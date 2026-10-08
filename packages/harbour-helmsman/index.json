@@ -18,5 +18,15 @@
     "buildtime": 1791464601,
     "last_scanned": "2026-10-08T14:55:48Z",
     "verdict": "clean"
+  },
+  {
+    "sha256": "8438b52a9fd06db996a7d4a85aa05fcf3b8ae9b5890dcde514c7d71446164c42",
+    "first_seen": "2026-10-08T14:56:59Z",
+    "package": "harbour-helmsman-0.4.8-1.aarch64",
+    "version": "0.4.8-1",
+    "arch": "aarch64",
+    "buildtime": 1791464616,
+    "last_scanned": "2026-10-08T14:56:59Z",
+    "verdict": "clean"
   }
 ]
