@@ -1,5 +1,5 @@
 {
-  "cursor": 1791482161,
+  "cursor": 1791483721,
   "queue": [
     {
       "url": "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.0-1.i486.rpm",
@@ -180,6 +180,18 @@
       "page": "https://openrepos.net/node/12422",
       "appid": 12422,
       "title": "Eureadia"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.45.0-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12489",
+      "appid": 12489,
+      "title": "xmatic"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.45.0-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12489",
+      "appid": 12489,
+      "title": "xmatic"
     }
   ],
   "seen": [
@@ -230,9 +242,11 @@
     "https://openrepos.net/sites/default/files/packages/19185/harbour-emoump-0.1-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19185/harbour-eureadia-0.6-8.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19185/harbour-eureadia-0.6-8.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/19185/harbour-eureadia-0.6-8.i486.rpm"
+    "https://openrepos.net/sites/default/files/packages/19185/harbour-eureadia-0.6-8.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.45.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.45.0-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-08T18:26:19Z",
+  "last_run": "2026-10-08T18:46:31Z",
   "dispatched": [
     1791483365,
     1791483552,
