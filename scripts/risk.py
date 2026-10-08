@@ -67,6 +67,10 @@ SCRIPTLET_RULES = [
 ]
 
 
+def _count(number, noun):
+    return f"{number} {noun}" + ("" if number == 1 else "s")
+
+
 def _indicator_name(rule):
     return rule.replace("Coastguard_Indicator_", "")
 
@@ -100,7 +104,7 @@ def assess(report, diff=None):
         add("info", "No sandbox profile declared")
     loosening = sailjail.get("profile_loosening") or []
     if loosening:
-        add("medium", f"Own profile loosens the sandbox ({len(loosening)} rule(s))")
+        add("medium", f"Own profile loosens the sandbox ({_count(len(loosening), 'rule')})")
     elif sailjail.get("shipped_profiles"):
         add("info", "Own sandbox profile")
     sensitive = sorted({p for a in apps for p in a.get("permissions") or []} & SENSITIVE_PERMISSIONS)
@@ -111,9 +115,9 @@ def assess(report, diff=None):
     root_units = [u for u in services if u.get("user") == "root" and u.get("scope") == "system"]
     started = [u for u in root_units if u.get("enabled_by")]
     if started:
-        add("medium", f"{len(started)} root service(s), started at install")
+        add("medium", f"{_count(len(started), 'root service')}, started at install")
     elif root_units:
-        add("medium", f"{len(root_units)} root service(s)")
+        add("medium", _count(len(root_units), "root service"))
     if root_units and (unsandboxed or undeclared):
         add("high", "Root service and no sandbox")
     if any(u.get("scope") == "user" for u in services) or (inspect.get("services") or {}).get("autostart"):
