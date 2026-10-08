@@ -262,6 +262,15 @@ def report_markdown(report):
     return "\n".join(lines)
 
 
+def _lookup_check(reputation, key, source):
+    status = (reputation.get(key) or {}).get("status")
+    if any(hit.get("source") == source for hit in reputation.get("hits") or []):
+        return "fail"
+    if status == "ok":
+        return "pass"
+    return "not run" if status in (None, "not configured") else "error"
+
+
 def summarize(report):
     """The few facts a store client shows about one build. Kept small: this
     is embedded in index.json, which a phone downloads per app page."""
@@ -305,6 +314,13 @@ def summarize(report):
         "hosts_in_scripts": (inspect.get("network") or {}).get("hosts_in_scripts"),
         "reputation": {key: (reputation.get(key) or {}).get("status")
                        for key in ("virustotal", "malwarebazaar")},
+        # One word per known-malware check: pass, fail, "not run" or error.
+        "checks": {
+            "clamav": "fail" if report.get("clamav") else "pass",
+            "yara": "fail" if report.get("yara") else "pass",
+            "virustotal": _lookup_check(reputation, "virustotal", "VirusTotal"),
+            "malwarebazaar": _lookup_check(reputation, "malwarebazaar", "MalwareBazaar"),
+        },
         "changes": changes,
         "run": report.get("run"),
         # Readable without a GitHub login, unlike the run page.
@@ -465,7 +481,7 @@ def main():
     mine["summary"] = summarize(report)
     # Builds stored before summaries existed get theirs from the stored result.
     for entry in index:
-        if not entry.get("summary", {}).get("report"):
+        if "checks" not in entry.get("summary", {}):
             old = load(os.path.join(pkgdir, entry["sha256"] + ".json"))
             if old:
                 old["report"] = report_url(name, entry["sha256"])

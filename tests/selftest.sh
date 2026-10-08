@@ -177,6 +177,9 @@ jq -e '.[0].summary.sandbox == "disabled" and .[0].summary.root_services == 1
        and (.[1].summary.changes.attention | any(.item == "Contacts"))' \
     "$store/packages/coastguard-inspect/index.json" > /dev/null \
     || { echo "FAIL: index summary" >&2; jq . "$store/packages/coastguard-inspect/index.json" >&2; exit 1; }
+jq -e '.[0].summary.checks == {"clamav": "pass", "yara": "pass", "virustotal": "not run", "malwarebazaar": "not run"}' \
+    "$store/packages/coastguard-inspect/index.json" > /dev/null \
+    || { echo "FAIL: per-check status" >&2; exit 1; }
 echo "ok: index carries a compact summary per build"
 report_md=$store/packages/coastguard-inspect/$(jq -r .sha256 "$top/report-v2/report.json").md
 grep -q 'high risk' "$report_md" && grep -q 'Changes since' "$report_md" \
