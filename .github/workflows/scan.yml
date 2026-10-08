@@ -1,0 +1,104 @@
+name: Scan RPM
+
+on:
+  workflow_dispatch:
+    inputs:
+      rpm_url:
+        description: HTTPS URL of the RPM to scan
+        required: true
+        type: string
+      sha256:
+        description: Expected SHA-256 of the RPM (optional)
+        required: false
+        type: string
+
+run-name: Scan ${{ inputs.rpm_url }}
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    # Untrusted input: GitHub-hosted runners only, never self-hosted.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install scanners
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends \
+            clamav clamav-freshclam yara libarchive-tools rpm jq
+          # The packaged updater would fetch a second copy of the database.
+          sudo systemctl stop clamav-freshclam || true
+
+      - name: Cache key
+        id: day
+        run: echo "day=$(date -u +%Y%m%d)" >> "$GITHUB_OUTPUT"
+
+      # database.clamav.net rate-limits; refresh at most once a day.
+      - name: ClamAV database cache
+        uses: actions/cache@v4
+        with:
+          path: db/clamav
+          key: clamav-${{ steps.day.outputs.day }}
+          restore-keys: clamav-
+
+      - name: Update ClamAV database
+        run: |
+          mkdir -p db/clamav
+          printf 'DatabaseMirror database.clamav.net\nDatabaseDirectory %s\n' \
+            "$PWD/db/clamav" > freshclam.conf
+          freshclam --config-file=freshclam.conf --stdout
+
+      - name: Fetch YARA Forge core rules
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p db/yara
+          tag=$(gh release view --repo YARAHQ/yara-forge --json tagName -q .tagName)
+          gh release download "$tag" --repo YARAHQ/yara-forge \
+            --pattern yara-forge-rules-core.zip --dir db/yara
+          unzip -q -j db/yara/yara-forge-rules-core.zip '*.yar' -d db/yara
+          echo "YARA_RULES_VERSION=$tag" >> "$GITHUB_ENV"
+
+      - name: Download RPM
+        env:
+          RPM_URL: ${{ inputs.rpm_url }}
+          EXPECTED_SHA256: ${{ inputs.sha256 }}
+        run: |
+          case "$RPM_URL" in
+            https://*) ;;
+            *) echo "::error::rpm_url must be an https:// URL"; exit 2 ;;
+          esac
+          mkdir sample
+          curl --fail --silent --show-error --location \
+            --proto '=https' --proto-redir '=https' \
+            --max-filesize 1073741824 --max-time 600 \
+            --output sample/package.rpm -- "$RPM_URL"
+          sha256sum sample/package.rpm
+          if [ -n "$EXPECTED_SHA256" ]; then
+            echo "${EXPECTED_SHA256,,}  sample/package.rpm" | sha256sum --check
+          fi
+
+      - name: Scan
+        env:
+          RPM_URL: ${{ inputs.rpm_url }}
+        run: |
+          scripts/scan.sh sample/package.rpm db/yara/yara-rules-core.yar \
+            db/clamav report
+
+      - name: Summary
+        if: always()
+        run: |
+          [ -f report/summary.md ] && cat report/summary.md >> "$GITHUB_STEP_SUMMARY" || true
+
+      # Logs and metadata only; the package itself is not re-published.
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coastguard-report
+          path: report/
+          if-no-files-found: ignore
