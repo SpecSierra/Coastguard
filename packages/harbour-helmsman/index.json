@@ -1,5 +1,15 @@
 [
   {
+    "sha256": "d21b598007957dfc2a162214616aca135e8a7f2dc4206abf775480b9408a132e",
+    "first_seen": "2026-10-08T14:56:12Z",
+    "package": "harbour-helmsman-0.4.8-1.i486",
+    "version": "0.4.8-1",
+    "arch": "i486",
+    "buildtime": 1791464581,
+    "last_scanned": "2026-10-08T14:56:12Z",
+    "verdict": "clean"
+  },
+  {
     "sha256": "a481a767937425badd17f983a9f54c76a715d230497367ede2263ad205f91273",
     "first_seen": "2026-10-08T14:55:48Z",
     "package": "harbour-helmsman-0.4.8-1.armv7hl",

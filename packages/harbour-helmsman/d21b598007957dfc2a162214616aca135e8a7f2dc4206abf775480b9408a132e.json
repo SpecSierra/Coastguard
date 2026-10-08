@@ -1,0 +1,158 @@
+{
+  "verdict": "clean",
+  "name": "harbour-helmsman",
+  "version": "0.4.8-1",
+  "arch": "i486",
+  "package": "harbour-helmsman-0.4.8-1.i486",
+  "buildtime": 1791464581,
+  "sha256": "d21b598007957dfc2a162214616aca135e8a7f2dc4206abf775480b9408a132e",
+  "source": "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.i486.rpm",
+  "source_page": "https://openrepos.net/node/12636",
+  "scanned": "2026-10-08T14:56:12Z",
+  "files": 154,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28147/Thu Oct  8 06:24:12 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 1,
+    "files": 1,
+    "bytes": 187691,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-helmsman.desktop",
+          "name": "Helmsman",
+          "exec": "harbour-helmsman",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Notifications",
+            "Location",
+            "Documents",
+            "Pictures",
+            "MediaIndexing"
+          ],
+          "organization": "org.helmsman",
+          "application": "harbour-helmsman"
+        }
+      ],
+      "shipped_profiles": [
+        "/etc/sailjail/permissions/harbour-helmsman.profile"
+      ]
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 5,
+      "hosts_in_scripts": 4,
+      "hosts": [
+        {
+          "host": "example.io.nabu.casa",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-helmsman/translations/bg.json",
+            "/usr/share/harbour-helmsman/translations/cs.json",
+            "/usr/share/harbour-helmsman/translations/da.json"
+          ]
+        },
+        {
+          "host": "example.ui.nabu.casa",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-helmsman/qml/pages/SettingsPage.qml"
+          ]
+        },
+        {
+          "host": "homeassistant.local",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-helmsman/qml/pages/SettingsPage.qml"
+          ]
+        },
+        {
+          "host": "tile.openstreetmap.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-helmsman/qml/dashboard/EntityMap.qml"
+          ]
+        },
+        {
+          "host": "fontello.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-helmsman"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "example.io.nabu.casa",
+        "example.ui.nabu.casa",
+        "homeassistant.local",
+        "tile.openstreetmap.org"
+      ],
+      "hosts_binaries": [
+        "fontello.com"
+      ],
+      "notable": [],
+      "ignored_hosts": 0
+    }
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37796477579",
+  "diff": null
+}
