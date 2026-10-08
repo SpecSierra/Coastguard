@@ -1,0 +1,236 @@
+{
+  "verdict": "clean",
+  "name": "foghorn",
+  "version": "0.4.1-1",
+  "arch": "armv7hl",
+  "package": "foghorn-0.4.1-1.armv7hl",
+  "buildtime": 1791381636,
+  "sha256": "0f3468ca6276894d888206ca96e4c97004ed98638634461a10bafe994a597411",
+  "source": "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.4.1-1.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12520",
+  "scanned": "2026-10-08T16:11:01Z",
+  "files": 43,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28147/Thu Oct  8 06:24:12 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/foghorn.desktop",
+          "name": "Foghorn",
+          "exec": "foghorn",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "AppLaunch",
+            "Foghorn"
+          ],
+          "organization": "org.foghorn",
+          "application": "Foghorn"
+        }
+      ],
+      "shipped_profiles": [
+        "/etc/sailjail/permissions/Foghorn.permission",
+        "/etc/sailjail/permissions/UnifiedPush.permission"
+      ],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [
+        {
+          "path": "/usr/lib/systemd/user/foghornd.service",
+          "scope": "user",
+          "exec_start": [
+            "/usr/bin/foghornd"
+          ],
+          "user": "device user",
+          "install_wanted_by": "default.target",
+          "enabled_by": [
+            "wanted by default.target (shipped symlink)",
+            "enabled or started from an install scriptlet"
+          ]
+        }
+      ],
+      "dbus": [
+        {
+          "path": "/usr/share/dbus-1/services/org.unifiedpush.Distributor.Foghorn.service",
+          "bus": "session",
+          "name": "org.unifiedpush.Distributor.Foghorn",
+          "exec": "/usr/bin/foghornd",
+          "user": null,
+          "systemd_service": "foghornd.service"
+        }
+      ],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 2,
+        "notable": [
+          "systemctl-user daemon-reload || :",
+          "systemctl-user try-restart foghornd.service || :"
+        ],
+        "body": "# No user session exists during a package transaction, so starting is left to the\n# GUI or the next login. Without try-restart an upgraded daemon keeps running.\nsystemctl-user daemon-reload || :\nsystemctl-user try-restart foghornd.service || :\n"
+      },
+      {
+        "type": "postuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 3,
+        "notable": [
+          "systemctl-user daemon-reload || :"
+        ],
+        "body": "if [ $1 -eq 0 ]; then\n    systemctl-user daemon-reload || :\nfi\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 7,
+      "hosts_in_scripts": 2,
+      "hosts": [
+        {
+          "host": "git.agnos.is",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/lib/systemd/user/foghornd.service",
+            "/usr/share/foghorn/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "ntfy.sh",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/foghorn/qml/pages/SettingsPage.qml"
+          ]
+        },
+        {
+          "host": "dbus.freedesktop.org",
+          "urls": 6,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/foghornd"
+          ]
+        },
+        {
+          "host": "docs.rs",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/foghornd"
+          ]
+        },
+        {
+          "host": "push.services.mozilla.compush",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/foghornd"
+          ]
+        },
+        {
+          "host": "rawevent.corruptreading",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/foghornd"
+          ]
+        },
+        {
+          "host": "www.freedesktop.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/foghornd"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "git.agnos.is",
+        "ntfy.sh"
+      ],
+      "hosts_binaries": [
+        "dbus.freedesktop.org",
+        "docs.rs",
+        "push.services.mozilla.compush",
+        "rawevent.corruptreading",
+        "www.freedesktop.org"
+      ],
+      "notable": [],
+      "ignored_hosts": 0
+    }
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37806683240",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "text": "Own sandbox profile"
+      },
+      {
+        "level": "info",
+        "text": "Starts in the background"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/foghorn/0f3468ca6276894d888206ca96e4c97004ed98638634461a10bafe994a597411.md"
+}

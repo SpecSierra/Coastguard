@@ -50,5 +50,57 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37798032858",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/foghorn/f2d2a1024f6d48455fc3425c834fe563cbb6048742421d8145d334f4a5663793.md"
     }
+  },
+  {
+    "sha256": "0f3468ca6276894d888206ca96e4c97004ed98638634461a10bafe994a597411",
+    "first_seen": "2026-10-08T16:11:01Z",
+    "package": "foghorn-0.4.1-1.armv7hl",
+    "version": "0.4.1-1",
+    "arch": "armv7hl",
+    "buildtime": 1791381636,
+    "last_scanned": "2026-10-08T16:11:01Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "text": "Own sandbox profile"
+          },
+          {
+            "level": "info",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "AppLaunch",
+        "Foghorn"
+      ],
+      "own_sandbox_profile": true,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 2,
+      "hosts_in_scripts": 2,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37806683240",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/foghorn/0f3468ca6276894d888206ca96e4c97004ed98638634461a10bafe994a597411.md"
+    }
   }
 ]
