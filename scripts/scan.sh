@@ -2,12 +2,13 @@
 # Scan one RPM with ClamAV and YARA. The package is only unpacked, never
 # installed or executed.
 #
-# usage: scan.sh <package.rpm> <yara-rules.yar> <clamav-db-dir> <report-dir>
+# usage: scan.sh <package.rpm> <yara-rules> <clamav-db-dir> <report-dir>
+#        <yara-rules> is a .yar file or a directory of .yar files
 # exit:  0 clean, 1 detections, 2 scan error (verdict unknown)
 set -euo pipefail
 
 if [ $# -ne 4 ]; then
-    echo "usage: $0 <package.rpm> <yara-rules.yar> <clamav-db-dir> <report-dir>" >&2
+    echo "usage: $0 <package.rpm> <yara-rules> <clamav-db-dir> <report-dir>" >&2
     exit 2
 fi
 
@@ -32,6 +33,7 @@ if ! rpm -qp --nosignature --qf \
     exit 2
 fi
 rm -f "$report/rpm-error.log"
+name=$(rpm -qp --nosignature --qf '%{NAME}' "$rpm_file")
 nevra=$(rpm -qp --nosignature --qf '%{NAME}-%{VERSION}-%{RELEASE}.%{ARCH}' "$rpm_file")
 
 # Install scriptlets run as root on the device, so they are scanned too.
@@ -71,7 +73,8 @@ clam_hits=$(wc -l < "$report/clamav-detections.txt")
 # --- YARA -------------------------------------------------------------------
 : > "$report/yara-detections.txt"
 : > "$work/yara.err"
-if yarac -w "$rules" "$work/rules.yarc" 2>> "$work/yara.err"; then
+if [ -d "$rules" ]; then rule_files=("$rules"/*.yar); else rule_files=("$rules"); fi
+if yarac -w "${rule_files[@]}" "$work/rules.yarc" 2>> "$work/yara.err"; then
     for target in "${targets[@]}"; do
         # -N: do not follow symlinks out of the payload
         yara -C -r -N -w "$work/rules.yarc" "$target" 2>> "$work/yara.err" \
@@ -98,6 +101,7 @@ fi
 
 jq -n \
     --arg verdict "$verdict" --arg sha256 "$sha256" --arg package "$nevra" \
+    --arg name "$name" \
     --arg source "${RPM_URL:-}" --arg scanned "$(date -u +%FT%TZ)" \
     --arg yara_rules "${YARA_RULES_VERSION:-unknown}" \
     --arg clamav "$(clamscan --database="$clamdb" --version 2>/dev/null || true)" \
@@ -105,7 +109,8 @@ jq -n \
     --rawfile clam "$report/clamav-detections.txt" \
     --rawfile yara "$report/yara-detections.txt" \
     --args '{
-        verdict: $verdict, package: $package, sha256: $sha256, source: $source,
+        verdict: $verdict, name: $name, package: $package, sha256: $sha256,
+        source: $source,
         scanned: $scanned, files: $files,
         engines: {clamav: $clamav, yara_forge_core: $yara_rules},
         clamav: ($clam | split("\n") | map(select(. != ""))),

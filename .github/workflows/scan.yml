@@ -24,49 +24,7 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-
-      - name: Install scanners
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq --no-install-recommends \
-            clamav clamav-freshclam yara libarchive-tools rpm jq
-          # The packaged updater would fetch a second copy of the database.
-          sudo systemctl stop clamav-freshclam || true
-
-      - name: Cache key
-        id: day
-        run: echo "day=$(date -u +%Y%m%d)" >> "$GITHUB_OUTPUT"
-
-      # database.clamav.net rate-limits; refresh at most once a day.
-      - name: ClamAV database cache
-        uses: actions/cache@v4
-        with:
-          path: db/clamav
-          key: clamav-${{ steps.day.outputs.day }}
-          restore-keys: clamav-
-
-      - name: Update ClamAV database
-        run: |
-          # Ubuntu's AppArmor profile confines freshclam to its system paths,
-          # so update in /var/lib/clamav and copy to and from the cached dir.
-          mkdir -p db/clamav
-          sudo cp -n db/clamav/* /var/lib/clamav/ 2>/dev/null || true
-          sudo chown -R clamav:clamav /var/lib/clamav
-          sudo freshclam --stdout
-          rm -rf db/clamav && mkdir -p db/clamav
-          sudo cp /var/lib/clamav/*.c[vl]d db/clamav/
-          sudo chown -R "$(id -u):$(id -g)" db/clamav
-
-      - name: Fetch YARA Forge core rules
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          mkdir -p db/yara
-          tag=$(gh release view --repo YARAHQ/yara-forge --json tagName -q .tagName)
-          gh release download "$tag" --repo YARAHQ/yara-forge \
-            --pattern yara-forge-rules-core.zip --dir db/yara
-          unzip -q -j db/yara/yara-forge-rules-core.zip '*.yar' -d db/yara
-          echo "YARA_RULES_VERSION=$tag" >> "$GITHUB_ENV"
+      - uses: ./.github/actions/setup-scanners
 
       - name: Download RPM
         env:
@@ -90,9 +48,7 @@ jobs:
       - name: Scan
         env:
           RPM_URL: ${{ inputs.rpm_url }}
-        run: |
-          scripts/scan.sh sample/package.rpm db/yara/yara-rules-core.yar \
-            db/clamav report
+        run: scripts/scan.sh sample/package.rpm db/yara db/clamav report
 
       - name: Summary
         if: always()
@@ -107,3 +63,61 @@ jobs:
           name: coastguard-report
           path: report/
           if-no-files-found: ignore
+
+  # Separate job so the one that handles the untrusted package never holds a
+  # write token. Stores packages/<name>/<sha256>.json on the results branch.
+  publish:
+    needs: scan
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: coastguard-report
+          path: report
+
+      - name: Store result
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          [ -f report/report.json ] || { echo "no report produced, nothing to store"; exit 0; }
+          verdict=$(jq -r .verdict report/report.json)
+          sha256=$(jq -r .sha256 report/report.json)
+          name=$(jq -r .name report/report.json)
+          # An incomplete scan is not a verdict and must not replace one.
+          case "$verdict" in
+            clean|detected) ;;
+            *) echo "verdict '$verdict' is not stored"; exit 0 ;;
+          esac
+          # Both values end up in a path and come from the scanned package.
+          [[ $sha256 =~ ^[0-9a-f]{64}$ ]] || { echo "::error::bad sha256"; exit 1; }
+          [[ $name =~ ^[A-Za-z0-9][A-Za-z0-9._+-]{0,127}$ ]] || name=_unnamed
+          jq --arg run "$RUN_URL" '. + {run: $run}' report/report.json > result.json
+
+          remote="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          # Scans run in parallel, so retry from a fresh clone when the push loses a race.
+          for attempt in 1 2 3 4 5; do
+            rm -rf store
+            if ! git clone --quiet --depth 1 --branch results "$remote" store 2>/dev/null; then
+              git init --quiet --initial-branch results store
+              git -C store remote add origin "$remote"
+            fi
+            mkdir -p "store/packages/$name"
+            cp result.json "store/packages/$name/$sha256.json"
+            git -C store add -A
+            git -C store -c user.name='github-actions[bot]' \
+              -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+              commit --quiet --allow-empty -m "$name: $verdict ($sha256)"
+            if git -C store push --quiet origin results; then
+              echo "stored packages/$name/$sha256.json" | tee -a "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+            sleep $((attempt * 3))
+          done
+          echo "::error::could not push result"; exit 1

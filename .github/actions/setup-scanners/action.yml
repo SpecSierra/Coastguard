@@ -1,0 +1,53 @@
+name: Set up scanners
+description: Install ClamAV and YARA and fetch current signatures into db/
+
+runs:
+  using: composite
+  steps:
+    - name: Install scanners
+      shell: bash
+      run: |
+        sudo apt-get update -qq
+        sudo apt-get install -y -qq --no-install-recommends \
+          clamav clamav-freshclam yara libarchive-tools rpm jq
+        # The packaged updater would fetch a second copy of the database.
+        sudo systemctl stop clamav-freshclam || true
+
+    - name: Cache key
+      id: day
+      shell: bash
+      run: echo "day=$(date -u +%Y%m%d)" >> "$GITHUB_OUTPUT"
+
+    # database.clamav.net rate-limits; refresh at most once a day.
+    - name: ClamAV database cache
+      uses: actions/cache@v4
+      with:
+        path: db/clamav
+        key: clamav-${{ steps.day.outputs.day }}
+        restore-keys: clamav-
+
+    - name: Update ClamAV database
+      shell: bash
+      run: |
+        # Ubuntu's AppArmor profile confines freshclam to its system paths,
+        # so update in /var/lib/clamav and copy to and from the cached dir.
+        mkdir -p db/clamav
+        sudo cp -n db/clamav/* /var/lib/clamav/ 2>/dev/null || true
+        sudo chown -R clamav:clamav /var/lib/clamav
+        sudo freshclam --stdout
+        rm -rf db/clamav && mkdir -p db/clamav
+        sudo cp /var/lib/clamav/*.c[vl]d db/clamav/
+        sudo chown -R "$(id -u):$(id -g)" db/clamav
+
+    - name: Fetch YARA rules
+      shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        mkdir -p db/yara
+        tag=$(gh release view --repo YARAHQ/yara-forge --json tagName -q .tagName)
+        gh release download "$tag" --repo YARAHQ/yara-forge \
+          --pattern yara-forge-rules-core.zip --dir db/yara
+        unzip -q -j db/yara/yara-forge-rules-core.zip '*.yar' -d db/yara
+        cp rules/*.yar db/yara/
+        echo "YARA_RULES_VERSION=$tag" >> "$GITHUB_ENV"
