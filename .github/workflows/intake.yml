@@ -1,8 +1,8 @@
 name: Watch OpenRepos
 
-# Every hour, queue a scan for each RPM newly released on OpenRepos (at most
-# INTAKE_MAX_SCANS per run). The watch position and the queue live in
-# intake/state.json on the results branch.
+# Every hour, queue a scan for each RPM newly released on OpenRepos. Scans run
+# one at a time, at most INTAKE_MAX_SCANS per rolling hour. The watch position
+# and the queue live in intake/state.json on the results branch.
 on:
   schedule:
     - cron: '17 * * * *'
@@ -19,7 +19,7 @@ concurrency:
 jobs:
   intake:
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    timeout-minutes: 120   # waits for each scan it starts
     env:
       INTAKE_MAX_SCANS: 5
     steps:

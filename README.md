@@ -49,7 +49,8 @@ The `Watch OpenRepos` workflow runs every hour. It reads the OpenRepos app
 listing, visits the page of each app updated since the last run, and starts a
 scan for every RPM uploaded with that update, all architectures included. At
 most 5 scans are started in any 60 minutes (`INTAKE_MAX_SCANS` in
-`.github/workflows/intake.yml`); the rest wait in a queue.
+`.github/workflows/intake.yml`); the rest wait in a queue. Scans run one at a time: each
+starts only once the previous one has finished.
 
 Only releases made after the watch started are scanned; the existing
 catalogue is not backfilled. The watch position, the queue and the list of

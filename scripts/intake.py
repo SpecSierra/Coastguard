@@ -6,7 +6,8 @@ usage: intake.py <state.json>
 Reads the OpenRepos app listing (most recently updated first), visits the
 page of every app updated since the last run, and queues the RPMs uploaded
 with that update. At most INTAKE_MAX_SCANS are dispatched in any 60 minutes,
-however often this runs; the rest wait in the queue.
+however often this runs, and one at a time: each scan is started only once
+the previous one has finished. The rest wait in the queue.
 
 The first run only records the current time as the starting point: packages
 released before Coastguard started watching are not scanned.
@@ -33,6 +34,7 @@ MAX_PAGES = 5             # listing pages read to catch up after downtime
 MAX_APPS = 15             # app pages visited per run
 MAX_SCANS = int(os.environ.get("INTAKE_MAX_SCANS", "5"))
 SEEN_CAP = 20000
+SCAN_WAIT = 20 * 60       # seconds to wait for one scan before leaving the rest queued
 # File dates on the app page are site-local time (UTC+3) with minute
 # precision, and an upload can precede the app's "updated" stamp. The margin
 # only has to be generous: URLs already queued once are never queued again.
@@ -91,6 +93,29 @@ def parse_files(page):
     return files
 
 
+def scans_active():
+    """True while any scan run is queued or running."""
+    result = subprocess.run(
+        ["gh", "run", "list", "--workflow", "scan.yml", "--limit", "20", "--json", "status"],
+        capture_output=True, text=True)
+    if result.returncode != 0:
+        # Unknown is treated as busy: better to wait than to overlap.
+        print(f"could not list scan runs: {result.stderr.strip()}", file=sys.stderr)
+        return True
+    return any(run["status"] != "completed" for run in json.loads(result.stdout))
+
+
+def wait_for_scans():
+    """Returns True once no scan is running, False if that took too long."""
+    deadline = time.time() + SCAN_WAIT
+    time.sleep(15)  # a freshly dispatched run takes a moment to appear
+    while scans_active():
+        if time.time() > deadline:
+            return False
+        time.sleep(20)
+    return True
+
+
 def dispatch(item):
     if os.environ.get("INTAKE_DRY_RUN"):
         print(f"would scan {item['url']}")
@@ -146,12 +171,19 @@ def main():
     now = int(time.time())
     recent = [t for t in state.get("dispatched", []) if t > now - 3600]
     budget = max(0, MAX_SCANS - len(recent))
+    dry_run = bool(os.environ.get("INTAKE_DRY_RUN"))
+    if budget and state["queue"] and not dry_run and scans_active():
+        print("a scan is still running; nothing started this time")
+        budget = 0
     remaining, sent = [], 0
     for item in state["queue"]:
         if sent < budget and dispatch(item):
             sent += 1
             recent.append(int(time.time()))
-            time.sleep(0 if os.environ.get("INTAKE_DRY_RUN") else 20)
+            # One at a time: the next scan starts when this one is done.
+            if not dry_run and not wait_for_scans():
+                print("scan still running after 20 minutes; the rest stay queued")
+                budget = 0
         else:
             remaining.append(item)
     state["queue"] = remaining
