@@ -2,36 +2,6 @@
   "cursor": 1791457441,
   "queue": [
     {
-      "url": "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.4.1-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12520",
-      "appid": 12520,
-      "title": "Foghorn"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.44.2-1.aarch64.rpm",
-      "page": "https://openrepos.net/node/12489",
-      "appid": 12489,
-      "title": "xmatic"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.44.2-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12489",
-      "appid": 12489,
-      "title": "xmatic"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.0-1.aarch64.rpm",
-      "page": "https://openrepos.net/node/12550",
-      "appid": 12550,
-      "title": "FUTO Keyboard (with Swipe and Offline Voice Input)"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.0-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12550",
-      "appid": 12550,
-      "title": "FUTO Keyboard (with Swipe and Offline Voice Input)"
-    },
-    {
       "url": "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.0-1.i486.rpm",
       "page": "https://openrepos.net/node/12550",
       "appid": 12550,
@@ -224,10 +194,10 @@
   ],
   "last_run": "2026-10-08T15:07:05Z",
   "dispatched": [
-    1791471917,
-    1791471939,
-    1791471961,
-    1791471983,
-    1791472005
+    1791475818,
+    1791475920,
+    1791476085,
+    1791476209,
+    1791476395
   ]
 }
