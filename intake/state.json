@@ -222,5 +222,12 @@
     "https://openrepos.net/sites/default/files/packages/19607/harbour-doomsday-0.2.0-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19607/harbour-doomsday-0.2.0-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-08T15:07:05Z"
+  "last_run": "2026-10-08T15:07:05Z",
+  "dispatched": [
+    1791471917,
+    1791471939,
+    1791471961,
+    1791471983,
+    1791472005
+  ]
 }
