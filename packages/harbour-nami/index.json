@@ -8,5 +8,15 @@
     "buildtime": 1791365883,
     "last_scanned": "2026-10-08T15:06:56Z",
     "verdict": "clean"
+  },
+  {
+    "sha256": "97a25b8f4dc327bdf165f44191c37c6dc12521469ac6f838eb6d067edd4e6bd6",
+    "first_seen": "2026-10-08T15:06:56Z",
+    "package": "harbour-nami-0.9.2-1.armv7hl",
+    "version": "0.9.2-1",
+    "arch": "armv7hl",
+    "buildtime": 1791365883,
+    "last_scanned": "2026-10-08T15:06:56Z",
+    "verdict": "clean"
   }
 ]
