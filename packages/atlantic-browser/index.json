@@ -1,0 +1,12 @@
+[
+  {
+    "sha256": "a0e953f9c21823bf64ac6a2cbe979bdc92d5ff9b17512367ab035722480d9245",
+    "package": "atlantic-browser-1.5.1-733.1.aio.aarch64",
+    "buildtime": 1790716615,
+    "first_seen": "2026-10-08T14:13:18Z",
+    "last_scanned": "2026-10-08T14:29:52Z",
+    "verdict": "clean",
+    "version": "1.5.1-733.1.aio",
+    "arch": "aarch64"
+  }
+]
