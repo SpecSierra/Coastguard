@@ -53,5 +53,60 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37852748660",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/longterm/226412b81c18162d18e359dca74a5857808423615075c35323aff64cc5f56ffe.md"
     }
+  },
+  {
+    "sha256": "a1364c0171147c7f571f07105e65be93d174793b24e4856da4c55d2e188f53ab",
+    "first_seen": "2026-10-08T22:22:07Z",
+    "package": "longterm-0.5.0-1.armv7hl",
+    "version": "0.5.0-1",
+    "arch": "armv7hl",
+    "buildtime": 1791409375,
+    "last_scanned": "2026-10-08T22:22:07Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "text": "Personal data: Secrets"
+          },
+          {
+            "level": "info",
+            "text": "Code that touches ssh keys"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Touches SSH Keys"
+      ],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "Secrets",
+        "UserDirs"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 9,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37852929991",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/longterm/a1364c0171147c7f571f07105e65be93d174793b24e4856da4c55d2e188f53ab.md"
+    }
   }
 ]
