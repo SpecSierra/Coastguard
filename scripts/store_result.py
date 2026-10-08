@@ -340,8 +340,9 @@ def main():
     # The build just before this one, by RPM build time. Prefer the same
     # architecture: comparing aarch64 with armv7hl changes every binary.
     earlier = index[:index.index(mine)][::-1]
-    baseline = next((e for e in earlier if e.get("arch") == mine["arch"]),
-                    earlier[0] if earlier else None)
+    # Another architecture of this same version is never a baseline.
+    baseline = next((e for e in earlier if e.get("arch") == mine["arch"]), None) \
+        or next((e for e in earlier if e.get("version") != mine["version"]), None)
     diff = None
     if baseline:
         old = load(os.path.join(pkgdir, baseline["sha256"] + ".json"))
