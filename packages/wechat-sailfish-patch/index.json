@@ -1,0 +1,47 @@
+[
+  {
+    "sha256": "35090438c911823fa4d88904c9ba37936ea0344a1a2c4c3ea6d91cd4bd636f6d",
+    "first_seen": "2026-10-08T21:38:15Z",
+    "package": "wechat-sailfish-patch-1.0-2.aarch64",
+    "version": "1.0-2",
+    "arch": "aarch64",
+    "buildtime": 1791431502,
+    "last_scanned": "2026-10-08T21:38:15Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "text": "Sandbox turned off"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 1,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37848080289",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/wechat-sailfish-patch/35090438c911823fa4d88904c9ba37936ea0344a1a2c4c3ea6d91cd4bd636f6d.md"
+    }
+  }
+]

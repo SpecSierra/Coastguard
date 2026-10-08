@@ -1,0 +1,251 @@
+{
+  "verdict": "clean",
+  "name": "wechat-sailfish-patch",
+  "version": "1.0-2",
+  "arch": "aarch64",
+  "package": "wechat-sailfish-patch-1.0-2.aarch64",
+  "buildtime": 1791431502,
+  "sha256": "35090438c911823fa4d88904c9ba37936ea0344a1a2c4c3ea6d91cd4bd636f6d",
+  "source": "https://openrepos.net/sites/default/files/packages/19652/wechat-sailfish-patch-1.0-2.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12664",
+  "scanned": "2026-10-08T21:38:15Z",
+  "files": 154,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28147/Thu Oct  8 06:24:12 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 114,
+    "files": 114,
+    "bytes": 312995,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/wechat-inputboard.desktop",
+          "name": "WeChat Input Board",
+          "exec": "/usr/bin/wechat-input",
+          "hidden": false,
+          "sandbox": "disabled",
+          "permissions": [],
+          "organization": null,
+          "application": null
+        },
+        {
+          "desktop": "/usr/share/applications/wechat.desktop",
+          "name": "WeChat",
+          "exec": "/usr/bin/wechat-sailfish %U",
+          "hidden": false,
+          "sandbox": "disabled",
+          "permissions": [],
+          "organization": null,
+          "application": null
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 1,
+        "notable": [],
+        "body": "# register the desktop entry; the home screen picks up new files in\n# /usr/share/applications via inotify, this is just belt and braces\nupdate-desktop-database /usr/share/applications >/dev/null 2>&1 || true\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 9,
+      "hosts_in_scripts": 0,
+      "hosts": [
+        {
+          "host": "www.inkscape.org",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib/wechat-sailfish/libgtk-3.so.0.2409.32"
+          ]
+        },
+        {
+          "host": "bugzilla.gnome.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib/wechat-sailfish/libgtk-3.so.0.2409.32"
+          ]
+        },
+        {
+          "host": "cairographics.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/lib/wechat-sailfish/libcairo.so.2.11800.0"
+          ]
+        },
+        {
+          "host": "icon-theme.freedesktop.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib/wechat-sailfish/libgtk-3.so.0.2409.32"
+          ]
+        },
+        {
+          "host": "jimmac.musichall.czif",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib/wechat-sailfish/libgtk-3.so.0.2409.32"
+          ]
+        },
+        {
+          "host": "sodipodi.sourceforge.net",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib/wechat-sailfish/libgtk-3.so.0.2409.32"
+          ]
+        },
+        {
+          "host": "website.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib/wechat-sailfish/libgtk-3.so.0.2409.32"
+          ]
+        },
+        {
+          "host": "www.gtk.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib/wechat-sailfish/libgtk-3.so.0.2409.32"
+          ]
+        },
+        {
+          "host": "www.openswatchbook.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib/wechat-sailfish/libgtk-3.so.0.2409.32"
+          ]
+        }
+      ],
+      "hosts_scripts": [],
+      "hosts_binaries": [
+        "bugzilla.gnome.org",
+        "cairographics.org",
+        "icon-theme.freedesktop.org",
+        "jimmac.musichall.czif",
+        "sodipodi.sourceforge.net",
+        "website.com",
+        "www.gtk.org",
+        "www.inkscape.org",
+        "www.openswatchbook.org"
+      ],
+      "notable": [],
+      "ignored_hosts": 5
+    }
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 8,
+      "unknown": 5,
+      "not_queried": 47,
+      "results": [
+        {
+          "sha256": "2c0d5baeb64e94446f034f97406daa017bae498385143539d01933186bf655ed",
+          "path": "/usr/lib/wechat-sailfish/libepoxy.so.0.0.0",
+          "malicious": 0,
+          "suspicious": 0,
+          "engines": 75,
+          "last_analysis": 1767690167,
+          "link": "https://www.virustotal.com/gui/file/2c0d5baeb64e94446f034f97406daa017bae498385143539d01933186bf655ed"
+        },
+        {
+          "sha256": "8e4b164809fe69ddfa317340c23cddc7b66963413ba2b224bec5da79496c0c12",
+          "path": "/usr/lib/wechat-sailfish/libX11.so.6.4.0",
+          "malicious": 0,
+          "suspicious": 0,
+          "engines": 75,
+          "last_analysis": 1790146574,
+          "link": "https://www.virustotal.com/gui/file/8e4b164809fe69ddfa317340c23cddc7b66963413ba2b224bec5da79496c0c12"
+        },
+        {
+          "sha256": "32a3c098b31f6d579ce25c11a95c93e39b1f53732884626c700943c44ed0dbb4",
+          "path": "/usr/lib/wechat-sailfish/libcairo.so.2.11800.0",
+          "malicious": 0,
+          "suspicious": 0,
+          "engines": 75,
+          "last_analysis": 1790146556,
+          "link": "https://www.virustotal.com/gui/file/32a3c098b31f6d579ce25c11a95c93e39b1f53732884626c700943c44ed0dbb4"
+        }
+      ]
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 50,
+      "unknown": 50,
+      "not_queried": 5,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37848080289",
+  "diff": null,
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "text": "Sandbox turned off"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/wechat-sailfish-patch/35090438c911823fa4d88904c9ba37936ea0344a1a2c4c3ea6d91cd4bd636f6d.md"
+}
