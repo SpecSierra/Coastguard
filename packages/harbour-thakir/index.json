@@ -1,0 +1,52 @@
+[
+  {
+    "sha256": "c80e1bad2db576f73a15e3777361460d5995965b02d603d04f874f36a3dc7394",
+    "first_seen": "2026-10-08T19:37:58Z",
+    "package": "harbour-thakir-3.1.9-1.aarch64",
+    "version": "3.1.9-1",
+    "arch": "aarch64",
+    "buildtime": 1791406046,
+    "last_scanned": "2026-10-08T19:37:58Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "text": "1 root service, started at install"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Internet",
+        "Location",
+        "Sensors"
+      ],
+      "own_sandbox_profile": false,
+      "services": 2,
+      "root_services": 1,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 2,
+      "hosts_in_scripts": 10,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37833309384",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-thakir/c80e1bad2db576f73a15e3777361460d5995965b02d603d04f874f36a3dc7394.md"
+    }
+  }
+]
