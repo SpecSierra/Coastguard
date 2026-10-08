@@ -1,5 +1,50 @@
 [
   {
+    "sha256": "49702fe20cf1a6388f60a81b35ee67a868daa4d136679aad91cc522904d9bf2a",
+    "first_seen": "2026-10-08T21:03:22Z",
+    "package": "openssl-libs-3.5.9-0.51.3.armv7hl",
+    "version": "3.5.9-0.51.3",
+    "arch": "armv7hl",
+    "buildtime": 1791393280,
+    "last_scanned": "2026-10-08T21:03:22Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "text": "Script uses a hard-coded IP address"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 1,
+      "hosts_in_scripts": 2,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37843943314",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/openssl-libs/49702fe20cf1a6388f60a81b35ee67a868daa4d136679aad91cc522904d9bf2a.md"
+    }
+  },
+  {
     "sha256": "da8afde109b0d4269947b493ddb2c092b8ecf038674d5053c3b9c1bda8bb47d6",
     "first_seen": "2026-10-08T20:57:54Z",
     "package": "openssl-libs-3.5.9-0.50.3.armv7hl",
