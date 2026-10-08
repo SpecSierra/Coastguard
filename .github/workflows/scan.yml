@@ -47,10 +47,15 @@ jobs:
 
       - name: Update ClamAV database
         run: |
+          # Ubuntu's AppArmor profile confines freshclam to its system paths,
+          # so update in /var/lib/clamav and copy to and from the cached dir.
           mkdir -p db/clamav
-          printf 'DatabaseMirror database.clamav.net\nDatabaseDirectory %s\n' \
-            "$PWD/db/clamav" > freshclam.conf
-          freshclam --config-file=freshclam.conf --stdout
+          sudo cp -n db/clamav/* /var/lib/clamav/ 2>/dev/null || true
+          sudo chown -R clamav:clamav /var/lib/clamav
+          sudo freshclam --stdout
+          rm -rf db/clamav && mkdir -p db/clamav
+          sudo cp /var/lib/clamav/*.c[vl]d db/clamav/
+          sudo chown -R "$(id -u):$(id -g)" db/clamav
 
       - name: Fetch YARA Forge core rules
         env:
