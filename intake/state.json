@@ -1,10 +1,226 @@
 {
-  "cursor": 1791363724,
-  "queue": [],
+  "cursor": 1791457441,
+  "queue": [
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.4.1-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12520",
+      "appid": 12520,
+      "title": "Foghorn"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.44.2-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12489",
+      "appid": 12489,
+      "title": "xmatic"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.44.2-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12489",
+      "appid": 12489,
+      "title": "xmatic"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.0-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12550",
+      "appid": 12550,
+      "title": "FUTO Keyboard (with Swipe and Offline Voice Input)"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.0-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12550",
+      "appid": 12550,
+      "title": "FUTO Keyboard (with Swipe and Offline Voice Input)"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.0-1.i486.rpm",
+      "page": "https://openrepos.net/node/12550",
+      "appid": 12550,
+      "title": "FUTO Keyboard (with Swipe and Offline Voice Input)"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/14239/tor-0.4.9.13-0.armv7hl.rpm",
+      "page": "https://openrepos.net/node/11396",
+      "appid": 11396,
+      "title": "tor (aarch64+armv7hl)"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/14239/tor-0.4.9.13-0.aarch64.rpm",
+      "page": "https://openrepos.net/node/11396",
+      "appid": 11396,
+      "title": "tor (aarch64+armv7hl)"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.0-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12345",
+      "appid": 12345,
+      "title": "SubMusic"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.0-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12345",
+      "appid": 12345,
+      "title": "SubMusic"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.0-1.i486.rpm",
+      "page": "https://openrepos.net/node/12345",
+      "appid": 12345,
+      "title": "SubMusic"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/6389/harbour-thakir-3.1.9-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12592",
+      "appid": 12592,
+      "title": "Thakir Athan"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/6389/harbour-thakir-3.1.9-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12592",
+      "appid": 12592,
+      "title": "Thakir Athan"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/6389/harbour-thakir-3.1.9-1.i486.rpm",
+      "page": "https://openrepos.net/node/12592",
+      "appid": 12592,
+      "title": "Thakir Athan"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/8272/openssl-devel-3.5.9-0.50.3.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12438",
+      "appid": 12438,
+      "title": "openssl 3.5 (for legacy kernels)"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/8272/openssl-3.5.9-0.50.3.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12438",
+      "appid": 12438,
+      "title": "openssl 3.5 (for legacy kernels)"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/8272/openssl-libs-3.5.9-0.50.3.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12438",
+      "appid": 12438,
+      "title": "openssl 3.5 (for legacy kernels)"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/8272/openssl-devel-3.5.9-0.51.3.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12438",
+      "appid": 12438,
+      "title": "openssl 3.5 (for legacy kernels)"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/8272/openssl-3.5.9-0.51.3.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12438",
+      "appid": 12438,
+      "title": "openssl 3.5 (for legacy kernels)"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/8272/openssl-libs-3.5.9-0.51.3.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12438",
+      "appid": 12438,
+      "title": "openssl 3.5 (for legacy kernels)"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19652/wechat-sailfish-patch-1.0-2.aarch64.rpm",
+      "page": "https://openrepos.net/node/12664",
+      "appid": 12664,
+      "title": "wechat-sailfish-patch"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19607/harbour-livewire-0.7.1-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12538",
+      "appid": 12538,
+      "title": "Livewire"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19607/harbour-livewire-0.7.1-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12538",
+      "appid": 12538,
+      "title": "Livewire"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/18418/longterm-0.5.0-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12642",
+      "appid": 12642,
+      "title": "Longterm"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/18418/longterm-0.5.0-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12642",
+      "appid": 12642,
+      "title": "Longterm"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.1.0-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12694",
+      "appid": 12694,
+      "title": "WhatsUp - a native WhatsApp client for Sailfish OS (with voice and video calls)"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.1.0-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12694",
+      "appid": 12694,
+      "title": "WhatsUp - a native WhatsApp client for Sailfish OS (with voice and video calls)"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.1.0-1.i486.rpm",
+      "page": "https://openrepos.net/node/12694",
+      "appid": 12694,
+      "title": "WhatsUp - a native WhatsApp client for Sailfish OS (with voice and video calls)"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19607/harbour-doomsday-0.2.0-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12693",
+      "appid": 12693,
+      "title": "Doomsday"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19607/harbour-doomsday-0.2.0-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12693",
+      "appid": 12693,
+      "title": "Doomsday"
+    }
+  ],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.i486.rpm"
+    "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/19237/harbour-nami-0.9.2-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19237/harbour-nami-0.9.2-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.4.1-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.4.1-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.4.1-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.4.1-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.44.2-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.44.2-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.0-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.0-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/14239/tor-0.4.9.13-0.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/14239/tor-0.4.9.13-0.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.0-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.0-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/6389/harbour-thakir-3.1.9-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/6389/harbour-thakir-3.1.9-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/6389/harbour-thakir-3.1.9-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/8272/openssl-devel-3.5.9-0.50.3.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/8272/openssl-3.5.9-0.50.3.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/8272/openssl-libs-3.5.9-0.50.3.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/8272/openssl-devel-3.5.9-0.51.3.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/8272/openssl-3.5.9-0.51.3.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/8272/openssl-libs-3.5.9-0.51.3.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19652/wechat-sailfish-patch-1.0-2.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/harbour-livewire-0.7.1-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/harbour-livewire-0.7.1-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/18418/longterm-0.5.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/18418/longterm-0.5.0-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.1.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.1.0-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.1.0-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/harbour-doomsday-0.2.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/harbour-doomsday-0.2.0-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-08T14:55:52Z"
+  "last_run": "2026-10-08T15:07:05Z"
 }
