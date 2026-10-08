@@ -78,6 +78,16 @@ Every clean or detected verdict is stored on the
     packages/<name>/<sha256>.json           the full result
     packages/<name>/<sha256>.manifest.tsv   sha256, size, kind, path per file
 
+`index.json` is what a client such as a store app should read. One request
+per package gives every scanned build with its `version`, `arch`, `sha256`,
+`verdict`, scan date and a compact `summary`: detections, indicators, sandbox
+state and permissions, service counts, reputation status and the changes worth
+reviewing since the previous build.
+
+    https://raw.githubusercontent.com/SpecSierra/Coastguard/results/packages/<name>/index.json
+
+A 404 means the package has never been scanned.
+
 Rescanning the same file replaces its entry; the branch history keeps the
 earlier ones. To look a file up by hash:
 

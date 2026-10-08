@@ -4,7 +4,9 @@
 usage: store_result.py <store-dir> <report-dir> [<run-url>]
 
 <store-dir> is a checkout of the results branch. Per package it holds:
-  packages/<name>/index.json              every scanned build, oldest first
+  packages/<name>/index.json              every scanned build, oldest first,
+                                          each with a compact summary for
+                                          clients such as a store app
   packages/<name>/<sha256>.json           the full result
   packages/<name>/<sha256>.manifest.tsv   sha256, size, kind, path per file
 
@@ -207,6 +209,49 @@ def compare(old, new, old_files, new_files):
     return changes, counts
 
 
+def summarize(report):
+    """The few facts a store client shows about one build. Kept small: this
+    is embedded in index.json, which a phone downloads per app page."""
+    inspect = report.get("inspect") or {}
+    apps = (inspect.get("sailjail") or {}).get("apps") or []
+    states = {a.get("sandbox") for a in apps}
+    services = (inspect.get("services") or {}).get("systemd") or []
+    reputation = report.get("reputation") or {}
+    diff = report.get("diff")
+    changes = None
+    if diff:
+        attention = [c for c in diff["changes"] if c["attention"]]
+        changes = {
+            "since": diff["baseline"].get("package"),
+            "attention_count": len(attention),
+            "attention": [{"area": c["area"], "change": c["change"], "item": str(c["item"])[:160]}
+                          for c in attention[:12]],
+            "files": (diff.get("counts") or {}).get("files"),
+        }
+    return {
+        "detections": [str(line)[:200] for line in
+                       (report.get("clamav") or []) + (report.get("yara") or [])][:10]
+                      + [f"{h['source']}: {h['detail']}" for h in reputation.get("hits") or []][:5],
+        "indicators": [i["rule"].replace("Coastguard_Indicator_", "").replace("_", " ")
+                       for i in report.get("indicators") or []],
+        # Worst case over the launcher entries; null when the package has none.
+        "sandbox": ("disabled" if "disabled" in states else "none" if "none" in states
+                    else "declared" if states else None),
+        "permissions": sorted({p for a in apps for p in a.get("permissions") or []}),
+        "own_sandbox_profile": bool((inspect.get("sailjail") or {}).get("shipped_profiles")),
+        "services": len(services),
+        "root_services": sum(1 for u in services if u.get("user") == "root"),
+        "privileged_files": len(inspect.get("privileged_files") or []),
+        "system_hooks": sorted((inspect.get("system_integration") or {}).keys()),
+        "scriptlets": sum(1 for sc in inspect.get("scriptlets") or [] if sc.get("lines")),
+        "hosts_in_scripts": (inspect.get("network") or {}).get("hosts_in_scripts"),
+        "reputation": {key: (reputation.get(key) or {}).get("status")
+                       for key in ("virustotal", "malwarebazaar")},
+        "changes": changes,
+        "run": report.get("run"),
+    }
+
+
 def code(value, limit=200):
     text = re.sub(r"[`\r\n\t]+", " ", str(value))[:limit]
     return f"`{text}`" if text else "-"
@@ -354,6 +399,14 @@ def main():
             diff = {"baseline": {k: baseline.get(k) for k in ("sha256", "package", "last_scanned")},
                     "changes": changes, "counts": counts}
     report["diff"] = diff
+
+    mine["summary"] = summarize(report)
+    # Builds stored before summaries existed get theirs from the stored result.
+    for entry in index:
+        if "summary" not in entry:
+            old = load(os.path.join(pkgdir, entry["sha256"] + ".json"))
+            if old:
+                entry["summary"] = summarize(old)
 
     with open(os.path.join(pkgdir, sha256 + ".json"), "w", encoding="utf-8") as fh:
         json.dump(report, fh, indent=2)

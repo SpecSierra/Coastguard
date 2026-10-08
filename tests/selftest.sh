@@ -166,6 +166,13 @@ diff_check "diff: new scriptlet line" 'any(.area == "install scriptlet" and .cha
 diff_check "diff: new host" 'any(.area == "host" and .change == "added" and .item == "new-host.coastguard-selftest.io")'
 diff_check "diff: changed file" 'any(.area == "file" and .change == "changed" and (.item | endswith("main.qml")))'
 diff_check "diff: unchanged things stay quiet" 'all(.item != "Internet" and .item != "telemetry.coastguard-selftest.io")'
+jq -e '.[0].summary.sandbox == "disabled" and .[0].summary.root_services == 1
+       and (.[1].summary.permissions | index("Contacts"))
+       and .[1].summary.changes.attention_count >= 4
+       and (.[1].summary.changes.attention | any(.item == "Contacts"))' \
+    "$store/packages/coastguard-inspect/index.json" > /dev/null \
+    || { echo "FAIL: index summary" >&2; jq . "$store/packages/coastguard-inspect/index.json" >&2; exit 1; }
+echo "ok: index carries a compact summary per build"
 jq -e '.reputation.virustotal.status == "not configured"' \
     "$store/packages/coastguard-inspect/$(jq -r .sha256 "$top/report-inspect/report.json").json" > /dev/null \
     || { echo "FAIL: reputation block missing" >&2; exit 1; }
