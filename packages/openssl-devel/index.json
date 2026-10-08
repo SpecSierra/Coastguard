@@ -1,0 +1,42 @@
+[
+  {
+    "sha256": "35eef4d2b3a12940bb2953de684be8cf0fd57e38a990db12ab53862e6fb747dc",
+    "first_seen": "2026-10-08T19:42:18Z",
+    "package": "openssl-devel-3.5.9-0.50.3.armv7hl",
+    "version": "3.5.9-0.50.3",
+    "arch": "armv7hl",
+    "buildtime": 1791394204,
+    "last_scanned": "2026-10-08T19:42:18Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 6,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37833845692",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/openssl-devel/35eef4d2b3a12940bb2953de684be8cf0fd57e38a990db12ab53862e6fb747dc.md"
+    }
+  }
+]
