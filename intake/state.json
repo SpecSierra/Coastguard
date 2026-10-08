@@ -1,5 +1,5 @@
 {
-  "cursor": 1791496021,
+  "cursor": 1791498121,
   "queue": [
     {
       "url": "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.1.0-1.aarch64.rpm",
@@ -156,6 +156,12 @@
       "page": "https://openrepos.net/node/12698",
       "appid": 12698,
       "title": "Personal Ringtones (fork)"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/12554/personal-ringtones-qml-1.2.0-1.noarch.rpm",
+      "page": "https://openrepos.net/node/12699",
+      "appid": 12699,
+      "title": "Patch personal ringtones in contacts pulldown menu"
     }
   ],
   "seen": [
@@ -217,9 +223,10 @@
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.5.0-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.5.0-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.5.0-1.i486.rpm",
-    "https://openrepos.net/sites/default/files/packages/12554/personalringtones-1.3.0-1.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/12554/personalringtones-1.3.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/12554/personal-ringtones-qml-1.2.0-1.noarch.rpm"
   ],
-  "last_run": "2026-10-08T22:23:17Z",
+  "last_run": "2026-10-08T22:37:22Z",
   "dispatched": [
     1791495447,
     1791496660,
