@@ -14,7 +14,7 @@
         "reasons": [
           {
             "level": "medium",
-            "text": "3 root service(s), started at install"
+            "text": "3 root services, started at install"
           },
           {
             "level": "info",
