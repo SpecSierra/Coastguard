@@ -1,6 +1,10 @@
 {
-  "cursor": 1791469980,
+  "cursor": 1791469981,
   "queue": [],
-  "seen": [],
-  "last_run": "2026-10-08T14:53:03Z"
+  "seen": [
+    "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.i486.rpm"
+  ],
+  "last_run": "2026-10-08T14:55:52Z"
 }
