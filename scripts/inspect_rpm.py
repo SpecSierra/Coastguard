@@ -215,7 +215,8 @@ def inspect_filemeta(path):
                         reasons.append(f"setuid {owner}")
                     if mode[6] in "sS":
                         reasons.append(f"setgid {group}")
-                if caps.strip():
+                # rpm prints "(none)" for a file without capabilities.
+                if caps.strip() not in ("", "(none)"):
                     reasons.append(f"capabilities {caps.strip()}")
                 if reasons:
                     privileged.append({"path": name, "mode": mode, "owner": owner,

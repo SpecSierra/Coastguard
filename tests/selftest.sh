@@ -93,7 +93,8 @@ check report-inspect "declared sandbox and its permissions" \
 check report-inspect "disabled sandbox" "$i.sailjail.apps | any(.sandbox == \"disabled\")"
 check report-inspect "root systemd service, enabled twice over" \
     "$i.services.systemd | any(.user == \"root\" and (.enabled_by | length) == 2)"
-check report-inspect "setuid binary" "$i.privileged_files | any(.path == \"/usr/bin/cg\")"
+check report-inspect "setuid binary, and only that one" \
+    "$i.privileged_files | map(.path) == [\"/usr/bin/cg\"]"
 check report-inspect "sudoers drop-in" "$i.system_integration.sudoers == [\"/etc/sudoers.d/cg\"]"
 check report-inspect "scriptlet command" "$i.scriptlets | any(.notable | any(test(\"systemctl\")))"
 check report-inspect "host from QML" \
