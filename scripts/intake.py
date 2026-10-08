@@ -5,14 +5,14 @@ usage: intake.py <state.json>
 
 Reads the OpenRepos app listing (most recently updated first), visits the
 page of every app updated since the last run, and queues the RPMs uploaded
-with that update. At most INTAKE_MAX_SCANS are dispatched per run; the rest
-wait in the queue for the next one.
+with that update. At most INTAKE_MAX_SCANS are dispatched in any 60 minutes,
+however often this runs; the rest wait in the queue.
 
 The first run only records the current time as the starting point: packages
 released before Coastguard started watching are not scanned.
 
 Environment:
-  INTAKE_MAX_SCANS  scans dispatched per run (default 5)
+  INTAKE_MAX_SCANS  scans dispatched per rolling hour (default 5)
   INTAKE_DRY_RUN    print what would be dispatched, dispatch nothing
 """
 import datetime
@@ -141,17 +141,25 @@ def main():
                                        "title": str(app.get("title"))[:200]})
             state["cursor"] = int(app["updated"])
 
+    # The limit is per rolling hour, not per run: a manual run shortly before
+    # a scheduled one must not double it.
+    now = int(time.time())
+    recent = [t for t in state.get("dispatched", []) if t > now - 3600]
+    budget = max(0, MAX_SCANS - len(recent))
     remaining, sent = [], 0
     for item in state["queue"]:
-        if sent < MAX_SCANS and dispatch(item):
+        if sent < budget and dispatch(item):
             sent += 1
+            recent.append(int(time.time()))
             time.sleep(0 if os.environ.get("INTAKE_DRY_RUN") else 20)
         else:
             remaining.append(item)
     state["queue"] = remaining
+    state["dispatched"] = recent
     state["seen"] = state["seen"][-SEEN_CAP:]
     state["last_run"] = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    print(f"{sent} scan(s) dispatched, {len(remaining)} waiting in the queue")
+    print(f"{sent} scan(s) dispatched ({len(recent)} in the last hour, limit {MAX_SCANS}), "
+          f"{len(remaining)} waiting in the queue")
 
     os.makedirs(os.path.dirname(os.path.abspath(state_path)), exist_ok=True)
     with open(state_path, "w", encoding="utf-8") as fh:
