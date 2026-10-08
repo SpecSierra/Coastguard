@@ -87,46 +87,45 @@ def assess(report, diff=None):
     nested = report.get("nested") or {}
 
     if report.get("verdict") == "detected":
-        add("high", "Recognised as known malware")
+        add("high", "Known malware")
     if inspect.get("error"):
-        add("medium", "The package could not be inspected, so this grade is incomplete")
+        add("medium", "Inspection failed, grade incomplete")
 
     # --- sandbox -------------------------------------------------------------
     unsandboxed = [a for a in apps if a.get("sandbox") == "disabled"]
     undeclared = [a for a in apps if a.get("sandbox") == "none"]
     if unsandboxed:
-        add("medium", "The app turns the Sailjail sandbox off")
+        add("medium", "Sandbox turned off")
     if undeclared:
-        add("info", "The app declares no Sailjail sandbox profile")
+        add("info", "No sandbox profile declared")
     loosening = sailjail.get("profile_loosening") or []
     if loosening:
-        add("medium", f"Its own sandbox profile loosens the sandbox ({len(loosening)} rule(s), "
-                      f"such as \"{loosening[0]['line'][:60]}\")")
+        add("medium", f"Own profile loosens the sandbox ({len(loosening)} rule(s))")
     elif sailjail.get("shipped_profiles"):
-        add("info", "Ships its own sandbox profile")
+        add("info", "Own sandbox profile")
     sensitive = sorted({p for a in apps for p in a.get("permissions") or []} & SENSITIVE_PERMISSIONS)
     if sensitive:
-        add("info", "Asks for access to personal data: " + ", ".join(sensitive))
+        add("info", "Personal data: " + ", ".join(sensitive))
 
     # --- services and privileges ---------------------------------------------
     root_units = [u for u in services if u.get("user") == "root" and u.get("scope") == "system"]
     started = [u for u in root_units if u.get("enabled_by")]
     if started:
-        add("medium", f"Installs and starts {len(started)} background service(s) running as root")
+        add("medium", f"{len(started)} root service(s), started at install")
     elif root_units:
-        add("medium", f"Installs {len(root_units)} service(s) that would run as root")
+        add("medium", f"{len(root_units)} root service(s)")
     if root_units and (unsandboxed or undeclared):
-        add("high", "Runs a root service while the app itself is not sandboxed")
+        add("high", "Root service and no sandbox")
     if any(u.get("scope") == "user" for u in services) or (inspect.get("services") or {}).get("autostart"):
-        add("info", "Starts automatically in the background")
+        add("info", "Starts in the background")
 
     for item in inspect.get("privileged_files") or []:
         why = ", ".join(item.get("why") or [])
         add("high" if "root" in why or "capabilities" in why else "medium",
-            f"Installs a file with elevated privileges ({why})")
+            f"Privileged file ({why})")
 
     for label in sorted(inspect.get("system_integration") or {}):
-        add(HOOK_LEVELS.get(label, "medium"), f"Hooks into the system: {label}")
+        add(HOOK_LEVELS.get(label, "medium"), f"System hook: {label}")
 
     # --- install scriptlets ----------------------------------------------------
     for script in inspect.get("scriptlets") or []:
@@ -136,7 +135,7 @@ def assess(report, diff=None):
                 continue
             for level, what, pattern in SCRIPTLET_RULES:
                 if pattern.search(line):
-                    add(level, f"Its install script, run as root, {what}")
+                    add(level, f"Install script {what}")
 
     # --- indicators ------------------------------------------------------------
     for indicator in report.get("indicators") or []:
@@ -144,23 +143,23 @@ def assess(report, diff=None):
         label = name.replace("_", " ").lower()
         in_scriptlet = any(f.endswith("scriptlets.txt") for f in indicator.get("files") or [])
         if name in BEHAVIOUR_INDICATORS:
-            add("high" if in_scriptlet else "medium", f"Contains code that {label}")
+            add("high" if in_scriptlet else "medium", f"Code that {label}")
         elif unsandboxed or undeclared:
             # Outside the sandbox nothing stands between this code and the data.
-            add("medium", f"Contains code that {label}, and is not sandboxed")
+            add("medium", f"Unsandboxed code that {label}")
         else:
-            add("info", f"Contains code that {label}")
+            add("info", f"Code that {label}")
 
     # --- network ---------------------------------------------------------------
     for item in (inspect.get("network") or {}).get("notable") or []:
         if item.get("in") == "script":
-            add("medium", f"A script refers to a {item.get('why')}")
+            add("medium", f"Script uses a {item.get('why')}")
 
     # --- things the scan could not see ---------------------------------------
     if nested.get("encrypted"):
-        add("medium", "Contains a password-protected archive that could not be scanned")
+        add("medium", "Password-protected archive, not scanned")
     if nested.get("limits_hit") or nested.get("error"):
-        add("medium", "Part of the content was too large or too deeply packed to scan")
+        add("medium", "Content too large to scan fully")
 
     # --- what this version changed -------------------------------------------
     for change in (diff or {}).get("changes") or []:
@@ -168,18 +167,18 @@ def assess(report, diff=None):
         if area == "sandbox" and kind == "changed":
             detail = change.get("detail") or ""
             if detail.startswith("declared ->"):
-                add("high", "This version drops the sandbox the previous one had")
+                add("high", "New: sandbox dropped")
         elif area == "permission" and kind == "added":
             add("medium" if item in SENSITIVE_PERMISSIONS else "info",
-                f"This version newly asks for the {item} permission")
+                f"New permission: {item}")
         elif area == "systemd unit" and kind == "added":
-            add("medium", "This version adds a background service")
+            add("medium", "New background service")
         elif area in ("privileged file", "shipped sandbox profile") and kind == "added":
-            add("medium", f"This version adds a {area}")
+            add("medium", f"New {area}")
         elif area == "system hook" and kind == "added":
-            add("medium", f"This version adds a system hook ({change.get('detail')})")
+            add("medium", f"New system hook: {change.get('detail')}")
         elif area == "indicator" and kind == "added":
-            add("medium", f"This version adds code that {_indicator_name(item).replace('_', ' ').lower()}")
+            add("medium", f"New code that {_indicator_name(item).replace('_', ' ').lower()}")
 
     reasons.sort(key=lambda r: -LEVELS[r["level"]])
     top = max((LEVELS[r["level"]] for r in reasons), default=0)

@@ -190,9 +190,9 @@ echo "ok: a readable report page is stored next to each result"
 # Risk grade: v1 runs a root service unsandboxed and ships a setuid binary and
 # a sudoers file; v2 also newly asks for Contacts. The clean package is low.
 jq -e '.[0].summary.risk.grade == "high"
-       and (.[0].summary.risk.reasons | any(.level == "high" and (.text | test("root service while"))))
+       and (.[0].summary.risk.reasons | any(.level == "high" and (.text | test("Root service and no sandbox"))))
        and (.[0].summary.risk.reasons | any(.level == "high" and (.text | test("sudoers"))))
-       and (.[1].summary.risk.reasons | any(.text | test("newly asks for the Contacts")))' \
+       and (.[1].summary.risk.reasons | any(.text | test("New permission: Contacts")))' \
     "$store/packages/coastguard-inspect/index.json" > /dev/null \
     || { echo "FAIL: risk grade" >&2; jq '.[].summary.risk' "$store/packages/coastguard-inspect/index.json" >&2; exit 1; }
 python3 -I "$scripts/store_result.py" "$store" "$top/report-clean" > /dev/null
