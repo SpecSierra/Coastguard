@@ -1,0 +1,61 @@
+[
+  {
+    "sha256": "b6ffcc64d3453d24af4397d3d447adda51c0f67f257dfe3bf33b326c63cd903b",
+    "first_seen": "2026-10-08T21:58:40Z",
+    "package": "harbour-livewire-0.7.1-1.aarch64",
+    "version": "0.7.1-1",
+    "arch": "aarch64",
+    "buildtime": 1791445662,
+    "last_scanned": "2026-10-08T21:58:40Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "text": "Own sandbox profile"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Documents",
+        "Downloads",
+        "Internet",
+        "Location",
+        "MediaIndexing",
+        "Microphone",
+        "Music",
+        "Pictures",
+        "RemovableMedia",
+        "UnifiedPush",
+        "UserDirs",
+        "Videos"
+      ],
+      "own_sandbox_profile": true,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 2,
+      "hosts_in_scripts": 4,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37850351398",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-livewire/b6ffcc64d3453d24af4397d3d447adda51c0f67f257dfe3bf33b326c63cd903b.md"
+    }
+  }
+]
