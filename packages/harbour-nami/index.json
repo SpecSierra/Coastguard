@@ -1,0 +1,12 @@
+[
+  {
+    "sha256": "b08755fa689c8024366a33792196d79a4d39ac6204cb7a987c73013b2c4ffffe",
+    "first_seen": "2026-10-08T15:06:56Z",
+    "package": "harbour-nami-0.9.2-1.aarch64",
+    "version": "0.9.2-1",
+    "arch": "aarch64",
+    "buildtime": 1791365883,
+    "last_scanned": "2026-10-08T15:06:56Z",
+    "verdict": "clean"
+  }
+]

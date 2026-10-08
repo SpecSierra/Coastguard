@@ -1,0 +1,131 @@
+{
+  "verdict": "clean",
+  "name": "harbour-nami",
+  "version": "0.9.2-1",
+  "arch": "aarch64",
+  "package": "harbour-nami-0.9.2-1.aarch64",
+  "buildtime": 1791365883,
+  "sha256": "b08755fa689c8024366a33792196d79a4d39ac6204cb7a987c73013b2c4ffffe",
+  "source": "https://openrepos.net/sites/default/files/packages/19237/harbour-nami-0.9.2-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12437",
+  "scanned": "2026-10-08T15:06:56Z",
+  "files": 127,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28147/Thu Oct  8 06:24:12 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-nami.desktop",
+          "name": "Nami",
+          "exec": "harbour-nami",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Pictures",
+            "Videos",
+            "Documents",
+            "RemovableMedia",
+            "Contacts",
+            "Privileged"
+          ],
+          "organization": "harbour-nami",
+          "application": "harbour-nami"
+        }
+      ],
+      "shipped_profiles": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 3,
+      "hosts_in_scripts": 3,
+      "hosts": [
+        {
+          "host": "pixabay.com",
+          "urls": 4,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-nami/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "github.com",
+          "urls": 2,
+          "in": [
+            "binary",
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/lib64/harbour-nami/libopencv_core.so.4.8.0",
+            "/usr/share/harbour-nami/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "www.naturalearthdata.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-nami/qml/js/worldcoastlines.js"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "github.com",
+        "pixabay.com",
+        "www.naturalearthdata.com"
+      ],
+      "hosts_binaries": [],
+      "notable": [],
+      "ignored_hosts": 0
+    }
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 8,
+      "unknown": 8,
+      "not_queried": 1,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 9,
+      "unknown": 9,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37797882049",
+  "diff": null
+}
