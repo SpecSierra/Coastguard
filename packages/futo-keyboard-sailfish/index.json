@@ -1,0 +1,63 @@
+[
+  {
+    "sha256": "dbc511636a91b319f20ec356c7be55f85ceab6ce061a7c6b8225dcafab43fa11",
+    "first_seen": "2026-10-08T16:17:29Z",
+    "package": "futo-keyboard-sailfish-0.7.0-1.aarch64",
+    "version": "0.7.0-1",
+    "arch": "aarch64",
+    "buildtime": 1791390222,
+    "last_scanned": "2026-10-08T16:17:29Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "high",
+        "reasons": [
+          {
+            "level": "high",
+            "text": "Privileged file (setuid root)"
+          },
+          {
+            "level": "medium",
+            "text": "System hook: polkit"
+          },
+          {
+            "level": "medium",
+            "text": "Code that reads raw input devices"
+          },
+          {
+            "level": "info",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Reads Raw Input Devices"
+      ],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 3,
+      "system_hooks": [
+        "polkit"
+      ],
+      "scriptlets": 3,
+      "hosts_in_scripts": 8,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37807538299",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/futo-keyboard-sailfish/dbc511636a91b319f20ec356c7be55f85ceab6ce061a7c6b8225dcafab43fa11.md"
+    }
+  }
+]
