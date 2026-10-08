@@ -1,0 +1,295 @@
+{
+  "verdict": "clean",
+  "name": "tor",
+  "version": "0.4.9.13-0",
+  "arch": "armv7hl",
+  "package": "tor-0.4.9.13-0.armv7hl",
+  "buildtime": 1791397791,
+  "sha256": "46ad607d510e1db480994f6832e0b7db5e642d109dccdca0f3755915e1b15347",
+  "source": "https://openrepos.net/sites/default/files/packages/14239/tor-0.4.9.13-0.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/11396",
+  "scanned": "2026-10-08T18:19:52Z",
+  "files": 39,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28147/Thu Oct  8 06:24:12 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 5,
+    "carved_streams": 0,
+    "files": 5,
+    "bytes": 223504,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [
+        {
+          "path": "/usr/lib/systemd/user/tor.service",
+          "scope": "user",
+          "exec_start": [
+            "/usr/bin/torctl start"
+          ],
+          "user": "device user",
+          "install_wanted_by": "user-session.target",
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        }
+      ],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {
+      "files in a home directory": [
+        "/home/.system/var/lib/tor/torrc",
+        "/home/.system/var/lib/tor/torrc.sample"
+      ]
+    },
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "preinstall",
+        "interpreter": "/bin/sh",
+        "lines": 9,
+        "notable": [
+          "if [ -d /home/.system/var/lib/tor ]; then",
+          "rm -rf /home/.system/var/lib/tor"
+        ],
+        "body": "if [ -d /var/lib/tor ]; then\nrm -rf /var/lib/tor\nfi\n\nif [ -d /etc/tor ]; then\nrm -rf  /etc/tor\nfi\n\nif [ -d /home/.system/var/lib/tor ]; then\nrm -rf /home/.system/var/lib/tor\nfi\n"
+      },
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 4,
+        "notable": [
+          "chown -R $PUSER:inet /home/.system/var/lib/tor",
+          "chown -R $PUSER:inet /var/log/tor",
+          "chown -R $PUSER:inet /var/run/tor"
+        ],
+        "body": "PUSER=$(getent passwd 100000 | cut -d: -f1 )\nchown -R $PUSER:inet /home/.system/var/lib/tor\nchown -R $PUSER:inet /var/log/tor\nchown -R $PUSER:inet /var/run/tor\n# Start service\n#systemctl-user start tor.service\n# Enable timer (to start at boot)\n#systemctl-user enable tor.service\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 13,
+      "hosts_in_scripts": 7,
+      "hosts": [
+        {
+          "host": "www.torproject.org",
+          "urls": 8,
+          "in": [
+            "binary",
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/home/.system/var/lib/tor/torrc.sample",
+            "/usr/bin/tor"
+          ]
+        },
+        {
+          "host": "bridges.torproject.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/home/.system/var/lib/tor/torrc.sample"
+          ]
+        },
+        {
+          "host": "bugs.debian.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/man/man1/tor-gencert.1.gz.unpacked/content",
+            "nested/usr/share/man/man1/tor-print-ed-signing-cert.1.gz.unpacked/content",
+            "nested/usr/share/man/man1/tor-resolve.1.gz.unpacked/content"
+          ]
+        },
+        {
+          "host": "docbook.sf.net",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/man/man1/tor-gencert.1.gz.unpacked/content",
+            "nested/usr/share/man/man1/tor-print-ed-signing-cert.1.gz.unpacked/content",
+            "nested/usr/share/man/man1/tor-resolve.1.gz.unpacked/content"
+          ]
+        },
+        {
+          "host": "gitlab.torproject.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/tor/geoip",
+            "/usr/share/tor/geoip6"
+          ]
+        },
+        {
+          "host": "location.ipfire.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/tor/geoip",
+            "/usr/share/tor/geoip6"
+          ]
+        },
+        {
+          "host": "www.docbook.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/man/man1/tor.1.gz.unpacked/content"
+          ]
+        },
+        {
+          "host": "bugs.torproject.org",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/tor"
+          ]
+        },
+        {
+          "host": "blog.torproject.org",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/tor"
+          ]
+        },
+        {
+          "host": "2019.www.torproject.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/tor"
+          ]
+        },
+        {
+          "host": "community.torproject.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/tor"
+          ]
+        },
+        {
+          "host": "freehaven.net",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/tor"
+          ]
+        },
+        {
+          "host": "support.torproject.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/tor"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "bridges.torproject.org",
+        "bugs.debian.org",
+        "docbook.sf.net",
+        "gitlab.torproject.org",
+        "location.ipfire.org",
+        "www.docbook.org",
+        "www.torproject.org"
+      ],
+      "hosts_binaries": [
+        "2019.www.torproject.org",
+        "blog.torproject.org",
+        "bugs.torproject.org",
+        "community.torproject.org",
+        "freehaven.net",
+        "support.torproject.org"
+      ],
+      "notable": [],
+      "ignored_hosts": 2
+    }
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 5,
+      "unknown": 5,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 5,
+      "unknown": 5,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37823350880",
+  "diff": null,
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "text": "System hook: files in a home directory"
+      },
+      {
+        "level": "info",
+        "text": "Starts in the background"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/tor/46ad607d510e1db480994f6832e0b7db5e642d109dccdca0f3755915e1b15347.md"
+}

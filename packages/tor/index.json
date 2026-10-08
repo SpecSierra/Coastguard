@@ -1,0 +1,53 @@
+[
+  {
+    "sha256": "46ad607d510e1db480994f6832e0b7db5e642d109dccdca0f3755915e1b15347",
+    "first_seen": "2026-10-08T18:19:52Z",
+    "package": "tor-0.4.9.13-0.armv7hl",
+    "version": "0.4.9.13-0",
+    "arch": "armv7hl",
+    "buildtime": 1791397791,
+    "last_scanned": "2026-10-08T18:19:52Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "text": "System hook: files in a home directory"
+          },
+          {
+            "level": "info",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [
+        "files in a home directory"
+      ],
+      "scriptlets": 2,
+      "hosts_in_scripts": 7,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37823350880",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/tor/46ad607d510e1db480994f6832e0b7db5e642d109dccdca0f3755915e1b15347.md"
+    }
+  }
+]
