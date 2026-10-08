@@ -1,0 +1,49 @@
+name: Watch OpenRepos
+
+# Every hour, queue a scan for each RPM newly released on OpenRepos (at most
+# INTAKE_MAX_SCANS per run). The watch position and the queue live in
+# intake/state.json on the results branch.
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write   # intake/state.json on the results branch
+  actions: write    # start scan runs
+
+concurrency:
+  group: intake
+  cancel-in-progress: false
+
+jobs:
+  intake:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      INTAKE_MAX_SCANS: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Find and queue new releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          remote="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if ! git clone --quiet --depth 1 --branch results "$remote" store 2>/dev/null; then
+            git init --quiet --initial-branch results store
+            git -C store remote add origin "$remote"
+          fi
+          python3 -I scripts/intake.py store/intake/state.json | tee -a "$GITHUB_STEP_SUMMARY"
+          git -C store add intake/state.json
+          git -C store -c user.name='github-actions[bot]' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit --quiet -m "intake: $(date -u +%FT%TZ)"
+          # Scans push to the same branch; rebase onto them when they got there first.
+          for attempt in 1 2 3 4 5; do
+            git -C store push --quiet origin results && exit 0
+            sleep $((attempt * 3))
+            git -C store pull --quiet --rebase origin results
+          done
+          echo "::error::could not save the intake state"; exit 1

@@ -170,4 +170,22 @@ jq -e '.reputation.virustotal.status == "not configured"' \
     "$store/packages/coastguard-inspect/$(jq -r .sha256 "$top/report-inspect/report.json").json" > /dev/null \
     || { echo "FAIL: reputation block missing" >&2; exit 1; }
 echo "ok: reputation is skipped cleanly without API keys"
+# --- intake -----------------------------------------------------------------
+# Offline: the OpenRepos file table is parsed, and only URLs on OpenRepos' own
+# file store are accepted.
+python3 -I - "$scripts" <<'PY'
+import sys
+sys.path.insert(0, sys.argv[1])
+import intake
+row = ('<tr class="odd"><td><span class="file"><img class="file-icon" /> <a href="%s" '
+       'type="application/x-redhat-package-manager; length=1">x</a></span></td><td>1 MB</td>'
+       '<td>08/10/2026 - 17:32</td> </tr>')
+good = "https://openrepos.net/sites/default/files/packages/5903/harbour-x-0.4.8-1.aarch64.rpm"
+page = row % good + row % "https://evil.example/sites/default/files/packages/1/x.rpm" \
+    + row % "https://openrepos.net/sites/default/files/packages/1/../../x.rpm"
+files = intake.parse_files(page)
+assert [url for url, _ in files] == [good], files
+assert files[0][1] == 1791469920, files  # 17:32 site time is 14:32 UTC
+PY
+echo "ok: intake parses the file table and rejects foreign URLs"
 echo "self-test passed"

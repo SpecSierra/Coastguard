@@ -43,6 +43,21 @@ up on a device. This is informational and never changes the verdict:
   scripts/QML listed first, with hard-coded IPs and paste/tunnel/webhook
   services called out
 
+## Watching OpenRepos
+
+The `Watch OpenRepos` workflow runs every hour. It reads the OpenRepos app
+listing, visits the page of each app updated since the last run, and starts a
+scan for every RPM uploaded with that update, all architectures included. At
+most 5 scans are started per run (`INTAKE_MAX_SCANS` in
+`.github/workflows/intake.yml`); the rest wait in a queue for the next hour.
+
+Only releases made after the watch started are scanned; the existing
+catalogue is not backfilled. The watch position, the queue and the list of
+URLs already handled are in `intake/state.json` on the `results` branch.
+
+GitHub may start scheduled workflows late, and disables them after 60 days
+without activity in the repository.
+
 ## Running a scan
 
     gh workflow run scan.yml -f rpm_url=https://openrepos.net/sites/default/files/packages/<uid>/<file>.rpm

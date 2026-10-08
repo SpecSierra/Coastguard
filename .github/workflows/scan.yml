@@ -11,6 +11,10 @@ on:
         description: Expected SHA-256 of the RPM (optional)
         required: false
         type: string
+      app_page:
+        description: Page the RPM was published on (optional, stored with the result)
+        required: false
+        type: string
 
 run-name: Scan ${{ inputs.rpm_url }}
 
@@ -48,6 +52,7 @@ jobs:
       - name: Scan
         env:
           RPM_URL: ${{ inputs.rpm_url }}
+          APP_PAGE: ${{ inputs.app_page }}
         run: scripts/scan.sh sample/package.rpm db/yara db/clamav report
 
       - name: Summary
@@ -70,7 +75,7 @@ jobs:
     needs: scan
     if: ${{ !cancelled() }}
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    timeout-minutes: 45
     permissions:
       contents: write
     steps:

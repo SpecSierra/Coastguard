@@ -137,7 +137,8 @@ jq -n \
     --arg verdict "$verdict" --arg sha256 "$sha256" --arg package "$nevra" \
     --arg name "$name" --arg version "$version" --arg arch "$arch" \
     --argjson buildtime "$buildtime" \
-    --arg source "${RPM_URL:-}" --arg scanned "$(date -u +%FT%TZ)" \
+    --arg source "${RPM_URL:-}" --arg source_page "${APP_PAGE:-}" \
+    --arg scanned "$(date -u +%FT%TZ)" \
     --arg yara_rules "${YARA_RULES_VERSION:-unknown}" \
     --arg clamav "$(clamscan --database="$clamdb" --version 2>/dev/null || true)" \
     --argjson files "$file_count" \
@@ -149,7 +150,7 @@ jq -n \
     --args '{
         verdict: $verdict, name: $name, version: $version, arch: $arch,
         package: $package, buildtime: $buildtime, sha256: $sha256,
-        source: $source,
+        source: $source, source_page: $source_page,
         scanned: $scanned, files: $files,
         engines: {clamav: $clamav, yara_forge_core: $yara_rules},
         clamav: ($clam | split("\n") | map(select(. != ""))),

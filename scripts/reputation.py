@@ -49,15 +49,23 @@ def targets(report_dir):
     return items
 
 
+RETRY_WAIT = float(os.environ.get("REPUTATION_RETRY_WAIT", "60"))
+
+
 def fetch(request):
     """Returns (status code, parsed JSON or None)."""
-    try:
-        with urllib.request.urlopen(request, timeout=30) as response:
-            return response.status, json.load(response)
-    except urllib.error.HTTPError as error:
-        return error.code, None
-    except (urllib.error.URLError, OSError, ValueError):
-        return 0, None
+    # Several scans can run at once and share the per-minute quota, so a
+    # rate-limit answer is retried before giving up.
+    for attempt in range(5):
+        try:
+            with urllib.request.urlopen(request, timeout=30) as response:
+                return response.status, json.load(response)
+        except urllib.error.HTTPError as error:
+            if error.code != 429 or attempt == 4:
+                return error.code, None
+            time.sleep(RETRY_WAIT)
+        except (urllib.error.URLError, OSError, ValueError):
+            return 0, None
 
 
 def virustotal(items, key):
