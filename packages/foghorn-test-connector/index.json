@@ -31,6 +31,12 @@
         "virustotal": "ok",
         "malwarebazaar": "ok"
       },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
       "changes": null,
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37797933665",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/foghorn-test-connector/98df116ed6dba2370e73a5e8dfb8c00e2e539adc8a42c91eba1f2890e55fa1f5.md"
@@ -67,6 +73,12 @@
       "reputation": {
         "virustotal": "ok",
         "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
       },
       "changes": null,
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37797983408",

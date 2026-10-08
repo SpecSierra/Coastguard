@@ -40,6 +40,12 @@
         "virustotal": "ok",
         "malwarebazaar": "ok"
       },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
       "changes": null,
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37796477579",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-helmsman/d21b598007957dfc2a162214616aca135e8a7f2dc4206abf775480b9408a132e.md"
@@ -86,6 +92,12 @@
         "virustotal": "ok",
         "malwarebazaar": "ok"
       },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
       "changes": null,
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37796424720",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-helmsman/a481a767937425badd17f983a9f54c76a715d230497367ede2263ad205f91273.md"
@@ -131,6 +143,12 @@
       "reputation": {
         "virustotal": "ok",
         "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
       },
       "changes": {
         "since": "harbour-helmsman-0.4.8-1.armv7hl",

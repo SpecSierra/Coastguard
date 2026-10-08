@@ -57,6 +57,12 @@
         "virustotal": "ok",
         "malwarebazaar": "ok"
       },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
       "changes": null,
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37794281699",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/atlantic-browser/a0e953f9c21823bf64ac6a2cbe979bdc92d5ff9b17512367ab035722480d9245.md"
