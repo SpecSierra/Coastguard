@@ -1,0 +1,12 @@
+[
+  {
+    "sha256": "f2d2a1024f6d48455fc3425c834fe563cbb6048742421d8145d334f4a5663793",
+    "first_seen": "2026-10-08T15:07:27Z",
+    "package": "foghorn-0.4.1-1.aarch64",
+    "version": "0.4.1-1",
+    "arch": "aarch64",
+    "buildtime": 1791381333,
+    "last_scanned": "2026-10-08T15:07:27Z",
+    "verdict": "clean"
+  }
+]
