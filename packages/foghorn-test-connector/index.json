@@ -7,7 +7,29 @@
     "arch": "aarch64",
     "buildtime": 1791381333,
     "last_scanned": "2026-10-08T15:07:33Z",
-    "verdict": "clean"
+    "verdict": "clean",
+    "summary": {
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "UnifiedPush"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37797933665"
+    }
   },
   {
     "sha256": "a77cd4d6927e069a5bbab14a07e64b316f0875e8d2fa066aaa181aed27329f34",
@@ -17,6 +39,28 @@
     "arch": "armv7hl",
     "buildtime": 1791381636,
     "last_scanned": "2026-10-08T15:07:02Z",
-    "verdict": "clean"
+    "verdict": "clean",
+    "summary": {
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "UnifiedPush"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37797983408"
+    }
   }
 ]

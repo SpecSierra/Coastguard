@@ -7,6 +7,28 @@
     "arch": "aarch64",
     "buildtime": 1791381333,
     "last_scanned": "2026-10-08T15:07:27Z",
-    "verdict": "clean"
+    "verdict": "clean",
+    "summary": {
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "AppLaunch",
+        "Foghorn"
+      ],
+      "own_sandbox_profile": true,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 2,
+      "hosts_in_scripts": 2,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37798032858"
+    }
   }
 ]

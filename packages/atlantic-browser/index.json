@@ -7,6 +7,37 @@
     "last_scanned": "2026-10-08T14:41:01Z",
     "verdict": "clean",
     "version": "1.5.1-733.1.aio",
-    "arch": "aarch64"
+    "arch": "aarch64",
+    "summary": {
+      "detections": [],
+      "indicators": [
+        "Installs Persistence",
+        "Reads Browser Profile Data"
+      ],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Camera",
+        "Internet",
+        "MediaIndexing",
+        "Microphone",
+        "RemovableMedia",
+        "UserDirs",
+        "WebView"
+      ],
+      "own_sandbox_profile": true,
+      "services": 3,
+      "root_services": 3,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 4,
+      "hosts_in_scripts": 25,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37794281699"
+    }
   }
 ]

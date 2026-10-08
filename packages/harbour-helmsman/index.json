@@ -7,7 +7,33 @@
     "arch": "i486",
     "buildtime": 1791464581,
     "last_scanned": "2026-10-08T14:56:12Z",
-    "verdict": "clean"
+    "verdict": "clean",
+    "summary": {
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Documents",
+        "Internet",
+        "Location",
+        "MediaIndexing",
+        "Notifications",
+        "Pictures"
+      ],
+      "own_sandbox_profile": true,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 4,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37796477579"
+    }
   },
   {
     "sha256": "a481a767937425badd17f983a9f54c76a715d230497367ede2263ad205f91273",
@@ -17,7 +43,33 @@
     "arch": "armv7hl",
     "buildtime": 1791464601,
     "last_scanned": "2026-10-08T14:55:48Z",
-    "verdict": "clean"
+    "verdict": "clean",
+    "summary": {
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Documents",
+        "Internet",
+        "Location",
+        "MediaIndexing",
+        "Notifications",
+        "Pictures"
+      ],
+      "own_sandbox_profile": true,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 4,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37796424720"
+    }
   },
   {
     "sha256": "8438b52a9fd06db996a7d4a85aa05fcf3b8ae9b5890dcde514c7d71446164c42",
@@ -27,6 +79,42 @@
     "arch": "aarch64",
     "buildtime": 1791464616,
     "last_scanned": "2026-10-08T14:56:59Z",
-    "verdict": "clean"
+    "verdict": "clean",
+    "summary": {
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Documents",
+        "Internet",
+        "Location",
+        "MediaIndexing",
+        "Notifications",
+        "Pictures"
+      ],
+      "own_sandbox_profile": true,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 4,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "changes": {
+        "since": "harbour-helmsman-0.4.8-1.armv7hl",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 1,
+          "unchanged": 122
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37796371214"
+    }
   }
 ]
