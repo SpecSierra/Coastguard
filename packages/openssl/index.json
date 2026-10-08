@@ -1,5 +1,45 @@
 [
   {
+    "sha256": "20c1ae2628bad43f9cbacbef790d46b593a23dbc910b226a68422919a81698b4",
+    "first_seen": "2026-10-08T21:01:59Z",
+    "package": "openssl-3.5.9-0.51.3.armv7hl",
+    "version": "3.5.9-0.51.3",
+    "arch": "armv7hl",
+    "buildtime": 1791393280,
+    "last_scanned": "2026-10-08T21:01:59Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 5,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37843778003",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/openssl/20c1ae2628bad43f9cbacbef790d46b593a23dbc910b226a68422919a81698b4.md"
+    }
+  },
+  {
     "sha256": "0ec659ddb0f3951f841f9b540d680667d2b89c7e26a181930a169e5c8a906571",
     "first_seen": "2026-10-08T20:37:44Z",
     "package": "openssl-3.5.9-0.50.3.armv7hl",
