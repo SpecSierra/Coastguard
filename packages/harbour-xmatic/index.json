@@ -1,5 +1,85 @@
 [
   {
+    "sha256": "da537c43bcb35a0167f3a2d40f40d8c7d442f8a6fded7511bbef92ce3d0bcf9d",
+    "first_seen": "2026-10-08T16:15:37Z",
+    "package": "harbour-xmatic-0.44.2-1.armv7hl",
+    "version": "0.44.2-1",
+    "arch": "armv7hl",
+    "buildtime": 1791390434,
+    "last_scanned": "2026-10-08T16:15:37Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "text": "Code that gains root with devel su"
+          },
+          {
+            "level": "medium",
+            "text": "Code that installs packages at runtime"
+          },
+          {
+            "level": "info",
+            "text": "Own sandbox profile"
+          },
+          {
+            "level": "info",
+            "text": "Personal data: Secrets"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Gains Root With Devel Su",
+        "Installs Packages At Runtime"
+      ],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Camera",
+        "Documents",
+        "Downloads",
+        "Internet",
+        "Location",
+        "MediaIndexing",
+        "Microphone",
+        "Music",
+        "Notifications",
+        "Pictures",
+        "PublicDir",
+        "RemovableMedia",
+        "Secrets",
+        "Sharing",
+        "Thumbnails",
+        "UnifiedPush",
+        "Videos",
+        "XmaticSpeech"
+      ],
+      "own_sandbox_profile": true,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 3,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37807263570",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-xmatic/da537c43bcb35a0167f3a2d40f40d8c7d442f8a6fded7511bbef92ce3d0bcf9d.md"
+    }
+  },
+  {
     "sha256": "c9a5eb47e93c86f31ce65fe45322cfdcda489dc1bcb65143e12b71cb08bca7e3",
     "first_seen": "2026-10-08T16:13:58Z",
     "package": "harbour-xmatic-0.44.2-1.aarch64",
