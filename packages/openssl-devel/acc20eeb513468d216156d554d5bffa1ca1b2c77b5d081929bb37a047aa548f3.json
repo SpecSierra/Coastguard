@@ -1,0 +1,156 @@
+{
+  "verdict": "clean",
+  "name": "openssl-devel",
+  "version": "3.5.9-0.51.3",
+  "arch": "armv7hl",
+  "package": "openssl-devel-3.5.9-0.51.3.armv7hl",
+  "buildtime": 1791393280,
+  "sha256": "acc20eeb513468d216156d554d5bffa1ca1b2c77b5d081929bb37a047aa548f3",
+  "source": "https://openrepos.net/sites/default/files/packages/8272/openssl-devel-3.5.9-0.51.3.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12438",
+  "scanned": "2026-10-08T21:01:01Z",
+  "files": 164,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28147/Thu Oct  8 06:24:12 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 6,
+      "hosts_in_scripts": 6,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 4,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/include/openssl/types.h",
+            "/usr/share/doc/openssl-devel-3.5.9/CONTRIBUTING.md"
+          ]
+        },
+        {
+          "host": "openssl-library.org",
+          "urls": 4,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/doc/openssl-devel-3.5.9/CONTRIBUTING.md"
+          ]
+        },
+        {
+          "host": "www.openssl.org",
+          "urls": 3,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/include/openssl/aes.h",
+            "/usr/include/openssl/asn1.h",
+            "/usr/include/openssl/asn1err.h"
+          ]
+        },
+        {
+          "host": "dx.doi.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/include/openssl/bn.h"
+          ]
+        },
+        {
+          "host": "magma.maths.usyd.edu.au",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/include/openssl/bn.h"
+          ]
+        },
+        {
+          "host": "msdn.microsoft.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/include/openssl/e_os2.h"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "dx.doi.org",
+        "github.com",
+        "magma.maths.usyd.edu.au",
+        "msdn.microsoft.com",
+        "openssl-library.org",
+        "www.openssl.org"
+      ],
+      "hosts_binaries": [],
+      "notable": [],
+      "ignored_hosts": 3
+    }
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37843647396",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/openssl-devel/acc20eeb513468d216156d554d5bffa1ca1b2c77b5d081929bb37a047aa548f3.md"
+}
