@@ -14,6 +14,21 @@ The scan covers the RPM itself, every file in its payload, and its install
 scriptlets (`%pre`, `%post`, triggers), which run as root on the device. The
 package is only unpacked, never installed or executed.
 
+Each report also describes, from the files alone, what the package would set
+up on a device. This is informational and never changes the verdict:
+
+- **Sailjail**: for every launcher entry, whether a sandbox profile is
+  declared, which permissions it asks for, or whether sandboxing is disabled;
+  plus any sandbox profile files the package ships itself
+- **Services**: systemd units (user, command, whether the package enables
+  them), D-Bus activation files, autostart entries
+- **Privileges and hooks**: setuid/setgid files, file capabilities, sudoers,
+  polkit, udev, cron, package repositories and similar
+- **Install scriptlets**: the commands worth reading
+- **Network**: hosts and URLs embedded in the files, those in readable
+  scripts/QML listed first, with hard-coded IPs and paste/tunnel/webhook
+  services called out
+
 ## Running a scan
 
     gh workflow run scan.yml -f rpm_url=https://openrepos.net/sites/default/files/packages/<uid>/<file>.rpm
@@ -45,3 +60,8 @@ second is flagged by both engines.
 A clean result means "no known signature matched", not "safe". Signature
 scanning does not catch new or targeted malware, and YARA does not look inside
 archives nested in the payload (ClamAV does).
+
+The inspection is static. The network list is what is written in the files,
+not what the app contacts: addresses built at runtime, obfuscated or stored
+in compressed resources are missed, and a large binary carries many hosts it
+never talks to.

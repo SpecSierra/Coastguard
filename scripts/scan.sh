@@ -12,6 +12,7 @@ if [ $# -ne 4 ]; then
     exit 2
 fi
 
+here=$(dirname "$(realpath "$0")")
 rpm_file=$(realpath "$1")
 rules=$(realpath "$2")
 clamdb=$(realpath "$3")
@@ -89,6 +90,19 @@ if [ -s "$work/yara.err" ]; then
 fi
 yara_hits=$(wc -l < "$report/yara-detections.txt")
 
+# --- static inspection --------------------------------------------------------
+# Informational: describes what the package sets up, never changes the verdict.
+rpm -qp --nosignature --qf \
+    '[%{FILEMODES:perms}\t%{FILEUSERNAME}\t%{FILEGROUPNAME}\t%{FILECAPS}\t%{FILENAMES}\n]' \
+    "$rpm_file" > "$work/filemeta.tsv" 2>/dev/null || true
+if ! python3 -I "$here/inspect_rpm.py" "$work/payload" "$work/filemeta.tsv" \
+    "$work/scriptlets.txt" "$report" 2> "$report/inspect-error.log"; then
+    echo '{"error": "inspection failed, see inspect-error.log"}' > "$report/inspect.json"
+    printf '### What the package sets up\n\nInspection failed, see `inspect-error.log`.\n' \
+        > "$report/inspect.md"
+fi
+[ -s "$report/inspect-error.log" ] || rm -f "$report/inspect-error.log"
+
 # --- verdict ----------------------------------------------------------------
 # Detections win over errors: a partial scan that still found something is a hit.
 if [ $((clam_hits + yara_hits)) -gt 0 ]; then
@@ -108,6 +122,7 @@ jq -n \
     --argjson files "$file_count" \
     --rawfile clam "$report/clamav-detections.txt" \
     --rawfile yara "$report/yara-detections.txt" \
+    --slurpfile inspect "$report/inspect.json" \
     --args '{
         verdict: $verdict, name: $name, package: $package, sha256: $sha256,
         source: $source,
@@ -115,7 +130,8 @@ jq -n \
         engines: {clamav: $clamav, yara_forge_core: $yara_rules},
         clamav: ($clam | split("\n") | map(select(. != ""))),
         yara: ($yara | split("\n") | map(select(. != ""))),
-        errors: $ARGS.positional
+        errors: $ARGS.positional,
+        inspect: $inspect[0]
     }' "${errors[@]}" > "$report/report.json"
 
 {
@@ -137,6 +153,7 @@ jq -n \
     if [ ${#errors[@]} -gt 0 ]; then
         echo; echo '### Errors'; echo '```'; printf '%s\n' "${errors[@]}"; echo '```'
     fi
+    echo; cat "$report/inspect.md"
 } > "$report/summary.md"
 
 cat "$report/summary.md"
