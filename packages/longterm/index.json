@@ -1,0 +1,57 @@
+[
+  {
+    "sha256": "226412b81c18162d18e359dca74a5857808423615075c35323aff64cc5f56ffe",
+    "first_seen": "2026-10-08T22:20:10Z",
+    "package": "longterm-0.5.0-1.aarch64",
+    "version": "0.5.0-1",
+    "arch": "aarch64",
+    "buildtime": 1791409304,
+    "last_scanned": "2026-10-08T22:20:10Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "text": "Personal data: Secrets"
+          },
+          {
+            "level": "info",
+            "text": "Code that touches ssh keys"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Touches SSH Keys"
+      ],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "Secrets",
+        "UserDirs"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 9,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37852748660",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/longterm/226412b81c18162d18e359dca74a5857808423615075c35323aff64cc5f56ffe.md"
+    }
+  }
+]

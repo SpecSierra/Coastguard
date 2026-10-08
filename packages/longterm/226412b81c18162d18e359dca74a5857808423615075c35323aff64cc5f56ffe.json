@@ -1,0 +1,319 @@
+{
+  "verdict": "clean",
+  "name": "longterm",
+  "version": "0.5.0-1",
+  "arch": "aarch64",
+  "package": "longterm-0.5.0-1.aarch64",
+  "buildtime": 1791409304,
+  "sha256": "226412b81c18162d18e359dca74a5857808423615075c35323aff64cc5f56ffe",
+  "source": "https://openrepos.net/sites/default/files/packages/18418/longterm-0.5.0-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12642",
+  "scanned": "2026-10-08T22:20:10Z",
+  "files": 104,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28147/Thu Oct  8 06:24:12 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [
+    {
+      "rule": "Coastguard_Indicator_Touches_SSH_Keys",
+      "files": [
+        "payload/usr/bin/longterm",
+        "payload/usr/share/longterm/lib/libssh.so.4.12.0",
+        "payload/usr/share/longterm/qml/pages/InstallKeyPage.qml",
+        "payload/usr/share/longterm/qml/pages/KeyPage.qml"
+      ]
+    }
+  ],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/longterm.desktop",
+          "name": "Longterm",
+          "exec": "/usr/bin/longterm",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Secrets",
+            "UserDirs"
+          ],
+          "organization": "rs.r8",
+          "application": "longterm"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 16,
+      "hosts_in_scripts": 9,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 24,
+          "in": [
+            "binary",
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/longterm/fonts/NerdFonts-README.md",
+            "/usr/share/longterm/fonts/SymbolsNerdFontMono-Regular.ttf",
+            "/usr/share/longterm/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "www.adobe.com",
+          "urls": 3,
+          "in": [
+            "binary",
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/longterm/fonts/LICENSE.md",
+            "/usr/share/longterm/fonts/SourceCodePro-Medium.ttf"
+          ]
+        },
+        {
+          "host": "scripts.sil.org",
+          "urls": 2,
+          "in": [
+            "binary",
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/longterm/fonts/LICENSE.md",
+            "/usr/share/longterm/fonts/NerdFonts-README.md",
+            "/usr/share/longterm/fonts/SourceCodePro-Medium.ttf"
+          ]
+        },
+        {
+          "host": "www.nerdfonts.com",
+          "urls": 2,
+          "in": [
+            "binary",
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/longterm/fonts/SymbolsNerdFontMono-Regular.ttf",
+            "/usr/share/longterm/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "devicon.dev",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/longterm/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "fsf.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/longterm/licenses/longterm.txt"
+          ]
+        },
+        {
+          "host": "www.leonerd.org.uk",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/longterm/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "www.libssh.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/longterm/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "www.nayuki.io",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/longterm/licenses/qrcodegen.txt",
+            "/usr/share/longterm/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "www.symauth.com",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/longterm/fonts/SourceCodePro-Medium.ttf"
+          ]
+        },
+        {
+          "host": "crl.thawte.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/longterm/fonts/SourceCodePro-Medium.ttf"
+          ]
+        },
+        {
+          "host": "crl.verisign.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/longterm/fonts/SourceCodePro-Medium.ttf"
+          ]
+        },
+        {
+          "host": "evcs-aia.ws.symantec.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/longterm/fonts/SourceCodePro-Medium.ttf"
+          ]
+        },
+        {
+          "host": "evcs-crl.ws.symantec.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/longterm/fonts/SourceCodePro-Medium.ttf"
+          ]
+        },
+        {
+          "host": "ts-aia.ws.symantec.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/longterm/fonts/SourceCodePro-Medium.ttf"
+          ]
+        },
+        {
+          "host": "ts-crl.ws.symantec.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/longterm/fonts/SourceCodePro-Medium.ttf"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "devicon.dev",
+        "fsf.org",
+        "github.com",
+        "scripts.sil.org",
+        "www.adobe.com",
+        "www.leonerd.org.uk",
+        "www.libssh.org",
+        "www.nayuki.io",
+        "www.nerdfonts.com"
+      ],
+      "hosts_binaries": [
+        "crl.thawte.com",
+        "crl.verisign.com",
+        "evcs-aia.ws.symantec.com",
+        "evcs-crl.ws.symantec.com",
+        "ts-aia.ws.symantec.com",
+        "ts-crl.ws.symantec.com",
+        "www.symauth.com"
+      ],
+      "notable": [],
+      "ignored_hosts": 2
+    }
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37852748660",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "text": "Personal data: Secrets"
+      },
+      {
+        "level": "info",
+        "text": "Code that touches ssh keys"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/longterm/226412b81c18162d18e359dca74a5857808423615075c35323aff64cc5f56ffe.md"
+}
