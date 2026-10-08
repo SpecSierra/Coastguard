@@ -9,6 +9,19 @@
     "last_scanned": "2026-10-08T15:07:27Z",
     "verdict": "clean",
     "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "text": "Ships its own sandbox profile"
+          },
+          {
+            "level": "info",
+            "text": "Starts automatically in the background"
+          }
+        ]
+      },
       "detections": [],
       "indicators": [],
       "sandbox": "declared",

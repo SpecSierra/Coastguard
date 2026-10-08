@@ -9,6 +9,10 @@
     "last_scanned": "2026-10-08T15:07:33Z",
     "verdict": "clean",
     "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
       "detections": [],
       "indicators": [],
       "sandbox": "declared",
@@ -41,6 +45,10 @@
     "last_scanned": "2026-10-08T15:07:02Z",
     "verdict": "clean",
     "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
       "detections": [],
       "indicators": [],
       "sandbox": "declared",

@@ -9,6 +9,15 @@
     "last_scanned": "2026-10-08T14:56:12Z",
     "verdict": "clean",
     "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "text": "Ships its own sandbox profile"
+          }
+        ]
+      },
       "detections": [],
       "indicators": [],
       "sandbox": "declared",
@@ -45,6 +54,15 @@
     "last_scanned": "2026-10-08T14:55:48Z",
     "verdict": "clean",
     "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "text": "Ships its own sandbox profile"
+          }
+        ]
+      },
       "detections": [],
       "indicators": [],
       "sandbox": "declared",
@@ -81,6 +99,15 @@
     "last_scanned": "2026-10-08T14:56:59Z",
     "verdict": "clean",
     "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "text": "Ships its own sandbox profile"
+          }
+        ]
+      },
       "detections": [],
       "indicators": [],
       "sandbox": "declared",

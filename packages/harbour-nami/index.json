@@ -9,6 +9,15 @@
     "last_scanned": "2026-10-08T15:06:56Z",
     "verdict": "clean",
     "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "text": "Asks for access to personal data: Contacts"
+          }
+        ]
+      },
       "detections": [],
       "indicators": [],
       "sandbox": "declared",
@@ -45,6 +54,15 @@
     "last_scanned": "2026-10-08T15:06:56Z",
     "verdict": "clean",
     "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "text": "Asks for access to personal data: Contacts"
+          }
+        ]
+      },
       "detections": [],
       "indicators": [],
       "sandbox": "declared",

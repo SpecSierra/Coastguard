@@ -9,6 +9,27 @@
     "version": "1.5.1-733.1.aio",
     "arch": "aarch64",
     "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "text": "Installs and starts 3 background service(s) running as root"
+          },
+          {
+            "level": "info",
+            "text": "Ships its own sandbox profile"
+          },
+          {
+            "level": "info",
+            "text": "Contains code that installs persistence"
+          },
+          {
+            "level": "info",
+            "text": "Contains code that reads browser profile data"
+          }
+        ]
+      },
       "detections": [],
       "indicators": [
         "Installs Persistence",
