@@ -1,5 +1,15 @@
 [
   {
+    "sha256": "98df116ed6dba2370e73a5e8dfb8c00e2e539adc8a42c91eba1f2890e55fa1f5",
+    "first_seen": "2026-10-08T15:07:33Z",
+    "package": "foghorn-test-connector-0.4.1-1.aarch64",
+    "version": "0.4.1-1",
+    "arch": "aarch64",
+    "buildtime": 1791381333,
+    "last_scanned": "2026-10-08T15:07:33Z",
+    "verdict": "clean"
+  },
+  {
     "sha256": "a77cd4d6927e069a5bbab14a07e64b316f0875e8d2fa066aaa181aed27329f34",
     "first_seen": "2026-10-08T15:07:02Z",
     "package": "foghorn-test-connector-0.4.1-1.armv7hl",
