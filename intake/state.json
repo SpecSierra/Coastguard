@@ -1,36 +1,6 @@
 {
-  "cursor": 1791476044,
+  "cursor": 1791482161,
   "queue": [
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.0-1.i486.rpm",
-      "page": "https://openrepos.net/node/12550",
-      "appid": 12550,
-      "title": "FUTO Keyboard (with Swipe and Offline Voice Input)"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/14239/tor-0.4.9.13-0.armv7hl.rpm",
-      "page": "https://openrepos.net/node/11396",
-      "appid": 11396,
-      "title": "tor (aarch64+armv7hl)"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/14239/tor-0.4.9.13-0.aarch64.rpm",
-      "page": "https://openrepos.net/node/11396",
-      "appid": 11396,
-      "title": "tor (aarch64+armv7hl)"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.0-1.aarch64.rpm",
-      "page": "https://openrepos.net/node/12345",
-      "appid": 12345,
-      "title": "SubMusic"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.0-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12345",
-      "appid": 12345,
-      "title": "SubMusic"
-    },
     {
       "url": "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.0-1.i486.rpm",
       "page": "https://openrepos.net/node/12345",
@@ -180,6 +150,36 @@
       "page": "https://openrepos.net/node/12695",
       "appid": 12695,
       "title": "screenrecorder (coderus fork)"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/16357/atlantic-browser-1.6.0.aarch64.rpm",
+      "page": "https://openrepos.net/node/12423",
+      "appid": 12423,
+      "title": "Atlantic Browser"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19185/harbour-emoump-0.1-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12697",
+      "appid": 12697,
+      "title": "Emoump"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19185/harbour-eureadia-0.6-8.aarch64.rpm",
+      "page": "https://openrepos.net/node/12422",
+      "appid": 12422,
+      "title": "Eureadia"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19185/harbour-eureadia-0.6-8.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12422",
+      "appid": 12422,
+      "title": "Eureadia"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19185/harbour-eureadia-0.6-8.i486.rpm",
+      "page": "https://openrepos.net/node/12422",
+      "appid": 12422,
+      "title": "Eureadia"
     }
   ],
   "seen": [
@@ -225,14 +225,19 @@
     "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.1-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.1-1.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/16198/screenrecorder-0.5.1-1.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/16198/screenrecorder-0.5.1-1.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/16198/screenrecorder-0.5.1-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/16357/atlantic-browser-1.6.0.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19185/harbour-emoump-0.1-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19185/harbour-eureadia-0.6-8.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19185/harbour-eureadia-0.6-8.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19185/harbour-eureadia-0.6-8.i486.rpm"
   ],
-  "last_run": "2026-10-08T16:25:57Z",
+  "last_run": "2026-10-08T18:26:19Z",
   "dispatched": [
-    1791475818,
-    1791475920,
-    1791476085,
-    1791476209,
-    1791476395
+    1791483365,
+    1791483552,
+    1791483675,
+    1791483819,
+    1791483900
   ]
 }
