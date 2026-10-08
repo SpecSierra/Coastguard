@@ -71,7 +71,7 @@ not a promise that an app is safe.
 
 ## Watching OpenRepos
 
-The `Watch OpenRepos` workflow runs every hour. It reads the OpenRepos app
+The `Watch OpenRepos` workflow runs three times an hour. It reads the OpenRepos app
 listing, visits the page of each app updated since the last run, and starts a
 scan for every RPM uploaded with that update, all architectures included. At
 most 5 scans are started in any 60 minutes (`INTAKE_MAX_SCANS` in

@@ -1,11 +1,13 @@
 name: Watch OpenRepos
 
-# Every hour, queue a scan for each RPM newly released on OpenRepos. Scans run
+# Three times an hour, queue a scan for each RPM newly released on OpenRepos. Scans run
 # one at a time, at most INTAKE_MAX_SCANS per rolling hour. The watch position
 # and the queue live in intake/state.json on the results branch.
 on:
+  # GitHub starts scheduled runs late and sometimes skips them, so this runs
+  # more often than the hourly limit needs; the limit itself is in intake.py.
   schedule:
-    - cron: '17 * * * *'
+    - cron: '7,27,47 * * * *'
   workflow_dispatch:
 
 permissions:
