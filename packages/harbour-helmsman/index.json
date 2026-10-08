@@ -1,0 +1,12 @@
+[
+  {
+    "sha256": "a481a767937425badd17f983a9f54c76a715d230497367ede2263ad205f91273",
+    "first_seen": "2026-10-08T14:55:48Z",
+    "package": "harbour-helmsman-0.4.8-1.armv7hl",
+    "version": "0.4.8-1",
+    "arch": "armv7hl",
+    "buildtime": 1791464601,
+    "last_scanned": "2026-10-08T14:55:48Z",
+    "verdict": "clean"
+  }
+]
