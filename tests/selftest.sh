@@ -1,23 +1,28 @@
 #!/usr/bin/env bash
 # Prove the scanner can both pass and fail: build a harmless RPM and one
-# carrying the EICAR test file, and check each gets the right verdict. A
-# third package checks that the static inspection reports what it should.
+# carrying the EICAR test file, and check each gets the right verdict. More
+# packages check nested unpacking, the static inspection, the indicator rules
+# and the comparison between two versions.
 #
 # usage: selftest.sh <yara-rules> <clamav-db-dir>
 set -euo pipefail
 
 rules=$(realpath "$1")
 clamdb=$(realpath "$2")
-scan=$(dirname "$(realpath "$0")")/../scripts/scan.sh
+scripts=$(dirname "$(realpath "$0")")/../scripts
+scan=$scripts/scan.sh
 top=$(mktemp -d)
 trap 'rm -rf "$top"' EXIT
 mkdir -p "$top/SOURCES" "$top/SPECS"
 tree=$top/SOURCES/tree
 
-build_rpm() { # <name> <%post body>; packages everything under $tree
+build_rpm() { # <name> <%post body> [<version>]; packages everything under $tree
+    local version=${3:-1}
     cat > "$top/SPECS/$1.spec" <<SPEC
+%global __os_install_post %{nil}
+%global debug_package %{nil}
 Name: $1
-Version: 1
+Version: $version
 Release: 1
 Summary: Coastguard self-test package
 License: Public Domain
@@ -33,7 +38,7 @@ $2
 SPEC
     rpmbuild -bb --quiet --define "_topdir $top" "$top/SPECS/$1.spec" >&2
     rm -rf "$tree"
-    echo "$top/RPMS/noarch/$1-1-1.noarch.rpm"
+    echo "$top/RPMS/noarch/$1-$version-1.noarch.rpm"
 }
 
 expect() { # <label> <expected rc> <rpm> <report dir>
@@ -57,6 +62,7 @@ mkdir -p "$tree/usr/share/coastguard-clean"
 echo 'nothing to see here' > "$tree/usr/share/coastguard-clean/payload"
 clean_rpm=$(build_rpm coastguard-clean 'true')
 expect "clean package passes" 0 "$clean_rpm" "$top/report-clean"
+check report-clean "clean package has no indicators" '.indicators == []'
 
 # --- EICAR ------------------------------------------------------------------
 mkdir -p "$tree/usr/share/coastguard-eicar"
@@ -68,6 +74,28 @@ expect "EICAR package is detected" 1 "$eicar_rpm" "$top/report-eicar"
 check report-eicar "ClamAV flags the payload" '.clamav | any(test("payload/.*FOUND$"))'
 check report-eicar "YARA flags the payload"   '.yara | any(test(" payload/"))'
 check report-eicar "YARA flags the scriptlet" '.yara | any(test(" scriptlets.txt$"))'
+
+# --- nested content -----------------------------------------------------------
+# The marker is only reachable by unpacking: once inside a zip, once inside a
+# zlib stream embedded in an ELF file, the way Qt compiles resources in.
+mkdir -p "$tree/usr/share/cg-nested" "$tree/usr/bin"
+python3 -I - "$tree" <<'PY'
+import os, sys, zipfile, zlib
+tree = sys.argv[1]
+marker = b"EICAR-STANDARD-ANTIVIRUS-TEST-FILE"
+with zipfile.ZipFile(tree + "/usr/share/cg-nested/data.zip", "w", zipfile.ZIP_DEFLATED) as z:
+    z.writestr("inner/readme.txt", marker * 20 + b" https://zipped.coastguard-selftest.io/x")
+blob = zlib.compress(b"import QtQuick 2.0 // " + marker + b" " * 200)
+with open(tree + "/usr/bin/cg-nested", "wb") as fh:
+    fh.write(b"\x7fELF" + os.urandom(4096) + blob + os.urandom(4096))
+PY
+nested_rpm=$(build_rpm coastguard-nested 'true')
+expect "marker hidden in nested content is detected" 1 "$nested_rpm" "$top/report-nested"
+check report-nested "YARA sees inside the zip" '.yara | any(test("nested/.*data.zip.unpacked/"))'
+check report-nested "YARA sees the embedded zlib stream" '.yara | any(test("nested/.*cg-nested.carved/"))'
+check report-nested "host found inside the zip" \
+    '.inspect.network.hosts | any(.host == "zipped.coastguard-selftest.io")'
+check report-nested "unpacking is counted" '.nested.archives == 1 and .nested.carved_streams >= 1'
 
 # --- inspection -------------------------------------------------------------
 units=$tree/usr/lib/systemd/system
@@ -85,8 +113,13 @@ echo 'fetch("https://telemetry.coastguard-selftest.io/v1"); fetch("http://203.0.
 echo 'nobody ALL=(ALL) NOPASSWD: ALL' > "$tree/etc/sudoers.d/cg"
 printf '#!/bin/sh\ntrue\n' > "$tree/usr/bin/cg"
 chmod 4755 "$tree/usr/bin/cg"
+echo 'db = "/home/defaultuser/.local/share/commhistory/commhistory.db"' \
+    > "$tree/usr/share/cg/qml/history.qml"
+cp -a "$tree" "$top/tree-v1"
 inspect_rpm=$(build_rpm coastguard-inspect 'systemctl enable cg.service')
 expect "inspection package is not a detection" 0 "$inspect_rpm" "$top/report-inspect"
+check report-inspect "indicator rule fires without changing the verdict" \
+    '.verdict == "clean" and (.indicators | any(.rule == "Coastguard_Indicator_Reads_Messages_Or_Call_History"))'
 i=.inspect
 check report-inspect "declared sandbox and its permissions" \
     "$i.sailjail.apps | any(.sandbox == \"declared\" and .permissions == [\"Internet\", \"Location\"])"
@@ -100,4 +133,41 @@ check report-inspect "scriptlet command" "$i.scriptlets | any(.notable | any(tes
 check report-inspect "host from QML" \
     "$i.network.hosts | any(.host == \"telemetry.coastguard-selftest.io\" and (.in | index(\"script\")))"
 check report-inspect "hard-coded IP" "$i.network.notable | any(.why == \"hard-coded IP address\")"
+# --- comparison with the previous version -----------------------------------
+# Version 2 asks for one more permission, talks to a new host, adds a root
+# service and changes a file.
+sleep 1  # RPM build times have one-second resolution and order the builds
+mv "$top/tree-v1" "$tree"
+sed -i 's/Permissions=Internet;Location/Permissions=Internet;Location;Contacts/' \
+    "$tree/usr/share/applications/cg-jailed.desktop"
+echo 'fetch("https://new-host.coastguard-selftest.io/v2")' >> "$tree/usr/share/cg/qml/main.qml"
+printf '[Service]\nExecStart=/usr/bin/cg --second\n' > "$units/cg-second.service"
+v2_rpm=$(build_rpm coastguard-inspect 'systemctl enable cg.service
+systemctl enable cg-second.service' 2)
+expect "second version is not a detection" 0 "$v2_rpm" "$top/report-v2"
+
+store=$top/store
+python3 -I "$scripts/reputation.py" "$top/report-inspect"
+python3 -I "$scripts/store_result.py" "$store" "$top/report-inspect" > /dev/null
+python3 -I "$scripts/store_result.py" "$store" "$top/report-v2" > /dev/null
+cat "$top/report-v2/final.md"
+v2=$store/packages/coastguard-inspect/$(jq -r .sha256 "$top/report-v2/report.json").json
+diff_check() { # <label> <jq filter over .diff.changes>
+    jq -e ".diff.changes | $2" "$v2" > /dev/null \
+        || { echo "FAIL: $1" >&2; jq .diff "$v2" >&2; exit 1; }
+    echo "ok: $1"
+}
+jq -e '.diff == null' "$store/packages/coastguard-inspect/$(jq -r .sha256 "$top/report-inspect/report.json").json" > /dev/null \
+    || { echo "FAIL: first version should have no baseline" >&2; exit 1; }
+echo "ok: first version has nothing to compare with"
+diff_check "diff: new permission" 'any(.area == "permission" and .change == "added" and .item == "Contacts")'
+diff_check "diff: new root service" 'any(.area == "systemd unit" and .change == "added" and (.item | endswith("cg-second.service")))'
+diff_check "diff: new scriptlet line" 'any(.area == "install scriptlet" and .change == "added" and (.item | test("cg-second")))'
+diff_check "diff: new host" 'any(.area == "host" and .change == "added" and .item == "new-host.coastguard-selftest.io")'
+diff_check "diff: changed file" 'any(.area == "file" and .change == "changed" and (.item | endswith("main.qml")))'
+diff_check "diff: unchanged things stay quiet" 'all(.item != "Internet" and .item != "telemetry.coastguard-selftest.io")'
+jq -e '.reputation.virustotal.status == "not configured"' \
+    "$store/packages/coastguard-inspect/$(jq -r .sha256 "$top/report-inspect/report.json").json" > /dev/null \
+    || { echo "FAIL: reputation block missing" >&2; exit 1; }
+echo "ok: reputation is skipped cleanly without API keys"
 echo "self-test passed"

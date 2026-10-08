@@ -3,11 +3,16 @@
 Sailfish OS device. Reads files only; nothing from the package is executed.
 
 usage: inspect_rpm.py <payload-dir> <filemeta.tsv> <scriptlets.txt> <report-dir>
+                      [<nested-dir>]
 
-Writes inspect.json, inspect.md and urls.txt into <report-dir>. This describes
+<nested-dir> holds content unpacked from archives inside the payload; it is
+searched for network addresses only, since nothing in it is an installed path.
+
+Writes inspect.json, inspect.md, urls.txt and manifest.tsv into <report-dir>. This describes
 what the package declares and embeds, not what it does at runtime.
 """
 import configparser
+import hashlib
 import ipaddress
 import json
 import mmap
@@ -19,6 +24,7 @@ from collections import defaultdict
 from urllib.parse import urlsplit
 
 MAX_TEXT = 256 * 1024  # config-like files larger than this are not parsed
+MAX_SCRIPTLET = 16 * 1024  # stored per scriptlet so later versions can be diffed
 
 # Hosts that appear in almost every binary as XML namespaces, licence texts
 # or documentation examples.
@@ -232,12 +238,17 @@ def inspect_scriptlets(text):
     for line in text.splitlines():
         m = header.match(line)
         if m and m.group(1).startswith(("pre", "post", "trigger", "verify", "filetrigger", "transfiletrigger")):
-            current = {"type": m.group(1), "interpreter": m.group(3), "lines": 0, "notable": []}
+            current = {"type": m.group(1), "interpreter": m.group(3), "lines": 0,
+                       "notable": [], "body": ""}
             if m.group(2) == "program":
                 current["interpreter"] = m.group(4).lstrip(": ").strip() or None
             scriptlets.append(current)
             continue
-        if current is None or not line.strip() or line.lstrip().startswith("#"):
+        if current is None:
+            continue
+        if len(current["body"]) < MAX_SCRIPTLET:
+            current["body"] += line[:1000] + "\n"
+        if not line.strip() or line.lstrip().startswith("#"):
             continue
         current["lines"] += 1
         if SCRIPTLET_NOTABLE.search(line) and len(current["notable"]) < 40:
@@ -256,15 +267,17 @@ def valid_host(host):
     return bool(re.fullmatch(r"(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,24}", host))
 
 
-def inspect_network(entries, scriptlets_path, report_dir):
+def inspect_network(entries, nested, scriptlets_path, report_dir):
     hosts = {}
     notable, seen_notable = [], set()
     urls = {}
-    sources = [(rel, full, st) for rel, full, st in entries if stat.S_ISREG(st.st_mode) and st.st_size]
+    sources = [("/" + rel, full, st) for rel, full, st in entries]
+    sources += [("nested/" + rel, full, st) for rel, full, st in nested]
+    sources = [s for s in sources if stat.S_ISREG(s[2].st_mode) and s[2].st_size]
     if os.path.getsize(scriptlets_path):
         sources.append(("(install scriptlets)", scriptlets_path, os.lstat(scriptlets_path)))
     ignored = set()
-    for rel, full, st in sources:
+    for label, full, st in sources:
         try:
             fd = os.open(full, os.O_RDONLY | os.O_NOFOLLOW)
         except OSError:
@@ -280,7 +293,6 @@ def inspect_network(entries, scriptlets_path, report_dir):
                     continue
                 if not valid_host(host):
                     continue
-                label = "/" + rel if not rel.startswith("(") else rel
                 reason = None
                 try:
                     ip = ipaddress.ip_address(host)
@@ -322,14 +334,37 @@ def inspect_network(entries, scriptlets_path, report_dir):
         "hosts_total": len(hosts),
         "hosts_in_scripts": sum("script" in h["in"] for h in hosts.values()),
         "hosts": listed,
+        # Complete lists, so the next version can be compared with this one.
+        "hosts_scripts": sorted(h for h, e in hosts.items() if "script" in e["in"])[:5000],
+        "hosts_binaries": sorted(h for h, e in hosts.items() if "script" not in e["in"])[:5000],
         "notable": notable,
         "ignored_hosts": len(ignored),
     }
 
 
+def write_manifest(entries, report_dir):
+    """sha256, size, kind and path of every payload file."""
+    with open(os.path.join(report_dir, "manifest.tsv"), "w", encoding="utf-8") as out:
+        for rel, full, st in entries:
+            if not stat.S_ISREG(st.st_mode):
+                continue
+            digest, head = hashlib.sha256(), b""
+            try:
+                fd = os.open(full, os.O_RDONLY | os.O_NOFOLLOW)
+                with os.fdopen(fd, "rb") as fh:
+                    for block in iter(lambda: fh.read(1 << 20), b""):
+                        head = head or block[:4]
+                        digest.update(block)
+            except OSError:
+                continue
+            kind = "elf" if head == b"\x7fELF" else "script" if head[:2] == b"#!" else "other"
+            path = re.sub(r"[\x00-\x1f\x7f]", "?", "/" + rel)
+            out.write(f"{digest.hexdigest()}\t{st.st_size}\t{kind}\t{path}\n")
+
+
 def code(value, limit=160):
     """Render an untrusted string as inline code."""
-    text = re.sub(r"[`|\r\n\t]+", " ", str(value))[:limit]
+    text = re.sub(r"[`\r\n\t]+", " ", str(value))[:limit]
     return f"`{text}`" if text else "-"
 
 
@@ -424,6 +459,8 @@ def markdown(result):
 def main():
     payload, filemeta, scriptlets_path, report_dir = sys.argv[1:5]
     entries = sorted(rel_files(payload))
+    nested = sorted(rel_files(sys.argv[5])) if len(sys.argv) > 5 else []
+    write_manifest(entries, report_dir)
     with open(scriptlets_path, encoding="utf-8", errors="replace") as fh:
         scriptlet_text = fh.read()
     result = {
@@ -432,7 +469,7 @@ def main():
         "system_integration": inspect_integration(entries),
         "privileged_files": inspect_filemeta(filemeta),
         "scriptlets": inspect_scriptlets(scriptlet_text),
-        "network": inspect_network(entries, scriptlets_path, report_dir),
+        "network": inspect_network(entries, nested, scriptlets_path, report_dir),
     }
     with open(os.path.join(report_dir, "inspect.json"), "w", encoding="utf-8") as fh:
         json.dump(result, fh, indent=2)

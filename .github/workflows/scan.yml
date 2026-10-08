@@ -65,41 +65,39 @@ jobs:
           if-no-files-found: ignore
 
   # Separate job so the one that handles the untrusted package never holds a
-  # write token. Stores packages/<name>/<sha256>.json on the results branch.
+  # write token or an API key. It only sees the report: hashes and metadata.
   publish:
     needs: scan
     if: ${{ !cancelled() }}
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 20
     permissions:
       contents: write
     steps:
+      - uses: actions/checkout@v4
+
       - uses: actions/download-artifact@v4
         continue-on-error: true
         with:
           name: coastguard-report
           path: report
 
-      - name: Store result
+      # Hashes only, never file content. Each service is skipped without its key.
+      - name: Hash reputation
+        env:
+          VT_API_KEY: ${{ secrets.VT_API_KEY }}
+          MALWAREBAZAAR_AUTH_KEY: ${{ secrets.MALWAREBAZAAR_AUTH_KEY }}
+        run: |
+          [ -f report/report.json ] || { echo "no report produced"; exit 0; }
+          python3 -I scripts/reputation.py report
+
+      - name: Store result and compare with previous version
         env:
           GH_TOKEN: ${{ github.token }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set -euo pipefail
           [ -f report/report.json ] || { echo "no report produced, nothing to store"; exit 0; }
-          verdict=$(jq -r .verdict report/report.json)
-          sha256=$(jq -r .sha256 report/report.json)
-          name=$(jq -r .name report/report.json)
-          # An incomplete scan is not a verdict and must not replace one.
-          case "$verdict" in
-            clean|detected) ;;
-            *) echo "verdict '$verdict' is not stored"; exit 0 ;;
-          esac
-          # Both values end up in a path and come from the scanned package.
-          [[ $sha256 =~ ^[0-9a-f]{64}$ ]] || { echo "::error::bad sha256"; exit 1; }
-          [[ $name =~ ^[A-Za-z0-9][A-Za-z0-9._+-]{0,127}$ ]] || name=_unnamed
-          jq --arg run "$RUN_URL" '. + {run: $run}' report/report.json > result.json
-
           remote="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           # Scans run in parallel, so retry from a fresh clone when the push loses a race.
           for attempt in 1 2 3 4 5; do
@@ -108,16 +106,26 @@ jobs:
               git init --quiet --initial-branch results store
               git -C store remote add origin "$remote"
             fi
-            mkdir -p "store/packages/$name"
-            cp result.json "store/packages/$name/$sha256.json"
+            rc=0
+            message=$(python3 -I scripts/store_result.py store report "$RUN_URL") || rc=$?
+            if [ "$rc" -eq 3 ]; then echo "scan has no verdict, nothing stored"; exit 0; fi
+            [ "$rc" -eq 0 ] || exit "$rc"
             git -C store add -A
             git -C store -c user.name='github-actions[bot]' \
               -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
-              commit --quiet --allow-empty -m "$name: $verdict ($sha256)"
+              commit --quiet --allow-empty -m "$message"
             if git -C store push --quiet origin results; then
-              echo "stored packages/$name/$sha256.json" | tee -a "$GITHUB_STEP_SUMMARY"
+              cat report/final.md >> "$GITHUB_STEP_SUMMARY"
               exit 0
             fi
             sleep $((attempt * 3))
           done
           echo "::error::could not push result"; exit 1
+
+      # Red run when a reputation service knows the package as malware, even
+      # if the local signatures found nothing.
+      - name: Verdict
+        run: |
+          verdict=$(cat report/final-verdict 2>/dev/null || echo none)
+          echo "final verdict: $verdict"
+          [ "$verdict" != detected ]

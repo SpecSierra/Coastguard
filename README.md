@@ -14,6 +14,20 @@ The scan covers the RPM itself, every file in its payload, and its install
 scriptlets (`%pre`, `%post`, triggers), which run as root on the device. The
 package is only unpacked, never installed or executed.
 
+Content packed inside the payload is unpacked and scanned as well: archives
+(zip/jar/apk, tar, gzip, xz, bzip2, zstd, 7z, cpio, rpm, deb), up to three
+levels deep, and zlib streams embedded in ELF binaries and Qt `.rcc` files,
+which is where compiled-in QML and JavaScript live. Password-protected
+archives cannot be opened and are called out in the report.
+
+Two more checks run after the scan, in a job that only sees the report:
+
+- **Hash reputation**: the sha256 of the RPM and of its executables is looked
+  up on VirusTotal and MalwareBazaar. Only hashes are sent. A file that three
+  or more VirusTotal engines call malicious, or that MalwareBazaar knows,
+  turns the verdict to detected.
+- **Changes since the previous version**: see below.
+
 Each report also describes, from the files alone, what the package would set
 up on a device. This is informational and never changes the verdict:
 
@@ -42,24 +56,62 @@ when the scan could not complete. The verdict is in the run summary; the
 ## Results
 
 Every clean or detected verdict is stored on the
-[`results`](../../tree/results) branch as `packages/<name>/<sha256>.json`.
+[`results`](../../tree/results) branch, per package:
+
+    packages/<name>/index.json              every scanned build, oldest first
+    packages/<name>/<sha256>.json           the full result
+    packages/<name>/<sha256>.manifest.tsv   sha256, size, kind, path per file
+
 Rescanning the same file replaces its entry; the branch history keeps the
 earlier ones. To look a file up by hash:
 
     git ls-tree -r --name-only origin/results | grep <sha256>
 
+## Changes since the previous version
+
+Each result is compared with the stored result of the build before it (by
+RPM build time, same architecture when there is one). The comparison uses
+the stored result, not the old RPM, so it keeps working after a developer
+deletes the old version from OpenRepos.
+
+Reported as worth reviewing: new permissions, a sandbox that was dropped, new
+or changed services, new setuid files or system hooks, new scriptlet lines,
+new indicators, and new hosts in scripts. Files added, removed and changed
+are listed by path; the content of a changed file is not compared.
+
+A build is only a baseline once Coastguard has scanned it, so the first scan
+of a package has nothing to compare with.
+
+## Reputation API keys
+
+Both lookups are skipped until their key is added as a repository secret:
+
+    gh secret set VT_API_KEY                # virustotal.com, free account
+    gh secret set MALWAREBAZAAR_AUTH_KEY    # auth.abuse.ch, free account
+
+The free VirusTotal tier allows 4 lookups a minute and 500 a day, so a scan
+looks up the RPM and its 7 most relevant executables (`VT_MAX_FILES`).
+
 ## Rules and self-test
 
 `rules/` holds Coastguard's own YARA rules, loaded next to the YARA Forge
-set. The `Self-test` workflow builds a harmless RPM and one carrying the
+set. `rules/sailfish.yar` has Sailfish OS specific **indicators**: reading the
+contacts, message or account databases, touching SSH keys, calling `devel-su`,
+editing sudoers, installing packages at runtime, download-and-run shell
+lines, sending SMS, and so on. Legitimate apps match these too, so they are
+listed in the report and in the version comparison but do not change the
+verdict. A rule becomes a detection by dropping the `Coastguard_Indicator_`
+prefix from its name.
+ The `Self-test` workflow builds a harmless RPM and one carrying the
 EICAR test file on every push, and checks that the first passes and the
-second is flagged by both engines.
+second is flagged by both engines. Further packages check nested unpacking,
+the inspection, the indicators and the version comparison.
 
 ## Limits
 
 A clean result means "no known signature matched", not "safe". Signature
-scanning does not catch new or targeted malware, and YARA does not look inside
-archives nested in the payload (ClamAV does).
+scanning does not catch new or targeted malware. Niche Sailfish packages are
+mostly unknown to the reputation services, where "unknown" is not a pass.
 
 The inspection is static. The network list is what is written in the files,
 not what the app contacts: addresses built at runtime, obfuscated or stored
