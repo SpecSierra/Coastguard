@@ -14,11 +14,11 @@
         "reasons": [
           {
             "level": "info",
-            "text": "Ships its own sandbox profile"
+            "text": "Own sandbox profile"
           },
           {
             "level": "info",
-            "text": "Starts automatically in the background"
+            "text": "Starts in the background"
           }
         ]
       },

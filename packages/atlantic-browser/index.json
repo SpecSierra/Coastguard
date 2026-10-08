@@ -14,19 +14,19 @@
         "reasons": [
           {
             "level": "medium",
-            "text": "Installs and starts 3 background service(s) running as root"
+            "text": "3 root service(s), started at install"
           },
           {
             "level": "info",
-            "text": "Ships its own sandbox profile"
+            "text": "Own sandbox profile"
           },
           {
             "level": "info",
-            "text": "Contains code that installs persistence"
+            "text": "Code that installs persistence"
           },
           {
             "level": "info",
-            "text": "Contains code that reads browser profile data"
+            "text": "Code that reads browser profile data"
           }
         ]
       },

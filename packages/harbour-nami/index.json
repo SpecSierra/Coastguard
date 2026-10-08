@@ -14,7 +14,7 @@
         "reasons": [
           {
             "level": "info",
-            "text": "Asks for access to personal data: Contacts"
+            "text": "Personal data: Contacts"
           }
         ]
       },
@@ -66,7 +66,7 @@
         "reasons": [
           {
             "level": "info",
-            "text": "Asks for access to personal data: Contacts"
+            "text": "Personal data: Contacts"
           }
         ]
       },
