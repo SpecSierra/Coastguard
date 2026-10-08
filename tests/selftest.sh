@@ -178,6 +178,12 @@ jq -e '.[0].summary.sandbox == "disabled" and .[0].summary.root_services == 1
     "$store/packages/coastguard-inspect/index.json" > /dev/null \
     || { echo "FAIL: index summary" >&2; jq . "$store/packages/coastguard-inspect/index.json" >&2; exit 1; }
 echo "ok: index carries a compact summary per build"
+report_md=$store/packages/coastguard-inspect/$(jq -r .sha256 "$top/report-v2/report.json").md
+grep -q 'high risk' "$report_md" && grep -q 'Changes since' "$report_md" \
+    && grep -q 'Sailjail sandbox' "$report_md" \
+    && jq -e '.[1].summary.report | endswith(".md")' "$store/packages/coastguard-inspect/index.json" > /dev/null \
+    || { echo "FAIL: readable report" >&2; cat "$report_md" >&2; exit 1; }
+echo "ok: a readable report page is stored next to each result"
 # Risk grade: v1 runs a root service unsandboxed and ships a setuid binary and
 # a sudoers file; v2 also newly asks for Contacts. The clean package is low.
 jq -e '.[0].summary.risk.grade == "high"

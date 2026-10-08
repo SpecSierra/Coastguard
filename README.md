@@ -102,6 +102,7 @@ Every clean or detected verdict is stored on the
 
     packages/<name>/index.json              every scanned build, oldest first
     packages/<name>/<sha256>.json           the full result
+    packages/<name>/<sha256>.md             the same as a readable report
     packages/<name>/<sha256>.manifest.tsv   sha256, size, kind, path per file
 
 `index.json` is what a client such as a store app should read. One request

@@ -8,6 +8,8 @@ usage: store_result.py <store-dir> <report-dir> [<run-url>]
                                           each with a compact summary for
                                           clients such as a store app
   packages/<name>/<sha256>.json           the full result
+  packages/<name>/<sha256>.md             the same as a readable report, which
+                                          GitHub shows without a login
   packages/<name>/<sha256>.manifest.tsv   sha256, size, kind, path per file
 
 The comparison uses the stored result of the previous build, not its RPM, so
@@ -25,7 +27,10 @@ import sys
 
 # Run with -I, which leaves the script's own directory off the import path.
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import inspect_rpm  # noqa: E402
 import risk  # noqa: E402
+
+REPOSITORY = os.environ.get("GITHUB_REPOSITORY", "SpecSierra/Coastguard")
 
 LIST_CAP = 500  # entries kept per list in the stored diff
 
@@ -213,6 +218,50 @@ def compare(old, new, old_files, new_files):
     return changes, counts
 
 
+def report_url(name, sha256):
+    return f"https://github.com/{REPOSITORY}/blob/results/packages/{name}/{sha256}.md"
+
+
+def report_markdown(report):
+    """The whole result as one readable page, built from the stored result
+    alone so it can be regenerated at any time."""
+    grade = report.get("risk") or risk.assess(report, report.get("diff"))
+    known = ("**recognised as known malware**" if report.get("verdict") == "detected"
+             else "nothing recognised")
+    lines = [f"# {code(report.get('package'))}: {grade['grade']} risk", "",
+             f"Known-malware check: {known}.", "",
+             "| | |", "|---|---|",
+             f"| Scanned | {report.get('scanned')} |",
+             f"| sha256 | `{report.get('sha256')}` |",
+             f"| Source | {code(report.get('source'), 300)} |",
+             f"| Engines | {code((report.get('engines') or {}).get('clamav'))}, "
+             f"YARA Forge core {code((report.get('engines') or {}).get('yara_forge_core'))} |", ""]
+    lines += risk.markdown(grade)
+    lines += ["### Known-malware check", ""]
+    detections = (report.get("clamav") or []) + (report.get("yara") or [])
+    lines += [f"- :rotating_light: {code(d, 300)}" for d in detections] or \
+             ["Nothing recognised by the ClamAV and YARA signatures."]
+    lines.append("")
+    lines += reputation_markdown(report.get("reputation"))
+    if report.get("indicators"):
+        lines += ["### Indicators", "",
+                  "Code patterns found in the package. Legitimate apps match these too.", ""]
+        for item in report["indicators"]:
+            files = item.get("files") or []
+            lines.append(f"- {item['rule'].replace('Coastguard_Indicator_', '').replace('_', ' ')}: "
+                         + ", ".join(code(f) for f in files[:4])
+                         + (f" (+{len(files) - 4} more)" if len(files) > 4 else ""))
+        lines.append("")
+    lines += diff_markdown(report.get("diff"))
+    inspect = report.get("inspect") or {}
+    if inspect and not inspect.get("error"):
+        inspect.setdefault("sailjail", {}).setdefault("profile_loosening", [])
+        lines.append(inspect_rpm.markdown(inspect))
+    lines += ["", "---", "Automatic scan by [Coastguard](https://github.com/" + REPOSITORY + "). "
+              "It cannot recognise new malware; nothing here is a guarantee that the package is safe.", ""]
+    return "\n".join(lines)
+
+
 def summarize(report):
     """The few facts a store client shows about one build. Kept small: this
     is embedded in index.json, which a phone downloads per app page."""
@@ -258,6 +307,8 @@ def summarize(report):
                        for key in ("virustotal", "malwarebazaar")},
         "changes": changes,
         "run": report.get("run"),
+        # Readable without a GitHub login, unlike the run page.
+        "report": report.get("report"),
     }
 
 
@@ -409,18 +460,24 @@ def main():
                     "changes": changes, "counts": counts}
     report["diff"] = diff
     report["risk"] = risk.assess(report, diff)
+    report["report"] = report_url(name, sha256)
 
     mine["summary"] = summarize(report)
     # Builds stored before summaries existed get theirs from the stored result.
     for entry in index:
-        if "risk" not in entry.get("summary", {}):
+        if not entry.get("summary", {}).get("report"):
             old = load(os.path.join(pkgdir, entry["sha256"] + ".json"))
             if old:
+                old["report"] = report_url(name, entry["sha256"])
                 entry["summary"] = summarize(old)
+                with open(os.path.join(pkgdir, entry["sha256"] + ".md"), "w", encoding="utf-8") as fh:
+                    fh.write(report_markdown(old))
 
     with open(os.path.join(pkgdir, sha256 + ".json"), "w", encoding="utf-8") as fh:
         json.dump(report, fh, indent=2)
         fh.write("\n")
+    with open(os.path.join(pkgdir, sha256 + ".md"), "w", encoding="utf-8") as fh:
+        fh.write(report_markdown(report))
     if os.path.exists(os.path.join(report_dir, "manifest.tsv")):
         shutil.copyfile(os.path.join(report_dir, "manifest.tsv"),
                         os.path.join(pkgdir, sha256 + ".manifest.tsv"))
