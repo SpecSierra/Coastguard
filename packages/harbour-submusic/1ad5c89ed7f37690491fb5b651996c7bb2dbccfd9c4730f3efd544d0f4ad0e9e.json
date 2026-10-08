@@ -1,0 +1,151 @@
+{
+  "verdict": "clean",
+  "name": "harbour-submusic",
+  "version": "0.15.0-1",
+  "arch": "i486",
+  "package": "harbour-submusic-0.15.0-1.i486",
+  "buildtime": 1791401935,
+  "sha256": "1ad5c89ed7f37690491fb5b651996c7bb2dbccfd9c4730f3efd544d0f4ad0e9e",
+  "source": "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.0-1.i486.rpm",
+  "source_page": "https://openrepos.net/node/12345",
+  "scanned": "2026-10-08T19:18:05Z",
+  "files": 72,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28147/Thu Oct  8 06:24:12 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-submusic.desktop",
+          "name": "SubMusic",
+          "exec": "harbour-submusic",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Audio",
+            "Secrets",
+            "Music",
+            "MediaIndexing"
+          ],
+          "organization": "Submusic",
+          "application": "harbour-submusic"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 4,
+      "hosts_in_scripts": 4,
+      "hosts": [
+        {
+          "host": "bandcamp.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-submusic/qml/pages/Login.qml"
+          ]
+        },
+        {
+          "host": "forum.sailfishos.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-submusic/qml/pages/settings/Contribute.qml"
+          ]
+        },
+        {
+          "host": "git.kiszczyc.pl",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-submusic/qml/pages/settings/Contribute.qml"
+          ]
+        },
+        {
+          "host": "weblate.kiszczyc.pl",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-submusic/qml/pages/settings/Contribute.qml"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "bandcamp.com",
+        "forum.sailfishos.org",
+        "git.kiszczyc.pl",
+        "weblate.kiszczyc.pl"
+      ],
+      "hosts_binaries": [],
+      "notable": [],
+      "ignored_hosts": 2
+    }
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37830831648",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "text": "Personal data: Secrets"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-submusic/1ad5c89ed7f37690491fb5b651996c7bb2dbccfd9c4730f3efd544d0f4ad0e9e.md"
+}
