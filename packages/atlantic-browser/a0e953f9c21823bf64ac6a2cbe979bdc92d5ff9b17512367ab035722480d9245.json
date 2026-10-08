@@ -7,7 +7,7 @@
   "buildtime": 1790716615,
   "sha256": "a0e953f9c21823bf64ac6a2cbe979bdc92d5ff9b17512367ab035722480d9245",
   "source": "https://openrepos.net/sites/default/files/packages/16357/atlantic-browser-1.5.1.aarch64.rpm",
-  "scanned": "2026-10-08T14:37:09Z",
+  "scanned": "2026-10-08T14:41:01Z",
   "files": 407,
   "engines": {
     "clamav": "ClamAV 1.5.4/28147/Thu Oct  8 06:24:12 2026",
@@ -4721,10 +4721,14 @@
       "results": []
     },
     "malwarebazaar": {
-      "status": "not configured"
+      "status": "ok",
+      "queried": 32,
+      "unknown": 32,
+      "not_queried": 0,
+      "results": []
     },
     "hits": []
   },
-  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37793604351",
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37794281699",
   "diff": null
 }
