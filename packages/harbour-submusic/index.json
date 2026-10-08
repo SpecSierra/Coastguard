@@ -1,0 +1,53 @@
+[
+  {
+    "sha256": "0b4313d3faad87d6a70f26c8d1e64c4b108e9f3c80853d273dba4a5a311ff64a",
+    "first_seen": "2026-10-08T18:24:15Z",
+    "package": "harbour-submusic-0.15.0-1.aarch64",
+    "version": "0.15.0-1",
+    "arch": "aarch64",
+    "buildtime": 1791401847,
+    "last_scanned": "2026-10-08T18:24:15Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "text": "Personal data: Secrets"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Internet",
+        "MediaIndexing",
+        "Music",
+        "Secrets"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 4,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37823925407",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-submusic/0b4313d3faad87d6a70f26c8d1e64c4b108e9f3c80853d273dba4a5a311ff64a.md"
+    }
+  }
+]
