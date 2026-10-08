@@ -41,7 +41,8 @@
         "malwarebazaar": "ok"
       },
       "changes": null,
-      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37797882049"
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37797882049",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-nami/b08755fa689c8024366a33792196d79a4d39ac6204cb7a987c73013b2c4ffffe.md"
     }
   },
   {
@@ -86,7 +87,8 @@
         "malwarebazaar": "ok"
       },
       "changes": null,
-      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37797830549"
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37797830549",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-nami/97a25b8f4dc327bdf165f44191c37c6dc12521469ac6f838eb6d067edd4e6bd6.md"
     }
   }
 ]

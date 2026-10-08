@@ -41,7 +41,8 @@
         "malwarebazaar": "ok"
       },
       "changes": null,
-      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37798032858"
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37798032858",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/foghorn/f2d2a1024f6d48455fc3425c834fe563cbb6048742421d8145d334f4a5663793.md"
     }
   }
 ]
