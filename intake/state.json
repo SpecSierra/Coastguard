@@ -2,24 +2,6 @@
   "cursor": 1791496021,
   "queue": [
     {
-      "url": "https://openrepos.net/sites/default/files/packages/19607/harbour-livewire-0.7.1-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12538",
-      "appid": 12538,
-      "title": "Livewire"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/18418/longterm-0.5.0-1.aarch64.rpm",
-      "page": "https://openrepos.net/node/12642",
-      "appid": 12642,
-      "title": "Longterm"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/18418/longterm-0.5.0-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12642",
-      "appid": 12642,
-      "title": "Longterm"
-    },
-    {
       "url": "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.1.0-1.aarch64.rpm",
       "page": "https://openrepos.net/node/12694",
       "appid": 12694,
@@ -237,12 +219,12 @@
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.5.0-1.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/12554/personalringtones-1.3.0-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-08T22:00:01Z",
+  "last_run": "2026-10-08T22:23:17Z",
   "dispatched": [
-    1791493222,
-    1791493282,
-    1791493363,
     1791495447,
-    1791496660
+    1791496660,
+    1791497833,
+    1791497976,
+    1791498077
   ]
 }
