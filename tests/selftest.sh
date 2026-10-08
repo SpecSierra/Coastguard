@@ -111,6 +111,9 @@ ln -s ../cg.service "$units/multi-user.target.wants/cg.service"
 echo 'fetch("https://telemetry.coastguard-selftest.io/v1"); fetch("http://203.0.113.7:8080/x")' \
     > "$tree/usr/share/cg/qml/main.qml"
 echo 'nobody ALL=(ALL) NOPASSWD: ALL' > "$tree/etc/sudoers.d/cg"
+mkdir -p "$tree/etc/sailjail/permissions"
+printf 'whitelist ${HOME}/.local/share/cg\nignore seccomp\ndbus-system.talk org.freedesktop.login1\n' \
+    > "$tree/etc/sailjail/permissions/cg.profile"
 printf '#!/bin/sh\ntrue\n' > "$tree/usr/bin/cg"
 chmod 4755 "$tree/usr/bin/cg"
 echo 'db = "/home/defaultuser/.local/share/commhistory/commhistory.db"' \
@@ -128,6 +131,8 @@ check report-inspect "root systemd service, enabled twice over" \
     "$i.services.systemd | any(.user == \"root\" and (.enabled_by | length) == 2)"
 check report-inspect "setuid binary, and only that one" \
     "$i.privileged_files | map(.path) == [\"/usr/bin/cg\"]"
+check report-inspect "sandbox profile: loosening rules found, plain whitelist ignored" \
+    "$i.sailjail.profile_loosening | map(.line) == [\"ignore seccomp\", \"dbus-system.talk org.freedesktop.login1\"]"
 check report-inspect "sudoers drop-in" "$i.system_integration.sudoers == [\"/etc/sudoers.d/cg\"]"
 check report-inspect "scriptlet command" "$i.scriptlets | any(.notable | any(test(\"systemctl\")))"
 check report-inspect "host from QML" \
@@ -173,6 +178,19 @@ jq -e '.[0].summary.sandbox == "disabled" and .[0].summary.root_services == 1
     "$store/packages/coastguard-inspect/index.json" > /dev/null \
     || { echo "FAIL: index summary" >&2; jq . "$store/packages/coastguard-inspect/index.json" >&2; exit 1; }
 echo "ok: index carries a compact summary per build"
+# Risk grade: v1 runs a root service unsandboxed and ships a setuid binary and
+# a sudoers file; v2 also newly asks for Contacts. The clean package is low.
+jq -e '.[0].summary.risk.grade == "high"
+       and (.[0].summary.risk.reasons | any(.level == "high" and (.text | test("root service while"))))
+       and (.[0].summary.risk.reasons | any(.level == "high" and (.text | test("sudoers"))))
+       and (.[1].summary.risk.reasons | any(.text | test("newly asks for the Contacts")))' \
+    "$store/packages/coastguard-inspect/index.json" > /dev/null \
+    || { echo "FAIL: risk grade" >&2; jq '.[].summary.risk' "$store/packages/coastguard-inspect/index.json" >&2; exit 1; }
+python3 -I "$scripts/store_result.py" "$store" "$top/report-clean" > /dev/null
+jq -e '.[0].summary.risk == {"grade": "low", "reasons": []}' \
+    "$store/packages/coastguard-clean/index.json" > /dev/null \
+    || { echo "FAIL: clean package should grade low" >&2; jq '.[].summary.risk' "$store/packages/coastguard-clean/index.json" >&2; exit 1; }
+echo "ok: risk grade is high for the privileged package, low for the clean one"
 jq -e '.reputation.virustotal.status == "not configured"' \
     "$store/packages/coastguard-inspect/$(jq -r .sha256 "$top/report-inspect/report.json").json" > /dev/null \
     || { echo "FAIL: reputation block missing" >&2; exit 1; }

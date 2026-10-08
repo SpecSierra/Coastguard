@@ -164,7 +164,13 @@ jq -n \
     }' "${errors[@]}" > "$report/report.json"
 
 {
-    echo "## Coastguard scan: $verdict"
+    case "$verdict" in
+        clean)    echo "## Known-malware scan: nothing recognised" ;;
+        detected) echo "## Known-malware scan: MALWARE RECOGNISED" ;;
+        *)        echo "## Known-malware scan: could not complete" ;;
+    esac
+    echo
+    echo "This only says whether known malware was recognised. The risk grade, in the publish job, says how much the package gets to do on the device."
     echo
     echo '```'
     echo "package: $nevra"

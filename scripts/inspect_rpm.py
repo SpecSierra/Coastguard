@@ -121,11 +121,22 @@ def get(parser, section, key):
     return parser.get(section, key, fallback=None) if parser.has_section(section) else None
 
 
+# Lines in a sandbox profile that take protections away rather than grant one
+# more directory: dropped filters, system D-Bus access, the whole home dir.
+PROFILE_LOOSENING = re.compile(
+    r"^\s*(ignore\s+\S.*|noblacklist\s+\S.*|caps\.keep\s+\S.*|allow-debuggers"
+    r"|dbus-system\.(talk|own|call|broadcast)\s+\S.*|dbus-(user|system)\s+none"
+    r"|writable-(etc|var|run-user)|whitelist\s+(\$\{HOME\}|~)/?)\s*$")
+
+
 def inspect_sailjail(entries):
-    apps, profiles = [], []
+    apps, profiles, loosening = [], [], []
     for rel, full, st in entries:
         if re.match(r"^(etc|usr/share)/sailjail/", rel) or rel.startswith("etc/firejail/"):
             profiles.append("/" + rel)
+            for line in read_text(full, st).splitlines():
+                if PROFILE_LOOSENING.match(line) and len(loosening) < 40:
+                    loosening.append({"file": "/" + rel, "line": line.strip()[:200]})
         if not re.match(r"^usr/share/applications/[^/]+\.desktop$", rel):
             continue
         parser = ini(read_text(full, st))
@@ -149,7 +160,8 @@ def inspect_sailjail(entries):
         else:
             app.update(sandbox="none", permissions=[])
         apps.append(app)
-    return {"apps": apps, "shipped_profiles": sorted(profiles)}
+    return {"apps": apps, "shipped_profiles": sorted(profiles),
+            "profile_loosening": loosening}
 
 
 def inspect_services(entries, scriptlet_text):
@@ -387,8 +399,10 @@ def markdown(result):
             state = ":warning: no `[X-Sailjail]` section, the app declares no sandbox profile"
         out.append(f"- {code(app['desktop'])}: {state}; runs {code(app['exec'])}")
     if jail["shipped_profiles"]:
-        out.append(f"- :warning: ships its own sandbox profile/permission files: "
+        out.append("- ships its own sandbox profile/permission files: "
                    + ", ".join(code(p) for p in jail["shipped_profiles"][:20]))
+    for item in jail["profile_loosening"][:20]:
+        out.append(f"  - :warning: loosens the sandbox: {code(item['line'])} in {code(item['file'])}")
     out.append("")
 
     svc = result["services"]

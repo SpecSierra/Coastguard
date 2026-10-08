@@ -43,6 +43,32 @@ up on a device. This is informational and never changes the verdict:
   scripts/QML listed first, with hard-coded IPs and paste/tunnel/webhook
   services called out
 
+## Risk grade
+
+The known-malware check only recognises malware someone has already
+catalogued; anything new passes it. So each result also carries a risk grade
+that answers a different question: how much does this package get to do on
+the device, and did that just change? It is computed from what the package
+declares and installs (the list above), which is much harder to hide than
+code.
+
+- **high**: review before installing. Recognised malware; a root service
+  next to an unsandboxed app; setuid-root files or file capabilities;
+  sudoers, dynamic-linker or kernel-module hooks; an install script that
+  fetches from the network, runs decoded code or grants privileges; an update
+  that drops the sandbox.
+- **medium**: worth a look. Sandbox turned off; a sandbox profile that
+  loosens the sandbox; root services; other system hooks; install scripts
+  that install packages or add repositories; behaviour indicators such as
+  download-and-run; data-access indicators in an unsandboxed app; content the
+  scan could not open; an update that adds a sensitive permission, a
+  service, a hook or a new indicator.
+- **low**: nothing unusual.
+
+Every reason is listed with the grade. The rules are in `scripts/risk.py`.
+They are heuristics: a legitimate system tool grades high, and a low grade is
+not a promise that an app is safe.
+
 ## Watching OpenRepos
 
 The `Watch OpenRepos` workflow runs every hour. It reads the OpenRepos app
@@ -80,7 +106,8 @@ Every clean or detected verdict is stored on the
 
 `index.json` is what a client such as a store app should read. One request
 per package gives every scanned build with its `version`, `arch`, `sha256`,
-`verdict`, scan date and a compact `summary`: detections, indicators, sandbox
+`verdict`, scan date and a compact `summary`: risk grade with its reasons,
+detections, indicators, sandbox
 state and permissions, service counts, reputation status and the changes worth
 reviewing since the previous build.
 

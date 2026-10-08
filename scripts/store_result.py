@@ -23,6 +23,10 @@ import re
 import shutil
 import sys
 
+# Run with -I, which leaves the script's own directory off the import path.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import risk  # noqa: E402
+
 LIST_CAP = 500  # entries kept per list in the stored diff
 
 
@@ -228,7 +232,12 @@ def summarize(report):
                           for c in attention[:12]],
             "files": (diff.get("counts") or {}).get("files"),
         }
+    grade = report.get("risk") or risk.assess(report, diff)
     return {
+        # How much the package gets to do on the device; see scripts/risk.py.
+        "risk": {"grade": grade["grade"],
+                 "reasons": [{"level": r["level"], "text": r["text"][:200]}
+                             for r in grade["reasons"][:20]]},
         "detections": [str(line)[:200] for line in
                        (report.get("clamav") or []) + (report.get("yara") or [])][:10]
                       + [f"{h['source']}: {h['detail']}" for h in reputation.get("hits") or []][:5],
@@ -399,11 +408,12 @@ def main():
             diff = {"baseline": {k: baseline.get(k) for k in ("sha256", "package", "last_scanned")},
                     "changes": changes, "counts": counts}
     report["diff"] = diff
+    report["risk"] = risk.assess(report, diff)
 
     mine["summary"] = summarize(report)
     # Builds stored before summaries existed get theirs from the stored result.
     for entry in index:
-        if "summary" not in entry:
+        if "risk" not in entry.get("summary", {}):
             old = load(os.path.join(pkgdir, entry["sha256"] + ".json"))
             if old:
                 entry["summary"] = summarize(old)
@@ -418,9 +428,12 @@ def main():
         json.dump(index, fh, indent=2)
         fh.write("\n")
 
-    lines = [f"## Coastguard result: {report['verdict']}", "",
+    known = ("**recognised as known malware**" if report["verdict"] == "detected"
+             else "nothing recognised")
+    lines = [f"## Coastguard: {report['risk']['grade']} risk", "",
+             f"Known-malware check: {known}. "
              f"Stored as `packages/{name}/{sha256}.json` on the `results` branch.", ""]
-    lines += reputation_markdown(reputation) + diff_markdown(diff)
+    lines += risk.markdown(report["risk"]) + reputation_markdown(reputation) + diff_markdown(diff)
     print(f"{name}: {report['verdict']} ({sha256})")
     finish(report["verdict"], lines, 0)
 
