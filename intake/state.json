@@ -1,12 +1,6 @@
 {
-  "cursor": 1791483721,
+  "cursor": 1791486181,
   "queue": [
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.0-1.i486.rpm",
-      "page": "https://openrepos.net/node/12345",
-      "appid": 12345,
-      "title": "SubMusic"
-    },
     {
       "url": "https://openrepos.net/sites/default/files/packages/6389/harbour-thakir-3.1.9-1.aarch64.rpm",
       "page": "https://openrepos.net/node/12592",
@@ -192,6 +186,18 @@
       "page": "https://openrepos.net/node/12489",
       "appid": 12489,
       "title": "xmatic"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.2.5-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12624",
+      "appid": 12624,
+      "title": "Car Hotspot"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.2.5-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12624",
+      "appid": 12624,
+      "title": "Car Hotspot"
     }
   ],
   "seen": [
@@ -244,14 +250,16 @@
     "https://openrepos.net/sites/default/files/packages/19185/harbour-eureadia-0.6-8.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19185/harbour-eureadia-0.6-8.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.45.0-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.45.0-1.armv7hl.rpm"
+    "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.45.0-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.2.5-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.2.5-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-08T18:57:12Z",
+  "last_run": "2026-10-08T19:18:48Z",
   "dispatched": [
-    1791483365,
     1791483552,
     1791483675,
     1791483819,
-    1791483900
+    1791483900,
+    1791487048
   ]
 }
