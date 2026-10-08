@@ -38,14 +38,22 @@ jobs:
             git -C store remote add origin "$remote"
           fi
           python3 -I scripts/intake.py store/intake/state.json | tee -a "$GITHUB_STEP_SUMMARY"
-          git -C store add intake/state.json
-          git -C store -c user.name='github-actions[bot]' \
-            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
-            commit --quiet -m "intake: $(date -u +%FT%TZ)"
-          # Scans push to the same branch; rebase onto them when they got there first.
+          # The run waits for its scans, and each of them pushes a result to
+          # this branch meanwhile. Only the intake writes the state file, so
+          # put it on top of a fresh clone rather than rebasing.
+          cp store/intake/state.json state.json
           for attempt in 1 2 3 4 5; do
+            rm -rf store
+            git clone --quiet --depth 1 --branch results "$remote" store 2>/dev/null || {
+              git init --quiet --initial-branch results store
+              git -C store remote add origin "$remote"
+            }
+            mkdir -p store/intake && cp state.json store/intake/state.json
+            git -C store add intake/state.json
+            git -C store -c user.name='github-actions[bot]' \
+              -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+              commit --quiet -m "intake: $(date -u +%FT%TZ)"
             git -C store push --quiet origin results && exit 0
             sleep $((attempt * 3))
-            git -C store pull --quiet --rebase origin results
           done
           echo "::error::could not save the intake state"; exit 1
