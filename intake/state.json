@@ -2,30 +2,6 @@
   "cursor": 1791486181,
   "queue": [
     {
-      "url": "https://openrepos.net/sites/default/files/packages/8272/openssl-libs-3.5.9-0.50.3.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12438",
-      "appid": 12438,
-      "title": "openssl 3.5 (for legacy kernels)"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/8272/openssl-devel-3.5.9-0.51.3.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12438",
-      "appid": 12438,
-      "title": "openssl 3.5 (for legacy kernels)"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/8272/openssl-3.5.9-0.51.3.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12438",
-      "appid": 12438,
-      "title": "openssl 3.5 (for legacy kernels)"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/8272/openssl-libs-3.5.9-0.51.3.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12438",
-      "appid": 12438,
-      "title": "openssl 3.5 (for legacy kernels)"
-    },
-    {
       "url": "https://openrepos.net/sites/default/files/packages/19652/wechat-sailfish-patch-1.0-2.aarch64.rpm",
       "page": "https://openrepos.net/node/12664",
       "appid": 12664,
@@ -224,12 +200,12 @@
     "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.2.5-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.2.5-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-08T20:38:33Z",
+  "last_run": "2026-10-08T21:05:48Z",
   "dispatched": [
-    1791488233,
-    1791488313,
-    1791488393,
-    1791488496,
-    1791491834
+    1791491834,
+    1791493035,
+    1791493222,
+    1791493282,
+    1791493363
   ]
 }
