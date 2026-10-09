@@ -1,0 +1,47 @@
+[
+  {
+    "sha256": "85b0762ea4230da30b7787691f23c900c14bbeeaa9d1273feb0042bd7fc80797",
+    "first_seen": "2026-10-09T05:58:49Z",
+    "package": "harbour-musicfox-0.5.0-7.aarch64",
+    "version": "0.5.0-7",
+    "arch": "aarch64",
+    "buildtime": 1791505778,
+    "last_scanned": "2026-10-09T05:58:49Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "text": "Sandbox turned off"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37891118758",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-musicfox/85b0762ea4230da30b7787691f23c900c14bbeeaa9d1273feb0042bd7fc80797.md"
+    }
+  }
+]

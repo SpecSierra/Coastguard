@@ -1,0 +1,241 @@
+{
+  "verdict": "clean",
+  "name": "harbour-musicfox",
+  "version": "0.5.0-7",
+  "arch": "aarch64",
+  "package": "harbour-musicfox-0.5.0-7.aarch64",
+  "buildtime": 1791505778,
+  "sha256": "85b0762ea4230da30b7787691f23c900c14bbeeaa9d1273feb0042bd7fc80797",
+  "source": "https://openrepos.net/sites/default/files/packages/19652/harbour-musicfox-0.5.0-7.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12547",
+  "scanned": "2026-10-09T05:58:49Z",
+  "files": 16,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28147/Thu Oct  8 06:24:12 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 4,
+    "files": 4,
+    "bytes": 115380,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-musicfox.desktop",
+          "name": "MusicFox",
+          "exec": "/usr/bin/harbour-musicfox",
+          "hidden": false,
+          "sandbox": "disabled",
+          "permissions": [],
+          "organization": null,
+          "application": null
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 12,
+      "hosts_in_scripts": 0,
+      "hosts": [
+        {
+          "host": "music.163.com",
+          "urls": 8,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/musicfox-daemon"
+          ]
+        },
+        {
+          "host": "music.migu.cn",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/musicfox-daemon"
+          ]
+        },
+        {
+          "host": "www.kuwo.cn",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/musicfox-daemon"
+          ]
+        },
+        {
+          "host": "c.y.qq.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/musicfox-daemon"
+          ]
+        },
+        {
+          "host": "kuwo.cn",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/musicfox-daemon"
+          ]
+        },
+        {
+          "host": "m.music.migu.cn",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/musicfox-daemon"
+          ]
+        },
+        {
+          "host": "mobi.kuwo.cn",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/musicfox-daemon"
+          ]
+        },
+        {
+          "host": "mobilecdn.kugou.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/musicfox-daemon"
+          ]
+        },
+        {
+          "host": "music.163.comhttp",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/musicfox-daemon"
+          ]
+        },
+        {
+          "host": "music.163.comunrecognized",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/musicfox-daemon"
+          ]
+        },
+        {
+          "host": "trackercdn.kugou.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/musicfox-daemon"
+          ]
+        },
+        {
+          "host": "u.y.qq.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/musicfox-daemon"
+          ]
+        }
+      ],
+      "hosts_scripts": [],
+      "hosts_binaries": [
+        "c.y.qq.com",
+        "kuwo.cn",
+        "m.music.migu.cn",
+        "mobi.kuwo.cn",
+        "mobilecdn.kugou.com",
+        "music.163.com",
+        "music.163.comhttp",
+        "music.163.comunrecognized",
+        "music.migu.cn",
+        "trackercdn.kugou.com",
+        "u.y.qq.com",
+        "www.kuwo.cn"
+      ],
+      "notable": [],
+      "ignored_hosts": 2
+    }
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37891118758",
+  "diff": null,
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "text": "Sandbox turned off"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-musicfox/85b0762ea4230da30b7787691f23c900c14bbeeaa9d1273feb0042bd7fc80797.md"
+}
