@@ -1,5 +1,5 @@
 {
-  "cursor": 1791528776,
+  "cursor": 1791532861,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -64,11 +64,15 @@
     "https://openrepos.net/sites/default/files/packages/12554/personal-ringtones-qml-1.2.0-1.noarch.rpm",
     "https://openrepos.net/sites/default/files/packages/19652/harbour-musicfox-0.5.0-7.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.1-1.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/12554/personal-ringtones-qml-1.2.0-2.noarch.rpm"
+    "https://openrepos.net/sites/default/files/packages/12554/personal-ringtones-qml-1.2.0-2.noarch.rpm",
+    "https://openrepos.net/sites/default/files/packages/19185/harbour-meliona-0.5-2.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19185/harbour-meliona-0.5-2.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19185/harbour-meliona-0.5-2.i486.rpm"
   ],
-  "last_run": "2026-10-09T07:57:12Z",
+  "last_run": "2026-10-09T08:22:09Z",
   "dispatched": [
-    1791529059,
-    1791529286
+    1791533847,
+    1791533927,
+    1791534029
   ]
 }
