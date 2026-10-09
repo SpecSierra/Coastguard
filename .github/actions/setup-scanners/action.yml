@@ -60,7 +60,7 @@ runs:
       uses: actions/cache@v4
       with:
         path: db/hostlists
-        key: hostlists-${{ steps.day.outputs.day }}
+        key: hostlists-v2-${{ steps.day.outputs.day }}
 
     - name: Fetch host lists
       shell: bash
@@ -78,6 +78,18 @@ runs:
         fetch public ubo-privacy    https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/privacy.txt
         fetch public ubo-badware    https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt
         fetch public ubo-unbreak    https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/unbreak.txt
+        fetch public ubo-quick      https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/quick-fixes.txt
+        fetch public ubo-abuse      https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/resource-abuse.txt
+        fetch public ubo-cookies    https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/annoyances-cookies.txt
+        fetch public ubo-annoy      https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/annoyances-others.txt
+        fetch public fanboy-cookie  https://secure.fanboy.co.nz/fanboy-cookiemonster.txt
+        fetch public fanboy-annoy   https://secure.fanboy.co.nz/fanboy-annoyance.txt
+        fetch public easylist-fr    https://easylist-downloads.adblockplus.org/liste_fr.txt
+        fetch public easylist-de    https://easylist-downloads.adblockplus.org/easylistgermany.txt
+        fetch public adguard-base   https://filters.adtidy.org/extension/ublock/filters/2.txt
+        fetch public adguard-track  https://filters.adtidy.org/extension/ublock/filters/3.txt
+        fetch public adguard-annoy  https://filters.adtidy.org/extension/ublock/filters/14.txt
+        fetch public adguard-cookie https://filters.adtidy.org/extension/ublock/filters/18.txt
         fetch public peter-lowe     'https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext'
         fetch public stevenblack    https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
         fetch malicious urlhaus     https://urlhaus.abuse.ch/downloads/hostfile/

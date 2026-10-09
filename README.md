@@ -51,8 +51,8 @@ up on a device. This is informational and never changes the verdict:
   binaries. This is what is in the files, not what the app contacts. A file
   naming a hundred or more hosts (a block list, a library's reference URLs)
   is reported as a count, with no guess about its purpose. Its hosts are
-  compared with public block lists (EasyList, EasyPrivacy, uBlock Origin,
-  Peter Lowe, StevenBlack) and only those on none of them are named, so a
+  compared with public block lists (EasyList, EasyPrivacy, Fanboy, uBlock
+  Origin, AdGuard, Peter Lowe, StevenBlack) and only those on none of them are named, so a
   long list is not a place to hide an address. Hosts in the app's own files
   are also checked against the URLhaus known-malware host list
 
