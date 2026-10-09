@@ -1,0 +1,105 @@
+{
+  "verdict": "clean",
+  "name": "harbour-dimeora",
+  "version": "0.3-3",
+  "arch": "armv7hl",
+  "package": "harbour-dimeora-0.3-3.armv7hl",
+  "buildtime": 1791533818,
+  "sha256": "1755703820315664562e59d224fe7e576d767d46b2288298283771d3fa01f40b",
+  "source": "https://openrepos.net/sites/default/files/packages/19185/harbour-dimeora-0.3-3.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12421",
+  "scanned": "2026-10-09T08:39:28Z",
+  "files": 92,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28147/Thu Oct  8 06:24:12 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-dimeora.desktop",
+          "name": "Dimeora",
+          "exec": "harbour-dimeora",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [],
+          "organization": "com.unapp",
+          "application": "harbour-Dimeora"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 1,
+      "hosts_in_scripts": 1,
+      "hosts": [
+        {
+          "host": "gitee.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-dimeora/harbour-dimeora.spec",
+            "/usr/share/harbour-dimeora/qml/pages/AboutPage.qml"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "gitee.com"
+      ],
+      "hosts_binaries": [],
+      "notable": [],
+      "ignored_hosts": 1
+    }
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37906250300",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-dimeora/1755703820315664562e59d224fe7e576d767d46b2288298283771d3fa01f40b.md"
+}
