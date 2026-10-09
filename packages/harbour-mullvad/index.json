@@ -51,5 +51,58 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37982682659",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-mullvad/98eb19a3127db44ddce7620e1d66a3b8ef32127bece012d444e3ccd752acfd63.md"
     }
+  },
+  {
+    "sha256": "3b5f08687d2ab29da567307946ef996f32cd0c014519ace66414531a6a974ef6",
+    "first_seen": "2026-10-09T19:50:12Z",
+    "package": "harbour-mullvad-0.1-2.armv7hl",
+    "version": "0.1-2",
+    "arch": "armv7hl",
+    "buildtime": 1791574956,
+    "last_scanned": "2026-10-09T19:50:12Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          },
+          {
+            "level": "medium",
+            "id": "privileged-files",
+            "text": "1 privileged file (setgid privileged)"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "disabled",
+      "permissions": [
+        "Internet"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 1,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 3,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37982869044",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-mullvad/3b5f08687d2ab29da567307946ef996f32cd0c014519ace66414531a6a974ef6.md"
+    }
   }
 ]
