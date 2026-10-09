@@ -1,0 +1,42 @@
+[
+  {
+    "sha256": "dd7da4904fd5692ae0030385f563986036e21859dea375ff584b6f5f26898d12",
+    "first_seen": "2026-10-09T20:59:13Z",
+    "package": "harbour-mullvad-debugsource-0.1-2.aarch64",
+    "version": "0.1-2",
+    "arch": "aarch64",
+    "buildtime": 1791574947,
+    "last_scanned": "2026-10-09T20:59:13Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 2,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37990528080",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-mullvad-debugsource/dd7da4904fd5692ae0030385f563986036e21859dea375ff584b6f5f26898d12.md"
+    }
+  }
+]
