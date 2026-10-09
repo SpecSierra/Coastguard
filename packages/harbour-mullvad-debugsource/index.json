@@ -38,5 +38,45 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37990528080",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-mullvad-debugsource/dd7da4904fd5692ae0030385f563986036e21859dea375ff584b6f5f26898d12.md"
     }
+  },
+  {
+    "sha256": "45a98504ee1e50dd0dcd8edd3a976bb4ca8acc80618e3700e86f728d77070293",
+    "first_seen": "2026-10-09T21:00:30Z",
+    "package": "harbour-mullvad-debugsource-0.1-2.armv7hl",
+    "version": "0.1-2",
+    "arch": "armv7hl",
+    "buildtime": 1791574956,
+    "last_scanned": "2026-10-09T21:00:30Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 2,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37990667490",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-mullvad-debugsource/45a98504ee1e50dd0dcd8edd3a976bb4ca8acc80618e3700e86f728d77070293.md"
+    }
   }
 ]
