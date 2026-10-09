@@ -1,11 +1,23 @@
 {
-  "cursor": 1791550141,
+  "cursor": 1791551041,
   "queue": [
     {
-      "url": "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.2.0-1.i486.rpm",
-      "page": "https://openrepos.net/node/12694",
-      "appid": 12694,
-      "title": "WhatsUp - a native WhatsApp client for Sailfish OS (with voice and video calls)"
+      "url": "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.1-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12550",
+      "appid": 12550,
+      "title": "FUTO Keyboard (with Swipe and Offline Voice Input)"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.1-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12550",
+      "appid": 12550,
+      "title": "FUTO Keyboard (with Swipe and Offline Voice Input)"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.1-1.i486.rpm",
+      "page": "https://openrepos.net/node/12550",
+      "appid": 12550,
+      "title": "FUTO Keyboard (with Swipe and Offline Voice Input)"
     }
   ],
   "seen": [
@@ -84,14 +96,17 @@
     "https://openrepos.net/sites/default/files/packages/19607/harbour-livewire-0.7.2-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.2.0-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.2.0-1.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.2.0-1.i486.rpm"
+    "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.2.0-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.1-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.1-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.1-1.i486.rpm"
   ],
-  "last_run": "2026-10-09T13:11:38Z",
+  "last_run": "2026-10-09T13:21:33Z",
   "dispatched": [
-    1791547145,
     1791550656,
     1791550819,
     1791550984,
-    1791551232
+    1791551232,
+    1791551847
   ]
 }
