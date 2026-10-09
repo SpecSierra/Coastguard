@@ -1,5 +1,5 @@
 {
-  "cursor": 1791560422,
+  "cursor": 1791570361,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -80,8 +80,15 @@
     "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.2.0-1.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.1-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.1-1.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.1-1.i486.rpm"
+    "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.1-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/14286/harbour-watchlist-0.13.13-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/14286/harbour-watchlist-0.13.13-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/14286/harbour-watchlist-0.13.13-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-09T18:17:12Z",
-  "dispatched": []
+  "last_run": "2026-10-09T18:41:28Z",
+  "dispatched": [
+    1791571048,
+    1791571129,
+    1791571210
+  ]
 }
