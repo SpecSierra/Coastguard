@@ -14,18 +14,22 @@
         "reasons": [
           {
             "level": "high",
-            "text": "Privileged file (setuid root)"
+            "id": "privileged-files",
+            "text": "3 privileged files (setuid root)"
           },
           {
             "level": "medium",
+            "id": "hook-polkit",
             "text": "System hook: polkit"
           },
           {
             "level": "medium",
+            "id": "code-reads-raw-input-devices",
             "text": "Code that reads raw input devices"
           },
           {
             "level": "info",
+            "id": "background-start",
             "text": "Starts in the background"
           }
         ]
@@ -75,18 +79,22 @@
         "reasons": [
           {
             "level": "high",
-            "text": "Privileged file (setuid root)"
+            "id": "privileged-files",
+            "text": "3 privileged files (setuid root)"
           },
           {
             "level": "medium",
+            "id": "hook-polkit",
             "text": "System hook: polkit"
           },
           {
             "level": "medium",
+            "id": "code-reads-raw-input-devices",
             "text": "Code that reads raw input devices"
           },
           {
             "level": "info",
+            "id": "background-start",
             "text": "Starts in the background"
           }
         ]
@@ -136,18 +144,22 @@
         "reasons": [
           {
             "level": "high",
-            "text": "Privileged file (setuid root)"
+            "id": "privileged-files",
+            "text": "3 privileged files (setuid root)"
           },
           {
             "level": "medium",
+            "id": "hook-polkit",
             "text": "System hook: polkit"
           },
           {
             "level": "medium",
+            "id": "code-reads-raw-input-devices",
             "text": "Code that reads raw input devices"
           },
           {
             "level": "info",
+            "id": "background-start",
             "text": "Starts in the background"
           }
         ]

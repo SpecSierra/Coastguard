@@ -14,18 +14,22 @@
         "reasons": [
           {
             "level": "medium",
+            "id": "code-gains-root-with-devel-su",
             "text": "Code that gains root with devel su"
           },
           {
             "level": "medium",
+            "id": "code-installs-packages-at-runtime",
             "text": "Code that installs packages at runtime"
           },
           {
             "level": "info",
+            "id": "own-sandbox-profile",
             "text": "Own sandbox profile"
           },
           {
             "level": "info",
+            "id": "personal-data",
             "text": "Personal data: Secrets"
           }
         ]
@@ -94,18 +98,22 @@
         "reasons": [
           {
             "level": "medium",
+            "id": "code-gains-root-with-devel-su",
             "text": "Code that gains root with devel su"
           },
           {
             "level": "medium",
+            "id": "code-installs-packages-at-runtime",
             "text": "Code that installs packages at runtime"
           },
           {
             "level": "info",
+            "id": "own-sandbox-profile",
             "text": "Own sandbox profile"
           },
           {
             "level": "info",
+            "id": "personal-data",
             "text": "Personal data: Secrets"
           }
         ]
@@ -174,18 +182,22 @@
         "reasons": [
           {
             "level": "medium",
+            "id": "code-gains-root-with-devel-su",
             "text": "Code that gains root with devel su"
           },
           {
             "level": "medium",
+            "id": "code-installs-packages-at-runtime",
             "text": "Code that installs packages at runtime"
           },
           {
             "level": "info",
+            "id": "own-sandbox-profile",
             "text": "Own sandbox profile"
           },
           {
             "level": "info",
+            "id": "personal-data",
             "text": "Personal data: Secrets"
           }
         ]
@@ -264,18 +276,22 @@
         "reasons": [
           {
             "level": "medium",
+            "id": "code-gains-root-with-devel-su",
             "text": "Code that gains root with devel su"
           },
           {
             "level": "medium",
+            "id": "code-installs-packages-at-runtime",
             "text": "Code that installs packages at runtime"
           },
           {
             "level": "info",
+            "id": "own-sandbox-profile",
             "text": "Own sandbox profile"
           },
           {
             "level": "info",
+            "id": "personal-data",
             "text": "Personal data: Secrets"
           }
         ]
@@ -354,18 +370,22 @@
         "reasons": [
           {
             "level": "medium",
+            "id": "code-gains-root-with-devel-su",
             "text": "Code that gains root with devel su"
           },
           {
             "level": "medium",
+            "id": "code-installs-packages-at-runtime",
             "text": "Code that installs packages at runtime"
           },
           {
             "level": "info",
+            "id": "own-sandbox-profile",
             "text": "Own sandbox profile"
           },
           {
             "level": "info",
+            "id": "personal-data",
             "text": "Personal data: Secrets"
           }
         ]
@@ -450,18 +470,22 @@
         "reasons": [
           {
             "level": "medium",
+            "id": "code-gains-root-with-devel-su",
             "text": "Code that gains root with devel su"
           },
           {
             "level": "medium",
+            "id": "code-installs-packages-at-runtime",
             "text": "Code that installs packages at runtime"
           },
           {
             "level": "info",
+            "id": "own-sandbox-profile",
             "text": "Own sandbox profile"
           },
           {
             "level": "info",
+            "id": "personal-data",
             "text": "Personal data: Secrets"
           }
         ]

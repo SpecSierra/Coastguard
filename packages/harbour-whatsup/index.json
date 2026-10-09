@@ -14,34 +14,42 @@
         "reasons": [
           {
             "level": "high",
+            "id": "root-service-no-sandbox",
             "text": "Root service and no sandbox"
           },
           {
             "level": "medium",
+            "id": "sandbox-off",
             "text": "Sandbox turned off"
           },
           {
             "level": "medium",
+            "id": "root-services",
             "text": "1 root service"
           },
           {
             "level": "medium",
-            "text": "Privileged file (setgid privileged)"
+            "id": "privileged-files",
+            "text": "3 privileged files (setgid privileged)"
           },
           {
             "level": "medium",
+            "id": "hook-d-bus-system-policy",
             "text": "System hook: D-Bus system policy"
           },
           {
             "level": "medium",
+            "id": "hook-privileged-launcher-grant",
             "text": "System hook: privileged launcher grant"
           },
           {
             "level": "medium",
+            "id": "code-takes-screenshots",
             "text": "Unsandboxed code that takes screenshots"
           },
           {
             "level": "info",
+            "id": "background-start",
             "text": "Starts in the background"
           }
         ]
@@ -101,34 +109,42 @@
         "reasons": [
           {
             "level": "high",
+            "id": "root-service-no-sandbox",
             "text": "Root service and no sandbox"
           },
           {
             "level": "medium",
+            "id": "sandbox-off",
             "text": "Sandbox turned off"
           },
           {
             "level": "medium",
+            "id": "root-services",
             "text": "1 root service"
           },
           {
             "level": "medium",
-            "text": "Privileged file (setgid privileged)"
+            "id": "privileged-files",
+            "text": "3 privileged files (setgid privileged)"
           },
           {
             "level": "medium",
+            "id": "hook-d-bus-system-policy",
             "text": "System hook: D-Bus system policy"
           },
           {
             "level": "medium",
+            "id": "hook-privileged-launcher-grant",
             "text": "System hook: privileged launcher grant"
           },
           {
             "level": "medium",
+            "id": "code-takes-screenshots",
             "text": "Unsandboxed code that takes screenshots"
           },
           {
             "level": "info",
+            "id": "background-start",
             "text": "Starts in the background"
           }
         ]
@@ -188,34 +204,42 @@
         "reasons": [
           {
             "level": "high",
+            "id": "root-service-no-sandbox",
             "text": "Root service and no sandbox"
           },
           {
             "level": "medium",
+            "id": "sandbox-off",
             "text": "Sandbox turned off"
           },
           {
             "level": "medium",
+            "id": "root-services",
             "text": "1 root service"
           },
           {
             "level": "medium",
-            "text": "Privileged file (setgid privileged)"
+            "id": "privileged-files",
+            "text": "3 privileged files (setgid privileged)"
           },
           {
             "level": "medium",
+            "id": "hook-d-bus-system-policy",
             "text": "System hook: D-Bus system policy"
           },
           {
             "level": "medium",
+            "id": "hook-privileged-launcher-grant",
             "text": "System hook: privileged launcher grant"
           },
           {
             "level": "medium",
+            "id": "code-takes-screenshots",
             "text": "Unsandboxed code that takes screenshots"
           },
           {
             "level": "info",
+            "id": "background-start",
             "text": "Starts in the background"
           }
         ]

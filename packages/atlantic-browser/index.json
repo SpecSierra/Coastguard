@@ -14,18 +14,22 @@
         "reasons": [
           {
             "level": "medium",
+            "id": "root-services",
             "text": "3 root services, started at install"
           },
           {
             "level": "info",
+            "id": "own-sandbox-profile",
             "text": "Own sandbox profile"
           },
           {
             "level": "info",
+            "id": "code-installs-persistence",
             "text": "Code that installs persistence"
           },
           {
             "level": "info",
+            "id": "code-reads-browser-profile-data",
             "text": "Code that reads browser profile data"
           }
         ]
@@ -83,18 +87,22 @@
         "reasons": [
           {
             "level": "medium",
+            "id": "sandbox-loosened",
             "text": "Own profile loosens the sandbox (7 rules)"
           },
           {
             "level": "medium",
+            "id": "root-services",
             "text": "3 root services, started at install"
           },
           {
             "level": "info",
+            "id": "code-installs-persistence",
             "text": "Code that installs persistence"
           },
           {
             "level": "info",
+            "id": "code-reads-browser-profile-data",
             "text": "Code that reads browser profile data"
           }
         ]

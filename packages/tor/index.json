@@ -14,10 +14,12 @@
         "reasons": [
           {
             "level": "medium",
+            "id": "hook-files-in-a-home-directory",
             "text": "System hook: files in a home directory"
           },
           {
             "level": "info",
+            "id": "background-start",
             "text": "Starts in the background"
           }
         ]
@@ -65,10 +67,12 @@
         "reasons": [
           {
             "level": "medium",
+            "id": "hook-files-in-a-home-directory",
             "text": "System hook: files in a home directory"
           },
           {
             "level": "info",
+            "id": "background-start",
             "text": "Starts in the background"
           }
         ]

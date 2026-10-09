@@ -14,22 +14,27 @@
         "reasons": [
           {
             "level": "high",
+            "id": "hook-sudoers",
             "text": "System hook: sudoers"
           },
           {
             "level": "high",
+            "id": "install-script-grants-elevated-privileges",
             "text": "Install script grants elevated privileges"
           },
           {
             "level": "high",
+            "id": "code-edits-sudoers",
             "text": "Code that edits sudoers"
           },
           {
             "level": "medium",
+            "id": "sandbox-off",
             "text": "Sandbox turned off"
           },
           {
             "level": "info",
+            "id": "background-start",
             "text": "Starts in the background"
           }
         ]
@@ -79,22 +84,27 @@
         "reasons": [
           {
             "level": "high",
+            "id": "hook-sudoers",
             "text": "System hook: sudoers"
           },
           {
             "level": "high",
+            "id": "install-script-grants-elevated-privileges",
             "text": "Install script grants elevated privileges"
           },
           {
             "level": "high",
+            "id": "code-edits-sudoers",
             "text": "Code that edits sudoers"
           },
           {
             "level": "medium",
+            "id": "sandbox-off",
             "text": "Sandbox turned off"
           },
           {
             "level": "info",
+            "id": "background-start",
             "text": "Starts in the background"
           }
         ]

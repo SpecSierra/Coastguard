@@ -14,14 +14,17 @@
         "reasons": [
           {
             "level": "medium",
+            "id": "sandbox-off",
             "text": "Sandbox turned off"
           },
           {
             "level": "medium",
+            "id": "hook-files-in-a-home-directory",
             "text": "System hook: files in a home directory"
           },
           {
             "level": "medium",
+            "id": "code-reads-raw-input-devices",
             "text": "Code that reads raw input devices"
           }
         ]

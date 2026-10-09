@@ -14,10 +14,12 @@
         "reasons": [
           {
             "level": "info",
+            "id": "personal-data",
             "text": "Personal data: Secrets"
           },
           {
             "level": "info",
+            "id": "code-touches-ssh-keys",
             "text": "Code that touches ssh keys"
           }
         ]
@@ -69,10 +71,12 @@
         "reasons": [
           {
             "level": "info",
+            "id": "personal-data",
             "text": "Personal data: Secrets"
           },
           {
             "level": "info",
+            "id": "code-touches-ssh-keys",
             "text": "Code that touches ssh keys"
           }
         ]

@@ -14,14 +14,17 @@
         "reasons": [
           {
             "level": "medium",
+            "id": "sandbox-off",
             "text": "Sandbox turned off"
           },
           {
             "level": "medium",
+            "id": "hook-privileged-launcher-grant",
             "text": "System hook: privileged launcher grant"
           },
           {
             "level": "medium",
+            "id": "code-sends-sms-or-places-calls",
             "text": "Unsandboxed code that sends sms or places calls"
           }
         ]

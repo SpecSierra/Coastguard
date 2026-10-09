@@ -14,6 +14,7 @@
         "reasons": [
           {
             "level": "info",
+            "id": "personal-data",
             "text": "Personal data: Secrets"
           }
         ]
@@ -65,6 +66,7 @@
         "reasons": [
           {
             "level": "info",
+            "id": "personal-data",
             "text": "Personal data: Secrets"
           }
         ]
@@ -116,6 +118,7 @@
         "reasons": [
           {
             "level": "info",
+            "id": "personal-data",
             "text": "Personal data: Secrets"
           }
         ]
@@ -167,6 +170,7 @@
         "reasons": [
           {
             "level": "info",
+            "id": "personal-data",
             "text": "Personal data: Secrets"
           }
         ]
@@ -228,6 +232,7 @@
         "reasons": [
           {
             "level": "info",
+            "id": "personal-data",
             "text": "Personal data: Secrets"
           }
         ]
@@ -289,6 +294,7 @@
         "reasons": [
           {
             "level": "info",
+            "id": "personal-data",
             "text": "Personal data: Secrets"
           }
         ]

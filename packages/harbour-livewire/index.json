@@ -14,6 +14,7 @@
         "reasons": [
           {
             "level": "info",
+            "id": "own-sandbox-profile",
             "text": "Own sandbox profile"
           }
         ]
@@ -73,6 +74,7 @@
         "reasons": [
           {
             "level": "info",
+            "id": "own-sandbox-profile",
             "text": "Own sandbox profile"
           }
         ]

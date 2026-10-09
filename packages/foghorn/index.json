@@ -14,10 +14,12 @@
         "reasons": [
           {
             "level": "info",
+            "id": "own-sandbox-profile",
             "text": "Own sandbox profile"
           },
           {
             "level": "info",
+            "id": "background-start",
             "text": "Starts in the background"
           }
         ]
@@ -66,10 +68,12 @@
         "reasons": [
           {
             "level": "info",
+            "id": "own-sandbox-profile",
             "text": "Own sandbox profile"
           },
           {
             "level": "info",
+            "id": "background-start",
             "text": "Starts in the background"
           }
         ]

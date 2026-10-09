@@ -14,6 +14,7 @@
         "reasons": [
           {
             "level": "info",
+            "id": "hook-system-ui-patches",
             "text": "System hook: system UI patches"
           }
         ]
@@ -61,6 +62,7 @@
         "reasons": [
           {
             "level": "info",
+            "id": "hook-system-ui-patches",
             "text": "System hook: system UI patches"
           }
         ]

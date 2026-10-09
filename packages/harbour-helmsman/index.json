@@ -14,6 +14,7 @@
         "reasons": [
           {
             "level": "info",
+            "id": "own-sandbox-profile",
             "text": "Own sandbox profile"
           }
         ]
@@ -66,6 +67,7 @@
         "reasons": [
           {
             "level": "info",
+            "id": "own-sandbox-profile",
             "text": "Own sandbox profile"
           }
         ]
@@ -118,6 +120,7 @@
         "reasons": [
           {
             "level": "info",
+            "id": "own-sandbox-profile",
             "text": "Own sandbox profile"
           }
         ]
@@ -180,6 +183,7 @@
         "reasons": [
           {
             "level": "medium",
+            "id": "sandbox-loosened",
             "text": "Own profile loosens the sandbox (7 rules)"
           }
         ]
@@ -242,6 +246,7 @@
         "reasons": [
           {
             "level": "medium",
+            "id": "sandbox-loosened",
             "text": "Own profile loosens the sandbox (7 rules)"
           }
         ]
@@ -304,6 +309,7 @@
         "reasons": [
           {
             "level": "medium",
+            "id": "sandbox-loosened",
             "text": "Own profile loosens the sandbox (7 rules)"
           }
         ]
@@ -366,6 +372,7 @@
         "reasons": [
           {
             "level": "medium",
+            "id": "sandbox-loosened",
             "text": "Own profile loosens the sandbox (7 rules)"
           }
         ]
@@ -428,6 +435,7 @@
         "reasons": [
           {
             "level": "medium",
+            "id": "sandbox-loosened",
             "text": "Own profile loosens the sandbox (7 rules)"
           }
         ]
@@ -490,6 +498,7 @@
         "reasons": [
           {
             "level": "medium",
+            "id": "sandbox-loosened",
             "text": "Own profile loosens the sandbox (7 rules)"
           }
         ]

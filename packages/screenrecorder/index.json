@@ -14,18 +14,22 @@
         "reasons": [
           {
             "level": "medium",
+            "id": "sandbox-off",
             "text": "Sandbox turned off"
           },
           {
             "level": "medium",
-            "text": "Privileged file (setgid privileged)"
+            "id": "privileged-files",
+            "text": "1 privileged file (setgid privileged)"
           },
           {
             "level": "medium",
+            "id": "hook-d-bus-system-policy",
             "text": "System hook: D-Bus system policy"
           },
           {
             "level": "info",
+            "id": "background-start",
             "text": "Starts in the background"
           }
         ]
@@ -73,18 +77,22 @@
         "reasons": [
           {
             "level": "medium",
+            "id": "sandbox-off",
             "text": "Sandbox turned off"
           },
           {
             "level": "medium",
-            "text": "Privileged file (setgid privileged)"
+            "id": "privileged-files",
+            "text": "1 privileged file (setgid privileged)"
           },
           {
             "level": "medium",
+            "id": "hook-d-bus-system-policy",
             "text": "System hook: D-Bus system policy"
           },
           {
             "level": "info",
+            "id": "background-start",
             "text": "Starts in the background"
           }
         ]
