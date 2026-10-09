@@ -78,5 +78,45 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37906250300",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-dimeora/1755703820315664562e59d224fe7e576d767d46b2288298283771d3fa01f40b.md"
     }
+  },
+  {
+    "sha256": "5b701fa796a417b038ff0e48523ef821497e07f0178b13d8439db36afaf9c697",
+    "first_seen": "2026-10-09T09:37:46Z",
+    "package": "harbour-dimeora-0.3-3.i486",
+    "version": "0.3-3",
+    "arch": "i486",
+    "buildtime": 1791533845,
+    "last_scanned": "2026-10-09T09:37:46Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37912442093",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-dimeora/5b701fa796a417b038ff0e48523ef821497e07f0178b13d8439db36afaf9c697.md"
+    }
   }
 ]
