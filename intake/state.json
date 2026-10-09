@@ -2,18 +2,6 @@
   "cursor": 1791505921,
   "queue": [
     {
-      "url": "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.5.0-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12636",
-      "appid": 12636,
-      "title": "Helmsman"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.5.0-1.i486.rpm",
-      "page": "https://openrepos.net/node/12636",
-      "appid": 12636,
-      "title": "Helmsman"
-    },
-    {
       "url": "https://openrepos.net/sites/default/files/packages/12554/personalringtones-1.3.0-1.aarch64.rpm",
       "page": "https://openrepos.net/node/12698",
       "appid": 12698,
@@ -95,12 +83,12 @@
     "https://openrepos.net/sites/default/files/packages/12554/personal-ringtones-qml-1.2.0-1.noarch.rpm",
     "https://openrepos.net/sites/default/files/packages/19652/harbour-musicfox-0.5.0-7.aarch64.rpm"
   ],
-  "last_run": "2026-10-09T04:39:52Z",
+  "last_run": "2026-10-09T05:00:14Z",
   "dispatched": [
-    1791517034,
-    1791517115,
     1791518235,
     1791520634,
-    1791520714
+    1791520714,
+    1791521834,
+    1791521935
   ]
 }
