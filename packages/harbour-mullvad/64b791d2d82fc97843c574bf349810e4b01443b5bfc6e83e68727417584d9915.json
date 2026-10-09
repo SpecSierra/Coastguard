@@ -1,0 +1,159 @@
+{
+  "verdict": "clean",
+  "name": "harbour-mullvad",
+  "version": "0.1-2",
+  "arch": "i486",
+  "package": "harbour-mullvad-0.1-2.i486",
+  "buildtime": 1791574982,
+  "sha256": "64b791d2d82fc97843c574bf349810e4b01443b5bfc6e83e68727417584d9915",
+  "source": "https://openrepos.net/sites/default/files/packages/18578/harbour-mullvad-0.1-2.i486.rpm",
+  "source_page": "https://openrepos.net/node/12649",
+  "scanned": "2026-10-09T19:51:58Z",
+  "files": 34,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28147/Thu Oct  8 06:24:12 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-mullvad.desktop",
+          "name": "Mullvad",
+          "exec": "harbour-mullvad",
+          "hidden": false,
+          "sandbox": "disabled",
+          "permissions": [
+            "Internet"
+          ],
+          "organization": "net.mullvad",
+          "application": "mullvad"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [
+      {
+        "path": "/usr/libexec/harbour-mullvad-vpn",
+        "mode": "-rwxr-sr-x",
+        "owner": "root",
+        "group": "privileged",
+        "why": [
+          "setgid privileged"
+        ]
+      }
+    ],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 3,
+      "hosts_in_scripts": 3,
+      "hosts": [
+        {
+          "host": "api.mullvad.net",
+          "urls": 5,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mullvad/qml/harbour-mullvad.qml"
+          ]
+        },
+        {
+          "host": "mullvad.net",
+          "urls": 3,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mullvad/qml/pages/TopupPage.qml"
+          ]
+        },
+        {
+          "host": "am.i.mullvad.net",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mullvad/qml/harbour-mullvad.qml"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "am.i.mullvad.net",
+        "api.mullvad.net",
+        "mullvad.net"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 606610,
+        "malicious": 397
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37983056977",
+  "diff": null,
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "sandbox-off",
+        "text": "Sandbox turned off"
+      },
+      {
+        "level": "medium",
+        "id": "privileged-files",
+        "text": "1 privileged file (setgid privileged)"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-mullvad/64b791d2d82fc97843c574bf349810e4b01443b5bfc6e83e68727417584d9915.md"
+}
