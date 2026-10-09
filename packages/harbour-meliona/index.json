@@ -1,0 +1,46 @@
+[
+  {
+    "sha256": "54628d57ed081f4743f11cee535459c4067b6c2fbb0d679b037b560b43411278",
+    "first_seen": "2026-10-09T08:18:13Z",
+    "package": "harbour-meliona-0.5-2.aarch64",
+    "version": "0.5-2",
+    "arch": "aarch64",
+    "buildtime": 1791532641,
+    "last_scanned": "2026-10-09T08:18:13Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Internet",
+        "UserDirs"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 2,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37904045233",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-meliona/54628d57ed081f4743f11cee535459c4067b6c2fbb0d679b037b560b43411278.md"
+    }
+  }
+]
