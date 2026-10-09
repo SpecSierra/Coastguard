@@ -1,6 +1,13 @@
 {
-  "cursor": 1791546001,
-  "queue": [],
+  "cursor": 1791550141,
+  "queue": [
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.2.0-1.i486.rpm",
+      "page": "https://openrepos.net/node/12694",
+      "appid": 12694,
+      "title": "WhatsUp - a native WhatsApp client for Sailfish OS (with voice and video calls)"
+    }
+  ],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -72,11 +79,19 @@
     "https://openrepos.net/sites/default/files/packages/19185/harbour-dimeora-0.3-3.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19185/harbour-dimeora-0.3-3.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.46.0-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.46.0-1.armv7hl.rpm"
+    "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.46.0-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/harbour-livewire-0.7.2-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/harbour-livewire-0.7.2-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.2.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.2.0-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.2.0-1.i486.rpm"
   ],
-  "last_run": "2026-10-09T12:37:12Z",
+  "last_run": "2026-10-09T13:11:38Z",
   "dispatched": [
-    1791547044,
-    1791547145
+    1791547145,
+    1791550656,
+    1791550819,
+    1791550984,
+    1791551232
   ]
 }
