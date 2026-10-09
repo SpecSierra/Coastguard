@@ -412,5 +412,67 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37884831084",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-helmsman/707f6b6bb20e80aec96107e977183c00e1d581c6c920968f70189d71d18700be.md"
     }
+  },
+  {
+    "sha256": "e63bf7c19676c0ed6a99104d7e79eda8b47ea6fe19f97751a48e2b1eabdab5cb",
+    "first_seen": "2026-10-09T04:57:43Z",
+    "package": "harbour-helmsman-0.5.0-1.armv7hl",
+    "version": "0.5.0-1",
+    "arch": "armv7hl",
+    "buildtime": 1791495720,
+    "last_scanned": "2026-10-09T04:57:43Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "text": "Own profile loosens the sandbox (7 rules)"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Documents",
+        "Internet",
+        "Location",
+        "MediaIndexing",
+        "Notifications",
+        "Pictures"
+      ],
+      "own_sandbox_profile": true,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 4,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-helmsman-0.4.9-1.armv7hl",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 16,
+          "unchanged": 107
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37886268341",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-helmsman/e63bf7c19676c0ed6a99104d7e79eda8b47ea6fe19f97751a48e2b1eabdab5cb.md"
+    }
   }
 ]
