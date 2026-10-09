@@ -1,0 +1,1060 @@
+{
+  "verdict": "clean",
+  "name": "harbour-livewire",
+  "version": "0.7.2-1",
+  "arch": "aarch64",
+  "package": "harbour-livewire-0.7.2-1.aarch64",
+  "buildtime": 1791544194,
+  "sha256": "f8ffd038b9605044a0629ca32d4565d41f87999b79e82b2b7c6590d00f744b1b",
+  "source": "https://openrepos.net/sites/default/files/packages/19607/harbour-livewire-0.7.2-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12538",
+  "scanned": "2026-10-09T13:01:26Z",
+  "files": 182,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28147/Thu Oct  8 06:24:12 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-livewire.desktop",
+          "name": "Livewire",
+          "exec": "harbour-livewire %u",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Audio",
+            "Microphone",
+            "Documents",
+            "Downloads",
+            "Location",
+            "MediaIndexing",
+            "Music",
+            "Pictures",
+            "RemovableMedia",
+            "UnifiedPush",
+            "UserDirs",
+            "Videos"
+          ],
+          "organization": "harbour-livewire",
+          "application": "harbour-livewire"
+        }
+      ],
+      "shipped_profiles": [
+        "/etc/sailjail/permissions/harbour-livewire.profile"
+      ],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [
+        {
+          "path": "/usr/share/dbus-1/services/org.unifiedpush.Connector.harbour-livewire.service",
+          "bus": "session",
+          "name": "org.unifiedpush.Connector.harbour-livewire",
+          "exec": "/usr/bin/env LIVEWIRE_PUSH_WAKE=1 /usr/bin/sailjail -p harbour-livewire.desktop -- /usr/bin/harbour-livewire",
+          "user": null,
+          "systemd_service": null
+        }
+      ],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 1,
+        "notable": [],
+        "body": "update-desktop-database /usr/share/applications &>/dev/null || :\n"
+      },
+      {
+        "type": "postuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 1,
+        "notable": [],
+        "body": "update-desktop-database /usr/share/applications &>/dev/null || :\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 72,
+      "hosts_in_scripts": 4,
+      "hosts": [
+        {
+          "host": "git.agnos.is",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-livewire",
+            "/usr/libexec/harbour-livewire/livewire-notification-client",
+            "/usr/share/harbour-livewire/qml/components/PrivacyPolicyText.qml"
+          ]
+        },
+        {
+          "host": "tiles.openfreemap.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-livewire",
+            "/usr/share/harbour-livewire/qml/components/MapLibreMap.qml"
+          ]
+        },
+        {
+          "host": "agnos.is",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-livewire/qml/components/PrivacyPolicyText.qml"
+          ]
+        },
+        {
+          "host": "www.openstreetmap.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-livewire/qml/components/MapLibreMap.qml"
+          ]
+        },
+        {
+          "host": "jabber.org",
+          "urls": 227,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire",
+            "/usr/libexec/harbour-livewire/livewire-notification-client"
+          ]
+        },
+        {
+          "host": "xmpp.org",
+          "urls": 204,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "www.xmpp.org",
+          "urls": 40,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "www.victim.com",
+          "urls": 14,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "stpeter.im",
+          "urls": 11,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "dbus.freedesktop.org",
+          "urls": 6,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-livewire",
+            "/usr/libexec/harbour-livewire/livewire-notification-client"
+          ]
+        },
+        {
+          "host": "etherx.jabber.org",
+          "urls": 6,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire",
+            "/usr/libexec/harbour-livewire/livewire-notification-client"
+          ]
+        },
+        {
+          "host": "download.montague.lit",
+          "urls": 5,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "shakespeare.lit",
+          "urls": 5,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "code.google.com",
+          "urls": 4,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "festhall.outer-planes.net",
+          "urls": 4,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "github.com",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-livewire",
+            "/usr/share/harbour-livewire/maplibre/lib/libLivewireQMapLibre.so.3.0.0"
+          ]
+        },
+        {
+          "host": "ogp.me",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "www.jabber.org",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "www.watersprings.org",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "csrc.nist.gov",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "docs.rs",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-livewire",
+            "/usr/libexec/harbour-livewire/livewire-notification-client"
+          ]
+        },
+        {
+          "host": "mail.jabber.org",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "pass.jabber.org",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "psi-im.org",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "signal.org",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "the-tech.mit.edu",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "www.chatopus.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "www.openmobilealliance.org",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "www.shakespeare.lit",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "www.signal.org",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "api.mapbox.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-livewire/maplibre/lib/libLivewireQMapLibre.so.3.0.0"
+          ]
+        },
+        {
+          "host": "api.maptiler.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-livewire/maplibre/lib/libLivewireQMapLibre.so.3.0.0"
+          ]
+        },
+        {
+          "host": "blog.samwhited.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "demotiles.maplibre.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-livewire/maplibre/lib/libLivewireQMapLibre.so.3.0.0"
+          ]
+        },
+        {
+          "host": "denmark.lit",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "docs.ejabberd.im",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "download.libsodium.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "download.montague.tld",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "dx.doi.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "edhelas.movim.euaccepted",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "el-tramo.be",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "en.wikipedia.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "exodus.jabberstudio.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "hashcash.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "infosec.mozilla.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "jabberd.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "jabxslt.jabberstudio.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "moparisthebest.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "myclient.example",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "sam.zoy.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "status.shakespeare.lit",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "upload.montague.tld",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "www.abuser.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "www.aeroportoverona.it",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "www.captcha.net",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "www.comune.verona.it",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "www.cs.utexas.edu",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "www.cypherpunks.ca",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "www.esbnyc.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "www.freedesktop.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire",
+            "/usr/libexec/harbour-livewire/livewire-notification-client"
+          ]
+        },
+        {
+          "host": "www.goffi.orgaccepted",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "www.hellasverona.it",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "www.hsluv.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "www.itu.int",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "www.oasis-open.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "www.pavlix.net",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "www.saint-andre.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "www.univr.it",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "www.veronafiere.it",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "xml.coverpages.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "xmlns.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-livewire"
+          ]
+        },
+        {
+          "host": "xmlns.xmpp.rs",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-livewire",
+            "/usr/libexec/harbour-livewire/livewire-notification-client"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "agnos.is",
+        "git.agnos.is",
+        "tiles.openfreemap.org",
+        "www.openstreetmap.org"
+      ],
+      "hosts_binaries": [
+        "api.mapbox.com",
+        "api.maptiler.com",
+        "blog.samwhited.com",
+        "code.google.com",
+        "csrc.nist.gov",
+        "dbus.freedesktop.org",
+        "demotiles.maplibre.org",
+        "denmark.lit",
+        "docs.ejabberd.im",
+        "docs.rs",
+        "download.libsodium.org",
+        "download.montague.lit",
+        "download.montague.tld",
+        "dx.doi.org",
+        "edhelas.movim.euaccepted",
+        "el-tramo.be",
+        "en.wikipedia.org",
+        "etherx.jabber.org",
+        "exodus.jabberstudio.org",
+        "festhall.outer-planes.net",
+        "github.com",
+        "hashcash.org",
+        "infosec.mozilla.org",
+        "jabber.org",
+        "jabberd.org",
+        "jabxslt.jabberstudio.org",
+        "mail.jabber.org",
+        "moparisthebest.com",
+        "myclient.example",
+        "ogp.me",
+        "pass.jabber.org",
+        "psi-im.org",
+        "sam.zoy.org",
+        "shakespeare.lit",
+        "signal.org",
+        "status.shakespeare.lit",
+        "stpeter.im",
+        "the-tech.mit.edu",
+        "upload.montague.tld",
+        "www.abuser.com",
+        "www.aeroportoverona.it",
+        "www.captcha.net",
+        "www.chatopus.com",
+        "www.comune.verona.it",
+        "www.cs.utexas.edu",
+        "www.cypherpunks.ca",
+        "www.esbnyc.com",
+        "www.freedesktop.org",
+        "www.goffi.orgaccepted",
+        "www.hellasverona.it",
+        "www.hsluv.org",
+        "www.itu.int",
+        "www.jabber.org",
+        "www.oasis-open.org",
+        "www.openmobilealliance.org",
+        "www.pavlix.net",
+        "www.saint-andre.com",
+        "www.shakespeare.lit",
+        "www.signal.org",
+        "www.univr.it",
+        "www.veronafiere.it",
+        "www.victim.com",
+        "www.watersprings.org",
+        "www.xmpp.org",
+        "xml.coverpages.org",
+        "xmlns.com",
+        "xmlns.xmpp.rs",
+        "xmpp.org"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 606610,
+        "malicious": 397
+      },
+      "notable": [
+        {
+          "url": "http://pass.jabber.org:8519/test.txt'/",
+          "why": "non-standard port 8519",
+          "file": "/usr/bin/harbour-livewire",
+          "in": "binary"
+        }
+      ],
+      "ignored_hosts": 15
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 5,
+      "unknown": 5,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 5,
+      "unknown": 5,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37933798603",
+  "diff": {
+    "baseline": {
+      "sha256": "b6ffcc64d3453d24af4397d3d447adda51c0f67f257dfe3bf33b326c63cd903b",
+      "package": "harbour-livewire-0.7.1-1.aarch64",
+      "last_scanned": "2026-10-08T21:58:40Z"
+    },
+    "changes": [
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/harbour-livewire",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/libexec/harbour-livewire/livewire-notification-client",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 0,
+        "removed": 0,
+        "changed": 2,
+        "unchanged": 147
+      }
+    }
+  },
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "id": "own-sandbox-profile",
+        "text": "Own sandbox profile"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-livewire/f8ffd038b9605044a0629ca32d4565d41f87999b79e82b2b7c6590d00f744b1b.md"
+}
