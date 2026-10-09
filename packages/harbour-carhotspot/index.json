@@ -138,5 +138,101 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37880109763",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-carhotspot/15f39d4049e621b79138c1366ebede0d3658de04557eced0991d42d855ea41fa.md"
     }
+  },
+  {
+    "sha256": "43a0b51dcbe5ea77c30ed90b69055576b25b9adc941ed012d6ecd6eccc8ee5d4",
+    "first_seen": "2026-10-09T21:38:02Z",
+    "package": "harbour-carhotspot-0.3.0-1.aarch64",
+    "version": "0.3.0-1",
+    "arch": "aarch64",
+    "buildtime": 1791581335,
+    "last_scanned": "2026-10-09T21:38:02Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "high",
+        "reasons": [
+          {
+            "level": "high",
+            "id": "privileged-files",
+            "text": "1 privileged file (setuid root)"
+          },
+          {
+            "level": "high",
+            "id": "hook-sudoers",
+            "text": "System hook: sudoers"
+          },
+          {
+            "level": "high",
+            "id": "install-script-grants-elevated-privileges",
+            "text": "Install script grants elevated privileges"
+          },
+          {
+            "level": "high",
+            "id": "code-edits-sudoers",
+            "text": "Code that edits sudoers"
+          },
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          },
+          {
+            "level": "medium",
+            "id": "new-privileged-file",
+            "text": "New privileged file"
+          },
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Edits Sudoers"
+      ],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 1,
+      "system_hooks": [
+        "sudoers"
+      ],
+      "scriptlets": 2,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-carhotspot-0.2.5-1.aarch64",
+        "attention_count": 1,
+        "attention": [
+          {
+            "area": "privileged file",
+            "change": "added",
+            "item": "/usr/bin/harbour-carhotspot-helper"
+          }
+        ],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 5,
+          "unchanged": 77
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37994554217",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-carhotspot/43a0b51dcbe5ea77c30ed90b69055576b25b9adc941ed012d6ecd6eccc8ee5d4.md"
+    }
   }
 ]
