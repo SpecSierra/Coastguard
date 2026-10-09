@@ -164,5 +164,67 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37796371214",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-helmsman/8438b52a9fd06db996a7d4a85aa05fcf3b8ae9b5890dcde514c7d71446164c42.md"
     }
+  },
+  {
+    "sha256": "827d0e7dab42188bee60729d7bbc95b510b5687c177a9e0340c5911b91d24e07",
+    "first_seen": "2026-10-09T03:39:10Z",
+    "package": "harbour-helmsman-0.4.9-1.aarch64",
+    "version": "0.4.9-1",
+    "arch": "aarch64",
+    "buildtime": 1791494732,
+    "last_scanned": "2026-10-09T03:39:10Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "text": "Own profile loosens the sandbox (7 rules)"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Documents",
+        "Internet",
+        "Location",
+        "MediaIndexing",
+        "Notifications",
+        "Pictures"
+      ],
+      "own_sandbox_profile": true,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 4,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-helmsman-0.4.8-1.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 3,
+          "unchanged": 120
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37880208587",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-helmsman/827d0e7dab42188bee60729d7bbc95b510b5687c177a9e0340c5911b91d24e07.md"
+    }
   }
 ]
