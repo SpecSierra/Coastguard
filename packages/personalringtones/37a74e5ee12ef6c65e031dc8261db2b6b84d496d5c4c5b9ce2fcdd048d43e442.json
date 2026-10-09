@@ -1,0 +1,172 @@
+{
+  "verdict": "clean",
+  "name": "personalringtones",
+  "version": "1.3.0-1",
+  "arch": "armv7hl",
+  "package": "personalringtones-1.3.0-1.armv7hl",
+  "buildtime": 1791547421,
+  "sha256": "37a74e5ee12ef6c65e031dc8261db2b6b84d496d5c4c5b9ce2fcdd048d43e442",
+  "source": "https://openrepos.net/sites/default/files/packages/26/personalringtones-1.3.0-1.sfos4_.6.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/9119",
+  "scanned": "2026-10-09T22:21:07Z",
+  "files": 45,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28147/Thu Oct  8 06:24:12 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [
+    {
+      "rule": "Coastguard_Indicator_Sends_SMS_Or_Places_Calls",
+      "files": [
+        "payload/usr/lib/voicecall/plugins/libvoicecall-angf-plugin.so"
+      ]
+    }
+  ],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/personalringtones.desktop",
+          "name": "Personal Ringtones",
+          "exec": "personalringtones",
+          "hidden": false,
+          "sandbox": "disabled",
+          "permissions": [],
+          "organization": null,
+          "application": null
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {
+      "privileged launcher grant": [
+        "/usr/share/mapplauncherd/privileges.d/personalringtones.privileges"
+      ]
+    },
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 2,
+        "notable": [
+          "systemctl-user restart ngfd.service || :",
+          "systemctl-user restart voicecall-manager.service || :"
+        ],
+        "body": "systemctl-user restart ngfd.service || :\nsystemctl-user restart voicecall-manager.service || :\n"
+      },
+      {
+        "type": "postuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 2,
+        "notable": [
+          "systemctl-user restart ngfd.service || :",
+          "systemctl-user restart voicecall-manager.service || :"
+        ],
+        "body": "systemctl-user restart ngfd.service || :\nsystemctl-user restart voicecall-manager.service || :\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 2,
+      "hosts_in_scripts": 2,
+      "hosts": [
+        {
+          "host": "sodipodi.sourceforge.net",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/personalringtones/qml/pages/personal-magic.svg"
+          ]
+        },
+        {
+          "host": "www.inkscape.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/personalringtones/qml/pages/personal-magic.svg"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "sodipodi.sourceforge.net",
+        "www.inkscape.org"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 606610,
+        "malicious": 397
+      },
+      "notable": [],
+      "ignored_hosts": 3
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37998678830",
+  "diff": null,
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "sandbox-off",
+        "text": "Sandbox turned off"
+      },
+      {
+        "level": "medium",
+        "id": "hook-privileged-launcher-grant",
+        "text": "System hook: privileged launcher grant"
+      },
+      {
+        "level": "medium",
+        "id": "code-sends-sms-or-places-calls",
+        "text": "Unsandboxed code that sends sms or places calls"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/personalringtones/37a74e5ee12ef6c65e031dc8261db2b6b84d496d5c4c5b9ce2fcdd048d43e442.md"
+}
