@@ -63,5 +63,70 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37878699404",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-carhotspot/2ad52c2ea7ec51c89eea9ac7d42b790b44930dcde856cedcf7363b0d0e5dd337.md"
     }
+  },
+  {
+    "sha256": "15f39d4049e621b79138c1366ebede0d3658de04557eced0991d42d855ea41fa",
+    "first_seen": "2026-10-09T03:37:46Z",
+    "package": "harbour-carhotspot-0.2.5-1.armv7hl",
+    "version": "0.2.5-1",
+    "arch": "armv7hl",
+    "buildtime": 1791485995,
+    "last_scanned": "2026-10-09T03:37:46Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "high",
+        "reasons": [
+          {
+            "level": "high",
+            "text": "System hook: sudoers"
+          },
+          {
+            "level": "high",
+            "text": "Install script grants elevated privileges"
+          },
+          {
+            "level": "high",
+            "text": "Code that edits sudoers"
+          },
+          {
+            "level": "medium",
+            "text": "Sandbox turned off"
+          },
+          {
+            "level": "info",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Edits Sudoers"
+      ],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [
+        "sudoers"
+      ],
+      "scriptlets": 2,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37880109763",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-carhotspot/15f39d4049e621b79138c1366ebede0d3658de04557eced0991d42d855ea41fa.md"
+    }
   }
 ]
