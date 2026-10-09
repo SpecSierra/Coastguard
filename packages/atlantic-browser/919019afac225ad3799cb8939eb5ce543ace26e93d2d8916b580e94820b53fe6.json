@@ -1,0 +1,4960 @@
+{
+  "verdict": "clean",
+  "name": "atlantic-browser",
+  "version": "1.6.0-748.1.aio",
+  "arch": "aarch64",
+  "package": "atlantic-browser-1.6.0-748.1.aio.aarch64",
+  "buildtime": 1791477089,
+  "sha256": "919019afac225ad3799cb8939eb5ce543ace26e93d2d8916b580e94820b53fe6",
+  "source": "https://openrepos.net/sites/default/files/packages/16357/atlantic-browser-1.6.0.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12423",
+  "scanned": "2026-10-09T01:19:45Z",
+  "files": 407,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28147/Thu Oct  8 06:24:12 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [
+    {
+      "rule": "Coastguard_Indicator_Installs_Persistence",
+      "files": [
+        "package.rpm",
+        "scriptlets.txt"
+      ]
+    },
+    {
+      "rule": "Coastguard_Indicator_Reads_Browser_Profile_Data",
+      "files": [
+        "payload/usr/lib64/libsailfishbrowser.so.1.0.0"
+      ]
+    }
+  ],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 239,
+    "files": 239,
+    "bytes": 7442394,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/atlantic-browser.desktop",
+          "name": "Atlantic",
+          "exec": "/usr/bin/sailjail -p atlantic-browser.desktop /usr/bin/atlantic-browser.bin %U",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Audio",
+            "Camera",
+            "Microphone",
+            "WebView",
+            "UserDirs",
+            "MediaIndexing",
+            "RemovableMedia"
+          ],
+          "organization": "org.atlantic",
+          "application": "atlanticbrowser"
+        }
+      ],
+      "shipped_profiles": [
+        "/etc/sailjail/permissions/atlantic-browser.profile"
+      ],
+      "profile_loosening": [
+        {
+          "file": "/etc/sailjail/permissions/atlantic-browser.profile",
+          "line": "noblacklist /opt/wpe-sfos"
+        },
+        {
+          "file": "/etc/sailjail/permissions/atlantic-browser.profile",
+          "line": "noblacklist /usr/libexec/wpe-webkit-2.0"
+        },
+        {
+          "file": "/etc/sailjail/permissions/atlantic-browser.profile",
+          "line": "noblacklist /usr/libexec/droid-hybris"
+        },
+        {
+          "file": "/etc/sailjail/permissions/atlantic-browser.profile",
+          "line": "noblacklist /usr/lib64/wpe-compat"
+        },
+        {
+          "file": "/etc/sailjail/permissions/atlantic-browser.profile",
+          "line": "noblacklist /dev/kgsl-3d0"
+        },
+        {
+          "file": "/etc/sailjail/permissions/atlantic-browser.profile",
+          "line": "noblacklist /dev/ion"
+        },
+        {
+          "file": "/etc/sailjail/permissions/atlantic-browser.profile",
+          "line": "noblacklist /dev/dri"
+        }
+      ]
+    },
+    "services": {
+      "systemd": [
+        {
+          "path": "/usr/lib/systemd/system/atlantic-browser-memory.service",
+          "scope": "system",
+          "exec_start": [
+            "/usr/libexec/atlantic/atlantic-browser-memory.sh"
+          ],
+          "user": "root",
+          "install_wanted_by": "multi-user.target",
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/system/atlantic-memory-reclaim.service",
+          "scope": "system",
+          "exec_start": [
+            "/usr/libexec/atlantic/atlantic-memory-reclaim.sh"
+          ],
+          "user": "root",
+          "install_wanted_by": null,
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/system/atlantic-memory-reclaim.timer",
+          "scope": "system",
+          "exec_start": [],
+          "user": "root",
+          "install_wanted_by": "timers.target",
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        }
+      ],
+      "dbus": [
+        {
+          "path": "/usr/share/dbus-1/services/org.atlantic.browser.service",
+          "bus": "session",
+          "name": "org.atlantic.browser",
+          "exec": "/usr/bin/sailjail -p atlantic-browser.desktop /usr/bin/atlantic-browser.bin",
+          "user": null,
+          "systemd_service": null
+        },
+        {
+          "path": "/usr/share/dbus-1/services/org.atlantic.browser.ui.service",
+          "bus": "session",
+          "name": "org.atlantic.browser.ui",
+          "exec": "/usr/bin/sailjail -p atlantic-browser.desktop /usr/bin/atlantic-browser.bin",
+          "user": null,
+          "systemd_service": null
+        }
+      ],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 1,
+        "notable": [],
+        "body": "#!/bin/sh\n/sbin/ldconfig || :\n"
+      },
+      {
+        "type": "preuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 5,
+        "notable": [
+          "systemctl disable --now atlantic-memory-reclaim.timer >/dev/null 2>&1 || :",
+          "systemctl disable --now atlantic-memory-reclaim.service >/dev/null 2>&1 || :",
+          "systemctl disable --now atlantic-browser-memory.service >/dev/null 2>&1 || :"
+        ],
+        "body": "#!/bin/sh\nif [ \"$1\" = 0 ]; then\n    systemctl disable --now atlantic-memory-reclaim.timer >/dev/null 2>&1 || :\n    systemctl disable --now atlantic-memory-reclaim.service >/dev/null 2>&1 || :\n    systemctl disable --now atlantic-browser-memory.service >/dev/null 2>&1 || :\nfi\n"
+      },
+      {
+        "type": "postuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 2,
+        "notable": [
+          "systemctl daemon-reload >/dev/null 2>&1 || :"
+        ],
+        "body": "#!/bin/sh\n/sbin/ldconfig || :\nsystemctl daemon-reload >/dev/null 2>&1 || :\n"
+      },
+      {
+        "type": "posttrans",
+        "interpreter": "/bin/sh",
+        "lines": 6,
+        "notable": [
+          "systemctl daemon-reload >/dev/null 2>&1 || :",
+          "systemctl enable atlantic-browser-memory.service >/dev/null 2>&1 || :",
+          "systemctl start atlantic-browser-memory.service >/dev/null 2>&1 || :",
+          "systemctl enable atlantic-memory-reclaim.timer >/dev/null 2>&1 || :",
+          "systemctl start atlantic-memory-reclaim.timer >/dev/null 2>&1 || :"
+        ],
+        "body": "#!/bin/sh\nrm -f /etc/systemd/system/*.target.wants/atlantic-cpu-governor.service >/dev/null 2>&1 || :\nsystemctl daemon-reload >/dev/null 2>&1 || :\nsystemctl enable atlantic-browser-memory.service >/dev/null 2>&1 || :\nsystemctl start atlantic-browser-memory.service >/dev/null 2>&1 || :\nsystemctl enable atlantic-memory-reclaim.timer >/dev/null 2>&1 || :\nsystemctl start atlantic-memory-reclaim.timer >/dev/null 2>&1 || :\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 1185,
+      "hosts_in_scripts": 25,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 2574,
+          "in": [
+            "binary",
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/include/epoxy/gl_generated.h",
+            "/usr/include/wpe-1.0/wpe/keysyms.h",
+            "/usr/lib/systemd/system/atlantic-browser-memory.service"
+          ]
+        },
+        {
+          "host": "www.xfa.org",
+          "urls": 9,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/lib64/libWPEWebKit-2.0.so.1.11.4.carved/01139198.bin"
+          ]
+        },
+        {
+          "host": "www.google.com",
+          "urls": 6,
+          "in": [
+            "binary",
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/lib64/libWPEWebKit-2.0.so.1.11.4",
+            "/usr/share/atlantic-browser/engine.dat",
+            "/usr/share/atlantic-browser/pages/components/UrlUtils.js"
+          ]
+        },
+        {
+          "host": "immersive-web.github.io",
+          "urls": 3,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/include/wpe-webkit-2.0/wpe/WebKitXRPermissionRequest.h"
+          ]
+        },
+        {
+          "host": "jolla.com",
+          "urls": 3,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/browser-minimal.qml",
+            "/usr/share/atlantic-browser/pages/BrowserPage.qml",
+            "/usr/share/atlantic-browser/pages/SettingsPage.qml"
+          ]
+        },
+        {
+          "host": "search.brave.com",
+          "urls": 3,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/searchEngines/brave.xml"
+          ]
+        },
+        {
+          "host": "consent.youtube.com",
+          "urls": 2,
+          "in": [
+            "binary",
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/autoconsent.js",
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "mozilla.github.io",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/lib64/libWPEWebKit-2.0.so.1.11.4.carved/011090a8.bin"
+          ]
+        },
+        {
+          "host": "www.dailymotion.com",
+          "urls": 2,
+          "in": [
+            "binary",
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/autoconsent.js",
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "www.ecosia.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/searchEngines/ecosia.xml"
+          ]
+        },
+        {
+          "host": "www.mozilla.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/searchEngines/brave.xml",
+            "/usr/share/atlantic-browser/searchEngines/ecosia.xml",
+            "/usr/share/atlantic-browser/searchEngines/google.xml"
+          ]
+        },
+        {
+          "host": "cmp-consent-tool.privacymanager.io",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/autoconsent.js"
+          ]
+        },
+        {
+          "host": "consent.google",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/autoconsent.js"
+          ]
+        },
+        {
+          "host": "consent.youtube",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/autoconsent.js"
+          ]
+        },
+        {
+          "host": "foo.bar",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/lib64/libWPEWebKit-2.0.so.1.11.4.carved/01283c98.bin"
+          ]
+        },
+        {
+          "host": "gdpr-legal-cookie.myshopify.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/autoconsent.js"
+          ]
+        },
+        {
+          "host": "mozilla.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/browser.qml",
+            "/usr/share/atlantic-browser/cover/BrowserCover.qml",
+            "/usr/share/atlantic-browser/cover/NoTabsCover.qml"
+          ]
+        },
+        {
+          "host": "policies.google.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/autoconsent.js"
+          ]
+        },
+        {
+          "host": "policy.medium.com",
+          "urls": 1,
+          "in": [
+            "binary",
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/autoconsent.js",
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "support.mozilla.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/lib64/libWPEWebKit-2.0.so.1.11.4.carved/010c6220.bin"
+          ]
+        },
+        {
+          "host": "vt100.net",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/include/wpe-1.0/wpe/keysyms.h"
+          ]
+        },
+        {
+          "host": "wpewebkit.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/lib64/pkgconfig/wpe-web-process-extension-2.0.pc",
+            "/usr/lib64/pkgconfig/wpe-webkit-2.0.pc"
+          ]
+        },
+        {
+          "host": "www.anthropic.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/autoconsent.js"
+          ]
+        },
+        {
+          "host": "www.khronos.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/include/wpe-1.0/wpe/renderer-backend-egl.h"
+          ]
+        },
+        {
+          "host": "www.nongnu.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/include/wpe-1.0/wpe/keysyms.h"
+          ]
+        },
+        {
+          "host": "www.reddit.com",
+          "urls": 173,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "forums.lanik.us",
+          "urls": 144,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "www.facebook.com",
+          "urls": 15,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "bit.ly",
+          "urls": 9,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "adblockplus.org",
+          "urls": 8,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "old.reddit.com",
+          "urls": 6,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "twitter.com",
+          "urls": 6,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "www.pinterest.com",
+          "urls": 6,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "x.com",
+          "urls": 6,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "t.me",
+          "urls": 5,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "www.linkedin.com",
+          "urls": 5,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "www.webrtc.org",
+          "urls": 5,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/libWPEWebKit-2.0.so.1.11.4"
+          ]
+        },
+        {
+          "host": "publicwww.com",
+          "urls": 4,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "r.i.ua",
+          "urls": 4,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "www.amazon.com",
+          "urls": 4,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "www.camp-firefox.de",
+          "urls": 4,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "ads.trafficjunky.net",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "apps.apple.com",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/lib64/libWPEWebKit-2.0.so.1.11.4",
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "cript.to",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "facebook.com",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "google.com",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "pubads.g.doubleclick.net",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "schema.org",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "www.mypillow.com",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "a.pr-cy.ru",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "ad.doubleclick.net",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "ad1.adfarm1.adition.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "adclick.g.doubleclick.net",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "addons.mozilla.org",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/lib64/libsailfishbrowser.so.1.0.0"
+          ]
+        },
+        {
+          "host": "adultfriendfinder.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "aichattings.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "amzn.to",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "bongacams.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "cam4com.go2cloud.org",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "camonster.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "candy.ai",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "chaturbate.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "click.ggpickaff.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "click.linksynergy.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "cryptorank.io",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "d3ward.github.io",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "discord.gg",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "easylist.to",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "efukt.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "fancentro.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "go.nordvpn.net",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "go.strpjmp.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "golove.ai",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "goo.gl",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "href.li",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "igg-games.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "img.rakudaclub.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "join.playboyplus.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "landing.brazzersnetwork.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "launer.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "lootbar.gg",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "loptelink.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "mob1ledev1ces.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "mypillow.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "news.ycombinator.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "notthebee.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "paid.outbrain.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "pinterest.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "play.google.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "prf.hn",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "redd.it",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "reddit.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "refer.ccbill.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "s.click.aliexpress.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "smallseotools.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "storage.proboards.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "storage2.proboards.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "syndication.dynsrvtbg.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "tc.tradetracker.net",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "telegram.me",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "tinyurl.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "track.fiverr.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "track.wg-aff.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "wct.link",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "www.adultempire.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "www.ascendercorp.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/libWPEWebKit-2.0.so.1.11.4"
+          ]
+        },
+        {
+          "host": "www.dating-finder.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "www.duplichecker.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "www.friendlyduck.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "www.hackster.io",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "www.hostg.xyz",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "www.iyalc.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "www.lego.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "www.microsoft.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/lib64/libWPEWebKit-2.0.so.1.11.4",
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "www.mobi24.net",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "www.mrskin.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "www.mundodeportivo.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "www.zdnet.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "123-stream.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "146.59.211.227",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "1775coffee.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "1betandgonow.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "1winpb.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "3rdpartytestwebkit.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/lib64/libWPEWebKit-2.0.so.1.11.4"
+          ]
+        },
+        {
+          "host": "6-partner.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "75.119.159.228",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "a-ads.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "a.acebet.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "a.adtng.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "a.bestcontentfood.top",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "a.bestcontentoperation.top",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "a.bestcontentweb.top",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "a.candyai.love",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "a.medfoodhome.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "a.medfoodsafety.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "a1.adform.net",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "a2.adform.net",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "aads.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "ab.advertiserurl.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "access-the-website.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "accounts.binance.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "acm.media",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "activate-game.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "ad.admitad.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "ad.zanox.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "adaptiva.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "add2home.files.wordpress.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "adfoc.us",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "ads.betfair.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "ads.golem.de",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "ads.leovegas.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "ads.planetwin365affiliate.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "adssettings.google.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "adult.xyz",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "aejuice.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "affiliate.fastcomet.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "affiliate.iqoption.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "affiliate.rusvpn.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "ai.meta.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "aitechpad.io",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "aj1070.online",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "ak.psaltauw.net",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "aka.ms",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "alan.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "all3dp.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "allabout.co.jp",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "ams.brighteon.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "anglebug.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/libWPEWebKit-2.0.so.1.11.4"
+          ]
+        },
+        {
+          "host": "anglers.go.link",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "animemafia.to",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "antiagingbed.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "aoflix.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "aonsolutions.es",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "ap.octopuspop.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "api.groupon.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "api.qwant.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "api.taboola.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "apnabazaar.indiatimes.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "app.adjust.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "app.solit-kapital.de",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "app.wiki.gg",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "apple.news",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "aptoze.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "arena.pl",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "as.fontheader.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "asianpornwebsites.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "attend.informatechevents.virtual.informatech.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "ausoafab.net",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "awbbjmp.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "aweptjmp.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "awptjmp.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "b.hatena.ne.jp",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "badoinkvr.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "banners.livepartners.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "bc.game",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "bcgame.sk",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "believessway.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "best-experience-cool.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "besthotgayporn.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "betfury.io",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "betway.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "bibliotechsuper.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "billing.purevpn.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "bitcoiner.tv",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "bitpreco.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "black77854.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "bngprm.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "bngpt.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "bockscornerbrewery.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "bodelen.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "bongacams10.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "bongacams11.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "bongacams2.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "boobgirlz.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "boyfriend.show",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "brave.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "bsky.app",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "bugzilla.mozilla.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "bunnyagent.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "buyvm.net",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "ca.clcknads.pro",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "cadenaser.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "camfapr.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "camplayer.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "canv.ai",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "cdn.flowdee.de",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "cdn.netkeiba.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "cdn.nhnace.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "cdn3.reddxxx.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "cdns.6hiidude.gold",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "charexempire.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "charmingdatings.life",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "chatreplay.stream",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "chaturbate.jjgirls.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "christianconcern.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "chromewebstore.google.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "claring-loccelkin.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "click.candyoffers.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "click.dtiserv2.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "click.hoolig.app",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "click.speee-ad.jp",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "clickadilla.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "clickaine.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "clickins.slixa.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "clicks.affstrack.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "clicks.pipaffiliates.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "clicks.totemcash.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "clixtrac.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "clk.tradedoubler.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "clkde.tradedoubler.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "cloakgpt.ca",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "cloud.broadwayworld.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "cloud.newsletters.time.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "codingforkids.io",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "coincodex.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "com-1.pro",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "combodef.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "community.brave.app",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "constantin.film",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "cosmohairshop.de",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "coveryourtracks.eff.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "ctads.rtbsuperhub.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "ctjdwm.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "ctosrd.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "ctrdwm.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "d25-a.sdn.cz",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "dailyhodl.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "datewhisper.life",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "de.euronews.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "dec.2chan.net",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "deliver.ptgncdn.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "deloplen.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "dembuon.vn",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "devowl.io",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "disneyplus.bn5x.net",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "display.digitalclickstime.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "disqus.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "dl-protect.net",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "dnsgurus.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "duel.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "duobot.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "dynamicadx.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "e-shop.leonidas.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "e.s4p.jp",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "easygamepromo.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "edisonwedges.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "education.lego.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "eepurl.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "emagazine.rakuten.co.jp",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "engine.phn.doublepimp.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "enscape3d.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "es.onswingers.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "eu.customerioforms.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "eu.patagonia.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "evreporter.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "explore-site.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "fastestvpn.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "fc.lc",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        },
+        {
+          "host": "fedoraproject.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/lib64/libWPEWebKit-2.0.so.1.11.4"
+          ]
+        },
+        {
+          "host": "fhgte.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/atlantic-browser/engine.dat"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "cmp-consent-tool.privacymanager.io",
+        "consent.google",
+        "consent.youtube",
+        "consent.youtube.com",
+        "foo.bar",
+        "gdpr-legal-cookie.myshopify.com",
+        "github.com",
+        "immersive-web.github.io",
+        "jolla.com",
+        "mozilla.github.io",
+        "mozilla.org",
+        "policies.google.com",
+        "policy.medium.com",
+        "search.brave.com",
+        "support.mozilla.org",
+        "vt100.net",
+        "wpewebkit.org",
+        "www.anthropic.com",
+        "www.dailymotion.com",
+        "www.ecosia.org",
+        "www.google.com",
+        "www.khronos.org",
+        "www.mozilla.org",
+        "www.nongnu.org",
+        "www.xfa.org"
+      ],
+      "hosts_binaries": [
+        "123-stream.org",
+        "146.59.211.227",
+        "1775coffee.com",
+        "1betandgonow.com",
+        "1winpb.com",
+        "3rdpartytestwebkit.org",
+        "6-partner.com",
+        "75.119.159.228",
+        "a-ads.com",
+        "a.acebet.com",
+        "a.adtng.com",
+        "a.bestcontentfood.top",
+        "a.bestcontentoperation.top",
+        "a.bestcontentweb.top",
+        "a.candyai.love",
+        "a.medfoodhome.com",
+        "a.medfoodsafety.com",
+        "a.pr-cy.ru",
+        "a1.adform.net",
+        "a2.adform.net",
+        "aads.com",
+        "ab.advertiserurl.com",
+        "access-the-website.com",
+        "accounts.binance.com",
+        "acm.media",
+        "activate-game.com",
+        "ad.admitad.com",
+        "ad.doubleclick.net",
+        "ad.zanox.com",
+        "ad1.adfarm1.adition.com",
+        "adaptiva.com",
+        "adblockplus.org",
+        "adclick.g.doubleclick.net",
+        "add2home.files.wordpress.com",
+        "addons.mozilla.org",
+        "adfoc.us",
+        "ads.betfair.com",
+        "ads.golem.de",
+        "ads.leovegas.com",
+        "ads.planetwin365affiliate.com",
+        "ads.trafficjunky.net",
+        "adssettings.google.com",
+        "adult.xyz",
+        "adultfriendfinder.com",
+        "aejuice.com",
+        "affiliate.fastcomet.com",
+        "affiliate.iqoption.com",
+        "affiliate.rusvpn.com",
+        "ai.meta.com",
+        "aichattings.com",
+        "aitechpad.io",
+        "aj1070.online",
+        "ak.psaltauw.net",
+        "aka.ms",
+        "alan.com",
+        "all3dp.com",
+        "allabout.co.jp",
+        "ams.brighteon.com",
+        "amzn.to",
+        "anglebug.com",
+        "anglers.go.link",
+        "animemafia.to",
+        "antiagingbed.com",
+        "aoflix.com",
+        "aonsolutions.es",
+        "ap.octopuspop.com",
+        "api.groupon.com",
+        "api.qwant.com",
+        "api.taboola.com",
+        "apnabazaar.indiatimes.com",
+        "app.adjust.com",
+        "app.solit-kapital.de",
+        "app.wiki.gg",
+        "apple.news",
+        "apps.apple.com",
+        "aptoze.com",
+        "arena.pl",
+        "as.fontheader.com",
+        "asianpornwebsites.com",
+        "attend.informatechevents.virtual.informatech.com",
+        "ausoafab.net",
+        "awbbjmp.com",
+        "aweptjmp.com",
+        "awptjmp.com",
+        "b.hatena.ne.jp",
+        "badoinkvr.com",
+        "banners.livepartners.com",
+        "bc.game",
+        "bcgame.sk",
+        "believessway.com",
+        "best-experience-cool.com",
+        "besthotgayporn.com",
+        "betfury.io",
+        "betway.com",
+        "bibliotechsuper.com",
+        "billing.purevpn.com",
+        "bit.ly",
+        "bitcoiner.tv",
+        "bitpreco.com",
+        "black77854.com",
+        "bngprm.com",
+        "bngpt.com",
+        "bockscornerbrewery.com",
+        "bodelen.com",
+        "bongacams.com",
+        "bongacams10.com",
+        "bongacams11.com",
+        "bongacams2.com",
+        "boobgirlz.com",
+        "boyfriend.show",
+        "brave.com",
+        "bsky.app",
+        "bugzilla.mozilla.org",
+        "bunnyagent.com",
+        "buyvm.net",
+        "ca.clcknads.pro",
+        "cadenaser.com",
+        "cam4com.go2cloud.org",
+        "camfapr.com",
+        "camonster.com",
+        "camplayer.com",
+        "candy.ai",
+        "canv.ai",
+        "cdn.flowdee.de",
+        "cdn.netkeiba.com",
+        "cdn.nhnace.com",
+        "cdn3.reddxxx.com",
+        "cdns.6hiidude.gold",
+        "charexempire.com",
+        "charmingdatings.life",
+        "chatreplay.stream",
+        "chaturbate.com",
+        "chaturbate.jjgirls.com",
+        "christianconcern.com",
+        "chromewebstore.google.com",
+        "claring-loccelkin.com",
+        "click.candyoffers.com",
+        "click.dtiserv2.com",
+        "click.ggpickaff.com",
+        "click.hoolig.app",
+        "click.linksynergy.com",
+        "click.speee-ad.jp",
+        "clickadilla.com",
+        "clickaine.com",
+        "clickins.slixa.com",
+        "clicks.affstrack.com",
+        "clicks.pipaffiliates.com",
+        "clicks.totemcash.com",
+        "clixtrac.com",
+        "clk.tradedoubler.com",
+        "clkde.tradedoubler.com",
+        "cloakgpt.ca",
+        "cloud.broadwayworld.com",
+        "cloud.newsletters.time.com",
+        "codingforkids.io",
+        "coincodex.com",
+        "com-1.pro",
+        "combodef.com",
+        "community.brave.app",
+        "constantin.film",
+        "cosmohairshop.de",
+        "coveryourtracks.eff.org",
+        "cript.to",
+        "cryptorank.io",
+        "ctads.rtbsuperhub.com",
+        "ctjdwm.com",
+        "ctosrd.com",
+        "ctrdwm.com",
+        "d25-a.sdn.cz",
+        "d3ward.github.io",
+        "dailyhodl.com",
+        "datewhisper.life",
+        "de.euronews.com",
+        "dec.2chan.net",
+        "deliver.ptgncdn.com",
+        "deloplen.com",
+        "dembuon.vn",
+        "devowl.io",
+        "discord.gg",
+        "disneyplus.bn5x.net",
+        "display.digitalclickstime.com",
+        "disqus.com",
+        "dl-protect.net",
+        "dnsgurus.com",
+        "duel.com",
+        "duobot.com",
+        "dynamicadx.com",
+        "e-shop.leonidas.com",
+        "e.s4p.jp",
+        "easygamepromo.com",
+        "easylist.to",
+        "edisonwedges.com",
+        "education.lego.com",
+        "eepurl.com",
+        "efukt.com",
+        "emagazine.rakuten.co.jp",
+        "engine.phn.doublepimp.com",
+        "enscape3d.com",
+        "es.onswingers.com",
+        "eu.customerioforms.com",
+        "eu.patagonia.com",
+        "evreporter.com",
+        "explore-site.com",
+        "facebook.com",
+        "fancentro.com",
+        "fastestvpn.com",
+        "fc.lc",
+        "fedoraproject.org",
+        "fhgte.com",
+        "filejoker.net",
+        "financeads.net",
+        "fineproxy.org",
+        "fireflies.ai",
+        "flirtify.com",
+        "flynorse.com",
+        "foldgun.xyz",
+        "form.jotform.com",
+        "forum.chip.de",
+        "forum.ru-board.com",
+        "forums.informaction.com",
+        "forums.lanik.us",
+        "forums.mozillazine.org",
+        "freekit.birchgold.com",
+        "fuqqt.com",
+        "fwd.ovh",
+        "gadlt.nl",
+        "galaxyroms.net",
+        "gamearena.pl",
+        "gameroomsolutions.com",
+        "gamestoday.org",
+        "gamingadlt.com",
+        "geni.us",
+        "get-link.xyz",
+        "get.surfshark.net",
+        "getdigitalradio.com",
+        "getmatchedlocally.com",
+        "gist.github.com",
+        "giving.cincinnatichildrens.org",
+        "glersakr.com",
+        "globalnews.ca",
+        "globsads.com",
+        "gml-grp.com",
+        "go-e.com",
+        "go.admjmp.com",
+        "go.bbrdbr.com",
+        "go.bushheel.com",
+        "go.cam.feet9.com",
+        "go.celebjihad.live",
+        "go.cmtaffiliates.com",
+        "go.dmzjmp.com",
+        "go.etoro.com",
+        "go.expressvpn.com",
+        "go.goaserv.com",
+        "go.grinsbest.com",
+        "go.hpyjmp.com",
+        "go.hpyrdr.com",
+        "go.markets.com",
+        "go.mavrtracktor.com",
+        "go.mnaspm.com",
+        "go.nordvpn.net",
+        "go.onelink.me",
+        "go.rabbitsreviews.com",
+        "go.rmhfrtnd.com",
+        "go.rmishe.com",
+        "go.skinstrip.net",
+        "go.smljmp.com",
+        "go.stripchat.com",
+        "go.strpjmp.com",
+        "go.tmrjmp.com",
+        "go.trackitalltheway.com",
+        "go.xlirdr.com",
+        "go.xlivrdr.com",
+        "go.xlrdr.com",
+        "go.xlviiirdr.com",
+        "go.xlviirdr.com",
+        "go.xlvirdr.com",
+        "go.xtbaffiliates.com",
+        "go.xxxiijmp.com",
+        "go.xxxijmp.com",
+        "go.xxxjmp.com",
+        "go.xxxvjmp.com",
+        "go.yhteishyva.fi",
+        "golinks.work",
+        "golove.ai",
+        "goo.gl",
+        "google.com",
+        "gota.io",
+        "groorsoa.net",
+        "grow.gab.com",
+        "guidedhacking.com",
+        "h5.whalefin.com",
+        "hardcoreincest.net",
+        "healf.com",
+        "helmethomicidal.com",
+        "help.samuelsohn.com",
+        "hemmersbach.com",
+        "hitchcoq.order.app.hd.digital",
+        "horti.brovada.eu",
+        "hostslick.com",
+        "hot-growngames.life",
+        "howl.link",
+        "href.li",
+        "http.app",
+        "hubblehq.com",
+        "hwebber.co.uk",
+        "i.hizliresim.com",
+        "i.imgur.com",
+        "i5.walmartimages.ca",
+        "id.contentdata.co.jp",
+        "identicaldrench.com",
+        "idmax.one",
+        "igg-games.com",
+        "ilovemyfreedoms.com",
+        "images.purevpnaffiliates.com",
+        "imagetwist.com",
+        "img.rakudaclub.com",
+        "img.travel.rakuten.co.jp",
+        "imgbaron.com",
+        "imgprime.com",
+        "imgsen.com",
+        "in.rabbtrk.com",
+        "indoxx1.show",
+        "info.ipet-ins.com",
+        "insiderapps.com",
+        "insights.assetmanagement.hsbc.com",
+        "instable-easher.com",
+        "iqbroker.com",
+        "iqoption.com",
+        "ir.ung.edu",
+        "ismlks.com",
+        "istlnkcl.com",
+        "italarizege.xyz",
+        "j.moomoo.com",
+        "jaxofuna.com",
+        "jdrucker.com",
+        "jhlcolorizing.tumblr.com",
+        "jjgirls.com",
+        "jlc3dp.com",
+        "join.bannedsextapes.com",
+        "join.brokestraightboys.com",
+        "join.dreamsexworld.com",
+        "join.girlsoutwest.com",
+        "join.hentaisex3d.com",
+        "join.playboyplus.com",
+        "join.sexworld3d.com",
+        "join.virtuallust3d.com",
+        "join.virtualtaboo.com",
+        "join3.bannedsextapes.com",
+        "joystick.tv",
+        "juicyads.in",
+        "julieroys.com",
+        "keep2share.cc",
+        "kinja.com",
+        "klsdee.com",
+        "kotimikro.fi",
+        "kttm.club",
+        "kurier.at",
+        "l.erodatalabs.com",
+        "l.facebook.com",
+        "l.hyenadata.com",
+        "landing.brazzersnetwork.com",
+        "landing.candynetwork.ai",
+        "landing.mennetwork.com",
+        "landing.spicevids.com",
+        "landing.transangelsnetwork.com",
+        "lastmile.lt",
+        "launer.com",
+        "lcp.fr",
+        "lead1.pl",
+        "li.blogtrottr.com",
+        "libertasbella.com",
+        "lijavaxa.com",
+        "limeiptv.to",
+        "link.sfgate.com",
+        "links.verotel.com",
+        "live.primis.tech",
+        "lnkxt.bannerator.com",
+        "loader.to",
+        "loboclick.com",
+        "logistics.vr.fi",
+        "lootbar.gg",
+        "loptelink.com",
+        "losingoldfry.com",
+        "lovo.ai",
+        "lp.raysee.jp",
+        "lpar2rrd.com",
+        "luckyfish.io",
+        "maps-norway.com",
+        "marathi.indiatimes.com",
+        "martialscanssoulland.onelink.me",
+        "mastodonshare.com",
+        "me.motorsport.com",
+        "mechazilla.io",
+        "mediani.fi",
+        "mediaserver.entainpartners.com",
+        "membership.theonion.com",
+        "mesta.net",
+        "metager.org",
+        "microbit.org",
+        "mmwebhandler.aff-online.com",
+        "mob1ledev1ces.com",
+        "mollars.com",
+        "monkeytype.com",
+        "moonpay-affiliate-program.sjv.io",
+        "mq.omenpenial.com",
+        "musicalartifacts.com",
+        "myapps.paychex.com",
+        "mybest.go.link",
+        "myclick-2.com",
+        "mylead.global",
+        "mylinks.fan",
+        "mypatriotsupply.com",
+        "mypillow.com",
+        "mystore.com",
+        "mysurferprotector.com",
+        "natour.naughtyamerica.com",
+        "ndt5.net",
+        "news.google.com",
+        "news.sky.com",
+        "news.ycombinator.com",
+        "newsletter.ibt.com",
+        "nft.chaingpt.org",
+        "nicovideo.applink.nicovideo.jp",
+        "nitter.poast.org",
+        "noqreport.com",
+        "notthebee.com",
+        "noveltranslator.com",
+        "nudegirlsoncam.com",
+        "nullsweep.com",
+        "nytimes.com",
+        "obqj2.com",
+        "offer.alibaba.com",
+        "offhandpump.com",
+        "officiallondontheatre.com",
+        "old.reddit.com",
+        "olimposcans.com",
+        "olympics.com",
+        "olymptrade.com",
+        "omgevingsloketinzage.omgeving.vlaanderen.be",
+        "omibet.io",
+        "omny.fm",
+        "onelink.to",
+        "online.depo.ee",
+        "onlyfans.com",
+        "ontinet.com",
+        "open.sns.ymcart.com",
+        "openai.com",
+        "optimizedelite.com",
+        "osfultrbriolenai.info",
+        "otixer.com",
+        "ourgoldguy.com",
+        "out.reflectormedia.com",
+        "pagead2.googlesyndication.com",
+        "paid.outbrain.com",
+        "papafy.com",
+        "parisicoffee.com",
+        "partnerbcgame.com",
+        "partners.etoro.com",
+        "partners.viadeo.com",
+        "patchmypc.com",
+        "patriotdepot.com",
+        "pb-front.com",
+        "pb-imc.com",
+        "pb-track.com",
+        "pcmdestination.example",
+        "pflotsh.com",
+        "ph-files.imgix.net",
+        "pharmacieauterive-ropars.mesoigner.fr",
+        "phemex.com",
+        "pinterest.com",
+        "pixon.ads-pixiv.net",
+        "pl.allsports4free.club",
+        "plagiarismdetector.net",
+        "plausible.io",
+        "play.google.com",
+        "play.leadzupc.com",
+        "player.boom973.com",
+        "playnano.online",
+        "pluralsight.pxf.io",
+        "plus.google.com",
+        "pohjanmaanhyvinvointi.fi",
+        "popcash.net",
+        "popcornpump.xyz",
+        "popculture.com",
+        "porn00.org",
+        "pornbimbo.com",
+        "porndoe.com",
+        "porntubemate.com",
+        "portal.cdn.yollamedia.com",
+        "postback1win.com",
+        "premium.walletinvestor.com",
+        "prf.hn",
+        "procvetok.ua",
+        "programme.conventus.de",
+        "proxy-seller.com",
+        "prtord.com",
+        "psh.com.fj",
+        "pubads.g.doubleclick.net",
+        "publicwww.com",
+        "qlinks.eu",
+        "quotationfirearmrevision.com",
+        "r.i.ua",
+        "r.search.yahoo.com",
+        "r.trwl1.com",
+        "rabbits.webcam",
+        "rally-maps.com",
+        "random-affiliate.atimaze.com",
+        "rapi.cryptonews.com",
+        "rapidgator.net",
+        "rawasiansex.com",
+        "rchannel.onelink.me",
+        "recall-email.onelink.me",
+        "redact.dev",
+        "redd.it",
+        "reddit.com",
+        "redirect.ero-advertising.com",
+        "redirect.viglink.com",
+        "refer.ccbill.com",
+        "referencemen.net",
+        "referrer.website",
+        "refpadsm.host",
+        "regenevive.com",
+        "requestmetrics.com",
+        "resources.github.com",
+        "revolvemockerycopper.com",
+        "rfnm.io",
+        "rixofa.com",
+        "rlsbb.cc",
+        "rlsbb.ru",
+        "rock.sh",
+        "rokymedia.com",
+        "roz-tilefona.xbomb.net",
+        "rpwmct.com",
+        "rukminim1.flixcart.com",
+        "rule34.xxx",
+        "runewager.com",
+        "s-img.adskeeper.com",
+        "s.cant3am.com",
+        "s.click.aliexpress.com",
+        "s.eunow4u.com",
+        "s.gentlefieldpattern.com",
+        "s.happyleafmotion.com",
+        "s.ma3ion.com",
+        "s.zline0.com",
+        "s.zlink0.com",
+        "s.zlink3.com",
+        "s.zlink7.com",
+        "s.zlinkd.com",
+        "s.zlinkn.com",
+        "s.zlinkr.com",
+        "s.zlinkt.com",
+        "s3.amazonaws.com",
+        "sandberg.world",
+        "sarcasmadvisor.com",
+        "satoshidisk.com",
+        "satualumni.itb.ac.id",
+        "schema.org",
+        "searchbrothers.com",
+        "searchenginereports.net",
+        "seascapeinc.com",
+        "secure.bmtmicro.com",
+        "secure.chewynet.com",
+        "securecheats.com",
+        "sendit.arcana.network",
+        "serve.awmdelivery.com",
+        "servedbyadbutler.com",
+        "server.cpmstar.com",
+        "serververify.com",
+        "service.bv-aff-trx.com",
+        "service.weibo.com",
+        "settledchagrinpass.com",
+        "sex.cam",
+        "sexynearme.com",
+        "share.flipboard.com",
+        "shareasale.com",
+        "shiftnetwork.infusionsoft.com",
+        "shockvpn.com",
+        "shrsl.com",
+        "shutterstock.7eer.net",
+        "signup.usenetbucket.com",
+        "simpleshare.io",
+        "sjec.ac.in",
+        "slaynews.com",
+        "slkmis.com",
+        "slotgame66.co",
+        "smallseotools.com",
+        "smiechawatv.cupsell.pl",
+        "smutr.com",
+        "snapmarkets.com",
+        "sneakyadministration.com",
+        "snkrdunkapp.page.link",
+        "snowdayonline.xyz",
+        "snvhost.com",
+        "solcasino.io",
+        "spares2repair.co.uk",
+        "specsierra.github.io",
+        "srv.buysellads.com",
+        "starcart.com",
+        "stardomcoit.com",
+        "static.fleshlight.com",
+        "static.posta.sk",
+        "stellarcashflow.net",
+        "stickingrepute.com",
+        "stjude.org",
+        "storage.proboards.com",
+        "storage2.proboards.com",
+        "store.steampowered.com",
+        "streamate.com",
+        "submissions.buzzly.art",
+        "subscribe.linuxiac.com",
+        "subscription.yahoo.net",
+        "support.brighteon.com",
+        "supreme.com",
+        "svb-analytics.trackerrr.com",
+        "sweetbidsflo.irauctions.com",
+        "sweetdeals.com",
+        "sweetjack.com",
+        "sydan.fi",
+        "syndicate.contentsserved.com",
+        "syndication.dynsrvtbg.com",
+        "syndication.exdynsrv.com",
+        "syndication.exoclick.com",
+        "t.acam.link",
+        "t.adating.link",
+        "t.ajrkm1.com",
+        "t.ajrkm3.com",
+        "t.ajump1.com",
+        "t.aslnk.link",
+        "t.csgofast.cash",
+        "t.grtya.com",
+        "t.javhd-trk.com",
+        "t.ly",
+        "t.me",
+        "t.mobtyb.com",
+        "t.trcktr.com",
+        "tab.gladly.io",
+        "tab2.clickmon.co.kr",
+        "tap.io",
+        "tarkine.com",
+        "tatrck.com",
+        "tbi.fyi",
+        "tc.tradetracker.net",
+        "tebex.io",
+        "techcabal.com",
+        "telegram.me",
+        "tezfiles.com",
+        "the-bold-and-the-beautiful-free.blogspot.com",
+        "thebreastformstore.com",
+        "thechillipadi.com",
+        "thegay.com",
+        "thegreencity.gr",
+        "thesurferprotector.com",
+        "threads.net",
+        "thrivewp.com",
+        "tietokonekauppa.fi",
+        "tinyurl.com",
+        "tm-offers.gamingadult.com",
+        "tn.thegay.com",
+        "tobis.de",
+        "toffee.ai",
+        "topazlabs.com",
+        "torchlight.xd",
+        "torguard.net",
+        "tour.mrskin.com",
+        "tp.media",
+        "tpc.googlesyndication.com",
+        "track.1234sd123.com",
+        "track.adform.net",
+        "track.afcpatrk.com",
+        "track.aftrk1.com",
+        "track.aftrk3.com",
+        "track.aftrk5.com",
+        "track.fiverr.com",
+        "track.totalav.com",
+        "track.ultravpn.com",
+        "track.wg-aff.com",
+        "tracker.loropartners.com",
+        "tracking.avapartner.com",
+        "traffdaq.com",
+        "trafino.fi",
+        "translate.google.com",
+        "trk.globwo.online",
+        "trk.nfl-online-streams.club",
+        "trk.scrolller.com",
+        "trk.softonixs.xyz",
+        "trynectar.ai",
+        "tsmodelstube.com",
+        "tubedupe.com",
+        "turtlebids.irauctions.com",
+        "twinrdsrv.com",
+        "twinrdsyte.com",
+        "twitter.com",
+        "twitthis.com",
+        "ucam.xxx",
+        "ugoos.com",
+        "ultimatesurferprotector.com",
+        "un.cr",
+        "uploadgig.com",
+        "upsups.click",
+        "url.rw",
+        "url.totaladblock.com",
+        "url4.cnx-software.com",
+        "urshunt.tumblr.com",
+        "us.ovhcloud.com",
+        "us.store.flsun3d.com",
+        "usasexcams.com",
+        "uutiskirje.valitutpalat.fi",
+        "v.wpimg.pl",
+        "v2.g.99.com",
+        "v6.realxxx.com",
+        "vadhander.hogakusten.com",
+        "vadhander.kramfors.se",
+        "vaks.re",
+        "vero.co",
+        "video.lefigaro.fr",
+        "vinaurl.net",
+        "vip.stakeclick.com",
+        "viralporn.com",
+        "vnkb.com",
+        "voluum.prom-xcams.com",
+        "wa.me",
+        "walletinvestor.com",
+        "warontherocks.com",
+        "warszawa.pip.gov.pl",
+        "wcrgl.freeadult.games",
+        "wct.link",
+        "web.de",
+        "what3words.com",
+        "whatsapp.com",
+        "whowhatwhy.org",
+        "windowcleaningforums.co.uk",
+        "winfuture.de",
+        "winning-eleven-2012-apk-download-v101.en.softonic.com",
+        "wistatefair.com",
+        "wittered-mainging.com",
+        "wmctjd.com",
+        "wolf-327b.com",
+        "wordpress.org",
+        "workspace.google.com",
+        "worldmobile.io",
+        "wsup.ai",
+        "ww25.spinningrats.online",
+        "ww44.affinity.net",
+        "ww55.affinity.net",
+        "ww7.linkviet.xyz",
+        "www.1001games.com",
+        "www.1a-finanzmarkt.de",
+        "www.1und1.de",
+        "www.21vek.by",
+        "www.82-0.com",
+        "www.adaptivesecurity.com",
+        "www.addtoany.com",
+        "www.adpeepshosted.com",
+        "www.adskeeper.com",
+        "www.adultempire.com",
+        "www.adxsrve.com",
+        "www.ai-expo.net",
+        "www.aiarty.com",
+        "www.aliexpress.com",
+        "www.amazon",
+        "www.amazon.com",
+        "www.analyticsvidhya.com",
+        "www.antena3.ro",
+        "www.arcadepunks.com",
+        "www.armdesigner.com",
+        "www.artificialintelligence-news.com",
+        "www.ascendercorp.com",
+        "www.atptour.com",
+        "www.autoliitto.fi",
+        "www.avantlink.com",
+        "www.avoiderrors.com",
+        "www.axios.com",
+        "www.bang.com",
+        "www.bankinter.com",
+        "www.banknorwegian.no",
+        "www.beehiiv.com",
+        "www.bestdrive.fi",
+        "www.bet365.com",
+        "www.bever.nl",
+        "www.bing.com",
+        "www.bitget.com",
+        "www.bktravel.com",
+        "www.bleepingcomputer.com",
+        "www.bleepstatic.com",
+        "www.blick.ch",
+        "www.bloomberg.co.jp",
+        "www.bloomberg.com",
+        "www.bol.com",
+        "www.boogschietshop.nl",
+        "www.brazzersnetwork.com",
+        "www.brighteonstore.com",
+        "www.buff.game",
+        "www.buywholefoodsonline.co.uk",
+        "www.bybit.com",
+        "www.call-a-pizza.de",
+        "www.cambro.tv",
+        "www.camp-firefox.de",
+        "www.carvertical.com",
+        "www.cbtnews.com",
+        "www.cc.com",
+        "www.cda.pl",
+        "www.chase.co.uk",
+        "www.chrono24.com",
+        "www.ciberhentai.net",
+        "www.cloudways.com",
+        "www.coinbase.com",
+        "www.coiwqe.site",
+        "www.coolstuff.de",
+        "www.css",
+        "www.ctvnews.ca",
+        "www.cyberport.de",
+        "www.dating-finder.com",
+        "www.deepswap.ai",
+        "www.delfi.ee",
+        "www.ditjesendatjes.nl",
+        "www.dlnews.com",
+        "www.dlsite.com",
+        "www.dql2clk.com",
+        "www.duplichecker.com",
+        "www.easyfind.ch",
+        "www.effectiveratecpm.com",
+        "www.elli.eco",
+        "www.elmundo.es",
+        "www.empik.com",
+        "www.energysage.com",
+        "www.eplsite.uk",
+        "www.essaypal.ai",
+        "www.estadiodeportivo.com",
+        "www.etsy.com",
+        "www.eurogamer.pl",
+        "www.europe1.fr",
+        "www.eurostar.com",
+        "www.evaair.com",
+        "www.eventim.ro",
+        "www.everythingrf.com",
+        "www.ewinracing.com",
+        "www.expertclasses.org",
+        "www.express.co.uk",
+        "www.f1academy.com",
+        "www.facebook.com",
+        "www.familyporngames.games",
+        "www.fandom.com",
+        "www.farmweeknow.com",
+        "www.feetfix.com",
+        "www.fetchahouse.com",
+        "www.filmweb.pl",
+        "www.financeads.net",
+        "www.flexpowertools.com",
+        "www.flibco.com",
+        "www.forbes.com",
+        "www.formula1.com",
+        "www.formulatv.com",
+        "www.fotografiska.com",
+        "www.friendlyduck.com",
+        "www.g2fame.com",
+        "www.g4mz.com",
+        "www.gallup.com",
+        "www.gameinformer.com",
+        "www.gamesgames.com",
+        "www.gamespot.com",
+        "www.gaming-adult.com",
+        "www.gamzz.net",
+        "www.geekbuying.com",
+        "www.gereedschapcentrum.nl",
+        "www.get-express-vpn.com",
+        "www.glamour.com",
+        "www.globus.ru",
+        "www.goldenfrog.com",
+        "www.google-analytics.com",
+        "www.googleadservices.com",
+        "www.gotporn.com",
+        "www.govirtuo.com",
+        "www.gsk.com",
+        "www.h4trck.com",
+        "www.hackster.io",
+        "www.hatch.co",
+        "www.haut-koenigsbourg.fr",
+        "www.hdporn.net",
+        "www.heise.de",
+        "www.hentai-gamer.com",
+        "www.her.ie",
+        "www.herbanomic.com",
+        "www.hertz.co.uk",
+        "www.heute.at",
+        "www.highcpmrevenuenetwork.com",
+        "www.highperformancecpmgate.com",
+        "www.hortcut",
+        "www.hostg.xyz",
+        "www.hrlab.de",
+        "www.hubsite365.com",
+        "www.hudl.com",
+        "www.hus.fi",
+        "www.hydralands.com",
+        "www.hyperoptic.com",
+        "www.ibm.com",
+        "www.icon",
+        "www.independent.co.uk",
+        "www.informacion.es",
+        "www.infowarsstore.com",
+        "www.instant-gaming.com",
+        "www.instapaper.com",
+        "www.interpretation",
+        "www.interracial.com",
+        "www.isarradweg.de",
+        "www.isitiptv.com",
+        "www.iyalc.com",
+        "www.jarviseudunsanomat.fi",
+        "www.jekabpils.lv",
+        "www.jeuxvideo.com",
+        "www.joinrs.com",
+        "www.juicyads.in",
+        "www.karkkainen.com",
+        "www.kicker.de",
+        "www.kickstarter.com",
+        "www.kinguin.net",
+        "www.komoot.com",
+        "www.kqzyfj.com",
+        "www.kupi.cz",
+        "www.laprovincia.es",
+        "www.lebenslauf.com",
+        "www.lego.com",
+        "www.lekarnaave.cz",
+        "www.lekarnalemon.cz",
+        "www.ligainsider.de",
+        "www.limetorrents",
+        "www.linasmatkasse.se",
+        "www.linkedin.com",
+        "www.linkev.com",
+        "www.linternaute.com",
+        "www.linuxhaxor.net",
+        "www.liquidfire.mobi",
+        "www.livejournal.com",
+        "www.lovense.com",
+        "www.ls-tc.de",
+        "www.lufthansa.com",
+        "www.maanmittauslaitos.fi",
+        "www.makeuseof.com",
+        "www.manageengine.com",
+        "www.maniac.de",
+        "www.marketbeat.com",
+        "www.mccabelumber.com",
+        "www.mcclatchy.com",
+        "www.mediamarkt.be",
+        "www.mekotronics.com",
+        "www.menards.com",
+        "www.microsoft.com",
+        "www.milb.com",
+        "www.milwaukeezoo.org",
+        "www.mirrored.to",
+        "www.mishcon.com",
+        "www.mobi24.net",
+        "www.modelsgonebad.com",
+        "www.moviepass.com",
+        "www.mrporngeek.com",
+        "www.mrskin.com",
+        "www.mtvuutiset.fi",
+        "www.mundodeportivo.com",
+        "www.myfreecams.com",
+        "www.mypatriotsupply.com",
+        "www.mypillow.com",
+        "www.myscript.com",
+        "www.nakivo.com",
+        "www.name.com",
+        "www.netscape.com",
+        "www.nextpcb.com",
+        "www.nordax.com",
+        "www.notion.so",
+        "www.nutaku.net",
+        "www.nytimes.com",
+        "www.odido.nl",
+        "www.oem.no",
+        "www.ohra.nl",
+        "www.oligo.security",
+        "www.onclickperformance.com",
+        "www.onelink.to",
+        "www.onlinestempel.ch",
+        "www.onlineusershielder.com",
+        "www.open.online",
+        "www.opendoors.org",
+        "www.opensanctions.org",
+        "www.opensubtitles.org",
+        "www.opswat.com",
+        "www.oracle.com",
+        "www.ownedcore.com",
+        "www.patagonia.com",
+        "www.pcbway.com",
+        "www.pexels.com",
+        "www.pieceauto-discount.com",
+        "www.pingperfect.com",
+        "www.pinterest.com",
+        "www.pinterest.de",
+        "www.pirha.fi",
+        "www.pizzafan.gr",
+        "www.planningportal.co.uk",
+        "www.plurk.com",
+        "www.porngames.club",
+        "www.potilaanlaakarilehti.fi",
+        "www.poweredbyliquidfire.mobi",
+        "www.privateinternetaccess.com",
+        "www.profitablegatecpm.com",
+        "www.puatraining.com",
+        "www.purevpn.com",
+        "www.quotidiano.net",
+        "www.rabbitsreviews.com",
+        "www.radiox.co.uk",
+        "www.raiplay.it",
+        "www.recent",
+        "www.redbubble.com",
+        "www.redbull.com",
+        "www.reddit.com",
+        "www.redhotpie.com",
+        "www.reflex.cz",
+        "www.remove-metadata.com",
+        "www.restoro.com",
+        "www.resursbank.fi",
+        "www.rikomagic.com",
+        "www.rikstoto.no",
+        "www.roaradventures.com",
+        "www.rpg.net",
+        "www.runestake.com",
+        "www.runewager.com",
+        "www.runoperagx.com",
+        "www.ryuugames.com",
+        "www.safeauto.com",
+        "www.sagame350.bet",
+        "www.saisoncard.co.jp",
+        "www.salvationarmycincinnati.org",
+        "www.salzburg.info",
+        "www.samsclub.com",
+        "www.sazkamobil.cz",
+        "www.sbnation.com",
+        "www.schauspiel.koeln",
+        "www.sciencealert.com",
+        "www.screen.studio",
+        "www.searchcommander.com",
+        "www.semrush.com",
+        "www.sharethis.com",
+        "www.sheetmusicplus.com",
+        "www.shroomery.org",
+        "www.siivous.fi",
+        "www.skandia.se",
+        "www.skypeis",
+        "www.snowandrock.com",
+        "www.softswiss.com",
+        "www.sogeti.com",
+        "www.soprema.es",
+        "www.spicevids.com",
+        "www.spiegel.de",
+        "www.spieljochbahn.at",
+        "www.spoj.com",
+        "www.sport.cz",
+        "www.sportscardforum.com",
+        "www.spv.no",
+        "www.sqmetals.com",
+        "www.squaremouth.com",
+        "www.standard.co.uk",
+        "www.starcar.de",
+        "www.starwindsoftware.com",
+        "www.steuerbot.com",
+        "www.stwater.co.uk",
+        "www.subtorrents.io",
+        "www.sunlu.com",
+        "www.super.cz",
+        "www.survivalservers.com",
+        "www.svt.se",
+        "www.sweetdeals.com",
+        "www.swimoutlet.com",
+        "www.swiss.com",
+        "www.targetingpartner.com",
+        "www.ted.com",
+        "www.telekom.com",
+        "www.tennisassa.fi",
+        "www.theclassicporn.com",
+        "www.thejournal.ie",
+        "www.thetrainline.com",
+        "www.threatlocker.com",
+        "www.thurrott.com",
+        "www.tkqlhce.com",
+        "www.tomsguide.com",
+        "www.topcashback.co.uk",
+        "www.topreality.sk",
+        "www.toprevenuegate.com",
+        "www.trading212.com",
+        "www.transfermarkt.com",
+        "www.transferxl.com",
+        "www.tredz.co.uk",
+        "www.tripadvisor",
+        "www.tryamazonmusic.com",
+        "www.tvbarata.club",
+        "www.tvserial.it",
+        "www.tvsyd.dk",
+        "www.twc.health",
+        "www.twitch.tv",
+        "www.uber.com",
+        "www.ubereats.com",
+        "www.ubs.com",
+        "www.ultimate-guitar.com",
+        "www.unilad.com",
+        "www.ups.com",
+        "www.uswitch.com",
+        "www.utwente.nl",
+        "www.uviu.com",
+        "www.veriff.com",
+        "www.versorgungslandkarte.de",
+        "www.viadeo.com",
+        "www.vidal.fr",
+        "www.virgin.com",
+        "www.virtuanic.com",
+        "www.visitmama.com",
+        "www.vivantis.sk",
+        "www.vkmag.com",
+        "www.vm.co.mz",
+        "www.vogue.co.uk",
+        "www.vr.fi",
+        "www.w3.or",
+        "www.walmart.ca",
+        "www.warp.dev",
+        "www.webnode.com",
+        "www.webpublished.com",
+        "www.webrtc.org",
+        "www.welcomestores.gr",
+        "www.wendymyersdetox.com",
+        "www.whatcar.com",
+        "www.windhager.eu",
+        "www.wired.com",
+        "www.wiz.io",
+        "www.world",
+        "www.wpvideolock.com",
+        "www.wrc.com",
+        "www.x-kom.pl",
+        "www.xing.com",
+        "www.xvinlink.com",
+        "www.years",
+        "www.youtube.com",
+        "www.youyeetoo.com",
+        "www.yrxtrk.com",
+        "www.zdf.de",
+        "www.zdnet.com",
+        "www.ztw.com",
+        "www.zus.pl",
+        "www.zwenkwielen.net",
+        "www8.smartadserver.com",
+        "wynstarks.lnk.to",
+        "x.com",
+        "x.o2.pl",
+        "xbooru.com",
+        "xenforo.com",
+        "xtapes.porn",
+        "yabs.yandex.ru",
+        "yandex.com",
+        "yandex.ru",
+        "yugatech.ph",
+        "z0000g.yvmads.com",
+        "zaccounts.io",
+        "zirdough.net",
+        "zone.gotrackier.com",
+        "zoom.us",
+        "zstacklife.com",
+        "ztw.com",
+        "zycryp.to"
+      ],
+      "notable": [
+        {
+          "url": "https://bit.ly/",
+          "why": "paste, tunnel, webhook or raw-download service",
+          "file": "/usr/share/atlantic-browser/engine.dat",
+          "in": "binary"
+        },
+        {
+          "url": "https://75.119.159.228/yuusha-yamemasu-episode-9/",
+          "why": "hard-coded IP address",
+          "file": "/usr/share/atlantic-browser/engine.dat",
+          "in": "binary"
+        },
+        {
+          "url": "http://146.59.211.227/tsc/Zx0bagrCjuxP",
+          "why": "hard-coded IP address",
+          "file": "/usr/share/atlantic-browser/engine.dat",
+          "in": "binary"
+        },
+        {
+          "url": "https://tinyurl.com",
+          "why": "paste, tunnel, webhook or raw-download service",
+          "file": "/usr/share/atlantic-browser/engine.dat",
+          "in": "binary"
+        }
+      ],
+      "ignored_hosts": 11
+    }
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 8,
+      "unknown": 8,
+      "not_queried": 24,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 32,
+      "unknown": 32,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37869147735",
+  "diff": {
+    "baseline": {
+      "sha256": "a0e953f9c21823bf64ac6a2cbe979bdc92d5ff9b17512367ab035722480d9245",
+      "package": "atlantic-browser-1.5.1-733.1.aio.aarch64",
+      "last_scanned": "2026-10-08T14:41:01Z"
+    },
+    "changes": [
+      {
+        "area": "host",
+        "change": "added",
+        "item": "go.celebjihad.live",
+        "attention": false,
+        "detail": "only in binaries"
+      },
+      {
+        "area": "host",
+        "change": "added",
+        "item": "www.ztw.com",
+        "attention": false,
+        "detail": "only in binaries"
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "res.cdn.office.net",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/lib64/libWPEWebKit-2.0.so.1.11.4",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/libWPEWebKit-2.0.so.1.11.3",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/etc/sailjail/permissions/atlantic-browser.profile",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/opt/wpe-sfos/lib/wpe-webkit-2.0/injected-bundle/libWPEInjectedBundle.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/opt/wpe-sfos/libexec/atlantic/runtime-common.sh",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/atlantic-browser.bin",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/include/wpe-webkit-2.0/jsc/JSCVersion.h",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/include/wpe-webkit-2.0/wpe/WebKitVersion.h",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/lib64/atlantic-browser/web-extensions/libatlantic-adblock-extension.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/lib64/libsailfishbrowser.so.1.0.0",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/lib64/pkgconfig/wpe-web-process-extension-2.0.pc",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/lib64/pkgconfig/wpe-webkit-2.0.pc",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/lib64/wpe-compat/libgbm.so.1.0.0",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/lib64/wpe-compat/libsoup-3.0.so.0.7.1",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/lib64/wpe-webkit-2.0/libWPEInjectedBundle.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/libexec/wpe-webkit-2.0/WPENetworkProcess",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/libexec/wpe-webkit-2.0/WPEWebProcess",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/atlantic-browser/engine.dat",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/atlantic-browser/engine.version",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/wpe-webkit-2.0/build-config/CMakeCache.txt",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/wpe-webkit-2.0/build-config/feature-flags.txt",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/wpe-webkit-2.0/inspector.gresource",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 2,
+        "removed": 1
+      },
+      "files": {
+        "added": 1,
+        "removed": 1,
+        "changed": 20,
+        "unchanged": 261
+      }
+    }
+  },
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "text": "Own profile loosens the sandbox (7 rules)"
+      },
+      {
+        "level": "medium",
+        "text": "3 root services, started at install"
+      },
+      {
+        "level": "info",
+        "text": "Code that installs persistence"
+      },
+      {
+        "level": "info",
+        "text": "Code that reads browser profile data"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/atlantic-browser/919019afac225ad3799cb8939eb5ce543ace26e93d2d8916b580e94820b53fe6.md"
+}

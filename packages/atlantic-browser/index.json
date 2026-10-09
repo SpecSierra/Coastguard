@@ -67,5 +67,84 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37794281699",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/atlantic-browser/a0e953f9c21823bf64ac6a2cbe979bdc92d5ff9b17512367ab035722480d9245.md"
     }
+  },
+  {
+    "sha256": "919019afac225ad3799cb8939eb5ce543ace26e93d2d8916b580e94820b53fe6",
+    "first_seen": "2026-10-09T01:19:45Z",
+    "package": "atlantic-browser-1.6.0-748.1.aio.aarch64",
+    "version": "1.6.0-748.1.aio",
+    "arch": "aarch64",
+    "buildtime": 1791477089,
+    "last_scanned": "2026-10-09T01:19:45Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "text": "Own profile loosens the sandbox (7 rules)"
+          },
+          {
+            "level": "medium",
+            "text": "3 root services, started at install"
+          },
+          {
+            "level": "info",
+            "text": "Code that installs persistence"
+          },
+          {
+            "level": "info",
+            "text": "Code that reads browser profile data"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Installs Persistence",
+        "Reads Browser Profile Data"
+      ],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Camera",
+        "Internet",
+        "MediaIndexing",
+        "Microphone",
+        "RemovableMedia",
+        "UserDirs",
+        "WebView"
+      ],
+      "own_sandbox_profile": true,
+      "services": 3,
+      "root_services": 3,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 4,
+      "hosts_in_scripts": 25,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "atlantic-browser-1.5.1-733.1.aio.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 1,
+          "removed": 1,
+          "changed": 20,
+          "unchanged": 261
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37869147735",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/atlantic-browser/919019afac225ad3799cb8939eb5ce543ace26e93d2d8916b580e94820b53fe6.md"
+    }
   }
 ]
