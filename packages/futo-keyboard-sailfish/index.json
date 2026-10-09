@@ -193,5 +193,91 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37822950874",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/futo-keyboard-sailfish/e895bd8cd5e4ab428b4a1d08f4dcd158940542d72aeafaed162e3ba6bbf1b09d.md"
     }
+  },
+  {
+    "sha256": "563856aade44a0cdc63721e85071bedf99506f0815817bb1c94c12dd1ddfdd40",
+    "first_seen": "2026-10-09T14:17:54Z",
+    "package": "futo-keyboard-sailfish-0.7.1-1.aarch64",
+    "version": "0.7.1-1",
+    "arch": "aarch64",
+    "buildtime": 1791464401,
+    "last_scanned": "2026-10-09T14:17:54Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "high",
+        "reasons": [
+          {
+            "level": "high",
+            "id": "privileged-files",
+            "text": "3 privileged files (setuid root)"
+          },
+          {
+            "level": "medium",
+            "id": "hook-polkit",
+            "text": "System hook: polkit"
+          },
+          {
+            "level": "medium",
+            "id": "code-reads-raw-input-devices",
+            "text": "Code that reads raw input devices"
+          },
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Reads Raw Input Devices"
+      ],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 3,
+      "system_hooks": [
+        "polkit"
+      ],
+      "scriptlets": 3,
+      "hosts_in_scripts": 10,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "futo-keyboard-sailfish-0.7.0-1.aarch64",
+        "attention_count": 2,
+        "attention": [
+          {
+            "area": "host",
+            "change": "added",
+            "item": "codeberg.org"
+          },
+          {
+            "area": "host",
+            "change": "added",
+            "item": "keyboard.futo.tech"
+          }
+        ],
+        "files": {
+          "added": 1,
+          "removed": 0,
+          "changed": 15,
+          "unchanged": 195
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37943042844",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/futo-keyboard-sailfish/563856aade44a0cdc63721e85071bedf99506f0815817bb1c94c12dd1ddfdd40.md"
+    }
   }
 ]
