@@ -1,0 +1,1095 @@
+{
+  "verdict": "clean",
+  "name": "harbour-whatsup",
+  "version": "1.2.0-1",
+  "arch": "aarch64",
+  "package": "harbour-whatsup-1.2.0-1.aarch64",
+  "buildtime": 1791549273,
+  "sha256": "d3405db82698597f51f06d530dd2c3819ce52d2b1642e47adcaf7a9b7f9ca502",
+  "source": "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.2.0-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12694",
+  "scanned": "2026-10-09T13:04:45Z",
+  "files": 8390,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28147/Thu Oct  8 06:24:12 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [
+    {
+      "rule": "Coastguard_Indicator_Takes_Screenshots",
+      "files": [
+        "payload/usr/share/harbour-whatsup/qml/components/CallVolumeKeys.qml"
+      ]
+    }
+  ],
+  "errors": [],
+  "nested": {
+    "archives": 1,
+    "carved_streams": 3,
+    "files": 11,
+    "bytes": 131111,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-whatsup.desktop",
+          "name": "WhatsUp",
+          "exec": "harbour-whatsup-qml harbour-whatsup",
+          "hidden": false,
+          "sandbox": "disabled",
+          "permissions": [
+            "Camera",
+            "Audio",
+            "Microphone",
+            "Internet",
+            "Location",
+            "ApplicationInstallation",
+            "UserDirs",
+            "RemovableMedia"
+          ],
+          "organization": "harbour-whatsup",
+          "application": "harbour-whatsup"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [
+        {
+          "path": "/usr/lib/systemd/system/harbour-whatsup-updater.service",
+          "scope": "system",
+          "exec_start": [
+            "/usr/bin/whatsupd --update-helper"
+          ],
+          "user": "root",
+          "install_wanted_by": null,
+          "enabled_by": []
+        },
+        {
+          "path": "/usr/lib/systemd/user/harbour-whatsup-call-overlay.service",
+          "scope": "user",
+          "exec_start": [
+            "/usr/bin/whatsup-native-call-overlay /usr/share/harbour-whatsup/overlay/PipHost.qml"
+          ],
+          "user": "device user",
+          "install_wanted_by": "user-session.target",
+          "enabled_by": []
+        },
+        {
+          "path": "/usr/lib/systemd/user/harbour-whatsup-daemon.service",
+          "scope": "user",
+          "exec_start": [
+            "/usr/bin/whatsupd"
+          ],
+          "user": "device user",
+          "install_wanted_by": "user-session.target",
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/user/harbour-whatsup-screencast.service",
+          "scope": "user",
+          "exec_start": [
+            "/usr/libexec/harbour-whatsup-screencast --daemon"
+          ],
+          "user": "device user",
+          "install_wanted_by": null,
+          "enabled_by": []
+        },
+        {
+          "path": "/usr/lib/systemd/user/harbour-whatsup-screencast.socket",
+          "scope": "user",
+          "exec_start": [],
+          "user": "device user",
+          "install_wanted_by": "sockets.target",
+          "enabled_by": []
+        }
+      ],
+      "dbus": [
+        {
+          "path": "/usr/share/dbus-1/services/harbour-whatsup.harbour-whatsup.service",
+          "bus": "session",
+          "name": "harbour-whatsup.harbour-whatsup",
+          "exec": "/usr/bin/invoker --type=silica-qt5 --single-instance /usr/bin/harbour-whatsup-qml harbour-whatsup",
+          "user": null,
+          "systemd_service": null
+        },
+        {
+          "path": "/usr/share/dbus-1/services/org.harbour.whatsup.App.service",
+          "bus": "session",
+          "name": "org.harbour.whatsup.App",
+          "exec": "/usr/bin/invoker --type=silica-qt5 --single-instance /usr/bin/harbour-whatsup-qml harbour-whatsup",
+          "user": null,
+          "systemd_service": null
+        },
+        {
+          "path": "/usr/share/dbus-1/services/org.harbour.whatsup.Diagnostics.service",
+          "bus": "session",
+          "name": "org.harbour.whatsup.Diagnostics",
+          "exec": "/usr/libexec/harbour-whatsup-diagnostics",
+          "user": null,
+          "systemd_service": null
+        },
+        {
+          "path": "/usr/share/dbus-1/services/org.harbour.whatsup.service",
+          "bus": "session",
+          "name": "org.harbour.whatsup",
+          "exec": "/usr/bin/whatsupd",
+          "user": null,
+          "systemd_service": "harbour-whatsup-daemon.service"
+        },
+        {
+          "path": "/usr/share/dbus-1/system-services/org.harbour.whatsup.Updater1.service",
+          "bus": "system",
+          "name": "org.harbour.whatsup.Updater1",
+          "exec": "/bin/false",
+          "user": "root",
+          "systemd_service": "harbour-whatsup-updater.service"
+        }
+      ],
+      "autostart": []
+    },
+    "system_integration": {
+      "D-Bus system policy": [
+        "/etc/dbus-1/system.d/org.harbour.whatsup.Updater1.conf"
+      ],
+      "privileged launcher grant": [
+        "/usr/share/mapplauncherd/privileges.d/harbour-whatsup.privileges"
+      ]
+    },
+    "privileged_files": [
+      {
+        "path": "/usr/libexec/harbour-whatsup-contact-export",
+        "mode": "-rwxr-sr-x",
+        "owner": "root",
+        "group": "privileged",
+        "why": [
+          "setgid privileged"
+        ]
+      },
+      {
+        "path": "/usr/libexec/harbour-whatsup-screencast",
+        "mode": "-rwxr-sr-x",
+        "owner": "root",
+        "group": "privileged",
+        "why": [
+          "setgid privileged"
+        ]
+      },
+      {
+        "path": "/usr/libexec/harbour-whatsup-shared-recording",
+        "mode": "-rwxr-sr-x",
+        "owner": "root",
+        "group": "privileged",
+        "why": [
+          "setgid privileged"
+        ]
+      }
+    ],
+    "scriptlets": [
+      {
+        "type": "pretrans",
+        "interpreter": "/bin/sh",
+        "lines": 13,
+        "notable": [
+          "for marker in /home/*/.local/share/harbour-whatsup/.whatsup-beta-migration.json; do"
+        ],
+        "body": "if [ -f /usr/share/applications/harbour-whatsapp-sailfish.desktop ]; then\n    prepared=0\n    for marker in /home/*/.local/share/harbour-whatsup/.whatsup-beta-migration.json; do\n        if [ -f \"$marker\" ] && grep -q '\"oldId\":\"harbour-whatsapp-sailfish\"' \"$marker\"; then\n            prepared=1\n            break\n        fi\n    done\n    if [ \"$prepared\" -ne 1 ]; then\n        echo 'Run WhatsUp Migrator before replacing the beta app.' >&2\n        exit 1\n    fi\nfi\n"
+      },
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 16,
+        "notable": [
+          "systemctl-user stop harbour-whatsapp-sailfish-daemon.service >/dev/null 2>&1 || :",
+          "systemctl-user disable harbour-whatsapp-sailfish-daemon.service >/dev/null 2>&1 || :",
+          "systemctl-user stop harbour-whatsapp-sailfish-call-overlay.service >/dev/null 2>&1 || :",
+          "systemctl-user stop harbour-whatsapp-sailfish-screencast.socket harbour-whatsapp-sailfish-screencast.service >/dev/null 2>&1 || :",
+          "systemctl daemon-reload >/dev/null 2>&1 || :",
+          "systemctl reload dbus.service >/dev/null 2>&1 || :",
+          "systemctl-user daemon-reload >/dev/null 2>&1 || :",
+          "systemctl-user enable harbour-whatsup-daemon.service >/dev/null 2>&1 || :",
+          "systemctl-user restart harbour-whatsup-daemon.service >/dev/null 2>&1 || :",
+          "pkill -f '^/usr/libexec/harbour-whatsup-diagnostics$' >/dev/null 2>&1 || :",
+          "systemctl-user stop harbour-whatsup-call-overlay.service >/dev/null 2>&1 || :",
+          "systemctl-user disable harbour-whatsup-call-overlay.service >/dev/null 2>&1 || :"
+        ],
+        "body": "if [ \"$1\" -gt 1 ]; then\n    systemctl-user stop harbour-whatsapp-sailfish-daemon.service >/dev/null 2>&1 || :\n    systemctl-user disable harbour-whatsapp-sailfish-daemon.service >/dev/null 2>&1 || :\n    systemctl-user stop harbour-whatsapp-sailfish-call-overlay.service >/dev/null 2>&1 || :\n    systemctl-user stop harbour-whatsapp-sailfish-screencast.socket harbour-whatsapp-sailfish-screencast.service >/dev/null 2>&1 || :\nfi\nsystemctl daemon-reload >/dev/null 2>&1 || :\nsystemctl reload dbus.service >/dev/null 2>&1 || :\nupdate-desktop-database /usr/share/applications >/dev/null 2>&1 || :\nsailfish-share-update-cache >/dev/null 2>&1 || :\nsystemctl-user daemon-reload >/dev/null 2>&1 || :\nsystemctl-user enable harbour-whatsup-daemon.service >/dev/null 2>&1 || :\nsystemctl-user restart harbour-whatsup-daemon.service >/dev/null 2>&1 || :\npkill -f '^/usr/libexec/harbour-whatsup-diagnostics$' >/dev/null 2>&1 || :\nsystemctl-user stop harbour-whatsup-call-overlay.service >/dev/null 2>&1 || :\nsystemctl-user disable harbour-whatsup-call-overlay.service >/dev/null 2>&1 || :\n"
+      },
+      {
+        "type": "preuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 7,
+        "notable": [
+          "systemctl-user stop harbour-whatsup-daemon.service >/dev/null 2>&1 || :",
+          "systemctl-user disable harbour-whatsup-daemon.service >/dev/null 2>&1 || :",
+          "systemctl-user stop harbour-whatsup-call-overlay.service >/dev/null 2>&1 || :",
+          "systemctl-user disable harbour-whatsup-call-overlay.service >/dev/null 2>&1 || :",
+          "systemctl-user stop harbour-whatsup-screencast.socket harbour-whatsup-screencast.service >/dev/null 2>&1 || :"
+        ],
+        "body": "if [ \"$1\" -eq 0 ]; then\n    systemctl-user stop harbour-whatsup-daemon.service >/dev/null 2>&1 || :\n    systemctl-user disable harbour-whatsup-daemon.service >/dev/null 2>&1 || :\n    systemctl-user stop harbour-whatsup-call-overlay.service >/dev/null 2>&1 || :\n    systemctl-user disable harbour-whatsup-call-overlay.service >/dev/null 2>&1 || :\n    systemctl-user stop harbour-whatsup-screencast.socket harbour-whatsup-screencast.service >/dev/null 2>&1 || :\nfi\n"
+      },
+      {
+        "type": "postuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 6,
+        "notable": [
+          "systemctl daemon-reload >/dev/null 2>&1 || :",
+          "systemctl-user daemon-reload >/dev/null 2>&1 || :"
+        ],
+        "body": "if [ \"$1\" -eq 0 ]; then\n    systemctl daemon-reload >/dev/null 2>&1 || :\n    update-desktop-database /usr/share/applications >/dev/null 2>&1 || :\n    sailfish-share-update-cache >/dev/null 2>&1 || :\n    systemctl-user daemon-reload >/dev/null 2>&1 || :\nfi\n"
+      },
+      {
+        "type": "posttrans",
+        "interpreter": "/bin/sh",
+        "lines": 4,
+        "notable": [
+          "systemctl-user daemon-reload >/dev/null 2>&1 || :",
+          "systemctl-user unmask --runtime harbour-whatsup-daemon.service >/dev/null 2>&1 || :",
+          "systemctl-user enable harbour-whatsup-daemon.service >/dev/null 2>&1 || :",
+          "systemctl-user restart harbour-whatsup-daemon.service >/dev/null 2>&1 || :"
+        ],
+        "body": "systemctl-user daemon-reload >/dev/null 2>&1 || :\nsystemctl-user unmask --runtime harbour-whatsup-daemon.service >/dev/null 2>&1 || :\nsystemctl-user enable harbour-whatsup-daemon.service >/dev/null 2>&1 || :\nsystemctl-user restart harbour-whatsup-daemon.service >/dev/null 2>&1 || :\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 29,
+      "hosts_in_scripts": 14,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 5,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/whatsupd",
+            "/usr/share/doc/harbour-whatsup/emoji/NOTICE.md",
+            "/usr/share/doc/harbour-whatsup/whatsmeow/LOCAL-CHANGES.md"
+          ]
+        },
+        {
+          "host": "www.whatsapp.com",
+          "urls": 3,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/whatsupd",
+            "/usr/share/harbour-whatsup/qml/pages/SharedContactInviteDialog.qml",
+            "/usr/share/harbour-whatsup/translations/harbour-whatsup-bg_BG.qm"
+          ]
+        },
+        {
+          "host": "call.whatsapp.com",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/whatsupd",
+            "/usr/share/harbour-whatsup/qml/components/StructuredMessageCard.qml"
+          ]
+        },
+        {
+          "host": "api.giphy.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-whatsup/qml/components/EmojiPicker.qml"
+          ]
+        },
+        {
+          "host": "api.klipy.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-whatsup/qml/components/EmojiPicker.qml"
+          ]
+        },
+        {
+          "host": "developers.giphy.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-whatsup/qml/pages/GifSettingsPage.qml"
+          ]
+        },
+        {
+          "host": "fsf.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/doc/harbour-whatsup/screencast/GPL-2.0.txt"
+          ]
+        },
+        {
+          "host": "gitlab.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/doc/harbour-whatsup/screencast/NOTICE.md"
+          ]
+        },
+        {
+          "host": "mozilla.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/doc/harbour-whatsup/whatsmeow/LICENSE"
+          ]
+        },
+        {
+          "host": "partner.klipy.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-whatsup/qml/pages/GifSettingsPage.qml"
+          ]
+        },
+        {
+          "host": "paypal.me",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-whatsup/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "photon.komoot.io",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-whatsup/qml/pages/LocationPickerPage.qml"
+          ]
+        },
+        {
+          "host": "sailfishos-chum.github.io",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/doc/harbour-whatsup/screencast/NOTICE.md"
+          ]
+        },
+        {
+          "host": "www.freedesktop.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/etc/dbus-1/system.d/org.harbour.whatsup.Updater1.conf"
+          ]
+        },
+        {
+          "host": "go.dev",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/whatsupd"
+          ]
+        },
+        {
+          "host": "wa.me",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/whatsupd"
+          ]
+        },
+        {
+          "host": "api.whatsapp.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/whatsupd"
+          ]
+        },
+        {
+          "host": "web.whatsapp.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/whatsupd"
+          ]
+        },
+        {
+          "host": "avisynth.nl",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/whatsup-screen-encoder"
+          ]
+        },
+        {
+          "host": "chat.whatsapp.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/whatsupd"
+          ]
+        },
+        {
+          "host": "htheb.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/whatsupd"
+          ]
+        },
+        {
+          "host": "protobuf.dev",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/whatsupd"
+          ]
+        },
+        {
+          "host": "static.whatsapp.net",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/whatsupd"
+          ]
+        },
+        {
+          "host": "tile.openstreetmap.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/whatsupd"
+          ]
+        },
+        {
+          "host": "web.whatsapp.comunknown",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/whatsupd"
+          ]
+        },
+        {
+          "host": "whatsapp.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/whatsupd"
+          ]
+        },
+        {
+          "host": "www.ibm.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/whatsupd"
+          ]
+        },
+        {
+          "host": "www.itu.int",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/whatsupd"
+          ]
+        },
+        {
+          "host": "www.videolan.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/whatsup-screen-encoder"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "api.giphy.com",
+        "api.klipy.com",
+        "call.whatsapp.com",
+        "developers.giphy.com",
+        "fsf.org",
+        "github.com",
+        "gitlab.com",
+        "mozilla.org",
+        "partner.klipy.com",
+        "paypal.me",
+        "photon.komoot.io",
+        "sailfishos-chum.github.io",
+        "www.freedesktop.org",
+        "www.whatsapp.com"
+      ],
+      "hosts_binaries": [
+        "api.whatsapp.com",
+        "avisynth.nl",
+        "chat.whatsapp.com",
+        "go.dev",
+        "htheb.com",
+        "protobuf.dev",
+        "static.whatsapp.net",
+        "tile.openstreetmap.org",
+        "wa.me",
+        "web.whatsapp.com",
+        "web.whatsapp.comunknown",
+        "whatsapp.com",
+        "www.ibm.com",
+        "www.itu.int",
+        "www.videolan.org"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 606610,
+        "malicious": 397
+      },
+      "notable": [],
+      "ignored_hosts": 5
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 8,
+      "unknown": 8,
+      "not_queried": 3,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 11,
+      "unknown": 11,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37934118997",
+  "diff": {
+    "baseline": {
+      "sha256": "8612b90f8666281a99e8d99eeeef057a30d3aa49a0a01f45992f01d3793e21c1",
+      "package": "harbour-whatsup-1.1.0-1.aarch64",
+      "last_scanned": "2026-10-08T22:58:53Z"
+    },
+    "changes": [
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/whatsupd",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/android/WhatsUpBridge.apk",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/qml/DaemonConnection.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/qml/components/EmojiTextField.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/qml/components/MessageComposer.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/qml/harbour-whatsup.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/qml/pages/AboutPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/qml/pages/BroadcastConversationPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/qml/pages/BroadcastNamePage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/qml/pages/ConversationPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/qml/pages/GroupEditDialog.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/qml/pages/GroupNamePage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/qml/pages/LocationPickerPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/qml/pages/MainPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/qml/pages/MessagingSettingsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/qml/pages/NewCommunityPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/qml/pages/PrivateNotificationsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/qml/pages/ProfileEditPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/qml/pages/StatusPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/qml/pages/StickerTabDialog.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-bg_BG.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-bn_IN.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-cs_CZ.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-da_DK.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-de_DE.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-el_GR.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-en_GB.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-en_US.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-es_BO.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-es_ES.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-et_EE.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-fi_FI.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-fr_FR.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-gu_IN.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-hi_IN.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-hu_HU.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-it_IT.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-kn_IN.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-lt_LT.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-lv_LV.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-ml_IN.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-mr_IN.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-nb_NO.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-nl_NL.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-pa_IN.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-pl_PL.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-pt_BR.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-pt_PT.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-ro_RO.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-ru_RU.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-sk_SK.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-sl_SI.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-sv_SE.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-ta_IN.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-te_IN.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-tr_TR.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-tt_RU.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-uk_UA.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-vi_VN.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-zh_CN.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-zh_HK.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-whatsup/translations/harbour-whatsup-zh_TW.qm",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 0,
+        "removed": 0,
+        "changed": 62,
+        "unchanged": 8267
+      }
+    }
+  },
+  "risk": {
+    "grade": "high",
+    "reasons": [
+      {
+        "level": "high",
+        "id": "root-service-no-sandbox",
+        "text": "Root service and no sandbox"
+      },
+      {
+        "level": "medium",
+        "id": "sandbox-off",
+        "text": "Sandbox turned off"
+      },
+      {
+        "level": "medium",
+        "id": "root-services",
+        "text": "1 root service"
+      },
+      {
+        "level": "medium",
+        "id": "privileged-files",
+        "text": "3 privileged files (setgid privileged)"
+      },
+      {
+        "level": "medium",
+        "id": "hook-d-bus-system-policy",
+        "text": "System hook: D-Bus system policy"
+      },
+      {
+        "level": "medium",
+        "id": "hook-privileged-launcher-grant",
+        "text": "System hook: privileged launcher grant"
+      },
+      {
+        "level": "medium",
+        "id": "code-takes-screenshots",
+        "text": "Unsandboxed code that takes screenshots"
+      },
+      {
+        "level": "info",
+        "id": "background-start",
+        "text": "Starts in the background"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-whatsup/d3405db82698597f51f06d530dd2c3819ce52d2b1642e47adcaf7a9b7f9ca502.md"
+}
