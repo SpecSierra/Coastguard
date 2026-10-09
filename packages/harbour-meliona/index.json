@@ -86,5 +86,49 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37904179641",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-meliona/06d13a063804c656cef303ad8eface54ea5047c0bfd1d23d1c0e9f26a4a222c0.md"
     }
+  },
+  {
+    "sha256": "dfd0838220688d4803aecfa540f65275b94a49d48f087300f706bb08f8ae802e",
+    "first_seen": "2026-10-09T08:21:19Z",
+    "package": "harbour-meliona-0.5-2.i486",
+    "version": "0.5-2",
+    "arch": "i486",
+    "buildtime": 1791532719,
+    "last_scanned": "2026-10-09T08:21:19Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Internet",
+        "UserDirs"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 2,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37904352408",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-meliona/dfd0838220688d4803aecfa540f65275b94a49d48f087300f706bb08f8ae802e.md"
+    }
   }
 ]
