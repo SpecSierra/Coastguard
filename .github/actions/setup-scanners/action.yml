@@ -51,3 +51,35 @@ runs:
         unzip -q -j db/yara/yara-forge-rules-core.zip '*.yar' -d db/yara
         cp rules/*.yar db/yara/
         echo "YARA_RULES_VERSION=$tag" >> "$GITHUB_ENV"
+
+    # Host lists the embedded addresses are compared with: public block lists
+    # (what is on none of them is the part nobody else has reviewed) and
+    # known-malware hosts. Refreshed once a day; a list that fails to download
+    # is skipped, and the report says when none were available.
+    - name: Host list cache
+      uses: actions/cache@v4
+      with:
+        path: db/hostlists
+        key: hostlists-${{ steps.day.outputs.day }}
+
+    - name: Fetch host lists
+      shell: bash
+      run: |
+        mkdir -p db/hostlists/public db/hostlists/malicious
+        fetch() { # <dir> <name> <url>
+          [ -s "db/hostlists/$1/$2.txt" ] && return 0
+          curl --fail --silent --show-error --location --max-time 120 \
+            --output "db/hostlists/$1/$2.txt" "$3" \
+            || { echo "::warning::host list $2 not available"; rm -f "db/hostlists/$1/$2.txt"; }
+        }
+        fetch public easylist       https://easylist.to/easylist/easylist.txt
+        fetch public easyprivacy    https://easylist.to/easylist/easyprivacy.txt
+        fetch public ubo-filters    https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt
+        fetch public ubo-privacy    https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/privacy.txt
+        fetch public ubo-badware    https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt
+        fetch public ubo-unbreak    https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/unbreak.txt
+        fetch public peter-lowe     'https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext'
+        fetch public stevenblack    https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+        fetch malicious urlhaus     https://urlhaus.abuse.ch/downloads/hostfile/
+        ls -l db/hostlists/public db/hostlists/malicious
+        echo "COASTGUARD_HOSTLISTS=$PWD/db/hostlists" >> "$GITHUB_ENV"

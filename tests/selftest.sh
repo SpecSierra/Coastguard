@@ -14,6 +14,14 @@ scan=$scripts/scan.sh
 top=$(mktemp -d)
 trap 'rm -rf "$top"' EXIT
 mkdir -p "$top/SOURCES" "$top/SPECS"
+
+# Host lists of our own, so the address checks do not depend on what the
+# public lists contain today.
+export COASTGUARD_HOSTLISTS=$top/hostlists
+mkdir -p "$COASTGUARD_HOSTLISTS/public" "$COASTGUARD_HOSTLISTS/malicious"
+for n in $(seq 1 148); do echo "||ads$n.coastguard-blocklist.test^"; done \
+    > "$COASTGUARD_HOSTLISTS/public/list.txt"
+echo "127.0.0.1 c2.coastguard-malware.test" > "$COASTGUARD_HOSTLISTS/malicious/list.txt"
 tree=$top/SOURCES/tree
 
 build_rpm() { # <name> <%post body> [<version>]; packages everything under $tree
@@ -111,6 +119,15 @@ ln -s ../cg.service "$units/multi-user.target.wants/cg.service"
 echo 'fetch("https://telemetry.coastguard-selftest.io/v1"); fetch("http://203.0.113.7:8080/x")' \
     > "$tree/usr/share/cg/qml/main.qml"
 echo 'nobody ALL=(ALL) NOPASSWD: ALL' > "$tree/etc/sudoers.d/cg"
+# A bulk list: 148 hosts that a public block list knows, and two it does not.
+{ for n in $(seq 1 148); do echo "https://ads$n.coastguard-blocklist.test/x"; done
+  echo "https://hidden.coastguard-selftest.io/x"; echo "https://own-rule.coastguard-selftest.io/x"; } \
+    > "$tree/usr/share/cg/filters.dat"
+echo 'fetch("https://c2.coastguard-malware.test/beacon")' > "$tree/usr/share/cg/qml/beacon.qml"
+# The developer's answer to one flag, with markup that must not survive.
+mkdir -p "$tree/usr/share/coastguard"
+echo '{"root-services": "Sets the CPU governor, <b>see</b> [docs](http://x).", "Not An Id": "x"}' \
+    > "$tree/usr/share/coastguard/cg.json"
 mkdir -p "$tree/etc/sailjail/permissions"
 printf 'whitelist ${HOME}/.local/share/cg\nignore seccomp\ndbus-system.talk org.freedesktop.login1\n' \
     > "$tree/etc/sailjail/permissions/cg.profile"
@@ -138,6 +155,14 @@ check report-inspect "scriptlet command" "$i.scriptlets | any(.notable | any(tes
 check report-inspect "host from QML" \
     "$i.network.hosts | any(.host == \"telemetry.coastguard-selftest.io\" and (.in | index(\"script\")))"
 check report-inspect "hard-coded IP" "$i.network.notable | any(.why == \"hard-coded IP address\")"
+check report-inspect "bulk file: only the two hosts on no public list are named" \
+    "$i.network.bulk == [{file: \"/usr/share/cg/filters.dat\", hosts: 150, on_public_lists: 148, unlisted: [\"hidden.coastguard-selftest.io\", \"own-rule.coastguard-selftest.io\"], unlisted_count: 2, known_bad: 0}]"
+check report-inspect "bulk hosts stay out of the app's own list" \
+    "$i.network.hosts | all(.host | test(\"coastguard-blocklist\") | not)"
+check report-inspect "known-malware host in a script" \
+    "$i.network.known_bad | map(.host) == [\"c2.coastguard-malware.test\"]"
+check report-inspect "developer explanation read, markup stripped, bad key dropped" \
+    "$i.explanations == {\"root-services\": \"Sets the CPU governor, b see /b docs http://x .\"}"
 # --- comparison with the previous version -----------------------------------
 # Version 2 asks for one more permission, talks to a new host, adds a root
 # service and changes a file.
@@ -199,7 +224,16 @@ python3 -I "$scripts/store_result.py" "$store" "$top/report-clean" > /dev/null
 jq -e '.[0].summary.risk == {"grade": "low", "reasons": []}' \
     "$store/packages/coastguard-clean/index.json" > /dev/null \
     || { echo "FAIL: clean package should grade low" >&2; jq '.[].summary.risk' "$store/packages/coastguard-clean/index.json" >&2; exit 1; }
+jq -e '(.[0].summary.risk.reasons | any(.id == "root-services" and (.explanation | test("CPU governor"))))
+       and (.[0].summary.risk.reasons | any(.id == "malware-host" and .level == "high"))
+       and (.[0].summary.risk.reasons | all(has("id")))' \
+    "$store/packages/coastguard-inspect/index.json" > /dev/null \
+    || { echo "FAIL: reason ids and explanations" >&2; jq '.[0].summary.risk' "$store/packages/coastguard-inspect/index.json" >&2; exit 1; }
+grep -q "Developer's explanation" "$report_md" && grep -q 'Known-malware check (ClamAV, YARA): nothing recognised' "$report_md" \
+    && ! grep -q 'Hash reputation' "$report_md" \
+    || { echo "FAIL: report page wording" >&2; cat "$report_md" >&2; exit 1; }
 echo "ok: risk grade is high for the privileged package, low for the clean one"
+echo "ok: flags carry ids and the developer's explanation; a clean malware check is one line"
 jq -e '.reputation.virustotal.status == "not configured"' \
     "$store/packages/coastguard-inspect/$(jq -r .sha256 "$top/report-inspect/report.json").json" > /dev/null \
     || { echo "FAIL: reputation block missing" >&2; exit 1; }

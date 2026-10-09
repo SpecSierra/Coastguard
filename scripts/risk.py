@@ -75,61 +75,71 @@ def _indicator_name(rule):
     return rule.replace("Coastguard_Indicator_", "")
 
 
+def _slug(text):
+    return re.sub(r"[^a-z0-9]+", "-", str(text).lower()).strip("-")
+
+
 def assess(report, diff=None):
-    """Returns {"grade": ..., "reasons": [{"level", "text"}, ...]}, the
-    reasons most serious first."""
+    """Returns {"grade": ..., "reasons": [{"level", "id", "text"}, ...]}, the
+    reasons most serious first. A reason whose id the developer explained in
+    the package (see README, "Explaining a flag") also carries "explanation".
+    That text is the developer's own claim and never changes the grade."""
     reasons = []
 
-    def add(level, text):
-        if not any(r["text"] == text for r in reasons):
-            reasons.append({"level": level, "text": text})
+    def add(level, ident, text):
+        if not any(r["id"] == ident for r in reasons):
+            reasons.append({"level": level, "id": ident, "text": text})
 
     inspect = report.get("inspect") or {}
     sailjail = inspect.get("sailjail") or {}
     apps = sailjail.get("apps") or []
     services = (inspect.get("services") or {}).get("systemd") or []
+    network = inspect.get("network") or {}
     nested = report.get("nested") or {}
 
     if report.get("verdict") == "detected":
-        add("high", "Known malware")
+        add("high", "malware", "Known malware")
     if inspect.get("error"):
-        add("medium", "Inspection failed, grade incomplete")
+        add("medium", "inspection-failed", "Inspection failed, grade incomplete")
 
     # --- sandbox -------------------------------------------------------------
     unsandboxed = [a for a in apps if a.get("sandbox") == "disabled"]
     undeclared = [a for a in apps if a.get("sandbox") == "none"]
     if unsandboxed:
-        add("medium", "Sandbox turned off")
+        add("medium", "sandbox-off", "Sandbox turned off")
     if undeclared:
-        add("info", "No sandbox profile declared")
+        add("info", "no-sandbox-profile", "No sandbox profile declared")
     loosening = sailjail.get("profile_loosening") or []
     if loosening:
-        add("medium", f"Own profile loosens the sandbox ({_count(len(loosening), 'rule')})")
+        add("medium", "sandbox-loosened",
+            f"Own profile loosens the sandbox ({_count(len(loosening), 'rule')})")
     elif sailjail.get("shipped_profiles"):
-        add("info", "Own sandbox profile")
+        add("info", "own-sandbox-profile", "Own sandbox profile")
     sensitive = sorted({p for a in apps for p in a.get("permissions") or []} & SENSITIVE_PERMISSIONS)
     if sensitive:
-        add("info", "Personal data: " + ", ".join(sensitive))
+        add("info", "personal-data", "Personal data: " + ", ".join(sensitive))
 
     # --- services and privileges ---------------------------------------------
     root_units = [u for u in services if u.get("user") == "root" and u.get("scope") == "system"]
     started = [u for u in root_units if u.get("enabled_by")]
     if started:
-        add("medium", f"{_count(len(started), 'root service')}, started at install")
+        add("medium", "root-services", f"{_count(len(started), 'root service')}, started at install")
     elif root_units:
-        add("medium", _count(len(root_units), "root service"))
+        add("medium", "root-services", _count(len(root_units), "root service"))
     if root_units and (unsandboxed or undeclared):
-        add("high", "Root service and no sandbox")
+        add("high", "root-service-no-sandbox", "Root service and no sandbox")
     if any(u.get("scope") == "user" for u in services) or (inspect.get("services") or {}).get("autostart"):
-        add("info", "Starts in the background")
+        add("info", "background-start", "Starts in the background")
 
-    for item in inspect.get("privileged_files") or []:
-        why = ", ".join(item.get("why") or [])
-        add("high" if "root" in why or "capabilities" in why else "medium",
-            f"Privileged file ({why})")
+    privileged = inspect.get("privileged_files") or []
+    if privileged:
+        whys = sorted({w for item in privileged for w in item.get("why") or []})
+        add("high" if any("root" in w or "capabilities" in w for w in whys) else "medium",
+            "privileged-files",
+            f"{_count(len(privileged), 'privileged file')} ({', '.join(whys)[:80]})")
 
     for label in sorted(inspect.get("system_integration") or {}):
-        add(HOOK_LEVELS.get(label, "medium"), f"System hook: {label}")
+        add(HOOK_LEVELS.get(label, "medium"), "hook-" + _slug(label), f"System hook: {label}")
 
     # --- install scriptlets ----------------------------------------------------
     for script in inspect.get("scriptlets") or []:
@@ -139,7 +149,7 @@ def assess(report, diff=None):
                 continue
             for level, what, pattern in SCRIPTLET_RULES:
                 if pattern.search(line):
-                    add(level, f"Install script {what}")
+                    add(level, "install-script-" + _slug(what), f"Install script {what}")
 
     # --- indicators ------------------------------------------------------------
     for indicator in report.get("indicators") or []:
@@ -147,23 +157,30 @@ def assess(report, diff=None):
         label = name.replace("_", " ").lower()
         in_scriptlet = any(f.endswith("scriptlets.txt") for f in indicator.get("files") or [])
         if name in BEHAVIOUR_INDICATORS:
-            add("high" if in_scriptlet else "medium", f"Code that {label}")
+            add("high" if in_scriptlet else "medium", "code-" + _slug(name), f"Code that {label}")
         elif unsandboxed or undeclared:
             # Outside the sandbox nothing stands between this code and the data.
-            add("medium", f"Unsandboxed code that {label}")
+            add("medium", "code-" + _slug(name), f"Unsandboxed code that {label}")
         else:
-            add("info", f"Code that {label}")
+            add("info", "code-" + _slug(name), f"Code that {label}")
 
-    # --- network ---------------------------------------------------------------
-    for item in (inspect.get("network") or {}).get("notable") or []:
+    # --- embedded addresses ----------------------------------------------------
+    for item in network.get("known_bad") or []:
+        add("high" if item.get("in") == "script" else "medium", "malware-host",
+            f"Names a known malware host ({str(item.get('host'))[:60]})")
+    for item in network.get("notable") or []:
         if item.get("in") == "script":
-            add("medium", f"Script uses a {item.get('why')}")
+            add("medium", "script-address", f"Script uses a {item.get('why')}")
+    unlisted = sum(b.get("unlisted_count") or 0 for b in network.get("bulk") or []
+                   if b.get("on_public_lists") is not None)
+    if unlisted:
+        add("info", "bulk-hosts", f"{_count(unlisted, 'host')} in a bulk list are on no public block list")
 
     # --- things the scan could not see ---------------------------------------
     if nested.get("encrypted"):
-        add("medium", "Password-protected archive, not scanned")
+        add("medium", "encrypted-archive", "Password-protected archive, not scanned")
     if nested.get("limits_hit") or nested.get("error"):
-        add("medium", "Content too large to scan fully")
+        add("medium", "scan-limits", "Content too large to scan fully")
 
     # --- what this version changed -------------------------------------------
     for change in (diff or {}).get("changes") or []:
@@ -171,19 +188,25 @@ def assess(report, diff=None):
         if area == "sandbox" and kind == "changed":
             detail = change.get("detail") or ""
             if detail.startswith("declared ->"):
-                add("high", "New: sandbox dropped")
+                add("high", "new-sandbox-dropped", "New: sandbox dropped")
         elif area == "permission" and kind == "added":
             add("medium" if item in SENSITIVE_PERMISSIONS else "info",
-                f"New permission: {item}")
+                "new-permission-" + _slug(item), f"New permission: {item}")
         elif area == "systemd unit" and kind == "added":
-            add("medium", "New background service")
+            add("medium", "new-service", "New background service")
         elif area in ("privileged file", "shipped sandbox profile") and kind == "added":
-            add("medium", f"New {area}")
+            add("medium", "new-" + _slug(area), f"New {area}")
         elif area == "system hook" and kind == "added":
-            add("medium", f"New system hook: {change.get('detail')}")
+            add("medium", "new-hook-" + _slug(change.get("detail")),
+                f"New system hook: {change.get('detail')}")
         elif area == "indicator" and kind == "added":
-            add("medium", f"New code that {_indicator_name(item).replace('_', ' ').lower()}")
+            add("medium", "new-code-" + _slug(_indicator_name(item)),
+                f"New code that {_indicator_name(item).replace('_', ' ').lower()}")
 
+    explanations = inspect.get("explanations") or {}
+    for reason in reasons:
+        if reason["id"] in explanations:
+            reason["explanation"] = explanations[reason["id"]]
     reasons.sort(key=lambda r: -LEVELS[r["level"]])
     top = max((LEVELS[r["level"]] for r in reasons), default=0)
     return {"grade": GRADES[top], "reasons": reasons}
@@ -197,7 +220,13 @@ def markdown(risk):
     if not risk["reasons"]:
         out.append("Nothing in what the package declares or installs stands out.")
     for reason in risk["reasons"]:
-        out.append(f"- {marks[reason['level']]} {reason['text']}".replace("-  ", "- "))
+        out.append(f"- {marks[reason['level']]} {reason['text']} (`{reason.get('id', '')}`)"
+                   .replace("-  ", "- "))
+        if reason.get("explanation"):
+            out.append(f"  - Developer's explanation (their own claim, not verified): "
+                       f"{reason['explanation']}")
     out += ["", "The grade describes how much the package gets to do on the device, from what it "
-            "declares and installs. It is a set of heuristics, not a verdict.", ""]
+            "declares and installs. It is a set of heuristics, not a verdict. A flag is a prompt "
+            "to explain, not an accusation: developers can answer each one by its id, see "
+            "[Explaining a flag](https://github.com/SpecSierra/Coastguard#explaining-a-flag).", ""]
     return out

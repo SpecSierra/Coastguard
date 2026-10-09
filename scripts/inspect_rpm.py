@@ -164,6 +164,37 @@ def inspect_sailjail(entries):
             "profile_loosening": loosening}
 
 
+MAX_EXPLANATIONS = 40
+MAX_EXPLANATION = 300
+
+
+def inspect_explanations(entries):
+    """The developer's own answers to flags, from /usr/share/coastguard/*.json
+    in the package: {"<flag id>": "<one or two sentences>"}. Shown next to
+    the flag as the developer's claim; never used to change a grade."""
+    explanations = {}
+    for rel, full, st in entries:
+        if not re.match(r"^usr/share/coastguard/[^/]+\.json$", rel):
+            continue
+        try:
+            data = json.loads(read_text(full, st) or "{}")
+        except ValueError:
+            continue
+        if not isinstance(data, dict):
+            continue
+        for key, value in data.items():
+            if len(explanations) >= MAX_EXPLANATIONS:
+                break
+            if not isinstance(value, str) or not re.fullmatch(r"[a-z0-9-]{1,80}", str(key)):
+                continue
+            # Plain words only: this text is shown in reports and in store apps.
+            text = re.sub(r"[\x00-\x1f\x7f<>\[\]()`*_|\\]+", " ", value)
+            text = re.sub(r"\s+", " ", text).strip()[:MAX_EXPLANATION]
+            if text:
+                explanations[key] = text
+    return explanations
+
+
 def inspect_services(entries, scriptlet_text):
     unit_re = re.compile(
         r"^(etc|lib|usr/lib)/systemd/(system|user)/([^/]+\.(service|timer|socket|path|mount))$"
@@ -279,8 +310,49 @@ def valid_host(host):
     return bool(re.fullmatch(r"(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,24}", host))
 
 
+# One file naming this many distinct hosts is a list of some kind (a block
+# list, a library's reference URLs), not the app's own code. It is reported
+# as a count, with no guess about what the list is for.
+BULK_HOSTS = 100
+HOST_TOKEN = re.compile(
+    rb"(?<![a-z0-9.-])((?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,24})(?![a-z0-9-])")
+
+
+def load_host_lists(directory):
+    """Every host named in the *.txt files of a directory, or None when there
+    are none. Used for public block lists and known-malware host lists."""
+    hosts, found = set(), False
+    try:
+        names = sorted(os.listdir(directory))
+    except OSError:
+        return None
+    for name in names:
+        if not name.endswith(".txt"):
+            continue
+        try:
+            with open(os.path.join(directory, name), "rb") as fh:
+                data = fh.read().lower()
+        except OSError:
+            continue
+        found = True
+        hosts.update(m.group(1).decode("ascii") for m in HOST_TOKEN.finditer(data))
+    return hosts if found else None
+
+
+def listed(host, hosts):
+    """Exact match, give or take a leading www. Deliberately not a match on
+    the parent domain: evil.github.io must not pass because github.io is listed."""
+    bare = host[4:] if host.startswith("www.") else host
+    return host in hosts or bare in hosts or "www." + bare in hosts
+
+
 def inspect_network(entries, nested, scriptlets_path, report_dir):
-    hosts = {}
+    lists_dir = os.environ.get("COASTGUARD_HOSTLISTS", "")
+    public = load_host_lists(os.path.join(lists_dir, "public")) if lists_dir else None
+    malicious = load_host_lists(os.path.join(lists_dir, "malicious")) if lists_dir else None
+
+    file_hosts, file_kind = {}, {}
+    info = {}       # host -> {"urls": set, "plain_http": bool}
     notable, seen_notable = [], set()
     urls = {}
     sources = [("/" + rel, full, st) for rel, full, st in entries]
@@ -320,16 +392,14 @@ def inspect_network(entries, nested, scriptlets_path, report_dir):
                         reason = "paste, tunnel, webhook or raw-download service"
                     elif port and port not in (80, 443):
                         reason = f"non-standard port {port}"
-                entry = hosts.setdefault(host, {"host": host, "urls": set(), "in": set(),
-                                               "files": [], "plain_http": False})
+                file_hosts.setdefault(label, set()).add(host)
+                file_kind[label] = kind
+                entry = info.setdefault(host, {"urls": set(), "plain_http": False})
                 entry["urls"].add(url)
-                entry["in"].add(kind)
                 entry["plain_http"] |= parts.scheme in ("http", "ws", "ftp")
-                if label not in entry["files"] and len(entry["files"]) < 3:
-                    entry["files"].append(label)
                 if len(urls) < 50000:
                     urls.setdefault(url, label)
-                if reason and (host, reason) not in seen_notable and len(notable) < 100:
+                if reason and (host, reason) not in seen_notable and len(notable) < 400:
                     seen_notable.add((host, reason))
                     notable.append({"url": url[:200], "why": reason, "file": label, "in": kind})
 
@@ -337,19 +407,60 @@ def inspect_network(entries, nested, scriptlets_path, report_dir):
         for url, label in sorted(urls.items()):
             fh.write(f"{url}\t{label}\n")
 
-    # Hosts named in readable scripts/QML say more than the thousands baked
-    # into a large binary, so they sort first.
-    ordered = sorted(hosts.values(), key=lambda h: ("script" not in h["in"], -len(h["urls"]), h["host"]))
-    listed = [{"host": h["host"], "urls": len(h["urls"]), "in": sorted(h["in"]),
-               "plain_http": h["plain_http"], "files": h["files"]} for h in ordered[:300]]
+    bulk_files = {f for f, found in file_hosts.items() if len(found) >= BULK_HOSTS}
+    scripts, binaries, where = set(), set(), {}
+    for label, found in file_hosts.items():
+        if label in bulk_files:
+            continue
+        (scripts if file_kind[label] == "script" else binaries).update(found)
+        for host in found:
+            where.setdefault(host, [])
+            if len(where[host]) < 3:
+                where[host].append(label)
+    binaries -= scripts
+
+    bulk, bulk_unlisted = [], set()
+    for label in sorted(bulk_files):
+        found = file_hosts[label]
+        item = {"file": label, "hosts": len(found), "on_public_lists": None,
+                "unlisted": [], "unlisted_count": None, "known_bad": 0}
+        if public is not None:
+            # What is on no public list is the part nobody else has reviewed.
+            unlisted = sorted(h for h in found if not listed(h, public))
+            item.update(on_public_lists=len(found) - len(unlisted),
+                        unlisted=unlisted[:40], unlisted_count=len(unlisted))
+            bulk_unlisted.update(unlisted)
+        if malicious is not None:
+            item["known_bad"] = sum(1 for h in found if listed(h, malicious))
+        bulk.append(item)
+
+    # A block list names malware hosts on purpose, so only the app's own
+    # files count here.
+    known_bad = []
+    if malicious is not None:
+        for host in sorted(scripts | binaries):
+            if listed(host, malicious):
+                known_bad.append({"host": host, "in": "script" if host in scripts else "binary",
+                                  "files": where.get(host, [])})
+
+    own = sorted(scripts | binaries, key=lambda h: (h not in scripts, -len(info[h]["urls"]), h))
     return {
-        "hosts_total": len(hosts),
-        "hosts_in_scripts": sum("script" in h["in"] for h in hosts.values()),
-        "hosts": listed,
+        "hosts_total": len(info),
+        "hosts_in_scripts": len(scripts),
+        # The app's own files only; bulk files are summarised under "bulk".
+        "hosts": [{"host": h, "urls": len(info[h]["urls"]),
+                   "in": ["script"] if h in scripts else ["binary"],
+                   "plain_http": info[h]["plain_http"], "files": where.get(h, [])}
+                  for h in own[:300]],
         # Complete lists, so the next version can be compared with this one.
-        "hosts_scripts": sorted(h for h, e in hosts.items() if "script" in e["in"])[:5000],
-        "hosts_binaries": sorted(h for h, e in hosts.items() if "script" not in e["in"])[:5000],
-        "notable": notable,
+        "hosts_scripts": sorted(scripts)[:5000],
+        "hosts_binaries": sorted(binaries)[:5000],
+        "hosts_bulk_unlisted": sorted(bulk_unlisted)[:5000],
+        "bulk": bulk,
+        "known_bad": known_bad[:50],
+        "lists": {"public": len(public) if public is not None else None,
+                  "malicious": len(malicious) if malicious is not None else None},
+        "notable": [n for n in notable if n["file"] not in bulk_files][:100],
         "ignored_hosts": len(ignored),
     }
 
@@ -447,25 +558,40 @@ def markdown(result):
     out.append("")
 
     net = result["network"]
-    out.append("**Network addresses embedded in the files**")
+    out.append("**Embedded addresses**")
     out.append("")
-    out.append(f"{net['hosts_total']} host(s), {net['hosts_in_scripts']} of them in readable "
-               f"scripts/QML/config. Full list in `urls.txt`. Addresses built at runtime or "
-               f"obfuscated do not show up here.")
+    out.append("Addresses written in the package's files, not a record of what the app "
+               "contacts. Addresses built at runtime do not show up here.")
     out.append("")
+    for item in net.get("known_bad") or []:
+        out.append(f"- :rotating_light: {code(item['host'])} is on a known-malware host list "
+                   f"(in {', '.join(code(f) for f in item['files'])})")
     for item in net["notable"][:25]:
         out.append(f"- :warning: {code(item['url'])}: {item['why']} (in {code(item['file'])})")
     scripts = [h for h in net["hosts"] if "script" in h["in"]]
     binaries = [h for h in net["hosts"] if "script" not in h["in"]]
     if scripts:
-        out.append("- in scripts/QML/config: " + ", ".join(
+        out.append("- in its scripts and config: " + ", ".join(
             code(h["host"]) + (" (plain http)" if h["plain_http"] else "") for h in scripts[:60])
             + (f" (+{net['hosts_in_scripts'] - 60} more)" if net["hosts_in_scripts"] > 60 else ""))
     if binaries:
-        rest = net["hosts_total"] - net["hosts_in_scripts"]
-        out.append("- only in binaries, most referenced first: "
-                   + ", ".join(code(h["host"]) for h in binaries[:25])
-                   + (f" (+{rest - 25} more)" if rest > 25 else ""))
+        total = len(net.get("hosts_binaries") or binaries)
+        out.append("- in its binaries: " + ", ".join(code(h["host"]) for h in binaries[:25])
+                   + (f" (+{total - 25} more)" if total > 25 else ""))
+    for item in net.get("bulk") or []:
+        line = f"- {code(item['file'])}: {item['hosts']} hosts in one file"
+        if item["on_public_lists"] is None:
+            line += " (public block lists were not available to compare with)"
+        elif item["unlisted_count"]:
+            line += (f"; {item['on_public_lists']} are on public block lists, "
+                     f"{item['unlisted_count']} are not: "
+                     + ", ".join(code(h) for h in item["unlisted"][:15])
+                     + (f" (+{item['unlisted_count'] - 15} more)" if item["unlisted_count"] > 15 else ""))
+        else:
+            line += ", all of them on public block lists"
+        out.append(line)
+    if not (scripts or binaries or net.get("bulk")):
+        out.append("None found.")
     out.append("")
     return "\n".join(out)
 
@@ -484,6 +610,7 @@ def main():
         "privileged_files": inspect_filemeta(filemeta),
         "scriptlets": inspect_scriptlets(scriptlet_text),
         "network": inspect_network(entries, nested, scriptlets_path, report_dir),
+        "explanations": inspect_explanations(entries),
     }
     with open(os.path.join(report_dir, "inspect.json"), "w", encoding="utf-8") as fh:
         json.dump(result, fh, indent=2)

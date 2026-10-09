@@ -1,14 +1,22 @@
 # Coastguard
 
-A tool for safe sailing: malware scanning for Sailfish OS packages published
-on OpenRepos.
+A tool for safe sailing: reports on what Sailfish OS packages published on
+OpenRepos get to do on a device.
+
+OpenRepos has no review: anyone can upload anything. Coastguard reads every
+new upload and writes down what it sets up: sandbox, services, privileges,
+install scripts, embedded addresses, and what changed since the previous
+version. Each finding is a **flag** with a risk grade. A flag is a prompt to
+explain, not an accusation, and developers can
+[answer each one](#explaining-a-flag) from inside their package.
+
+It also checks packages against known malware (ClamAV, the
+[YARA Forge](https://yarahq.github.io/) core rules, VirusTotal and
+MalwareBazaar). That check only recognises malware that is already
+catalogued, so a clean result takes one line in a report and is never
+presented as "safe".
 
 ## What it does today
-
-The `Scan RPM` workflow downloads one RPM and checks it with:
-
-- **ClamAV**, using the official signature database (refreshed daily)
-- **YARA**, using the [YARA Forge](https://yarahq.github.io/) *core* rule set
 
 The scan covers the RPM itself, every file in its payload, and its install
 scriptlets (`%pre`, `%post`, triggers), which run as root on the device. The
@@ -39,9 +47,14 @@ up on a device. This is informational and never changes the verdict:
 - **Privileges and hooks**: setuid/setgid files, file capabilities, sudoers,
   polkit, udev, cron, package repositories and similar
 - **Install scriptlets**: the commands worth reading
-- **Network**: hosts and URLs embedded in the files, those in readable
-  scripts/QML listed first, with hard-coded IPs and paste/tunnel/webhook
-  services called out
+- **Embedded addresses**: hosts written in the app's own scripts and
+  binaries. This is what is in the files, not what the app contacts. A file
+  naming a hundred or more hosts (a block list, a library's reference URLs)
+  is reported as a count, with no guess about its purpose. Its hosts are
+  compared with public block lists (EasyList, EasyPrivacy, uBlock Origin,
+  Peter Lowe, StevenBlack) and only those on none of them are named, so a
+  long list is not a place to hide an address. Hosts in the app's own files
+  are also checked against the URLhaus known-malware host list
 
 ## Risk grade
 
@@ -68,6 +81,25 @@ code.
 Every reason is listed with the grade. The rules are in `scripts/risk.py`.
 They are heuristics: a legitimate system tool grades high, and a low grade is
 not a promise that an app is safe.
+
+## Explaining a flag
+
+Every flag in a report has an id, shown next to it, such as `root-services`
+or `sandbox-loosened`. A developer can answer flags by shipping one small
+JSON file in the package:
+
+    /usr/share/coastguard/<package-name>.json
+
+    {
+      "root-services": "Sets the CPU governor on Xperia ports; without it the CPU stays in low-power mode.",
+      "sandbox-loosened": "The browser needs the camera and microphone devices for video calls."
+    }
+
+Coastguard shows each answer under its flag, in the report and in store
+apps, marked as the developer's own explanation. It is a claim, not a
+verification: it never changes a grade, since anyone can write one. What it
+does is give users a reason to weigh, and make a flag with no answer stand
+out. Answers are plain text, up to 300 characters each.
 
 ## Watching OpenRepos
 

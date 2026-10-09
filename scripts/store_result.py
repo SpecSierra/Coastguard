@@ -199,9 +199,19 @@ def compare(old, new, old_files, new_files):
             change("host", "added", host, True, "in scripts/QML/config")
         for host in added_binaries[:LIST_CAP]:
             change("host", "added", host, False, "only in binaries")
+        # A bulk file is where an address could hide, so a new one that no
+        # public block list knows is worth reading. Only comparable when the
+        # previous scan had the lists too.
+        added_bulk = []
+        if "hosts_bulk_unlisted" in old_net:
+            added_bulk = sorted(set(new_net.get("hosts_bulk_unlisted") or [])
+                                - set(old_net["hosts_bulk_unlisted"]) - old_all)
+            for host in added_bulk[:LIST_CAP]:
+                change("host", "added", host, True, "in a bulk list, on no public block list")
         for host in removed[:LIST_CAP]:
             change("host", "removed", host)
-        counts["hosts"] = {"added": len(added_scripts) + len(added_binaries), "removed": len(removed)}
+        counts["hosts"] = {"added": len(added_scripts) + len(added_binaries) + len(added_bulk),
+                           "removed": len(removed)}
 
     if old_files is not None and new_files is not None:
         added = sorted(new_files.keys() - old_files.keys())
@@ -222,43 +232,65 @@ def report_url(name, sha256):
     return f"https://github.com/{REPOSITORY}/blob/results/packages/{name}/{sha256}.md"
 
 
+def _graded(report):
+    """The stored grade, recomputed when it predates reason ids."""
+    grade = report.get("risk")
+    if not grade or any("id" not in r for r in grade.get("reasons", [])):
+        grade = risk.assess(report, report.get("diff"))
+    return grade
+
+
+def malware_markdown(report):
+    """Nothing to read when nothing was recognised: one line. The check only
+    knows catalogued malware, so a clean result deserves no more space."""
+    reputation = report.get("reputation") or {}
+    detections = (report.get("clamav") or []) + (report.get("yara") or [])
+    hits = reputation.get("hits") or []
+    if not detections and not hits:
+        engines = ["ClamAV", "YARA"] + [label for key, label in
+                                        (("virustotal", "VirusTotal"), ("malwarebazaar", "MalwareBazaar"))
+                                        if (reputation.get(key) or {}).get("status") == "ok"]
+        return [f"Known-malware check ({', '.join(engines)}): nothing recognised. "
+                "This only covers malware that is already catalogued.", ""]
+    lines = ["### Known malware recognised", ""]
+    lines += [f"- :rotating_light: {code(d, 300)}" for d in detections]
+    lines += [f"- :rotating_light: {hit['source']}: {code(hit['path'])} {hit['detail']}" for hit in hits]
+    return lines + [""]
+
+
 def report_markdown(report):
     """The whole result as one readable page, built from the stored result
     alone so it can be regenerated at any time."""
-    grade = report.get("risk") or risk.assess(report, report.get("diff"))
-    known = ("**recognised as known malware**" if report.get("verdict") == "detected"
-             else "nothing recognised")
-    lines = [f"# {code(report.get('package'))}: {grade['grade']} risk", "",
-             f"Known-malware check: {known}.", "",
-             "| | |", "|---|---|",
-             f"| Scanned | {report.get('scanned')} |",
-             f"| sha256 | `{report.get('sha256')}` |",
-             f"| Source | {code(report.get('source'), 300)} |",
-             f"| Engines | {code((report.get('engines') or {}).get('clamav'))}, "
-             f"YARA Forge core {code((report.get('engines') or {}).get('yara_forge_core'))} |", ""]
+    grade = _graded(report)
+    detected = report.get("verdict") == "detected"
+    lines = [f"# {code(report.get('package'))}: {grade['grade']} risk", ""]
+    if detected:
+        lines += malware_markdown(report)
     lines += risk.markdown(grade)
-    lines += ["### Known-malware check", ""]
-    detections = (report.get("clamav") or []) + (report.get("yara") or [])
-    lines += [f"- :rotating_light: {code(d, 300)}" for d in detections] or \
-             ["Nothing recognised by the ClamAV and YARA signatures."]
-    lines.append("")
-    lines += reputation_markdown(report.get("reputation"))
+    lines += diff_markdown(report.get("diff"))
+    inspect = report.get("inspect") or {}
+    if inspect and not inspect.get("error"):
+        inspect.setdefault("sailjail", {}).setdefault("profile_loosening", [])
+        lines.append(inspect_rpm.markdown(inspect))
     if report.get("indicators"):
-        lines += ["### Indicators", "",
-                  "Code patterns found in the package. Legitimate apps match these too.", ""]
+        lines += ["**Code patterns**", "",
+                  "Found in the package's files. Legitimate apps match these too.", ""]
         for item in report["indicators"]:
             files = item.get("files") or []
             lines.append(f"- {item['rule'].replace('Coastguard_Indicator_', '').replace('_', ' ')}: "
                          + ", ".join(code(f) for f in files[:4])
                          + (f" (+{len(files) - 4} more)" if len(files) > 4 else ""))
         lines.append("")
-    lines += diff_markdown(report.get("diff"))
-    inspect = report.get("inspect") or {}
-    if inspect and not inspect.get("error"):
-        inspect.setdefault("sailjail", {}).setdefault("profile_loosening", [])
-        lines.append(inspect_rpm.markdown(inspect))
-    lines += ["", "---", "Automatic scan by [Coastguard](https://github.com/" + REPOSITORY + "). "
-              "It cannot recognise new malware; nothing here is a guarantee that the package is safe.", ""]
+    lines += ["---", ""]
+    if not detected:
+        lines += malware_markdown(report)
+    lines += ["| | |", "|---|---|",
+              f"| Scanned | {report.get('scanned')} |",
+              f"| sha256 | `{report.get('sha256')}` |",
+              f"| Source | {code(report.get('source'), 300)} |", "",
+              "Automatic report by [Coastguard](https://github.com/" + REPOSITORY + "). "
+              "It describes what a package gets to do on a device; it is not a guarantee "
+              "that the package is safe.", ""]
     return "\n".join(lines)
 
 
@@ -290,12 +322,13 @@ def summarize(report):
                           for c in attention[:12]],
             "files": (diff.get("counts") or {}).get("files"),
         }
-    grade = report.get("risk") or risk.assess(report, diff)
+    grade = _graded(report)
     return {
         # How much the package gets to do on the device; see scripts/risk.py.
         "risk": {"grade": grade["grade"],
-                 "reasons": [{"level": r["level"], "text": r["text"][:200]}
-                             for r in grade["reasons"][:20]]},
+                 # "explanation", when present, is the developer's own claim.
+                 "reasons": [{k: str(r[k])[:300] for k in ("level", "id", "text", "explanation")
+                              if k in r} for r in grade["reasons"][:20]]},
         "detections": [str(line)[:200] for line in
                        (report.get("clamav") or []) + (report.get("yara") or [])][:10]
                       + [f"{h['source']}: {h['detail']}" for h in reputation.get("hits") or []][:5],
@@ -481,7 +514,8 @@ def main():
     mine["summary"] = summarize(report)
     # Builds stored before summaries existed get theirs from the stored result.
     for entry in index:
-        if "checks" not in entry.get("summary", {}):
+        reasons = entry.get("summary", {}).get("risk", {}).get("reasons")
+        if reasons is None or any("id" not in r for r in reasons):
             old = load(os.path.join(pkgdir, entry["sha256"] + ".json"))
             if old:
                 old["report"] = report_url(name, entry["sha256"])
@@ -501,12 +535,13 @@ def main():
         json.dump(index, fh, indent=2)
         fh.write("\n")
 
-    known = ("**recognised as known malware**" if report["verdict"] == "detected"
-             else "nothing recognised")
     lines = [f"## Coastguard: {report['risk']['grade']} risk", "",
-             f"Known-malware check: {known}. "
-             f"Stored as `packages/{name}/{sha256}.json` on the `results` branch.", ""]
-    lines += risk.markdown(report["risk"]) + reputation_markdown(reputation) + diff_markdown(diff)
+             f"[Report page]({report['report']})", ""]
+    if report["verdict"] == "detected":
+        lines += malware_markdown(report)
+    lines += risk.markdown(report["risk"]) + diff_markdown(diff)
+    if report["verdict"] != "detected":
+        lines += malware_markdown(report)
     print(f"{name}: {report['verdict']} ({sha256})")
     finish(report["verdict"], lines, 0)
 
