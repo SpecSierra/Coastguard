@@ -1,0 +1,49 @@
+[
+  {
+    "sha256": "e508d4a78b4295cbc5ce07df8e410e7b82ec3d0260816c3d9b8c2b2618325bcc",
+    "first_seen": "2026-10-09T05:57:45Z",
+    "package": "personal-ringtones-qml-1.2.0-1.noarch",
+    "version": "1.2.0-1",
+    "arch": "noarch",
+    "buildtime": 1791497867,
+    "last_scanned": "2026-10-09T05:57:45Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "text": "System hook: system UI patches"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [
+        "system UI patches"
+      ],
+      "scriptlets": 2,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37891040392",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/personal-ringtones-qml/e508d4a78b4295cbc5ce07df8e410e7b82ec3d0260816c3d9b8c2b2618325bcc.md"
+    }
+  }
+]

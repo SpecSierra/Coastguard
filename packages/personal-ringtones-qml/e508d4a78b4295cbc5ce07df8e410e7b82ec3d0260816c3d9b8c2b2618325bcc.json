@@ -1,0 +1,104 @@
+{
+  "verdict": "clean",
+  "name": "personal-ringtones-qml",
+  "version": "1.2.0-1",
+  "arch": "noarch",
+  "package": "personal-ringtones-qml-1.2.0-1.noarch",
+  "buildtime": 1791497867,
+  "sha256": "e508d4a78b4295cbc5ce07df8e410e7b82ec3d0260816c3d9b8c2b2618325bcc",
+  "source": "https://openrepos.net/sites/default/files/packages/12554/personal-ringtones-qml-1.2.0-1.noarch.rpm",
+  "source_page": "https://openrepos.net/node/12699",
+  "scanned": "2026-10-09T05:57:45Z",
+  "files": 7,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28147/Thu Oct  8 06:24:12 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {
+      "system UI patches": [
+        "/usr/share/patchmanager/patches/personal-ringtones-qml/patch.json",
+        "/usr/share/patchmanager/patches/personal-ringtones-qml/unified_diff.patch"
+      ]
+    },
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "preinstall",
+        "interpreter": "/bin/sh",
+        "lines": 3,
+        "notable": [],
+        "body": "if [ -d /tmp/patchmanager3/patches/personal-ringtones-qml ]; then\n/usr/sbin/patchmanager -u personal-ringtones-qml || true\nfi\n"
+      },
+      {
+        "type": "preuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 3,
+        "notable": [],
+        "body": "if [ -d /tmp/patchmanager3/patches/personal-ringtones-qml ]; then\n/usr/sbin/patchmanager -u personal-ringtones-qml || true\nfi\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 0,
+      "hosts_in_scripts": 0,
+      "hosts": [],
+      "hosts_scripts": [],
+      "hosts_binaries": [],
+      "notable": [],
+      "ignored_hosts": 0
+    }
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37891040392",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "text": "System hook: system UI patches"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/personal-ringtones-qml/e508d4a78b4295cbc5ce07df8e410e7b82ec3d0260816c3d9b8c2b2618325bcc.md"
+}
