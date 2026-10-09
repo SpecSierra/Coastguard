@@ -1,25 +1,6 @@
 {
   "cursor": 1791551041,
-  "queue": [
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.1-1.aarch64.rpm",
-      "page": "https://openrepos.net/node/12550",
-      "appid": 12550,
-      "title": "FUTO Keyboard (with Swipe and Offline Voice Input)"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.1-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12550",
-      "appid": 12550,
-      "title": "FUTO Keyboard (with Swipe and Offline Voice Input)"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.1-1.i486.rpm",
-      "page": "https://openrepos.net/node/12550",
-      "appid": 12550,
-      "title": "FUTO Keyboard (with Swipe and Offline Voice Input)"
-    }
-  ],
+  "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -101,12 +82,11 @@
     "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.1-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.1-1.i486.rpm"
   ],
-  "last_run": "2026-10-09T13:57:12Z",
+  "last_run": "2026-10-09T14:26:58Z",
   "dispatched": [
-    1791550656,
-    1791550819,
-    1791550984,
-    1791551232,
-    1791551847
+    1791551847,
+    1791555437,
+    1791555625,
+    1791555812
   ]
 }
