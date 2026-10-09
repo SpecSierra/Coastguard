@@ -2,18 +2,6 @@
   "cursor": 1791505921,
   "queue": [
     {
-      "url": "https://openrepos.net/sites/default/files/packages/16198/screenrecorder-0.5.1-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12695",
-      "appid": 12695,
-      "title": "screenrecorder (coderus fork)"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/16198/screenrecorder-0.5.1-1.aarch64.rpm",
-      "page": "https://openrepos.net/node/12695",
-      "appid": 12695,
-      "title": "screenrecorder (coderus fork)"
-    },
-    {
       "url": "https://openrepos.net/sites/default/files/packages/16357/atlantic-browser-1.6.0.aarch64.rpm",
       "page": "https://openrepos.net/node/12423",
       "appid": 12423,
@@ -185,12 +173,12 @@
     "https://openrepos.net/sites/default/files/packages/12554/personal-ringtones-qml-1.2.0-1.noarch.rpm",
     "https://openrepos.net/sites/default/files/packages/19652/harbour-musicfox-0.5.0-7.aarch64.rpm"
   ],
-  "last_run": "2026-10-09T00:40:06Z",
+  "last_run": "2026-10-09T01:00:34Z",
   "dispatched": [
-    1791502859,
-    1791503002,
     1791505034,
     1791506247,
-    1791506327
+    1791506327,
+    1791507433,
+    1791507535
   ]
 }
