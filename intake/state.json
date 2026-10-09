@@ -1,6 +1,13 @@
 {
-  "cursor": 1791575173,
-  "queue": [],
+  "cursor": 1791581521,
+  "queue": [
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.3.0-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12624",
+      "appid": 12624,
+      "title": "Car Hotspot"
+    }
+  ],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -92,13 +99,16 @@
     "https://openrepos.net/sites/default/files/packages/18578/harbour-mullvad-debuginfo-0.1-2.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/18578/harbour-mullvad-debugsource-0.1-2.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/18578/harbour-mullvad-debugsource-0.1-2.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/18578/harbour-mullvad-debugsource-0.1-2.i486.rpm"
+    "https://openrepos.net/sites/default/files/packages/18578/harbour-mullvad-debugsource-0.1-2.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.3.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.3.0-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-09T21:17:10Z",
+  "last_run": "2026-10-09T21:39:04Z",
   "dispatched": [
     1791579432,
     1791579512,
     1791579591,
-    1791579650
+    1791579650,
+    1791581845
   ]
 }
