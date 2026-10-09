@@ -288,5 +288,67 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37881620399",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-helmsman/62237de535ac19044a26e38b380920d5ca9dce3c0f825642227ece13b54beceb.md"
     }
+  },
+  {
+    "sha256": "b83cb26d9506ed471b4a745897d78177cdae5dc7737855fcbcfb36b38c26e254",
+    "first_seen": "2026-10-09T04:37:51Z",
+    "package": "harbour-helmsman-0.4.9-1.i486",
+    "version": "0.4.9-1",
+    "arch": "i486",
+    "buildtime": 1791494779,
+    "last_scanned": "2026-10-09T04:37:51Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "text": "Own profile loosens the sandbox (7 rules)"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Documents",
+        "Internet",
+        "Location",
+        "MediaIndexing",
+        "Notifications",
+        "Pictures"
+      ],
+      "own_sandbox_profile": true,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 4,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-helmsman-0.4.8-1.i486",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 3,
+          "unchanged": 120
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37884729730",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-helmsman/b83cb26d9506ed471b4a745897d78177cdae5dc7737855fcbcfb36b38c26e254.md"
+    }
   }
 ]
