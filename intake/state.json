@@ -1,5 +1,5 @@
 {
-  "cursor": 1791534001,
+  "cursor": 1791546001,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -70,8 +70,13 @@
     "https://openrepos.net/sites/default/files/packages/19185/harbour-meliona-0.5-2.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/19185/harbour-dimeora-0.3-3.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19185/harbour-dimeora-0.3-3.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/19185/harbour-dimeora-0.3-3.i486.rpm"
+    "https://openrepos.net/sites/default/files/packages/19185/harbour-dimeora-0.3-3.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.46.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.46.0-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-09T11:37:11Z",
-  "dispatched": []
+  "last_run": "2026-10-09T12:00:44Z",
+  "dispatched": [
+    1791547044,
+    1791547145
+  ]
 }
