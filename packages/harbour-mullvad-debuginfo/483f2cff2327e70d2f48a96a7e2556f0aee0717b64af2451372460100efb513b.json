@@ -1,0 +1,87 @@
+{
+  "verdict": "clean",
+  "name": "harbour-mullvad-debuginfo",
+  "version": "0.1-2",
+  "arch": "armv7hl",
+  "package": "harbour-mullvad-debuginfo-0.1-2.armv7hl",
+  "buildtime": 1791574956,
+  "sha256": "483f2cff2327e70d2f48a96a7e2556f0aee0717b64af2451372460100efb513b",
+  "source": "https://openrepos.net/sites/default/files/packages/18578/harbour-mullvad-debuginfo-0.1-2.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12649",
+  "scanned": "2026-10-09T19:54:56Z",
+  "files": 10,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28147/Thu Oct  8 06:24:12 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 0,
+      "hosts_in_scripts": 0,
+      "hosts": [],
+      "hosts_scripts": [],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 606610,
+        "malicious": 397
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37983393047",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-mullvad-debuginfo/483f2cff2327e70d2f48a96a7e2556f0aee0717b64af2451372460100efb513b.md"
+}
