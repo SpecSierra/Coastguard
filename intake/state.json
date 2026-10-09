@@ -1,18 +1,6 @@
 {
-  "cursor": 1791498121,
+  "cursor": 1791505921,
   "queue": [
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.1-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12345",
-      "appid": 12345,
-      "title": "SubMusic"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.1-1.i486.rpm",
-      "page": "https://openrepos.net/node/12345",
-      "appid": 12345,
-      "title": "SubMusic"
-    },
     {
       "url": "https://openrepos.net/sites/default/files/packages/16198/screenrecorder-0.5.1-1.armv7hl.rpm",
       "page": "https://openrepos.net/node/12695",
@@ -126,6 +114,12 @@
       "page": "https://openrepos.net/node/12699",
       "appid": 12699,
       "title": "Patch personal ringtones in contacts pulldown menu"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19652/harbour-musicfox-0.5.0-7.aarch64.rpm",
+      "page": "https://openrepos.net/node/12547",
+      "appid": 12547,
+      "title": "Musicfox Touch"
     }
   ],
   "seen": [
@@ -188,14 +182,15 @@
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.5.0-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.5.0-1.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/12554/personalringtones-1.3.0-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/12554/personal-ringtones-qml-1.2.0-1.noarch.rpm"
+    "https://openrepos.net/sites/default/files/packages/12554/personal-ringtones-qml-1.2.0-1.noarch.rpm",
+    "https://openrepos.net/sites/default/files/packages/19652/harbour-musicfox-0.5.0-7.aarch64.rpm"
   ],
-  "last_run": "2026-10-09T00:18:54Z",
+  "last_run": "2026-10-09T00:40:06Z",
   "dispatched": [
-    1791501437,
-    1791502633,
     1791502859,
     1791503002,
-    1791505034
+    1791505034,
+    1791506247,
+    1791506327
   ]
 }
