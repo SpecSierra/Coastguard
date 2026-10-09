@@ -42,5 +42,49 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37872333811",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-eureadia/a6f8aebeff68043ec0d37b23a913307c31f033490a11feaef2120912b8734900.md"
     }
+  },
+  {
+    "sha256": "73dd7832a385effbf4fcfe85c2d1f625dc971ae4ac5676612939a94e97ec7ec6",
+    "first_seen": "2026-10-09T02:17:49Z",
+    "package": "harbour-eureadia-0.6-8.armv7hl",
+    "version": "0.6-8",
+    "arch": "armv7hl",
+    "buildtime": 1791481914,
+    "last_scanned": "2026-10-09T02:17:49Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Internet",
+        "UserDirs"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37873847605",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-eureadia/73dd7832a385effbf4fcfe85c2d1f625dc971ae4ac5676612939a94e97ec7ec6.md"
+    }
   }
 ]
