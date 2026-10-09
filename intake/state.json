@@ -2,18 +2,6 @@
   "cursor": 1791505921,
   "queue": [
     {
-      "url": "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.45.0-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12489",
-      "appid": 12489,
-      "title": "xmatic"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.2.5-1.aarch64.rpm",
-      "page": "https://openrepos.net/node/12624",
-      "appid": 12624,
-      "title": "Car Hotspot"
-    },
-    {
       "url": "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.2.5-1.armv7hl.rpm",
       "page": "https://openrepos.net/node/12624",
       "appid": 12624,
@@ -137,12 +125,12 @@
     "https://openrepos.net/sites/default/files/packages/12554/personal-ringtones-qml-1.2.0-1.noarch.rpm",
     "https://openrepos.net/sites/default/files/packages/19652/harbour-musicfox-0.5.0-7.aarch64.rpm"
   ],
-  "last_run": "2026-10-09T02:57:11Z",
+  "last_run": "2026-10-09T03:20:12Z",
   "dispatched": [
-    1791511033,
-    1791511112,
     1791512234,
     1791512315,
-    1791513436
+    1791513436,
+    1791515833,
+    1791515934
   ]
 }
