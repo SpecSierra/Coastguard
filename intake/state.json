@@ -1,6 +1,13 @@
 {
-  "cursor": 1791532861,
-  "queue": [],
+  "cursor": 1791534001,
+  "queue": [
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19185/harbour-dimeora-0.3-3.i486.rpm",
+      "page": "https://openrepos.net/node/12421",
+      "appid": 12421,
+      "title": "Dimeora"
+    }
+  ],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -67,12 +74,17 @@
     "https://openrepos.net/sites/default/files/packages/12554/personal-ringtones-qml-1.2.0-2.noarch.rpm",
     "https://openrepos.net/sites/default/files/packages/19185/harbour-meliona-0.5-2.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19185/harbour-meliona-0.5-2.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/19185/harbour-meliona-0.5-2.i486.rpm"
+    "https://openrepos.net/sites/default/files/packages/19185/harbour-meliona-0.5-2.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/19185/harbour-dimeora-0.3-3.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19185/harbour-dimeora-0.3-3.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19185/harbour-dimeora-0.3-3.i486.rpm"
   ],
-  "last_run": "2026-10-09T08:22:09Z",
+  "last_run": "2026-10-09T08:40:15Z",
   "dispatched": [
     1791533847,
     1791533927,
-    1791534029
+    1791534029,
+    1791535054,
+    1791535136
   ]
 }
