@@ -79,7 +79,7 @@
     "version": "1.6.0-748.1.aio",
     "arch": "aarch64",
     "buildtime": 1791477089,
-    "last_scanned": "2026-10-09T12:29:50Z",
+    "last_scanned": "2026-10-09T12:34:29Z",
     "verdict": "clean",
     "summary": {
       "risk": {
@@ -108,7 +108,7 @@
           {
             "level": "info",
             "id": "bulk-hosts",
-            "text": "256 hosts in a bulk list are on no public block list"
+            "text": "7 hosts in a bulk list are on no public block list"
           }
         ]
       },
@@ -156,7 +156,7 @@
           "unchanged": 261
         }
       },
-      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37930249132",
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37930781523",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/atlantic-browser/919019afac225ad3799cb8939eb5ce543ace26e93d2d8916b580e94820b53fe6.md"
     }
   }
