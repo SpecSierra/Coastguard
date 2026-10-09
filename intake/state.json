@@ -1,6 +1,31 @@
 {
-  "cursor": 1791570361,
-  "queue": [],
+  "cursor": 1791575173,
+  "queue": [
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/18578/harbour-mullvad-debuginfo-0.1-2.i486.rpm",
+      "page": "https://openrepos.net/node/12649",
+      "appid": 12649,
+      "title": "Mullvad VPN"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/18578/harbour-mullvad-debugsource-0.1-2.aarch64.rpm",
+      "page": "https://openrepos.net/node/12649",
+      "appid": 12649,
+      "title": "Mullvad VPN"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/18578/harbour-mullvad-debugsource-0.1-2.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12649",
+      "appid": 12649,
+      "title": "Mullvad VPN"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/18578/harbour-mullvad-debugsource-0.1-2.i486.rpm",
+      "page": "https://openrepos.net/node/12649",
+      "appid": 12649,
+      "title": "Mullvad VPN"
+    }
+  ],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -83,12 +108,23 @@
     "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.7.1-1.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/14286/harbour-watchlist-0.13.13-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/14286/harbour-watchlist-0.13.13-1.i486.rpm",
-    "https://openrepos.net/sites/default/files/packages/14286/harbour-watchlist-0.13.13-1.armv7hl.rpm"
+    "https://openrepos.net/sites/default/files/packages/14286/harbour-watchlist-0.13.13-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/18578/harbour-mullvad-0.1-2.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/18578/harbour-mullvad-0.1-2.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/18578/harbour-mullvad-0.1-2.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/18578/harbour-mullvad-debuginfo-0.1-2.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/18578/harbour-mullvad-debuginfo-0.1-2.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/18578/harbour-mullvad-debuginfo-0.1-2.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/18578/harbour-mullvad-debugsource-0.1-2.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/18578/harbour-mullvad-debugsource-0.1-2.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/18578/harbour-mullvad-debugsource-0.1-2.i486.rpm"
   ],
-  "last_run": "2026-10-09T19:37:11Z",
+  "last_run": "2026-10-09T19:55:40Z",
   "dispatched": [
-    1791571048,
-    1791571129,
-    1791571210
+    1791575280,
+    1791575380,
+    1791575481,
+    1791575581,
+    1791575662
   ]
 }
