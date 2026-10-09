@@ -350,5 +350,67 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37884729730",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-helmsman/b83cb26d9506ed471b4a745897d78177cdae5dc7737855fcbcfb36b38c26e254.md"
     }
+  },
+  {
+    "sha256": "707f6b6bb20e80aec96107e977183c00e1d581c6c920968f70189d71d18700be",
+    "first_seen": "2026-10-09T04:39:11Z",
+    "package": "harbour-helmsman-0.5.0-1.aarch64",
+    "version": "0.5.0-1",
+    "arch": "aarch64",
+    "buildtime": 1791495694,
+    "last_scanned": "2026-10-09T04:39:11Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "text": "Own profile loosens the sandbox (7 rules)"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Documents",
+        "Internet",
+        "Location",
+        "MediaIndexing",
+        "Notifications",
+        "Pictures"
+      ],
+      "own_sandbox_profile": true,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 4,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-helmsman-0.4.9-1.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 16,
+          "unchanged": 107
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37884831084",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-helmsman/707f6b6bb20e80aec96107e977183c00e1d581c6c920968f70189d71d18700be.md"
+    }
   }
 ]
