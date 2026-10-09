@@ -1,0 +1,143 @@
+{
+  "verdict": "clean",
+  "name": "harbour-eureadia",
+  "version": "0.6-8",
+  "arch": "i486",
+  "package": "harbour-eureadia-0.6-8.i486",
+  "buildtime": 1791482068,
+  "sha256": "4bf6f24605ea9bf8ba8b2d1f96fb67fdb9cd2421309ec7be0cac5c77b32fa8fa",
+  "source": "https://openrepos.net/sites/default/files/packages/19185/harbour-eureadia-0.6-8.i486.rpm",
+  "source_page": "https://openrepos.net/node/12422",
+  "scanned": "2026-10-09T02:19:09Z",
+  "files": 92,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28147/Thu Oct  8 06:24:12 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-eureadia.desktop",
+          "name": "Eureadia",
+          "exec": "harbour-eureadia",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "UserDirs",
+            "Internet",
+            "Audio"
+          ],
+          "organization": "com.unapp",
+          "application": "harbour-Eureadia"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [
+        {
+          "path": "/usr/share/dbus-1/services/com.unapp.eureadia.service",
+          "bus": "session",
+          "name": "com.unapp.eureadia",
+          "exec": "/usr/bin/sailjail -p harbour-eureadia.desktop /usr/bin/harbour-eureadia",
+          "user": null,
+          "systemd_service": null
+        }
+      ],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 3,
+      "hosts_in_scripts": 1,
+      "hosts": [
+        {
+          "host": "gitee.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-eureadia/harbour-eureadia.spec",
+            "/usr/share/harbour-eureadia/qml/pages/AppInfoPage.qml"
+          ]
+        },
+        {
+          "host": "www.idpf.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-eureadia"
+          ]
+        },
+        {
+          "host": "www.winimage.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-eureadia"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "gitee.com"
+      ],
+      "hosts_binaries": [
+        "www.idpf.org",
+        "www.winimage.com"
+      ],
+      "notable": [],
+      "ignored_hosts": 2
+    }
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37873953601",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-eureadia/4bf6f24605ea9bf8ba8b2d1f96fb67fdb9cd2421309ec7be0cac5c77b32fa8fa.md"
+}
