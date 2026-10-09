@@ -1,5 +1,47 @@
 [
   {
+    "sha256": "59a3ecf0e7a0f859feb23083f7fcfc75ad2b970b1aebb5900f75f8046dd743ef",
+    "first_seen": "2026-10-09T18:39:24Z",
+    "package": "harbour-watchlist-0.13.13-1.i486",
+    "version": "0.13.13-1",
+    "arch": "i486",
+    "buildtime": 1791569732,
+    "last_scanned": "2026-10-09T18:39:24Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 4,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37974721904",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-watchlist/59a3ecf0e7a0f859feb23083f7fcfc75ad2b970b1aebb5900f75f8046dd743ef.md"
+    }
+  },
+  {
     "sha256": "f4fa30716beb9a80c96f61de48ebfd2313f08edd4c4fe9c7f530c3edaae64f3c",
     "first_seen": "2026-10-09T18:38:01Z",
     "package": "harbour-watchlist-0.13.13-1.aarch64",

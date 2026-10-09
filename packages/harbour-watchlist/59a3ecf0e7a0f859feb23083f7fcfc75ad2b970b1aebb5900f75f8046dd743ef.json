@@ -1,0 +1,248 @@
+{
+  "verdict": "clean",
+  "name": "harbour-watchlist",
+  "version": "0.13.13-1",
+  "arch": "i486",
+  "package": "harbour-watchlist-0.13.13-1.i486",
+  "buildtime": 1791569732,
+  "sha256": "59a3ecf0e7a0f859feb23083f7fcfc75ad2b970b1aebb5900f75f8046dd743ef",
+  "source": "https://openrepos.net/sites/default/files/packages/14286/harbour-watchlist-0.13.13-1.i486.rpm",
+  "source_page": "https://openrepos.net/node/10867",
+  "scanned": "2026-10-09T18:39:24Z",
+  "files": 77,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28147/Thu Oct  8 06:24:12 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-watchlist.desktop",
+          "name": "Watchlist",
+          "exec": "harbour-watchlist",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet"
+          ],
+          "organization": "de.andreas-wuest-it-consulting",
+          "application": "harbour-watchlist"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 12,
+      "hosts_in_scripts": 4,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 5,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-watchlist/qml/components/thirdparty/readme.txt",
+            "/usr/share/harbour-watchlist/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "liberapay.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-watchlist/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "stackoverflow.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-watchlist/qml/js/functions.js"
+          ]
+        },
+        {
+          "host": "www.paypal.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-watchlist/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "component-api.wertpapiere.ing.de",
+          "urls": 5,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-watchlist"
+          ]
+        },
+        {
+          "host": "api.euroinvestor.dk",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-watchlist"
+          ]
+        },
+        {
+          "host": "iss.moex.com",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-watchlist"
+          ]
+        },
+        {
+          "host": "api.divvydiary.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-watchlist"
+          ]
+        },
+        {
+          "host": "api.www.ing.de",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-watchlist"
+          ]
+        },
+        {
+          "host": "commander.commerzbank.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-watchlist"
+          ]
+        },
+        {
+          "host": "m.onvista.de",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-watchlist"
+          ]
+        },
+        {
+          "host": "search.euroinvestor.dk",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-watchlist"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "github.com",
+        "liberapay.com",
+        "stackoverflow.com",
+        "www.paypal.com"
+      ],
+      "hosts_binaries": [
+        "api.divvydiary.com",
+        "api.euroinvestor.dk",
+        "api.www.ing.de",
+        "commander.commerzbank.com",
+        "component-api.wertpapiere.ing.de",
+        "iss.moex.com",
+        "m.onvista.de",
+        "search.euroinvestor.dk"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 606610,
+        "malicious": 397
+      },
+      "notable": [],
+      "ignored_hosts": 4
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37974721904",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-watchlist/59a3ecf0e7a0f859feb23083f7fcfc75ad2b970b1aebb5900f75f8046dd743ef.md"
+}
