@@ -1,0 +1,42 @@
+[
+  {
+    "sha256": "bfef8a1265086f5c8cb1e52e3df8c801efd4fc45e406b7cd57f9f5cb2496e9e7",
+    "first_seen": "2026-10-09T08:38:11Z",
+    "package": "harbour-dimeora-0.3-3.aarch64",
+    "version": "0.3-3",
+    "arch": "aarch64",
+    "buildtime": 1791533779,
+    "last_scanned": "2026-10-09T08:38:11Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37906111204",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-dimeora/bfef8a1265086f5c8cb1e52e3df8c801efd4fc45e406b7cd57f9f5cb2496e9e7.md"
+    }
+  }
+]
