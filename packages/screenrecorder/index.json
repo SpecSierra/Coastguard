@@ -57,5 +57,64 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37867357234",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/screenrecorder/bd17d4d55785b20fc91607068d9d98f24aa18dda7b487c3f1a0d87385ed6fa67.md"
     }
+  },
+  {
+    "sha256": "7a4953a01fa3b91d9b9e43165a147aeb223eb4c3e6b80bff51cdc23c0dd4a0d1",
+    "first_seen": "2026-10-09T00:59:24Z",
+    "package": "screenrecorder-0.5.1-1.aarch64",
+    "version": "0.5.1-1",
+    "arch": "aarch64",
+    "buildtime": 1791475729,
+    "last_scanned": "2026-10-09T00:59:24Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "text": "Sandbox turned off"
+          },
+          {
+            "level": "medium",
+            "text": "Privileged file (setgid privileged)"
+          },
+          {
+            "level": "medium",
+            "text": "System hook: D-Bus system policy"
+          },
+          {
+            "level": "info",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 1,
+      "system_hooks": [
+        "D-Bus system policy"
+      ],
+      "scriptlets": 3,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37867493606",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/screenrecorder/7a4953a01fa3b91d9b9e43165a147aeb223eb4c3e6b80bff51cdc23c0dd4a0d1.md"
+    }
   }
 ]

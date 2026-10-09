@@ -1,0 +1,185 @@
+{
+  "verdict": "clean",
+  "name": "screenrecorder",
+  "version": "0.5.1-1",
+  "arch": "aarch64",
+  "package": "screenrecorder-0.5.1-1.aarch64",
+  "buildtime": 1791475729,
+  "sha256": "7a4953a01fa3b91d9b9e43165a147aeb223eb4c3e6b80bff51cdc23c0dd4a0d1",
+  "source": "https://openrepos.net/sites/default/files/packages/16198/screenrecorder-0.5.1-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12695",
+  "scanned": "2026-10-09T00:59:24Z",
+  "files": 47,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28147/Thu Oct  8 06:24:12 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/screenrecorder-gui.desktop",
+          "name": "Screenrecorder",
+          "exec": "screenrecorder-gui",
+          "hidden": false,
+          "sandbox": "disabled",
+          "permissions": [],
+          "organization": null,
+          "application": null
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [
+        {
+          "path": "/usr/lib/systemd/user/screenrecorder.service",
+          "scope": "user",
+          "exec_start": [
+            "/usr/sbin/screenrecorder --daemon"
+          ],
+          "user": "device user",
+          "install_wanted_by": "multi-user.target",
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        }
+      ],
+      "dbus": [
+        {
+          "path": "/usr/share/dbus-1/services/org.coderus.screenrecorder.service",
+          "bus": "session",
+          "name": "org.coderus.screenrecorder",
+          "exec": "/bin/false",
+          "user": null,
+          "systemd_service": "screenrecorder.service"
+        }
+      ],
+      "autostart": []
+    },
+    "system_integration": {
+      "D-Bus system policy": [
+        "/usr/share/dbus-1/system.d/org.coderus.screenrecorder.conf"
+      ]
+    },
+    "privileged_files": [
+      {
+        "path": "/usr/sbin/screenrecorder",
+        "mode": "-rwxr-sr-x",
+        "owner": "root",
+        "group": "privileged",
+        "why": [
+          "setgid privileged"
+        ]
+      }
+    ],
+    "scriptlets": [
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 1,
+        "notable": [
+          "systemctl-user start screenrecorder.service"
+        ],
+        "body": "systemctl-user start screenrecorder.service\n"
+      },
+      {
+        "type": "preuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 1,
+        "notable": [
+          "systemctl-user stop screenrecorder.service"
+        ],
+        "body": "systemctl-user stop screenrecorder.service\n"
+      },
+      {
+        "type": "postuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 1,
+        "notable": [
+          "systemctl-user stop screenrecorder.service"
+        ],
+        "body": "systemctl-user stop screenrecorder.service\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 1,
+      "hosts_in_scripts": 1,
+      "hosts": [
+        {
+          "host": "www.freedesktop.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/dbus-1/system.d/org.coderus.screenrecorder.conf"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "www.freedesktop.org"
+      ],
+      "hosts_binaries": [],
+      "notable": [],
+      "ignored_hosts": 0
+    }
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37867493606",
+  "diff": null,
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "text": "Sandbox turned off"
+      },
+      {
+        "level": "medium",
+        "text": "Privileged file (setgid privileged)"
+      },
+      {
+        "level": "medium",
+        "text": "System hook: D-Bus system policy"
+      },
+      {
+        "level": "info",
+        "text": "Starts in the background"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/screenrecorder/7a4953a01fa3b91d9b9e43165a147aeb223eb4c3e6b80bff51cdc23c0dd4a0d1.md"
+}
