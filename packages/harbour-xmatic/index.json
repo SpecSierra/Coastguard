@@ -340,6 +340,102 @@
     }
   },
   {
+    "sha256": "35e209284d044de49f355a73bfc4e3272d65d20a7292b219112f8580949e607d",
+    "first_seen": "2026-10-09T12:00:03Z",
+    "package": "harbour-xmatic-0.46.0-1.armv7hl",
+    "version": "0.46.0-1",
+    "arch": "armv7hl",
+    "buildtime": 1791543875,
+    "last_scanned": "2026-10-09T12:00:03Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "text": "Code that gains root with devel su"
+          },
+          {
+            "level": "medium",
+            "text": "Code that installs packages at runtime"
+          },
+          {
+            "level": "info",
+            "text": "Own sandbox profile"
+          },
+          {
+            "level": "info",
+            "text": "Personal data: Secrets"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Gains Root With Devel Su",
+        "Installs Packages At Runtime"
+      ],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Camera",
+        "Documents",
+        "Downloads",
+        "Internet",
+        "Location",
+        "MediaIndexing",
+        "Microphone",
+        "Music",
+        "Notifications",
+        "Pictures",
+        "PublicDir",
+        "RemovableMedia",
+        "Secrets",
+        "Sharing",
+        "Thumbnails",
+        "UnifiedPush",
+        "Videos",
+        "XmaticSpeech"
+      ],
+      "own_sandbox_profile": true,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 4,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-xmatic-0.45.0-1.armv7hl",
+        "attention_count": 1,
+        "attention": [
+          {
+            "area": "host",
+            "change": "added",
+            "item": "git.agnos.is"
+          }
+        ],
+        "files": {
+          "added": 3,
+          "removed": 2,
+          "changed": 40,
+          "unchanged": 94
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37927103494",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-xmatic/35e209284d044de49f355a73bfc4e3272d65d20a7292b219112f8580949e607d.md"
+    }
+  },
+  {
     "sha256": "c579024a9289b640b52fd6a2d44bbc482f0d0acb3e289be929aa689f11520f31",
     "first_seen": "2026-10-09T11:58:17Z",
     "package": "harbour-xmatic-0.46.0-1.aarch64",
