@@ -2,12 +2,6 @@
   "cursor": 1791498121,
   "queue": [
     {
-      "url": "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.1-1.aarch64.rpm",
-      "page": "https://openrepos.net/node/12345",
-      "appid": 12345,
-      "title": "SubMusic"
-    },
-    {
       "url": "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.1-1.armv7hl.rpm",
       "page": "https://openrepos.net/node/12345",
       "appid": 12345,
@@ -196,12 +190,12 @@
     "https://openrepos.net/sites/default/files/packages/12554/personalringtones-1.3.0-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/12554/personal-ringtones-qml-1.2.0-1.noarch.rpm"
   ],
-  "last_run": "2026-10-08T23:57:10Z",
+  "last_run": "2026-10-09T00:18:54Z",
   "dispatched": [
-    1791500234,
     1791501437,
     1791502633,
     1791502859,
-    1791503002
+    1791503002,
+    1791505034
   ]
 }
