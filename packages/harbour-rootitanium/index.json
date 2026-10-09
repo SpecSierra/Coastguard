@@ -1,0 +1,59 @@
+[
+  {
+    "sha256": "fa087a7dfa6db9cd25f78035b94bd62fa2f99f41977d9051844632e63af658de",
+    "first_seen": "2026-10-09T06:58:55Z",
+    "package": "harbour-rootitanium-2.1-1.armv7hl",
+    "version": "2.1-1",
+    "arch": "armv7hl",
+    "buildtime": 1791501205,
+    "last_scanned": "2026-10-09T06:58:55Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "text": "Sandbox turned off"
+          },
+          {
+            "level": "medium",
+            "text": "System hook: files in a home directory"
+          },
+          {
+            "level": "medium",
+            "text": "Code that reads raw input devices"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Reads Raw Input Devices"
+      ],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [
+        "files in a home directory"
+      ],
+      "scriptlets": 0,
+      "hosts_in_scripts": 34,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "error (HTTP 502, None)"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "error"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37896309811",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-rootitanium/fa087a7dfa6db9cd25f78035b94bd62fa2f99f41977d9051844632e63af658de.md"
+    }
+  }
+]
