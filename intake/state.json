@@ -1,13 +1,6 @@
 {
   "cursor": 1791647699,
-  "queue": [
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/14239/harbour-meteopl-1.3-0.noarch.rpm",
-      "page": "https://openrepos.net/node/12461",
-      "appid": 12461,
-      "title": "meteo.pl"
-    }
-  ],
+  "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -143,12 +136,12 @@
     "https://openrepos.net/sites/default/files/packages/19754/harbour-sailwave-1.0-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/14239/harbour-meteopl-1.3-0.noarch.rpm"
   ],
-  "last_run": "2026-10-10T16:20:04Z",
+  "last_run": "2026-10-10T16:38:32Z",
   "dispatched": [
-    1791645544,
     1791647853,
     1791647953,
     1791649033,
-    1791649126
+    1791649126,
+    1791650234
   ]
 }
