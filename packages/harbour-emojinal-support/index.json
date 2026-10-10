@@ -1,0 +1,50 @@
+[
+  {
+    "sha256": "52ebc429ca0f22d54cb5c42a4a8a686e035d5abfd26917aed499fb26965b5855",
+    "first_seen": "2026-10-10T21:38:03Z",
+    "package": "harbour-emojinal-support-1.10-1.aarch64",
+    "version": "1.10-1",
+    "arch": "aarch64",
+    "buildtime": 1791666055,
+    "last_scanned": "2026-10-10T21:38:03Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "own-sandbox-profile",
+            "text": "Own sandbox profile"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet"
+      ],
+      "own_sandbox_profile": true,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38088329843",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-emojinal-support/52ebc429ca0f22d54cb5c42a4a8a686e035d5abfd26917aed499fb26965b5855.md"
+    }
+  }
+]
