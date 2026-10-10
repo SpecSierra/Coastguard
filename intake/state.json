@@ -1,23 +1,29 @@
 {
-  "cursor": 1791643681,
+  "cursor": 1791645224,
   "queue": [
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.6.1-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12521",
-      "appid": 12521,
-      "title": "Foghorn Test Connector"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.6.1-1.aarch64.rpm",
-      "page": "https://openrepos.net/node/12520",
-      "appid": 12520,
-      "title": "Foghorn"
-    },
     {
       "url": "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.6.1-1.armv7hl.rpm",
       "page": "https://openrepos.net/node/12520",
       "appid": 12520,
       "title": "Foghorn"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19754/harbour-sailwave-1.0-1.i486.rpm",
+      "page": "https://openrepos.net/node/12702",
+      "appid": 12702,
+      "title": "Sailwave"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19754/harbour-sailwave-1.0-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12702",
+      "appid": 12702,
+      "title": "Sailwave"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19754/harbour-sailwave-1.0-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12702",
+      "appid": 12702,
+      "title": "Sailwave"
     }
   ],
   "seen": [
@@ -149,14 +155,17 @@
     "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.6.1-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.6.1-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.6.1-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.6.1-1.armv7hl.rpm"
+    "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.6.1-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19754/harbour-sailwave-1.0-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/19754/harbour-sailwave-1.0-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19754/harbour-sailwave-1.0-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-10T14:58:53Z",
+  "last_run": "2026-10-10T15:20:42Z",
   "dispatched": [
-    1791640723,
-    1791640823,
     1791643054,
     1791643154,
-    1791644255
+    1791644255,
+    1791645443,
+    1791645544
   ]
 }
