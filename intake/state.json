@@ -1,5 +1,5 @@
 {
-  "cursor": 1791645224,
+  "cursor": 1791646192,
   "queue": [
     {
       "url": "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.6.1-1.armv7hl.rpm",
@@ -160,7 +160,7 @@
     "https://openrepos.net/sites/default/files/packages/19754/harbour-sailwave-1.0-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19754/harbour-sailwave-1.0-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-10T15:20:42Z",
+  "last_run": "2026-10-10T15:37:23Z",
   "dispatched": [
     1791643054,
     1791643154,
