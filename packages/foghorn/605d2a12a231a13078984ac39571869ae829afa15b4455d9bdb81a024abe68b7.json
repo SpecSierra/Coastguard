@@ -1,0 +1,366 @@
+{
+  "verdict": "clean",
+  "name": "foghorn",
+  "version": "0.6.1-1",
+  "arch": "armv7hl",
+  "package": "foghorn-0.6.1-1.armv7hl",
+  "buildtime": 1791643314,
+  "sha256": "605d2a12a231a13078984ac39571869ae829afa15b4455d9bdb81a024abe68b7",
+  "source": "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.6.1-1.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12520",
+  "scanned": "2026-10-10T15:58:14Z",
+  "files": 55,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28149/Sat Oct 10 06:24:04 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 1,
+    "carved_streams": 0,
+    "files": 17,
+    "bytes": 129981,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/foghorn.desktop",
+          "name": "Foghorn",
+          "exec": "foghorn",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "AppLaunch",
+            "Foghorn"
+          ],
+          "organization": "org.foghorn",
+          "application": "Foghorn"
+        }
+      ],
+      "shipped_profiles": [
+        "/etc/sailjail/permissions/Foghorn.permission",
+        "/etc/sailjail/permissions/UnifiedPush.permission"
+      ],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [
+        {
+          "path": "/usr/lib/systemd/system/foghorn-appsupport-sync@.path",
+          "scope": "system",
+          "exec_start": [],
+          "user": "root",
+          "install_wanted_by": "graphical.target",
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/system/foghorn-appsupport-sync@.service",
+          "scope": "system",
+          "exec_start": [
+            "/usr/libexec/foghorn-appsupport sync %i"
+          ],
+          "user": "root",
+          "install_wanted_by": null,
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/system/foghorn-appsupport@.service",
+          "scope": "system",
+          "exec_start": [
+            "/usr/libexec/foghorn-appsupport run %i"
+          ],
+          "user": "root",
+          "install_wanted_by": "appsupport@%i.service",
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/user/foghornd.service",
+          "scope": "user",
+          "exec_start": [
+            "/usr/bin/foghornd"
+          ],
+          "user": "device user",
+          "install_wanted_by": "default.target",
+          "enabled_by": [
+            "wanted by default.target (shipped symlink)",
+            "enabled or started from an install scriptlet"
+          ]
+        }
+      ],
+      "dbus": [
+        {
+          "path": "/usr/share/dbus-1/services/org.unifiedpush.Distributor.Foghorn.service",
+          "bus": "session",
+          "name": "org.unifiedpush.Distributor.Foghorn",
+          "exec": "/usr/bin/foghornd",
+          "user": null,
+          "systemd_service": "foghornd.service"
+        }
+      ],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 2,
+        "notable": [
+          "systemctl-user daemon-reload || :",
+          "systemctl-user try-restart foghornd.service || :"
+        ],
+        "body": "# No user session exists during a package transaction, so starting is left to the\n# GUI or the next login. Without try-restart an upgraded daemon keeps running.\nsystemctl-user daemon-reload || :\nsystemctl-user try-restart foghornd.service || :\n\n# After the transaction, so an obsoleted foghorn-appsupport's %preun, which\n# disables the same unit, has already run.\n"
+      },
+      {
+        "type": "preuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 16,
+        "notable": [
+          "systemctl-user stop foghornd.service || :",
+          "systemctl disable --now \"foghorn-appsupport@$user.service\" \\",
+          "systemctl stop \"foghorn-appsupport-sync@$user.service\" || :",
+          "systemd-run --no-block --unit=foghorn-cleanup \\"
+        ],
+        "body": "if [ $1 -eq 0 ]; then\n    systemctl-user stop foghornd.service || :\n    user=\"$(getent passwd 100000 | cut -d: -f1)\"\n    if [ -n \"$user\" ]; then\n        systemctl disable --now \"foghorn-appsupport@$user.service\" \\\n            \"foghorn-appsupport-sync@$user.path\" || :\n        systemctl stop \"foghorn-appsupport-sync@$user.service\" || :\n        # Removing the APK can mean starting App Support, so it runs after the\n        # transaction from copies of the files about to be deleted.\n        cleanup=/run/foghorn-cleanup\n        mkdir -p \"$cleanup\"\n        cp /usr/libexec/foghorn-appsupport /usr/share/foghorn/appsupport/foghorn.sh \\\n            /usr/share/foghorn/appsupport/foghorn-appsupport.apk \"$cleanup/\" || :\n        systemd-run --no-block --unit=foghorn-cleanup \\\n            --setenv=FOGHORN_SHARE=\"$cleanup\" \\\n            /bin/sh -c \"$cleanup/foghorn-appsupport remove $user; rm -rf $cleanup /var/lib/foghorn /run/foghorn\" || :\n    fi\nfi\n"
+      },
+      {
+        "type": "postuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 4,
+        "notable": [
+          "systemctl daemon-reload || :",
+          "systemctl-user daemon-reload || :"
+        ],
+        "body": "if [ $1 -eq 0 ]; then\n    systemctl daemon-reload || :\n    systemctl-user daemon-reload || :\nfi\n"
+      },
+      {
+        "type": "posttrans",
+        "interpreter": "/bin/sh",
+        "lines": 10,
+        "notable": [
+          "systemctl daemon-reload || :",
+          "systemctl enable \"foghorn-appsupport@$user.service\" || :",
+          "systemctl reenable \"foghorn-appsupport-sync@$user.path\" || :",
+          "systemctl start \"foghorn-appsupport-sync@$user.path\" || :",
+          "if systemctl -q is-active \"appsupport@$user.service\"; then",
+          "systemctl restart \"foghorn-appsupport@$user.service\" || :"
+        ],
+        "body": "systemctl daemon-reload || :\nuser=\"$(getent passwd 100000 | cut -d: -f1)\"\nif [ -n \"$user\" ]; then\n    systemctl enable \"foghorn-appsupport@$user.service\" || :\n    # reenable drops the multi-user.target link older versions made.\n    systemctl reenable \"foghorn-appsupport-sync@$user.path\" || :\n    systemctl start \"foghorn-appsupport-sync@$user.path\" || :\n    if systemctl -q is-active \"appsupport@$user.service\"; then\n        systemctl restart \"foghorn-appsupport@$user.service\" || :\n    fi\nfi\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 6,
+      "hosts_in_scripts": 2,
+      "hosts": [
+        {
+          "host": "git.agnos.is",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/lib/systemd/system/foghorn-appsupport@.service",
+            "/usr/lib/systemd/user/foghornd.service",
+            "/usr/share/foghorn/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "ntfy.sh",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/foghorn/qml/pages/SettingsPage.qml"
+          ]
+        },
+        {
+          "host": "dbus.freedesktop.org",
+          "urls": 6,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/foghornd"
+          ]
+        },
+        {
+          "host": "docs.rs",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/foghornd"
+          ]
+        },
+        {
+          "host": "push.services.mozilla.comconnecting",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/foghornd"
+          ]
+        },
+        {
+          "host": "www.freedesktop.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/foghornd"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "git.agnos.is",
+        "ntfy.sh"
+      ],
+      "hosts_binaries": [
+        "dbus.freedesktop.org",
+        "docs.rs",
+        "push.services.mozilla.comconnecting",
+        "www.freedesktop.org"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 617396,
+        "malicious": 396
+      },
+      "notable": [],
+      "ignored_hosts": 1
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38065704878",
+  "diff": {
+    "baseline": {
+      "sha256": "6274b8a92da96920edc394202b0f599e7d0ed0f1df9082577d485afd0d5bf48e",
+      "package": "foghorn-0.6.0-1.armv7hl",
+      "last_scanned": "2026-10-10T11:20:00Z"
+    },
+    "changes": [
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "systemctl enable \"foghorn-appsupport@$user.service\" || :",
+        "attention": true,
+        "detail": "posttrans"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "systemctl reenable \"foghorn-appsupport-sync@$user.path\" || :",
+        "attention": true,
+        "detail": "posttrans"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "removed",
+        "item": "systemctl enable \"foghorn-appsupport@$user.service\" \"foghorn-appsupport-sync@$user.path\" || :",
+        "attention": false,
+        "detail": "posttrans"
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/foghorn",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/foghornd",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/lib/systemd/system/foghorn-appsupport-sync@.path",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/foghorn/appsupport/foghorn-appsupport.apk",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 0,
+        "removed": 0,
+        "changed": 4,
+        "unchanged": 24
+      }
+    }
+  },
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "root-services",
+        "text": "3 root services, started at install"
+      },
+      {
+        "level": "info",
+        "id": "own-sandbox-profile",
+        "text": "Own sandbox profile"
+      },
+      {
+        "level": "info",
+        "id": "background-start",
+        "text": "Starts in the background"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/foghorn/605d2a12a231a13078984ac39571869ae829afa15b4455d9bdb81a024abe68b7.md"
+}
