@@ -48,6 +48,54 @@
     }
   },
   {
+    "sha256": "af6f9e99e7c58e01cb4fddba0adbb43387674bd0cfd93b5bde69b489584fd4d5",
+    "first_seen": "2026-10-10T14:01:06Z",
+    "package": "harbour-clipper-0.4.5-1.armv7hl",
+    "version": "0.4.5-1",
+    "arch": "armv7hl",
+    "buildtime": 1791639740,
+    "last_scanned": "2026-10-10T14:01:06Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Camera",
+        "Compatibility",
+        "MediaIndexing",
+        "Microphone",
+        "RemovableMedia",
+        "UserDirs"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 6,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38057900110",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-clipper/af6f9e99e7c58e01cb4fddba0adbb43387674bd0cfd93b5bde69b489584fd4d5.md"
+    }
+  },
+  {
     "sha256": "2f94b29b8fda461f4a3f6f1c3c01d9e6d09d4cce2fe5a2a66e9236b3e3b19a2b",
     "first_seen": "2026-10-10T13:59:33Z",
     "package": "harbour-clipper-0.4.5-1.aarch64",
