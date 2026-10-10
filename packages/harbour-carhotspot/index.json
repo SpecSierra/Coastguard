@@ -755,5 +755,90 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38060352353",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-carhotspot/86d24d6602987a39e9cbd4fbfe8f8296b47694788f3848b3e72c6be3d0445b42.md"
     }
+  },
+  {
+    "sha256": "697014e609be18f817955c43cd3693fc120ea4d6f9ea262069c78c99cb5f167c",
+    "first_seen": "2026-10-10T14:40:02Z",
+    "package": "harbour-carhotspot-0.3.2-1.armv7hl",
+    "version": "0.3.2-1",
+    "arch": "armv7hl",
+    "buildtime": 1791642000,
+    "last_scanned": "2026-10-10T14:40:02Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "high",
+        "reasons": [
+          {
+            "level": "high",
+            "id": "privileged-files",
+            "text": "1 privileged file (setuid root)"
+          },
+          {
+            "level": "high",
+            "id": "hook-sudoers",
+            "text": "System hook: sudoers"
+          },
+          {
+            "level": "high",
+            "id": "install-script-grants-elevated-privileges",
+            "text": "Install script grants elevated privileges"
+          },
+          {
+            "level": "high",
+            "id": "code-edits-sudoers",
+            "text": "Code that edits sudoers"
+          },
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          },
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Edits Sudoers"
+      ],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 1,
+      "system_hooks": [
+        "sudoers"
+      ],
+      "scriptlets": 2,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-carhotspot-0.3.1-1.armv7hl",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 1,
+          "unchanged": 81
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38060465133",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-carhotspot/697014e609be18f817955c43cd3693fc120ea4d6f9ea262069c78c99cb5f167c.md"
+    }
   }
 ]
