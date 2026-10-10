@@ -1,5 +1,5 @@
 {
-  "cursor": 1791639167,
+  "cursor": 1791639901,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -121,12 +121,15 @@
     "https://openrepos.net/sites/default/files/packages/19678/vapaamin-0.3.0-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19678/vapaamin-0.3.0-1.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/12895/harbour-webuntis-1.8.7-1.noarch.rpm",
-    "https://openrepos.net/sites/default/files/packages/12895/harbour-webuntis-secret-3.61-1.noarch.rpm"
+    "https://openrepos.net/sites/default/files/packages/12895/harbour-webuntis-secret-3.61-1.noarch.rpm",
+    "https://openrepos.net/sites/default/files/packages/16198/harbour-clipper-0.4.5-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/16198/harbour-clipper-0.4.5-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/16198/harbour-clipper-0.4.5-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-10T13:37:21Z",
+  "last_run": "2026-10-10T14:01:41Z",
   "dispatched": [
-    1791635935,
-    1791636037,
-    1791636096
+    1791640644,
+    1791640723,
+    1791640823
   ]
 }
