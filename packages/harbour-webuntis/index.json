@@ -1,0 +1,51 @@
+[
+  {
+    "sha256": "4d5888cf27003529cf38a8606f96a98828ee41b62cc1e8a196a03b121dd5514e",
+    "first_seen": "2026-10-10T12:41:15Z",
+    "package": "harbour-webuntis-1.8.7-1.noarch",
+    "version": "1.8.7-1",
+    "arch": "noarch",
+    "buildtime": 1791631973,
+    "last_scanned": "2026-10-10T12:41:15Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Secrets"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "Secrets"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 2,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38052829163",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-webuntis/4d5888cf27003529cf38a8606f96a98828ee41b62cc1e8a196a03b121dd5514e.md"
+    }
+  }
+]
