@@ -46,5 +46,53 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38057712980",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-clipper/9ae89bd9ce8c2e812b1e2aef161f131879923b91dacf6d91284a4843a3789545.md"
     }
+  },
+  {
+    "sha256": "2f94b29b8fda461f4a3f6f1c3c01d9e6d09d4cce2fe5a2a66e9236b3e3b19a2b",
+    "first_seen": "2026-10-10T13:59:33Z",
+    "package": "harbour-clipper-0.4.5-1.aarch64",
+    "version": "0.4.5-1",
+    "arch": "aarch64",
+    "buildtime": 1791639759,
+    "last_scanned": "2026-10-10T13:59:33Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Camera",
+        "Compatibility",
+        "MediaIndexing",
+        "Microphone",
+        "RemovableMedia",
+        "UserDirs"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 6,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38057793238",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-clipper/2f94b29b8fda461f4a3f6f1c3c01d9e6d09d4cce2fe5a2a66e9236b3e3b19a2b.md"
+    }
   }
 ]
