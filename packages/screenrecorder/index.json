@@ -124,5 +124,78 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37867493606",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/screenrecorder/7a4953a01fa3b91d9b9e43165a147aeb223eb4c3e6b80bff51cdc23c0dd4a0d1.md"
     }
+  },
+  {
+    "sha256": "02f3d829c66d57754ee00ed19ad3208750e8cf5f38885fad708c311009d28e0a",
+    "first_seen": "2026-10-10T17:18:03Z",
+    "package": "screenrecorder-0.5.2-1.i486",
+    "version": "0.5.2-1",
+    "arch": "i486",
+    "buildtime": 1791651294,
+    "last_scanned": "2026-10-10T17:18:03Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          },
+          {
+            "level": "medium",
+            "id": "privileged-files",
+            "text": "1 privileged file (setgid privileged)"
+          },
+          {
+            "level": "medium",
+            "id": "hook-d-bus-system-policy",
+            "text": "System hook: D-Bus system policy"
+          },
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 1,
+      "system_hooks": [
+        "D-Bus system policy"
+      ],
+      "scriptlets": 3,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "screenrecorder-0.5.1-1.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 3,
+          "unchanged": 14
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38071123657",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/screenrecorder/02f3d829c66d57754ee00ed19ad3208750e8cf5f38885fad708c311009d28e0a.md"
+    }
   }
 ]
