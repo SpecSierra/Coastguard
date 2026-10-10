@@ -1,0 +1,45 @@
+[
+  {
+    "sha256": "df9f34e6f972df2a5ab47f9669f8beb5ffedbe09c35f719c3601c4a2743a4254",
+    "first_seen": "2026-10-10T16:37:56Z",
+    "package": "harbour-meteopl-1.3-0.noarch",
+    "version": "1.3-0",
+    "arch": "noarch",
+    "buildtime": 1791645478,
+    "last_scanned": "2026-10-10T16:37:56Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "Location"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 4,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38068403444",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-meteopl/df9f34e6f972df2a5ab47f9669f8beb5ffedbe09c35f719c3601c4a2743a4254.md"
+    }
+  }
+]

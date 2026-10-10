@@ -1,0 +1,166 @@
+{
+  "verdict": "clean",
+  "name": "harbour-meteopl",
+  "version": "1.3-0",
+  "arch": "noarch",
+  "package": "harbour-meteopl-1.3-0.noarch",
+  "buildtime": 1791645478,
+  "sha256": "df9f34e6f972df2a5ab47f9669f8beb5ffedbe09c35f719c3601c4a2743a4254",
+  "source": "https://openrepos.net/sites/default/files/packages/14239/harbour-meteopl-1.3-0.noarch.rpm",
+  "source_page": "https://openrepos.net/node/12461",
+  "scanned": "2026-10-10T16:37:56Z",
+  "files": 37,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28149/Sat Oct 10 06:24:04 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-meteopl.desktop",
+          "name": "MeteoPL",
+          "exec": "sailfish-qml harbour-meteopl",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Location"
+          ],
+          "organization": "pl.kan-ibal",
+          "application": "meteopl"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 5,
+      "hosts_in_scripts": 4,
+      "hosts": [
+        {
+          "host": "old.meteo.pl",
+          "urls": 4,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-meteopl/qml/pages/AboutPage.qml",
+            "/usr/share/harbour-meteopl/qml/py/mgram_fetcher.py",
+            "/usr/share/harbour-meteopl/qml/translations.js"
+          ]
+        },
+        {
+          "host": "www.meteo.pl",
+          "urls": 3,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-meteopl/qml/py/mgram_fetcher.py"
+          ]
+        },
+        {
+          "host": "devmgramapi.meteo.pl",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-meteopl/qml/py/mgram_fetcher.py"
+          ]
+        },
+        {
+          "host": "nom-proxy.dev.meteo.pl",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-meteopl/qml/py/mgram_fetcher.py"
+          ]
+        },
+        {
+          "host": "www.gimp.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/icons/hicolor/512x512/apps/harbour-meteopl.png"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "devmgramapi.meteo.pl",
+        "nom-proxy.dev.meteo.pl",
+        "old.meteo.pl",
+        "www.meteo.pl"
+      ],
+      "hosts_binaries": [
+        "www.gimp.org"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 617396,
+        "malicious": 396
+      },
+      "notable": [],
+      "ignored_hosts": 3
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38068403444",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-meteopl/df9f34e6f972df2a5ab47f9669f8beb5ffedbe09c35f719c3601c4a2743a4254.md"
+}
