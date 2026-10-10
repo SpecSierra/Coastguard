@@ -1,5 +1,5 @@
 {
-  "cursor": 1791632691,
+  "cursor": 1791633637,
   "queue": [
     {
       "url": "https://openrepos.net/sites/default/files/packages/19678/vapaamin-0.3.0-1.armv7hl.rpm",
@@ -148,7 +148,7 @@
     "https://openrepos.net/sites/default/files/packages/12895/harbour-webuntis-1.8.7-1.noarch.rpm",
     "https://openrepos.net/sites/default/files/packages/12895/harbour-webuntis-secret-3.61-1.noarch.rpm"
   ],
-  "last_run": "2026-10-10T11:59:28Z",
+  "last_run": "2026-10-10T12:17:22Z",
   "dispatched": [
     1791631056,
     1791631156,
