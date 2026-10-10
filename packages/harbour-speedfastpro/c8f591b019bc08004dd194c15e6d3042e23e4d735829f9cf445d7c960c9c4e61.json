@@ -1,0 +1,126 @@
+{
+  "verdict": "clean",
+  "name": "harbour-speedfastpro",
+  "version": "1.1.1-2",
+  "arch": "armv7hl",
+  "package": "harbour-speedfastpro-1.1.1-2.armv7hl",
+  "buildtime": 1791595927,
+  "sha256": "c8f591b019bc08004dd194c15e6d3042e23e4d735829f9cf445d7c960c9c4e61",
+  "source": "https://openrepos.net/sites/default/files/packages/19533/harbour-speedfastpro-1.1.1-2.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12424",
+  "scanned": "2026-10-10T01:37:58Z",
+  "files": 41,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28148/Fri Oct  9 06:25:40 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-speedfastpro.desktop",
+          "name": "Speed Fast Pro",
+          "exec": "harbour-speedfastpro",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet"
+          ],
+          "organization": null,
+          "application": null
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 2,
+      "hosts_in_scripts": 2,
+      "hosts": [
+        {
+          "host": "speed.cloudflare.com",
+          "urls": 3,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-speedfastpro/qml/pages/FirstPage.qml"
+          ]
+        },
+        {
+          "host": "ip-api.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-speedfastpro/qml/pages/FirstPage.qml"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "ip-api.com",
+        "speed.cloudflare.com"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 617396,
+        "malicious": 396
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "error (HTTP 0)",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 1,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38013887145",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-speedfastpro/c8f591b019bc08004dd194c15e6d3042e23e4d735829f9cf445d7c960c9c4e61.md"
+}
