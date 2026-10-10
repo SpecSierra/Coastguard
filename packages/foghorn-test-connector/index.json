@@ -265,5 +265,58 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38061675581",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/foghorn-test-connector/7c22f719aa1b730f00e7b9d1130f9f721e15bebaf7892ed8c57b694304c8f1ec.md"
     }
+  },
+  {
+    "sha256": "c6dc9e29a8294280d381b9bcd294cd5482df21a4753f0ddd28b2b2e16514aa82",
+    "first_seen": "2026-10-10T15:18:12Z",
+    "package": "foghorn-test-connector-0.6.1-1.armv7hl",
+    "version": "0.6.1-1",
+    "arch": "armv7hl",
+    "buildtime": 1791643314,
+    "last_scanned": "2026-10-10T15:18:12Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "UnifiedPush"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "foghorn-test-connector-0.6.0-1.armv7hl",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 1,
+          "unchanged": 9
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38062998532",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/foghorn-test-connector/c6dc9e29a8294280d381b9bcd294cd5482df21a4753f0ddd28b2b2e16514aa82.md"
+    }
   }
 ]
