@@ -84,5 +84,48 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38034121226",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-emoump/95ba4bb5a2386d6c821ec5c78b498b00a085597c3bc2f3122a07e38404d73382.md"
     }
+  },
+  {
+    "sha256": "21159f6a4d8f7e0b33820357f2409eb354a3359b54362d6bf785d76bf0b0c3b0",
+    "first_seen": "2026-10-10T07:23:30Z",
+    "package": "harbour-emoump-0.1-1.i486",
+    "version": "0.1-1",
+    "arch": "i486",
+    "buildtime": 1791479755,
+    "last_scanned": "2026-10-10T07:23:30Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Input"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38034213943",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-emoump/21159f6a4d8f7e0b33820357f2409eb354a3359b54362d6bf785d76bf0b0c3b0.md"
+    }
   }
 ]
