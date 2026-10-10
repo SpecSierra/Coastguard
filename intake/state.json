@@ -1,5 +1,5 @@
 {
-  "cursor": 1791592396,
+  "cursor": 1791593341,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -99,10 +99,12 @@
     "https://openrepos.net/sites/default/files/packages/26/personalringtones-1.3.0-1.sfos5_.0.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/26/personalringtones-1.3.0-1.sfos4_.6.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/26/personalringtones-1.3.0-1.sfos4_.6.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/6026/inari-blue-notifier-daemon-1.0.0-1.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/6026/inari-blue-notifier-daemon-1.0.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/6026/inari-blue-notifier-daemon-1.0.1-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-10T00:39:07Z",
+  "last_run": "2026-10-10T00:58:43Z",
   "dispatched": [
-    1791592648
+    1791592648,
+    1791593844
   ]
 }
