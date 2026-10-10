@@ -1,0 +1,224 @@
+{
+  "verdict": "clean",
+  "name": "harbour-carhotspot",
+  "version": "0.3.0-1",
+  "arch": "armv7hl",
+  "package": "harbour-carhotspot-0.3.0-1.armv7hl",
+  "buildtime": 1791615691,
+  "sha256": "94b9c717f9177b70c6c874883d4f7a1ea1da73b230635d3eea7644a7bd2b3931",
+  "source": "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.3.0-2.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12624",
+  "scanned": "2026-10-10T07:19:53Z",
+  "files": 109,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28149/Sat Oct 10 06:24:04 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [
+    {
+      "rule": "Coastguard_Indicator_Edits_Sudoers",
+      "files": [
+        "package.rpm",
+        "payload/etc/sudoers.d/harbour-carhotspot",
+        "scriptlets.txt"
+      ]
+    }
+  ],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-carhotspot.desktop",
+          "name": "Car Hotspot",
+          "exec": "/usr/bin/harbour-carhotspot",
+          "hidden": false,
+          "sandbox": "disabled",
+          "permissions": [],
+          "organization": null,
+          "application": null
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [
+        {
+          "path": "/usr/lib/systemd/user/harbour-carhotspot.service",
+          "scope": "user",
+          "exec_start": [
+            "/usr/bin/harbour-carhotspot --daemon"
+          ],
+          "user": "device user",
+          "install_wanted_by": "user-session.target",
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        }
+      ],
+      "dbus": [
+        {
+          "path": "/usr/share/dbus-1/services/harbour.carhotspot.service",
+          "bus": "session",
+          "name": "harbour.carhotspot",
+          "exec": "/usr/bin/harbour-carhotspot",
+          "user": null,
+          "systemd_service": null
+        }
+      ],
+      "autostart": []
+    },
+    "system_integration": {
+      "sudoers": [
+        "/etc/sudoers.d/harbour-carhotspot"
+      ]
+    },
+    "privileged_files": [
+      {
+        "path": "/usr/bin/harbour-carhotspot-helper",
+        "mode": "-rwsr-xr-x",
+        "owner": "root",
+        "group": "root",
+        "why": [
+          "setuid root"
+        ]
+      }
+    ],
+    "scriptlets": [
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 4,
+        "notable": [
+          "chmod 440 /etc/sudoers.d/harbour-carhotspot || true",
+          "systemctl-user daemon-reload >/dev/null 2>&1 || true",
+          "systemctl-user enable harbour-carhotspot.service >/dev/null 2>&1 || true",
+          "systemctl-user restart harbour-carhotspot.service >/dev/null 2>&1 || true"
+        ],
+        "body": "chmod 440 /etc/sudoers.d/harbour-carhotspot || true\nsystemctl-user daemon-reload >/dev/null 2>&1 || true\nsystemctl-user enable harbour-carhotspot.service >/dev/null 2>&1 || true\nsystemctl-user restart harbour-carhotspot.service >/dev/null 2>&1 || true\n"
+      },
+      {
+        "type": "preuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 5,
+        "notable": [
+          "systemctl-user stop harbour-carhotspot.service >/dev/null 2>&1 || true",
+          "systemctl-user disable harbour-carhotspot.service >/dev/null 2>&1 || true",
+          "systemctl-user daemon-reload >/dev/null 2>&1 || true"
+        ],
+        "body": "if [ $1 -eq 0 ]; then\n    systemctl-user stop harbour-carhotspot.service >/dev/null 2>&1 || true\n    systemctl-user disable harbour-carhotspot.service >/dev/null 2>&1 || true\n    systemctl-user daemon-reload >/dev/null 2>&1 || true\nfi\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 0,
+      "hosts_in_scripts": 0,
+      "hosts": [],
+      "hosts_scripts": [],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 617396,
+        "malicious": 396
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38034020324",
+  "diff": {
+    "baseline": {
+      "sha256": "c6fa881af9c43bc6068ed116890b9817523e81d48aa8e549bf717b0be59820f5",
+      "package": "harbour-carhotspot-0.3.0-1.armv7hl",
+      "last_scanned": "2026-10-09T21:58:01Z"
+    },
+    "changes": [
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/harbour-carhotspot",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 0,
+        "removed": 0,
+        "changed": 1,
+        "unchanged": 81
+      }
+    }
+  },
+  "risk": {
+    "grade": "high",
+    "reasons": [
+      {
+        "level": "high",
+        "id": "privileged-files",
+        "text": "1 privileged file (setuid root)"
+      },
+      {
+        "level": "high",
+        "id": "hook-sudoers",
+        "text": "System hook: sudoers"
+      },
+      {
+        "level": "high",
+        "id": "install-script-grants-elevated-privileges",
+        "text": "Install script grants elevated privileges"
+      },
+      {
+        "level": "high",
+        "id": "code-edits-sudoers",
+        "text": "Code that edits sudoers"
+      },
+      {
+        "level": "medium",
+        "id": "sandbox-off",
+        "text": "Sandbox turned off"
+      },
+      {
+        "level": "info",
+        "id": "background-start",
+        "text": "Starts in the background"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-carhotspot/94b9c717f9177b70c6c874883d4f7a1ea1da73b230635d3eea7644a7bd2b3931.md"
+}
