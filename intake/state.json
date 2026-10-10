@@ -1,6 +1,25 @@
 {
-  "cursor": 1791642901,
-  "queue": [],
+  "cursor": 1791643681,
+  "queue": [
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.6.1-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12521",
+      "appid": 12521,
+      "title": "Foghorn Test Connector"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.6.1-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12520",
+      "appid": 12520,
+      "title": "Foghorn"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.6.1-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12520",
+      "appid": 12520,
+      "title": "Foghorn"
+    }
+  ],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -126,14 +145,18 @@
     "https://openrepos.net/sites/default/files/packages/16198/harbour-clipper-0.4.5-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/16198/harbour-clipper-0.4.5-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.3.2-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.3.2-1.armv7hl.rpm"
+    "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.3.2-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.6.1-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.6.1-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.6.1-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.6.1-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-10T14:40:53Z",
+  "last_run": "2026-10-10T14:58:53Z",
   "dispatched": [
-    1791640644,
     1791640723,
     1791640823,
     1791643054,
-    1791643154
+    1791643154,
+    1791644255
   ]
 }
