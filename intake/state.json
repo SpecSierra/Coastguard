@@ -1,5 +1,5 @@
 {
-  "cursor": 1791668641,
+  "cursor": 1791672109,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -148,11 +148,12 @@
     "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.46.2-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.46.2-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19799/harbour-emojinal-support-1.10-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.1.0-1.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.1.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19799/harbour-dollfin-1.2-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-10T22:37:10Z",
+  "last_run": "2026-10-10T22:58:43Z",
   "dispatched": [
-    1791668244,
-    1791669446
+    1791669446,
+    1791673045
   ]
 }
