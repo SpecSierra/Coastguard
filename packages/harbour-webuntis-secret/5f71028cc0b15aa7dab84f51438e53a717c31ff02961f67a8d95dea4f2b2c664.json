@@ -1,0 +1,133 @@
+{
+  "verdict": "clean",
+  "name": "harbour-webuntis-secret",
+  "version": "3.61-1",
+  "arch": "noarch",
+  "package": "harbour-webuntis-secret-3.61-1.noarch",
+  "buildtime": 1791631975,
+  "sha256": "5f71028cc0b15aa7dab84f51438e53a717c31ff02961f67a8d95dea4f2b2c664",
+  "source": "https://openrepos.net/sites/default/files/packages/12895/harbour-webuntis-secret-3.61-1.noarch.rpm",
+  "source_page": "https://openrepos.net/node/12245",
+  "scanned": "2026-10-10T12:42:13Z",
+  "files": 41,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28149/Sat Oct 10 06:24:04 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-webuntis.desktop",
+          "name": "WebUntis Secret",
+          "exec": "sailfish-qml harbour-webuntis",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Secrets"
+          ],
+          "organization": "harbour-webuntis",
+          "application": "harbour-webuntis"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 2,
+      "hosts_in_scripts": 2,
+      "hosts": [
+        {
+          "host": "melpomene.webuntis.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-webuntis/webuntis_classbook.py"
+          ]
+        },
+        {
+          "host": "schoolsearch.webuntis.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-webuntis/webuntis_classbook.py"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "melpomene.webuntis.com",
+        "schoolsearch.webuntis.com"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 617396,
+        "malicious": 396
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38052890847",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "id": "personal-data",
+        "text": "Personal data: Secrets"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-webuntis-secret/5f71028cc0b15aa7dab84f51438e53a717c31ff02961f67a8d95dea4f2b2c664.md"
+}
