@@ -1,0 +1,42 @@
+[
+  {
+    "sha256": "3dd893b395e63402ce990089731d7edf2281e30ccddfd2a985d6c8b3a82fb56f",
+    "first_seen": "2026-10-10T10:18:03Z",
+    "package": "harbour-sailmines-0.9-1.3.1.bso.aarch64",
+    "version": "0.9-1.3.1.bso",
+    "arch": "aarch64",
+    "buildtime": 1791626383,
+    "last_scanned": "2026-10-10T10:18:03Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38044382950",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-sailmines/3dd893b395e63402ce990089731d7edf2281e30ccddfd2a985d6c8b3a82fb56f.md"
+    }
+  }
+]

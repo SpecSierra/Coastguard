@@ -1,0 +1,112 @@
+{
+  "verdict": "clean",
+  "name": "harbour-sailmines",
+  "version": "0.9-1.3.1.bso",
+  "arch": "aarch64",
+  "package": "harbour-sailmines-0.9-1.3.1.bso.aarch64",
+  "buildtime": 1791626383,
+  "sha256": "3dd893b395e63402ce990089731d7edf2281e30ccddfd2a985d6c8b3a82fb56f",
+  "source": "https://openrepos.net/sites/default/files/packages/18851/harbour-sailmines-0.9-1.3.1.bso_.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12147",
+  "scanned": "2026-10-10T10:18:03Z",
+  "files": 28,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28149/Sat Oct 10 06:24:04 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-sailmines.desktop",
+          "name": "SailMines",
+          "exec": "harbour-sailmines",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [],
+          "organization": "io.github.sharks-dev",
+          "application": "harbour-sailmines"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 1,
+      "hosts_in_scripts": 1,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-sailmines/qml/pages/SettingsPage.qml"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "github.com"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 617396,
+        "malicious": 396
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38044382950",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-sailmines/3dd893b395e63402ce990089731d7edf2281e30ccddfd2a985d6c8b3a82fb56f.md"
+}
