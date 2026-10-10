@@ -1,0 +1,202 @@
+{
+  "verdict": "clean",
+  "name": "inari-blue-notifier-daemon",
+  "version": "1.0.1-1",
+  "arch": "aarch64",
+  "package": "inari-blue-notifier-daemon-1.0.1-1.aarch64",
+  "buildtime": 1791593301,
+  "sha256": "f90e3b5315fb9f09797a83eae812afb3e51cb776c7061b51ac2d3a3fe767512c",
+  "source": "https://openrepos.net/sites/default/files/packages/6026/inari-blue-notifier-daemon-1.0.1-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12700",
+  "scanned": "2026-10-10T00:58:07Z",
+  "files": 16,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28147/Thu Oct  8 06:24:12 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [
+    {
+      "rule": "Coastguard_Indicator_Sends_SMS_Or_Places_Calls",
+      "files": [
+        "payload/usr/bin/inari-blue-notifier-daemon"
+      ]
+    }
+  ],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [
+        {
+          "path": "/usr/lib/systemd/user/inari-blue-notifier-daemon.service",
+          "scope": "user",
+          "exec_start": [
+            "/usr/bin/inari-blue-notifier-daemon"
+          ],
+          "user": "device user",
+          "install_wanted_by": "post-user-session.target",
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        }
+      ],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 7,
+        "notable": [
+          "systemctl reload-or-try-restart symbiosis.service || :",
+          "systemctl-user daemon-reload || :",
+          "systemctl-user enable --now inari-blue-notifier-daemon.service || :",
+          "systemctl-user try-restart inari-blue-notifier-daemon.service || :"
+        ],
+        "body": "systemctl reload-or-try-restart symbiosis.service || :\nsystemctl-user daemon-reload || :\nif [ \"$1\" -eq 1 ]; then\n  systemctl-user enable --now inari-blue-notifier-daemon.service || :\nelse\n  systemctl-user try-restart inari-blue-notifier-daemon.service || :\nfi\n"
+      },
+      {
+        "type": "preuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 3,
+        "notable": [
+          "systemctl-user disable --now inari-blue-notifier-daemon.service || :"
+        ],
+        "body": "if [ \"$1\" -eq 0 ]; then\n  systemctl-user disable --now inari-blue-notifier-daemon.service || :\nfi\n"
+      },
+      {
+        "type": "postuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 4,
+        "notable": [
+          "systemctl-user daemon-reload || :",
+          "systemctl reload-or-try-restart symbiosis.service || :"
+        ],
+        "body": "systemctl-user daemon-reload || :\nif [ \"$1\" -eq 0 ]; then\n    systemctl reload-or-try-restart symbiosis.service || :\nfi\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 1,
+      "hosts_in_scripts": 0,
+      "hosts": [
+        {
+          "host": "go.dev",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/inari-blue-notifier-daemon"
+          ]
+        }
+      ],
+      "hosts_scripts": [],
+      "hosts_binaries": [
+        "go.dev"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 617396,
+        "malicious": 396
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38011225282",
+  "diff": {
+    "baseline": {
+      "sha256": "7a57a6e89fa1a4b3aee0d8bbc34c675eb203f5fa7782294539631c0b391f6381",
+      "package": "inari-blue-notifier-daemon-1.0.0-1.aarch64",
+      "last_scanned": "2026-10-10T00:38:18Z"
+    },
+    "changes": [
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/licenses/inari-blue-notifier-daemon-1.0.1/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/licenses/inari-blue-notifier-daemon-1.0.0/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/inari-blue-notifier-daemon",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 1,
+        "removed": 1,
+        "changed": 1,
+        "unchanged": 2
+      }
+    }
+  },
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "id": "background-start",
+        "text": "Starts in the background"
+      },
+      {
+        "level": "info",
+        "id": "code-sends-sms-or-places-calls",
+        "text": "Code that sends sms or places calls"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/inari-blue-notifier-daemon/f90e3b5315fb9f09797a83eae812afb3e51cb776c7061b51ac2d3a3fe767512c.md"
+}

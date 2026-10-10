@@ -1,0 +1,4 @@
+787f6f7c07fd8adf4e01e00923ca5818aa1f14ee0ab4d27038035e0231a699f4	3113640	elf	/usr/bin/inari-blue-notifier-daemon
+6d30245228ba47c482462f033badd0393a36619138c02fc82e00dfb04131b9e0	245	other	/usr/lib/systemd/user/inari-blue-notifier-daemon.service
+a9887416f02f45145d5e27af346aff7c53f52ec4b9e1e695462a6c709285964e	1068	other	/usr/share/licenses/inari-blue-notifier-daemon-1.0.1/LICENSE
+113ea84a7df8f47785e8bbf269a3eb376e62885f749eaaadde64a43ec0a1cebd	61	other	/usr/share/tohd-1/tohs/0001/0004/90-inari-blue-notifier-daemon.yaml
