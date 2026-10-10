@@ -1,0 +1,625 @@
+{
+  "verdict": "clean",
+  "name": "futo-keyboard-sailfish",
+  "version": "0.8.0-1",
+  "arch": "armv7hl",
+  "package": "futo-keyboard-sailfish-0.8.0-1.armv7hl",
+  "buildtime": 1791649743,
+  "sha256": "671302f3acbf2dd387ad5c341e60fca8a1561ef49c1d55c4766dc972a31f0f38",
+  "source": "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.8.0-1.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12550",
+  "scanned": "2026-10-10T18:41:39Z",
+  "files": 305,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28149/Sat Oct 10 06:24:04 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [
+    {
+      "rule": "Coastguard_Indicator_Reads_Raw_Input_Devices",
+      "files": [
+        "payload/usr/libexec/futo-keyboard-focus"
+      ]
+    }
+  ],
+  "errors": [],
+  "nested": {
+    "archives": 2,
+    "carved_streams": 0,
+    "files": 10,
+    "bytes": 3436986,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [
+        {
+          "path": "/usr/lib/systemd/user/futo-keyboard-helper.service",
+          "scope": "user",
+          "exec_start": [
+            "/usr/libexec/futo-keyboard-helper"
+          ],
+          "user": "device user",
+          "install_wanted_by": null,
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        }
+      ],
+      "dbus": [
+        {
+          "path": "/usr/share/dbus-1/services/org.hb.FutoKeyboard1.service",
+          "bus": "session",
+          "name": "org.hb.FutoKeyboard1",
+          "exec": "/usr/libexec/futo-keyboard-helper",
+          "user": null,
+          "systemd_service": "futo-keyboard-helper.service"
+        }
+      ],
+      "autostart": []
+    },
+    "system_integration": {
+      "polkit": [
+        "/usr/share/polkit-1/actions/org.hb.futo.keyboard.policy",
+        "/usr/share/polkit-1/rules.d/49-futo-keyboard-secrets.rules",
+        "/usr/share/polkit-1/rules.d/49-futo-keyboard-uninstall.rules"
+      ]
+    },
+    "privileged_files": [
+      {
+        "path": "/usr/libexec/futo-keyboard-appsupport",
+        "mode": "-rwsr-xr-x",
+        "owner": "root",
+        "group": "root",
+        "why": [
+          "setuid root"
+        ]
+      },
+      {
+        "path": "/usr/libexec/futo-keyboard-browser-origin",
+        "mode": "-rwsr-xr-x",
+        "owner": "root",
+        "group": "root",
+        "why": [
+          "setuid root"
+        ]
+      },
+      {
+        "path": "/usr/libexec/futo-keyboard-device-auth",
+        "mode": "-rwxr-sr-x",
+        "owner": "root",
+        "group": "privileged",
+        "why": [
+          "setgid privileged"
+        ]
+      },
+      {
+        "path": "/usr/libexec/futo-keyboard-editor",
+        "mode": "-rwsr-xr-x",
+        "owner": "root",
+        "group": "root",
+        "why": [
+          "setuid root"
+        ]
+      },
+      {
+        "path": "/usr/libexec/futo-keyboard-focus",
+        "mode": "-rwsr-xr-x",
+        "owner": "root",
+        "group": "root",
+        "why": [
+          "setuid root"
+        ]
+      },
+      {
+        "path": "/usr/libexec/futo-keyboard-keyring",
+        "mode": "-rwsr-xr-x",
+        "owner": "root",
+        "group": "root",
+        "why": [
+          "setuid root"
+        ]
+      }
+    ],
+    "scriptlets": [
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 7,
+        "notable": [
+          "/usr/bin/systemctl-user daemon-reload >/dev/null 2>&1 || :",
+          "/usr/bin/systemctl-user reload dbus.service >/dev/null 2>&1 || :",
+          "/usr/bin/systemctl-user restart futo-keyboard-helper.service >/dev/null 2>&1 || :",
+          "/usr/bin/systemctl-user try-restart maliit-server.service >/dev/null 2>&1 || :"
+        ],
+        "body": "/usr/bin/fc-cache -f >/dev/null 2>&1 || :\n/usr/libexec/futo-keyboard-install-wayland-deadkey-hook || :\n/usr/libexec/futo-keyboard-install-textinput-bottom-hook || :\n/usr/bin/systemctl-user daemon-reload >/dev/null 2>&1 || :\n/usr/bin/systemctl-user reload dbus.service >/dev/null 2>&1 || :\n/usr/bin/systemctl-user restart futo-keyboard-helper.service >/dev/null 2>&1 || :\n/usr/bin/systemctl-user try-restart maliit-server.service >/dev/null 2>&1 || :\n"
+      },
+      {
+        "type": "preuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 5,
+        "notable": [],
+        "body": "if [ \"$1\" -eq 0 ]; then\n    # The helper is deliberately left running: it is the only thing that\n    # can say whether the removal worked and close the settings\n    # application afterwards, and it ends itself once it has.\n    /usr/libexec/futo-keyboard-remove-textinput-bottom-hook || :\n    /usr/libexec/futo-keyboard-remove-wayland-deadkey-hook || :\n    # Sailfish keeps the chosen layouts as bare file names and never checks\n    # that they still exist, so leaving futo.qml selected past this point\n    # gives an empty keyboard with no way to type out of it. This runs from\n    # %preun rather than %postun because by then the script is gone too.\n    /usr/libexec/futo-keyboard-restore-stock-layout || :\nfi\n"
+      },
+      {
+        "type": "postuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 7,
+        "notable": [
+          "/usr/bin/systemctl-user daemon-reload >/dev/null 2>&1 || :",
+          "/usr/bin/systemctl-user reload dbus.service >/dev/null 2>&1 || :",
+          "/usr/bin/systemctl-user try-restart maliit-server.service >/dev/null 2>&1 || :",
+          "/usr/bin/systemctl-user restart lipstick.service >/dev/null 2>&1 || :"
+        ],
+        "body": "/usr/bin/fc-cache -f >/dev/null 2>&1 || :\n/usr/bin/systemctl-user daemon-reload >/dev/null 2>&1 || :\n/usr/bin/systemctl-user reload dbus.service >/dev/null 2>&1 || :\n/usr/bin/systemctl-user try-restart maliit-server.service >/dev/null 2>&1 || :\nif [ \"$1\" -eq 0 ]; then\n    # FUTO installs a modified Amiri face under the same family name as the\n    # Sailfish font. Fontconfig's disk cache is already rebuilt above, but\n    # running Qt processes retain their old font database and may keep trying\n    # to render through the removed face. Reload the compositor and its native\n    # clients after a real erase so the stock font is selected immediately.\n    # Do not do this during an upgrade, where the replacement font remains.\n    /usr/bin/systemctl-user restart lipstick.service >/dev/null 2>&1 || :\nfi\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 11,
+      "hosts_in_scripts": 10,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 59,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/futo-keyboard-prediction",
+            "/usr/share/futo-keyboard-sailfish/content/manifest.json",
+            "/usr/share/licenses/futo-keyboard-sailfish/AMIRI-FONT-LICENSE.txt"
+          ]
+        },
+        {
+          "host": "keyboard.futo.org",
+          "urls": 6,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/futo-keyboard-sailfish/content/manifest.json"
+          ]
+        },
+        {
+          "host": "scripts.sil.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/fonts/amiri/00-futo-amiri-regular.ttf",
+            "/usr/share/licenses/futo-keyboard-sailfish/NOTO-FONTS-OFL.txt"
+          ]
+        },
+        {
+          "host": "www.freedesktop.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/futo-keyboard-helper",
+            "/usr/share/polkit-1/actions/org.hb.futo.keyboard.policy"
+          ]
+        },
+        {
+          "host": "codeberg.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/licenses/futo-keyboard-sailfish/FUTO-COMMUNITY-DICTIONARIES-ATTRIBUTION.md"
+          ]
+        },
+        {
+          "host": "download.qt.io",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/licenses/futo-keyboard-sailfish/QT-COMPOSE-NOTICE.md"
+          ]
+        },
+        {
+          "host": "fsf.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/licenses/futo-keyboard-sailfish/FUTO-SWIPE-GPL-3.0.txt"
+          ]
+        },
+        {
+          "host": "gitlab.futo.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/futo-keyboard-sailfish/content/manifest.json"
+          ]
+        },
+        {
+          "host": "keyboard.futo.tech",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/licenses/futo-keyboard-sailfish/FUTO-COMMUNITY-DICTIONARIES-ATTRIBUTION.md"
+          ]
+        },
+        {
+          "host": "openfontlicense.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/licenses/futo-keyboard-sailfish/AMIRI-FONT-LICENSE.txt"
+          ]
+        },
+        {
+          "host": "www.amirifont.orghttp",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/fonts/amiri/00-futo-amiri-regular.ttf"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "codeberg.org",
+        "download.qt.io",
+        "fsf.org",
+        "github.com",
+        "gitlab.futo.org",
+        "keyboard.futo.org",
+        "keyboard.futo.tech",
+        "openfontlicense.org",
+        "scripts.sil.org",
+        "www.freedesktop.org"
+      ],
+      "hosts_binaries": [
+        "www.amirifont.orghttp"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 617396,
+        "malicious": 396
+      },
+      "notable": [],
+      "ignored_hosts": 8
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 8,
+      "unknown": 8,
+      "not_queried": 11,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 19,
+      "unknown": 19,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38076748355",
+  "diff": {
+    "baseline": {
+      "sha256": "f50670ff6e417f23a6c2aee0d50b9612830bc8c9f49a02a7b4bc5153d1b03925",
+      "package": "futo-keyboard-sailfish-0.7.1-1.armv7hl",
+      "last_scanned": "2026-10-09T14:21:17Z"
+    },
+    "changes": [
+      {
+        "area": "privileged file",
+        "change": "added",
+        "item": "/usr/libexec/futo-keyboard-browser-origin",
+        "attention": true,
+        "detail": "setuid root"
+      },
+      {
+        "area": "privileged file",
+        "change": "added",
+        "item": "/usr/libexec/futo-keyboard-device-auth",
+        "attention": true,
+        "detail": "setgid privileged"
+      },
+      {
+        "area": "privileged file",
+        "change": "added",
+        "item": "/usr/libexec/futo-keyboard-editor",
+        "attention": true,
+        "detail": "setuid root"
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/libexec/futo-keyboard-browser-origin",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/libexec/futo-keyboard-device-auth",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/libexec/futo-keyboard-editor",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/libexec/futo-keyboard-setup-toast",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/futo-keyboard-sailfish/android/FutoAutofill.apk",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/futo-keyboard-sailfish/icons/futo-keyboard-sailfish.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/futo-keyboard-sailfish/icons/futo-keyboard-sailfish.xpm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/icons/hicolor/128x128/apps/futo-keyboard-sailfish.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/jolla-settings/pages/futo-keyboard-sailfish/FutoAndroidAutofillPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/jolla-settings/pages/futo-keyboard-sailfish/FutoAndroidCredentialPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/futo-keyboard-sailfish/integration/textinput-bottom-settings.patch",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/lib/libfuto-maliit-policy.so.1",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/lib/qt5/plugins/platforminputcontexts/libafutomaliitcomposewrapper.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/lib/qt5/plugins/platforminputcontexts/libcomposeplatforminputcontextplugin.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/libexec/futo-keyboard-appsupport",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/libexec/futo-keyboard-focus",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/libexec/futo-keyboard-helper",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/libexec/futo-keyboard-install-textinput-bottom-hook",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/libexec/futo-keyboard-remove-textinput-bottom-hook",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/libexec/futo-keyboard-secrets",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/futo-keyboard-sailfish/content/manifest.json",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/jolla-settings/pages/futo-keyboard-sailfish/FutoAboutPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/jolla-settings/pages/futo-keyboard-sailfish/FutoLanguagesPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/jolla-settings/pages/futo-keyboard-sailfish/FutoLetterLayouts.js",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/jolla-settings/pages/futo-keyboard-sailfish/FutoPasswordManagePage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/jolla-settings/pages/futo-keyboard-sailfish/FutoPrivacyPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/jolla-settings/pages/futo-keyboard-sailfish/FutoTextInputSettings.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/jolla-settings/pages/futo-keyboard-sailfish/FutoTypingPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/jolla-settings/pages/futo-keyboard-sailfish/main.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/licenses/futo-keyboard-sailfish/MODIFIED-NOTICE.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/maliit/plugins/com/jolla/FutoInputHandler.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/maliit/plugins/com/jolla/handlers/FutoInputHandler.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/maliit/plugins/com/jolla/layouts/FutoCredentialPanel.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/maliit/plugins/com/jolla/layouts/FutoLetterLayouts.js",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/maliit/plugins/com/jolla/layouts/FutoQwertyLayout.qml",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 10,
+        "removed": 1,
+        "changed": 24,
+        "unchanged": 186
+      }
+    }
+  },
+  "risk": {
+    "grade": "high",
+    "reasons": [
+      {
+        "level": "high",
+        "id": "privileged-files",
+        "text": "6 privileged files (setgid privileged, setuid root)"
+      },
+      {
+        "level": "medium",
+        "id": "hook-polkit",
+        "text": "System hook: polkit"
+      },
+      {
+        "level": "medium",
+        "id": "code-reads-raw-input-devices",
+        "text": "Code that reads raw input devices"
+      },
+      {
+        "level": "medium",
+        "id": "new-privileged-file",
+        "text": "New privileged file"
+      },
+      {
+        "level": "info",
+        "id": "background-start",
+        "text": "Starts in the background"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/futo-keyboard-sailfish/671302f3acbf2dd387ad5c341e60fca8a1561ef49c1d55c4766dc972a31f0f38.md"
+}
