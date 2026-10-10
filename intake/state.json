@@ -1,11 +1,23 @@
 {
-  "cursor": 1791630781,
+  "cursor": 1791631321,
   "queue": [
     {
-      "url": "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.6.0-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12521",
-      "appid": 12521,
-      "title": "Foghorn Test Connector"
+      "url": "https://openrepos.net/sites/default/files/packages/19678/vapaamin-0.3.0-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12583",
+      "appid": 12583,
+      "title": "Vapaamin "
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19678/vapaamin-0.3.0-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12583",
+      "appid": 12583,
+      "title": "Vapaamin "
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19678/vapaamin-0.3.0-1.i486.rpm",
+      "page": "https://openrepos.net/node/12583",
+      "appid": 12583,
+      "title": "Vapaamin "
     }
   ],
   "seen": [
@@ -123,14 +135,17 @@
     "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.6.0-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.6.0-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.6.0-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.6.0-1.armv7hl.rpm"
+    "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.6.0-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19678/vapaamin-0.3.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19678/vapaamin-0.3.0-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19678/vapaamin-0.3.0-1.i486.rpm"
   ],
-  "last_run": "2026-10-10T11:22:15Z",
+  "last_run": "2026-10-10T11:25:04Z",
   "dispatched": [
-    1791627524,
     1791628646,
     1791631056,
     1791631156,
-    1791631257
+    1791631257,
+    1791631426
   ]
 }
