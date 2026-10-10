@@ -1,0 +1,142 @@
+{
+  "verdict": "clean",
+  "name": "ice-data-on-lockscreen",
+  "version": "0.7.0-1",
+  "arch": "noarch",
+  "package": "ice-data-on-lockscreen-0.7.0-1.noarch",
+  "buildtime": 1791617436,
+  "sha256": "76375ec0e59b4f8df7d9c8dc9a74f2fa2a4f274c744d8d453e8b2e957e99a2f5",
+  "source": "https://openrepos.net/sites/default/files/packages/2446/ice-data-on-lockscreen-0.7.0-1.noarch.rpm",
+  "source_page": "https://openrepos.net/node/12655",
+  "scanned": "2026-10-10T08:39:32Z",
+  "files": 8,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28149/Sat Oct 10 06:24:04 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {
+      "system UI patches": [
+        "/usr/share/patchmanager/patches/ice-data-on-lockscreen/main.qml",
+        "/usr/share/patchmanager/patches/ice-data-on-lockscreen/patch.json",
+        "/usr/share/patchmanager/patches/ice-data-on-lockscreen/unified_diff.patch"
+      ]
+    },
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 1,
+        "notable": [
+          "chmod 644 /usr/share/patchmanager/patches/{name}/*.*"
+        ],
+        "body": "chmod 644 /usr/share/patchmanager/patches/{name}/*.*\n"
+      },
+      {
+        "type": "postuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 7,
+        "notable": [],
+        "body": "if [ $1 = 0 ]; then\nrm -rf /usr/share/patchmanager/patches/{name}\nelse\nif [ $1 = 1 ]; then\necho \"Upgrading\"\nfi\nfi\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 2,
+      "hosts_in_scripts": 2,
+      "hosts": [
+        {
+          "host": "forum.sailfishos.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/patchmanager/patches/ice-data-on-lockscreen/patch.json"
+          ]
+        },
+        {
+          "host": "liberapay.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/patchmanager/patches/ice-data-on-lockscreen/patch.json"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "forum.sailfishos.org",
+        "liberapay.com"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 617396,
+        "malicious": 396
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38038603592",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "id": "hook-system-ui-patches",
+        "text": "System hook: system UI patches"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/ice-data-on-lockscreen/76375ec0e59b4f8df7d9c8dc9a74f2fa2a4f274c744d8d453e8b2e957e99a2f5.md"
+}

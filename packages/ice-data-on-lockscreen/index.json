@@ -1,0 +1,50 @@
+[
+  {
+    "sha256": "76375ec0e59b4f8df7d9c8dc9a74f2fa2a4f274c744d8d453e8b2e957e99a2f5",
+    "first_seen": "2026-10-10T08:39:32Z",
+    "package": "ice-data-on-lockscreen-0.7.0-1.noarch",
+    "version": "0.7.0-1",
+    "arch": "noarch",
+    "buildtime": 1791617436,
+    "last_scanned": "2026-10-10T08:39:32Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "hook-system-ui-patches",
+            "text": "System hook: system UI patches"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [
+        "system UI patches"
+      ],
+      "scriptlets": 2,
+      "hosts_in_scripts": 2,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38038603592",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/ice-data-on-lockscreen/76375ec0e59b4f8df7d9c8dc9a74f2fa2a4f274c744d8d453e8b2e957e99a2f5.md"
+    }
+  }
+]
