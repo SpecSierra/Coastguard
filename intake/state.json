@@ -1,5 +1,5 @@
 {
-  "cursor": 1791626701,
+  "cursor": 1791628441,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -111,11 +111,13 @@
     "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.3.1-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/2446/ice-data-on-lockscreen-0.7.0-1.noarch.rpm",
     "https://openrepos.net/sites/default/files/packages/18851/harbour-sailmines-0.9-1.3.1.bso_.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/18851/harbour-sailmines-0.9-1.3.1.bso_.armv7hl.rpm"
+    "https://openrepos.net/sites/default/files/packages/18851/harbour-sailmines-0.9-1.3.1.bso_.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.0.0-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-10T10:20:02Z",
+  "last_run": "2026-10-10T10:38:44Z",
   "dispatched": [
     1791627445,
-    1791627524
+    1791627524,
+    1791628646
   ]
 }
