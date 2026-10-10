@@ -111,9 +111,8 @@
     "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.3.1-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/2446/ice-data-on-lockscreen-0.7.0-1.noarch.rpm"
   ],
-  "last_run": "2026-10-10T08:57:12Z",
+  "last_run": "2026-10-10T09:17:11Z",
   "dispatched": [
-    1791619056,
     1791621431,
     1791621531
   ]
