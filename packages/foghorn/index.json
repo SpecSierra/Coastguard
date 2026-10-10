@@ -106,5 +106,140 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37806683240",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/foghorn/0f3468ca6276894d888206ca96e4c97004ed98638634461a10bafe994a597411.md"
     }
+  },
+  {
+    "sha256": "1703f8409e2ba5bd37984217fc56dbb51c5955ce590dfe1d6c80c197eaf9d5c9",
+    "first_seen": "2026-10-10T11:18:22Z",
+    "package": "foghorn-0.6.0-1.aarch64",
+    "version": "0.6.0-1",
+    "arch": "aarch64",
+    "buildtime": 1791575836,
+    "last_scanned": "2026-10-10T11:18:22Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "root-services",
+            "text": "3 root services, started at install"
+          },
+          {
+            "level": "medium",
+            "id": "new-service",
+            "text": "New background service"
+          },
+          {
+            "level": "info",
+            "id": "own-sandbox-profile",
+            "text": "Own sandbox profile"
+          },
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "AppLaunch",
+        "Foghorn"
+      ],
+      "own_sandbox_profile": true,
+      "services": 4,
+      "root_services": 3,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 4,
+      "hosts_in_scripts": 2,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "error (HTTP 502, None)"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "error"
+      },
+      "changes": {
+        "since": "foghorn-0.4.1-1.aarch64",
+        "attention_count": 27,
+        "attention": [
+          {
+            "area": "systemd unit",
+            "change": "added",
+            "item": "/usr/lib/systemd/system/foghorn-appsupport-sync@.path"
+          },
+          {
+            "area": "systemd unit",
+            "change": "added",
+            "item": "/usr/lib/systemd/system/foghorn-appsupport-sync@.service"
+          },
+          {
+            "area": "systemd unit",
+            "change": "added",
+            "item": "/usr/lib/systemd/system/foghorn-appsupport@.service"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "fi"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "if [ -n \"$user\" ]; then"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "if systemctl -q is-active \"appsupport@$user.service\"; then"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "systemctl daemon-reload || :"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "systemctl enable \"foghorn-appsupport@$user.service\" \"foghorn-appsupport-sync@$user.path\" || :"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "systemctl restart \"foghorn-appsupport@$user.service\" || :"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "systemctl start \"foghorn-appsupport-sync@$user.path\" || :"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "user=\"$(getent passwd 100000 | cut -d: -f1)\""
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "systemctl daemon-reload || :"
+          }
+        ],
+        "files": {
+          "added": 8,
+          "removed": 0,
+          "changed": 11,
+          "unchanged": 9
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38047890751",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/foghorn/1703f8409e2ba5bd37984217fc56dbb51c5955ce590dfe1d6c80c197eaf9d5c9.md"
+    }
   }
 ]
