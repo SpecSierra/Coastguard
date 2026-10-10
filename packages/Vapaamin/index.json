@@ -1,5 +1,75 @@
 [
   {
+    "sha256": "46399aeba8d9fad7a21e42897f55cf0915f952baeac3e13542c92c31027bf11b",
+    "first_seen": "2026-10-10T12:39:33Z",
+    "package": "Vapaamin-0.3.0-1.i486",
+    "version": "0.3.0-1",
+    "arch": "i486",
+    "buildtime": 1791630762,
+    "last_scanned": "2026-10-10T12:39:33Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          },
+          {
+            "level": "medium",
+            "id": "privileged-files",
+            "text": "1 privileged file (setgid privileged)"
+          },
+          {
+            "level": "medium",
+            "id": "hook-privileged-launcher-grant",
+            "text": "System hook: privileged launcher grant"
+          },
+          {
+            "level": "medium",
+            "id": "code-gains-root-with-devel-su",
+            "text": "Code that gains root with devel su"
+          },
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Gains Root With Devel Su"
+      ],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 1,
+      "system_hooks": [
+        "privileged launcher grant"
+      ],
+      "scriptlets": 2,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38052724786",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/Vapaamin/46399aeba8d9fad7a21e42897f55cf0915f952baeac3e13542c92c31027bf11b.md"
+    }
+  },
+  {
     "sha256": "688b6b582893a843963e414e003cf0909ae064f38647f0e3dcabfd4e651984f5",
     "first_seen": "2026-10-10T12:37:59Z",
     "package": "Vapaamin-0.3.0-1.armv7hl",
