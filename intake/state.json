@@ -139,9 +139,8 @@
     "https://openrepos.net/sites/default/files/packages/16198/screenrecorder-0.5.2-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/16198/screenrecorder-0.5.2-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-10T17:37:13Z",
+  "last_run": "2026-10-10T17:57:09Z",
   "dispatched": [
-    1791650234,
     1791652646,
     1791652747,
     1791652869
