@@ -1,0 +1,50 @@
+[
+  {
+    "sha256": "9ae89bd9ce8c2e812b1e2aef161f131879923b91dacf6d91284a4843a3789545",
+    "first_seen": "2026-10-10T13:58:00Z",
+    "package": "harbour-clipper-0.4.5-1.i486",
+    "version": "0.4.5-1",
+    "arch": "i486",
+    "buildtime": 1791639565,
+    "last_scanned": "2026-10-10T13:58:00Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Camera",
+        "Compatibility",
+        "MediaIndexing",
+        "Microphone",
+        "RemovableMedia",
+        "UserDirs"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 6,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38057712980",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-clipper/9ae89bd9ce8c2e812b1e2aef161f131879923b91dacf6d91284a4843a3789545.md"
+    }
+  }
+]
