@@ -1,0 +1,55 @@
+[
+  {
+    "sha256": "7a57a6e89fa1a4b3aee0d8bbc34c675eb203f5fa7782294539631c0b391f6381",
+    "first_seen": "2026-10-10T00:38:18Z",
+    "package": "inari-blue-notifier-daemon-1.0.0-1.aarch64",
+    "version": "1.0.0-1",
+    "arch": "aarch64",
+    "buildtime": 1791592239,
+    "last_scanned": "2026-10-10T00:38:18Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          },
+          {
+            "level": "info",
+            "id": "code-sends-sms-or-places-calls",
+            "text": "Code that sends sms or places calls"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Sends SMS Or Places Calls"
+      ],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 3,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38009844942",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/inari-blue-notifier-daemon/7a57a6e89fa1a4b3aee0d8bbc34c675eb203f5fa7782294539631c0b391f6381.md"
+    }
+  }
+]
