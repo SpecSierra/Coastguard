@@ -1,31 +1,6 @@
 {
   "cursor": 1791633637,
-  "queue": [
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/19678/vapaamin-0.3.0-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12583",
-      "appid": 12583,
-      "title": "Vapaamin "
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/19678/vapaamin-0.3.0-1.i486.rpm",
-      "page": "https://openrepos.net/node/12583",
-      "appid": 12583,
-      "title": "Vapaamin "
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/12895/harbour-webuntis-1.8.7-1.noarch.rpm",
-      "page": "https://openrepos.net/node/12244",
-      "appid": 12244,
-      "title": "WebUntis"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/12895/harbour-webuntis-secret-3.61-1.noarch.rpm",
-      "page": "https://openrepos.net/node/12245",
-      "appid": 12245,
-      "title": "WebUntis 365"
-    }
-  ],
+  "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -148,12 +123,12 @@
     "https://openrepos.net/sites/default/files/packages/12895/harbour-webuntis-1.8.7-1.noarch.rpm",
     "https://openrepos.net/sites/default/files/packages/12895/harbour-webuntis-secret-3.61-1.noarch.rpm"
   ],
-  "last_run": "2026-10-10T12:17:22Z",
+  "last_run": "2026-10-10T12:42:34Z",
   "dispatched": [
-    1791631056,
-    1791631156,
-    1791631257,
-    1791631426,
-    1791633469
+    1791633469,
+    1791635834,
+    1791635935,
+    1791636037,
+    1791636096
   ]
 }
