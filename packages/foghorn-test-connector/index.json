@@ -148,5 +148,69 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38048085839",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/foghorn-test-connector/193c8c024723350b0395a6212c3b71d7c47cd2a590db49bc7c07bba1f42fba50.md"
     }
+  },
+  {
+    "sha256": "f9bb5508dbc4cfee68754b3a5164f9d37ff08dcb22c75dd45620b20f1eccf82a",
+    "first_seen": "2026-10-10T11:24:20Z",
+    "package": "foghorn-test-connector-0.6.0-1.armv7hl",
+    "version": "0.6.0-1",
+    "arch": "armv7hl",
+    "buildtime": 1791576060,
+    "last_scanned": "2026-10-10T11:24:20Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "UnifiedPush"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "foghorn-test-connector-0.4.1-1.armv7hl",
+        "attention_count": 2,
+        "attention": [
+          {
+            "area": "launcher command",
+            "change": "changed",
+            "item": "/usr/share/applications/foghorn-test-connector.desktop"
+          },
+          {
+            "area": "D-Bus activation",
+            "change": "added",
+            "item": "/usr/share/dbus-1/services/org.foghorn.TestConnector.service"
+          }
+        ],
+        "files": {
+          "added": 1,
+          "removed": 0,
+          "changed": 5,
+          "unchanged": 4
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38048253680",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/foghorn-test-connector/f9bb5508dbc4cfee68754b3a5164f9d37ff08dcb22c75dd45620b20f1eccf82a.md"
+    }
   }
 ]
