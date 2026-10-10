@@ -1,6 +1,13 @@
 {
-  "cursor": 1791628441,
-  "queue": [],
+  "cursor": 1791630781,
+  "queue": [
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.6.0-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12521",
+      "appid": 12521,
+      "title": "Foghorn Test Connector"
+    }
+  ],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -112,12 +119,18 @@
     "https://openrepos.net/sites/default/files/packages/2446/ice-data-on-lockscreen-0.7.0-1.noarch.rpm",
     "https://openrepos.net/sites/default/files/packages/18851/harbour-sailmines-0.9-1.3.1.bso_.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/18851/harbour-sailmines-0.9-1.3.1.bso_.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.0.0-1.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.0.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.6.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.6.0-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.6.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.6.0-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-10T10:57:10Z",
+  "last_run": "2026-10-10T11:22:15Z",
   "dispatched": [
-    1791627445,
     1791627524,
-    1791628646
+    1791628646,
+    1791631056,
+    1791631156,
+    1791631257
   ]
 }
