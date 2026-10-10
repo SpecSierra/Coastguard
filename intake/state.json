@@ -1,19 +1,6 @@
 {
   "cursor": 1791618668,
-  "queue": [
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.3.1-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12624",
-      "appid": 12624,
-      "title": "Car Hotspot"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/2446/ice-data-on-lockscreen-0.7.0-1.noarch.rpm",
-      "page": "https://openrepos.net/node/12655",
-      "appid": 12655,
-      "title": "ICE Data on Lockscreen (for Sailfish OS 5)"
-    }
-  ],
+  "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -124,12 +111,10 @@
     "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.3.1-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/2446/ice-data-on-lockscreen-0.7.0-1.noarch.rpm"
   ],
-  "last_run": "2026-10-10T08:17:11Z",
+  "last_run": "2026-10-10T08:39:49Z",
   "dispatched": [
-    1791616656,
-    1791616757,
-    1791616858,
-    1791616960,
-    1791619056
+    1791619056,
+    1791621431,
+    1791621531
   ]
 }
