@@ -414,5 +414,144 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38166124600",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/sfos_airpods/2f75f215e05d395b2d0a6628f0b1aab6de062592bd385ce0a608658fd742c2ab.md"
     }
+  },
+  {
+    "sha256": "c47213f2af3d69991b053d5cd4da0bf3c1449c727d3e57ea2113672a932f6d8b",
+    "first_seen": "2026-10-11T19:02:13Z",
+    "package": "sfos_airpods-0.1.0-2.i486",
+    "version": "0.1.0-2",
+    "arch": "i486",
+    "buildtime": 1791742369,
+    "last_scanned": "2026-10-11T19:02:13Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          },
+          {
+            "level": "medium",
+            "id": "hook-d-bus-system-policy",
+            "text": "System hook: D-Bus system policy"
+          },
+          {
+            "level": "medium",
+            "id": "install-script-changes-users-or-loads-kernel-modules",
+            "text": "Install script changes users or loads kernel modules"
+          },
+          {
+            "level": "medium",
+            "id": "new-service",
+            "text": "New background service"
+          },
+          {
+            "level": "medium",
+            "id": "new-hook-d-bus-system-policy",
+            "text": "New system hook: D-Bus system policy"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [
+        "D-Bus system policy"
+      ],
+      "scriptlets": 3,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "sfos_airpods-0.1.0-1.i486",
+        "attention_count": 12,
+        "attention": [
+          {
+            "area": "systemd unit",
+            "change": "added",
+            "item": "/usr/lib/systemd/system/sfos_airpods.service"
+          },
+          {
+            "area": "system hook",
+            "change": "added",
+            "item": "/usr/share/dbus-1/system.d/net.mrcyjanek.sfos_airpods.conf"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "systemctl daemon-reload >/dev/null 2>&1 || :"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "systemctl enable sfos_airpods.service >/dev/null 2>&1 || :"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "systemctl restart sfos_airpods.service >/dev/null 2>&1 || :"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "systemd-sysusers /usr/lib/sysusers.d/sfos_airpods.conf >/dev/null 2>&1 || \\"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "useradd -r -g bluetooth -s /usr/sbin/nologin -c \"AirPods control\" airpods >/dev/null 2>&1 || :"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "systemctl daemon-reload >/dev/null 2>&1 || :"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "fi"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "if [ \"$1\" -eq 0 ]; then"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "systemctl disable --now sfos_airpods.service >/dev/null 2>&1 || :"
+          },
+          {
+            "area": "host",
+            "change": "added",
+            "item": "www.freedesktop.org"
+          }
+        ],
+        "files": {
+          "added": 5,
+          "removed": 0,
+          "changed": 1,
+          "unchanged": 11
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38166274923",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/sfos_airpods/c47213f2af3d69991b053d5cd4da0bf3c1449c727d3e57ea2113672a932f6d8b.md"
+    }
   }
 ]
