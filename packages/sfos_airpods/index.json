@@ -136,5 +136,144 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38126790053",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/sfos_airpods/8afe65fdddfebdefbc8833b417425b9d5a2a36ef80e51622ec6b59557a42312f.md"
     }
+  },
+  {
+    "sha256": "63239f7b66864b7bee99dd1c31579e53fc1cddfee25a70bc132eeff7fec8a3f0",
+    "first_seen": "2026-10-11T18:58:12Z",
+    "package": "sfos_airpods-0.1.0-2.aarch64",
+    "version": "0.1.0-2",
+    "arch": "aarch64",
+    "buildtime": 1791742323,
+    "last_scanned": "2026-10-11T18:58:12Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          },
+          {
+            "level": "medium",
+            "id": "hook-d-bus-system-policy",
+            "text": "System hook: D-Bus system policy"
+          },
+          {
+            "level": "medium",
+            "id": "install-script-changes-users-or-loads-kernel-modules",
+            "text": "Install script changes users or loads kernel modules"
+          },
+          {
+            "level": "medium",
+            "id": "new-service",
+            "text": "New background service"
+          },
+          {
+            "level": "medium",
+            "id": "new-hook-d-bus-system-policy",
+            "text": "New system hook: D-Bus system policy"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [
+        "D-Bus system policy"
+      ],
+      "scriptlets": 3,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "sfos_airpods-0.1.0-1.aarch64",
+        "attention_count": 12,
+        "attention": [
+          {
+            "area": "systemd unit",
+            "change": "added",
+            "item": "/usr/lib/systemd/system/sfos_airpods.service"
+          },
+          {
+            "area": "system hook",
+            "change": "added",
+            "item": "/usr/share/dbus-1/system.d/net.mrcyjanek.sfos_airpods.conf"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "systemctl daemon-reload >/dev/null 2>&1 || :"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "systemctl enable sfos_airpods.service >/dev/null 2>&1 || :"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "systemctl restart sfos_airpods.service >/dev/null 2>&1 || :"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "systemd-sysusers /usr/lib/sysusers.d/sfos_airpods.conf >/dev/null 2>&1 || \\"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "useradd -r -g bluetooth -s /usr/sbin/nologin -c \"AirPods control\" airpods >/dev/null 2>&1 || :"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "systemctl daemon-reload >/dev/null 2>&1 || :"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "fi"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "if [ \"$1\" -eq 0 ]; then"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "systemctl disable --now sfos_airpods.service >/dev/null 2>&1 || :"
+          },
+          {
+            "area": "host",
+            "change": "added",
+            "item": "www.freedesktop.org"
+          }
+        ],
+        "files": {
+          "added": 5,
+          "removed": 0,
+          "changed": 1,
+          "unchanged": 11
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38165989322",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/sfos_airpods/63239f7b66864b7bee99dd1c31579e53fc1cddfee25a70bc132eeff7fec8a3f0.md"
+    }
   }
 ]
