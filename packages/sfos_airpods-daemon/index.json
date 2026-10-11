@@ -51,5 +51,58 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38126882389",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/sfos_airpods-daemon/346b39ff635977e85416494a31d3ebcef439d8c0001c0179c277f0c280b29f0c.md"
     }
+  },
+  {
+    "sha256": "e4635ec21750e9414a44a6408dad67e41c0e32eae5ca3de9314f3ea0104f348e",
+    "first_seen": "2026-10-11T09:03:46Z",
+    "package": "sfos_airpods-daemon-0.1.0-1.armv7hl",
+    "version": "0.1.0-1",
+    "arch": "armv7hl",
+    "buildtime": 1791707979,
+    "last_scanned": "2026-10-11T09:03:46Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "hook-d-bus-system-policy",
+            "text": "System hook: D-Bus system policy"
+          },
+          {
+            "level": "medium",
+            "id": "install-script-changes-users-or-loads-kernel-modules",
+            "text": "Install script changes users or loads kernel modules"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [
+        "D-Bus system policy"
+      ],
+      "scriptlets": 3,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38126983470",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/sfos_airpods-daemon/e4635ec21750e9414a44a6408dad67e41c0e32eae5ca3de9314f3ea0104f348e.md"
+    }
   }
 ]
