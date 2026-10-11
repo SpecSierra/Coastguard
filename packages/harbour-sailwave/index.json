@@ -154,5 +154,67 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38065808718",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-sailwave/882a4e69696593c1d3776806f4189564175f2816f6e22025568f9db6c0f4e55c.md"
     }
+  },
+  {
+    "sha256": "efa642bd17a6856adca33d5b00c61afa36b587e16a1b29e87fa70a5aadb41cbb",
+    "first_seen": "2026-10-11T04:59:34Z",
+    "package": "harbour-sailwave-1.0.1-1.i486",
+    "version": "1.0.1-1",
+    "arch": "i486",
+    "buildtime": 1791693759,
+    "last_scanned": "2026-10-11T04:59:34Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Secrets"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Documents",
+        "Downloads",
+        "Internet",
+        "Secrets"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 10,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-sailwave-1.0-1.i486",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 7,
+          "unchanged": 41
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38113221430",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-sailwave/efa642bd17a6856adca33d5b00c61afa36b587e16a1b29e87fa70a5aadb41cbb.md"
+    }
   }
 ]
