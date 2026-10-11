@@ -1,0 +1,294 @@
+{
+  "verdict": "clean",
+  "name": "harbour-sailwave",
+  "version": "1.0.1-1",
+  "arch": "armv7hl",
+  "package": "harbour-sailwave-1.0.1-1.armv7hl",
+  "buildtime": 1791693708,
+  "sha256": "0a3f28c2242cf333fc57ba2aeb8b5455e61c1499d6caaa2d41e933567dc4ae45",
+  "source": "https://openrepos.net/sites/default/files/packages/19754/harbour-sailwave-1.0.1-1.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12702",
+  "scanned": "2026-10-11T05:00:44Z",
+  "files": 67,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28149/Sat Oct 10 06:24:04 2026",
+    "yara_forge_core": "20261004"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-sailwave.desktop",
+          "name": "Sailwave",
+          "exec": "harbour-sailwave",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Audio",
+            "Documents",
+            "Downloads",
+            "Secrets"
+          ],
+          "organization": "harbour-sailwave",
+          "application": "harbour-sailwave"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 10,
+      "hosts_in_scripts": 10,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 3,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-sailwave/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "all.api.radio-browser.info",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-sailwave/qml/ServerPool.js"
+          ]
+        },
+        {
+          "host": "api.country.is",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-sailwave/qml/RadioApi.js"
+          ]
+        },
+        {
+          "host": "ipapi.co",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-sailwave/qml/RadioApi.js"
+          ]
+        },
+        {
+          "host": "itunes.apple.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-sailwave/qml/CoverArtCache.qml"
+          ]
+        },
+        {
+          "host": "oe3.orf.at",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-sailwave/qml/StationLogo.js"
+          ]
+        },
+        {
+          "host": "sailfishos.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-sailwave/qml/MprisIntegration.qml"
+          ]
+        },
+        {
+          "host": "server.api.radio-browser.info",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-sailwave/qml/RadioApi.js"
+          ]
+        },
+        {
+          "host": "www.google.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-sailwave/qml/StationLogo.js"
+          ]
+        },
+        {
+          "host": "www.radio-browser.info",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-sailwave/qml/pages/AboutPage.qml"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "all.api.radio-browser.info",
+        "api.country.is",
+        "github.com",
+        "ipapi.co",
+        "itunes.apple.com",
+        "oe3.orf.at",
+        "sailfishos.org",
+        "server.api.radio-browser.info",
+        "www.google.com",
+        "www.radio-browser.info"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 591769,
+        "malicious": 398
+      },
+      "notable": [],
+      "ignored_hosts": 1
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38113364160",
+  "diff": {
+    "baseline": {
+      "sha256": "233a0f8888619a9fbfd830a4b192c03b54228334750998b58b813db5c7699d8e",
+      "package": "harbour-sailwave-1.0-1.armv7hl",
+      "last_scanned": "2026-10-10T16:17:53Z"
+    },
+    "changes": [
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-sailwave/qml/AppSettings.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-sailwave/qml/MprisIntegration.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-sailwave/qml/harbour-sailwave.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-sailwave/qml/pages/SettingsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-sailwave/translations/harbour-sailwave-de.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-sailwave/translations/harbour-sailwave-es.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-sailwave/translations/harbour-sailwave-fr.qm",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 0,
+        "removed": 0,
+        "changed": 7,
+        "unchanged": 41
+      }
+    }
+  },
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "id": "personal-data",
+        "text": "Personal data: Secrets"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-sailwave/0a3f28c2242cf333fc57ba2aeb8b5455e61c1499d6caaa2d41e933567dc4ae45.md"
+}
