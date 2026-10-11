@@ -1,12 +1,6 @@
 {
-  "cursor": 1791756061,
+  "cursor": 1791761041,
   "queue": [
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/6389/harbour-thakir-3.5.1-1.aarch64.rpm",
-      "page": "https://openrepos.net/node/12592",
-      "appid": 12592,
-      "title": "Thakir Athan"
-    },
     {
       "url": "https://openrepos.net/sites/default/files/packages/6389/harbour-thakir-3.5.1-1.armv7hl.rpm",
       "page": "https://openrepos.net/node/12592",
@@ -48,6 +42,18 @@
       "page": "https://openrepos.net/node/12636",
       "appid": 12636,
       "title": "Helmsman"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.1-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12708",
+      "appid": 12708,
+      "title": "Captain's Bible"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.1-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12708",
+      "appid": 12708,
+      "title": "Captain's Bible"
     }
   ],
   "seen": [
@@ -258,14 +264,16 @@
     "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.4.0-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.5.1-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.5.1-1.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.5.1-1.i486.rpm"
+    "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.5.1-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.1-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.1-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-11T23:17:10Z",
+  "last_run": "2026-10-11T23:39:05Z",
   "dispatched": [
-    1791757057,
     1791759436,
     1791759516,
     1791759596,
-    1791759676
+    1791759676,
+    1791761845
   ]
 }
