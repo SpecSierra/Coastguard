@@ -96,5 +96,54 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38182515352",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-sailfeed/89ed84e6a6bd26ab454af49157b770e49d57edf4dd89804d8a8b779d17af28e9.md"
     }
+  },
+  {
+    "sha256": "009022711b3608a4c9c8dea53d2a44188695b23c983932fa59cd6fce1f07f3eb",
+    "first_seen": "2026-10-11T23:00:31Z",
+    "package": "harbour-sailfeed-1.0.0-1.i486",
+    "version": "1.0.0-1",
+    "arch": "i486",
+    "buildtime": 1791739694,
+    "last_scanned": "2026-10-11T23:00:31Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Secrets"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "Secrets"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 8,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38182590922",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-sailfeed/009022711b3608a4c9c8dea53d2a44188695b23c983932fa59cd6fce1f07f3eb.md"
+    }
   }
 ]
