@@ -402,5 +402,67 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38155077777",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-submusic/7bdbd8c6b16811b313576db1c4a62544b32faa0e5f4feac800b4f65ea10874c2.md"
     }
+  },
+  {
+    "sha256": "5b96e5b82f3318abdb21d3ea81f1d58f5b5c9c653b233a5d74a17da4b8bf9f50",
+    "first_seen": "2026-10-11T16:23:15Z",
+    "package": "harbour-submusic-1.0.0-1.armv7hl",
+    "version": "1.0.0-1",
+    "arch": "armv7hl",
+    "buildtime": 1791732115,
+    "last_scanned": "2026-10-11T16:23:15Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Secrets"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Internet",
+        "MediaIndexing",
+        "Music",
+        "Secrets"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 4,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-submusic-0.15.1-1.armv7hl",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 32,
+          "removed": 31,
+          "changed": 7,
+          "unchanged": 12
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38155195491",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-submusic/5b96e5b82f3318abdb21d3ea81f1d58f5b5c9c653b233a5d74a17da4b8bf9f50.md"
+    }
   }
 ]
