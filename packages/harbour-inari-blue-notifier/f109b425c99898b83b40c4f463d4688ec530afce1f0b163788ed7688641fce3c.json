@@ -1,0 +1,164 @@
+{
+  "verdict": "clean",
+  "name": "harbour-inari-blue-notifier",
+  "version": "1.2.1-1",
+  "arch": "aarch64",
+  "package": "harbour-inari-blue-notifier-1.2.1-1.aarch64",
+  "buildtime": 1791722679,
+  "sha256": "f109b425c99898b83b40c4f463d4688ec530afce1f0b163788ed7688641fce3c",
+  "source": "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.2.1-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12701",
+  "scanned": "2026-10-11T12:58:08Z",
+  "files": 39,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28149/Sat Oct 10 06:24:04 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-inari-blue-notifier.desktop",
+          "name": "Inari Blue Notifier",
+          "exec": "harbour-inari-blue-notifier",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "AppLaunch",
+            "InariBlueNotifier"
+          ],
+          "organization": "dev.rikudou",
+          "application": "inari-blue-notifier"
+        }
+      ],
+      "shipped_profiles": [
+        "/etc/sailjail/permissions/InariBlueNotifier.permission"
+      ],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 0,
+      "hosts_in_scripts": 0,
+      "hosts": [],
+      "hosts_scripts": [],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 591769,
+        "malicious": 398
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38141253336",
+  "diff": {
+    "baseline": {
+      "sha256": "891a99f800563f3aa1131b7a8d3b6ea6155e9de7487570db8f1d51f34633396c",
+      "package": "harbour-inari-blue-notifier-1.2.0-1.aarch64",
+      "last_scanned": "2026-10-11T12:38:12Z"
+    },
+    "changes": [
+      {
+        "area": "permission",
+        "change": "added",
+        "item": "InariBlueNotifier",
+        "attention": true,
+        "detail": "/usr/share/applications/harbour-inari-blue-notifier.desktop"
+      },
+      {
+        "area": "shipped sandbox profile",
+        "change": "added",
+        "item": "/etc/sailjail/permissions/InariBlueNotifier.permission",
+        "attention": true
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/etc/sailjail/permissions/InariBlueNotifier.permission",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/applications/harbour-inari-blue-notifier.desktop",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 1,
+        "removed": 0,
+        "changed": 1,
+        "unchanged": 14
+      }
+    }
+  },
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "new-shipped-sandbox-profile",
+        "text": "New shipped sandbox profile"
+      },
+      {
+        "level": "info",
+        "id": "own-sandbox-profile",
+        "text": "Own sandbox profile"
+      },
+      {
+        "level": "info",
+        "id": "new-permission-inaribluenotifier",
+        "text": "New permission: InariBlueNotifier"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-inari-blue-notifier/f109b425c99898b83b40c4f463d4688ec530afce1f0b163788ed7688641fce3c.md"
+}
