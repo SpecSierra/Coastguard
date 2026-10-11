@@ -1,25 +1,6 @@
 {
-  "cursor": 1791734694,
-  "queue": [
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.2-1.aarch64.rpm",
-      "page": "https://openrepos.net/node/12345",
-      "appid": 12345,
-      "title": "SubMusic"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.2-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12345",
-      "appid": 12345,
-      "title": "SubMusic"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.2-1.i486.rpm",
-      "page": "https://openrepos.net/node/12345",
-      "appid": 12345,
-      "title": "SubMusic"
-    }
-  ],
+  "cursor": 1791740041,
+  "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -198,14 +179,16 @@
     "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-1.0.0-1.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.2-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.2-1.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.2-1.i486.rpm"
+    "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.2-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/harbour-livewire-0.7.3-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/harbour-livewire-0.7.3-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-11T17:17:10Z",
+  "last_run": "2026-10-11T17:46:28Z",
   "dispatched": [
-    1791735455,
-    1791735555,
-    1791735655,
-    1791735755,
-    1791735835
+    1791740244,
+    1791740323,
+    1791740404,
+    1791740484,
+    1791740647
   ]
 }
