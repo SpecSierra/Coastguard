@@ -1,0 +1,326 @@
+{
+  "verdict": "clean",
+  "name": "sfos_airpods",
+  "version": "0.1.0-2",
+  "arch": "armv7hl",
+  "package": "sfos_airpods-0.1.0-2.armv7hl",
+  "buildtime": 1791742334,
+  "sha256": "2f75f215e05d395b2d0a6628f0b1aab6de062592bd385ce0a608658fd742c2ab",
+  "source": "https://openrepos.net/sites/default/files/packages/18578/sfos_airpods-0.1.0-2.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12705",
+  "scanned": "2026-10-11T19:00:11Z",
+  "files": 43,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28149/Sat Oct 10 06:24:04 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/sfos_airpods.desktop",
+          "name": "AirPods",
+          "exec": "sfos_airpods",
+          "hidden": false,
+          "sandbox": "disabled",
+          "permissions": [],
+          "organization": "net.mrcyjanek",
+          "application": "sfos_airpods"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [
+        {
+          "path": "/usr/lib/systemd/system/sfos_airpods.service",
+          "scope": "system",
+          "exec_start": [
+            "/usr/bin/airpodsd"
+          ],
+          "user": "airpods",
+          "install_wanted_by": "multi-user.target",
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        }
+      ],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {
+      "D-Bus system policy": [
+        "/usr/share/dbus-1/system.d/net.mrcyjanek.sfos_airpods.conf"
+      ]
+    },
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 5,
+        "notable": [
+          "useradd -r -g bluetooth -s /usr/sbin/nologin -c \"AirPods control\" airpods >/dev/null 2>&1 || :",
+          "systemctl daemon-reload >/dev/null 2>&1 || :",
+          "systemctl enable sfos_airpods.service >/dev/null 2>&1 || :",
+          "systemctl restart sfos_airpods.service >/dev/null 2>&1 || :"
+        ],
+        "body": "systemd-sysusers /usr/lib/sysusers.d/sfos_airpods.conf >/dev/null 2>&1 || \\\n    useradd -r -g bluetooth -s /usr/sbin/nologin -c \"AirPods control\" airpods >/dev/null 2>&1 || :\nsystemctl daemon-reload >/dev/null 2>&1 || :\nsystemctl enable sfos_airpods.service >/dev/null 2>&1 || :\nsystemctl restart sfos_airpods.service >/dev/null 2>&1 || :\n"
+      },
+      {
+        "type": "preuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 3,
+        "notable": [
+          "systemctl disable --now sfos_airpods.service >/dev/null 2>&1 || :"
+        ],
+        "body": "if [ \"$1\" -eq 0 ]; then\n    systemctl disable --now sfos_airpods.service >/dev/null 2>&1 || :\nfi\n"
+      },
+      {
+        "type": "postuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 1,
+        "notable": [
+          "systemctl daemon-reload >/dev/null 2>&1 || :"
+        ],
+        "body": "systemctl daemon-reload >/dev/null 2>&1 || :\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 1,
+      "hosts_in_scripts": 1,
+      "hosts": [
+        {
+          "host": "www.freedesktop.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/dbus-1/system.d/net.mrcyjanek.sfos_airpods.conf"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "www.freedesktop.org"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 591769,
+        "malicious": 398
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 4,
+      "unknown": 4,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 4,
+      "unknown": 4,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38166124600",
+  "diff": {
+    "baseline": {
+      "sha256": "528da93c0704f07ff5f829e42bb5288716169e5a4b0599cf16ac2fea9e86b0d2",
+      "package": "sfos_airpods-0.1.0-1.armv7hl",
+      "last_scanned": "2026-10-11T08:59:19Z"
+    },
+    "changes": [
+      {
+        "area": "systemd unit",
+        "change": "added",
+        "item": "/usr/lib/systemd/system/sfos_airpods.service",
+        "attention": true,
+        "detail": "as airpods: /usr/bin/airpodsd (enabled or started from an install scriptlet)"
+      },
+      {
+        "area": "system hook",
+        "change": "added",
+        "item": "/usr/share/dbus-1/system.d/net.mrcyjanek.sfos_airpods.conf",
+        "attention": true,
+        "detail": "D-Bus system policy"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "systemctl daemon-reload >/dev/null 2>&1 || :",
+        "attention": true,
+        "detail": "postinstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "systemctl enable sfos_airpods.service >/dev/null 2>&1 || :",
+        "attention": true,
+        "detail": "postinstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "systemctl restart sfos_airpods.service >/dev/null 2>&1 || :",
+        "attention": true,
+        "detail": "postinstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "systemd-sysusers /usr/lib/sysusers.d/sfos_airpods.conf >/dev/null 2>&1 || \\",
+        "attention": true,
+        "detail": "postinstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "useradd -r -g bluetooth -s /usr/sbin/nologin -c \"AirPods control\" airpods >/dev/null 2>&1 || :",
+        "attention": true,
+        "detail": "postinstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "systemctl daemon-reload >/dev/null 2>&1 || :",
+        "attention": true,
+        "detail": "postuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "fi",
+        "attention": true,
+        "detail": "preuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "if [ \"$1\" -eq 0 ]; then",
+        "attention": true,
+        "detail": "preuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "systemctl disable --now sfos_airpods.service >/dev/null 2>&1 || :",
+        "attention": true,
+        "detail": "preuninstall"
+      },
+      {
+        "area": "host",
+        "change": "added",
+        "item": "www.freedesktop.org",
+        "attention": true,
+        "detail": "in scripts/QML/config"
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/bin/airpods",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/bin/airpodsd",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/lib/systemd/system/sfos_airpods.service",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/lib/sysusers.d/sfos_airpods.conf",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/dbus-1/system.d/net.mrcyjanek.sfos_airpods.conf",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/sfos_airpods",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 1,
+        "removed": 0
+      },
+      "files": {
+        "added": 5,
+        "removed": 0,
+        "changed": 1,
+        "unchanged": 11
+      }
+    }
+  },
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "sandbox-off",
+        "text": "Sandbox turned off"
+      },
+      {
+        "level": "medium",
+        "id": "hook-d-bus-system-policy",
+        "text": "System hook: D-Bus system policy"
+      },
+      {
+        "level": "medium",
+        "id": "install-script-changes-users-or-loads-kernel-modules",
+        "text": "Install script changes users or loads kernel modules"
+      },
+      {
+        "level": "medium",
+        "id": "new-service",
+        "text": "New background service"
+      },
+      {
+        "level": "medium",
+        "id": "new-hook-d-bus-system-policy",
+        "text": "New system hook: D-Bus system policy"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/sfos_airpods/2f75f215e05d395b2d0a6628f0b1aab6de062592bd385ce0a608658fd742c2ab.md"
+}
