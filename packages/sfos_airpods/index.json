@@ -90,5 +90,51 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38126711549",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/sfos_airpods/528da93c0704f07ff5f829e42bb5288716169e5a4b0599cf16ac2fea9e86b0d2.md"
     }
+  },
+  {
+    "sha256": "8afe65fdddfebdefbc8833b417425b9d5a2a36ef80e51622ec6b59557a42312f",
+    "first_seen": "2026-10-11T09:00:46Z",
+    "package": "sfos_airpods-0.1.0-1.i486",
+    "version": "0.1.0-1",
+    "arch": "i486",
+    "buildtime": 1791708043,
+    "last_scanned": "2026-10-11T09:00:46Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38126790053",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/sfos_airpods/8afe65fdddfebdefbc8833b417425b9d5a2a36ef80e51622ec6b59557a42312f.md"
+    }
   }
 ]
