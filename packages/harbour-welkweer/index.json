@@ -1,0 +1,44 @@
+[
+  {
+    "sha256": "2e22ffc26ac471a06d66075b539441192ca2cf8c5997f568ee081b2296e49df5",
+    "first_seen": "2026-10-11T21:18:08Z",
+    "package": "harbour-welkweer-0.45-1.aarch64",
+    "version": "0.45-1",
+    "arch": "aarch64",
+    "buildtime": 1791739054,
+    "last_scanned": "2026-10-11T21:18:08Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 15,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38175733003",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-welkweer/2e22ffc26ac471a06d66075b539441192ca2cf8c5997f568ee081b2296e49df5.md"
+    }
+  }
+]
