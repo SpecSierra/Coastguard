@@ -1,0 +1,238 @@
+{
+  "verdict": "clean",
+  "name": "harbour-imira",
+  "version": "0.10.11-1",
+  "arch": "aarch64",
+  "package": "harbour-imira-0.10.11-1.aarch64",
+  "buildtime": 1791739996,
+  "sha256": "dde2faa6a2d232554cbbce03b7c28d86afd46cd538d36eb3a6c57688189bc120",
+  "source": "https://openrepos.net/sites/default/files/packages/19623/harbour-imira-0.10.11-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12502",
+  "scanned": "2026-10-11T20:23:57Z",
+  "files": 56,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28149/Sat Oct 10 06:24:04 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [
+    {
+      "rule": "Coastguard_Indicator_Installs_Persistence",
+      "files": [
+        "package.rpm"
+      ]
+    }
+  ],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-imira.desktop",
+          "name": "Imira",
+          "exec": "harbour-imira",
+          "hidden": false,
+          "sandbox": "disabled",
+          "permissions": [],
+          "organization": "io.github.jimknopfiot",
+          "application": "harbour-imira"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [
+        {
+          "path": "/etc/systemd/system/imira.service",
+          "scope": "system",
+          "exec_start": [
+            "/usr/libexec/imira/imira-session.sh"
+          ],
+          "user": "root",
+          "install_wanted_by": null,
+          "enabled_by": []
+        }
+      ],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {
+      "polkit": [
+        "/usr/share/polkit-1/rules.d/50-imira.rules"
+      ]
+    },
+    "privileged_files": [
+      {
+        "path": "/usr/libexec/imira/imira-castd",
+        "mode": "-rwxr-sr-x",
+        "owner": "root",
+        "group": "privileged",
+        "why": [
+          "setgid privileged"
+        ]
+      },
+      {
+        "path": "/usr/libexec/imira/imira-comp",
+        "mode": "-rwxr-sr-x",
+        "owner": "root",
+        "group": "privileged",
+        "why": [
+          "setgid privileged"
+        ]
+      }
+    ],
+    "scriptlets": [
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 5,
+        "notable": [
+          "systemctl daemon-reload >/dev/null 2>&1 || :",
+          "systemctl disable --now imira.service >/dev/null 2>&1 || :"
+        ],
+        "body": "# Installed straight into /etc/systemd/system, so only a reload is needed.\n# Guarded: during image builds there is no running systemd.\nsystemctl daemon-reload >/dev/null 2>&1 || :\n# Upgrades: disable the pre-0.10.1 boot service.\nif [ \"$1\" -gt 1 ]; then\n    systemctl disable --now imira.service >/dev/null 2>&1 || :\nfi\n# PulseAudio only reads xpolicy.conf.d on startup; kick the user instance\n# (systemd --user respawns it immediately). Without the rule the daemon's\n# monitor capture would be rerouted to the mic \u2014 which it refuses, so audio\n# would stay off until the next reboot. Not pkill -x: busybox matches the\n# full argv[0] (/usr/bin/pulseaudio) and never hits; pidof does.\nP=$(pidof pulseaudio 2>/dev/null) && kill $P >/dev/null 2>&1 || :\n"
+      },
+      {
+        "type": "preuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 4,
+        "notable": [
+          "systemctl stop imira.service >/dev/null 2>&1 || :",
+          "systemctl disable imira.service >/dev/null 2>&1 || :"
+        ],
+        "body": "# $1 = 0 on erase, >= 1 on upgrade \u2014 only stop the service when going away.\nif [ \"$1\" = \"0\" ]; then\n    systemctl stop imira.service >/dev/null 2>&1 || :\n    systemctl disable imira.service >/dev/null 2>&1 || :\nfi\n"
+      },
+      {
+        "type": "postuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 1,
+        "notable": [
+          "systemctl daemon-reload >/dev/null 2>&1 || :"
+        ],
+        "body": "systemctl daemon-reload >/dev/null 2>&1 || :\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 3,
+      "hosts_in_scripts": 0,
+      "hosts": [
+        {
+          "host": "www.trustedcomputinggroup.org",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/imira/wpa_supplicant-p2p"
+          ]
+        },
+        {
+          "host": "www.freedesktop.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/imira/wpa_supplicant-p2p"
+          ]
+        },
+        {
+          "host": "www.openssl.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/imira/wpa_supplicant-p2p"
+          ]
+        }
+      ],
+      "hosts_scripts": [],
+      "hosts_binaries": [
+        "www.freedesktop.org",
+        "www.openssl.org",
+        "www.trustedcomputinggroup.org"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 617700,
+        "malicious": 398
+      },
+      "notable": [],
+      "ignored_hosts": 1
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 6,
+      "unknown": 6,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 6,
+      "unknown": 6,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38171988583",
+  "diff": null,
+  "risk": {
+    "grade": "high",
+    "reasons": [
+      {
+        "level": "high",
+        "id": "root-service-no-sandbox",
+        "text": "Root service and no sandbox"
+      },
+      {
+        "level": "medium",
+        "id": "sandbox-off",
+        "text": "Sandbox turned off"
+      },
+      {
+        "level": "medium",
+        "id": "root-services",
+        "text": "1 root service"
+      },
+      {
+        "level": "medium",
+        "id": "privileged-files",
+        "text": "2 privileged files (setgid privileged)"
+      },
+      {
+        "level": "medium",
+        "id": "hook-polkit",
+        "text": "System hook: polkit"
+      },
+      {
+        "level": "medium",
+        "id": "code-installs-persistence",
+        "text": "Unsandboxed code that installs persistence"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-imira/dde2faa6a2d232554cbbce03b7c28d86afd46cd538d36eb3a6c57688189bc120.md"
+}
