@@ -464,5 +464,67 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38155195491",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-submusic/5b96e5b82f3318abdb21d3ea81f1d58f5b5c9c653b233a5d74a17da4b8bf9f50.md"
     }
+  },
+  {
+    "sha256": "f2d092dbaa9fcecb98dd8b13cc8cfbeedd66feb6a8fd479328e78147e78f56e0",
+    "first_seen": "2026-10-11T16:24:29Z",
+    "package": "harbour-submusic-1.0.0-1.i486",
+    "version": "1.0.0-1",
+    "arch": "i486",
+    "buildtime": 1791732147,
+    "last_scanned": "2026-10-11T16:24:29Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Secrets"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Internet",
+        "MediaIndexing",
+        "Music",
+        "Secrets"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 4,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-submusic-0.15.1-1.i486",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 32,
+          "removed": 31,
+          "changed": 7,
+          "unchanged": 12
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38155288218",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-submusic/f2d092dbaa9fcecb98dd8b13cc8cfbeedd66feb6a8fd479328e78147e78f56e0.md"
+    }
   }
 ]
