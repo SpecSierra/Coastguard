@@ -1,0 +1,5 @@
+13276571cea689414d2666e11fbff6909d97744df39926361ad94f89d8956aec	2744176	elf	/usr/bin/airpods
+72a48bc81a27d205542ce667f04ff4dd2edd83365083017eb42c98deb2e8e136	3605072	elf	/usr/bin/airpodsd
+6a2b545e3c87323e3481363a2151545597942784caf8c956519b1a803738b319	263	other	/usr/lib/systemd/system/sfos_airpods.service
+6d8290102ecb2fce94beb2ed1a8fd6250b3d15b82d61db76d9b48fe2d279b29d	70	other	/usr/lib/sysusers.d/sfos_airpods.conf
+c1a4c201a337d8cc4b3fe9ac0a1e770c379753492a0ba6dd43066ced25938eff	411	other	/usr/share/dbus-1/system.d/net.mrcyjanek.sfos_airpods.conf
