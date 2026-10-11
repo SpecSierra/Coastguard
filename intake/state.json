@@ -1,6 +1,67 @@
 {
-  "cursor": 1791740586,
-  "queue": [],
+  "cursor": 1791742561,
+  "queue": [
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/18578/sfos_airpods-0.1.0-2.aarch64.rpm",
+      "page": "https://openrepos.net/node/12705",
+      "appid": 12705,
+      "title": "AirPods"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/18578/sfos_airpods-0.1.0-2.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12705",
+      "appid": 12705,
+      "title": "AirPods"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/18578/sfos_airpods-0.1.0-2.i486.rpm",
+      "page": "https://openrepos.net/node/12705",
+      "appid": 12705,
+      "title": "AirPods"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/18578/sfos_airpods-debuginfo-0.1.0-2.aarch64.rpm",
+      "page": "https://openrepos.net/node/12705",
+      "appid": 12705,
+      "title": "AirPods"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/18578/sfos_airpods-debuginfo-0.1.0-2.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12705",
+      "appid": 12705,
+      "title": "AirPods"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/18578/sfos_airpods-debuginfo-0.1.0-2.i486.rpm",
+      "page": "https://openrepos.net/node/12705",
+      "appid": 12705,
+      "title": "AirPods"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/18578/sfos_airpods-debugsource-0.1.0-2.aarch64.rpm",
+      "page": "https://openrepos.net/node/12705",
+      "appid": 12705,
+      "title": "AirPods"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/18578/sfos_airpods-debugsource-0.1.0-2.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12705",
+      "appid": 12705,
+      "title": "AirPods"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/18578/sfos_airpods-debugsource-0.1.0-2.i486.rpm",
+      "page": "https://openrepos.net/node/12705",
+      "appid": 12705,
+      "title": "AirPods"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19623/harbour-imira-0.10.11-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12502",
+      "appid": 12502,
+      "title": "Imira"
+    }
+  ],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -181,9 +242,19 @@
     "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.2-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19375/harbour-submusic-0.15.2-1.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/19607/harbour-livewire-0.7.3-1.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/19607/harbour-livewire-0.7.3-1.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/19607/harbour-livewire-0.7.3-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/18578/sfos_airpods-0.1.0-2.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/18578/sfos_airpods-0.1.0-2.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/18578/sfos_airpods-0.1.0-2.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/18578/sfos_airpods-debuginfo-0.1.0-2.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/18578/sfos_airpods-debuginfo-0.1.0-2.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/18578/sfos_airpods-debuginfo-0.1.0-2.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/18578/sfos_airpods-debugsource-0.1.0-2.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/18578/sfos_airpods-debugsource-0.1.0-2.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/18578/sfos_airpods-debugsource-0.1.0-2.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/19623/harbour-imira-0.10.11-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-11T17:57:23Z",
+  "last_run": "2026-10-11T18:17:34Z",
   "dispatched": [
     1791740244,
     1791740323,
