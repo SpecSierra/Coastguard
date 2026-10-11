@@ -2,30 +2,6 @@
   "cursor": 1791756061,
   "queue": [
     {
-      "url": "https://openrepos.net/sites/default/files/packages/19754/harbour-sailfeed-1.0.0-1.aarch64.rpm",
-      "page": "https://openrepos.net/node/12706",
-      "appid": 12706,
-      "title": "Sailfeed"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/19754/harbour-sailfeed-1.0.0-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12706",
-      "appid": 12706,
-      "title": "Sailfeed"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/19754/harbour-sailfeed-1.0.0-1.i486.rpm",
-      "page": "https://openrepos.net/node/12706",
-      "appid": 12706,
-      "title": "Sailfeed"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.3.1-1.aarch64.rpm",
-      "page": "https://openrepos.net/node/12701",
-      "appid": 12701,
-      "title": "Inari Blue Notifier"
-    },
-    {
       "url": "https://openrepos.net/sites/default/files/packages/6389/harbour-thakir-3.5.1-1.aarch64.rpm",
       "page": "https://openrepos.net/node/12592",
       "appid": 12592,
@@ -284,12 +260,12 @@
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.5.1-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.5.1-1.i486.rpm"
   ],
-  "last_run": "2026-10-11T22:37:12Z",
+  "last_run": "2026-10-11T23:02:35Z",
   "dispatched": [
-    1791754658,
-    1791754738,
-    1791754818,
-    1791754899,
-    1791757057
+    1791757057,
+    1791759436,
+    1791759516,
+    1791759596,
+    1791759676
   ]
 }
