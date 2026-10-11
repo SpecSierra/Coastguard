@@ -404,6 +404,68 @@
     }
   },
   {
+    "sha256": "5d0d74fb5f178fce5f49b6a0576b3f28b781aa19f18d8a8fe29db4ac5c2f7fcf",
+    "first_seen": "2026-10-11T17:39:24Z",
+    "package": "harbour-submusic-0.15.2-1.armv7hl",
+    "version": "0.15.2-1",
+    "arch": "armv7hl",
+    "buildtime": 1791718982,
+    "last_scanned": "2026-10-11T17:39:24Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Secrets"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Internet",
+        "MediaIndexing",
+        "Music",
+        "Secrets"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 4,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-submusic-0.15.1-1.armv7hl",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 31,
+          "removed": 31,
+          "changed": 5,
+          "unchanged": 14
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38160510368",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-submusic/5d0d74fb5f178fce5f49b6a0576b3f28b781aa19f18d8a8fe29db4ac5c2f7fcf.md"
+    }
+  },
+  {
     "sha256": "7bdbd8c6b16811b313576db1c4a62544b32faa0e5f4feac800b4f65ea10874c2",
     "first_seen": "2026-10-11T16:21:44Z",
     "package": "harbour-submusic-1.0.0-1.aarch64",
