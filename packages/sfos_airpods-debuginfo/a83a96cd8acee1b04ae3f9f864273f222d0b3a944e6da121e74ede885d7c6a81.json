@@ -1,0 +1,143 @@
+{
+  "verdict": "clean",
+  "name": "sfos_airpods-debuginfo",
+  "version": "0.1.0-2",
+  "arch": "armv7hl",
+  "package": "sfos_airpods-debuginfo-0.1.0-2.armv7hl",
+  "buildtime": 1791742334,
+  "sha256": "a83a96cd8acee1b04ae3f9f864273f222d0b3a944e6da121e74ede885d7c6a81",
+  "source": "https://openrepos.net/sites/default/files/packages/18578/sfos_airpods-debuginfo-0.1.0-2.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12705",
+  "scanned": "2026-10-11T19:06:35Z",
+  "files": 18,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28149/Sat Oct 10 06:24:04 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 14,
+    "files": 14,
+    "bytes": 6365839,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 0,
+      "hosts_in_scripts": 0,
+      "hosts": [],
+      "hosts_scripts": [],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 591769,
+        "malicious": 398
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 4,
+      "unknown": 4,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 4,
+      "unknown": 4,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38166554441",
+  "diff": {
+    "baseline": {
+      "sha256": "92bf7fe74f89762d393205f7bbf62f095775664ee8526a851c2d7b90e0dda9be",
+      "package": "sfos_airpods-debuginfo-0.1.0-1.armv7hl",
+      "last_scanned": "2026-10-11T10:21:43Z"
+    },
+    "changes": [
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/lib/debug/usr/bin/airpods-0.1.0-2.arm.debug",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/lib/debug/usr/bin/airpodsd-0.1.0-2.arm.debug",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/lib/debug/usr/bin/sfos_airpods-0.1.0-2.arm.debug",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib/debug/usr/bin/airpods-0.1.0-1.arm.debug",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib/debug/usr/bin/airpodsd-0.1.0-1.arm.debug",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib/debug/usr/bin/sfos_airpods-0.1.0-1.arm.debug",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 3,
+        "removed": 3,
+        "changed": 0,
+        "unchanged": 0
+      }
+    }
+  },
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/sfos_airpods-debuginfo/a83a96cd8acee1b04ae3f9f864273f222d0b3a944e6da121e74ede885d7c6a81.md"
+}
