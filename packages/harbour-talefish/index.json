@@ -53,6 +53,59 @@
     }
   },
   {
+    "sha256": "31503f7bebea1db6f47cbfc51dcba145b2ae5722297f4c9f4acd39e734398de6",
+    "first_seen": "2026-10-11T21:42:28Z",
+    "package": "harbour-talefish-0.11-1.i486",
+    "version": "0.11-1",
+    "arch": "i486",
+    "buildtime": 1791743769,
+    "last_scanned": "2026-10-11T21:42:28Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "disabled",
+      "permissions": [
+        "Audio",
+        "Compatibility",
+        "PublicDir",
+        "RemovableMedia",
+        "UserDirs",
+        "Videos"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 9,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38177421347",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-talefish/31503f7bebea1db6f47cbfc51dcba145b2ae5722297f4c9f4acd39e734398de6.md"
+    }
+  },
+  {
     "sha256": "912922a3a0a4e8e89e4594e26bd28790f57219e301b6e43b2ec34ac4ec07e625",
     "first_seen": "2026-10-11T21:41:03Z",
     "package": "harbour-talefish-0.11-1.aarch64",
