@@ -1,0 +1,104 @@
+{
+  "verdict": "clean",
+  "name": "sfos_airpods",
+  "version": "0.1.0-1",
+  "arch": "armv7hl",
+  "package": "sfos_airpods-0.1.0-1.armv7hl",
+  "buildtime": 1791707979,
+  "sha256": "528da93c0704f07ff5f829e42bb5288716169e5a4b0599cf16ac2fea9e86b0d2",
+  "source": "https://openrepos.net/sites/default/files/packages/18578/sfos_airpods-0.1.0-1.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12705",
+  "scanned": "2026-10-11T08:59:19Z",
+  "files": 32,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28149/Sat Oct 10 06:24:04 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/sfos_airpods.desktop",
+          "name": "AirPods",
+          "exec": "sfos_airpods",
+          "hidden": false,
+          "sandbox": "disabled",
+          "permissions": [],
+          "organization": "net.mrcyjanek",
+          "application": "sfos_airpods"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 0,
+      "hosts_in_scripts": 0,
+      "hosts": [],
+      "hosts_scripts": [],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 591769,
+        "malicious": 398
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38126711549",
+  "diff": null,
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "sandbox-off",
+        "text": "Sandbox turned off"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/sfos_airpods/528da93c0704f07ff5f829e42bb5288716169e5a4b0599cf16ac2fea9e86b0d2.md"
+}
