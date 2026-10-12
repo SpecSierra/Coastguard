@@ -1,0 +1,100 @@
+{
+  "verdict": "clean",
+  "name": "harbour-r8-one",
+  "version": "0.2.0-1",
+  "arch": "armv7hl",
+  "package": "harbour-r8-one-0.2.0-1.armv7hl",
+  "buildtime": 1791792140,
+  "sha256": "f292f310f80c13a3ffe74437e4d922ee8d7133b4abf2757f169207f8704acd73",
+  "source": "https://openrepos.net/sites/default/files/packages/18418/harbour-r8-one-0.2.0-1.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12709",
+  "scanned": "2026-10-12T08:38:11Z",
+  "files": 49,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28151/Mon Oct 12 06:24:02 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-r8-one.desktop",
+          "name": "r8 One",
+          "exec": "harbour-r8-one",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Documents"
+          ],
+          "organization": "rs.r8",
+          "application": "harbour-r8-one"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 0,
+      "hosts_in_scripts": 0,
+      "hosts": [],
+      "hosts_scripts": [],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 618078,
+        "malicious": 415
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38224711626",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-r8-one/f292f310f80c13a3ffe74437e4d922ee8d7133b4abf2757f169207f8704acd73.md"
+}

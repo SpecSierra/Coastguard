@@ -1,0 +1,44 @@
+[
+  {
+    "sha256": "f292f310f80c13a3ffe74437e4d922ee8d7133b4abf2757f169207f8704acd73",
+    "first_seen": "2026-10-12T08:38:11Z",
+    "package": "harbour-r8-one-0.2.0-1.armv7hl",
+    "version": "0.2.0-1",
+    "arch": "armv7hl",
+    "buildtime": 1791792140,
+    "last_scanned": "2026-10-12T08:38:11Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Documents"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38224711626",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-r8-one/f292f310f80c13a3ffe74437e4d922ee8d7133b4abf2757f169207f8704acd73.md"
+    }
+  }
+]
