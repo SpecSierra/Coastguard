@@ -47,5 +47,54 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38267039752",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-nextmarks/d9fd4e5e373171e8ed34ca84238e66cd41440b9576d6b0b0b1f365d038528137.md"
     }
+  },
+  {
+    "sha256": "e9878e42e6943247263ef3cdadfbdfdda8b85509d3f0631f57006b92df5a7e87",
+    "first_seen": "2026-10-12T15:03:34Z",
+    "package": "harbour-nextmarks-1.0.2-1.armv7hl",
+    "version": "1.0.2-1",
+    "arch": "armv7hl",
+    "buildtime": 1791816416,
+    "last_scanned": "2026-10-12T15:03:34Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Secrets"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "Secrets"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38267254528",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-nextmarks/e9878e42e6943247263ef3cdadfbdfdda8b85509d3f0631f57006b92df5a7e87.md"
+    }
   }
 ]
