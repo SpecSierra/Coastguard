@@ -94,5 +94,58 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38093315038",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-dollfin/b1a1a2781c615f6e6f8f8117522d6903d11669fbab623da8ea6185ff0293e512.md"
     }
+  },
+  {
+    "sha256": "2d8eaf71520f9fa2181c375c0e80bfabaae3db8390aa27100e5013036319cdda",
+    "first_seen": "2026-10-12T22:57:57Z",
+    "package": "harbour-dollfin-1.2-2.aarch64",
+    "version": "1.2-2",
+    "arch": "aarch64",
+    "buildtime": 1791844778,
+    "last_scanned": "2026-10-12T22:57:57Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Calendar",
+        "Downloads"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-dollfin-1.2-1.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 6,
+          "unchanged": 17
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38319553753",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-dollfin/2d8eaf71520f9fa2181c375c0e80bfabaae3db8390aa27100e5013036319cdda.md"
+    }
   }
 ]
