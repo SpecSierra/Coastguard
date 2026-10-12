@@ -236,10 +236,6 @@
     "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.5-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19742/harbour-felisbtbattery-0.2.1-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-12T18:17:13Z",
-  "dispatched": [
-    1791825458,
-    1791825724,
-    1791825991
-  ]
+  "last_run": "2026-10-12T18:37:11Z",
+  "dispatched": []
 }
