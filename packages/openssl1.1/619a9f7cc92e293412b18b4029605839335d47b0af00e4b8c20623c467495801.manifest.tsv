@@ -1,0 +1,6 @@
+32570298caf5be1ac0b0f0f68386e0b55c989c43ed49eec7ac9ef59474e49ff4	7280	elf	/usr/lib/engines-1.1/afalg.so
+34d5d3382909ff6ca4035ac22fbcef71329b58c5a3027606b2bc413ba63ce4a7	7292	elf	/usr/lib/engines-1.1/capi.so
+422b0170e8deb8f2eb35209b9d870ef755fd0502237432dd5ceef1f26b22ca93	7296	elf	/usr/lib/engines-1.1/padlock.so
+81f31621668827a02fbabacc50c2d4639048ec0ae315fc1de0cfaeb8a49e4afa	2342716	elf	/usr/lib/libcrypto.so.1.1.1w
+de215a87a4fbac841d1ee8af7a6d82db415521ce8f02d235d03ac72f2b808034	480256	elf	/usr/lib/libssl.so.1.1.1w
+c32913b33252e71190af2066f08115c69bc9fddadf3bf29296e20c835389841c	6121	other	/usr/share/licenses/openssl1.1-1.1.1w/LICENSE
