@@ -1,0 +1,619 @@
+{
+  "verdict": "clean",
+  "name": "harbour-thakir",
+  "version": "3.5.5-1",
+  "arch": "armv7hl",
+  "package": "harbour-thakir-3.5.5-1.armv7hl",
+  "buildtime": 1791805694,
+  "sha256": "94ce5b15cf890fa3d5acc1f17a799c9a681e16bef58e1b7d17f1409f58d6b85f",
+  "source": "https://openrepos.net/sites/default/files/packages/6389/harbour-thakir-3.5.5-1.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12592",
+  "scanned": "2026-10-12T12:02:16Z",
+  "files": 169,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28151/Mon Oct 12 06:24:02 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-thakir.desktop",
+          "name": "Thakir Athan",
+          "exec": "harbour-thakir",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Audio",
+            "Internet",
+            "Location",
+            "Sensors"
+          ],
+          "organization": "org.hafsoftdz",
+          "application": "harbour-thakir"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [
+        {
+          "path": "/usr/lib/systemd/system/harbour-thakir-check.service",
+          "scope": "system",
+          "exec_start": [
+            "/bin/sh -c '/usr/bin/harbour-thakir --check-and-play >> /home/defaultuser/.cache/harbour-thakir-check.log 2>&1'"
+          ],
+          "user": "defaultuser",
+          "install_wanted_by": null,
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/system/harbour-thakir-check.timer",
+          "scope": "system",
+          "exec_start": [],
+          "user": "root",
+          "install_wanted_by": "timers.target",
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        }
+      ],
+      "dbus": [
+        {
+          "path": "/usr/share/dbus-1/services/org.hafsoftdz.harbour-thakir.service",
+          "bus": "session",
+          "name": "org.hafsoftdz.harbour-thakir",
+          "exec": "/usr/bin/sailjail -p harbour-thakir.desktop /usr/bin/harbour-thakir",
+          "user": null,
+          "systemd_service": null
+        },
+        {
+          "path": "/usr/share/dbus-1/services/org.hafsoftdz.harbour_thakir.service",
+          "bus": "session",
+          "name": "org.hafsoftdz.harbour_thakir",
+          "exec": "/usr/bin/sailjail -p harbour-thakir.desktop /usr/bin/harbour-thakir",
+          "user": null,
+          "systemd_service": null
+        }
+      ],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 4,
+        "notable": [
+          "systemctl daemon-reload ||:",
+          "systemctl enable --now harbour-thakir-check.timer ||:",
+          "systemctl restart harbour-thakir-check.timer ||:"
+        ],
+        "body": "# Runs with root privileges as part of package installation (whether\n# via pkcon, `rpm -i` under devel-su, or the IDE's deploy step) - a\n# system-level unit's systemd instance (unlike a --user one) is always\n# available at this point, so this can safely run automatically instead\n# of requiring the user to do it by hand afterward. \"||:\" makes each\n# line non-fatal to the install if systemctl is ever unavailable for\n# some reason.\nsystemctl daemon-reload ||:\nsystemctl enable --now harbour-thakir-check.timer ||:\nsystemctl restart harbour-thakir-check.timer ||:\nupdate-desktop-database /usr/share/applications ||:\n"
+      },
+      {
+        "type": "preuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 3,
+        "notable": [
+          "systemctl disable --now harbour-thakir-check.timer ||:"
+        ],
+        "body": "# Only on final removal, not on upgrade (an upgrade's %post above will\n# re-enable it against the new files).\nif [ \"$1\" -eq 0 ]; then\n    systemctl disable --now harbour-thakir-check.timer ||:\nfi\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 26,
+      "hosts_in_scripts": 10,
+      "hosts": [
+        {
+          "host": "everyayah.com",
+          "urls": 48,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-thakir/data/quran.db",
+            "/usr/share/harbour-thakir/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "quranpedia.net",
+          "urls": 3,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-thakir/data/quran.db",
+            "/usr/share/harbour-thakir/qml/pages/AboutPage.qml",
+            "/usr/share/harbour-thakir/quran_svg/hafs/raw_1.svg"
+          ]
+        },
+        {
+          "host": "tanzil.net",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-thakir/files/quran-simple-clean.xml",
+            "/usr/share/harbour-thakir/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "audio.quran.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-thakir/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "praytimes.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-thakir/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "quran.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-thakir/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "qurancomplex.gov.sa",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-thakir/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "sodipodi.sourceforge.net",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-thakir/qml/Images/bg_mosque_sunset.svg"
+          ]
+        },
+        {
+          "host": "www.amirifont.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-thakir/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "www.inkscape.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-thakir/qml/Images/bg_mosque_sunset.svg"
+          ]
+        },
+        {
+          "host": "pki.goog",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-thakir/qml/Images/bg_geometric_1.jpg",
+            "/usr/share/harbour-thakir/qml/Images/bg_geometric_2.jpg",
+            "/usr/share/harbour-thakir/qml/Images/bg_geometric_3.jpg"
+          ]
+        },
+        {
+          "host": "c2pa-ocsp.pki.goog",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-thakir/qml/Images/bg_geometric_1.jpg",
+            "/usr/share/harbour-thakir/qml/Images/bg_geometric_2.jpg",
+            "/usr/share/harbour-thakir/qml/Images/bg_geometric_3.jpg"
+          ]
+        },
+        {
+          "host": "cacerts.digicert.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-thakir/qml/fonts/UthmanicWarsh.ttf"
+          ]
+        },
+        {
+          "host": "crl.verisign.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-thakir/qml/fonts/UthmanTN-Bold.ttf",
+            "/usr/share/harbour-thakir/qml/fonts/UthmanTN.otf",
+            "/usr/share/harbour-thakir/qml/fonts/UthmanTN.ttf"
+          ]
+        },
+        {
+          "host": "crl3.digicert.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-thakir/qml/fonts/UthmanicWarsh.ttf"
+          ]
+        },
+        {
+          "host": "crl4.digicert.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-thakir/qml/fonts/UthmanicWarsh.ttf"
+          ]
+        },
+        {
+          "host": "cv.iptc.org",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-thakir/qml/Images/bg_geometric_1.jpg",
+            "/usr/share/harbour-thakir/qml/Images/bg_geometric_2.jpg",
+            "/usr/share/harbour-thakir/qml/Images/bg_geometric_3.jpg"
+          ]
+        },
+        {
+          "host": "fonts.qurancomplex.gov.sa",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-thakir/qml/fonts/UthmanicWarsh.ttf"
+          ]
+        },
+        {
+          "host": "crl.thawte.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-thakir/qml/fonts/UthmanTN-Bold.ttf",
+            "/usr/share/harbour-thakir/qml/fonts/UthmanTN.otf",
+            "/usr/share/harbour-thakir/qml/fonts/UthmanTN.ttf"
+          ]
+        },
+        {
+          "host": "cs-g2-crl.thawte.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-thakir/qml/fonts/UthmanTN-Bold.ttf",
+            "/usr/share/harbour-thakir/qml/fonts/UthmanTN.otf",
+            "/usr/share/harbour-thakir/qml/fonts/UthmanTN.ttf"
+          ]
+        },
+        {
+          "host": "fontello.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-thakir/qml/fonts/titles.ttf"
+          ]
+        },
+        {
+          "host": "fonts.qurancomplex.gov.saelectronic",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-thakir/qml/fonts/UthmanTN-Bold.ttf",
+            "/usr/share/harbour-thakir/qml/fonts/UthmanTN.otf",
+            "/usr/share/harbour-thakir/qml/fonts/UthmanTN.ttf"
+          ]
+        },
+        {
+          "host": "fonts.qurancomplex.gov.sahttp",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-thakir/qml/fonts/UthmanicHafs.otf"
+          ]
+        },
+        {
+          "host": "geocoding-api.open-meteo.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-thakir"
+          ]
+        },
+        {
+          "host": "nominatim.openstreetmap.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-thakir"
+          ]
+        },
+        {
+          "host": "www.digicert.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-thakir/qml/fonts/UthmanicWarsh.ttf"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "audio.quran.com",
+        "everyayah.com",
+        "praytimes.org",
+        "quran.com",
+        "qurancomplex.gov.sa",
+        "quranpedia.net",
+        "sodipodi.sourceforge.net",
+        "tanzil.net",
+        "www.amirifont.org",
+        "www.inkscape.org"
+      ],
+      "hosts_binaries": [
+        "c2pa-ocsp.pki.goog",
+        "cacerts.digicert.com",
+        "crl.thawte.com",
+        "crl.verisign.com",
+        "crl3.digicert.com",
+        "crl4.digicert.com",
+        "cs-g2-crl.thawte.com",
+        "cv.iptc.org",
+        "fontello.com",
+        "fonts.qurancomplex.gov.sa",
+        "fonts.qurancomplex.gov.saelectronic",
+        "fonts.qurancomplex.gov.sahttp",
+        "geocoding-api.open-meteo.com",
+        "nominatim.openstreetmap.org",
+        "pki.goog",
+        "www.digicert.com"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 618078,
+        "malicious": 415
+      },
+      "notable": [],
+      "ignored_hosts": 1
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38246161389",
+  "diff": {
+    "baseline": {
+      "sha256": "f9e9bbfa0c1f109558171badefe3b49371f638c43be748e47b2f4378bbb13649",
+      "package": "harbour-thakir-3.5.1-1.armv7hl",
+      "last_scanned": "2026-10-12T00:18:15Z"
+    },
+    "changes": [
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/harbour-thakir",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-thakir/qml/pages/AlertSettingsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-thakir/qml/pages/AppearancePage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-thakir/qml/pages/Athkar.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-thakir/qml/pages/LocationSettingsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-thakir/qml/pages/MainPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-thakir/qml/pages/QiblaPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-thakir/qml/pages/QuranDownloadPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-thakir/qml/pages/QuranIndexPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-thakir/qml/pages/QuranReaderPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-thakir/qml/pages/QuranTafsirPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-thakir/qml/pages/ReciterPickerDialog.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-thakir/qml/pages/TimeAdjustmentsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-thakir/translations/harbour-thakir-ar.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-thakir/translations/harbour-thakir-fr.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-thakir/translations/harbour-thakir-tr.qm",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 0,
+        "removed": 0,
+        "changed": 16,
+        "unchanged": 116
+      }
+    }
+  },
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "root-services",
+        "text": "1 root service, started at install"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-thakir/94ce5b15cf890fa3d5acc1f17a799c9a681e16bef58e1b7d17f1409f58d6b85f.md"
+}
