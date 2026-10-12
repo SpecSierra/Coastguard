@@ -1,0 +1,62 @@
+[
+  {
+    "sha256": "e27b4f9025a54323e60fab20eb5f5c6299abaf66e9a0b6dc3c07a50d9b4b077a",
+    "first_seen": "2026-10-12T11:38:10Z",
+    "package": "toh-notify-0.1.0-1.noarch",
+    "version": "0.1.0-1",
+    "arch": "noarch",
+    "buildtime": 1791745804,
+    "last_scanned": "2026-10-12T11:38:10Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "root-services",
+            "text": "1 root service, started at install"
+          },
+          {
+            "level": "info",
+            "id": "hook-system-ui-patches",
+            "text": "System hook: system UI patches"
+          },
+          {
+            "level": "info",
+            "id": "code-sends-sms-or-places-calls",
+            "text": "Code that sends sms or places calls"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Sends SMS Or Places Calls"
+      ],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 1,
+      "privileged_files": 0,
+      "system_hooks": [
+        "system UI patches"
+      ],
+      "scriptlets": 3,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38243842848",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/toh-notify/e27b4f9025a54323e60fab20eb5f5c6299abaf66e9a0b6dc3c07a50d9b4b077a.md"
+    }
+  }
+]
