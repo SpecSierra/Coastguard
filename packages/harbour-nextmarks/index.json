@@ -1,0 +1,51 @@
+[
+  {
+    "sha256": "d9fd4e5e373171e8ed34ca84238e66cd41440b9576d6b0b0b1f365d038528137",
+    "first_seen": "2026-10-12T15:01:08Z",
+    "package": "harbour-nextmarks-1.0.2-1.aarch64",
+    "version": "1.0.2-1",
+    "arch": "aarch64",
+    "buildtime": 1791816384,
+    "last_scanned": "2026-10-12T15:01:08Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Secrets"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "Secrets"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38267039752",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-nextmarks/d9fd4e5e373171e8ed34ca84238e66cd41440b9576d6b0b0b1f365d038528137.md"
+    }
+  }
+]

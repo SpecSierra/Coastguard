@@ -1,0 +1,116 @@
+{
+  "verdict": "clean",
+  "name": "harbour-nextmarks",
+  "version": "1.0.2-1",
+  "arch": "aarch64",
+  "package": "harbour-nextmarks-1.0.2-1.aarch64",
+  "buildtime": 1791816384,
+  "sha256": "d9fd4e5e373171e8ed34ca84238e66cd41440b9576d6b0b0b1f365d038528137",
+  "source": "https://openrepos.net/sites/default/files/packages/4899/harbour-nextmarks-1.0.2-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12621",
+  "scanned": "2026-10-12T15:01:08Z",
+  "files": 39,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28151/Mon Oct 12 06:24:02 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-nextmarks.desktop",
+          "name": "Nextmarks",
+          "exec": "harbour-nextmarks",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Secrets"
+          ],
+          "organization": "harbour-nextmarks",
+          "application": "harbour-nextmarks"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [
+        {
+          "path": "/usr/share/dbus-1/services/harbour-nextmarks.harbour-nextmarks.service",
+          "bus": "session",
+          "name": "harbour-nextmarks.harbour-nextmarks",
+          "exec": "/usr/bin/invoker --type=silica-qt5 --desktop-file=harbour-nextmarks.desktop -s -n /usr/bin/harbour-nextmarks",
+          "user": null,
+          "systemd_service": null
+        }
+      ],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 0,
+      "hosts_in_scripts": 0,
+      "hosts": [],
+      "hosts_scripts": [],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 618078,
+        "malicious": 415
+      },
+      "notable": [],
+      "ignored_hosts": 1
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38267039752",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "id": "personal-data",
+        "text": "Personal data: Secrets"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-nextmarks/d9fd4e5e373171e8ed34ca84238e66cd41440b9576d6b0b0b1f365d038528137.md"
+}
