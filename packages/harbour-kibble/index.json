@@ -1,0 +1,57 @@
+[
+  {
+    "sha256": "50f9a8b57d6df71d79ab092e24db21ab8a552f7e9bb1687eb9e7d51f09a686cf",
+    "first_seen": "2026-10-12T10:38:01Z",
+    "package": "harbour-kibble-1.0.0-1.aarch64",
+    "version": "1.0.0-1",
+    "arch": "aarch64",
+    "buildtime": 1791798768,
+    "last_scanned": "2026-10-12T10:38:01Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          },
+          {
+            "level": "medium",
+            "id": "code-reads-browser-profile-data",
+            "text": "Unsandboxed code that reads browser profile data"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Reads Browser Profile Data"
+      ],
+      "sandbox": "disabled",
+      "permissions": [
+        "Internet"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 2,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38237485307",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-kibble/50f9a8b57d6df71d79ab092e24db21ab8a552f7e9bb1687eb9e7d51f09a686cf.md"
+    }
+  }
+]
