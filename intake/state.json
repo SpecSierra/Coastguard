@@ -1,5 +1,5 @@
 {
-  "cursor": 1791841621,
+  "cursor": 1791845041,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -248,12 +248,12 @@
     "https://openrepos.net/sites/default/files/packages/14239/harbour-qutenav-0.51-3.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.5.0-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.5.0-1.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.5.0-1.i486.rpm"
+    "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.5.0-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/19799/harbour-dollfin-1.2-2.aarch64.rpm"
   ],
-  "last_run": "2026-10-12T22:37:11Z",
+  "last_run": "2026-10-12T22:58:43Z",
   "dispatched": [
-    1791841033,
-    1791841302,
-    1791842247
+    1791842247,
+    1791845844
   ]
 }
