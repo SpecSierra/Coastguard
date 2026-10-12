@@ -273,5 +273,66 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38187422533",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-thakir/f9e9bbfa0c1f109558171badefe3b49371f638c43be748e47b2f4378bbb13649.md"
     }
+  },
+  {
+    "sha256": "671ef3577ab24b68d59f29d7c84b858257dea28a1daf60bf2861bde3233d6970",
+    "first_seen": "2026-10-12T00:19:48Z",
+    "package": "harbour-thakir-3.5.1-1.i486",
+    "version": "3.5.1-1",
+    "arch": "i486",
+    "buildtime": 1791751846,
+    "last_scanned": "2026-10-12T00:19:48Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "root-services",
+            "text": "1 root service, started at install"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Internet",
+        "Location",
+        "Sensors"
+      ],
+      "own_sandbox_profile": false,
+      "services": 2,
+      "root_services": 1,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 2,
+      "hosts_in_scripts": 10,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-thakir-3.1.9-1.i486",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 2,
+          "removed": 0,
+          "changed": 5,
+          "unchanged": 125
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38187528450",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-thakir/671ef3577ab24b68d59f29d7c84b858257dea28a1daf60bf2861bde3233d6970.md"
+    }
   }
 ]
