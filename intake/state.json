@@ -1,5 +1,5 @@
 {
-  "cursor": 1791825121,
+  "cursor": 1791830821,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -234,8 +234,15 @@
     "https://openrepos.net/sites/default/files/packages/4899/harbour-nextmarks-1.0.2-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.5-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.5-1.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/19742/harbour-felisbtbattery-0.2.1-1.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/19742/harbour-felisbtbattery-0.2.1-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19678/harbour-ausweis-satama-0.1.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19678/harbour-ausweis-satama-0.1.0-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19678/harbour-ausweis-satama-0.1.0-1.i486.rpm"
   ],
-  "last_run": "2026-10-12T18:37:11Z",
-  "dispatched": []
+  "last_run": "2026-10-12T19:01:28Z",
+  "dispatched": [
+    1791831448,
+    1791831528,
+    1791831609
+  ]
 }
