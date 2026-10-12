@@ -1,0 +1,193 @@
+{
+  "verdict": "clean",
+  "name": "foghorn-test-connector",
+  "version": "0.7.0-1",
+  "arch": "armv7hl",
+  "package": "foghorn-test-connector-0.7.0-1.armv7hl",
+  "buildtime": 1791831583,
+  "sha256": "a05ba48e9287bdc36e9ff4cc5de7e0caf49faf51c70d9e7d51f8127c1460b15f",
+  "source": "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.7.0-1.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12521",
+  "scanned": "2026-10-12T20:38:03Z",
+  "files": 23,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28151/Mon Oct 12 06:24:02 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/foghorn-test-connector.desktop",
+          "name": "Foghorn Test Connector",
+          "exec": "/usr/bin/foghorn-test-connector",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "UnifiedPush"
+          ],
+          "organization": "org.foghorn",
+          "application": "TestConnector"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [
+        {
+          "path": "/usr/share/dbus-1/services/org.foghorn.TestConnector.service",
+          "bus": "session",
+          "name": "org.foghorn.TestConnector",
+          "exec": "/usr/bin/env LEGHORN_PUSH_WAKE=1 /usr/bin/sailjail -p foghorn-test-connector.desktop -- /usr/bin/foghorn-test-connector",
+          "user": null,
+          "systemd_service": null
+        }
+      ],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 4,
+      "hosts_in_scripts": 1,
+      "hosts": [
+        {
+          "host": "unifiedpush.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/foghorn-test-connector/qml/pages/MainPage.qml"
+          ]
+        },
+        {
+          "host": "dbus.freedesktop.org",
+          "urls": 6,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/foghorn-test-connector"
+          ]
+        },
+        {
+          "host": "docs.rs",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/foghorn-test-connector"
+          ]
+        },
+        {
+          "host": "www.freedesktop.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/foghorn-test-connector"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "unifiedpush.org"
+      ],
+      "hosts_binaries": [
+        "dbus.freedesktop.org",
+        "docs.rs",
+        "www.freedesktop.org"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 618078,
+        "malicious": 415
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38305418502",
+  "diff": {
+    "baseline": {
+      "sha256": "c6dc9e29a8294280d381b9bcd294cd5482df21a4753f0ddd28b2b2e16514aa82",
+      "package": "foghorn-test-connector-0.6.1-1.armv7hl",
+      "last_scanned": "2026-10-10T15:18:12Z"
+    },
+    "changes": [
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/foghorn-test-connector",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/icons/hicolor/128x128/apps/foghorn-test-connector.png",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 0,
+        "removed": 0,
+        "changed": 2,
+        "unchanged": 8
+      }
+    }
+  },
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/foghorn-test-connector/a05ba48e9287bdc36e9ff4cc5de7e0caf49faf51c70d9e7d51f8127c1460b15f.md"
+}

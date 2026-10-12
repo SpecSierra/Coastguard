@@ -320,6 +320,59 @@
     }
   },
   {
+    "sha256": "a05ba48e9287bdc36e9ff4cc5de7e0caf49faf51c70d9e7d51f8127c1460b15f",
+    "first_seen": "2026-10-12T20:38:03Z",
+    "package": "foghorn-test-connector-0.7.0-1.armv7hl",
+    "version": "0.7.0-1",
+    "arch": "armv7hl",
+    "buildtime": 1791831583,
+    "last_scanned": "2026-10-12T20:38:03Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "UnifiedPush"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "foghorn-test-connector-0.6.1-1.armv7hl",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 2,
+          "unchanged": 8
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38305418502",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/foghorn-test-connector/a05ba48e9287bdc36e9ff4cc5de7e0caf49faf51c70d9e7d51f8127c1460b15f.md"
+    }
+  },
+  {
     "sha256": "78429a53c01af6b569a21550def8ab53805f193ac669ef1db34c03e5b029e69e",
     "first_seen": "2026-10-12T20:20:01Z",
     "package": "foghorn-test-connector-0.7.0-1.aarch64",
