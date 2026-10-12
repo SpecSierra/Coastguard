@@ -1018,5 +1018,110 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38215119027",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-whatsup/f3e5d77f703a2caa67d61a3e74a3cdba4c384ff7796f99f19d4a970ec1f94dbd.md"
     }
+  },
+  {
+    "sha256": "c4afb5f4bc316d2e56efa607cace012867f64e6725e000802ff6edd048fec5a6",
+    "first_seen": "2026-10-12T07:03:55Z",
+    "package": "harbour-whatsup-1.4.0-1.armv7hl",
+    "version": "1.4.0-1",
+    "arch": "armv7hl",
+    "buildtime": 1791785812,
+    "last_scanned": "2026-10-12T07:03:55Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "high",
+        "reasons": [
+          {
+            "level": "high",
+            "id": "root-service-no-sandbox",
+            "text": "Root service and no sandbox"
+          },
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          },
+          {
+            "level": "medium",
+            "id": "root-services",
+            "text": "1 root service"
+          },
+          {
+            "level": "medium",
+            "id": "privileged-files",
+            "text": "3 privileged files (setgid privileged)"
+          },
+          {
+            "level": "medium",
+            "id": "hook-d-bus-system-policy",
+            "text": "System hook: D-Bus system policy"
+          },
+          {
+            "level": "medium",
+            "id": "hook-privileged-launcher-grant",
+            "text": "System hook: privileged launcher grant"
+          },
+          {
+            "level": "medium",
+            "id": "code-takes-screenshots",
+            "text": "Unsandboxed code that takes screenshots"
+          },
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Takes Screenshots"
+      ],
+      "sandbox": "disabled",
+      "permissions": [
+        "ApplicationInstallation",
+        "Audio",
+        "Camera",
+        "Internet",
+        "Location",
+        "Microphone",
+        "RemovableMedia",
+        "UserDirs"
+      ],
+      "own_sandbox_profile": false,
+      "services": 5,
+      "root_services": 1,
+      "privileged_files": 3,
+      "system_hooks": [
+        "D-Bus system policy",
+        "privileged launcher grant"
+      ],
+      "scriptlets": 5,
+      "hosts_in_scripts": 14,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-whatsup-1.3.0-1.armv7hl",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 12,
+          "removed": 0,
+          "changed": 154,
+          "unchanged": 8175
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38215554531",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-whatsup/c4afb5f4bc316d2e56efa607cace012867f64e6725e000802ff6edd048fec5a6.md"
+    }
   }
 ]
