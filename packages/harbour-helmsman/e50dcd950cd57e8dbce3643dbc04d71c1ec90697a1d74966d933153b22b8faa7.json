@@ -1,0 +1,275 @@
+{
+  "verdict": "clean",
+  "name": "harbour-helmsman",
+  "version": "0.5.1-1",
+  "arch": "armv7hl",
+  "package": "harbour-helmsman-0.5.1-1.armv7hl",
+  "buildtime": 1791754341,
+  "sha256": "e50dcd950cd57e8dbce3643dbc04d71c1ec90697a1d74966d933153b22b8faa7",
+  "source": "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.5.1-1.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12636",
+  "scanned": "2026-10-12T01:37:51Z",
+  "files": 154,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28149/Sat Oct 10 06:24:04 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 1,
+    "files": 1,
+    "bytes": 187691,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-helmsman.desktop",
+          "name": "Helmsman",
+          "exec": "harbour-helmsman",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Notifications",
+            "Location",
+            "Documents",
+            "Pictures",
+            "MediaIndexing"
+          ],
+          "organization": "org.helmsman",
+          "application": "harbour-helmsman"
+        }
+      ],
+      "shipped_profiles": [
+        "/etc/sailjail/permissions/harbour-helmsman.profile"
+      ],
+      "profile_loosening": [
+        {
+          "file": "/etc/sailjail/permissions/harbour-helmsman.profile",
+          "line": "noblacklist /opt/wpe-sfos"
+        },
+        {
+          "file": "/etc/sailjail/permissions/harbour-helmsman.profile",
+          "line": "noblacklist /usr/libexec/wpe-webkit-2.0"
+        },
+        {
+          "file": "/etc/sailjail/permissions/harbour-helmsman.profile",
+          "line": "noblacklist /usr/lib64/wpe-compat"
+        },
+        {
+          "file": "/etc/sailjail/permissions/harbour-helmsman.profile",
+          "line": "noblacklist /usr/lib/wpe-compat"
+        },
+        {
+          "file": "/etc/sailjail/permissions/harbour-helmsman.profile",
+          "line": "noblacklist /dev/kgsl-3d0"
+        },
+        {
+          "file": "/etc/sailjail/permissions/harbour-helmsman.profile",
+          "line": "noblacklist /dev/ion"
+        },
+        {
+          "file": "/etc/sailjail/permissions/harbour-helmsman.profile",
+          "line": "noblacklist /dev/dri"
+        }
+      ]
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 5,
+      "hosts_in_scripts": 4,
+      "hosts": [
+        {
+          "host": "example.io.nabu.casa",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-helmsman/translations/bg.json",
+            "/usr/share/harbour-helmsman/translations/cs.json",
+            "/usr/share/harbour-helmsman/translations/da.json"
+          ]
+        },
+        {
+          "host": "example.ui.nabu.casa",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-helmsman/qml/pages/SettingsPage.qml"
+          ]
+        },
+        {
+          "host": "homeassistant.local",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-helmsman/qml/pages/SettingsPage.qml"
+          ]
+        },
+        {
+          "host": "tile.openstreetmap.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-helmsman/qml/dashboard/EntityMap.qml"
+          ]
+        },
+        {
+          "host": "fontello.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-helmsman"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "example.io.nabu.casa",
+        "example.ui.nabu.casa",
+        "homeassistant.local",
+        "tile.openstreetmap.org"
+      ],
+      "hosts_binaries": [
+        "fontello.com"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 618078,
+        "malicious": 415
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38192588550",
+  "diff": {
+    "baseline": {
+      "sha256": "e63bf7c19676c0ed6a99104d7e79eda8b47ea6fe19f97751a48e2b1eabdab5cb",
+      "package": "harbour-helmsman-0.5.0-1.armv7hl",
+      "last_scanned": "2026-10-09T04:57:43Z"
+    },
+    "changes": [
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/harbour-helmsman",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-helmsman/qml/dashboard/CameraStreamPlayer.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-helmsman/qml/dashboard/CardChrome.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-helmsman/qml/dashboard/RoundedImage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-helmsman/qml/dashboard/cards/PictureCard.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-helmsman/qml/dashboard/cards/PictureElementsCard.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-helmsman/qml/dashboard/cards/PictureEntityCard.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-helmsman/qml/dashboard/cards/PictureGlanceCard.qml",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 0,
+        "removed": 0,
+        "changed": 8,
+        "unchanged": 115
+      }
+    }
+  },
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "sandbox-loosened",
+        "text": "Own profile loosens the sandbox (7 rules)"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-helmsman/e50dcd950cd57e8dbce3643dbc04d71c1ec90697a1d74966d933153b22b8faa7.md"
+}

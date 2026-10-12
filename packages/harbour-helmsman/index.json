@@ -608,5 +608,68 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38189996152",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-helmsman/2545550712fa705a3905c935c30998408f5d6705fb70f2216910d33a87787e17.md"
     }
+  },
+  {
+    "sha256": "e50dcd950cd57e8dbce3643dbc04d71c1ec90697a1d74966d933153b22b8faa7",
+    "first_seen": "2026-10-12T01:37:51Z",
+    "package": "harbour-helmsman-0.5.1-1.armv7hl",
+    "version": "0.5.1-1",
+    "arch": "armv7hl",
+    "buildtime": 1791754341,
+    "last_scanned": "2026-10-12T01:37:51Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-loosened",
+            "text": "Own profile loosens the sandbox (7 rules)"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Documents",
+        "Internet",
+        "Location",
+        "MediaIndexing",
+        "Notifications",
+        "Pictures"
+      ],
+      "own_sandbox_profile": true,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 4,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-helmsman-0.5.0-1.armv7hl",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 8,
+          "unchanged": 115
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38192588550",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-helmsman/e50dcd950cd57e8dbce3643dbc04d71c1ec90697a1d74966d933153b22b8faa7.md"
+    }
   }
 ]
