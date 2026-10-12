@@ -1,11 +1,29 @@
 {
-  "cursor": 1791836701,
+  "cursor": 1791838321,
   "queue": [
     {
       "url": "https://openrepos.net/sites/default/files/packages/14239/harbour-qutenav-0.51-3.aarch64.rpm",
       "page": "https://openrepos.net/node/12216",
       "appid": 12216,
       "title": "QuteNav"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.5.0-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12694",
+      "appid": 12694,
+      "title": "WhatsUp - a native WhatsApp client for Sailfish OS (with voice and video calls)"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.5.0-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12694",
+      "appid": 12694,
+      "title": "WhatsUp - a native WhatsApp client for Sailfish OS (with voice and video calls)"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.5.0-1.i486.rpm",
+      "page": "https://openrepos.net/node/12694",
+      "appid": 12694,
+      "title": "WhatsUp - a native WhatsApp client for Sailfish OS (with voice and video calls)"
     }
   ],
   "seen": [
@@ -252,9 +270,12 @@
     "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.7.0-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.7.0-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.6.1-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/14239/harbour-qutenav-0.51-3.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/14239/harbour-qutenav-0.51-3.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.5.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.5.0-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.5.0-1.i486.rpm"
   ],
-  "last_run": "2026-10-12T20:40:04Z",
+  "last_run": "2026-10-12T20:57:25Z",
   "dispatched": [
     1791835059,
     1791836234,
