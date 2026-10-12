@@ -1,5 +1,5 @@
 {
-  "cursor": 1791805021,
+  "cursor": 1791806222,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -224,11 +224,16 @@
     "https://openrepos.net/sites/default/files/packages/1867/harbour-whisperfish-0.6.0.beta_.45-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/1867/harbour-whisperfish-0.6.0.beta_.45-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19799/harbour-kibble-1.0.0-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/6263/toh-notify-0.1.0-1.noarch.rpm"
+    "https://openrepos.net/sites/default/files/packages/6263/toh-notify-0.1.0-1.noarch.rpm",
+    "https://openrepos.net/sites/default/files/packages/6389/harbour-thakir-3.5.5-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/6389/harbour-thakir-3.5.5-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/6389/harbour-thakir-3.5.5-1.i486.rpm"
   ],
-  "last_run": "2026-10-12T11:38:48Z",
+  "last_run": "2026-10-12T12:04:47Z",
   "dispatched": [
-    1791801446,
-    1791805049
+    1791805049,
+    1791806253,
+    1791806353,
+    1791806587
   ]
 }
