@@ -1,5 +1,83 @@
 [
   {
+    "sha256": "e84a5569c0e7ead9519545e20d898131667f9d18959f82909f1dd68223f997ce",
+    "first_seen": "2026-10-12T09:40:45Z",
+    "package": "harbour-whisperfish-0.6.0.beta.45-1.aarch64",
+    "version": "0.6.0.beta.45-1",
+    "arch": "aarch64",
+    "buildtime": 1791793552,
+    "last_scanned": "2026-10-12T09:40:45Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "root-services",
+            "text": "1 root service"
+          },
+          {
+            "level": "medium",
+            "id": "hook-privileged-launcher-grant",
+            "text": "System hook: privileged launcher grant"
+          },
+          {
+            "level": "info",
+            "id": "own-sandbox-profile",
+            "text": "Own sandbox profile"
+          },
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Contacts"
+          },
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Camera",
+        "Contacts",
+        "Downloads",
+        "Internet",
+        "MediaIndexing",
+        "Pictures",
+        "RemovableMedia",
+        "UserDirs",
+        "WebView"
+      ],
+      "own_sandbox_profile": true,
+      "services": 2,
+      "root_services": 1,
+      "privileged_files": 0,
+      "system_hooks": [
+        "privileged launcher grant"
+      ],
+      "scriptlets": 2,
+      "hosts_in_scripts": 13,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38231338085",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-whisperfish/e84a5569c0e7ead9519545e20d898131667f9d18959f82909f1dd68223f997ce.md"
+    }
+  },
+  {
     "sha256": "a486d6f35b5a74f8e1be3c287d9957830953bf65898b1781f6e98021af5eb331",
     "first_seen": "2026-10-12T09:38:28Z",
     "package": "harbour-whisperfish-0.6.0.beta.45-1.i486",
