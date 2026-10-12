@@ -2,30 +2,6 @@
   "cursor": 1791761041,
   "queue": [
     {
-      "url": "https://openrepos.net/sites/default/files/packages/6389/harbour-thakir-3.5.1-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12592",
-      "appid": 12592,
-      "title": "Thakir Athan"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/6389/harbour-thakir-3.5.1-1.i486.rpm",
-      "page": "https://openrepos.net/node/12592",
-      "appid": 12592,
-      "title": "Thakir Athan"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/19742/harbour-felisbtbattery-0.2.0-2.aarch64.rpm",
-      "page": "https://openrepos.net/node/12707",
-      "appid": 12707,
-      "title": "Felis Bluetooth Battery"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.4.0-1.aarch64.rpm",
-      "page": "https://openrepos.net/node/12701",
-      "appid": 12701,
-      "title": "Inari Blue Notifier"
-    },
-    {
       "url": "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.5.1-1.aarch64.rpm",
       "page": "https://openrepos.net/node/12636",
       "appid": 12636,
@@ -268,12 +244,12 @@
     "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.1-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.1-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-11T23:57:10Z",
+  "last_run": "2026-10-12T00:23:38Z",
   "dispatched": [
-    1791759436,
-    1791759516,
-    1791759596,
-    1791759676,
-    1791761845
+    1791761845,
+    1791764235,
+    1791764336,
+    1791764438,
+    1791764540
   ]
 }
