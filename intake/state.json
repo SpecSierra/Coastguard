@@ -2,12 +2,6 @@
   "cursor": 1791838321,
   "queue": [
     {
-      "url": "https://openrepos.net/sites/default/files/packages/14239/harbour-qutenav-0.51-3.aarch64.rpm",
-      "page": "https://openrepos.net/node/12216",
-      "appid": 12216,
-      "title": "QuteNav"
-    },
-    {
       "url": "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.5.0-1.aarch64.rpm",
       "page": "https://openrepos.net/node/12694",
       "appid": 12694,
@@ -275,12 +269,12 @@
     "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.5.0-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.5.0-1.i486.rpm"
   ],
-  "last_run": "2026-10-12T20:57:25Z",
+  "last_run": "2026-10-12T21:19:32Z",
   "dispatched": [
-    1791835059,
     1791836234,
     1791836357,
     1791837445,
-    1791837526
+    1791837526,
+    1791839832
   ]
 }
