@@ -58,5 +58,146 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37896309811",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-rootitanium/fa087a7dfa6db9cd25f78035b94bd62fa2f99f41977d9051844632e63af658de.md"
     }
+  },
+  {
+    "sha256": "eff5cc0cb9d44fa5ce1aafa2f1669b7116e99621ba9dcde52e4654a89ce815f4",
+    "first_seen": "2026-10-12T17:19:29Z",
+    "package": "harbour-rootitanium-2.5-1.aarch64",
+    "version": "2.5-1",
+    "arch": "aarch64",
+    "buildtime": 1791822579,
+    "last_scanned": "2026-10-12T17:19:29Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          },
+          {
+            "level": "medium",
+            "id": "hook-files-in-a-home-directory",
+            "text": "System hook: files in a home directory"
+          },
+          {
+            "level": "medium",
+            "id": "code-reads-raw-input-devices",
+            "text": "Code that reads raw input devices"
+          },
+          {
+            "level": "medium",
+            "id": "new-hook-files-in-a-home-directory",
+            "text": "New system hook: files in a home directory"
+          },
+          {
+            "level": "info",
+            "id": "bulk-hosts",
+            "text": "305 hosts in a bulk list are on no public block list"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Reads Raw Input Devices"
+      ],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [
+        "files in a home directory"
+      ],
+      "scriptlets": 0,
+      "hosts_in_scripts": 40,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-rootitanium-2.1-1.armv7hl",
+        "attention_count": 235,
+        "attention": [
+          {
+            "area": "launcher command",
+            "change": "changed",
+            "item": "/usr/share/applications/harbour-rootitanium.desktop"
+          },
+          {
+            "area": "D-Bus activation",
+            "change": "added",
+            "item": "/usr/share/dbus-1/services/com.github.RootGPT_YouTube.rootitanium.service"
+          },
+          {
+            "area": "system hook",
+            "change": "added",
+            "item": "/home/rootitanium/lib/libQt6Core.so.6.12.0"
+          },
+          {
+            "area": "system hook",
+            "change": "added",
+            "item": "/home/rootitanium/lib/libQt6DBus.so.6.12.0"
+          },
+          {
+            "area": "system hook",
+            "change": "added",
+            "item": "/home/rootitanium/lib/libQt6EglFSDeviceIntegration.so.6.12.0"
+          },
+          {
+            "area": "system hook",
+            "change": "added",
+            "item": "/home/rootitanium/lib/libQt6Gui.so.6.12.0"
+          },
+          {
+            "area": "system hook",
+            "change": "added",
+            "item": "/home/rootitanium/lib/libQt6LabsAnimation.so.6.12.0"
+          },
+          {
+            "area": "system hook",
+            "change": "added",
+            "item": "/home/rootitanium/lib/libQt6LabsFolderListModel.so.6.12.0"
+          },
+          {
+            "area": "system hook",
+            "change": "added",
+            "item": "/home/rootitanium/lib/libQt6LabsQmlModels.so.6.12.0"
+          },
+          {
+            "area": "system hook",
+            "change": "added",
+            "item": "/home/rootitanium/lib/libQt6LabsSettings.so.6.12.0"
+          },
+          {
+            "area": "system hook",
+            "change": "added",
+            "item": "/home/rootitanium/lib/libQt6LabsSharedImage.so.6.12.0"
+          },
+          {
+            "area": "system hook",
+            "change": "added",
+            "item": "/home/rootitanium/lib/libQt6LabsWavefrontMesh.so.6.12.0"
+          }
+        ],
+        "files": {
+          "added": 222,
+          "removed": 89,
+          "changed": 594,
+          "unchanged": 1229
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38283235085",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-rootitanium/eff5cc0cb9d44fa5ce1aafa2f1669b7116e99621ba9dcde52e4654a89ce815f4.md"
+    }
   }
 ]
