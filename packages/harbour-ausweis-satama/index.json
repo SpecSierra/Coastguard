@@ -1,0 +1,45 @@
+[
+  {
+    "sha256": "4c4b8c184b222d841a24f06964cd879e366de15949b1b8be478d91b233da6874",
+    "first_seen": "2026-10-12T18:58:05Z",
+    "package": "harbour-ausweis-satama-0.1.0-1.aarch64",
+    "version": "0.1.0-1",
+    "arch": "aarch64",
+    "buildtime": 1791824729,
+    "last_scanned": "2026-10-12T18:58:05Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "NFC"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38294397182",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-ausweis-satama/4c4b8c184b222d841a24f06964cd879e366de15949b1b8be478d91b233da6874.md"
+    }
+  }
+]
