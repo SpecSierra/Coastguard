@@ -1,5 +1,5 @@
 {
-  "cursor": 1791832153,
+  "cursor": 1791833755,
   "queue": [
     {
       "url": "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.7.0-1.aarch64.rpm",
@@ -24,6 +24,12 @@
       "page": "https://openrepos.net/node/12521",
       "appid": 12521,
       "title": "Foghorn Test Connector"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.6.1-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12701",
+      "appid": 12701,
+      "title": "Inari Blue Notifier"
     }
   ],
   "seen": [
@@ -268,9 +274,10 @@
     "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.7.0-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.7.0-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.7.0-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.7.0-1.armv7hl.rpm"
+    "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.7.0-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.6.1-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-12T19:23:03Z",
+  "last_run": "2026-10-12T19:37:23Z",
   "dispatched": [
     1791831448,
     1791831528,
