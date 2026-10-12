@@ -547,6 +547,69 @@
     }
   },
   {
+    "sha256": "292f9f48ffe1eb503994b7a62ff843d6dc6a183d7c85bb52db77f400e88edadd",
+    "first_seen": "2026-10-12T01:39:26Z",
+    "package": "harbour-helmsman-0.5.1-1.i486",
+    "version": "0.5.1-1",
+    "arch": "i486",
+    "buildtime": 1791754276,
+    "last_scanned": "2026-10-12T01:39:26Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-loosened",
+            "text": "Own profile loosens the sandbox (7 rules)"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Documents",
+        "Internet",
+        "Location",
+        "MediaIndexing",
+        "Notifications",
+        "Pictures"
+      ],
+      "own_sandbox_profile": true,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 4,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-helmsman-0.5.0-1.i486",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 8,
+          "unchanged": 115
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38192674766",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-helmsman/292f9f48ffe1eb503994b7a62ff843d6dc6a183d7c85bb52db77f400e88edadd.md"
+    }
+  },
+  {
     "sha256": "2545550712fa705a3905c935c30998408f5d6705fb70f2216910d33a87787e17",
     "first_seen": "2026-10-12T00:58:03Z",
     "package": "harbour-helmsman-0.5.1-1.aarch64",
