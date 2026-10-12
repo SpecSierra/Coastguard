@@ -1,13 +1,6 @@
 {
-  "cursor": 1791838321,
-  "queue": [
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.5.0-1.i486.rpm",
-      "page": "https://openrepos.net/node/12694",
-      "appid": 12694,
-      "title": "WhatsUp - a native WhatsApp client for Sailfish OS (with voice and video calls)"
-    }
-  ],
+  "cursor": 1791841621,
+  "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -257,12 +250,11 @@
     "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.5.0-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.5.0-1.i486.rpm"
   ],
-  "last_run": "2026-10-12T21:46:10Z",
+  "last_run": "2026-10-12T22:01:55Z",
   "dispatched": [
-    1791837445,
-    1791837526,
     1791839832,
     1791841033,
-    1791841302
+    1791841302,
+    1791842247
   ]
 }
