@@ -538,6 +538,110 @@
     }
   },
   {
+    "sha256": "cc46f133eaa808a61886e0c7bff0d4d531104b887ef0b183e23dec760e94833f",
+    "first_seen": "2026-10-12T20:18:02Z",
+    "package": "foghorn-0.7.0-1.armv7hl",
+    "version": "0.7.0-1",
+    "arch": "armv7hl",
+    "buildtime": 1791831583,
+    "last_scanned": "2026-10-12T20:18:02Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "root-services",
+            "text": "3 root services, started at install"
+          },
+          {
+            "level": "medium",
+            "id": "new-code-reads-account-credentials",
+            "text": "New code that reads account credentials"
+          },
+          {
+            "level": "info",
+            "id": "own-sandbox-profile",
+            "text": "Own sandbox profile"
+          },
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Accounts"
+          },
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          },
+          {
+            "level": "info",
+            "id": "code-reads-account-credentials",
+            "text": "Code that reads account credentials"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Reads Account Credentials"
+      ],
+      "sandbox": "declared",
+      "permissions": [
+        "Accounts",
+        "AppLaunch",
+        "Foghorn",
+        "Privileged"
+      ],
+      "own_sandbox_profile": true,
+      "services": 4,
+      "root_services": 3,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 4,
+      "hosts_in_scripts": 2,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "foghorn-0.6.1-1.armv7hl",
+        "attention_count": 3,
+        "attention": [
+          {
+            "area": "launcher entry",
+            "change": "added",
+            "item": "/usr/share/applications/foghorn-accounts.desktop"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "su - \"$user\" -c \"/usr/bin/foghornd --cleanup\" || :"
+          },
+          {
+            "area": "indicator",
+            "change": "added",
+            "item": "Coastguard_Indicator_Reads_Account_Credentials"
+          }
+        ],
+        "files": {
+          "added": 2,
+          "removed": 0,
+          "changed": 13,
+          "unchanged": 15
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38303214952",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/foghorn/cc46f133eaa808a61886e0c7bff0d4d531104b887ef0b183e23dec760e94833f.md"
+    }
+  },
+  {
     "sha256": "0037163c4d648546b3ebc4a3c8dd5df9639e8834dde0f1326109b7979315e9ef",
     "first_seen": "2026-10-12T19:58:19Z",
     "package": "foghorn-0.7.0-1.aarch64",
