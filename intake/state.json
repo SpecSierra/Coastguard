@@ -224,10 +224,8 @@
     "https://openrepos.net/sites/default/files/packages/1867/harbour-whisperfish-0.6.0.beta_.45-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/1867/harbour-whisperfish-0.6.0.beta_.45-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-12T09:44:59Z",
+  "last_run": "2026-10-12T09:46:26Z",
   "dispatched": [
-    1791794254,
-    1791794334,
     1791797848,
     1791797993,
     1791798137
