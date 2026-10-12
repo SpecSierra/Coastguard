@@ -49,5 +49,56 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38266705218",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-readeck/c4538857e9b2afa89cce7489e6259f8fdd9ecb923cf005a5e450e7f434ae3425.md"
     }
+  },
+  {
+    "sha256": "0f8d6e42c2123a8e9dc7198768cb64f6dea892936132d2a7380700374984bf78",
+    "first_seen": "2026-10-12T14:59:37Z",
+    "package": "harbour-readeck-1.1.5-1.armv7hl",
+    "version": "1.1.5-1",
+    "arch": "armv7hl",
+    "buildtime": 1791816340,
+    "last_scanned": "2026-10-12T14:59:37Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Secrets"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "Secrets",
+        "UserDirs",
+        "WebView"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38266871070",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-readeck/0f8d6e42c2123a8e9dc7198768cb64f6dea892936132d2a7380700374984bf78.md"
+    }
   }
 ]
