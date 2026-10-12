@@ -930,5 +930,99 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38154844960",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-xmatic/a7a4daa3578a918c5f16b7a9b9b99c5a953024b191e5fcabb407bcf9cf599939.md"
     }
+  },
+  {
+    "sha256": "d544bfdc027f9c07a470f3200308b9b190623e39ac97436c13fb71ea8e785116",
+    "first_seen": "2026-10-12T07:18:26Z",
+    "package": "harbour-xmatic-0.46.5-1.aarch64",
+    "version": "0.46.5-1",
+    "arch": "aarch64",
+    "buildtime": 1791786873,
+    "last_scanned": "2026-10-12T07:18:26Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "code-gains-root-with-devel-su",
+            "text": "Code that gains root with devel su"
+          },
+          {
+            "level": "medium",
+            "id": "code-installs-packages-at-runtime",
+            "text": "Code that installs packages at runtime"
+          },
+          {
+            "level": "info",
+            "id": "own-sandbox-profile",
+            "text": "Own sandbox profile"
+          },
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Secrets"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Gains Root With Devel Su",
+        "Installs Packages At Runtime"
+      ],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Camera",
+        "Documents",
+        "Downloads",
+        "Internet",
+        "Location",
+        "MediaIndexing",
+        "Microphone",
+        "Music",
+        "Notifications",
+        "Pictures",
+        "PublicDir",
+        "RemovableMedia",
+        "Secrets",
+        "Sharing",
+        "Thumbnails",
+        "UnifiedPush",
+        "Videos",
+        "XmaticSpeech"
+      ],
+      "own_sandbox_profile": true,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 4,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-xmatic-0.46.4-1.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 2,
+          "removed": 2,
+          "changed": 34,
+          "unchanged": 102
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38216907876",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-xmatic/d544bfdc027f9c07a470f3200308b9b190623e39ac97436c13fb71ea8e785116.md"
+    }
   }
 ]
