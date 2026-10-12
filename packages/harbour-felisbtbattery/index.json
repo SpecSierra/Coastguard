@@ -1,0 +1,44 @@
+[
+  {
+    "sha256": "11c07f4fb7ae7f6514361e07e457bdd87f7bbf2f6d8dc8eb87112aa855f41d85",
+    "first_seen": "2026-10-12T00:21:22Z",
+    "package": "harbour-felisbtbattery-0.2.0-2.aarch64",
+    "version": "0.2.0-2",
+    "arch": "aarch64",
+    "buildtime": 1791752350,
+    "last_scanned": "2026-10-12T00:21:22Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Bluetooth"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 2,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38187639189",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-felisbtbattery/11c07f4fb7ae7f6514361e07e457bdd87f7bbf2f6d8dc8eb87112aa855f41d85.md"
+    }
+  }
+]
