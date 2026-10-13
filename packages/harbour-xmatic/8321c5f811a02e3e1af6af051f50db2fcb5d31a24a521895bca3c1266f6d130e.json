@@ -1,0 +1,724 @@
+{
+  "verdict": "clean",
+  "name": "harbour-xmatic",
+  "version": "0.46.8-1",
+  "arch": "aarch64",
+  "package": "harbour-xmatic-0.46.8-1.aarch64",
+  "buildtime": 1791868346,
+  "sha256": "8321c5f811a02e3e1af6af051f50db2fcb5d31a24a521895bca3c1266f6d130e",
+  "source": "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.46.8-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12489",
+  "scanned": "2026-10-13T06:18:27Z",
+  "files": 169,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28151/Mon Oct 12 06:24:02 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [
+    {
+      "rule": "Coastguard_Indicator_Gains_Root_With_Devel_Su",
+      "files": [
+        "payload/usr/share/harbour-xmatic/qml/pages/SecretsHelpPage.qml"
+      ]
+    },
+    {
+      "rule": "Coastguard_Indicator_Installs_Packages_At_Runtime",
+      "files": [
+        "payload/usr/share/harbour-xmatic/qml/pages/SecretsHelpPage.qml"
+      ]
+    }
+  ],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-xmatic-open-url.desktop",
+          "name": "xmatic",
+          "exec": "harbour-xmatic %u",
+          "hidden": true,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Audio",
+            "Microphone",
+            "Camera",
+            "Pictures",
+            "Documents",
+            "Downloads",
+            "Music",
+            "Videos",
+            "PublicDir",
+            "RemovableMedia",
+            "MediaIndexing",
+            "Thumbnails",
+            "Sharing",
+            "Notifications",
+            "Secrets",
+            "UnifiedPush",
+            "XmaticSpeech",
+            "Location"
+          ],
+          "organization": "org.xmatic",
+          "application": "xmatic"
+        },
+        {
+          "desktop": "/usr/share/applications/harbour-xmatic.desktop",
+          "name": "xmatic",
+          "exec": "harbour-xmatic",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Audio",
+            "Microphone",
+            "Camera",
+            "Pictures",
+            "Documents",
+            "Downloads",
+            "Music",
+            "Videos",
+            "PublicDir",
+            "RemovableMedia",
+            "MediaIndexing",
+            "Thumbnails",
+            "Sharing",
+            "Notifications",
+            "Secrets",
+            "UnifiedPush",
+            "XmaticSpeech",
+            "Location"
+          ],
+          "organization": "org.xmatic",
+          "application": "xmatic"
+        }
+      ],
+      "shipped_profiles": [
+        "/etc/sailjail/permissions/XmaticSpeech.permission"
+      ],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [
+        {
+          "path": "/usr/share/dbus-1/services/org.unifiedpush.Connector.xmatic.service",
+          "bus": "session",
+          "name": "org.unifiedpush.Connector.xmatic",
+          "exec": "/usr/bin/env XMATIC_PUSH_WAKE=1 /usr/bin/sailjail -p harbour-xmatic.desktop -- /usr/bin/harbour-xmatic",
+          "user": null,
+          "systemd_service": null
+        },
+        {
+          "path": "/usr/share/dbus-1/services/org.xmatic.xmatic.service",
+          "bus": "session",
+          "name": "org.xmatic.xmatic",
+          "exec": "/usr/bin/sailjail -p harbour-xmatic.desktop /usr/bin/harbour-xmatic",
+          "user": null,
+          "systemd_service": null
+        }
+      ],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 11,
+      "hosts_in_scripts": 4,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 4,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-xmatic",
+            "/usr/share/harbour-xmatic/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "crates.io",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/licenses/harbour-xmatic-0.46.8/THIRD-PARTY.md"
+          ]
+        },
+        {
+          "host": "git.agnos.is",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/licenses/harbour-xmatic-0.46.8/THIRD-PARTY.md"
+          ]
+        },
+        {
+          "host": "www.openstreetmap.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-xmatic/qml/pages/LocationBlock.qml"
+          ]
+        },
+        {
+          "host": "dbus.freedesktop.org",
+          "urls": 7,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-xmatic"
+          ]
+        },
+        {
+          "host": "docs.rs",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-xmatic"
+          ]
+        },
+        {
+          "host": "matrix.to",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-xmatic"
+          ]
+        },
+        {
+          "host": "json.tmpnoscripttemplate",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-xmatic"
+          ]
+        },
+        {
+          "host": "matrix.gateway.unifiedpush.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-xmatic"
+          ]
+        },
+        {
+          "host": "www.freedesktop.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-xmatic"
+          ]
+        },
+        {
+          "host": "www.ibm.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-xmatic"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "crates.io",
+        "git.agnos.is",
+        "github.com",
+        "www.openstreetmap.org"
+      ],
+      "hosts_binaries": [
+        "dbus.freedesktop.org",
+        "docs.rs",
+        "json.tmpnoscripttemplate",
+        "matrix.gateway.unifiedpush.org",
+        "matrix.to",
+        "www.freedesktop.org",
+        "www.ibm.com"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 630386,
+        "malicious": 425
+      },
+      "notable": [],
+      "ignored_hosts": 5
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38355870260",
+  "diff": {
+    "baseline": {
+      "sha256": "d544bfdc027f9c07a470f3200308b9b190623e39ac97436c13fb71ea8e785116",
+      "package": "harbour-xmatic-0.46.5-1.aarch64",
+      "last_scanned": "2026-10-12T07:18:26Z"
+    },
+    "changes": [
+      {
+        "area": "host",
+        "change": "added",
+        "item": "json.tmpnoscripttemplate",
+        "attention": false,
+        "detail": "only in binaries"
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/harbour-xmatic/qml/pages/KeyboardHold.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/harbour-xmatic/qml/pages/LeftRoomsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/harbour-xmatic/qml/pages/Strings.js",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/licenses/harbour-xmatic-0.46.8/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/licenses/harbour-xmatic-0.46.8/THIRD-PARTY.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/licenses/harbour-xmatic-0.46.5/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/licenses/harbour-xmatic-0.46.5/THIRD-PARTY.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/harbour-xmatic",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/qml/harbour-xmatic.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/qml/pages/AttachmentPickerPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/qml/pages/Avatar.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/qml/pages/BehaviourPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/qml/pages/Composer.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/qml/pages/EncryptionPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/qml/pages/ImageViewPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/qml/pages/LinkPreviewCard.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/qml/pages/MemberProfilePage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/qml/pages/MessageBody.js",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/qml/pages/PrivacyPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/qml/pages/PushPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/qml/pages/RoomActionsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/qml/pages/RoomDelegate.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/qml/pages/RoomListPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/qml/pages/RoomPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/qml/pages/SendMediaPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/qml/pages/SendQueueBanner.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/qml/pages/SpaceColourPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/qml/pages/ThreadPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-ar.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-bg.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-cs.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-da.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-de.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-el.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-en.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-es.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-et.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-fa.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-fi.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-fr.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-ga.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-hi.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-hr.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-hu.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-is.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-it.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-ja.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-lt.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-lv.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-mt.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-nb.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-nl.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-pl.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-pt.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-ro.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-ru.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-sk.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-sl.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-sv.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-xmatic/translations/harbour-xmatic-zh_CN.qm",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 1,
+        "removed": 0
+      },
+      "files": {
+        "added": 5,
+        "removed": 2,
+        "changed": 53,
+        "unchanged": 83
+      }
+    }
+  },
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "code-gains-root-with-devel-su",
+        "text": "Code that gains root with devel su"
+      },
+      {
+        "level": "medium",
+        "id": "code-installs-packages-at-runtime",
+        "text": "Code that installs packages at runtime"
+      },
+      {
+        "level": "info",
+        "id": "own-sandbox-profile",
+        "text": "Own sandbox profile"
+      },
+      {
+        "level": "info",
+        "id": "personal-data",
+        "text": "Personal data: Secrets"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-xmatic/8321c5f811a02e3e1af6af051f50db2fcb5d31a24a521895bca3c1266f6d130e.md"
+}
