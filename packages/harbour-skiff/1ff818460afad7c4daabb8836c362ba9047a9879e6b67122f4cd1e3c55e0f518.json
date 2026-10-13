@@ -1,0 +1,575 @@
+{
+  "verdict": "clean",
+  "name": "harbour-skiff",
+  "version": "0.1.0-1",
+  "arch": "aarch64",
+  "package": "harbour-skiff-0.1.0-1.aarch64",
+  "buildtime": 1791919370,
+  "sha256": "1ff818460afad7c4daabb8836c362ba9047a9879e6b67122f4cd1e3c55e0f518",
+  "source": "https://openrepos.net/sites/default/files/packages/19811/harbour-skiff-0.1.0-1.aarch64_1.rpm",
+  "source_page": "https://openrepos.net/node/12720",
+  "scanned": "2026-10-13T20:18:28Z",
+  "files": 25,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28151/Mon Oct 12 06:24:02 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 6,
+    "files": 6,
+    "bytes": 828761,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-skiff.desktop",
+          "name": "Skiff",
+          "exec": "harbour-skiff %u",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet"
+          ],
+          "organization": "org.skiff",
+          "application": "skiff"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 39,
+      "hosts_in_scripts": 15,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 335,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-skiff/THIRD-PARTY-NOTICES.txt",
+            "/usr/share/harbour-skiff/lib/libskiff.so"
+          ]
+        },
+        {
+          "host": "crates.io",
+          "urls": 5,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/THIRD-PARTY-NOTICES.txt"
+          ]
+        },
+        {
+          "host": "gitlab.com",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/THIRD-PARTY-NOTICES.txt"
+          ]
+        },
+        {
+          "host": "hg.mozilla.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/THIRD-PARTY-NOTICES.txt",
+            "/usr/share/harbour-skiff/lib/libskiff.so"
+          ]
+        },
+        {
+          "host": "mozilla.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-skiff",
+            "/usr/share/harbour-skiff/LICENSE",
+            "/usr/share/harbour-skiff/THIRD-PARTY-NOTICES.txt"
+          ]
+        },
+        {
+          "host": "core-math.gitlabpages.inria.fr",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/THIRD-PARTY-NOTICES.txt"
+          ]
+        },
+        {
+          "host": "golang.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/THIRD-PARTY-NOTICES.txt"
+          ]
+        },
+        {
+          "host": "llvm.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-skiff/THIRD-PARTY-NOTICES.txt"
+          ]
+        },
+        {
+          "host": "sqlite.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/THIRD-PARTY-NOTICES.txt"
+          ]
+        },
+        {
+          "host": "thanks.rust-lang.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/THIRD-PARTY-NOTICES.txt"
+          ]
+        },
+        {
+          "host": "unlicense.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-skiff/THIRD-PARTY-NOTICES.txt"
+          ]
+        },
+        {
+          "host": "www.aswf.io",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/THIRD-PARTY-NOTICES.txt"
+          ]
+        },
+        {
+          "host": "www.freetype.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/THIRD-PARTY-NOTICES.txt"
+          ]
+        },
+        {
+          "host": "www.musl-libc.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/THIRD-PARTY-NOTICES.txt"
+          ]
+        },
+        {
+          "host": "www.openexr.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/THIRD-PARTY-NOTICES.txt"
+          ]
+        },
+        {
+          "host": "searchfox.org",
+          "urls": 22,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/lib/libskiff.so"
+          ]
+        },
+        {
+          "host": "html.spec.whatwg.org",
+          "urls": 14,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/lib/libskiff.so"
+          ]
+        },
+        {
+          "host": "firefox-source-docs.mozilla.org",
+          "urls": 6,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/lib/libskiff.so"
+          ]
+        },
+        {
+          "host": "drafts.csswg.org",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/lib/libskiff.so"
+          ]
+        },
+        {
+          "host": "www.khronos.org",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/lib/libskiff.so"
+          ]
+        },
+        {
+          "host": "docs.rs",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/lib/libskiff.so"
+          ]
+        },
+        {
+          "host": "drafts.fxtf.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/lib/libskiff.so"
+          ]
+        },
+        {
+          "host": "dummy.testdummyassertion",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-skiff/lib/libskiff.so"
+          ]
+        },
+        {
+          "host": "fullscreen.spec.whatwg.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/lib/libskiff.so"
+          ]
+        },
+        {
+          "host": "infocenter.nordicsemi.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-skiff/lib/libskiff.so"
+          ]
+        },
+        {
+          "host": "jdashg.github.io",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/lib/libskiff.so"
+          ]
+        },
+        {
+          "host": "math.stackexchange.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/lib/libskiff.so"
+          ]
+        },
+        {
+          "host": "servo.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-skiff"
+          ]
+        },
+        {
+          "host": "web.archive.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/lib/libskiff.so"
+          ]
+        },
+        {
+          "host": "wpt.fyi",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/lib/libskiff.so"
+          ]
+        },
+        {
+          "host": "www.css",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-skiff/lib/libskiff.so"
+          ]
+        },
+        {
+          "host": "www.hortcut",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-skiff/lib/libskiff.so"
+          ]
+        },
+        {
+          "host": "www.icon",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-skiff/lib/libskiff.so"
+          ]
+        },
+        {
+          "host": "www.interpretation",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-skiff/lib/libskiff.so"
+          ]
+        },
+        {
+          "host": "www.recent",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/lib/libskiff.so"
+          ]
+        },
+        {
+          "host": "www.shadertoy.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/lib/libskiff.so"
+          ]
+        },
+        {
+          "host": "www.ti.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-skiff/lib/libskiff.so"
+          ]
+        },
+        {
+          "host": "www.world",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-skiff/lib/libskiff.so"
+          ]
+        },
+        {
+          "host": "www.years",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-skiff/lib/libskiff.so"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "core-math.gitlabpages.inria.fr",
+        "crates.io",
+        "github.com",
+        "gitlab.com",
+        "golang.org",
+        "hg.mozilla.org",
+        "llvm.org",
+        "mozilla.org",
+        "sqlite.org",
+        "thanks.rust-lang.org",
+        "unlicense.org",
+        "www.aswf.io",
+        "www.freetype.org",
+        "www.musl-libc.org",
+        "www.openexr.com"
+      ],
+      "hosts_binaries": [
+        "docs.rs",
+        "drafts.csswg.org",
+        "drafts.fxtf.org",
+        "dummy.testdummyassertion",
+        "firefox-source-docs.mozilla.org",
+        "fullscreen.spec.whatwg.org",
+        "html.spec.whatwg.org",
+        "infocenter.nordicsemi.com",
+        "jdashg.github.io",
+        "math.stackexchange.com",
+        "searchfox.org",
+        "servo.org",
+        "web.archive.org",
+        "wpt.fyi",
+        "www.css",
+        "www.hortcut",
+        "www.icon",
+        "www.interpretation",
+        "www.khronos.org",
+        "www.recent",
+        "www.shadertoy.com",
+        "www.ti.com",
+        "www.world",
+        "www.years"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 630386,
+        "malicious": 425
+      },
+      "notable": [],
+      "ignored_hosts": 6
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38461630205",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-skiff/1ff818460afad7c4daabb8836c362ba9047a9879e6b67122f4cd1e3c55e0f518.md"
+}
