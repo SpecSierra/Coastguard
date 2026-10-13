@@ -104,5 +104,68 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37823350880",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/tor/46ad607d510e1db480994f6832e0b7db5e642d109dccdca0f3755915e1b15347.md"
     }
+  },
+  {
+    "sha256": "4e03705755847f1bd623ed11eeff384ba546312b13cb5293e6983473d66fd398",
+    "first_seen": "2026-10-13T17:58:11Z",
+    "package": "tor-0.4.9.14-0.armv7hl",
+    "version": "0.4.9.14-0",
+    "arch": "armv7hl",
+    "buildtime": 1791911853,
+    "last_scanned": "2026-10-13T17:58:11Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "hook-files-in-a-home-directory",
+            "text": "System hook: files in a home directory"
+          },
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [
+        "files in a home directory"
+      ],
+      "scriptlets": 2,
+      "hosts_in_scripts": 7,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "tor-0.4.9.13-0.armv7hl",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 11,
+          "unchanged": 6
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38442837003",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/tor/4e03705755847f1bd623ed11eeff384ba546312b13cb5293e6983473d66fd398.md"
+    }
   }
 ]
