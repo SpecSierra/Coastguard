@@ -1,5 +1,5 @@
 {
-  "cursor": 1791922499,
+  "cursor": 1791924901,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -263,10 +263,12 @@
     "https://openrepos.net/sites/default/files/packages/14239/tor-0.4.9.14-0.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/14239/tor-0.4.8.25-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/14239/tor-0.4.9.12-1.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/19811/harbour-skiff-0.1.0-1.aarch64_1.rpm"
+    "https://openrepos.net/sites/default/files/packages/19811/harbour-skiff-0.1.0-1.aarch64_1.rpm",
+    "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.8.0-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-13T20:37:11Z",
+  "last_run": "2026-10-13T20:59:07Z",
   "dispatched": [
-    1791922643
+    1791922643,
+    1791925047
   ]
 }
