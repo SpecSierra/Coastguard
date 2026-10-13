@@ -106,6 +106,69 @@
     }
   },
   {
+    "sha256": "590ddf02b17f205ba67440ed51cc4fe046c4199e39e049803889ca054ce10a78",
+    "first_seen": "2026-10-13T18:00:48Z",
+    "package": "tor-0.4.9.14-0.aarch64",
+    "version": "0.4.9.14-0",
+    "arch": "aarch64",
+    "buildtime": 1791910824,
+    "last_scanned": "2026-10-13T18:00:48Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "hook-files-in-a-home-directory",
+            "text": "System hook: files in a home directory"
+          },
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [
+        "files in a home directory"
+      ],
+      "scriptlets": 2,
+      "hosts_in_scripts": 7,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "tor-0.4.9.13-0.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 11,
+          "unchanged": 6
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38443155927",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/tor/590ddf02b17f205ba67440ed51cc4fe046c4199e39e049803889ca054ce10a78.md"
+    }
+  },
+  {
     "sha256": "4e03705755847f1bd623ed11eeff384ba546312b13cb5293e6983473d66fd398",
     "first_seen": "2026-10-13T17:58:11Z",
     "package": "tor-0.4.9.14-0.armv7hl",
