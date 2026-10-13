@@ -1,6 +1,19 @@
 {
-  "cursor": 1791924901,
-  "queue": [],
+  "cursor": 1791926101,
+  "queue": [
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.46.14-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12489",
+      "appid": 12489,
+      "title": "xmatic"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.46.14-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12489",
+      "appid": 12489,
+      "title": "xmatic"
+    }
+  ],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -264,11 +277,20 @@
     "https://openrepos.net/sites/default/files/packages/14239/tor-0.4.8.25-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/14239/tor-0.4.9.12-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19811/harbour-skiff-0.1.0-1.aarch64_1.rpm",
-    "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.8.0-1.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.8.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/14239/harbour-qutenav-0.51-4.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/6389/harbour-thakir-3.5.7-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/6389/harbour-thakir-3.5.7-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/6389/harbour-thakir-3.5.7-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.46.14-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.46.14-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-13T20:59:07Z",
+  "last_run": "2026-10-13T21:26:21Z",
   "dispatched": [
-    1791922643,
-    1791925047
+    1791925047,
+    1791926271,
+    1791926414,
+    1791926515,
+    1791926660
   ]
 }
