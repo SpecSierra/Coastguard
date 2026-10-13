@@ -564,6 +564,79 @@
     }
   },
   {
+    "sha256": "57bb6293739411bd7c1f6aff3ff709dab0f6621f584deea922e01e1ecaf40cca",
+    "first_seen": "2026-10-13T14:03:31Z",
+    "package": "screenrecorder-0.5.4-1.armv7hl",
+    "version": "0.5.4-1",
+    "arch": "armv7hl",
+    "buildtime": 1791899489,
+    "last_scanned": "2026-10-13T14:03:31Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          },
+          {
+            "level": "medium",
+            "id": "privileged-files",
+            "text": "1 privileged file (setgid privileged)"
+          },
+          {
+            "level": "medium",
+            "id": "hook-d-bus-system-policy",
+            "text": "System hook: D-Bus system policy"
+          },
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 1,
+      "system_hooks": [
+        "D-Bus system policy"
+      ],
+      "scriptlets": 3,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "screenrecorder-0.5.3-1.armv7hl",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 2,
+          "unchanged": 17
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38410018394",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/screenrecorder/57bb6293739411bd7c1f6aff3ff709dab0f6621f584deea922e01e1ecaf40cca.md"
+    }
+  },
+  {
     "sha256": "28d68b4513be0cdea5628b2d26362e65da9f009d6322e283186103b55a860fc1",
     "first_seen": "2026-10-13T14:01:41Z",
     "package": "screenrecorder-0.5.4-1.i486",
