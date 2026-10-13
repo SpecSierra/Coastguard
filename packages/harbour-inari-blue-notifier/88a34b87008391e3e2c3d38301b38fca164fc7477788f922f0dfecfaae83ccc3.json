@@ -1,0 +1,153 @@
+{
+  "verdict": "clean",
+  "name": "harbour-inari-blue-notifier",
+  "version": "1.8.1-1",
+  "arch": "aarch64",
+  "package": "harbour-inari-blue-notifier-1.8.1-1.aarch64",
+  "buildtime": 1791928581,
+  "sha256": "88a34b87008391e3e2c3d38301b38fca164fc7477788f922f0dfecfaae83ccc3",
+  "source": "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.8.1-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12701",
+  "scanned": "2026-10-13T22:39:28Z",
+  "files": 49,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28151/Mon Oct 12 06:24:02 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-inari-blue-notifier.desktop",
+          "name": "Inari Blue Notifier",
+          "exec": "harbour-inari-blue-notifier",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "AppLaunch",
+            "InariBlueNotifier"
+          ],
+          "organization": "dev.rikudou",
+          "application": "inari-blue-notifier"
+        }
+      ],
+      "shipped_profiles": [
+        "/etc/sailjail/permissions/InariBlueNotifier.permission"
+      ],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 0,
+      "hosts_in_scripts": 0,
+      "hosts": [],
+      "hosts_scripts": [],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 630386,
+        "malicious": 425
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38479182794",
+  "diff": {
+    "baseline": {
+      "sha256": "8aea4516f8d84746f05c1362d556f929b0819bfdb4f1711027e46c5b50771735",
+      "package": "harbour-inari-blue-notifier-1.8.0-1.aarch64",
+      "last_scanned": "2026-10-13T20:58:15Z"
+    },
+    "changes": [
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/harbour-inari-blue-notifier",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-inari-blue-notifier/qml/pages/PatternsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-inari-blue-notifier/qml/pages/SettingsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-inari-blue-notifier/translations/harbour-inari-blue-notifier-en.qm",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 0,
+        "removed": 0,
+        "changed": 4,
+        "unchanged": 21
+      }
+    }
+  },
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "id": "own-sandbox-profile",
+        "text": "Own sandbox profile"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-inari-blue-notifier/88a34b87008391e3e2c3d38301b38fca164fc7477788f922f0dfecfaae83ccc3.md"
+}
