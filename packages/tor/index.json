@@ -293,5 +293,68 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38450962209",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/tor/0fec2658ca016a2ec12a46025ad57f9473d4753fde4c0f849258cef2fe17d903.md"
     }
+  },
+  {
+    "sha256": "878143f3c5dbf75fdf13e4229db3840fb46ff85ff964568423bbca57aebcca4e",
+    "first_seen": "2026-10-13T19:00:15Z",
+    "package": "tor-0.4.9.12-1.armv7hl",
+    "version": "0.4.9.12-1",
+    "arch": "armv7hl",
+    "buildtime": 1791916989,
+    "last_scanned": "2026-10-13T19:00:15Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "hook-files-in-a-home-directory",
+            "text": "System hook: files in a home directory"
+          },
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [
+        "files in a home directory"
+      ],
+      "scriptlets": 2,
+      "hosts_in_scripts": 7,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "tor-0.4.8.25-1.armv7hl",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 11,
+          "unchanged": 6
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38451238710",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/tor/878143f3c5dbf75fdf13e4229db3840fb46ff85ff964568423bbca57aebcca4e.md"
+    }
   }
 ]
