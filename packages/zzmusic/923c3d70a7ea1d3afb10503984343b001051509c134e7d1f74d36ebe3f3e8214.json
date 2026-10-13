@@ -1,0 +1,159 @@
+{
+  "verdict": "clean",
+  "name": "zzmusic",
+  "version": "1.0.0-27.bonito.dev.20261013t113645z.8ef344bc6f8b",
+  "arch": "aarch64",
+  "package": "zzmusic-1.0.0-27.bonito.dev.20261013t113645z.8ef344bc6f8b.aarch64",
+  "buildtime": 1784937600,
+  "sha256": "923c3d70a7ea1d3afb10503984343b001051509c134e7d1f74d36ebe3f3e8214",
+  "source": "https://openrepos.net/sites/default/files/packages/19602/zzmusic-1.0.0-27.bonito.dev_.20261013t113645z.8ef344bc6f8b.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12713",
+  "scanned": "2026-10-13T15:17:49Z",
+  "files": 57,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28151/Mon Oct 12 06:24:02 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-qqmusic.desktop",
+          "name": "ZZ Music",
+          "exec": "/usr/bin/harbour-qqmusic",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Audio",
+            "Secrets"
+          ],
+          "organization": "org.bonito.qqmusic",
+          "application": "harbour-qqmusic"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 4,
+      "hosts_in_scripts": 3,
+      "hosts": [
+        {
+          "host": "doc.qt.io",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/licenses/zzmusic/QT-LICENSES.md"
+          ]
+        },
+        {
+          "host": "github.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/licenses/zzmusic/UPSTREAM.md"
+          ]
+        },
+        {
+          "host": "www.qt.io",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/licenses/zzmusic/QT-LICENSES.md"
+          ]
+        },
+        {
+          "host": "y.qq.com",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-qqmusic"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "doc.qt.io",
+        "github.com",
+        "www.qt.io"
+      ],
+      "hosts_binaries": [
+        "y.qq.com"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 630386,
+        "malicious": 425
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38420745697",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "id": "personal-data",
+        "text": "Personal data: Secrets"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/zzmusic/923c3d70a7ea1d3afb10503984343b001051509c134e7d1f74d36ebe3f3e8214.md"
+}

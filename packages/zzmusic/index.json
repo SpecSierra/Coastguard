@@ -1,0 +1,52 @@
+[
+  {
+    "sha256": "923c3d70a7ea1d3afb10503984343b001051509c134e7d1f74d36ebe3f3e8214",
+    "first_seen": "2026-10-13T15:17:49Z",
+    "package": "zzmusic-1.0.0-27.bonito.dev.20261013t113645z.8ef344bc6f8b.aarch64",
+    "version": "1.0.0-27.bonito.dev.20261013t113645z.8ef344bc6f8b",
+    "arch": "aarch64",
+    "buildtime": 1784937600,
+    "last_scanned": "2026-10-13T15:17:49Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Secrets"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Internet",
+        "Secrets"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 3,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38420745697",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/zzmusic/923c3d70a7ea1d3afb10503984343b001051509c134e7d1f74d36ebe3f3e8214.md"
+    }
+  }
+]
