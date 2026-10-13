@@ -1,0 +1,168 @@
+{
+  "verdict": "clean",
+  "name": "harbour-qutenav",
+  "version": "0.51-4",
+  "arch": "aarch64",
+  "package": "harbour-qutenav-0.51-4.aarch64",
+  "buildtime": 1791924017,
+  "sha256": "c5fefdb22befa799a9420683ad18a6939b6c1920d8ee33b892490daafd95ecc0",
+  "source": "https://openrepos.net/sites/default/files/packages/14239/harbour-qutenav-0.51-4.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12216",
+  "scanned": "2026-10-13T21:18:25Z",
+  "files": 151,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28151/Mon Oct 12 06:24:02 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-qutenav.desktop",
+          "name": "QuteNav",
+          "exec": "harbour-qutenav",
+          "hidden": false,
+          "sandbox": "disabled",
+          "permissions": [],
+          "organization": null,
+          "application": null
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 2,
+      "hosts_in_scripts": 0,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-qutenav"
+          ]
+        },
+        {
+          "host": "www.digikam.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-qutenav/globe/negx.jpg",
+            "/usr/share/harbour-qutenav/globe/negy.jpg",
+            "/usr/share/harbour-qutenav/globe/negz.jpg"
+          ]
+        }
+      ],
+      "hosts_scripts": [],
+      "hosts_binaries": [
+        "github.com",
+        "www.digikam.org"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 630386,
+        "malicious": 425
+      },
+      "notable": [],
+      "ignored_hosts": 3
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 5,
+      "unknown": 4,
+      "not_queried": 0,
+      "results": [
+        {
+          "sha256": "c1982f4c6458acd18bca60a64fc24c13e74753e4f8c22ee55bc50985a8b13f14",
+          "path": "/usr/lib64/libsglarm64-2.31.0.0.so",
+          "malicious": 0,
+          "suspicious": 0,
+          "engines": 75,
+          "last_analysis": 1774959164,
+          "link": "https://www.virustotal.com/gui/file/c1982f4c6458acd18bca60a64fc24c13e74753e4f8c22ee55bc50985a8b13f14"
+        }
+      ]
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 5,
+      "unknown": 5,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38469513900",
+  "diff": {
+    "baseline": {
+      "sha256": "52a7c3463045bef8412bcba8f09aa9b8b69c9d778f58a52b9e199e6b5cbf0fff",
+      "package": "harbour-qutenav-0.51-3.aarch64",
+      "last_scanned": "2026-10-12T21:17:50Z"
+    },
+    "changes": [
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/harbour-qutenav",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 0,
+        "removed": 0,
+        "changed": 1,
+        "unchanged": 128
+      }
+    }
+  },
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "sandbox-off",
+        "text": "Sandbox turned off"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-qutenav/c5fefdb22befa799a9420683ad18a6939b6c1920d8ee33b892490daafd95ecc0.md"
+}

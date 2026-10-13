@@ -44,5 +44,61 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38309665938",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-qutenav/52a7c3463045bef8412bcba8f09aa9b8b69c9d778f58a52b9e199e6b5cbf0fff.md"
     }
+  },
+  {
+    "sha256": "c5fefdb22befa799a9420683ad18a6939b6c1920d8ee33b892490daafd95ecc0",
+    "first_seen": "2026-10-13T21:18:25Z",
+    "package": "harbour-qutenav-0.51-4.aarch64",
+    "version": "0.51-4",
+    "arch": "aarch64",
+    "buildtime": 1791924017,
+    "last_scanned": "2026-10-13T21:18:25Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-qutenav-0.51-3.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 1,
+          "unchanged": 128
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38469513900",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-qutenav/c5fefdb22befa799a9420683ad18a6939b6c1920d8ee33b892490daafd95ecc0.md"
+    }
   }
 ]
