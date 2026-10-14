@@ -1,0 +1,87 @@
+{
+  "verdict": "clean",
+  "name": "empty-package",
+  "version": "1.0-1",
+  "arch": "noarch",
+  "package": "empty-package-1.0-1.noarch",
+  "buildtime": 1791966468,
+  "sha256": "656e6da9203fde579186f0c9fa9f7be9f02bd55cdc5e9cdb13046026b25c364a",
+  "source": "https://openrepos.net/sites/default/files/packages/19812/empty-package-1.0-1.noarch.rpm",
+  "source_page": "https://openrepos.net/node/12721",
+  "scanned": "2026-10-14T08:37:59Z",
+  "files": 0,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28153/Wed Oct 14 06:24:15 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 0,
+      "hosts_in_scripts": 0,
+      "hosts": [],
+      "hosts_scripts": [],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 630738,
+        "malicious": 424
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38536416227",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/empty-package/656e6da9203fde579186f0c9fa9f7be9f02bd55cdc5e9cdb13046026b25c364a.md"
+}

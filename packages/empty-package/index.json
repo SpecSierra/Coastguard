@@ -1,0 +1,42 @@
+[
+  {
+    "sha256": "656e6da9203fde579186f0c9fa9f7be9f02bd55cdc5e9cdb13046026b25c364a",
+    "first_seen": "2026-10-14T08:37:59Z",
+    "package": "empty-package-1.0-1.noarch",
+    "version": "1.0-1",
+    "arch": "noarch",
+    "buildtime": 1791966468,
+    "last_scanned": "2026-10-14T08:37:59Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38536416227",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/empty-package/656e6da9203fde579186f0c9fa9f7be9f02bd55cdc5e9cdb13046026b25c364a.md"
+    }
+  }
+]
