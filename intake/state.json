@@ -1,5 +1,5 @@
 {
-  "cursor": 1791994190,
+  "cursor": 1791996689,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -292,7 +292,7 @@
     "https://openrepos.net/sites/default/files/packages/19055/harbour-rootelegram-3.4-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19055/harbour-rootelegram-3.4-1.i486.rpm"
   ],
-  "last_run": "2026-10-14T16:37:17Z",
+  "last_run": "2026-10-14T16:57:23Z",
   "dispatched": [
     1791993447,
     1791994658,
