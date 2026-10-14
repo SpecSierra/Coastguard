@@ -1,0 +1,139 @@
+{
+  "verdict": "clean",
+  "name": "harbour-fiatvox",
+  "version": "1.2-1",
+  "arch": "aarch64",
+  "package": "harbour-fiatvox-1.2-1.aarch64",
+  "buildtime": 1792011372,
+  "sha256": "cc2b3ba89185c6dbc3266b143bfc52af597c10de318a3389644804c26a6d04dd",
+  "source": "https://openrepos.net/sites/default/files/packages/19674/harbour-fiatvox-1.2-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12560",
+  "scanned": "2026-10-14T21:18:08Z",
+  "files": 55,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28153/Wed Oct 14 06:24:15 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-fiatvox.desktop",
+          "name": "fiat vox",
+          "exec": "harbour-fiatvox",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Audio",
+            "Microphone"
+          ],
+          "organization": "se.munkstolen",
+          "application": "harbour-fiatvox"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 3,
+      "hosts_in_scripts": 3,
+      "hosts": [
+        {
+          "host": "openrepos.net",
+          "urls": 9,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-fiatvox/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "github.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-fiatvox/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "munkstolen.se",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-fiatvox/qml/pages/AboutPage.qml"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "github.com",
+        "munkstolen.se",
+        "openrepos.net"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 630738,
+        "malicious": 424
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38639083212",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-fiatvox/cc2b3ba89185c6dbc3266b143bfc52af597c10de318a3389644804c26a6d04dd.md"
+}
