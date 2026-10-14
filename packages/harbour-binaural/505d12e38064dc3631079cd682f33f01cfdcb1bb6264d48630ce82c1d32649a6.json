@@ -1,0 +1,162 @@
+{
+  "verdict": "clean",
+  "name": "harbour-binaural",
+  "version": "0.8.0-1",
+  "arch": "aarch64",
+  "package": "harbour-binaural-0.8.0-1.aarch64",
+  "buildtime": 1791980855,
+  "sha256": "505d12e38064dc3631079cd682f33f01cfdcb1bb6264d48630ce82c1d32649a6",
+  "source": "https://openrepos.net/sites/default/files/packages/10743/harbour-binaural-0.8.0-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12690",
+  "scanned": "2026-10-14T12:40:01Z",
+  "files": 60,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28153/Wed Oct 14 06:24:15 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-binaural.desktop",
+          "name": "Binaural",
+          "exec": "harbour-binaural",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Audio"
+          ],
+          "organization": "org.molan",
+          "application": "binaural"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 5,
+      "hosts_in_scripts": 5,
+      "hosts": [
+        {
+          "host": "pixabay.com",
+          "urls": 7,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-binaural/qml/pages/CreditPage.qml"
+          ]
+        },
+        {
+          "host": "github.com",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-binaural/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "commons.wikimedia.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-binaural/qml/pages/CreditPage.qml"
+          ]
+        },
+        {
+          "host": "hosted.weblate.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-binaural/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "ko-fi.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-binaural/qml/pages/AboutPage.qml"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "commons.wikimedia.org",
+        "github.com",
+        "hosted.weblate.org",
+        "ko-fi.com",
+        "pixabay.com"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 630738,
+        "malicious": 424
+      },
+      "notable": [],
+      "ignored_hosts": 3
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38565445463",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-binaural/505d12e38064dc3631079cd682f33f01cfdcb1bb6264d48630ce82c1d32649a6.md"
+}

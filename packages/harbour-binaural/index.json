@@ -40,5 +40,47 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38565223831",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-binaural/6a835bf0ca9a2a19ebfb4d9533e2f4f5cbd925366537939acac58b2be51f29c6.md"
     }
+  },
+  {
+    "sha256": "505d12e38064dc3631079cd682f33f01cfdcb1bb6264d48630ce82c1d32649a6",
+    "first_seen": "2026-10-14T12:40:01Z",
+    "package": "harbour-binaural-0.8.0-1.aarch64",
+    "version": "0.8.0-1",
+    "arch": "aarch64",
+    "buildtime": 1791980855,
+    "last_scanned": "2026-10-14T12:40:01Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 5,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38565445463",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-binaural/505d12e38064dc3631079cd682f33f01cfdcb1bb6264d48630ce82c1d32649a6.md"
+    }
   }
 ]
