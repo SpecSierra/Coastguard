@@ -1,0 +1,916 @@
+{
+  "verdict": "clean",
+  "name": "spinny",
+  "version": "0.9-1",
+  "arch": "noarch",
+  "package": "spinny-0.9-1.noarch",
+  "buildtime": 1791958075,
+  "sha256": "1fbc45ee2d1f55d7e2c71441ec9fef5233c1eb101a0ced741764e8c1379a95b9",
+  "source": "https://openrepos.net/sites/default/files/packages/16972/spinny-0.9-1.noarch.rpm",
+  "source_page": "https://openrepos.net/node/12018",
+  "scanned": "2026-10-14T07:21:34Z",
+  "files": 9,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28153/Wed Oct 14 06:24:15 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 1,
+    "carved_streams": 0,
+    "files": 4324,
+    "bytes": 95994648,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/spinny.desktop",
+          "name": "spinny",
+          "exec": "/usr/bin/love /usr/share/games/love/spinny/spinny.love",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Love2D",
+            "Internet"
+          ],
+          "organization": null,
+          "application": null
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 64,
+      "hosts_in_scripts": 58,
+      "hosts": [
+        {
+          "host": "opengameart.org",
+          "urls": 126,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/games/love/spinny/spinny.love",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/Credits/CreditsText.lua",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/images/LICENSE"
+          ]
+        },
+        {
+          "host": "github.com",
+          "urls": 34,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/Credits.md",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/Credits/CreditsText.lua",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/editor/init.lua"
+          ]
+        },
+        {
+          "host": "i.imgur.com",
+          "urls": 13,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/boxclip02/game/STALKER-X/README.md",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/game/STALKER-X/README.md"
+          ]
+        },
+        {
+          "host": "codeberg.org",
+          "urls": 11,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/Credits.md",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/Credits/CreditsText.lua",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/Credits/hyperlinks.lua"
+          ]
+        },
+        {
+          "host": "shadered.org",
+          "urls": 6,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/shaders/clouds.lua",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/shaders/cloudsMobileExtremeOptimized.lua",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/shaders/cloudsMobileOptimized.lua"
+          ]
+        },
+        {
+          "host": "fontstruct.com",
+          "urls": 5,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/fonts/0xa000/main_mono.ttf",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/talkies/example/assets/fonts/Pixel UniCode.ttf",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/talkies/example/main.lua"
+          ]
+        },
+        {
+          "host": "love2d.org",
+          "urls": 4,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/boxclip02/menus/title.lua",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/lovebpm/README.md",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/noobhubLove2d/Readme.md"
+          ]
+        },
+        {
+          "host": "scripts.sil.org",
+          "urls": 4,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/Credits/CreditsText.lua",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/fonts/0xa000/0xA000-Bold.ttf",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/fonts/0xa000/0xA000-Boxes.ttf"
+          ]
+        },
+        {
+          "host": "hump.readthedocs.io",
+          "urls": 3,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/boxclip02/game/STALKER-X/README.md",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/game/STALKER-X/README.md"
+          ]
+        },
+        {
+          "host": "ced30.itch.io",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/music-credits-manager/About.lua"
+          ]
+        },
+        {
+          "host": "lua-users.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/equalizer/complex.lua",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/serpent/README.md"
+          ]
+        },
+        {
+          "host": "pixabay.com",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/Credits/CreditsText.lua",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/images/LICENSE"
+          ]
+        },
+        {
+          "host": "www.love2d.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/game/sti/README.md",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/shaders/moonshine/godsray.lua"
+          ]
+        },
+        {
+          "host": "www.youtube.com",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/boxclip02/game/STALKER-X/README.md",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/game/STALKER-X/README.md",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/shaders/moonshine/fog.lua"
+          ]
+        },
+        {
+          "host": "yourserver.com",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/mapio.lua",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/menus/title/listmaps.lua"
+          ]
+        },
+        {
+          "host": "art.university.edu",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/fonts/Hanken/OFL-FAQ.txt"
+          ]
+        },
+        {
+          "host": "benhumphreys.ca",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/entities/loops.lua",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/entities/platforms.lua",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/boxclip02/entities/platforms.lua"
+          ]
+        },
+        {
+          "host": "dkolf.de",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/chatHud/dkjson.lua"
+          ]
+        },
+        {
+          "host": "en.wikipedia.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/shaders/moonshine/dmg.lua"
+          ]
+        },
+        {
+          "host": "fabiensanglard.net",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/shaders/moonshine/godsray.lua"
+          ]
+        },
+        {
+          "host": "fontlibrary.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/Credits/CreditsText.lua",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/fonts/Hanken/CREDIT"
+          ]
+        },
+        {
+          "host": "foobar.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/fonts/Hanken/OFL-FAQ.txt"
+          ]
+        },
+        {
+          "host": "fsf.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/love-boids/LICENSE"
+          ]
+        },
+        {
+          "host": "gafferongames.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/boxclip02/game/STALKER-X/README.md",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/game/STALKER-X/README.md"
+          ]
+        },
+        {
+          "host": "gamedev.stackexchange.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/shaders/moonshine/posterize.lua"
+          ]
+        },
+        {
+          "host": "gitter.im",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/game/sti/README.md"
+          ]
+        },
+        {
+          "host": "haxeflixel.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/boxclip02/game/STALKER-X/README.md",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/game/STALKER-X/README.md"
+          ]
+        },
+        {
+          "host": "jehadel.github.io",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/Credits.md",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/Credits/CreditsText.lua",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/love-boids/README.md"
+          ]
+        },
+        {
+          "host": "joe.fontstudio.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/fonts/Hanken/OFL-FAQ.txt"
+          ]
+        },
+        {
+          "host": "jonny.morrill.me",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/boxclip02/game/STALKER-X/Camera.lua",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/boxclip02/game/STALKER-X/README.md",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/game/STALKER-X/Camera.lua"
+          ]
+        },
+        {
+          "host": "json.luaforge.net",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/NoobHub/json.lua"
+          ]
+        },
+        {
+          "host": "karai17.github.io",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/game/sti/README.md"
+          ]
+        },
+        {
+          "host": "kenney.nl",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/images/icons/credits.md"
+          ]
+        },
+        {
+          "host": "landonmanning.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/game/sti/LICENSE.md"
+          ]
+        },
+        {
+          "host": "lib.openmpt.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/music-credits-manager/openmpt.lua"
+          ]
+        },
+        {
+          "host": "lovr.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/love2dLovrBridge/Readme.md"
+          ]
+        },
+        {
+          "host": "luaforge.net",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/equalizer/complex.lua"
+          ]
+        },
+        {
+          "host": "openfontlibrary.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/fonts/Hanken/OFL-FAQ.txt"
+          ]
+        },
+        {
+          "host": "pat.fontstudio.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/fonts/Hanken/OFL-FAQ.txt"
+          ]
+        },
+        {
+          "host": "rastergrid.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/shaders/moonshine/fastgaussianblur.lua"
+          ]
+        },
+        {
+          "host": "rosskfoad.carrd.co",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/Credits/CreditsText.lua",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/sounds/dubs/credits.md",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/sounds/dubs/shops/Credits.md"
+          ]
+        },
+        {
+          "host": "soundcloud.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/music-credits-manager/credits.lua"
+          ]
+        },
+        {
+          "host": "stackoverflow.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/talkies/talkies.lua"
+          ]
+        },
+        {
+          "host": "theleagueofmovabletype.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/fonts/Hanken/OFL-FAQ.txt"
+          ]
+        },
+        {
+          "host": "unifont.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/fonts/Hanken/OFL-FAQ.txt"
+          ]
+        },
+        {
+          "host": "w3.impa.br",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/love2dLovrBridge/Readme.md"
+          ]
+        },
+        {
+          "host": "www.bfxr.net",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/talkies/example/main.lua",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/talkies/mtalk1.lua"
+          ]
+        },
+        {
+          "host": "www.company.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/fonts/Hanken/OFL-FAQ.txt"
+          ]
+        },
+        {
+          "host": "www.gamasutra.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/boxclip02/game/STALKER-X/README.md",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/game/STALKER-X/README.md"
+          ]
+        },
+        {
+          "host": "www.hardcoregaming101.net",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/shaders/moonshine/dmg.lua"
+          ]
+        },
+        {
+          "host": "www.katieotten.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/Credits/CreditsText.lua",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/sounds/dubs/credits.md"
+          ]
+        },
+        {
+          "host": "www.mapeditor.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/game/sti/README.md"
+          ]
+        },
+        {
+          "host": "www.michaelfogleman.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/Gui/GuiLoveMain.lua"
+          ]
+        },
+        {
+          "host": "www.patreon.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/sounds/GUI/unicae_games_keyboard_soundpack_1/readme.txt"
+          ]
+        },
+        {
+          "host": "www.paypal.me",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/game/sti/README.md"
+          ]
+        },
+        {
+          "host": "www.rorydriscoll.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/Gui/Gui.lua"
+          ]
+        },
+        {
+          "host": "www.shadertoy.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/shaders/wadingCaustics.lua",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/shaders/wadingcaustic.glsl"
+          ]
+        },
+        {
+          "host": "www.sil.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/fonts/Hanken/OFL-FAQ.txt"
+          ]
+        },
+        {
+          "host": "www.hankendesign.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/fonts/Hanken/Hanken-Book.ttf",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/fonts/Hanken/Hanken-Light.ttf"
+          ]
+        },
+        {
+          "host": "archive.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/sounds/GUI/photo.opus"
+          ]
+        },
+        {
+          "host": "iptc.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/images/webp/player/1/look_down/frame-1.webp",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/images/webp/player/1/look_down/frame-2.webp",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/love-boids/src/pix/boidOriginal.png"
+          ]
+        },
+        {
+          "host": "ns.useplus.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/images/webp/player/1/look_down/frame-1.webp",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/images/webp/player/1/look_down/frame-2.webp",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/extras/love-boids/src/pix/boidOriginal.png"
+          ]
+        },
+        {
+          "host": "www.fontshop.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/fonts/0xa000/main_mono.ttf"
+          ]
+        },
+        {
+          "host": "www.gimp.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/games/love/spinny/spinny.png",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/SplashBck.jpg",
+            "nested/usr/share/games/love/spinny/spinny.love.unpacked/data/images/webp/player/1/look_down/frame-1.webp"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "art.university.edu",
+        "benhumphreys.ca",
+        "ced30.itch.io",
+        "codeberg.org",
+        "dkolf.de",
+        "en.wikipedia.org",
+        "fabiensanglard.net",
+        "fontlibrary.org",
+        "fontstruct.com",
+        "foobar.org",
+        "fsf.org",
+        "gafferongames.com",
+        "gamedev.stackexchange.com",
+        "github.com",
+        "gitter.im",
+        "haxeflixel.com",
+        "hump.readthedocs.io",
+        "i.imgur.com",
+        "jehadel.github.io",
+        "joe.fontstudio.org",
+        "jonny.morrill.me",
+        "json.luaforge.net",
+        "karai17.github.io",
+        "kenney.nl",
+        "landonmanning.com",
+        "lib.openmpt.org",
+        "love2d.org",
+        "lovr.org",
+        "lua-users.org",
+        "luaforge.net",
+        "openfontlibrary.org",
+        "opengameart.org",
+        "pat.fontstudio.org",
+        "pixabay.com",
+        "rastergrid.com",
+        "rosskfoad.carrd.co",
+        "scripts.sil.org",
+        "shadered.org",
+        "soundcloud.com",
+        "stackoverflow.com",
+        "theleagueofmovabletype.com",
+        "unifont.org",
+        "w3.impa.br",
+        "www.bfxr.net",
+        "www.company.com",
+        "www.gamasutra.com",
+        "www.hardcoregaming101.net",
+        "www.katieotten.com",
+        "www.love2d.org",
+        "www.mapeditor.org",
+        "www.michaelfogleman.com",
+        "www.patreon.com",
+        "www.paypal.me",
+        "www.rorydriscoll.com",
+        "www.shadertoy.com",
+        "www.sil.org",
+        "www.youtube.com",
+        "yourserver.com"
+      ],
+      "hosts_binaries": [
+        "archive.org",
+        "iptc.org",
+        "ns.useplus.org",
+        "www.fontshop.com",
+        "www.gimp.org",
+        "www.hankendesign.com"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 630738,
+        "malicious": 424
+      },
+      "notable": [],
+      "ignored_hosts": 6
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38527553152",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/spinny/1fbc45ee2d1f55d7e2c71441ec9fef5233c1eb101a0ced741764e8c1379a95b9.md"
+}

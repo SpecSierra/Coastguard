@@ -1,0 +1,45 @@
+[
+  {
+    "sha256": "1fbc45ee2d1f55d7e2c71441ec9fef5233c1eb101a0ced741764e8c1379a95b9",
+    "first_seen": "2026-10-14T07:21:34Z",
+    "package": "spinny-0.9-1.noarch",
+    "version": "0.9-1",
+    "arch": "noarch",
+    "buildtime": 1791958075,
+    "last_scanned": "2026-10-14T07:21:34Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "Love2D"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 58,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38527553152",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/spinny/1fbc45ee2d1f55d7e2c71441ec9fef5233c1eb101a0ced741764e8c1379a95b9.md"
+    }
+  }
+]
