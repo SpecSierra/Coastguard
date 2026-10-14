@@ -1,5 +1,5 @@
 {
-  "cursor": 1791999121,
+  "cursor": 1791999781,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -293,12 +293,16 @@
     "https://openrepos.net/sites/default/files/packages/19055/harbour-rootelegram-3.4-1.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/10743/harbour-binaural-0.8.1-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/10743/harbour-binaural-0.8.1-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/10743/harbour-binaural-0.8.1-1.i486.rpm"
+    "https://openrepos.net/sites/default/files/packages/10743/harbour-binaural-0.8.1-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.46.16-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.46.16-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-14T17:42:32Z",
+  "last_run": "2026-10-14T18:00:49Z",
   "dispatched": [
     1791999447,
     1791999550,
-    1791999652
+    1791999652,
+    1792000646,
+    1792000749
   ]
 }
