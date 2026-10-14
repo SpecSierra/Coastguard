@@ -1,5 +1,48 @@
 [
   {
+    "sha256": "d51e4051dba73d7a8136a446865e3beff5f6846604ef602fa9afdd7798227549",
+    "first_seen": "2026-10-14T12:21:05Z",
+    "package": "harbour-openhab-0.4-1.i486",
+    "version": "0.4-1",
+    "arch": "i486",
+    "buildtime": 1791978395,
+    "last_scanned": "2026-10-14T12:21:05Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "NFC"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 7,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38563055773",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-openhab/d51e4051dba73d7a8136a446865e3beff5f6846604ef602fa9afdd7798227549.md"
+    }
+  },
+  {
     "sha256": "750be11991de040eeccbccb96260f034dbc07ef033f7aea9757a99f71f53cc64",
     "first_seen": "2026-10-14T12:19:37Z",
     "package": "harbour-openhab-0.4-1.aarch64",
