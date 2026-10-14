@@ -286,10 +286,8 @@
     "https://openrepos.net/sites/default/files/packages/10743/harbour-binaural-0.8.0-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/10743/harbour-binaural-0.8.0-1.i486.rpm"
   ],
-  "last_run": "2026-10-14T13:38:58Z",
+  "last_run": "2026-10-14T13:57:11Z",
   "dispatched": [
-    1791981447,
-    1791981550,
     1791985037
   ]
 }
