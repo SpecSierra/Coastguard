@@ -1,0 +1,189 @@
+{
+  "verdict": "clean",
+  "name": "harbour-openhab",
+  "version": "0.4-1",
+  "arch": "aarch64",
+  "package": "harbour-openhab-0.4-1.aarch64",
+  "buildtime": 1791978399,
+  "sha256": "750be11991de040eeccbccb96260f034dbc07ef033f7aea9757a99f71f53cc64",
+  "source": "https://openrepos.net/sites/default/files/packages/19358/harbour-openhab-0.4-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12343",
+  "scanned": "2026-10-14T12:19:37Z",
+  "files": 96,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28153/Wed Oct 14 06:24:15 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 1,
+    "files": 1,
+    "bytes": 596187,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-openhab.desktop",
+          "name": "openHAB",
+          "exec": "harbour-openhab",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "NFC"
+          ],
+          "organization": "org.openhab",
+          "application": "harbour-openhab"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 7,
+      "hosts_in_scripts": 7,
+      "hosts": [
+        {
+          "host": "a.basemaps.cartocdn.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-openhab/qml/pages/SitemapPage.qml"
+          ]
+        },
+        {
+          "host": "community.openhab.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-openhab/qml/pages/SettingsPage.qml"
+          ]
+        },
+        {
+          "host": "crowdin.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-openhab/qml/pages/SettingsPage.qml"
+          ]
+        },
+        {
+          "host": "demo.openhab.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-openhab/qml/base/Settings.qml",
+            "/usr/share/harbour-openhab/qml/pages/SettingsPage.qml",
+            "/usr/share/harbour-openhab/translations/harbour-openhab-de.qm"
+          ]
+        },
+        {
+          "host": "docs.sailfishos.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/applications/harbour-openhab.desktop"
+          ]
+        },
+        {
+          "host": "www.openhab.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-openhab/qml/pages/LegalPage.qml"
+          ]
+        },
+        {
+          "host": "www.openhabfoundation.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-openhab/qml/pages/SettingsPage.qml"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "a.basemaps.cartocdn.com",
+        "community.openhab.org",
+        "crowdin.com",
+        "demo.openhab.org",
+        "docs.sailfishos.org",
+        "www.openhab.org",
+        "www.openhabfoundation.org"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 630738,
+        "malicious": 424
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38562849910",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-openhab/750be11991de040eeccbccb96260f034dbc07ef033f7aea9757a99f71f53cc64.md"
+}
