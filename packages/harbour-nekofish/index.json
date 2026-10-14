@@ -1,0 +1,45 @@
+[
+  {
+    "sha256": "352248603a9619de6b228265706f0c3db121f1c944a018e69a73bf76df00f2f7",
+    "first_seen": "2026-10-14T15:18:06Z",
+    "package": "harbour-nekofish-1.0.3-1.aarch64",
+    "version": "1.0.3-1",
+    "arch": "aarch64",
+    "buildtime": 1791990362,
+    "last_scanned": "2026-10-14T15:18:06Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Internet"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 2,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38588019221",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-nekofish/352248603a9619de6b228265706f0c3db121f1c944a018e69a73bf76df00f2f7.md"
+    }
+  }
+]
