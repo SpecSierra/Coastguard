@@ -61,5 +61,78 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38409274333",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/silisili-native-devel/b3b7d9010ce64524fc1167fed4271c60553520ad4ab866d59b716eee20025325.md"
     }
+  },
+  {
+    "sha256": "545bb815c0dcfcbfdae6b0ab36ab7d55bbfd35f4ebbbb2408319269fbd45dddb",
+    "first_seen": "2026-10-14T02:38:35Z",
+    "package": "silisili-native-devel-1.1.0-1.59.aarch64",
+    "version": "1.1.0-1.59",
+    "arch": "aarch64",
+    "buildtime": 1791942722,
+    "last_scanned": "2026-10-14T02:38:35Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "high",
+        "reasons": [
+          {
+            "level": "high",
+            "id": "root-service-no-sandbox",
+            "text": "Root service and no sandbox"
+          },
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          },
+          {
+            "level": "medium",
+            "id": "root-services",
+            "text": "1 root service, started at install"
+          },
+          {
+            "level": "medium",
+            "id": "hook-privileged-launcher-grant",
+            "text": "System hook: privileged launcher grant"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 1,
+      "privileged_files": 0,
+      "system_hooks": [
+        "privileged launcher grant"
+      ],
+      "scriptlets": 3,
+      "hosts_in_scripts": 2,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "silisili-native-devel-1.1.0-1.58.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 1,
+          "unchanged": 28
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38501999231",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/silisili-native-devel/545bb815c0dcfcbfdae6b0ab36ab7d55bbfd35f4ebbbb2408319269fbd45dddb.md"
+    }
   }
 ]

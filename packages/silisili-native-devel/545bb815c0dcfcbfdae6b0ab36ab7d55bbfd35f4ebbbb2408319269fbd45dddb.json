@@ -1,0 +1,358 @@
+{
+  "verdict": "clean",
+  "name": "silisili-native-devel",
+  "version": "1.1.0-1.59",
+  "arch": "aarch64",
+  "package": "silisili-native-devel-1.1.0-1.59.aarch64",
+  "buildtime": 1791942722,
+  "sha256": "545bb815c0dcfcbfdae6b0ab36ab7d55bbfd35f4ebbbb2408319269fbd45dddb",
+  "source": "https://openrepos.net/sites/default/files/packages/19602/silisili-native-devel-1.1.0-1.59.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12484",
+  "scanned": "2026-10-14T02:38:35Z",
+  "files": 72,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28151/Mon Oct 12 06:24:02 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 28,
+    "files": 28,
+    "bytes": 512727,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/cn.silisili.native.desktop",
+          "name": "SiliSili",
+          "exec": "/usr/bin/silisili-native",
+          "hidden": false,
+          "sandbox": "disabled",
+          "permissions": [],
+          "organization": null,
+          "application": null
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [
+        {
+          "path": "/usr/lib/systemd/system/silisili-native-minimedia.service",
+          "scope": "system",
+          "exec_start": [
+            "/usr/libexec/silisili-native/silisili-native-minimedia-wrapper"
+          ],
+          "user": "root",
+          "install_wanted_by": "multi-user.target",
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        }
+      ],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {
+      "privileged launcher grant": [
+        "/usr/share/mapplauncherd/privileges.d/silisili-native"
+      ]
+    },
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 25,
+        "notable": [
+          "native_dir=/home/defaultuser/.config/cn.silisili.native",
+          "stable_config=/home/defaultuser/.config/silisili/silisili_config.json",
+          "legacy_snapshot=/home/defaultuser/.config/silisili-native/stable_config_snapshot.json",
+          "chmod 700 \"$native_dir\" || :",
+          "chown defaultuser:defaultuser \"$native_dir\" 2>/dev/null || chown defaultuser \"$native_dir\" 2>/dev/null || :",
+          "chmod 600 \"$native_snapshot\" || :",
+          "chown defaultuser:defaultuser \"$native_snapshot\" 2>/dev/null || chown defaultuser \"$native_snapshot\" 2>/dev/null || :",
+          "systemctl daemon-reload >/dev/null 2>&1 || :",
+          "systemctl enable silisili-native-minimedia.service >/dev/null 2>&1 || :",
+          "systemctl restart silisili-native-minimedia.service >/dev/null 2>&1 || :"
+        ],
+        "body": "# Sailjail only exposes the development app's own config directory at runtime.\n# Seed a read-only snapshot of the stable/legacy config into that directory\n# during package installation so the app can import cookies without expanding\n# its runtime sandbox.  Do not overwrite an explicit native session.\nnative_dir=/home/defaultuser/.config/cn.silisili.native\nnative_snapshot=$native_dir/stable_config_snapshot.json\nnative_session=$native_dir/account_session.json\nstable_config=/home/defaultuser/.config/silisili/silisili_config.json\nlegacy_snapshot=/home/defaultuser/.config/silisili-native/stable_config_snapshot.json\n\nif [ ! -f \"$native_session\" ] && [ ! -f \"$native_snapshot\" ]; then\n    mkdir -p \"$native_dir\" || :\n    if [ -f \"$stable_config\" ]; then\n        cp -f \"$stable_config\" \"$native_snapshot\" || :\n    elif [ -f \"$legacy_snapshot\" ]; then\n        cp -f \"$legacy_snapshot\" \"$native_snapshot\" || :\n    fi\nfi\nif [ -d \"$native_dir\" ]; then\n    chmod 700 \"$native_dir\" || :\n    chown defaultuser:defaultuser \"$native_dir\" 2>/dev/null || chown defaultuser \"$native_dir\" 2>/dev/null || :\nfi\nif [ -f \"$native_snapshot\" ]; then\n    chmod 600 \"$native_snapshot\" || :\n    chown defaultuser:defaultuser \"$native_snapshot\" 2>/dev/null || chown defaultuser \"$native_snapshot\" 2>/dev/null || :\nfi\nsystemctl daemon-reload >/dev/null 2>&1 || :\nsystemctl enable silisili-native-minimedia.service >/dev/null 2>&1 || :\nsystemctl restart silisili-native-minimedia.service >/dev/null 2>&1 || :\nexit 0\n"
+      },
+      {
+        "type": "preuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 4,
+        "notable": [
+          "systemctl disable --now silisili-native-minimedia.service >/dev/null 2>&1 || :"
+        ],
+        "body": "if [ \"$1\" -eq 0 ]; then\n    systemctl disable --now silisili-native-minimedia.service >/dev/null 2>&1 || :\nfi\nexit 0\n"
+      },
+      {
+        "type": "postuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 2,
+        "notable": [
+          "systemctl daemon-reload >/dev/null 2>&1 || :"
+        ],
+        "body": "systemctl daemon-reload >/dev/null 2>&1 || :\nexit 0\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 13,
+      "hosts_in_scripts": 2,
+      "hosts": [
+        {
+          "host": "fsf.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/licenses/silisili-native-devel/LICENSE.silisili-GPLv3"
+          ]
+        },
+        {
+          "host": "www.nayuki.io",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/licenses/silisili-native-devel/LICENSE.qrcodegen-MIT"
+          ]
+        },
+        {
+          "host": "curl.se",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/lib64/silisili-native/libcurl.so.4.8.0"
+          ]
+        },
+        {
+          "host": "www.bilibili.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/silisili-native"
+          ]
+        },
+        {
+          "host": "0x0.st",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/lib64/silisili-native/libmpv.so.2.2.0"
+          ]
+        },
+        {
+          "host": "ffmpeg.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/lib64/silisili-native/libmpv.so.2.2.0"
+          ]
+        },
+        {
+          "host": "github.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/silisili-native"
+          ]
+        },
+        {
+          "host": "live.bilibili.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/silisili-native"
+          ]
+        },
+        {
+          "host": "message.bilibili.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/silisili-native"
+          ]
+        },
+        {
+          "host": "search.bilibili.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/silisili-native"
+          ]
+        },
+        {
+          "host": "space.bilibili.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/silisili-native"
+          ]
+        },
+        {
+          "host": "streams.videolan.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/lib64/silisili-native/libavutil.so.57.28.100"
+          ]
+        },
+        {
+          "host": "t.bilibili.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/silisili-native"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "fsf.org",
+        "www.nayuki.io"
+      ],
+      "hosts_binaries": [
+        "0x0.st",
+        "curl.se",
+        "ffmpeg.org",
+        "github.com",
+        "live.bilibili.com",
+        "message.bilibili.com",
+        "search.bilibili.com",
+        "space.bilibili.com",
+        "streams.videolan.org",
+        "t.bilibili.com",
+        "www.bilibili.com"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 630738,
+        "malicious": 424
+      },
+      "notable": [],
+      "ignored_hosts": 4
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 8,
+      "unknown": 8,
+      "not_queried": 7,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 15,
+      "unknown": 15,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38501999231",
+  "diff": {
+    "baseline": {
+      "sha256": "b3b7d9010ce64524fc1167fed4271c60553520ad4ab866d59b716eee20025325",
+      "package": "silisili-native-devel-1.1.0-1.58.aarch64",
+      "last_scanned": "2026-10-13T13:58:29Z"
+    },
+    "changes": [
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/silisili-native",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 0,
+        "removed": 0,
+        "changed": 1,
+        "unchanged": 28
+      }
+    }
+  },
+  "risk": {
+    "grade": "high",
+    "reasons": [
+      {
+        "level": "high",
+        "id": "root-service-no-sandbox",
+        "text": "Root service and no sandbox"
+      },
+      {
+        "level": "medium",
+        "id": "sandbox-off",
+        "text": "Sandbox turned off"
+      },
+      {
+        "level": "medium",
+        "id": "root-services",
+        "text": "1 root service, started at install"
+      },
+      {
+        "level": "medium",
+        "id": "hook-privileged-launcher-grant",
+        "text": "System hook: privileged launcher grant"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/silisili-native-devel/545bb815c0dcfcbfdae6b0ab36ab7d55bbfd35f4ebbbb2408319269fbd45dddb.md"
+}
