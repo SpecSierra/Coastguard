@@ -1,0 +1,50 @@
+[
+  {
+    "sha256": "3e4dd15b4ffdcff7c22926f0c1ff7b8b18d6765b66aebb08b6e8fb7fd3f1a5ec",
+    "first_seen": "2026-10-14T07:23:38Z",
+    "package": "felis-phone-start-page-1.0.0-3.noarch",
+    "version": "1.0.0-3",
+    "arch": "noarch",
+    "buildtime": 1791959124,
+    "last_scanned": "2026-10-14T07:23:38Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "hook-system-ui-patches",
+            "text": "System hook: system UI patches"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [
+        "system UI patches"
+      ],
+      "scriptlets": 2,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38527954076",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/felis-phone-start-page/3e4dd15b4ffdcff7c22926f0c1ff7b8b18d6765b66aebb08b6e8fb7fd3f1a5ec.md"
+    }
+  }
+]

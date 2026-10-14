@@ -1,0 +1,114 @@
+{
+  "verdict": "clean",
+  "name": "felis-phone-start-page",
+  "version": "1.0.0-3",
+  "arch": "noarch",
+  "package": "felis-phone-start-page-1.0.0-3.noarch",
+  "buildtime": 1791959124,
+  "sha256": "3e4dd15b4ffdcff7c22926f0c1ff7b8b18d6765b66aebb08b6e8fb7fd3f1a5ec",
+  "source": "https://openrepos.net/sites/default/files/packages/19742/felis-phone-start-page-1.0.0-3.noarch.rpm",
+  "source_page": "https://openrepos.net/node/12668",
+  "scanned": "2026-10-14T07:23:38Z",
+  "files": 8,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28153/Wed Oct 14 06:24:15 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {
+      "system UI patches": [
+        "/usr/share/patchmanager/patches/felis-phone-start-page/main.qml",
+        "/usr/share/patchmanager/patches/felis-phone-start-page/patch.json",
+        "/usr/share/patchmanager/patches/felis-phone-start-page/unified_diff.patch"
+      ]
+    },
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "preinstall",
+        "interpreter": "/bin/sh",
+        "lines": 3,
+        "notable": [],
+        "body": "if [ -d /tmp/patchmanager3/patches/felis-phone-start-page ]; then\n    /usr/sbin/patchmanager -u felis-phone-start-page || true\nfi\n"
+      },
+      {
+        "type": "preuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 3,
+        "notable": [],
+        "body": "if [ -d /tmp/patchmanager3/patches/felis-phone-start-page ]; then\n    /usr/sbin/patchmanager -u felis-phone-start-page || true\nfi\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 0,
+      "hosts_in_scripts": 0,
+      "hosts": [],
+      "hosts_scripts": [],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 630738,
+        "malicious": 424
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38527954076",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "id": "hook-system-ui-patches",
+        "text": "System hook: system UI patches"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/felis-phone-start-page/3e4dd15b4ffdcff7c22926f0c1ff7b8b18d6765b66aebb08b6e8fb7fd3f1a5ec.md"
+}
