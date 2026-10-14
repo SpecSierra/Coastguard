@@ -1,5 +1,5 @@
 {
-  "cursor": 1791928681,
+  "cursor": 1791945361,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -271,8 +271,11 @@
     "https://openrepos.net/sites/default/files/packages/6389/harbour-thakir-3.5.7-1.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.46.14-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.46.14-1.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.8.1-1.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.8.1-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19602/silisili-native-devel-1.1.0-1.59.aarch64.rpm"
   ],
-  "last_run": "2026-10-14T02:17:10Z",
-  "dispatched": []
+  "last_run": "2026-10-14T02:41:10Z",
+  "dispatched": [
+    1791945445
+  ]
 }
