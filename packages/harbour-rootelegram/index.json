@@ -1,0 +1,83 @@
+[
+  {
+    "sha256": "44cc887bc461a2ba383e02049583eda545b623749c165cf2bc1d5830c0bbe881",
+    "first_seen": "2026-10-14T16:19:23Z",
+    "package": "harbour-rootelegram-3.4-1.aarch64",
+    "version": "3.4-1",
+    "arch": "aarch64",
+    "buildtime": 1791992012,
+    "last_scanned": "2026-10-14T16:19:23Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "code-sends-sms-or-places-calls",
+            "text": "Unsandboxed code that sends sms or places calls"
+          },
+          {
+            "level": "info",
+            "id": "no-sandbox-profile",
+            "text": "No sandbox profile declared"
+          },
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Contacts, Phone"
+          },
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Sends SMS Or Places Calls"
+      ],
+      "sandbox": "none",
+      "permissions": [
+        "Audio",
+        "Camera",
+        "Contacts",
+        "Documents",
+        "Downloads",
+        "Internet",
+        "Location",
+        "MediaIndexing",
+        "Microphone",
+        "Music",
+        "Phone",
+        "Pictures",
+        "Privileged",
+        "PublicDir",
+        "RemovableMedia",
+        "UserDirs",
+        "Videos"
+      ],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 4,
+      "hosts_in_scripts": 15,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38596832700",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-rootelegram/44cc887bc461a2ba383e02049583eda545b623749c165cf2bc1d5830c0bbe881.md"
+    }
+  }
+]
