@@ -1,0 +1,44 @@
+[
+  {
+    "sha256": "3bc14b760da077bbf2ae1866fcc710fab2a7c162addfa0bff50f4769df8e7ce9",
+    "first_seen": "2026-10-14T21:40:59Z",
+    "package": "harbour-felisnetatmo-0.1.0-15.aarch64",
+    "version": "0.1.0-15",
+    "arch": "aarch64",
+    "buildtime": 1792009338,
+    "last_scanned": "2026-10-14T21:40:59Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38642028897",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-felisnetatmo/3bc14b760da077bbf2ae1866fcc710fab2a7c162addfa0bff50f4769df8e7ce9.md"
+    }
+  }
+]
