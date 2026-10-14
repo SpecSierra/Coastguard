@@ -1,5 +1,5 @@
 {
-  "cursor": 1791990999,
+  "cursor": 1791993301,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -286,11 +286,12 @@
     "https://openrepos.net/sites/default/files/packages/10743/harbour-binaural-0.8.0-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/10743/harbour-binaural-0.8.0-1.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/4801/rockpool-2.0.2-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/19799/harbour-nekofish-1.0.3-1.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/19799/harbour-nekofish-1.0.3-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19811/harbour-skiff-0.2.0-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-14T15:37:12Z",
+  "last_run": "2026-10-14T15:59:27Z",
   "dispatched": [
-    1791988645,
-    1791991045
+    1791991045,
+    1791993447
   ]
 }
