@@ -1,5 +1,5 @@
 {
-  "cursor": 1791962161,
+  "cursor": 1791965117,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -278,7 +278,7 @@
     "https://openrepos.net/sites/default/files/packages/19742/felis-sharp-caller-photo-1.0.0-3.noarch.rpm",
     "https://openrepos.net/sites/default/files/packages/19742/felis-phone-start-page-1.0.0-3.noarch.rpm"
   ],
-  "last_run": "2026-10-14T07:57:12Z",
+  "last_run": "2026-10-14T08:17:23Z",
   "dispatched": [
     1791962277,
     1791962356,
