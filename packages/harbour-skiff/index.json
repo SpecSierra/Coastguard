@@ -40,5 +40,73 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38461630205",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-skiff/1ff818460afad7c4daabb8836c362ba9047a9879e6b67122f4cd1e3c55e0f518.md"
     }
+  },
+  {
+    "sha256": "367d3696f03aa619409327a2269c4d6037fe88bc6ec3f0f4546682a69a91ab35",
+    "first_seen": "2026-10-14T15:58:26Z",
+    "package": "harbour-skiff-0.2.0-1.aarch64",
+    "version": "0.2.0-1",
+    "arch": "aarch64",
+    "buildtime": 1791992456,
+    "last_scanned": "2026-10-14T15:58:26Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 2,
+      "hosts_in_scripts": 15,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-skiff-0.1.0-1.aarch64",
+        "attention_count": 3,
+        "attention": [
+          {
+            "area": "D-Bus activation",
+            "change": "added",
+            "item": "/usr/share/dbus-1/services/org.skiff.skiff.service"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "update-desktop-database > /dev/null 2>&1 || :"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "update-desktop-database > /dev/null 2>&1 || :"
+          }
+        ],
+        "files": {
+          "added": 1,
+          "removed": 0,
+          "changed": 4,
+          "unchanged": 5
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38593894068",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-skiff/367d3696f03aa619409327a2269c4d6037fe88bc6ec3f0f4546682a69a91ab35.md"
+    }
   }
 ]
