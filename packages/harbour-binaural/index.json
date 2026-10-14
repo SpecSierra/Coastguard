@@ -228,5 +228,57 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38608462964",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-binaural/f4d1044560f2a60b76dc0768cf8aba9e5c98267a121840b1c12ccfe10d8496ed.md"
     }
+  },
+  {
+    "sha256": "ffe0ff81ff5c9290f2105f2cec1e0123da6ab90e235681ffece47d9dc0353ca4",
+    "first_seen": "2026-10-14T17:41:41Z",
+    "package": "harbour-binaural-0.8.1-1.i486",
+    "version": "0.8.1-1",
+    "arch": "i486",
+    "buildtime": 1791998868,
+    "last_scanned": "2026-10-14T17:41:41Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 5,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-binaural-0.8.0-1.i486",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 2,
+          "removed": 0,
+          "changed": 15,
+          "unchanged": 23
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38608708058",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-binaural/ffe0ff81ff5c9290f2105f2cec1e0123da6ab90e235681ffece47d9dc0353ca4.md"
+    }
   }
 ]
