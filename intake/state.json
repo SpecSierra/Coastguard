@@ -1,6 +1,13 @@
 {
-  "cursor": 1791979141,
-  "queue": [],
+  "cursor": 1791981061,
+  "queue": [
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/10743/harbour-binaural-0.8.0-1.i486.rpm",
+      "page": "https://openrepos.net/node/12690",
+      "appid": 12690,
+      "title": "Binaural"
+    }
+  ],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -281,12 +288,17 @@
     "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.8.3-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19358/harbour-openhab-0.4-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19358/harbour-openhab-0.4-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/19358/harbour-openhab-0.4-1.i486.rpm"
+    "https://openrepos.net/sites/default/files/packages/19358/harbour-openhab-0.4-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/10743/harbour-binaural-0.8.0-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/10743/harbour-binaural-0.8.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/10743/harbour-binaural-0.8.0-1.i486.rpm"
   ],
-  "last_run": "2026-10-14T12:21:45Z",
+  "last_run": "2026-10-14T12:40:50Z",
   "dispatched": [
     1791980246,
     1791980326,
-    1791980427
+    1791980427,
+    1791981447,
+    1791981550
   ]
 }
