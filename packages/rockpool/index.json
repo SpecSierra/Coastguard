@@ -1,0 +1,84 @@
+[
+  {
+    "sha256": "5cb0e601620e83fb4809fdc55852267ec7545952278bee25f8b0c494d7cc3f66",
+    "first_seen": "2026-10-14T14:38:52Z",
+    "package": "rockpool-2.0.2-1.aarch64",
+    "version": "2.0.2-1",
+    "arch": "aarch64",
+    "buildtime": 1791987768,
+    "last_scanned": "2026-10-14T14:38:52Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "privileged-files",
+            "text": "1 privileged file (setgid privileged)"
+          },
+          {
+            "level": "info",
+            "id": "own-sandbox-profile",
+            "text": "Own sandbox profile"
+          },
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Contacts"
+          },
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          },
+          {
+            "level": "info",
+            "id": "code-installs-persistence",
+            "text": "Code that installs persistence"
+          },
+          {
+            "level": "info",
+            "id": "code-sends-sms-or-places-calls",
+            "text": "Code that sends sms or places calls"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Installs Persistence",
+        "Sends SMS Or Places Calls"
+      ],
+      "sandbox": "declared",
+      "permissions": [
+        "AppLaunch",
+        "Contacts",
+        "Internet",
+        "Privileged",
+        "Rockpool",
+        "UserDirs",
+        "WebView"
+      ],
+      "own_sandbox_profile": true,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 1,
+      "system_hooks": [],
+      "scriptlets": 4,
+      "hosts_in_scripts": 7,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38582167232",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/rockpool/5cb0e601620e83fb4809fdc55852267ec7545952278bee25f8b0c494d7cc3f66.md"
+    }
+  }
+]

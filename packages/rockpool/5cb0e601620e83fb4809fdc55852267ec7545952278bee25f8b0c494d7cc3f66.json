@@ -1,0 +1,986 @@
+{
+  "verdict": "clean",
+  "name": "rockpool",
+  "version": "2.0.2-1",
+  "arch": "aarch64",
+  "package": "rockpool-2.0.2-1.aarch64",
+  "buildtime": 1791987768,
+  "sha256": "5cb0e601620e83fb4809fdc55852267ec7545952278bee25f8b0c494d7cc3f66",
+  "source": "https://openrepos.net/sites/default/files/packages/4801/rockpool-2.0.2-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/9563",
+  "scanned": "2026-10-14T14:38:52Z",
+  "files": 112,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28153/Wed Oct 14 06:24:15 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [
+    {
+      "rule": "Coastguard_Indicator_Installs_Persistence",
+      "files": [
+        "package.rpm",
+        "scriptlets.txt"
+      ]
+    },
+    {
+      "rule": "Coastguard_Indicator_Sends_SMS_Or_Places_Calls",
+      "files": [
+        "payload/usr/libexec/libpebble3d/libpebble3d-platform-sailfish-host"
+      ]
+    }
+  ],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 24,
+    "files": 24,
+    "bytes": 9677681,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/rockpool.desktop",
+          "name": "RockPool",
+          "exec": "invoker -s --type=browser -G /usr/bin/rockpool",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Rockpool",
+            "UserDirs",
+            "AppLaunch",
+            "WebView",
+            "Internet",
+            "Contacts",
+            "Privileged"
+          ],
+          "organization": null,
+          "application": null
+        }
+      ],
+      "shipped_profiles": [
+        "/etc/sailjail/permissions/Rockpool.permission"
+      ],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [
+        {
+          "path": "/usr/lib/systemd/user/libpebble3d.service",
+          "scope": "user",
+          "exec_start": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ],
+          "user": "device user",
+          "install_wanted_by": "user-session.target",
+          "enabled_by": [
+            "wanted by user-session.target (shipped symlink)",
+            "enabled or started from an install scriptlet"
+          ]
+        }
+      ],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [
+      {
+        "path": "/usr/libexec/libpebble3d/libpebble3d-platform-sailfish-launcher",
+        "mode": "-rwxr-sr-x",
+        "owner": "root",
+        "group": "privileged",
+        "why": [
+          "setgid privileged"
+        ]
+      }
+    ],
+    "scriptlets": [
+      {
+        "type": "preinstall",
+        "interpreter": "/bin/sh",
+        "lines": 4,
+        "notable": [
+          "systemctl-user stop rockpoold.service || :",
+          "systemctl-user disable rockpoold.service || :"
+        ],
+        "body": "systemctl-user stop rockpoold.service || :\nsystemctl-user disable rockpoold.service || :\n# Remember the installed override before RPM replaces it, including reinstalls.\nsha256sum /etc/systemd/system/bluetooth.service.d/50-libpebble3d.conf \\\n    > /run/rockpool-bluetooth-override.sha256 2>/dev/null || :\n"
+      },
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 12,
+        "notable": [
+          "systemctl daemon-reload || :",
+          "systemctl try-restart bluetooth.service || :",
+          "systemctl-user daemon-reload || :",
+          "systemctl-user start libpebble3d.service || :",
+          "systemctl-user try-restart libpebble3d.service || :"
+        ],
+        "body": "update-desktop-database\nsystemctl daemon-reload || :\n# Applying a new override needs a restart; unchanged upgrades must preserve links.\nif ! sha256sum --check --status /run/rockpool-bluetooth-override.sha256 2>/dev/null; then\n    systemctl try-restart bluetooth.service || :\nfi\nrm -f /run/rockpool-bluetooth-override.sha256\nsystemctl-user daemon-reload || :\nif [ \"$1\" = \"1\" ]; then\n    systemctl-user start libpebble3d.service || :\nelse\n    systemctl-user try-restart libpebble3d.service || :\nfi\n"
+      },
+      {
+        "type": "preuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 3,
+        "notable": [
+          "systemctl-user stop libpebble3d.service || :"
+        ],
+        "body": "if [ \"$1\" = \"0\" ]; then\n    systemctl-user stop libpebble3d.service || :\nfi\n"
+      },
+      {
+        "type": "postuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 5,
+        "notable": [
+          "systemctl-user daemon-reload || :",
+          "systemctl daemon-reload || :",
+          "systemctl try-restart bluetooth.service || :"
+        ],
+        "body": "systemctl-user daemon-reload || :\nif [ \"$1\" = \"0\" ]; then\n    systemctl daemon-reload || :\n    systemctl try-restart bluetooth.service || :\nfi\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 63,
+      "hosts_in_scripts": 7,
+      "hosts": [
+        {
+          "host": "boot.rebble.io",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d",
+            "/usr/share/rockpool/qml/pages/AppSettingsPage.qml",
+            "/usr/share/rockpool/qml/pages/SettingsPage.qml"
+          ]
+        },
+        {
+          "host": "askubuntu.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/rockpool/qml/pages/DeveloperToolsPage.qml",
+            "/usr/share/rockpool/qml/pages/MainMenuPage.qml"
+          ]
+        },
+        {
+          "host": "geocoding-api.open-meteo.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/rockpool/qml/pages/LocationPicker.qml"
+          ]
+        },
+        {
+          "host": "lp.rebble.io",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/rockpool/qml/pages/WatchLanguageSelector.qml"
+          ]
+        },
+        {
+          "host": "mozilla.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/rockpool/jsm/PebbleProtoHandle.js"
+          ]
+        },
+        {
+          "host": "ndocs.repebble.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/rockpool/qml/pages/FirmwareUpgradePage.qml"
+          ]
+        },
+        {
+          "host": "open-meteo.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/rockpool/qml/pages/LocationPicker.qml",
+            "/usr/share/rockpool/qml/pages/WeatherSettingsDialog.qml"
+          ]
+        },
+        {
+          "host": "www.oracle.com",
+          "urls": 16,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "xml.org",
+          "urls": 14,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "java.sun.com",
+          "urls": 8,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "www.slf4j.org",
+          "urls": 8,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "appstore-api.rebble.io",
+          "urls": 5,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/rockpool",
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "d.symcb.com",
+          "urls": 5,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "javax.xml.xmlconstants",
+          "urls": 5,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "cacerts.digicert.com",
+          "urls": 4,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "crl3.digicert.com",
+          "urls": 4,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "github.com",
+          "urls": 4,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "www.d-trust.net",
+          "urls": 4,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "www.graalvm.org",
+          "urls": 4,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "youtrack.jetbrains.com",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "crl.certigna.fr",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "crl.comodo.net",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "crl.comodoca.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "crl.dhimyotis.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "crl.securetrust.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "crl.usertrust.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "crl.xrampsecurity.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "crl4.digicert.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "javax.xml.transform.sax.saxtransformerfactory",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "ktor.io",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "logo.verisign.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "repository.swisssign.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "s.symcb.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "ts-aia.ws.symantec.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "ts-crl.ws.symantec.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "www.digicert.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "www.quovadisglobal.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "wwww.certigna.fr",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "7683ow76eq-dsn.algolia.net",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/rockpool",
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "api.github.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "api.open-meteo.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "cloudpebble-proxy.repebble.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "cohorts.rebble.io",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "issuetracker.google.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "javax.xml.transform.dom.domresult",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "javax.xml.transform.dom.domsource",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "javax.xml.transform.sax.saxresult",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "javax.xml.transform.sax.saxsource",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "javax.xml.transform.stax.staxresult",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "javax.xml.transform.stax.staxsource",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "javax.xml.transform.stream.streamresult",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "javax.xml.transform.stream.streamsource",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "kotl.in",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "ocsp.digicert.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "ocsp.quovadisoffshore.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "policy.camerfirma.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "repository.luxtrust.lu",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "s.symcd.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "timeline-sync.rebble.io",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "ts-ocsp.ws.symantec.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "www.freedesktop.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "www.quovadis.bm",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        },
+        {
+          "host": "www.usertrust.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/libpebble3d/libpebble3d"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "askubuntu.com",
+        "boot.rebble.io",
+        "geocoding-api.open-meteo.com",
+        "lp.rebble.io",
+        "mozilla.org",
+        "ndocs.repebble.com",
+        "open-meteo.com"
+      ],
+      "hosts_binaries": [
+        "7683ow76eq-dsn.algolia.net",
+        "api.github.com",
+        "api.open-meteo.com",
+        "appstore-api.rebble.io",
+        "cacerts.digicert.com",
+        "cloudpebble-proxy.repebble.com",
+        "cohorts.rebble.io",
+        "crl.certigna.fr",
+        "crl.comodo.net",
+        "crl.comodoca.com",
+        "crl.dhimyotis.com",
+        "crl.securetrust.com",
+        "crl.usertrust.com",
+        "crl.xrampsecurity.com",
+        "crl3.digicert.com",
+        "crl4.digicert.com",
+        "d.symcb.com",
+        "github.com",
+        "issuetracker.google.com",
+        "java.sun.com",
+        "javax.xml.transform.dom.domresult",
+        "javax.xml.transform.dom.domsource",
+        "javax.xml.transform.sax.saxresult",
+        "javax.xml.transform.sax.saxsource",
+        "javax.xml.transform.sax.saxtransformerfactory",
+        "javax.xml.transform.stax.staxresult",
+        "javax.xml.transform.stax.staxsource",
+        "javax.xml.transform.stream.streamresult",
+        "javax.xml.transform.stream.streamsource",
+        "javax.xml.xmlconstants",
+        "kotl.in",
+        "ktor.io",
+        "logo.verisign.com",
+        "ocsp.digicert.com",
+        "ocsp.quovadisoffshore.com",
+        "policy.camerfirma.com",
+        "repository.luxtrust.lu",
+        "repository.swisssign.com",
+        "s.symcb.com",
+        "s.symcd.com",
+        "timeline-sync.rebble.io",
+        "ts-aia.ws.symantec.com",
+        "ts-crl.ws.symantec.com",
+        "ts-ocsp.ws.symantec.com",
+        "www.d-trust.net",
+        "www.digicert.com",
+        "www.freedesktop.org",
+        "www.graalvm.org",
+        "www.oracle.com",
+        "www.quovadis.bm",
+        "www.quovadisglobal.com",
+        "www.slf4j.org",
+        "www.usertrust.com",
+        "wwww.certigna.fr",
+        "xml.org",
+        "youtrack.jetbrains.com"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 630738,
+        "malicious": 424
+      },
+      "notable": [],
+      "ignored_hosts": 6
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 7,
+      "unknown": 7,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 7,
+      "unknown": 7,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38582167232",
+  "diff": null,
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "privileged-files",
+        "text": "1 privileged file (setgid privileged)"
+      },
+      {
+        "level": "info",
+        "id": "own-sandbox-profile",
+        "text": "Own sandbox profile"
+      },
+      {
+        "level": "info",
+        "id": "personal-data",
+        "text": "Personal data: Contacts"
+      },
+      {
+        "level": "info",
+        "id": "background-start",
+        "text": "Starts in the background"
+      },
+      {
+        "level": "info",
+        "id": "code-installs-persistence",
+        "text": "Code that installs persistence"
+      },
+      {
+        "level": "info",
+        "id": "code-sends-sms-or-places-calls",
+        "text": "Code that sends sms or places calls"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/rockpool/5cb0e601620e83fb4809fdc55852267ec7545952278bee25f8b0c494d7cc3f66.md"
+}
