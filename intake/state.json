@@ -1,5 +1,5 @@
 {
-  "cursor": 1791945361,
+  "cursor": 1791962161,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -272,8 +272,17 @@
     "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.46.14-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.46.14-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.8.1-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/19602/silisili-native-devel-1.1.0-1.59.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/19602/silisili-native-devel-1.1.0-1.59.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.8.2-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/16972/spinny-0.9-1.noarch.rpm",
+    "https://openrepos.net/sites/default/files/packages/19742/felis-sharp-caller-photo-1.0.0-3.noarch.rpm",
+    "https://openrepos.net/sites/default/files/packages/19742/felis-phone-start-page-1.0.0-3.noarch.rpm"
   ],
-  "last_run": "2026-10-14T06:57:16Z",
-  "dispatched": []
+  "last_run": "2026-10-14T07:23:57Z",
+  "dispatched": [
+    1791962277,
+    1791962356,
+    1791962520,
+    1791962579
+  ]
 }
