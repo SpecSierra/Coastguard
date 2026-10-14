@@ -124,5 +124,57 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38573312810",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-binaural/4afd1f4239351a1b7ca206af593e848330407664e1cce47195ddb9436c2d6c92.md"
     }
+  },
+  {
+    "sha256": "b23573fb1f3c5269d278dcca2c80da63ecdb4efc455b2929d6ece18ae7d34a66",
+    "first_seen": "2026-10-14T17:38:19Z",
+    "package": "harbour-binaural-0.8.1-1.armv7hl",
+    "version": "0.8.1-1",
+    "arch": "armv7hl",
+    "buildtime": 1791998704,
+    "last_scanned": "2026-10-14T17:38:19Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 5,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-binaural-0.8.0-1.armv7hl",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 2,
+          "removed": 0,
+          "changed": 15,
+          "unchanged": 23
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38608221552",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-binaural/b23573fb1f3c5269d278dcca2c80da63ecdb4efc455b2929d6ece18ae7d34a66.md"
+    }
   }
 ]
