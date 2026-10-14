@@ -1,0 +1,113 @@
+{
+  "verdict": "clean",
+  "name": "felis-sharp-caller-photo",
+  "version": "1.0.0-3",
+  "arch": "noarch",
+  "package": "felis-sharp-caller-photo-1.0.0-3.noarch",
+  "buildtime": 1791959123,
+  "sha256": "dbd8664b5bf465166a60e324cd572e5309cb3a760bcdd30896aae0d721527e54",
+  "source": "https://openrepos.net/sites/default/files/packages/19742/felis-sharp-caller-photo-1.0.0-3.noarch.rpm",
+  "source_page": "https://openrepos.net/node/12669",
+  "scanned": "2026-10-14T07:22:35Z",
+  "files": 7,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28153/Wed Oct 14 06:24:15 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {
+      "system UI patches": [
+        "/usr/share/patchmanager/patches/felis-sharp-caller-photo/patch.json",
+        "/usr/share/patchmanager/patches/felis-sharp-caller-photo/unified_diff.patch"
+      ]
+    },
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "preinstall",
+        "interpreter": "/bin/sh",
+        "lines": 3,
+        "notable": [],
+        "body": "if [ -d /tmp/patchmanager3/patches/felis-sharp-caller-photo ]; then\n    /usr/sbin/patchmanager -u felis-sharp-caller-photo || true\nfi\n"
+      },
+      {
+        "type": "preuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 3,
+        "notable": [],
+        "body": "if [ -d /tmp/patchmanager3/patches/felis-sharp-caller-photo ]; then\n    /usr/sbin/patchmanager -u felis-sharp-caller-photo || true\nfi\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 0,
+      "hosts_in_scripts": 0,
+      "hosts": [],
+      "hosts_scripts": [],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 630738,
+        "malicious": 424
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38527847726",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "id": "hook-system-ui-patches",
+        "text": "System hook: system UI patches"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/felis-sharp-caller-photo/dbd8664b5bf465166a60e324cd572e5309cb3a760bcdd30896aae0d721527e54.md"
+}

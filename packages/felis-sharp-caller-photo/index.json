@@ -1,0 +1,50 @@
+[
+  {
+    "sha256": "dbd8664b5bf465166a60e324cd572e5309cb3a760bcdd30896aae0d721527e54",
+    "first_seen": "2026-10-14T07:22:35Z",
+    "package": "felis-sharp-caller-photo-1.0.0-3.noarch",
+    "version": "1.0.0-3",
+    "arch": "noarch",
+    "buildtime": 1791959123,
+    "last_scanned": "2026-10-14T07:22:35Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "hook-system-ui-patches",
+            "text": "System hook: system UI patches"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [
+        "system UI patches"
+      ],
+      "scriptlets": 2,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38527847726",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/felis-sharp-caller-photo/dbd8664b5bf465166a60e324cd572e5309cb3a760bcdd30896aae0d721527e54.md"
+    }
+  }
+]
