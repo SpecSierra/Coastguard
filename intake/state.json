@@ -304,10 +304,8 @@
     "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.1-3.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19742/harbour-felisnetatmo-0.1.0-15.aarch64.rpm"
   ],
-  "last_run": "2026-10-14T22:17:12Z",
+  "last_run": "2026-10-14T22:37:12Z",
   "dispatched": [
-    1792012644,
-    1792012745,
     1792013856,
     1792013936,
     1792014017
