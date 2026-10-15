@@ -966,6 +966,87 @@
     }
   },
   {
+    "sha256": "3f7a9b68d46900dab35f28b655660fa73897442805d8f034575e780ee8e6208e",
+    "first_seen": "2026-10-15T10:41:35Z",
+    "package": "futo-keyboard-sailfish-0.9.0-1.aarch64",
+    "version": "0.9.0-1",
+    "arch": "aarch64",
+    "buildtime": 1792057623,
+    "last_scanned": "2026-10-15T10:41:35Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "high",
+        "reasons": [
+          {
+            "level": "high",
+            "id": "privileged-files",
+            "text": "6 privileged files (setgid privileged, setuid root)"
+          },
+          {
+            "level": "medium",
+            "id": "hook-polkit",
+            "text": "System hook: polkit"
+          },
+          {
+            "level": "medium",
+            "id": "code-reads-raw-input-devices",
+            "text": "Code that reads raw input devices"
+          },
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Reads Raw Input Devices"
+      ],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 6,
+      "system_hooks": [
+        "polkit"
+      ],
+      "scriptlets": 3,
+      "hosts_in_scripts": 11,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "futo-keyboard-sailfish-0.8.0-2.aarch64",
+        "attention_count": 1,
+        "attention": [
+          {
+            "area": "host",
+            "change": "added",
+            "item": "dl.keyboard.futo.org"
+          }
+        ],
+        "files": {
+          "added": 32,
+          "removed": 0,
+          "changed": 33,
+          "unchanged": 187
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38721981784",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/futo-keyboard-sailfish/3f7a9b68d46900dab35f28b655660fa73897442805d8f034575e780ee8e6208e.md"
+    }
+  },
+  {
     "sha256": "f20c1418f2585ce606d480ac2ebd071c8d91b13c821a4ad539607e4ad550bf19",
     "first_seen": "2026-10-15T10:38:22Z",
     "package": "futo-keyboard-sailfish-0.9.0-1.i486",
