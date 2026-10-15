@@ -1,0 +1,60 @@
+[
+  {
+    "sha256": "9c23e0ee0062a025c5d12d0efce92d334bdd7a67718941243f6697a4e45bf663",
+    "first_seen": "2026-10-15T03:18:44Z",
+    "package": "sfos-quickshare-0.1.1-1.aarch64",
+    "version": "0.1.1-1",
+    "arch": "aarch64",
+    "buildtime": 1792033293,
+    "last_scanned": "2026-10-15T03:18:44Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "script-address",
+            "text": "Script uses a paste, tunnel, webhook or raw-download service"
+          },
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          },
+          {
+            "level": "info",
+            "id": "code-installs-persistence",
+            "text": "Code that installs persistence"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Installs Persistence"
+      ],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 38,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38675485564",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/sfos-quickshare/9c23e0ee0062a025c5d12d0efce92d334bdd7a67718941243f6697a4e45bf663.md"
+    }
+  }
+]
