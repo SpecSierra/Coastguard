@@ -1,5 +1,5 @@
 {
-  "cursor": 1792045292,
+  "cursor": 1792048237,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -308,12 +308,15 @@
     "https://openrepos.net/sites/default/files/packages/2414/sfos-quickshare-0.1.1-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19814/suuntosync-notifyd-1.4.0-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19814/harbour-suuntosync-1.4.0-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/2414/sfos-quickshare-0.1.4-1.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/2414/sfos-quickshare-0.1.4-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19754/harbour-sailfeed-1.1.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19754/harbour-sailfeed-1.1.0-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19754/harbour-sailfeed-1.1.0-1.i486.rpm"
   ],
-  "last_run": "2026-10-15T06:57:12Z",
+  "last_run": "2026-10-15T07:21:30Z",
   "dispatched": [
-    1792043849,
-    1792043929,
-    1792045044
+    1792048649,
+    1792048730,
+    1792048811
   ]
 }
