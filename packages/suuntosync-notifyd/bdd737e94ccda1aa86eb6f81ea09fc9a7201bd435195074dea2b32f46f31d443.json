@@ -1,0 +1,177 @@
+{
+  "verdict": "clean",
+  "name": "suuntosync-notifyd",
+  "version": "1.4.0-1",
+  "arch": "aarch64",
+  "package": "suuntosync-notifyd-1.4.0-1.aarch64",
+  "buildtime": 1791871586,
+  "sha256": "bdd737e94ccda1aa86eb6f81ea09fc9a7201bd435195074dea2b32f46f31d443",
+  "source": "https://openrepos.net/sites/default/files/packages/19814/suuntosync-notifyd-1.4.0-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12725",
+  "scanned": "2026-10-15T05:58:02Z",
+  "files": 7,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28153/Wed Oct 14 06:24:15 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [
+    {
+      "rule": "Coastguard_Indicator_Sends_SMS_Or_Places_Calls",
+      "files": [
+        "payload/usr/bin/suuntosync-notifyd"
+      ]
+    }
+  ],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [
+        {
+          "path": "/usr/lib/systemd/user/suuntosync-notifyd.service",
+          "scope": "user",
+          "exec_start": [
+            "/usr/bin/suuntosync-notifyd"
+          ],
+          "user": "device user",
+          "install_wanted_by": "user-session.target",
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        }
+      ],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [
+      {
+        "path": "/usr/bin/suuntosync-notifyd",
+        "mode": "-rwxr-sr-x",
+        "owner": "root",
+        "group": "privileged",
+        "why": [
+          "setgid privileged"
+        ]
+      }
+    ],
+    "scriptlets": [
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 3,
+        "notable": [
+          "systemctl-user daemon-reload || :",
+          "systemctl-user enable suuntosync-notifyd.service || :",
+          "systemctl-user restart suuntosync-notifyd.service || :"
+        ],
+        "body": "systemctl-user daemon-reload || :\nsystemctl-user enable suuntosync-notifyd.service || :\n# restart, not \"enable --now\": --now does nothing to a service that is\n# already running, so an upgrade left the old binary in place and the new\n# one sitting unused on disk. restart starts it when stopped and replaces it\n# when running, which is what both an install and an upgrade want.\nsystemctl-user restart suuntosync-notifyd.service || :\n"
+      },
+      {
+        "type": "preuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 3,
+        "notable": [
+          "systemctl-user disable --now suuntosync-notifyd.service || :"
+        ],
+        "body": "if [ \"$1\" = 0 ]; then\n    systemctl-user disable --now suuntosync-notifyd.service || :\nfi\n"
+      },
+      {
+        "type": "postuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 1,
+        "notable": [
+          "systemctl-user daemon-reload || :"
+        ],
+        "body": "systemctl-user daemon-reload || :\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 1,
+      "hosts_in_scripts": 1,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/lib/systemd/user/suuntosync-notifyd.service"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "github.com"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 631117,
+        "malicious": 428
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38689619224",
+  "diff": null,
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "privileged-files",
+        "text": "1 privileged file (setgid privileged)"
+      },
+      {
+        "level": "info",
+        "id": "background-start",
+        "text": "Starts in the background"
+      },
+      {
+        "level": "info",
+        "id": "code-sends-sms-or-places-calls",
+        "text": "Code that sends sms or places calls"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/suuntosync-notifyd/bdd737e94ccda1aa86eb6f81ea09fc9a7201bd435195074dea2b32f46f31d443.md"
+}
