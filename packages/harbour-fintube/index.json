@@ -1,0 +1,55 @@
+[
+  {
+    "sha256": "8b9a26ab85e726a3d2b3739635c12da00e2c4708e6adbd2de10779633d848c64",
+    "first_seen": "2026-10-15T00:20:04Z",
+    "package": "harbour-fintube-1.5.0-2.aarch64",
+    "version": "1.5.0-2",
+    "arch": "aarch64",
+    "buildtime": 1792017196,
+    "last_scanned": "2026-10-15T00:20:04Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          },
+          {
+            "level": "medium",
+            "id": "code-reads-browser-profile-data",
+            "text": "Unsandboxed code that reads browser profile data"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Reads Browser Profile Data"
+      ],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 15,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38659343632",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-fintube/8b9a26ab85e726a3d2b3739635c12da00e2c4708e6adbd2de10779633d848c64.md"
+    }
+  }
+]
