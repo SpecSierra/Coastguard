@@ -335,11 +335,8 @@
     "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.7-2.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.7-2.armv7hl.rpm"
   ],
-  "last_run": "2026-10-15T19:01:42Z",
+  "last_run": "2026-10-15T19:17:15Z",
   "dispatched": [
-    1792087059,
-    1792087140,
-    1792087221,
     1792090635
   ]
 }
