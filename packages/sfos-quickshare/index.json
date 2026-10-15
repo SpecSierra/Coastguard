@@ -56,5 +56,73 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38675485564",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/sfos-quickshare/9c23e0ee0062a025c5d12d0efce92d334bdd7a67718941243f6697a4e45bf663.md"
     }
+  },
+  {
+    "sha256": "2d7d5ea58b0622716fb33ee775bcfbf3ed2729d749d46215c8090aec36b394f6",
+    "first_seen": "2026-10-15T06:18:37Z",
+    "package": "sfos-quickshare-0.1.4-1.aarch64",
+    "version": "0.1.4-1",
+    "arch": "aarch64",
+    "buildtime": 1792043805,
+    "last_scanned": "2026-10-15T06:18:37Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "script-address",
+            "text": "Script uses a paste, tunnel, webhook or raw-download service"
+          },
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          },
+          {
+            "level": "info",
+            "id": "code-installs-persistence",
+            "text": "Code that installs persistence"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Installs Persistence"
+      ],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 38,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "sfos-quickshare-0.1.1-1.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 2,
+          "removed": 1,
+          "changed": 13,
+          "unchanged": 352
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38691530621",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/sfos-quickshare/2d7d5ea58b0622716fb33ee775bcfbf3ed2729d749d46215c8090aec36b394f6.md"
+    }
   }
 ]
