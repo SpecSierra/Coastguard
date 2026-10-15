@@ -1,0 +1,353 @@
+{
+  "verdict": "clean",
+  "name": "harbour-speakergain",
+  "version": "0.2.1-1",
+  "arch": "armv7hl",
+  "package": "harbour-speakergain-0.2.1-1.armv7hl",
+  "buildtime": 1792082233,
+  "sha256": "277192a595e8caeeedd2cba7a7a2fd2c2da333010879eca221f669c1167335f9",
+  "source": "https://openrepos.net/sites/default/files/packages/19623/harbour-speakergain-0.2.1-1.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12593",
+  "scanned": "2026-10-15T17:59:40Z",
+  "files": 55,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28153/Wed Oct 14 06:24:15 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-speakergain.desktop",
+          "name": "Speaker Gain",
+          "exec": "harbour-speakergain",
+          "hidden": false,
+          "sandbox": "disabled",
+          "permissions": [],
+          "organization": "io.github.jimknopfiot",
+          "application": "harbour-speakergain"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [
+        {
+          "path": "/usr/lib/systemd/system/harbour-speakergain-softvol@.service",
+          "scope": "system",
+          "exec_start": [
+            "/usr/bin/harbour-speakergain --softvol %i"
+          ],
+          "user": "root",
+          "install_wanted_by": null,
+          "enabled_by": []
+        },
+        {
+          "path": "/usr/lib/systemd/user/harbour-speakergain-apply.service",
+          "scope": "user",
+          "exec_start": [
+            "/usr/bin/harbour-speakergain --apply-pending"
+          ],
+          "user": "device user",
+          "install_wanted_by": "post-user-session.target",
+          "enabled_by": []
+        }
+      ],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {
+      "udev rules": [
+        "/lib/udev/rules.d/91-harbour-speakergain-softvol.rules"
+      ],
+      "polkit": [
+        "/usr/share/polkit-1/rules.d/50-harbour-speakergain.rules"
+      ]
+    },
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 2,
+        "notable": [
+          "systemctl daemon-reload >/dev/null 2>&1 || :"
+        ],
+        "body": "# The rule naming the USB devices that get software volume.\nudevadm control --reload >/dev/null 2>&1 || :\nsystemctl daemon-reload >/dev/null 2>&1 || :\n"
+      },
+      {
+        "type": "postuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 5,
+        "notable": [
+          "systemctl daemon-reload >/dev/null 2>&1 || :"
+        ],
+        "body": "if [ \"$1\" = 0 ]; then\n    # Devices the app added on this phone go with it.\n    rm -f /etc/udev/rules.d/91-harbour-speakergain-softvol-local.rules\nfi\nudevadm control --reload >/dev/null 2>&1 || :\nsystemctl daemon-reload >/dev/null 2>&1 || :\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 0,
+      "hosts_in_scripts": 0,
+      "hosts": [],
+      "hosts_scripts": [],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 631117,
+        "malicious": 428
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38781823580",
+  "diff": {
+    "baseline": {
+      "sha256": "215f7d1be71f26a1e0157f21868170e9dc06e6098a68e99e80920ab975f3ab7e",
+      "package": "harbour-speakergain-0.2.0-2.armv7hl",
+      "last_scanned": "2026-10-15T13:39:32Z"
+    },
+    "changes": [
+      {
+        "area": "systemd unit",
+        "change": "added",
+        "item": "/usr/lib/systemd/system/harbour-speakergain-softvol@.service",
+        "attention": true,
+        "detail": "as root: /usr/bin/harbour-speakergain --softvol %i (not enabled by the package)"
+      },
+      {
+        "area": "system hook",
+        "change": "added",
+        "item": "/usr/share/polkit-1/rules.d/50-harbour-speakergain.rules",
+        "attention": true,
+        "detail": "polkit"
+      },
+      {
+        "area": "system hook",
+        "change": "added",
+        "item": "/lib/udev/rules.d/91-harbour-speakergain-softvol.rules",
+        "attention": true,
+        "detail": "udev rules"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "systemctl daemon-reload >/dev/null 2>&1 || :",
+        "attention": true,
+        "detail": "postinstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "udevadm control --reload >/dev/null 2>&1 || :",
+        "attention": true,
+        "detail": "postinstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "fi",
+        "attention": true,
+        "detail": "postuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "if [ \"$1\" = 0 ]; then",
+        "attention": true,
+        "detail": "postuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "rm -f /etc/udev/rules.d/91-harbour-speakergain-softvol-local.rules",
+        "attention": true,
+        "detail": "postuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "systemctl daemon-reload >/dev/null 2>&1 || :",
+        "attention": true,
+        "detail": "postuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "udevadm control --reload >/dev/null 2>&1 || :",
+        "attention": true,
+        "detail": "postuninstall"
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/lib/udev/rules.d/91-harbour-speakergain-softvol.rules",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/lib/systemd/system/harbour-speakergain-softvol@.service",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/harbour-speakergain/qml/pages/DiagnosticsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/polkit-1/rules.d/50-harbour-speakergain.rules",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/pulseaudio/alsa-mixer/paths/harbour-speakergain-softvol-input.conf",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/pulseaudio/alsa-mixer/paths/harbour-speakergain-softvol-output.conf",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/pulseaudio/alsa-mixer/profile-sets/harbour-speakergain-softvol.conf",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/harbour-speakergain",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-speakergain/qml/pages/AboutPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-speakergain/qml/pages/OutputsView.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-speakergain/translations/harbour-speakergain-de.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-speakergain/translations/harbour-speakergain-en.qm",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 7,
+        "removed": 0,
+        "changed": 5,
+        "unchanged": 11
+      }
+    }
+  },
+  "risk": {
+    "grade": "high",
+    "reasons": [
+      {
+        "level": "high",
+        "id": "root-service-no-sandbox",
+        "text": "Root service and no sandbox"
+      },
+      {
+        "level": "medium",
+        "id": "sandbox-off",
+        "text": "Sandbox turned off"
+      },
+      {
+        "level": "medium",
+        "id": "root-services",
+        "text": "1 root service"
+      },
+      {
+        "level": "medium",
+        "id": "hook-polkit",
+        "text": "System hook: polkit"
+      },
+      {
+        "level": "medium",
+        "id": "hook-udev-rules",
+        "text": "System hook: udev rules"
+      },
+      {
+        "level": "medium",
+        "id": "new-service",
+        "text": "New background service"
+      },
+      {
+        "level": "medium",
+        "id": "new-hook-polkit",
+        "text": "New system hook: polkit"
+      },
+      {
+        "level": "medium",
+        "id": "new-hook-udev-rules",
+        "text": "New system hook: udev rules"
+      },
+      {
+        "level": "info",
+        "id": "background-start",
+        "text": "Starts in the background"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-speakergain/277192a595e8caeeedd2cba7a7a2fd2c2da333010879eca221f669c1167335f9.md"
+}
