@@ -565,5 +565,80 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38782008927",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-rootitanium/1cc9723d34b63068ac67a48163d024c2591ceddc38f2d8b7327a1891c1ce39e7.md"
     }
+  },
+  {
+    "sha256": "0f9b4b17b3de6a3b220a495dfe31a2bc9f97341d214cefe58e4cf5a3a8cc48b5",
+    "first_seen": "2026-10-15T18:58:50Z",
+    "package": "harbour-rootitanium-2.7-2.armv7hl",
+    "version": "2.7-2",
+    "arch": "armv7hl",
+    "buildtime": 1792085450,
+    "last_scanned": "2026-10-15T18:58:50Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          },
+          {
+            "level": "medium",
+            "id": "hook-files-in-a-home-directory",
+            "text": "System hook: files in a home directory"
+          },
+          {
+            "level": "medium",
+            "id": "code-reads-raw-input-devices",
+            "text": "Code that reads raw input devices"
+          },
+          {
+            "level": "info",
+            "id": "bulk-hosts",
+            "text": "305 hosts in a bulk list are on no public block list"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Reads Raw Input Devices"
+      ],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [
+        "files in a home directory"
+      ],
+      "scriptlets": 0,
+      "hosts_in_scripts": 40,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-rootitanium-2.6-1.armv7hl",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 2,
+          "unchanged": 2047
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38789878629",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-rootitanium/0f9b4b17b3de6a3b220a495dfe31a2bc9f97341d214cefe58e4cf5a3a8cc48b5.md"
+    }
   }
 ]
