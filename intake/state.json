@@ -1,5 +1,5 @@
 {
-  "cursor": 1792086001,
+  "cursor": 1792100011,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -333,8 +333,11 @@
     "https://openrepos.net/sites/default/files/packages/19623/harbour-speakergain-0.2.1-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19623/harbour-speakergain-0.2.1-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.7-2.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.7-2.armv7hl.rpm"
+    "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.7-2.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19799/harbour-kibble-1.2.2-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-15T21:17:12Z",
-  "dispatched": []
+  "last_run": "2026-10-15T21:38:54Z",
+  "dispatched": [
+    1792100255
+  ]
 }
