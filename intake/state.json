@@ -1,5 +1,5 @@
 {
-  "cursor": 1792070401,
+  "cursor": 1792071961,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -322,11 +322,17 @@
     "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.6.0-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/117/harbour-whatsup-1.6.0-1.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/19623/harbour-speakergain-0.2.0-2.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/19623/harbour-speakergain-0.2.0-2.armv7hl.rpm"
+    "https://openrepos.net/sites/default/files/packages/19623/harbour-speakergain-0.2.0-2.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/16198/harbour-clipper-0.4.6-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/16198/harbour-clipper-0.4.6-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/16198/harbour-clipper-0.4.6-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-15T13:40:09Z",
+  "last_run": "2026-10-15T14:01:52Z",
   "dispatched": [
     1792071447,
-    1792071529
+    1792071529,
+    1792072648,
+    1792072730,
+    1792072832
   ]
 }
