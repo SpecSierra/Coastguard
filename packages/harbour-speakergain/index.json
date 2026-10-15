@@ -100,5 +100,155 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38744468464",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-speakergain/215f7d1be71f26a1e0157f21868170e9dc06e6098a68e99e80920ab975f3ab7e.md"
     }
+  },
+  {
+    "sha256": "d80a91867b826b46e4239a1e96a928644350fec5b9d4baf7166fa81686b1adcb",
+    "first_seen": "2026-10-15T17:58:17Z",
+    "package": "harbour-speakergain-0.2.1-1.aarch64",
+    "version": "0.2.1-1",
+    "arch": "aarch64",
+    "buildtime": 1792082216,
+    "last_scanned": "2026-10-15T17:58:17Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "high",
+        "reasons": [
+          {
+            "level": "high",
+            "id": "root-service-no-sandbox",
+            "text": "Root service and no sandbox"
+          },
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          },
+          {
+            "level": "medium",
+            "id": "root-services",
+            "text": "1 root service"
+          },
+          {
+            "level": "medium",
+            "id": "hook-polkit",
+            "text": "System hook: polkit"
+          },
+          {
+            "level": "medium",
+            "id": "hook-udev-rules",
+            "text": "System hook: udev rules"
+          },
+          {
+            "level": "medium",
+            "id": "new-service",
+            "text": "New background service"
+          },
+          {
+            "level": "medium",
+            "id": "new-hook-polkit",
+            "text": "New system hook: polkit"
+          },
+          {
+            "level": "medium",
+            "id": "new-hook-udev-rules",
+            "text": "New system hook: udev rules"
+          },
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 2,
+      "root_services": 1,
+      "privileged_files": 0,
+      "system_hooks": [
+        "polkit",
+        "udev rules"
+      ],
+      "scriptlets": 2,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-speakergain-0.2.0-2.aarch64",
+        "attention_count": 10,
+        "attention": [
+          {
+            "area": "systemd unit",
+            "change": "added",
+            "item": "/usr/lib/systemd/system/harbour-speakergain-softvol@.service"
+          },
+          {
+            "area": "system hook",
+            "change": "added",
+            "item": "/usr/share/polkit-1/rules.d/50-harbour-speakergain.rules"
+          },
+          {
+            "area": "system hook",
+            "change": "added",
+            "item": "/lib/udev/rules.d/91-harbour-speakergain-softvol.rules"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "systemctl daemon-reload >/dev/null 2>&1 || :"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "udevadm control --reload >/dev/null 2>&1 || :"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "fi"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "if [ \"$1\" = 0 ]; then"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "rm -f /etc/udev/rules.d/91-harbour-speakergain-softvol-local.rules"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "systemctl daemon-reload >/dev/null 2>&1 || :"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "udevadm control --reload >/dev/null 2>&1 || :"
+          }
+        ],
+        "files": {
+          "added": 7,
+          "removed": 0,
+          "changed": 5,
+          "unchanged": 11
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38781645344",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-speakergain/d80a91867b826b46e4239a1e96a928644350fec5b9d4baf7166fa81686b1adcb.md"
+    }
   }
 ]
