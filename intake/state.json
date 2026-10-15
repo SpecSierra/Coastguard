@@ -1,5 +1,5 @@
 {
-  "cursor": 1792080865,
+  "cursor": 1792085581,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -327,11 +327,13 @@
     "https://openrepos.net/sites/default/files/packages/16198/harbour-clipper-0.4.6-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/16198/harbour-clipper-0.4.6-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.6-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.6-1.armv7hl.rpm"
+    "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.6-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/1867/harbour-whisperfish-0.6.0.beta_.46-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/1867/harbour-whisperfish-0.6.0.beta_.46-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-15T17:17:11Z",
+  "last_run": "2026-10-15T17:41:43Z",
   "dispatched": [
-    1792081062,
-    1792081337
+    1792085859,
+    1792085982
   ]
 }
