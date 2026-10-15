@@ -1,6 +1,13 @@
 {
-  "cursor": 1792085581,
-  "queue": [],
+  "cursor": 1792086001,
+  "queue": [
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.7-2.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12451",
+      "appid": 12451,
+      "title": "RooTitanium"
+    }
+  ],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -329,11 +336,18 @@
     "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.6-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.6-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/1867/harbour-whisperfish-0.6.0.beta_.46-1.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/1867/harbour-whisperfish-0.6.0.beta_.46-1.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/1867/harbour-whisperfish-0.6.0.beta_.46-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19623/harbour-speakergain-0.2.1-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19623/harbour-speakergain-0.2.1-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.7-2.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.7-2.armv7hl.rpm"
   ],
-  "last_run": "2026-10-15T17:41:43Z",
+  "last_run": "2026-10-15T18:04:27Z",
   "dispatched": [
     1792085859,
-    1792085982
+    1792085982,
+    1792087059,
+    1792087140,
+    1792087221
   ]
 }
