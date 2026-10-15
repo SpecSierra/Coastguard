@@ -1,6 +1,13 @@
 {
-  "cursor": 1792048237,
-  "queue": [],
+  "cursor": 1792050573,
+  "queue": [
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/16198/harbour-fahrplan2-2.0.58-1.i486.rpm",
+      "page": "https://openrepos.net/node/11580",
+      "appid": 11580,
+      "title": "Fahrplan (fork)"
+    }
+  ],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -311,12 +318,17 @@
     "https://openrepos.net/sites/default/files/packages/2414/sfos-quickshare-0.1.4-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19754/harbour-sailfeed-1.1.0-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19754/harbour-sailfeed-1.1.0-1.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/19754/harbour-sailfeed-1.1.0-1.i486.rpm"
+    "https://openrepos.net/sites/default/files/packages/19754/harbour-sailfeed-1.1.0-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/16198/harbour-fahrplan2-2.0.58-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/16198/harbour-fahrplan2-2.0.58-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/16198/harbour-fahrplan2-2.0.58-1.i486.rpm"
   ],
-  "last_run": "2026-10-15T07:37:12Z",
+  "last_run": "2026-10-15T08:00:12Z",
   "dispatched": [
     1792048649,
     1792048730,
-    1792048811
+    1792048811,
+    1792051051,
+    1792051132
   ]
 }
