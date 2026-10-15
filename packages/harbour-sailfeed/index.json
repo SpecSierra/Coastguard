@@ -145,5 +145,75 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38182590922",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-sailfeed/009022711b3608a4c9c8dea53d2a44188695b23c983932fa59cd6fce1f07f3eb.md"
     }
+  },
+  {
+    "sha256": "58f34aa8511b098cbc339555e1f1ad2cb4f4e6202f48966b4ee5ff5efd41fe85",
+    "first_seen": "2026-10-15T07:18:11Z",
+    "package": "harbour-sailfeed-1.1.0-1.aarch64",
+    "version": "1.1.0-1",
+    "arch": "aarch64",
+    "buildtime": 1792045750,
+    "last_scanned": "2026-10-15T07:18:11Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Secrets"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "Secrets"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 10,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-sailfeed-1.0.0-1.aarch64",
+        "attention_count": 2,
+        "attention": [
+          {
+            "area": "host",
+            "change": "added",
+            "item": "apps.nextcloud.com"
+          },
+          {
+            "area": "host",
+            "change": "added",
+            "item": "nextcloud.github.io"
+          }
+        ],
+        "files": {
+          "added": 10,
+          "removed": 0,
+          "changed": 19,
+          "unchanged": 25
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38697757604",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-sailfeed/58f34aa8511b098cbc339555e1f1ad2cb4f4e6202f48966b4ee5ff5efd41fe85.md"
+    }
   }
 ]
