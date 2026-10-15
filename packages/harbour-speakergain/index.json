@@ -49,5 +49,56 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38744278974",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-speakergain/e7cb061af5809d205effa82310eb1dd358cb0c1b752fcd21f051322c265db3e6.md"
     }
+  },
+  {
+    "sha256": "215f7d1be71f26a1e0157f21868170e9dc06e6098a68e99e80920ab975f3ab7e",
+    "first_seen": "2026-10-15T13:39:32Z",
+    "package": "harbour-speakergain-0.2.0-2.armv7hl",
+    "version": "0.2.0-2",
+    "arch": "armv7hl",
+    "buildtime": 1792069911,
+    "last_scanned": "2026-10-15T13:39:32Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          },
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38744468464",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-speakergain/215f7d1be71f26a1e0157f21868170e9dc06e6098a68e99e80920ab975f3ab7e.md"
+    }
   }
 ]
