@@ -86,5 +86,49 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38702424809",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-fahrplan2/ea2cceffa911b102df007f05a3cb6d5b2996d7e1584d4e4df0d0fee216683cbe.md"
     }
+  },
+  {
+    "sha256": "8662c2e2e63e8581ece6241d2f16843333c5edb2781a7f39faffaacc3ae395aa",
+    "first_seen": "2026-10-15T08:37:42Z",
+    "package": "harbour-fahrplan2-2.0.58-1.i486",
+    "version": "2.0.58-1",
+    "arch": "i486",
+    "buildtime": 1792049904,
+    "last_scanned": "2026-10-15T08:37:42Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "Location",
+        "UserDirs"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 8,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38706960724",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-fahrplan2/8662c2e2e63e8581ece6241d2f16843333c5edb2781a7f39faffaacc3ae395aa.md"
+    }
   }
 ]
