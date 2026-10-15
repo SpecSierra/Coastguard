@@ -316,8 +316,6 @@
     "https://openrepos.net/sites/default/files/packages/16198/harbour-fahrplan2-2.0.58-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/16198/harbour-fahrplan2-2.0.58-1.i486.rpm"
   ],
-  "last_run": "2026-10-15T09:37:10Z",
-  "dispatched": [
-    1792053432
-  ]
+  "last_run": "2026-10-15T09:57:11Z",
+  "dispatched": []
 }
