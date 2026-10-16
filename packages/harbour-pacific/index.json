@@ -1,0 +1,56 @@
+[
+  {
+    "sha256": "19d84cda6d3d7ecffd2e4caa5040098f10416fe92b9fab4ce21b7b01df6e3fc5",
+    "first_seen": "2026-10-16T15:51:13Z",
+    "package": "harbour-pacific-0.2.0-16.aarch64",
+    "version": "0.2.0-16",
+    "arch": "aarch64",
+    "buildtime": 1792159274,
+    "last_scanned": "2026-10-16T15:51:13Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "code-reads-raw-input-devices",
+            "text": "Code that reads raw input devices"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Reads Raw Input Devices"
+      ],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Downloads",
+        "Internet",
+        "Location",
+        "Microphone"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 14,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38927170791",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-pacific/19d84cda6d3d7ecffd2e4caa5040098f10416fe92b9fab4ce21b7b01df6e3fc5.md"
+    }
+  }
+]

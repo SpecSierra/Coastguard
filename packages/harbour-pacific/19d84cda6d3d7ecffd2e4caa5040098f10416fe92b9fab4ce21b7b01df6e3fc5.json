@@ -1,0 +1,883 @@
+{
+  "verdict": "clean",
+  "name": "harbour-pacific",
+  "version": "0.2.0-16",
+  "arch": "aarch64",
+  "package": "harbour-pacific-0.2.0-16.aarch64",
+  "buildtime": 1792159274,
+  "sha256": "19d84cda6d3d7ecffd2e4caa5040098f10416fe92b9fab4ce21b7b01df6e3fc5",
+  "source": "https://github.com/SpecSierra/Coastguard/releases/download/pacific-scan-tmp/harbour-pacific-0.2.0-16.aarch64.rpm",
+  "source_page": "",
+  "scanned": "2026-10-16T15:51:13Z",
+  "files": 353,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28155/Fri Oct 16 06:24:17 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [
+    {
+      "rule": "Coastguard_Indicator_Reads_Raw_Input_Devices",
+      "files": [
+        "payload/usr/share/harbour-pacific/lib/engine/libSDL3.so.0"
+      ]
+    }
+  ],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-pacific.desktop",
+          "name": "Pacific",
+          "exec": "harbour-pacific %U",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Audio",
+            "Microphone",
+            "Location",
+            "Downloads"
+          ],
+          "organization": "org.pacific",
+          "application": "harbour-pacific"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 62,
+      "hosts_in_scripts": 14,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 10,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/libcrypto.so.3",
+            "/usr/share/harbour-pacific/lib/engine/liblagom-web.so.0",
+            "/usr/share/harbour-pacific/lib/engine/liblagom-webview.so.0"
+          ]
+        },
+        {
+          "host": "www.xfa.org",
+          "urls": 9,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-pacific/share/Lagom/ladybird/pdfjs/build/pdf.worker.mjs"
+          ]
+        },
+        {
+          "host": "search.brave.com",
+          "urls": 5,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-webview.so.0",
+            "/usr/share/harbour-pacific/qml/searchEngines/brave.xml"
+          ]
+        },
+        {
+          "host": "www.google.com",
+          "urls": 5,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-webview.so.0",
+            "/usr/share/harbour-pacific/qml/pages/components/UrlUtils.js",
+            "/usr/share/harbour-pacific/qml/searchEngines/google.xml"
+          ]
+        },
+        {
+          "host": "www.mozilla.org",
+          "urls": 3,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-web.so.0",
+            "/usr/share/harbour-pacific/qml/searchEngines/brave.xml",
+            "/usr/share/harbour-pacific/qml/searchEngines/ecosia.xml"
+          ]
+        },
+        {
+          "host": "mozilla.github.io",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-pacific/share/Lagom/ladybird/pdfjs/web/viewer.mjs"
+          ]
+        },
+        {
+          "host": "www.ecosia.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/qml/searchEngines/ecosia.xml"
+          ]
+        },
+        {
+          "host": "aljazeera.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/share/Lagom/ladybird/site-compatibility/aljazeera.com.json"
+          ]
+        },
+        {
+          "host": "cnn.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/share/Lagom/ladybird/site-compatibility/cnn.com.json"
+          ]
+        },
+        {
+          "host": "foo.bar",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/share/Lagom/ladybird/pdfjs/build/pdf.mjs"
+          ]
+        },
+        {
+          "host": "jolla.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/qml/pages/BrowserPage.qml",
+            "/usr/share/harbour-pacific/qml/pages/SettingsPage.qml"
+          ]
+        },
+        {
+          "host": "mozilla.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-pacific/qml/browser.qml",
+            "/usr/share/harbour-pacific/qml/cover/BrowserCover.qml",
+            "/usr/share/harbour-pacific/qml/cover/NoTabsCover.qml"
+          ]
+        },
+        {
+          "host": "support.mozilla.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/share/Lagom/ladybird/pdfjs/web/viewer.html"
+          ]
+        },
+        {
+          "host": "www.nytimes.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/share/Lagom/ladybird/site-compatibility/nytimes.com.json"
+          ]
+        },
+        {
+          "host": "html.spec.whatwg.org",
+          "urls": 19,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-web.so.0"
+          ]
+        },
+        {
+          "host": "tc39.es",
+          "urls": 17,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-js.so.0"
+          ]
+        },
+        {
+          "host": "easylist-downloads.adblockplus.org",
+          "urls": 12,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-webview.so.0"
+          ]
+        },
+        {
+          "host": "raw.githubusercontent.com",
+          "urls": 6,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-webview.so.0"
+          ]
+        },
+        {
+          "host": "drafts.csswg.org",
+          "urls": 5,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-web.so.0"
+          ]
+        },
+        {
+          "host": "easylist.to",
+          "urls": 4,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-webview.so.0"
+          ]
+        },
+        {
+          "host": "curl.se",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/libcurl.so.4"
+          ]
+        },
+        {
+          "host": "duckduckgo.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-webview.so.0"
+          ]
+        },
+        {
+          "host": "ns.apple.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/libskia.so"
+          ]
+        },
+        {
+          "host": "ns.google.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/libskia.so"
+          ]
+        },
+        {
+          "host": "search.yahoo.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-webview.so.0"
+          ]
+        },
+        {
+          "host": "secure.fanboy.co.nz",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-webview.so.0"
+          ]
+        },
+        {
+          "host": "w3c.github.io",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-web.so.0"
+          ]
+        },
+        {
+          "host": "www.bing.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-webview.so.0"
+          ]
+        },
+        {
+          "host": "abpvn.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-webview.so.0"
+          ]
+        },
+        {
+          "host": "ac.ecosia.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-webview.so.0"
+          ]
+        },
+        {
+          "host": "anglebug.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblibGLESv2_angle.so"
+          ]
+        },
+        {
+          "host": "discord.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-webview.so.0"
+          ]
+        },
+        {
+          "host": "dummy.invalid",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-url.so.0",
+            "/usr/share/harbour-pacific/lib/engine/liblagom-web.so.0"
+          ]
+        },
+        {
+          "host": "ecosia.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-webview.so.0"
+          ]
+        },
+        {
+          "host": "fullscreen.spec.whatwg.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-web.so.0"
+          ]
+        },
+        {
+          "host": "kagi.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-webview.so.0"
+          ]
+        },
+        {
+          "host": "kagisuggest.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-webview.so.0"
+          ]
+        },
+        {
+          "host": "ladybird.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-webview.so.0"
+          ]
+        },
+        {
+          "host": "local-file.invalid",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-web.so.0"
+          ]
+        },
+        {
+          "host": "relaxng.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/libxml2.so.16"
+          ]
+        },
+        {
+          "host": "reports.app.ladybird.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-webview.so.0"
+          ]
+        },
+        {
+          "host": "searchfox.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-web.so.0"
+          ]
+        },
+        {
+          "host": "stanev.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-webview.so.0"
+          ]
+        },
+        {
+          "host": "startpage.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-webview.so.0"
+          ]
+        },
+        {
+          "host": "streams.videolan.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/libavutil-ladybird.so.59"
+          ]
+        },
+        {
+          "host": "suggest.yandex.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-webview.so.0"
+          ]
+        },
+        {
+          "host": "svgwg.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-web.so.0"
+          ]
+        },
+        {
+          "host": "trac.webkit.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-web.so.0"
+          ]
+        },
+        {
+          "host": "www.brynosaurus.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/libfontconfig.so.1"
+          ]
+        },
+        {
+          "host": "www.css",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/libbrotlicommon.so.1"
+          ]
+        },
+        {
+          "host": "www.gimp.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-pacific/share/Lagom/icons/128x128/app-browser.png",
+            "/usr/share/harbour-pacific/share/Lagom/icons/48x48/app-browser.png"
+          ]
+        },
+        {
+          "host": "www.hortcut",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/libbrotlicommon.so.1"
+          ]
+        },
+        {
+          "host": "www.ibm.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-web.so.0"
+          ]
+        },
+        {
+          "host": "www.icon",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/libbrotlicommon.so.1"
+          ]
+        },
+        {
+          "host": "www.interpretation",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/libbrotlicommon.so.1"
+          ]
+        },
+        {
+          "host": "www.mojeek.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-webview.so.0"
+          ]
+        },
+        {
+          "host": "www.oasis-open.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/libxml2.so.16"
+          ]
+        },
+        {
+          "host": "www.recent",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/libbrotlicommon.so.1"
+          ]
+        },
+        {
+          "host": "www.world",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/libbrotlicommon.so.1"
+          ]
+        },
+        {
+          "host": "www.years",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/libbrotlicommon.so.1"
+          ]
+        },
+        {
+          "host": "yandex.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-webview.so.0"
+          ]
+        },
+        {
+          "host": "zoso.ro",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-pacific/lib/engine/liblagom-webview.so.0"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "aljazeera.com",
+        "cnn.com",
+        "foo.bar",
+        "github.com",
+        "jolla.com",
+        "mozilla.github.io",
+        "mozilla.org",
+        "search.brave.com",
+        "support.mozilla.org",
+        "www.ecosia.org",
+        "www.google.com",
+        "www.mozilla.org",
+        "www.nytimes.com",
+        "www.xfa.org"
+      ],
+      "hosts_binaries": [
+        "abpvn.com",
+        "ac.ecosia.org",
+        "anglebug.com",
+        "curl.se",
+        "discord.com",
+        "drafts.csswg.org",
+        "duckduckgo.com",
+        "dummy.invalid",
+        "easylist-downloads.adblockplus.org",
+        "easylist.to",
+        "ecosia.org",
+        "fullscreen.spec.whatwg.org",
+        "html.spec.whatwg.org",
+        "kagi.com",
+        "kagisuggest.com",
+        "ladybird.org",
+        "local-file.invalid",
+        "ns.apple.com",
+        "ns.google.com",
+        "raw.githubusercontent.com",
+        "relaxng.org",
+        "reports.app.ladybird.org",
+        "search.yahoo.com",
+        "searchfox.org",
+        "secure.fanboy.co.nz",
+        "stanev.org",
+        "startpage.com",
+        "streams.videolan.org",
+        "suggest.yandex.com",
+        "svgwg.org",
+        "tc39.es",
+        "trac.webkit.org",
+        "w3c.github.io",
+        "www.bing.com",
+        "www.brynosaurus.com",
+        "www.css",
+        "www.gimp.org",
+        "www.hortcut",
+        "www.ibm.com",
+        "www.icon",
+        "www.interpretation",
+        "www.mojeek.com",
+        "www.oasis-open.org",
+        "www.recent",
+        "www.world",
+        "www.years",
+        "yandex.com",
+        "zoso.ro"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 632901,
+        "malicious": 440
+      },
+      "notable": [
+        {
+          "url": "https://raw.githubusercontent.com/heradhis/indonesianadblockrules/master/subscriptions/abpindo.txt",
+          "why": "paste, tunnel, webhook or raw-download service",
+          "file": "/usr/share/harbour-pacific/lib/engine/liblagom-webview.so.0",
+          "in": "binary"
+        }
+      ],
+      "ignored_hosts": 10
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 8,
+      "unknown": 8,
+      "not_queried": 83,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 50,
+      "unknown": 50,
+      "not_queried": 41,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38927170791",
+  "diff": null,
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "code-reads-raw-input-devices",
+        "text": "Code that reads raw input devices"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-pacific/19d84cda6d3d7ecffd2e4caa5040098f10416fe92b9fab4ce21b7b01df6e3fc5.md"
+}
