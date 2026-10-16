@@ -186,5 +186,57 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38641691302",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-captains-bible/238955f5505459802f450b1d191fc2bcafd97dd86ae2671a8c2a06b20dfb11cc.md"
     }
+  },
+  {
+    "sha256": "1b50a096c02641cd41ac28b869e7f03fb4a3ab93561c82783ae937f8c958a206",
+    "first_seen": "2026-10-16T07:38:09Z",
+    "package": "harbour-captains-bible-0.2-1.armv7hl",
+    "version": "0.2-1",
+    "arch": "armv7hl",
+    "buildtime": 1792135524,
+    "last_scanned": "2026-10-16T07:38:09Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-captains-bible-0.1-3.armv7hl",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 4,
+          "unchanged": 15
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38868393366",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-captains-bible/1b50a096c02641cd41ac28b869e7f03fb4a3ab93561c82783ae937f8c958a206.md"
+    }
   }
 ]
