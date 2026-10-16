@@ -1,0 +1,553 @@
+{
+  "verdict": "clean",
+  "name": "harbour-carhotspot",
+  "version": "0.4.0-1",
+  "arch": "aarch64",
+  "package": "harbour-carhotspot-0.4.0-1.aarch64",
+  "buildtime": 1792151259,
+  "sha256": "33ad103c54ad07b0cbc8adcbf41c4943fe6df1c5a262495d618450e864e46dc9",
+  "source": "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.4.0-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12624",
+  "scanned": "2026-10-16T12:38:06Z",
+  "files": 63,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28155/Fri Oct 16 06:24:17 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [
+    {
+      "rule": "Coastguard_Indicator_Installs_Persistence",
+      "files": [
+        "payload/usr/bin/harbour-carhotspot"
+      ]
+    }
+  ],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-carhotspot.desktop",
+          "name": "Car Hotspot",
+          "exec": "harbour-carhotspot",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Bluetooth",
+            "Internet"
+          ],
+          "organization": "harbour-carhotspot",
+          "application": "harbour-carhotspot"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 0,
+      "hosts_in_scripts": 0,
+      "hosts": [],
+      "hosts_scripts": [],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 632901,
+        "malicious": 440
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38901818388",
+  "diff": {
+    "baseline": {
+      "sha256": "86d24d6602987a39e9cbd4fbfe8f8296b47694788f3848b3e72c6be3d0445b42",
+      "package": "harbour-carhotspot-0.3.2-1.aarch64",
+      "last_scanned": "2026-10-10T14:38:11Z"
+    },
+    "changes": [
+      {
+        "area": "sandbox",
+        "change": "changed",
+        "item": "/usr/share/applications/harbour-carhotspot.desktop",
+        "attention": false,
+        "detail": "disabled -> declared"
+      },
+      {
+        "area": "permission",
+        "change": "added",
+        "item": "Bluetooth",
+        "attention": true,
+        "detail": "/usr/share/applications/harbour-carhotspot.desktop"
+      },
+      {
+        "area": "permission",
+        "change": "added",
+        "item": "Internet",
+        "attention": true,
+        "detail": "/usr/share/applications/harbour-carhotspot.desktop"
+      },
+      {
+        "area": "launcher command",
+        "change": "changed",
+        "item": "/usr/share/applications/harbour-carhotspot.desktop",
+        "attention": true,
+        "detail": "/usr/bin/harbour-carhotspot -> harbour-carhotspot"
+      },
+      {
+        "area": "systemd unit",
+        "change": "removed",
+        "item": "/usr/lib/systemd/user/harbour-carhotspot.service",
+        "attention": false
+      },
+      {
+        "area": "D-Bus activation",
+        "change": "removed",
+        "item": "/usr/share/dbus-1/services/harbour.carhotspot.service",
+        "attention": false
+      },
+      {
+        "area": "privileged file",
+        "change": "removed",
+        "item": "/usr/bin/harbour-carhotspot-helper",
+        "attention": false
+      },
+      {
+        "area": "system hook",
+        "change": "removed",
+        "item": "/etc/sudoers.d/harbour-carhotspot",
+        "attention": false,
+        "detail": "sudoers"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "removed",
+        "item": "chmod 440 /etc/sudoers.d/harbour-carhotspot || true",
+        "attention": false,
+        "detail": "postinstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "removed",
+        "item": "systemctl-user daemon-reload >/dev/null 2>&1 || true",
+        "attention": false,
+        "detail": "postinstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "removed",
+        "item": "systemctl-user enable harbour-carhotspot.service >/dev/null 2>&1 || true",
+        "attention": false,
+        "detail": "postinstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "removed",
+        "item": "systemctl-user restart harbour-carhotspot.service >/dev/null 2>&1 || true",
+        "attention": false,
+        "detail": "postinstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "removed",
+        "item": "fi",
+        "attention": false,
+        "detail": "preuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "removed",
+        "item": "if [ $1 -eq 0 ]; then",
+        "attention": false,
+        "detail": "preuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "removed",
+        "item": "systemctl-user daemon-reload >/dev/null 2>&1 || true",
+        "attention": false,
+        "detail": "preuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "removed",
+        "item": "systemctl-user disable harbour-carhotspot.service >/dev/null 2>&1 || true",
+        "attention": false,
+        "detail": "preuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "removed",
+        "item": "systemctl-user stop harbour-carhotspot.service >/dev/null 2>&1 || true",
+        "attention": false,
+        "detail": "preuninstall"
+      },
+      {
+        "area": "indicator",
+        "change": "added",
+        "item": "Coastguard_Indicator_Installs_Persistence",
+        "attention": true
+      },
+      {
+        "area": "indicator",
+        "change": "removed",
+        "item": "Coastguard_Indicator_Edits_Sudoers",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/etc/sudoers.d/harbour-carhotspot",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/bin/harbour-carhotspot-helper",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib/systemd/user/harbour-carhotspot.service",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/dbus-1/services/harbour.carhotspot.service",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-ar.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-bg.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-ca.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-cs.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-da.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-de.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-el.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-en.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-es.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-et.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-eu.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-fi.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-fr.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-hu.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-it.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-ja.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-lt.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-lv.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-nb_NO.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-nl.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-no.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-pl.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-pt.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-pt_BR.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-ro.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-ru.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-sk.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-sl.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-sr.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-sv.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-tr.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-uk.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-zh_CN.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/translations/harbour-carhotspot-zh_TW.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/harbour-carhotspot",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/applications/harbour-carhotspot.desktop",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-carhotspot/qml/pages/MainPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-carhotspot/translations/harbour-carhotspot-bg.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/icons/hicolor/108x108/apps/harbour-carhotspot.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/icons/hicolor/128x128/apps/harbour-carhotspot.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/icons/hicolor/172x172/apps/harbour-carhotspot.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/icons/hicolor/86x86/apps/harbour-carhotspot.png",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 0,
+        "removed": 38,
+        "changed": 8,
+        "unchanged": 36
+      }
+    }
+  },
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "new-code-installs-persistence",
+        "text": "New code that installs persistence"
+      },
+      {
+        "level": "info",
+        "id": "code-installs-persistence",
+        "text": "Code that installs persistence"
+      },
+      {
+        "level": "info",
+        "id": "new-permission-bluetooth",
+        "text": "New permission: Bluetooth"
+      },
+      {
+        "level": "info",
+        "id": "new-permission-internet",
+        "text": "New permission: Internet"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-carhotspot/33ad103c54ad07b0cbc8adcbf41c4943fe6df1c5a262495d618450e864e46dc9.md"
+}
