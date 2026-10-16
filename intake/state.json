@@ -1,5 +1,5 @@
 {
-  "cursor": 1792164961,
+  "cursor": 1792168232,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -353,7 +353,7 @@
     "https://openrepos.net/sites/default/files/packages/19799/harbour-dollfin-1.3-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.10.0-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-16T16:17:11Z",
+  "last_run": "2026-10-16T16:37:24Z",
   "dispatched": [
     1792165057,
     1792166233
