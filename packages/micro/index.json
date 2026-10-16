@@ -1,0 +1,42 @@
+[
+  {
+    "sha256": "1e55b8976bb37a4c6fa7e6c04fbdcd88fbe1f385b2898ce0ba120ca90bd05963",
+    "first_seen": "2026-10-16T07:18:12Z",
+    "package": "micro-2.0.15-1.aarch64",
+    "version": "2.0.15-1",
+    "arch": "aarch64",
+    "buildtime": 1792133435,
+    "last_scanned": "2026-10-16T07:18:12Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 2,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38866273426",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/micro/1e55b8976bb37a4c6fa7e6c04fbdcd88fbe1f385b2898ce0ba120ca90bd05963.md"
+    }
+  }
+]
