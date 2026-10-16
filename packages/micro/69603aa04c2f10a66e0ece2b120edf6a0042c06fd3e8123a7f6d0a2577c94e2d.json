@@ -1,0 +1,302 @@
+{
+  "verdict": "clean",
+  "name": "micro",
+  "version": "2.0.15-1",
+  "arch": "armv7hl",
+  "package": "micro-2.0.15-1.armv7hl",
+  "buildtime": 1792133383,
+  "sha256": "69603aa04c2f10a66e0ece2b120edf6a0042c06fd3e8123a7f6d0a2577c94e2d",
+  "source": "https://openrepos.net/sites/default/files/packages/18816/micro-2.0.15-1.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12727",
+  "scanned": "2026-10-16T07:19:38Z",
+  "files": 8,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28155/Fri Oct 16 06:24:17 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 17,
+      "hosts_in_scripts": 2,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 18,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/micro",
+            "/usr/share/licenses/micro-2.0.15/LICENSE-THIRD-PARTY"
+          ]
+        },
+        {
+          "host": "mozilla.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/licenses/micro-2.0.15/LICENSE-THIRD-PARTY"
+          ]
+        },
+        {
+          "host": "pkg.go.dev",
+          "urls": 33,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/micro"
+          ]
+        },
+        {
+          "host": "www.terraform.io",
+          "urls": 14,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/micro"
+          ]
+        },
+        {
+          "host": "www.nushell.sh",
+          "urls": 8,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/micro"
+          ]
+        },
+        {
+          "host": "erlang.org",
+          "urls": 5,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/micro"
+          ]
+        },
+        {
+          "host": "raw.githubusercontent.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/micro"
+          ]
+        },
+        {
+          "host": "anti.teamidiot.de",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/micro"
+          ]
+        },
+        {
+          "host": "en.wikibooks.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/micro"
+          ]
+        },
+        {
+          "host": "jsonnet.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/micro"
+          ]
+        },
+        {
+          "host": "mesonbuild.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/micro"
+          ]
+        },
+        {
+          "host": "micro-editor.github.io",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/micro"
+          ]
+        },
+        {
+          "host": "openscad.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/micro"
+          ]
+        },
+        {
+          "host": "prql-lang.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/micro"
+          ]
+        },
+        {
+          "host": "semver.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/micro"
+          ]
+        },
+        {
+          "host": "www.lua.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/micro"
+          ]
+        },
+        {
+          "host": "www.vaultproject.io",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/micro"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "github.com",
+        "mozilla.org"
+      ],
+      "hosts_binaries": [
+        "anti.teamidiot.de",
+        "en.wikibooks.org",
+        "erlang.org",
+        "jsonnet.org",
+        "mesonbuild.com",
+        "micro-editor.github.io",
+        "openscad.org",
+        "pkg.go.dev",
+        "prql-lang.org",
+        "raw.githubusercontent.com",
+        "semver.org",
+        "www.lua.org",
+        "www.nushell.sh",
+        "www.terraform.io",
+        "www.vaultproject.io"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 632901,
+        "malicious": 440
+      },
+      "notable": [
+        {
+          "url": "https://raw.githubusercontent.com/micro-editor/plugin-channel/master/channel.jsongroovy",
+          "why": "paste, tunnel, webhook or raw-download service",
+          "file": "/usr/bin/micro",
+          "in": "binary"
+        }
+      ],
+      "ignored_hosts": 4
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38866414348",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/micro/69603aa04c2f10a66e0ece2b120edf6a0042c06fd3e8123a7f6d0a2577c94e2d.md"
+}
