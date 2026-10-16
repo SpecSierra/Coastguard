@@ -124,5 +124,61 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38691530621",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/sfos-quickshare/2d7d5ea58b0622716fb33ee775bcfbf3ed2729d749d46215c8090aec36b394f6.md"
     }
+  },
+  {
+    "sha256": "4e7b9e0d1310c23838320f76dce3c65c3e7d8e14931462c470d7fd8337f5ab6e",
+    "first_seen": "2026-10-16T00:22:49Z",
+    "package": "sfos-quickshare-0.1.5-1.aarch64",
+    "version": "0.1.5-1",
+    "arch": "aarch64",
+    "buildtime": 1792107870,
+    "last_scanned": "2026-10-16T00:22:49Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "sfos-quickshare-0.1.4-1.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 1,
+          "removed": 342,
+          "changed": 2,
+          "unchanged": 23
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38829098123",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/sfos-quickshare/4e7b9e0d1310c23838320f76dce3c65c3e7d8e14931462c470d7fd8337f5ab6e.md"
+    }
   }
 ]

@@ -1,0 +1,2661 @@
+{
+  "verdict": "clean",
+  "name": "sfos-quickshare",
+  "version": "0.1.5-1",
+  "arch": "aarch64",
+  "package": "sfos-quickshare-0.1.5-1.aarch64",
+  "buildtime": 1792107870,
+  "sha256": "4e7b9e0d1310c23838320f76dce3c65c3e7d8e14931462c470d7fd8337f5ab6e",
+  "source": "https://openrepos.net/sites/default/files/packages/2414/sfos-quickshare-0.1.5-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12724",
+  "scanned": "2026-10-16T00:22:49Z",
+  "files": 51,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28153/Wed Oct 14 06:24:15 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [
+        {
+          "path": "/usr/lib/systemd/user/sfos-quickshare.service",
+          "scope": "user",
+          "exec_start": [
+            "/usr/bin/sfos-quickshared"
+          ],
+          "user": "device user",
+          "install_wanted_by": null,
+          "enabled_by": []
+        }
+      ],
+      "dbus": [
+        {
+          "path": "/usr/share/dbus-1/services/org.sailfishos.QuickShare.service",
+          "bus": "session",
+          "name": "org.sailfishos.QuickShare",
+          "exec": "/usr/bin/sfos-quickshared",
+          "user": null,
+          "systemd_service": "sfos-quickshare.service"
+        }
+      ],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 1,
+      "hosts_in_scripts": 1,
+      "hosts": [
+        {
+          "host": "fsf.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/licenses/sfos-quickshare-0.1.5/LICENSE"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "fsf.org"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 632901,
+        "malicious": 440
+      },
+      "notable": [],
+      "ignored_hosts": 1
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38829098123",
+  "diff": {
+    "baseline": {
+      "sha256": "2d7d5ea58b0622716fb33ee775bcfbf3ed2729d749d46215c8090aec36b394f6",
+      "package": "sfos-quickshare-0.1.4-1.aarch64",
+      "last_scanned": "2026-10-15T06:18:37Z"
+    },
+    "changes": [
+      {
+        "area": "indicator",
+        "change": "removed",
+        "item": "Coastguard_Indicator_Installs_Persistence",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "adoptium.net",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "badges.gitter.im",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "bugs.python.org",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "cloud.google.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "codecov.io",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "crl.certigna.fr",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "crl.d-trust.net",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "crl.dhimyotis.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "developer.android.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "developer.mozilla.org",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "developers.google.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "docs.oracle.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "docs.python.org",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "en.wikipedia.org",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "errorprone.info",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "exslt.org",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "freetype.org",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "github.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "gitter.im",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "img.shields.io",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "issuetracker.google.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "java.net",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "java.sun.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "javax.xml.transform",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "javax.xml.transform.dom.domresult",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "javax.xml.transform.dom.domsource",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "javax.xml.transform.sax.saxresult",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "javax.xml.transform.sax.saxsource",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "javax.xml.transform.sax.saxtransformerfactory",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "javax.xml.transform.stax.staxresult",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "javax.xml.transform.stax.staxsource",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "javax.xml.transform.stream.streamresult",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "javax.xml.transform.stream.streamsource",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "javax.xml.xmlconstants",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "joda-time.sourceforge.net",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "kotlinlang.org",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "mozilla.org",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "null.oracle.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "openjdk.java.net",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "opensource.apple.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "pcsclite.apdu.fr",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "projects.eclipse.org",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "pypi.org",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "pypi.python.org",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "pythonhosted.org",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "quickshare.google",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "r8.googlesource.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "raw.githubusercontent.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "relaxng.org",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "semver.org",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "site.icu-project.org",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "some.company.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "stackoverflow.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "travis-ci.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "www.accv.es",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "www.alphaworks.ibm.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "www.alsa-project.org",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "www.cert.fnmt.es",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "www.certicom.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "www.d-trust.net",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "www.firmaprofesional.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "www.ibm.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "www.isi.edu",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "www.lotus.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "www.nue.et-inf.uni-siegen.de",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "www.oasis-open.org",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "www.oracle.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "www.sun.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "www.xmlsecurity.org",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "wwww.certigna.fr",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "xml.org",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "xsl.lotus.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "youtrack.jetbrains.com",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/licenses/sfos-quickshare-0.1.5/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/NOTICE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/bin/java",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/bin/jfr",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/bin/jrunscript",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/bin/keytool",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/bin/rmiregistry",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/conf/logging.properties",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/conf/management/jmxremote.access",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/conf/management/jmxremote.password.template",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/conf/management/management.properties",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/conf/net.properties",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/conf/sdp/sdp.conf.template",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/conf/security/java.policy",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/conf/security/java.security",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/conf/security/policy/README.txt",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/conf/security/policy/limited/default_US_export.policy",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/conf/security/policy/limited/default_local.policy",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/conf/security/policy/limited/exempt_local.policy",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/conf/security/policy/unlimited/default_US_export.policy",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/conf/security/policy/unlimited/default_local.policy",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/conf/sound.properties",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.base/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.base/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.base/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.base/aes.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.base/asm.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.base/c-libutl.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.base/cldr.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.base/gcc.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.base/icu.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.base/public_suffix.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.base/siphash.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.base/unicode.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.base/zlib.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.compiler/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.compiler/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.compiler/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.datatransfer/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.datatransfer/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.datatransfer/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.desktop/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.desktop/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.desktop/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.desktop/colorimaging.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.desktop/freetype.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.desktop/giflib.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.desktop/harfbuzz.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.desktop/jpeg.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.desktop/lcms.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.desktop/libpng.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.desktop/mesa3d.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.desktop/pipewire.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.desktop/xwd.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.instrument/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.instrument/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.instrument/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.logging/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.logging/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.logging/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.management.rmi/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.management.rmi/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.management.rmi/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.management/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.management/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.management/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.naming/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.naming/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.naming/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.net.http/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.net.http/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.net.http/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.prefs/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.prefs/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.prefs/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.rmi/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.rmi/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.rmi/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.scripting/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.scripting/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.scripting/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.se/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.se/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.se/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.security.jgss/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.security.jgss/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.security.jgss/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.security.sasl/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.security.sasl/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.security.sasl/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.smartcardio/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.smartcardio/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.smartcardio/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.smartcardio/pcsclite.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.sql.rowset/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.sql.rowset/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.sql.rowset/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.sql/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.sql/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.sql/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.transaction.xa/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.transaction.xa/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.transaction.xa/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.xml.crypto/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.xml.crypto/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.xml.crypto/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.xml.crypto/santuario.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.xml/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.xml/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.xml/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.xml/bcel.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.xml/dom.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.xml/jcup.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.xml/xalan.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/java.xml/xerces.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.accessibility/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.accessibility/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.accessibility/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.charsets/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.charsets/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.charsets/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.crypto.cryptoki/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.crypto.cryptoki/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.crypto.cryptoki/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.crypto.cryptoki/pkcs11cryptotoken.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.crypto.cryptoki/pkcs11wrapper.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.crypto.ec/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.crypto.ec/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.crypto.ec/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.dynalink/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.dynalink/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.dynalink/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.dynalink/dynalink.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.httpserver/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.httpserver/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.httpserver/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.incubator.foreign/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.incubator.foreign/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.incubator.foreign/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.incubator.vector/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.incubator.vector/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.incubator.vector/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.internal.vm.ci/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.internal.vm.ci/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.internal.vm.ci/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.internal.vm.compiler.management/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.internal.vm.compiler.management/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.internal.vm.compiler.management/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.internal.vm.compiler/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.internal.vm.compiler/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.internal.vm.compiler/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.jdwp.agent/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.jdwp.agent/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.jdwp.agent/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.jfr/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.jfr/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.jfr/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.jsobject/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.jsobject/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.jsobject/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.localedata/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.localedata/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.localedata/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.localedata/cldr.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.localedata/thaidict.md",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.management.agent/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.management.agent/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.management.agent/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.management.jfr/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.management.jfr/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.management.jfr/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.management/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.management/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.management/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.naming.dns/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.naming.dns/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.naming.dns/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.naming.rmi/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.naming.rmi/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.naming.rmi/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.net/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.net/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.net/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.nio.mapmode/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.nio.mapmode/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.nio.mapmode/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.sctp/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.sctp/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.sctp/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.security.auth/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.security.auth/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.security.auth/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.security.jgss/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.security.jgss/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.security.jgss/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.unsupported/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.unsupported/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.unsupported/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.xml.dom/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.xml.dom/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.xml.dom/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.zipfs/ADDITIONAL_LICENSE_INFO",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.zipfs/ASSEMBLY_EXCEPTION",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/legal/jdk.zipfs/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/classlist",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/jexec",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/jfr/default.jfc",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/jfr/profile.jfc",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/jrt-fs.jar",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/jspawnhelper",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/jvm.cfg",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libawt.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libawt_headless.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libawt_xawt.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libdt_socket.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libextnet.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libfontmanager.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libfreetype.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libinstrument.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libj2gss.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libj2pcsc.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libj2pkcs11.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libjaas.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libjava.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libjavajpeg.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libjawt.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libjdwp.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libjimage.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libjli.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libjsig.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libjsound.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/liblcms.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libmanagement.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libmanagement_agent.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libmanagement_ext.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libmlib_image.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libnet.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libnio.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libprefs.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/librmi.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libsctp.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libsplashscreen.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libsyslookup.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libverify.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/libzip.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/modules",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/psfont.properties.ja",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/psfontj2d.properties",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/security/blocked.certs",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/security/cacerts",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/security/default.policy",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/security/public_suffix_list.dat",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/server/classes.jsa",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/server/classes_nocoops.jsa",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/server/libjsig.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/server/libjvm.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/lib/tzdb.dat",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/lib64/sfos-quickshare/runtime/release",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/licenses/sfos-quickshare-0.1.4/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/quickshare/UPSTREAM.json",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/quickshare/artifacts.lock.json",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/quickshare/lib/annotations-23.0.0.jar",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/quickshare/lib/bridge.jar",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/quickshare/lib/core-protocol.jar",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/quickshare/lib/error_prone_annotations-2.27.0.jar",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/quickshare/lib/gson-2.11.0.jar",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/quickshare/lib/kotlin-stdlib-2.1.0.jar",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/quickshare/lib/kotlinx-coroutines-core-jvm-1.9.0.jar",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/quickshare/lib/protobuf-javalite-4.28.3.jar",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/quickshare/licenses/Apache-2.0.txt",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/quickshare/runtime.lock.json",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/async_timeout-4.0.3.dist-info/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/async_timeout-4.0.3.dist-info/METADATA",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/async_timeout-4.0.3.dist-info/RECORD",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/async_timeout-4.0.3.dist-info/WHEEL",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/async_timeout-4.0.3.dist-info/top_level.txt",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/async_timeout-4.0.3.dist-info/zip-safe",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/async_timeout/__init__.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/async_timeout/py.typed",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/ifaddr-0.2.0.dist-info/LICENSE.txt",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/ifaddr-0.2.0.dist-info/METADATA",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/ifaddr-0.2.0.dist-info/RECORD",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/ifaddr-0.2.0.dist-info/WHEEL",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/ifaddr-0.2.0.dist-info/top_level.txt",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/ifaddr/__init__.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/ifaddr/_posix.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/ifaddr/_shared.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/ifaddr/_win32.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/ifaddr/netifaces.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/ifaddr/py.typed",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/ifaddr/test_ifaddr.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/__init__.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_cache.pxd",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_cache.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_core.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_dns.pxd",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_dns.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_engine.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_exceptions.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_handlers/__init__.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_handlers/answers.pxd",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_handlers/answers.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_handlers/multicast_outgoing_queue.pxd",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_handlers/multicast_outgoing_queue.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_handlers/query_handler.pxd",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_handlers/query_handler.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_handlers/record_manager.pxd",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_handlers/record_manager.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_history.pxd",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_history.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_listener.pxd",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_listener.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_logger.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_protocol/__init__.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_protocol/incoming.pxd",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_protocol/incoming.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_protocol/outgoing.pxd",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_protocol/outgoing.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_record_update.pxd",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_record_update.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_services/__init__.pxd",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_services/__init__.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_services/browser.pxd",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_services/browser.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_services/info.pxd",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_services/info.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_services/registry.pxd",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_services/registry.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_services/types.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_transport.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_updates.pxd",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_updates.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_utils/__init__.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_utils/asyncio.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_utils/ipaddress.pxd",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_utils/ipaddress.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_utils/name.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_utils/net.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_utils/time.pxd",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/_utils/time.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/asyncio.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/const.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/sfos-quickshare/vendor/zeroconf/py.typed",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/sfos-quickshare/quickshare/history.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/sfos-quickshare/quickshare/service.py",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 73
+      },
+      "files": {
+        "added": 1,
+        "removed": 342,
+        "changed": 2,
+        "unchanged": 23
+      }
+    }
+  },
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "id": "background-start",
+        "text": "Starts in the background"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/sfos-quickshare/4e7b9e0d1310c23838320f76dce3c65c3e7d8e14931462c470d7fd8337f5ab6e.md"
+}
