@@ -1,5 +1,5 @@
 {
-  "cursor": 1792109461,
+  "cursor": 1792132379,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -336,8 +336,11 @@
     "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.7-2.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19799/harbour-kibble-1.2.2-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/2414/sfos-quickshare-runtime-1.0.0-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/2414/sfos-quickshare-0.1.5-1.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/2414/sfos-quickshare-0.1.5-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19814/harbour-ourasync-1.1.0-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-16T06:17:11Z",
-  "dispatched": []
+  "last_run": "2026-10-16T06:38:58Z",
+  "dispatched": [
+    1792132659
+  ]
 }
