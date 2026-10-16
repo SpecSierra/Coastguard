@@ -1,0 +1,1088 @@
+{
+  "verdict": "clean",
+  "name": "sfos-quickshare-runtime",
+  "version": "1.0.0-1",
+  "arch": "aarch64",
+  "package": "sfos-quickshare-runtime-1.0.0-1.aarch64",
+  "buildtime": 1792107870,
+  "sha256": "a390f565402e74b2f4e80a9543a6c8341078c7d6180e4dd742405ca179283d03",
+  "source": "https://openrepos.net/sites/default/files/packages/2414/sfos-quickshare-runtime-1.0.0-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12724",
+  "scanned": "2026-10-16T00:19:25Z",
+  "files": 426,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28153/Wed Oct 14 06:24:15 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [
+    {
+      "rule": "Coastguard_Indicator_Installs_Persistence",
+      "files": [
+        "payload/usr/lib64/sfos-quickshare/runtime/lib/server/libjvm.so"
+      ]
+    }
+  ],
+  "errors": [],
+  "nested": {
+    "archives": 10,
+    "carved_streams": 0,
+    "files": 5236,
+    "bytes": 15983398,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 74,
+      "hosts_in_scripts": 38,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 31,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/NOTICE",
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules",
+            "/usr/lib64/sfos-quickshare/runtime/lib/server/classes.jsa"
+          ]
+        },
+        {
+          "host": "codecov.io",
+          "urls": 5,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/sfos-quickshare/vendor/async_timeout-4.0.3.dist-info/METADATA",
+            "/usr/share/sfos-quickshare/vendor/ifaddr-0.2.0.dist-info/METADATA"
+          ]
+        },
+        {
+          "host": "developers.google.com",
+          "urls": 3,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/sfos-quickshare/quickshare/lib/protobuf-javalite-4.28.3.jar.unpacked/META-INF/MANIFEST.MF",
+            "nested/usr/share/sfos-quickshare/quickshare/lib/protobuf-javalite-4.28.3.jar.unpacked/google/protobuf/any.proto",
+            "nested/usr/share/sfos-quickshare/quickshare/lib/protobuf-javalite-4.28.3.jar.unpacked/google/protobuf/api.proto"
+          ]
+        },
+        {
+          "host": "en.wikipedia.org",
+          "urls": 3,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/sfos-quickshare/quickshare/lib/core-protocol.jar.unpacked/offline_wire_formats.proto"
+          ]
+        },
+        {
+          "host": "pypi.python.org",
+          "urls": 3,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/sfos-quickshare/vendor/async_timeout-4.0.3.dist-info/METADATA",
+            "/usr/share/sfos-quickshare/vendor/ifaddr-0.2.0.dist-info/METADATA"
+          ]
+        },
+        {
+          "host": "docs.python.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/sfos-quickshare/vendor/zeroconf/_core.py",
+            "nested/usr/share/sfos-quickshare/quickshare/lib/protobuf-javalite-4.28.3.jar.unpacked/google/protobuf/timestamp.proto"
+          ]
+        },
+        {
+          "host": "img.shields.io",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/sfos-quickshare/vendor/async_timeout-4.0.3.dist-info/METADATA",
+            "/usr/share/sfos-quickshare/vendor/ifaddr-0.2.0.dist-info/METADATA"
+          ]
+        },
+        {
+          "host": "travis-ci.com",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/sfos-quickshare/vendor/async_timeout-4.0.3.dist-info/METADATA"
+          ]
+        },
+        {
+          "host": "www.nue.et-inf.uni-siegen.de",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/legal/java.xml.crypto/santuario.md",
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules"
+          ]
+        },
+        {
+          "host": "www.oasis-open.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/legal/jdk.crypto.cryptoki/pkcs11cryptotoken.md",
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules"
+          ]
+        },
+        {
+          "host": "badges.gitter.im",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/sfos-quickshare/vendor/async_timeout-4.0.3.dist-info/METADATA"
+          ]
+        },
+        {
+          "host": "bugs.python.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/sfos-quickshare/vendor/zeroconf/const.py"
+          ]
+        },
+        {
+          "host": "cloud.google.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/sfos-quickshare/quickshare/lib/protobuf-javalite-4.28.3.jar.unpacked/google/protobuf/api.proto"
+          ]
+        },
+        {
+          "host": "developer.android.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/sfos-quickshare/quickshare/lib/gson-2.11.0.jar.unpacked/META-INF/proguard/gson.pro"
+          ]
+        },
+        {
+          "host": "developer.mozilla.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/sfos-quickshare/quickshare/lib/protobuf-javalite-4.28.3.jar.unpacked/google/protobuf/timestamp.proto"
+          ]
+        },
+        {
+          "host": "docs.oracle.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/conf/management/jmxremote.password.template"
+          ]
+        },
+        {
+          "host": "errorprone.info",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/sfos-quickshare/quickshare/lib/error_prone_annotations-2.27.0.jar.unpacked/META-INF/MANIFEST.MF"
+          ]
+        },
+        {
+          "host": "freetype.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/legal/java.desktop/freetype.md"
+          ]
+        },
+        {
+          "host": "fsf.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/legal/java.base/gcc.md",
+            "/usr/share/licenses/sfos-quickshare-runtime-1.0.0/LICENSE"
+          ]
+        },
+        {
+          "host": "gitter.im",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/sfos-quickshare/vendor/async_timeout-4.0.3.dist-info/METADATA"
+          ]
+        },
+        {
+          "host": "issuetracker.google.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/sfos-quickshare/quickshare/lib/gson-2.11.0.jar.unpacked/META-INF/proguard/gson.pro"
+          ]
+        },
+        {
+          "host": "joda-time.sourceforge.net",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/sfos-quickshare/quickshare/lib/protobuf-javalite-4.28.3.jar.unpacked/google/protobuf/timestamp.proto"
+          ]
+        },
+        {
+          "host": "mozilla.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/legal/java.base/public_suffix.md"
+          ]
+        },
+        {
+          "host": "openjdk.java.net",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/legal/java.base/ASSEMBLY_EXCEPTION",
+            "/usr/lib64/sfos-quickshare/runtime/legal/java.compiler/ASSEMBLY_EXCEPTION",
+            "/usr/lib64/sfos-quickshare/runtime/legal/java.datatransfer/ASSEMBLY_EXCEPTION"
+          ]
+        },
+        {
+          "host": "opensource.apple.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/sfos-quickshare/vendor/zeroconf/_utils/net.py"
+          ]
+        },
+        {
+          "host": "pcsclite.apdu.fr",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/legal/java.smartcardio/pcsclite.md"
+          ]
+        },
+        {
+          "host": "projects.eclipse.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/NOTICE"
+          ]
+        },
+        {
+          "host": "pypi.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/sfos-quickshare/vendor/ifaddr-0.2.0.dist-info/METADATA"
+          ]
+        },
+        {
+          "host": "pythonhosted.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/sfos-quickshare/vendor/ifaddr-0.2.0.dist-info/METADATA"
+          ]
+        },
+        {
+          "host": "r8.googlesource.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/sfos-quickshare/quickshare/lib/gson-2.11.0.jar.unpacked/META-INF/proguard/gson.pro"
+          ]
+        },
+        {
+          "host": "raw.githubusercontent.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/legal/java.base/public_suffix.md"
+          ]
+        },
+        {
+          "host": "semver.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/sfos-quickshare/quickshare/lib/protobuf-javalite-4.28.3.jar.unpacked/google/protobuf/api.proto"
+          ]
+        },
+        {
+          "host": "site.icu-project.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/legal/java.base/cldr.md",
+            "/usr/lib64/sfos-quickshare/runtime/legal/java.base/icu.md",
+            "/usr/lib64/sfos-quickshare/runtime/legal/jdk.localedata/cldr.md"
+          ]
+        },
+        {
+          "host": "some.company.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/conf/security/java.security"
+          ]
+        },
+        {
+          "host": "stackoverflow.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/sfos-quickshare/quickshare/lib/gson-2.11.0.jar.unpacked/META-INF/proguard/gson.pro"
+          ]
+        },
+        {
+          "host": "www.ibm.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/legal/java.xml/xalan.md",
+            "/usr/lib64/sfos-quickshare/runtime/legal/java.xml/xerces.md"
+          ]
+        },
+        {
+          "host": "www.lotus.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/legal/java.xml/xalan.md"
+          ]
+        },
+        {
+          "host": "www.sun.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/legal/java.xml/xalan.md",
+            "/usr/lib64/sfos-quickshare/runtime/legal/java.xml/xerces.md"
+          ]
+        },
+        {
+          "host": "www.oracle.com",
+          "urls": 18,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules"
+          ]
+        },
+        {
+          "host": "java.sun.com",
+          "urls": 17,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules"
+          ]
+        },
+        {
+          "host": "xml.org",
+          "urls": 16,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules"
+          ]
+        },
+        {
+          "host": "exslt.org",
+          "urls": 9,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules"
+          ]
+        },
+        {
+          "host": "javax.xml.xmlconstants",
+          "urls": 6,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules"
+          ]
+        },
+        {
+          "host": "crl.d-trust.net",
+          "urls": 4,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/security/cacerts"
+          ]
+        },
+        {
+          "host": "www.accv.es",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/security/cacerts"
+          ]
+        },
+        {
+          "host": "youtrack.jetbrains.com",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/sfos-quickshare/quickshare/lib/kotlin-stdlib-2.1.0.jar.unpacked/kotlin/jvm/ImplicitlyActualizedByJvmDeclaration.class",
+            "nested/usr/share/sfos-quickshare/quickshare/lib/kotlin-stdlib-2.1.0.jar.unpacked/kotlin/jvm/internal/PropertyReference.class",
+            "nested/usr/share/sfos-quickshare/quickshare/lib/kotlin-stdlib-2.1.0.jar.unpacked/kotlin/kotlin.kotlin_builtins"
+          ]
+        },
+        {
+          "host": "javax.xml.transform.sax.saxtransformerfactory",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules"
+          ]
+        },
+        {
+          "host": "quickshare.google",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/sfos-quickshare/quickshare/lib/core-protocol.jar.unpacked/dev/bluehouse/bada/protocol/qr/QrUrl.class"
+          ]
+        },
+        {
+          "host": "www.d-trust.net",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/security/cacerts"
+          ]
+        },
+        {
+          "host": "www.xmlsecurity.org",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules"
+          ]
+        },
+        {
+          "host": "adoptium.net",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules",
+            "/usr/lib64/sfos-quickshare/runtime/lib/server/classes.jsa",
+            "/usr/lib64/sfos-quickshare/runtime/lib/server/classes_nocoops.jsa"
+          ]
+        },
+        {
+          "host": "crl.certigna.fr",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/security/cacerts"
+          ]
+        },
+        {
+          "host": "crl.dhimyotis.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/security/cacerts"
+          ]
+        },
+        {
+          "host": "java.net",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules"
+          ]
+        },
+        {
+          "host": "javax.xml.transform",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules"
+          ]
+        },
+        {
+          "host": "javax.xml.transform.dom.domresult",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules"
+          ]
+        },
+        {
+          "host": "javax.xml.transform.dom.domsource",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules"
+          ]
+        },
+        {
+          "host": "javax.xml.transform.sax.saxresult",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules"
+          ]
+        },
+        {
+          "host": "javax.xml.transform.sax.saxsource",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules"
+          ]
+        },
+        {
+          "host": "javax.xml.transform.stax.staxresult",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules"
+          ]
+        },
+        {
+          "host": "javax.xml.transform.stax.staxsource",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules"
+          ]
+        },
+        {
+          "host": "javax.xml.transform.stream.streamresult",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules"
+          ]
+        },
+        {
+          "host": "javax.xml.transform.stream.streamsource",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules"
+          ]
+        },
+        {
+          "host": "kotlinlang.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/sfos-quickshare/quickshare/lib/kotlin-stdlib-2.1.0.jar.unpacked/META-INF/kotlin-stdlib.kotlin_module"
+          ]
+        },
+        {
+          "host": "null.oracle.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules"
+          ]
+        },
+        {
+          "host": "relaxng.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules"
+          ]
+        },
+        {
+          "host": "www.alphaworks.ibm.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules"
+          ]
+        },
+        {
+          "host": "www.alsa-project.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/libjsound.so"
+          ]
+        },
+        {
+          "host": "www.cert.fnmt.es",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/security/cacerts"
+          ]
+        },
+        {
+          "host": "www.certicom.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules"
+          ]
+        },
+        {
+          "host": "www.firmaprofesional.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/security/cacerts"
+          ]
+        },
+        {
+          "host": "www.isi.edu",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules"
+          ]
+        },
+        {
+          "host": "wwww.certigna.fr",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/security/cacerts"
+          ]
+        },
+        {
+          "host": "xsl.lotus.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/lib64/sfos-quickshare/runtime/lib/modules"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "badges.gitter.im",
+        "bugs.python.org",
+        "cloud.google.com",
+        "codecov.io",
+        "developer.android.com",
+        "developer.mozilla.org",
+        "developers.google.com",
+        "docs.oracle.com",
+        "docs.python.org",
+        "en.wikipedia.org",
+        "errorprone.info",
+        "freetype.org",
+        "fsf.org",
+        "github.com",
+        "gitter.im",
+        "img.shields.io",
+        "issuetracker.google.com",
+        "joda-time.sourceforge.net",
+        "mozilla.org",
+        "openjdk.java.net",
+        "opensource.apple.com",
+        "pcsclite.apdu.fr",
+        "projects.eclipse.org",
+        "pypi.org",
+        "pypi.python.org",
+        "pythonhosted.org",
+        "r8.googlesource.com",
+        "raw.githubusercontent.com",
+        "semver.org",
+        "site.icu-project.org",
+        "some.company.com",
+        "stackoverflow.com",
+        "travis-ci.com",
+        "www.ibm.com",
+        "www.lotus.com",
+        "www.nue.et-inf.uni-siegen.de",
+        "www.oasis-open.org",
+        "www.sun.com"
+      ],
+      "hosts_binaries": [
+        "adoptium.net",
+        "crl.certigna.fr",
+        "crl.d-trust.net",
+        "crl.dhimyotis.com",
+        "exslt.org",
+        "java.net",
+        "java.sun.com",
+        "javax.xml.transform",
+        "javax.xml.transform.dom.domresult",
+        "javax.xml.transform.dom.domsource",
+        "javax.xml.transform.sax.saxresult",
+        "javax.xml.transform.sax.saxsource",
+        "javax.xml.transform.sax.saxtransformerfactory",
+        "javax.xml.transform.stax.staxresult",
+        "javax.xml.transform.stax.staxsource",
+        "javax.xml.transform.stream.streamresult",
+        "javax.xml.transform.stream.streamsource",
+        "javax.xml.xmlconstants",
+        "kotlinlang.org",
+        "null.oracle.com",
+        "quickshare.google",
+        "relaxng.org",
+        "www.accv.es",
+        "www.alphaworks.ibm.com",
+        "www.alsa-project.org",
+        "www.cert.fnmt.es",
+        "www.certicom.com",
+        "www.d-trust.net",
+        "www.firmaprofesional.com",
+        "www.isi.edu",
+        "www.oracle.com",
+        "www.xmlsecurity.org",
+        "wwww.certigna.fr",
+        "xml.org",
+        "xsl.lotus.com",
+        "youtrack.jetbrains.com"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 632901,
+        "malicious": 440
+      },
+      "notable": [
+        {
+          "url": "https://raw.githubusercontent.com/publicsuffix/list/823beb1425def931c8b0b170a6bc33b424c3f9b0/public_suffix_list.dat",
+          "why": "paste, tunnel, webhook or raw-download service",
+          "file": "/usr/lib64/sfos-quickshare/runtime/legal/java.base/public_suffix.md",
+          "in": "script"
+        }
+      ],
+      "ignored_hosts": 15
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 8,
+      "unknown": 1,
+      "not_queried": 35,
+      "results": [
+        {
+          "sha256": "eaba20104ceff5bd071c6ffaab376f97dd157fc1694d5381e4f27036356aa89c",
+          "path": "/usr/lib64/sfos-quickshare/runtime/bin/jrunscript",
+          "malicious": 0,
+          "suspicious": 0,
+          "engines": 75,
+          "last_analysis": 1788764830,
+          "link": "https://www.virustotal.com/gui/file/eaba20104ceff5bd071c6ffaab376f97dd157fc1694d5381e4f27036356aa89c"
+        },
+        {
+          "sha256": "f2abf07878548f645b52da0b29a95bd0a013fb25288995273103ff2c41f9d936",
+          "path": "/usr/lib64/sfos-quickshare/runtime/bin/rmiregistry",
+          "malicious": 0,
+          "suspicious": 0,
+          "engines": 75,
+          "last_analysis": 1788764830,
+          "link": "https://www.virustotal.com/gui/file/f2abf07878548f645b52da0b29a95bd0a013fb25288995273103ff2c41f9d936"
+        },
+        {
+          "sha256": "64e46122f71026df5ff56fdc75085a9e6018e93746f41bc10e05ea53644fbb1c",
+          "path": "/usr/lib64/sfos-quickshare/runtime/bin/jfr",
+          "malicious": 0,
+          "suspicious": 0,
+          "engines": 74,
+          "last_analysis": 1788764830,
+          "link": "https://www.virustotal.com/gui/file/64e46122f71026df5ff56fdc75085a9e6018e93746f41bc10e05ea53644fbb1c"
+        },
+        {
+          "sha256": "148a208fdfadfad3ecf3ddb9a6597c1b52c6e30090b1d6887297e23e05288f34",
+          "path": "/usr/lib64/sfos-quickshare/runtime/bin/keytool",
+          "malicious": 0,
+          "suspicious": 0,
+          "engines": 75,
+          "last_analysis": 1788216102,
+          "link": "https://www.virustotal.com/gui/file/148a208fdfadfad3ecf3ddb9a6597c1b52c6e30090b1d6887297e23e05288f34"
+        },
+        {
+          "sha256": "185fdd3e40d7736c600cb948403f77fd3421e8877e2ff13271673f28a501531f",
+          "path": "/usr/lib64/sfos-quickshare/runtime/bin/java",
+          "malicious": 0,
+          "suspicious": 0,
+          "engines": 75,
+          "last_analysis": 1788216097,
+          "link": "https://www.virustotal.com/gui/file/185fdd3e40d7736c600cb948403f77fd3421e8877e2ff13271673f28a501531f"
+        },
+        {
+          "sha256": "d70d9e5fefcc9b214d5f83f9b3b21e26de85331346e52678751dbe1150582478",
+          "path": "/usr/lib64/sfos-quickshare/runtime/lib/server/libjvm.so",
+          "malicious": 0,
+          "suspicious": 0,
+          "engines": 74,
+          "last_analysis": 1788216104,
+          "link": "https://www.virustotal.com/gui/file/d70d9e5fefcc9b214d5f83f9b3b21e26de85331346e52678751dbe1150582478"
+        },
+        {
+          "sha256": "c35ed5cac0b28fb66b7279a18d4d0707a99956b549956c8ab3b0a2469fe6200e",
+          "path": "/usr/lib64/sfos-quickshare/runtime/lib/libfontmanager.so",
+          "malicious": 0,
+          "suspicious": 0,
+          "engines": 75,
+          "last_analysis": 1785457705,
+          "link": "https://www.virustotal.com/gui/file/c35ed5cac0b28fb66b7279a18d4d0707a99956b549956c8ab3b0a2469fe6200e"
+        }
+      ]
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 43,
+      "unknown": 43,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38828644263",
+  "diff": null,
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "script-address",
+        "text": "Script uses a paste, tunnel, webhook or raw-download service"
+      },
+      {
+        "level": "info",
+        "id": "code-installs-persistence",
+        "text": "Code that installs persistence"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/sfos-quickshare-runtime/a390f565402e74b2f4e80a9543a6c8341078c7d6180e4dd742405ca179283d03.md"
+}
