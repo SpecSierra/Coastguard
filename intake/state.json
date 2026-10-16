@@ -1,6 +1,13 @@
 {
-  "cursor": 1792134001,
-  "queue": [],
+  "cursor": 1792135861,
+  "queue": [
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12708",
+      "appid": 12708,
+      "title": "Captain's Bible"
+    }
+  ],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -340,13 +347,16 @@
     "https://openrepos.net/sites/default/files/packages/19814/harbour-ourasync-1.1.0-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/18816/micro-2.0.15-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/18816/micro-2.0.15-1.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/18816/micro-2.0.15-1.i486.rpm"
+    "https://openrepos.net/sites/default/files/packages/18816/micro-2.0.15-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-16T07:21:49Z",
+  "last_run": "2026-10-16T07:38:47Z",
   "dispatched": [
     1792132659,
     1792135047,
     1792135128,
-    1792135230
+    1792135230,
+    1792136247
   ]
 }
