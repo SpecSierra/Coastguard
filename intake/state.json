@@ -1,6 +1,13 @@
 {
-  "cursor": 1792135861,
-  "queue": [],
+  "cursor": 1792137841,
+  "queue": [
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/1867/harbour-whisperfish-0.6.0.beta_.46-1.i486.rpm",
+      "page": "https://openrepos.net/node/11046",
+      "appid": 11046,
+      "title": "Whisperfish"
+    }
+  ],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -342,9 +349,10 @@
     "https://openrepos.net/sites/default/files/packages/18816/micro-2.0.15-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/18816/micro-2.0.15-1.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-1.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-1.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/1867/harbour-whisperfish-0.6.0.beta_.46-1.i486.rpm"
   ],
-  "last_run": "2026-10-16T07:58:35Z",
+  "last_run": "2026-10-16T08:17:25Z",
   "dispatched": [
     1792135047,
     1792135128,
