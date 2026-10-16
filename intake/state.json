@@ -1,5 +1,5 @@
 {
-  "cursor": 1792137841,
+  "cursor": 1792153989,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -343,8 +343,13 @@
     "https://openrepos.net/sites/default/files/packages/18816/micro-2.0.15-1.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/1867/harbour-whisperfish-0.6.0.beta_.46-1.i486.rpm"
+    "https://openrepos.net/sites/default/files/packages/1867/harbour-whisperfish-0.6.0.beta_.46-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.4.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.4.0-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-16T12:17:12Z",
-  "dispatched": []
+  "last_run": "2026-10-16T12:40:08Z",
+  "dispatched": [
+    1792154246,
+    1792154329
+  ]
 }
