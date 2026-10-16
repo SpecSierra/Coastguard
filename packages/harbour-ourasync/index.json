@@ -1,0 +1,54 @@
+[
+  {
+    "sha256": "c0cc93de9b6bc407599b5d553965a44564c272ca73258e78819245ecbc6686fa",
+    "first_seen": "2026-10-16T06:38:19Z",
+    "package": "harbour-ourasync-1.1.0-1.aarch64",
+    "version": "1.1.0-1",
+    "arch": "aarch64",
+    "buildtime": 1792128864,
+    "last_scanned": "2026-10-16T06:38:19Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Secrets"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Bluetooth",
+        "Documents",
+        "Downloads",
+        "Internet",
+        "Secrets"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38862281576",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-ourasync/c0cc93de9b6bc407599b5d553965a44564c272ca73258e78819245ecbc6686fa.md"
+    }
+  }
+]
