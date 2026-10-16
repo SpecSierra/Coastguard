@@ -1,0 +1,175 @@
+{
+  "verdict": "clean",
+  "name": "harbour-dollfin",
+  "version": "1.3-1",
+  "arch": "aarch64",
+  "package": "harbour-dollfin-1.3-1.aarch64",
+  "buildtime": 1792164274,
+  "sha256": "47bf68111ad82829da7fe4dc1e186f9c70779f30322603ad18308ae3db6137d3",
+  "source": "https://openrepos.net/sites/default/files/packages/19799/harbour-dollfin-1.3-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12703",
+  "scanned": "2026-10-16T15:38:12Z",
+  "files": 42,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28155/Fri Oct 16 06:24:17 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-dollfin.desktop",
+          "name": "Dollfin",
+          "exec": "harbour-dollfin",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Calendar",
+            "Downloads"
+          ],
+          "organization": "org.dollfin",
+          "application": "Dollfin"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 0,
+      "hosts_in_scripts": 0,
+      "hosts": [],
+      "hosts_scripts": [],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 632901,
+        "malicious": 440
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38925463021",
+  "diff": {
+    "baseline": {
+      "sha256": "2d8eaf71520f9fa2181c375c0e80bfabaae3db8390aa27100e5013036319cdda",
+      "package": "harbour-dollfin-1.2-2.aarch64",
+      "last_scanned": "2026-10-12T22:57:57Z"
+    },
+    "changes": [
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/harbour-dollfin",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-dollfin/qml/cover/CoverPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-dollfin/qml/pages/TodayPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-dollfin/translations/harbour-dollfin-nb.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-dollfin/translations/harbour-dollfin-nl.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/icons/hicolor/108x108/apps/harbour-dollfin.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/icons/hicolor/128x128/apps/harbour-dollfin.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/icons/hicolor/172x172/apps/harbour-dollfin.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/icons/hicolor/86x86/apps/harbour-dollfin.png",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 0,
+        "removed": 0,
+        "changed": 9,
+        "unchanged": 14
+      }
+    }
+  },
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-dollfin/47bf68111ad82829da7fe4dc1e186f9c70779f30322603ad18308ae3db6137d3.md"
+}
