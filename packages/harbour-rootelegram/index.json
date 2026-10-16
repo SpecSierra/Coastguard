@@ -241,5 +241,107 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38598014947",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-rootelegram/c20c1dfb47d195f4496d9b6874c1099f800de879348ae80eaf7a13272e0bb3bb.md"
     }
+  },
+  {
+    "sha256": "1059bd7ff05797f2703f9ee70db12020ed4d9069e8311c0b028ed7d30b11f2f9",
+    "first_seen": "2026-10-16T14:58:46Z",
+    "package": "harbour-rootelegram-3.6-1.aarch64",
+    "version": "3.6-1",
+    "arch": "aarch64",
+    "buildtime": 1792161164,
+    "last_scanned": "2026-10-16T14:58:46Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "code-sends-sms-or-places-calls",
+            "text": "Unsandboxed code that sends sms or places calls"
+          },
+          {
+            "level": "info",
+            "id": "no-sandbox-profile",
+            "text": "No sandbox profile declared"
+          },
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Contacts, Phone"
+          },
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Sends SMS Or Places Calls"
+      ],
+      "sandbox": "none",
+      "permissions": [
+        "Audio",
+        "Camera",
+        "Contacts",
+        "Documents",
+        "Downloads",
+        "Internet",
+        "Location",
+        "MediaIndexing",
+        "Microphone",
+        "Music",
+        "Phone",
+        "Pictures",
+        "Privileged",
+        "PublicDir",
+        "RemovableMedia",
+        "UserDirs",
+        "Videos"
+      ],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 4,
+      "hosts_in_scripts": 17,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-rootelegram-3.4-1.aarch64",
+        "attention_count": 2,
+        "attention": [
+          {
+            "area": "host",
+            "change": "added",
+            "item": "mozilla.org"
+          },
+          {
+            "area": "host",
+            "change": "added",
+            "item": "www.freetype.org"
+          }
+        ],
+        "files": {
+          "added": 12,
+          "removed": 1,
+          "changed": 12,
+          "unchanged": 4225
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38919979490",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-rootelegram/1059bd7ff05797f2703f9ee70db12020ed4d9069e8311c0b028ed7d30b11f2f9.md"
+    }
   }
 ]
