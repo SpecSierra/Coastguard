@@ -1,5 +1,5 @@
 {
-  "cursor": 1792161661,
+  "cursor": 1792161961,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -346,10 +346,16 @@
     "https://openrepos.net/sites/default/files/packages/1867/harbour-whisperfish-0.6.0.beta_.46-1.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.4.0-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.4.0-1.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.9.2-1.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.9.2-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19055/harbour-rootelegram-3.6-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19055/harbour-rootelegram-3.6-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19055/harbour-rootelegram-3.6-1.i486.rpm"
   ],
-  "last_run": "2026-10-16T14:46:30Z",
+  "last_run": "2026-10-16T15:08:47Z",
   "dispatched": [
-    1792161911
+    1792161911,
+    1792162646,
+    1792162874,
+    1792163102
   ]
 }
