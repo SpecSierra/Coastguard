@@ -937,5 +937,102 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38901818388",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-carhotspot/33ad103c54ad07b0cbc8adcbf41c4943fe6df1c5a262495d618450e864e46dc9.md"
     }
+  },
+  {
+    "sha256": "c35a1523e13fd60fbeef85c9da4bbd772e463d92165c066c691882be889bb67e",
+    "first_seen": "2026-10-16T12:39:34Z",
+    "package": "harbour-carhotspot-0.4.0-1.armv7hl",
+    "version": "0.4.0-1",
+    "arch": "armv7hl",
+    "buildtime": 1792151540,
+    "last_scanned": "2026-10-16T12:39:34Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "new-code-installs-persistence",
+            "text": "New code that installs persistence"
+          },
+          {
+            "level": "info",
+            "id": "code-installs-persistence",
+            "text": "Code that installs persistence"
+          },
+          {
+            "level": "info",
+            "id": "new-permission-bluetooth",
+            "text": "New permission: Bluetooth"
+          },
+          {
+            "level": "info",
+            "id": "new-permission-internet",
+            "text": "New permission: Internet"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Installs Persistence"
+      ],
+      "sandbox": "declared",
+      "permissions": [
+        "Bluetooth",
+        "Internet"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-carhotspot-0.3.2-1.armv7hl",
+        "attention_count": 4,
+        "attention": [
+          {
+            "area": "permission",
+            "change": "added",
+            "item": "Bluetooth"
+          },
+          {
+            "area": "permission",
+            "change": "added",
+            "item": "Internet"
+          },
+          {
+            "area": "launcher command",
+            "change": "changed",
+            "item": "/usr/share/applications/harbour-carhotspot.desktop"
+          },
+          {
+            "area": "indicator",
+            "change": "added",
+            "item": "Coastguard_Indicator_Installs_Persistence"
+          }
+        ],
+        "files": {
+          "added": 0,
+          "removed": 38,
+          "changed": 8,
+          "unchanged": 36
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38901980431",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-carhotspot/c35a1523e13fd60fbeef85c9da4bbd772e463d92165c066c691882be889bb67e.md"
+    }
   }
 ]
