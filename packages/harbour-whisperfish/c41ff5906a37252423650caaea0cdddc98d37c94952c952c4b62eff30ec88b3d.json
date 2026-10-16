@@ -1,0 +1,494 @@
+{
+  "verdict": "clean",
+  "name": "harbour-whisperfish",
+  "version": "0.6.0.beta.46-1",
+  "arch": "i486",
+  "package": "harbour-whisperfish-0.6.0.beta.46-1.i486",
+  "buildtime": 1792084394,
+  "sha256": "c41ff5906a37252423650caaea0cdddc98d37c94952c952c4b62eff30ec88b3d",
+  "source": "https://openrepos.net/sites/default/files/packages/1867/harbour-whisperfish-0.6.0.beta_.46-1.i486.rpm",
+  "source_page": "https://openrepos.net/node/11046",
+  "scanned": "2026-10-16T08:38:00Z",
+  "files": 183,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28155/Fri Oct 16 06:24:17 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-whisperfish.desktop",
+          "name": "Whisperfish",
+          "exec": "harbour-whisperfish",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Pictures",
+            "MediaIndexing",
+            "Contacts",
+            "Downloads",
+            "UserDirs",
+            "WebView",
+            "Camera",
+            "RemovableMedia"
+          ],
+          "organization": "be.rubdos",
+          "application": "harbour-whisperfish"
+        }
+      ],
+      "shipped_profiles": [
+        "/etc/sailjail/permissions/harbour-whisperfish.profile"
+      ],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [
+        {
+          "path": "/usr/lib/systemd/system/be.rubdos.harbour-whisperfish.service",
+          "scope": "system",
+          "exec_start": [],
+          "user": "root",
+          "install_wanted_by": null,
+          "enabled_by": []
+        },
+        {
+          "path": "/usr/lib/systemd/user/harbour-whisperfish.service",
+          "scope": "user",
+          "exec_start": [
+            "/usr/bin/invoker --type=qtquick2 /usr/bin/harbour-whisperfish -prestart"
+          ],
+          "user": "device user",
+          "install_wanted_by": "post-user-session.target",
+          "enabled_by": []
+        }
+      ],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {
+      "privileged launcher grant": [
+        "/usr/share/mapplauncherd/privileges.d/harbour-whisperfish.privileges"
+      ]
+    },
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 4,
+        "notable": [
+          "systemctl-user daemon-reload"
+        ],
+        "body": "systemctl-user daemon-reload\nif pidof harbour-whisperfish >/dev/null; then\n  kill -INT $(pidof harbour-whisperfish) || true\nfi\n"
+      },
+      {
+        "type": "preuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 2,
+        "notable": [
+          "systemctl-user stop harbour-whisperfish.service || true",
+          "systemctl-user disable harbour-whisperfish.service || true"
+        ],
+        "body": "systemctl-user stop harbour-whisperfish.service || true\nsystemctl-user disable harbour-whisperfish.service || true\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 22,
+      "hosts_in_scripts": 13,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 18,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-whisperfish",
+            "/usr/bin/whisperfish-migration-dry-run",
+            "/usr/share/harbour-whisperfish/qml/harbour-whisperfish-main.qml"
+          ]
+        },
+        {
+          "host": "gitlab.com",
+          "urls": 7,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-whisperfish",
+            "/usr/share/harbour-whisperfish/qml/cover/CoverPage.qml",
+            "/usr/share/harbour-whisperfish/qml/pages/About.qml"
+          ]
+        },
+        {
+          "host": "emojipedia.org",
+          "urls": 4,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-whisperfish/qml/js/emoji.js"
+          ]
+        },
+        {
+          "host": "signalcaptchas.org",
+          "urls": 3,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-whisperfish",
+            "/usr/share/harbour-whisperfish/qml/pages/RegistrationCaptcha.qml"
+          ]
+        },
+        {
+          "host": "en.wikipedia.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-whisperfish/qml/js/countries.js.md"
+          ]
+        },
+        {
+          "host": "support.signal.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-whisperfish/qml/delegates/ServiceMessageDelegate.qml",
+            "/usr/share/harbour-whisperfish/qml/pages/ProfilePage.qml"
+          ]
+        },
+        {
+          "host": "developer.mozilla.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-whisperfish/qml/harbour-whisperfish-main.qml"
+          ]
+        },
+        {
+          "host": "jolla.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-whisperfish/qml/components/ErrorLabel.qml",
+            "/usr/share/harbour-whisperfish/qml/components/MessagesView.qml",
+            "/usr/share/harbour-whisperfish/qml/pages/NewMessage.qml"
+          ]
+        },
+        {
+          "host": "liberapay.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-whisperfish/qml/pages/About.qml"
+          ]
+        },
+        {
+          "host": "semver.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-whisperfish/qml/js/emoji.js"
+          ]
+        },
+        {
+          "host": "signal.me",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-whisperfish/qml/pages/UsernameQrScannerPage.qml"
+          ]
+        },
+        {
+          "host": "stackoverflow.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-whisperfish/qml/harbour-whisperfish-main.qml"
+          ]
+        },
+        {
+          "host": "xkcd.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-whisperfish/qml/js/countries.js.md"
+          ]
+        },
+        {
+          "host": "www.webrtc.org",
+          "urls": 11,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-whisperfish"
+          ]
+        },
+        {
+          "host": "docs.rs",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-whisperfish"
+          ]
+        },
+        {
+          "host": "aomediacodec.github.io",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-whisperfish"
+          ]
+        },
+        {
+          "host": "chat.signal.orghttps",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-whisperfish"
+          ]
+        },
+        {
+          "host": "chat.staging.signal.orghttps",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-whisperfish"
+          ]
+        },
+        {
+          "host": "crbug.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-whisperfish"
+          ]
+        },
+        {
+          "host": "sqlite.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-whisperfish",
+            "/usr/bin/whisperfish-migration-dry-run"
+          ]
+        },
+        {
+          "host": "webrtc.googlesource.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-whisperfish"
+          ]
+        },
+        {
+          "host": "www.sqlite.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-whisperfish",
+            "/usr/bin/whisperfish-migration-dry-run"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "developer.mozilla.org",
+        "emojipedia.org",
+        "en.wikipedia.org",
+        "github.com",
+        "gitlab.com",
+        "jolla.com",
+        "liberapay.com",
+        "semver.org",
+        "signal.me",
+        "signalcaptchas.org",
+        "stackoverflow.com",
+        "support.signal.org",
+        "xkcd.com"
+      ],
+      "hosts_binaries": [
+        "aomediacodec.github.io",
+        "chat.signal.orghttps",
+        "chat.staging.signal.orghttps",
+        "crbug.com",
+        "docs.rs",
+        "sqlite.org",
+        "webrtc.googlesource.com",
+        "www.sqlite.org",
+        "www.webrtc.org"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 632901,
+        "malicious": 440
+      },
+      "notable": [],
+      "ignored_hosts": 4
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 4,
+      "unknown": 4,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 4,
+      "unknown": 4,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38874901430",
+  "diff": {
+    "baseline": {
+      "sha256": "a486d6f35b5a74f8e1be3c287d9957830953bf65898b1781f6e98021af5eb331",
+      "package": "harbour-whisperfish-0.6.0.beta.45-1.i486",
+      "last_scanned": "2026-10-12T09:38:28Z"
+    },
+    "changes": [
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/harbour-whisperfish",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/whisperfish-migration-dry-run",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/whisperfish-storage-key",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 0,
+        "removed": 0,
+        "changed": 3,
+        "unchanged": 144
+      }
+    }
+  },
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "root-services",
+        "text": "1 root service"
+      },
+      {
+        "level": "medium",
+        "id": "hook-privileged-launcher-grant",
+        "text": "System hook: privileged launcher grant"
+      },
+      {
+        "level": "info",
+        "id": "own-sandbox-profile",
+        "text": "Own sandbox profile"
+      },
+      {
+        "level": "info",
+        "id": "personal-data",
+        "text": "Personal data: Contacts"
+      },
+      {
+        "level": "info",
+        "id": "background-start",
+        "text": "Starts in the background"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-whisperfish/c41ff5906a37252423650caaea0cdddc98d37c94952c952c4b62eff30ec88b3d.md"
+}
