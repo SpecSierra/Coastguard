@@ -1,0 +1,58 @@
+[
+  {
+    "sha256": "31cdd9f03020369bc36ce306e6eff45d5324b109b1dd1e50da9712e1d1b59424",
+    "first_seen": "2026-10-17T10:38:01Z",
+    "package": "harbour-schachlehrer-0.4.1-1.aarch64",
+    "version": "0.4.1-1",
+    "arch": "aarch64",
+    "buildtime": 1791546386,
+    "last_scanned": "2026-10-17T10:38:01Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          },
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Secrets"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "disabled",
+      "permissions": [
+        "Bluetooth",
+        "Documents",
+        "Internet",
+        "Secrets"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 7,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39025591710",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-schachlehrer/31cdd9f03020369bc36ce306e6eff45d5324b109b1dd1e50da9712e1d1b59424.md"
+    }
+  }
+]

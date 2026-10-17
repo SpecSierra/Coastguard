@@ -1,0 +1,204 @@
+{
+  "verdict": "clean",
+  "name": "harbour-schachlehrer",
+  "version": "0.4.1-1",
+  "arch": "aarch64",
+  "package": "harbour-schachlehrer-0.4.1-1.aarch64",
+  "buildtime": 1791546386,
+  "sha256": "31cdd9f03020369bc36ce306e6eff45d5324b109b1dd1e50da9712e1d1b59424",
+  "source": "https://openrepos.net/sites/default/files/packages/12895/harbour-schachlehrer-0.4.1-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12603",
+  "scanned": "2026-10-17T10:38:01Z",
+  "files": 162,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28155/Fri Oct 16 06:24:17 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-schachlehrer.desktop",
+          "name": "Schachlehrer",
+          "exec": "harbour-schachlehrer",
+          "hidden": false,
+          "sandbox": "disabled",
+          "permissions": [
+            "Internet",
+            "Documents",
+            "Secrets",
+            "Bluetooth"
+          ],
+          "organization": "org.smatkovi",
+          "application": "harbour-schachlehrer"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 7,
+      "hosts_in_scripts": 7,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 5,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-schachlehrer-engine",
+            "/usr/share/doc/harbour-schachlehrer/ASSETS.md",
+            "/usr/share/doc/harbour-schachlehrer/CODE.md"
+          ]
+        },
+        {
+          "host": "tests.stockfishchess.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-schachlehrer-engine",
+            "/usr/share/doc/harbour-schachlehrer/ASSETS.md",
+            "/usr/share/harbour-schachlehrer/bin/stockfish"
+          ]
+        },
+        {
+          "host": "commons.wikimedia.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/doc/harbour-schachlehrer/ASSETS.md"
+          ]
+        },
+        {
+          "host": "database.lichess.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/doc/harbour-schachlehrer/ASSETS.md"
+          ]
+        },
+        {
+          "host": "fsf.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/licenses/harbour-schachlehrer/LICENSE"
+          ]
+        },
+        {
+          "host": "lichess.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/doc/harbour-schachlehrer/ASSETS.md"
+          ]
+        },
+        {
+          "host": "tablebase.lichess.ovh",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/doc/harbour-schachlehrer/ASSETS.md"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "commons.wikimedia.org",
+        "database.lichess.org",
+        "fsf.org",
+        "github.com",
+        "lichess.org",
+        "tablebase.lichess.ovh",
+        "tests.stockfishchess.org"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 633360,
+        "malicious": 416
+      },
+      "notable": [],
+      "ignored_hosts": 2
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39025591710",
+  "diff": null,
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "sandbox-off",
+        "text": "Sandbox turned off"
+      },
+      {
+        "level": "info",
+        "id": "personal-data",
+        "text": "Personal data: Secrets"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-schachlehrer/31cdd9f03020369bc36ce306e6eff45d5324b109b1dd1e50da9712e1d1b59424.md"
+}
