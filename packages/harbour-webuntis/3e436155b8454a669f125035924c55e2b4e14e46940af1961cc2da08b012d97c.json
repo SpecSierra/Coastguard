@@ -1,0 +1,189 @@
+{
+  "verdict": "clean",
+  "name": "harbour-webuntis",
+  "version": "1.8.8-1",
+  "arch": "noarch",
+  "package": "harbour-webuntis-1.8.8-1.noarch",
+  "buildtime": 1791633434,
+  "sha256": "3e436155b8454a669f125035924c55e2b4e14e46940af1961cc2da08b012d97c",
+  "source": "https://openrepos.net/sites/default/files/packages/12895/harbour-webuntis-1.8.8-1.noarch.rpm",
+  "source_page": "https://openrepos.net/node/12244",
+  "scanned": "2026-10-17T19:20:50Z",
+  "files": 42,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28155/Fri Oct 16 06:24:17 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-webuntis.desktop",
+          "name": "WebUntis",
+          "exec": "sailfish-qml harbour-webuntis",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Secrets"
+          ],
+          "organization": "harbour-webuntis",
+          "application": "harbour-webuntis"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 2,
+      "hosts_in_scripts": 2,
+      "hosts": [
+        {
+          "host": "melpomene.webuntis.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-webuntis/webuntis_classbook.py"
+          ]
+        },
+        {
+          "host": "schoolsearch.webuntis.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-webuntis/webuntis_classbook.py"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "melpomene.webuntis.com",
+        "schoolsearch.webuntis.com"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 633360,
+        "malicious": 416
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39062026968",
+  "diff": {
+    "baseline": {
+      "sha256": "4d5888cf27003529cf38a8606f96a98828ee41b62cc1e8a196a03b121dd5514e",
+      "package": "harbour-webuntis-1.8.7-1.noarch",
+      "last_scanned": "2026-10-10T12:41:15Z"
+    },
+    "changes": [
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/harbour-webuntis/qml/pages/SecretPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-webuntis/qml/harbour-webuntis.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-webuntis/qml/pages/AboutPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-webuntis/qml/pages/PeriodDetailPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-webuntis/qml/pages/TimetablePage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-webuntis/webuntis_classbook.py",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 1,
+        "removed": 0,
+        "changed": 5,
+        "unchanged": 19
+      }
+    }
+  },
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "id": "personal-data",
+        "text": "Personal data: Secrets"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-webuntis/3e436155b8454a669f125035924c55e2b4e14e46940af1961cc2da08b012d97c.md"
+}
