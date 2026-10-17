@@ -1,0 +1,198 @@
+{
+  "verdict": "clean",
+  "name": "harbour-readeck",
+  "version": "1.1.6-1",
+  "arch": "aarch64",
+  "package": "harbour-readeck-1.1.6-1.aarch64",
+  "buildtime": 1792264582,
+  "sha256": "07d90115ecf0da5821159a8541f49865501d22d1d9120611689dba2f1a9d7a10",
+  "source": "https://openrepos.net/sites/default/files/packages/4899/harbour-readeck-1.1.6-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12620",
+  "scanned": "2026-10-17T19:38:10Z",
+  "files": 48,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28155/Fri Oct 16 06:24:17 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-readeck.desktop",
+          "name": "Readeck",
+          "exec": "harbour-readeck",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "WebView",
+            "UserDirs",
+            "Secrets"
+          ],
+          "organization": "harbour-readeck",
+          "application": "harbour-readeck"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [
+        {
+          "path": "/usr/share/dbus-1/services/harbour-readeck.harbour-readeck.service",
+          "bus": "session",
+          "name": "harbour-readeck.harbour-readeck",
+          "exec": "/usr/bin/invoker --type=silica-qt5 --desktop-file=harbour-readeck.desktop -s -n /usr/bin/harbour-readeck",
+          "user": null,
+          "systemd_service": null
+        }
+      ],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 0,
+      "hosts_in_scripts": 0,
+      "hosts": [],
+      "hosts_scripts": [],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 633360,
+        "malicious": 416
+      },
+      "notable": [],
+      "ignored_hosts": 2
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39063276661",
+  "diff": {
+    "baseline": {
+      "sha256": "c4538857e9b2afa89cce7489e6259f8fdd9ecb923cf005a5e450e7f434ae3425",
+      "package": "harbour-readeck-1.1.5-1.aarch64",
+      "last_scanned": "2026-10-12T14:58:24Z"
+    },
+    "changes": [
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/harbour-readeck",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/applications/harbour-readeck.desktop",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-readeck/qml/harbour-readeck.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-readeck/qml/pages/AddBookmarkPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-readeck/qml/pages/BookmarksPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-readeck/qml/pages/LoginPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/icons/hicolor/108x108/apps/harbour-readeck.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/icons/hicolor/128x128/apps/harbour-readeck.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/icons/hicolor/172x172/apps/harbour-readeck.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/icons/hicolor/86x86/apps/harbour-readeck.png",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 0,
+        "removed": 0,
+        "changed": 10,
+        "unchanged": 15
+      }
+    }
+  },
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "id": "personal-data",
+        "text": "Personal data: Secrets"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-readeck/07d90115ecf0da5821159a8541f49865501d22d1d9120611689dba2f1a9d7a10.md"
+}
