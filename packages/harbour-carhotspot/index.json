@@ -1034,5 +1034,66 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38901980431",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-carhotspot/c35a1523e13fd60fbeef85c9da4bbd772e463d92165c066c691882be889bb67e.md"
     }
+  },
+  {
+    "sha256": "52839ec9f983fa7d9b6fe36ecdf3476d6b0f49703c113aa35af3af0904c04b99",
+    "first_seen": "2026-10-17T11:59:31Z",
+    "package": "harbour-carhotspot-0.4.1-1.aarch64",
+    "version": "0.4.1-1",
+    "arch": "aarch64",
+    "buildtime": 1792231821,
+    "last_scanned": "2026-10-17T11:59:31Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "code-installs-persistence",
+            "text": "Code that installs persistence"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Installs Persistence"
+      ],
+      "sandbox": "declared",
+      "permissions": [
+        "Bluetooth",
+        "Internet"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-carhotspot-0.4.0-1.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 1,
+          "unchanged": 43
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39030736687",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-carhotspot/52839ec9f983fa7d9b6fe36ecdf3476d6b0f49703c113aa35af3af0904c04b99.md"
+    }
   }
 ]
