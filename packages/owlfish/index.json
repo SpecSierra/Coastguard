@@ -1,0 +1,42 @@
+[
+  {
+    "sha256": "588306f389df422bfbb556e871fa5cd636c78164ec495637a49b2b57ae20ef08",
+    "first_seen": "2026-10-17T11:38:00Z",
+    "package": "owlfish-1.5.0-1.aarch64",
+    "version": "1.5.0-1",
+    "arch": "aarch64",
+    "buildtime": 1792230064,
+    "last_scanned": "2026-10-17T11:38:00Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 2,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39029393290",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/owlfish/588306f389df422bfbb556e871fa5cd636c78164ec495637a49b2b57ae20ef08.md"
+    }
+  }
+]

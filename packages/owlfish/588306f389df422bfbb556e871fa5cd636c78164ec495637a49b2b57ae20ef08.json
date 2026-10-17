@@ -1,0 +1,121 @@
+{
+  "verdict": "clean",
+  "name": "owlfish",
+  "version": "1.5.0-1",
+  "arch": "aarch64",
+  "package": "owlfish-1.5.0-1.aarch64",
+  "buildtime": 1792230064,
+  "sha256": "588306f389df422bfbb556e871fa5cd636c78164ec495637a49b2b57ae20ef08",
+  "source": "https://openrepos.net/sites/default/files/packages/19767/owlfish-1.5.0-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12675",
+  "scanned": "2026-10-17T11:38:00Z",
+  "files": 46,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28155/Fri Oct 16 06:24:17 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 4,
+        "notable": [
+          "echo \"owlfish: restart the home screen to load it: systemctl --user restart lipstick\""
+        ],
+        "body": "# On every install and upgrade; never fails the installation\nif /usr/libexec/owlfish/update-env; then\n    echo \"owlfish: restart the home screen to load it: systemctl --user restart lipstick\"\nfi\nexit 0\n"
+      },
+      {
+        "type": "postuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 3,
+        "notable": [
+          "echo \"owlfish: restart the home screen to unload it: systemctl --user restart lipstick\""
+        ],
+        "body": "if [ $1 -eq 0 ]; then\n    echo \"owlfish: restart the home screen to unload it: systemctl --user restart lipstick\"\nfi\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 1,
+      "hosts_in_scripts": 1,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/owlfish/update-env",
+            "/usr/share/jolla-settings/pages/owlfish/OwlfishPage.qml"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "github.com"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 633360,
+        "malicious": 416
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39029393290",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/owlfish/588306f389df422bfbb556e871fa5cd636c78164ec495637a49b2b57ae20ef08.md"
+}
