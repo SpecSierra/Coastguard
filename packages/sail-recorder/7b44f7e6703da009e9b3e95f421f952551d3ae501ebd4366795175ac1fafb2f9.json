@@ -1,0 +1,237 @@
+{
+  "verdict": "clean",
+  "name": "sail-recorder",
+  "version": "1.2.2-18",
+  "arch": "aarch64",
+  "package": "sail-recorder-1.2.2-18.aarch64",
+  "buildtime": 1792210000,
+  "sha256": "7b44f7e6703da009e9b3e95f421f952551d3ae501ebd4366795175ac1fafb2f9",
+  "source": "https://openrepos.net/sites/default/files/packages/19628/betasail-recorder-1.2.2-18.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12504",
+  "scanned": "2026-10-17T05:58:09Z",
+  "files": 60,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28155/Fri Oct 16 06:24:17 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/sail-recorder.desktop",
+          "name": "Sail Recorder",
+          "exec": "/usr/bin/qmlscene /usr/share/sail-recorder/qml/ScreenKayitClean.qml",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [],
+          "organization": "org.sailrecorder",
+          "application": "SailRecorder"
+        }
+      ],
+      "shipped_profiles": [
+        "/etc/sailjail/permissions/sail-recorder.profile"
+      ],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [
+        {
+          "path": "/usr/lib/systemd/user/sail-recorder-daemon.service",
+          "scope": "user",
+          "exec_start": [
+            "/usr/bin/python3 /usr/libexec/sail-recorder/sail-recorder-daemon.py"
+          ],
+          "user": "device user",
+          "install_wanted_by": "default.target",
+          "enabled_by": [
+            "wanted by default.target (shipped symlink)",
+            "enabled or started from an install scriptlet"
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/user/sail-recorder-dbus-refresh.service",
+          "scope": "user",
+          "exec_start": [
+            "/usr/bin/busctl --user call org.freedesktop.DBus / org.freedesktop.DBus ReloadConfig"
+          ],
+          "user": "device user",
+          "install_wanted_by": null,
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/user/sail-recorder-dbus-watchdog.service",
+          "scope": "user",
+          "exec_start": [
+            "/usr/libexec/sail-recorder/sail-recorder-dbus-watchdog.sh"
+          ],
+          "user": "device user",
+          "install_wanted_by": "default.target",
+          "enabled_by": []
+        },
+        {
+          "path": "/usr/lib/systemd/user/sail-recorder-screenrecords-cleanup.path",
+          "scope": "user",
+          "exec_start": [],
+          "user": "device user",
+          "install_wanted_by": "default.target",
+          "enabled_by": [
+            "wanted by default.target (shipped symlink)",
+            "enabled or started from an install scriptlet"
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/user/sail-recorder-screenrecords-cleanup.service",
+          "scope": "user",
+          "exec_start": [
+            "/bin/sh -c 'rmdir /home/defaultuser/Videos/ScreenRecords 2>/dev/null || true'"
+          ],
+          "user": "device user",
+          "install_wanted_by": null,
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/user/sail-recorder-topmenu.service",
+          "scope": "user",
+          "exec_start": [
+            "/usr/libexec/sail-recorder/sail-recorder-dbus-bridge"
+          ],
+          "user": "device user",
+          "install_wanted_by": "default.target",
+          "enabled_by": [
+            "wanted by default.target (shipped symlink)",
+            "enabled or started from an install scriptlet"
+          ]
+        }
+      ],
+      "dbus": [
+        {
+          "path": "/usr/share/dbus-1/services/org.sailfishos.SailRecorder.service",
+          "bus": "session",
+          "name": "org.sailfishos.SailRecorder",
+          "exec": "/usr/libexec/sail-recorder/sail-recorder-dbus-bridge",
+          "user": null,
+          "systemd_service": "sail-recorder-topmenu.service"
+        },
+        {
+          "path": "/usr/share/dbus-1/services/org.sailfishos.SailRecorderCountdown.service",
+          "bus": "session",
+          "name": "org.sailfishos.SailRecorderCountdown",
+          "exec": "/usr/libexec/sail-recorder/sail-recorder-countdown-broker.sh",
+          "user": null,
+          "systemd_service": null
+        }
+      ],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [
+      {
+        "path": "/usr/libexec/sail-recorder/sail-recorder-engine",
+        "mode": "-rwxr-sr-x",
+        "owner": "root",
+        "group": "privileged",
+        "why": [
+          "setgid privileged"
+        ]
+      }
+    ],
+    "scriptlets": [
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 11,
+        "notable": [
+          "systemctl-user daemon-reload >/dev/null 2>&1 || :",
+          "chmod 2755 /usr/libexec/sail-recorder/sail-recorder-engine >/dev/null 2>&1 || :",
+          "systemctl-user disable --now sail-recorder-dbus-watchdog.service >/dev/null 2>&1 || :",
+          "systemctl-user restart sail-recorder-daemon.service >/dev/null 2>&1 || :",
+          "systemctl-user restart sail-recorder-topmenu.service >/dev/null 2>&1 || :",
+          "systemctl-user start sail-recorder-dbus-refresh.service >/dev/null 2>&1 || :",
+          "systemctl-user start sail-recorder-screenrecords-cleanup.service >/dev/null 2>&1 || :",
+          "systemctl-user restart sail-recorder-screenrecords-cleanup.path >/dev/null 2>&1 || :"
+        ],
+        "body": "systemctl-user daemon-reload >/dev/null 2>&1 || :\n# Apply the Xperia 10 III verified file ownership before any future recording.\n# RPM metadata already names this group; this is an idempotent install safeguard.\nif getent group privileged >/dev/null 2>&1; then\n    chgrp privileged /usr/libexec/sail-recorder/sail-recorder-engine >/dev/null 2>&1 || :\n    chmod 2755 /usr/libexec/sail-recorder/sail-recorder-engine >/dev/null 2>&1 || :\nfi\nsystemctl-user disable --now sail-recorder-dbus-watchdog.service >/dev/null 2>&1 || :\nsystemctl-user restart sail-recorder-daemon.service >/dev/null 2>&1 || :\nsystemctl-user restart sail-recorder-topmenu.service >/dev/null 2>&1 || :\nsystemctl-user start sail-recorder-dbus-refresh.service >/dev/null 2>&1 || :\nsystemctl-user start sail-recorder-screenrecords-cleanup.service >/dev/null 2>&1 || :\nsystemctl-user restart sail-recorder-screenrecords-cleanup.path >/dev/null 2>&1 || :\n\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 0,
+      "hosts_in_scripts": 0,
+      "hosts": [],
+      "hosts_scripts": [],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 633360,
+        "malicious": 416
+      },
+      "notable": [],
+      "ignored_hosts": 1
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39008123954",
+  "diff": null,
+  "risk": {
+    "grade": "high",
+    "reasons": [
+      {
+        "level": "high",
+        "id": "install-script-grants-elevated-privileges",
+        "text": "Install script grants elevated privileges"
+      },
+      {
+        "level": "medium",
+        "id": "privileged-files",
+        "text": "1 privileged file (setgid privileged)"
+      },
+      {
+        "level": "info",
+        "id": "own-sandbox-profile",
+        "text": "Own sandbox profile"
+      },
+      {
+        "level": "info",
+        "id": "background-start",
+        "text": "Starts in the background"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/sail-recorder/7b44f7e6703da009e9b3e95f421f952551d3ae501ebd4366795175ac1fafb2f9.md"
+}
