@@ -1,5 +1,51 @@
 [
   {
+    "sha256": "acecb986fa88b876ae805c78b45f170d9554fcb6a500509915db56d3fd0ab859",
+    "first_seen": "2026-10-17T19:19:39Z",
+    "package": "mpd-0.24-16.aarch64",
+    "version": "0.24-16",
+    "arch": "aarch64",
+    "buildtime": 1792261486,
+    "last_scanned": "2026-10-17T19:19:39Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 2,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 2,
+      "hosts_in_scripts": 3,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39061927041",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/mpd/acecb986fa88b876ae805c78b45f170d9554fcb6a500509915db56d3fd0ab859.md"
+    }
+  },
+  {
     "sha256": "14c0a3af32db3b85fb99f379a32723cede3620ad0dead6db7a9eb103f2d942a3",
     "first_seen": "2026-10-17T19:18:18Z",
     "package": "mpd-0.24-16.armv7hl",
