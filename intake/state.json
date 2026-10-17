@@ -1,5 +1,5 @@
 {
-  "cursor": 1792265747,
+  "cursor": 1792266541,
   "queue": [
     {
       "url": "https://openrepos.net/sites/default/files/packages/4899/harbour-nextmarks-1.0.3-1.aarch64.rpm",
@@ -12,6 +12,18 @@
       "page": "https://openrepos.net/node/12621",
       "appid": 12621,
       "title": "Nextmarks"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.46.17-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12489",
+      "appid": 12489,
+      "title": "xmatic"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.46.17-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12489",
+      "appid": 12489,
+      "title": "xmatic"
     }
   ],
   "seen": [
@@ -404,9 +416,11 @@
     "https://openrepos.net/sites/default/files/packages/4899/harbour-readeck-1.1.6-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/4899/harbour-readeck-1.1.6-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/4899/harbour-nextmarks-1.0.3-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/4899/harbour-nextmarks-1.0.3-1.armv7hl.rpm"
+    "https://openrepos.net/sites/default/files/packages/4899/harbour-nextmarks-1.0.3-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.46.17-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.46.17-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-17T19:40:18Z",
+  "last_run": "2026-10-17T19:57:22Z",
   "dispatched": [
     1792264659,
     1792264739,
