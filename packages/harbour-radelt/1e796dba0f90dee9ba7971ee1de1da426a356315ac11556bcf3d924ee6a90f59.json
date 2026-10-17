@@ -1,0 +1,127 @@
+{
+  "verdict": "clean",
+  "name": "harbour-radelt",
+  "version": "0.8.5-1",
+  "arch": "armv7hl",
+  "package": "harbour-radelt-0.8.5-1.armv7hl",
+  "buildtime": 1791897268,
+  "sha256": "1e796dba0f90dee9ba7971ee1de1da426a356315ac11556bcf3d924ee6a90f59",
+  "source": "https://openrepos.net/sites/default/files/packages/12895/harbour-radelt-0.8.5-1.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12730",
+  "scanned": "2026-10-17T09:22:15Z",
+  "files": 58,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28155/Fri Oct 16 06:24:17 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-radelt.desktop",
+          "name": "Radelt",
+          "exec": "harbour-radelt",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Location"
+          ],
+          "organization": "harbour-radelt",
+          "application": "harbour-radelt"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 2,
+      "hosts_in_scripts": 0,
+      "hosts": [
+        {
+          "host": "dashboard.radelt.at",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-radelt"
+          ]
+        },
+        {
+          "host": "www.topografix.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-radelt"
+          ]
+        }
+      ],
+      "hosts_scripts": [],
+      "hosts_binaries": [
+        "dashboard.radelt.at",
+        "www.topografix.com"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 633360,
+        "malicious": 416
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39020820519",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-radelt/1e796dba0f90dee9ba7971ee1de1da426a356315ac11556bcf3d924ee6a90f59.md"
+}
