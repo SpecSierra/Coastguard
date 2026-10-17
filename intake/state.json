@@ -1,5 +1,5 @@
 {
-  "cursor": 1792216361,
+  "cursor": 1792228441,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -362,8 +362,17 @@
     "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.9.5-2.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.9.5-2.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/19811/harbour-skiff-0.3.0-1.aarch64_5.rpm",
-    "https://openrepos.net/sites/default/files/packages/19628/betasail-recorder-1.2.2-18.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/19628/betasail-recorder-1.2.2-18.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/12895/harbour-quizduel-0.6.8-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/12895/harbour-quizduel-0.6.8-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/12895/harbour-radelt-0.8.5-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/12895/harbour-radelt-0.8.5-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-17T08:57:10Z",
-  "dispatched": []
+  "last_run": "2026-10-17T09:22:54Z",
+  "dispatched": [
+    1792228656,
+    1792228736,
+    1792228816,
+    1792228896
+  ]
 }
