@@ -2,12 +2,6 @@
   "cursor": 1792235606,
   "queue": [
     {
-      "url": "https://openrepos.net/sites/default/files/packages/19767/owlfish-1.5.0-1.aarch64.rpm",
-      "page": "https://openrepos.net/node/12675",
-      "appid": 12675,
-      "title": "Owlfish"
-    },
-    {
       "url": "https://openrepos.net/sites/default/files/packages/19767/owlfish-1.5.0-1.armv7hl.rpm",
       "page": "https://openrepos.net/node/12675",
       "appid": 12675,
@@ -410,12 +404,12 @@
     "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.4.1-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.10.1-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-17T11:17:31Z",
+  "last_run": "2026-10-17T11:38:31Z",
   "dispatched": [
-    1792232267,
     1792233434,
     1792233535,
     1792233636,
-    1792234633
+    1792234633,
+    1792237033
   ]
 }
