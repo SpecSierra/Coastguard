@@ -1,6 +1,13 @@
 {
-  "cursor": 1792228441,
-  "queue": [],
+  "cursor": 1792228801,
+  "queue": [
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/12895/harbour-sagswien-0.2.3-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12732",
+      "appid": 12732,
+      "title": "harbour-sagswien"
+    }
+  ],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -366,13 +373,16 @@
     "https://openrepos.net/sites/default/files/packages/12895/harbour-quizduel-0.6.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/12895/harbour-quizduel-0.6.8-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/12895/harbour-radelt-0.8.5-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/12895/harbour-radelt-0.8.5-1.armv7hl.rpm"
+    "https://openrepos.net/sites/default/files/packages/12895/harbour-radelt-0.8.5-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/12895/harbour-sagswien-0.2.3-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/12895/harbour-sagswien-0.2.3-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-17T09:22:54Z",
+  "last_run": "2026-10-17T09:38:43Z",
   "dispatched": [
     1792228656,
     1792228736,
     1792228816,
-    1792228896
+    1792228896,
+    1792229844
   ]
 }
