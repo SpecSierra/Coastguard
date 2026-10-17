@@ -2,12 +2,6 @@
   "cursor": 1792232101,
   "queue": [
     {
-      "url": "https://openrepos.net/sites/default/files/packages/19767/owlfish-qualcomm-1.5.0-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12736",
-      "appid": 12736,
-      "title": "owlfish-qualcomm"
-    },
-    {
       "url": "https://openrepos.net/sites/default/files/packages/19767/owlfish-1.5.0-1.aarch64.rpm",
       "page": "https://openrepos.net/node/12675",
       "appid": 12675,
@@ -409,12 +403,12 @@
     "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.4.1-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.4.1-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-17T10:41:55Z",
+  "last_run": "2026-10-17T10:58:32Z",
   "dispatched": [
-    1792229844,
     1792232267,
     1792233434,
     1792233535,
-    1792233636
+    1792233636,
+    1792234633
   ]
 }
