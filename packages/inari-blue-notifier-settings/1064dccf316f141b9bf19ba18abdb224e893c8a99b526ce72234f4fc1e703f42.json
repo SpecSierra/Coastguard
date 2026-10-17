@@ -1,0 +1,102 @@
+{
+  "verdict": "clean",
+  "name": "inari-blue-notifier-settings",
+  "version": "1.0.0-1",
+  "arch": "noarch",
+  "package": "inari-blue-notifier-settings-1.0.0-1.noarch",
+  "buildtime": 1792270676,
+  "sha256": "1064dccf316f141b9bf19ba18abdb224e893c8a99b526ce72234f4fc1e703f42",
+  "source": "https://openrepos.net/sites/default/files/packages/6026/inari-blue-notifier-settings-1.0.0-1.noarch.rpm",
+  "source_page": "https://openrepos.net/node/12740",
+  "scanned": "2026-10-17T22:00:46Z",
+  "files": 9,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28155/Fri Oct 16 06:24:17 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "postuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 3,
+        "notable": [],
+        "body": "if [ \"$1\" -eq 0 ] && [ -f \"/usr/share/applications/harbour-inari-blue-notifier.desktop\" ]; then\n    desktop-file-edit --remove-key=NoDisplay \"/usr/share/applications/harbour-inari-blue-notifier.desktop\"\nfi\n"
+      },
+      {
+        "type": "posttrans",
+        "interpreter": "/bin/sh",
+        "lines": 4,
+        "notable": [],
+        "body": "if [ -f \"/usr/share/inari-blue-notifier-settings/hide-launcher\" ] && \\\n   [ -f \"/usr/share/applications/harbour-inari-blue-notifier.desktop\" ]; then\n    desktop-file-edit --set-key=NoDisplay --set-value=true \"/usr/share/applications/harbour-inari-blue-notifier.desktop\"\nfi\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 0,
+      "hosts_in_scripts": 0,
+      "hosts": [],
+      "hosts_scripts": [],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 633360,
+        "malicious": 416
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39073258448",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/inari-blue-notifier-settings/1064dccf316f141b9bf19ba18abdb224e893c8a99b526ce72234f4fc1e703f42.md"
+}
