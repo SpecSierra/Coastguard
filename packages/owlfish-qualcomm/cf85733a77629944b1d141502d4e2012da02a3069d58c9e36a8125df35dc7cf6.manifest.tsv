@@ -1,0 +1,5 @@
+5dfb9886d741ecdadd7159e680f883b85849c4ea6380f026e1eba0eb3827c17f	748	other	/etc/dbus-1/system.d/io.github.ccontino84.owlfish.Qualcomm.conf
+90d7eebdce174a65f41969b66bc0f6bdacf9b95692127359b302dc5f6b3c2168	829	other	/usr/lib/systemd/system/owlfish-qualcomm.service
+36e84b96a389656bfd90606fe00cc3e863f86e19225a504d69aa7d9b1c07a57a	93908	elf	/usr/libexec/owlfish/qualcomm-helper
+3f84ff17e1d042b123eaec5ff4d39cece54353e3fe808438b916d2fbfa702c97	125	other	/usr/share/dbus-1/system-services/io.github.ccontino84.owlfish.Qualcomm.service
+5df07007198989c622f5d41de8d703e7bef3d0e79d62e24332ee739a452af62a	26436	other	/usr/share/licenses/owlfish-qualcomm-1.5.0/LICENSE

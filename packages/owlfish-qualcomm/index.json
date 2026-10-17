@@ -1,5 +1,53 @@
 [
   {
+    "sha256": "cf85733a77629944b1d141502d4e2012da02a3069d58c9e36a8125df35dc7cf6",
+    "first_seen": "2026-10-17T10:57:50Z",
+    "package": "owlfish-qualcomm-1.5.0-1.armv7hl",
+    "version": "1.5.0-1",
+    "arch": "armv7hl",
+    "buildtime": 1792230057,
+    "last_scanned": "2026-10-17T10:57:50Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "hook-d-bus-system-policy",
+            "text": "System hook: D-Bus system policy"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [
+        "D-Bus system policy"
+      ],
+      "scriptlets": 3,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39026843603",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/owlfish-qualcomm/cf85733a77629944b1d141502d4e2012da02a3069d58c9e36a8125df35dc7cf6.md"
+    }
+  },
+  {
     "sha256": "dcdf4c785125e24287eaa06aa637672e5f5bb13872797e41d292d94c67a853dd",
     "first_seen": "2026-10-17T10:41:15Z",
     "package": "owlfish-qualcomm-1.5.0-1.aarch64",

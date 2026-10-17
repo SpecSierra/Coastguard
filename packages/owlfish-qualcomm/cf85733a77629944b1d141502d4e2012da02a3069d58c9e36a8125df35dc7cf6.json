@@ -1,0 +1,163 @@
+{
+  "verdict": "clean",
+  "name": "owlfish-qualcomm",
+  "version": "1.5.0-1",
+  "arch": "armv7hl",
+  "package": "owlfish-qualcomm-1.5.0-1.armv7hl",
+  "buildtime": 1792230057,
+  "sha256": "cf85733a77629944b1d141502d4e2012da02a3069d58c9e36a8125df35dc7cf6",
+  "source": "https://openrepos.net/sites/default/files/packages/19767/owlfish-qualcomm-1.5.0-1.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12736",
+  "scanned": "2026-10-17T10:57:50Z",
+  "files": 19,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28155/Fri Oct 16 06:24:17 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [
+        {
+          "path": "/usr/lib/systemd/system/owlfish-qualcomm.service",
+          "scope": "system",
+          "exec_start": [
+            "/usr/libexec/owlfish/qualcomm-helper"
+          ],
+          "user": "graphics",
+          "install_wanted_by": null,
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        }
+      ],
+      "dbus": [
+        {
+          "path": "/usr/share/dbus-1/system-services/io.github.ccontino84.owlfish.Qualcomm.service",
+          "bus": "system",
+          "name": "io.github.ccontino84.owlfish.Qualcomm",
+          "exec": "/bin/false",
+          "user": "root",
+          "systemd_service": "owlfish-qualcomm.service"
+        }
+      ],
+      "autostart": []
+    },
+    "system_integration": {
+      "D-Bus system policy": [
+        "/etc/dbus-1/system.d/io.github.ccontino84.owlfish.Qualcomm.conf"
+      ]
+    },
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 4,
+        "notable": [
+          "systemctl daemon-reload >/dev/null 2>&1 || :",
+          "systemctl try-restart owlfish-qualcomm.service >/dev/null 2>&1 || :",
+          "echo \"owlfish-qualcomm: restart the home screen to use it: systemctl --user restart lipstick\""
+        ],
+        "body": "systemctl daemon-reload >/dev/null 2>&1 || :\n# A helper from an older version starts again when lipstick asks for it\nsystemctl try-restart owlfish-qualcomm.service >/dev/null 2>&1 || :\necho \"owlfish-qualcomm: restart the home screen to use it: systemctl --user restart lipstick\"\nexit 0\n"
+      },
+      {
+        "type": "preuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 4,
+        "notable": [
+          "systemctl stop owlfish-qualcomm.service >/dev/null 2>&1 || :"
+        ],
+        "body": "# Stopping the helper turns the display hardware's matrix off\nif [ $1 -eq 0 ]; then\n    systemctl stop owlfish-qualcomm.service >/dev/null 2>&1 || :\nfi\nexit 0\n"
+      },
+      {
+        "type": "postuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 2,
+        "notable": [
+          "systemctl daemon-reload >/dev/null 2>&1 || :"
+        ],
+        "body": "systemctl daemon-reload >/dev/null 2>&1 || :\nexit 0\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 1,
+      "hosts_in_scripts": 1,
+      "hosts": [
+        {
+          "host": "www.freedesktop.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/etc/dbus-1/system.d/io.github.ccontino84.owlfish.Qualcomm.conf"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "www.freedesktop.org"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 633360,
+        "malicious": 416
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39026843603",
+  "diff": null,
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "hook-d-bus-system-policy",
+        "text": "System hook: D-Bus system policy"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/owlfish-qualcomm/cf85733a77629944b1d141502d4e2012da02a3069d58c9e36a8125df35dc7cf6.md"
+}
