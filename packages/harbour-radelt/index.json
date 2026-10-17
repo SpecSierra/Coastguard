@@ -1,0 +1,45 @@
+[
+  {
+    "sha256": "0eb3d1d3b8bcff59f7070de639a1b9bb44476035ae01331cd5b23bc5c3e1a235",
+    "first_seen": "2026-10-17T09:20:48Z",
+    "package": "harbour-radelt-0.8.5-1.aarch64",
+    "version": "0.8.5-1",
+    "arch": "aarch64",
+    "buildtime": 1791897253,
+    "last_scanned": "2026-10-17T09:20:48Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "Location"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39020735202",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-radelt/0eb3d1d3b8bcff59f7070de639a1b9bb44476035ae01331cd5b23bc5c3e1a235.md"
+    }
+  }
+]
