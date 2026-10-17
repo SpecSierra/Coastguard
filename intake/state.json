@@ -1,6 +1,19 @@
 {
-  "cursor": 1792264381,
-  "queue": [],
+  "cursor": 1792265747,
+  "queue": [
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/4899/harbour-nextmarks-1.0.3-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12621",
+      "appid": 12621,
+      "title": "Nextmarks"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/4899/harbour-nextmarks-1.0.3-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12621",
+      "appid": 12621,
+      "title": "Nextmarks"
+    }
+  ],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -387,12 +400,18 @@
     "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-4.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/2497/mpd-0.24-16.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/2497/mpd-0.24-16.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/12895/harbour-webuntis-1.8.8-1.noarch.rpm"
+    "https://openrepos.net/sites/default/files/packages/12895/harbour-webuntis-1.8.8-1.noarch.rpm",
+    "https://openrepos.net/sites/default/files/packages/4899/harbour-readeck-1.1.6-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/4899/harbour-readeck-1.1.6-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/4899/harbour-nextmarks-1.0.3-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/4899/harbour-nextmarks-1.0.3-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-17T19:21:17Z",
+  "last_run": "2026-10-17T19:40:18Z",
   "dispatched": [
     1792264659,
     1792264739,
-    1792264819
+    1792264819,
+    1792265858,
+    1792265939
   ]
 }
