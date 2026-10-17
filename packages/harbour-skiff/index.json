@@ -108,5 +108,57 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38593894068",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-skiff/367d3696f03aa619409327a2269c4d6037fe88bc6ec3f0f4546682a69a91ab35.md"
     }
+  },
+  {
+    "sha256": "f0f367281abf420e7572bfeadfe7ebf5c4dd39e9a9842815fb89b18cfd9b267f",
+    "first_seen": "2026-10-17T05:38:32Z",
+    "package": "harbour-skiff-0.3.0-1.aarch64",
+    "version": "0.3.0-1",
+    "arch": "aarch64",
+    "buildtime": 1792066966,
+    "last_scanned": "2026-10-17T05:38:32Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 2,
+      "hosts_in_scripts": 15,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-skiff-0.2.0-1.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 2,
+          "unchanged": 8
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39006947231",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-skiff/f0f367281abf420e7572bfeadfe7ebf5c4dd39e9a9842815fb89b18cfd9b267f.md"
+    }
   }
 ]
