@@ -1,5 +1,49 @@
 [
   {
+    "sha256": "089739d5dc8c24e77d34cf5fd310f6344552ab1c2ec0a629b8f401d8b5458088",
+    "first_seen": "2026-10-17T21:59:28Z",
+    "package": "harbour-oe1radio-0.7.4-1.aarch64",
+    "version": "0.7.4-1",
+    "arch": "aarch64",
+    "buildtime": 1792265280,
+    "last_scanned": "2026-10-17T21:59:28Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Downloads",
+        "Internet"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39073169352",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-oe1radio/089739d5dc8c24e77d34cf5fd310f6344552ab1c2ec0a629b8f401d8b5458088.md"
+    }
+  },
+  {
     "sha256": "43c797f51c2d2619210ebb03229233ea37d860a60ef1e13245190c4e92d52bbf",
     "first_seen": "2026-10-17T21:58:02Z",
     "package": "harbour-oe1radio-0.7.4-1.armv7hl",

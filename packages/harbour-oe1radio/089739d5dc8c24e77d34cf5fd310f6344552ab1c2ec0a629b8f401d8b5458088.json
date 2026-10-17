@@ -1,0 +1,130 @@
+{
+  "verdict": "clean",
+  "name": "harbour-oe1radio",
+  "version": "0.7.4-1",
+  "arch": "aarch64",
+  "package": "harbour-oe1radio-0.7.4-1.aarch64",
+  "buildtime": 1792265280,
+  "sha256": "089739d5dc8c24e77d34cf5fd310f6344552ab1c2ec0a629b8f401d8b5458088",
+  "source": "https://openrepos.net/sites/default/files/packages/12895/harbour-oe1radio-0.7.4-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12738",
+  "scanned": "2026-10-17T21:59:28Z",
+  "files": 60,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28155/Fri Oct 16 06:24:17 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-oe1radio.desktop",
+          "name": "\u00d61 Radio",
+          "exec": "harbour-oe1radio",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Audio",
+            "Internet",
+            "Downloads"
+          ],
+          "organization": "harbour-oe1radio",
+          "application": "harbour-oe1radio"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 2,
+      "hosts_in_scripts": 1,
+      "hosts": [
+        {
+          "host": "oe1.orf.at",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-oe1radio",
+            "/usr/share/harbour-oe1radio/qml/pages/BeitragPage.qml"
+          ]
+        },
+        {
+          "host": "audioapi.orf.at",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-oe1radio"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "oe1.orf.at"
+      ],
+      "hosts_binaries": [
+        "audioapi.orf.at"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 633360,
+        "malicious": 416
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39073169352",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-oe1radio/089739d5dc8c24e77d34cf5fd310f6344552ab1c2ec0a629b8f401d8b5458088.md"
+}
