@@ -47,5 +47,54 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39020567043",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-quizduel/d990850e3e9b5c1c25e93553471ef913014638cb0135bd0f8ed840c7ec4fd4b3.md"
     }
+  },
+  {
+    "sha256": "cd0e74062650558499ce43f45fc868509f127d0681e18224b4c23f829efef708",
+    "first_seen": "2026-10-17T09:19:29Z",
+    "package": "harbour-quizduel-0.6.8-1.armv7hl",
+    "version": "0.6.8-1",
+    "arch": "armv7hl",
+    "buildtime": 1791752290,
+    "last_scanned": "2026-10-17T09:19:29Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Secrets"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "Secrets"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39020650358",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-quizduel/cd0e74062650558499ce43f45fc868509f127d0681e18224b4c23f829efef708.md"
+    }
   }
 ]
