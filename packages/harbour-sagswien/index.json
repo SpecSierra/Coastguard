@@ -44,5 +44,51 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39021833286",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-sagswien/d55705956719a5bbe8bcb368171038d63092041b889fc3ee40311f0fb4025789.md"
     }
+  },
+  {
+    "sha256": "14004b13e2c6ce49173dd12dacb7092234a10d1f68428ccb083f596b7e1f5560",
+    "first_seen": "2026-10-17T10:18:24Z",
+    "package": "harbour-sagswien-0.2.3-1.armv7hl",
+    "version": "0.2.3-1",
+    "arch": "armv7hl",
+    "buildtime": 1791559958,
+    "last_scanned": "2026-10-17T10:18:24Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "Location",
+        "MediaIndexing",
+        "Pictures",
+        "RemovableMedia"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39024353190",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-sagswien/14004b13e2c6ce49173dd12dacb7092234a10d1f68428ccb083f596b7e1f5560.md"
+    }
   }
 ]
