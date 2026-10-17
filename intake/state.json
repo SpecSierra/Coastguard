@@ -2,18 +2,6 @@
   "cursor": 1792269335,
   "queue": [
     {
-      "url": "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.46.17-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12489",
-      "appid": 12489,
-      "title": "xmatic"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/17160/pharos-0.1.0-1.aarch64.rpm",
-      "page": "https://openrepos.net/node/12739",
-      "appid": 12739,
-      "title": "Pharos"
-    },
-    {
       "url": "https://openrepos.net/sites/default/files/packages/12895/harbour-oe1radio-0.7.4-1.armv7hl.rpm",
       "page": "https://openrepos.net/node/12738",
       "appid": 12738,
@@ -423,12 +411,12 @@
     "https://openrepos.net/sites/default/files/packages/12895/harbour-oe1radio-0.7.4-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/12895/harbour-oe1radio-0.7.4-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-17T20:41:55Z",
+  "last_run": "2026-10-17T20:49:31Z",
   "dispatched": [
-    1792265858,
-    1792265939,
     1792269456,
     1792269536,
-    1792269616
+    1792269616,
+    1792269993,
+    1792270093
   ]
 }
