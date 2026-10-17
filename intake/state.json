@@ -1,6 +1,13 @@
 {
-  "cursor": 1792270902,
-  "queue": [],
+  "cursor": 1792275541,
+  "queue": [
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.9.6-1.i486.rpm",
+      "page": "https://openrepos.net/node/12550",
+      "appid": 12550,
+      "title": "FUTO Keyboard (with Swipe and Offline Voice Input)"
+    }
+  ],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -397,12 +404,17 @@
     "https://openrepos.net/sites/default/files/packages/17160/pharos-0.1.0-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/12895/harbour-oe1radio-0.7.4-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/12895/harbour-oe1radio-0.7.4-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/6026/inari-blue-notifier-settings-1.0.0-1.noarch.rpm"
+    "https://openrepos.net/sites/default/files/packages/6026/inari-blue-notifier-settings-1.0.0-1.noarch.rpm",
+    "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.9.6-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.9.6-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.9.6-1.i486.rpm"
   ],
-  "last_run": "2026-10-17T22:17:09Z",
+  "last_run": "2026-10-17T22:44:17Z",
   "dispatched": [
     1792274233,
     1792274333,
-    1792274413
+    1792274413,
+    1792276646,
+    1792276852
   ]
 }
