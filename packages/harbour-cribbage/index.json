@@ -38,5 +38,45 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39036124784",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-cribbage/a9cd4492059d58148533086ea46adeaaa93bde1ae6e82eadd899d302425385e1.md"
     }
+  },
+  {
+    "sha256": "cf4e94d8a61dc8db85cf0fc8ed4892439c1effa870919987ee67fd22ca2930b7",
+    "first_seen": "2026-10-17T13:22:14Z",
+    "package": "harbour-cribbage-0.1.0-1.armv7hl",
+    "version": "0.1.0-1",
+    "arch": "armv7hl",
+    "buildtime": 1792238791,
+    "last_scanned": "2026-10-17T13:22:14Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39036217655",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-cribbage/cf4e94d8a61dc8db85cf0fc8ed4892439c1effa870919987ee67fd22ca2930b7.md"
+    }
   }
 ]
