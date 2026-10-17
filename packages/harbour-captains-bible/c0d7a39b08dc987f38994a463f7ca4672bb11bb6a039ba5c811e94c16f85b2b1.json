@@ -1,0 +1,160 @@
+{
+  "verdict": "clean",
+  "name": "harbour-captains-bible",
+  "version": "0.2-4",
+  "arch": "armv7hl",
+  "package": "harbour-captains-bible-0.2-4.armv7hl",
+  "buildtime": 1792255816,
+  "sha256": "c0d7a39b08dc987f38994a463f7ca4672bb11bb6a039ba5c811e94c16f85b2b1",
+  "source": "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-4.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12708",
+  "scanned": "2026-10-17T16:58:02Z",
+  "files": 41,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28155/Fri Oct 16 06:24:17 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-captains-bible.desktop",
+          "name": "Captain's Bible",
+          "exec": "harbour-captains-bible",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet"
+          ],
+          "organization": "org.myorg",
+          "application": "harbour-captains-bible"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 2,
+      "hosts_in_scripts": 0,
+      "hosts": [
+        {
+          "host": "mph4.ru",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-captains-bible"
+          ]
+        },
+        {
+          "host": "www.gimp.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-captains-bible/qml/cover/172icon.png",
+            "/usr/share/icons/hicolor/108x108/apps/harbour-captains-bible.png",
+            "/usr/share/icons/hicolor/128x128/apps/harbour-captains-bible.png"
+          ]
+        }
+      ],
+      "hosts_scripts": [],
+      "hosts_binaries": [
+        "mph4.ru",
+        "www.gimp.org"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 633360,
+        "malicious": 416
+      },
+      "notable": [],
+      "ignored_hosts": 3
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39051648069",
+  "diff": {
+    "baseline": {
+      "sha256": "c42472f760861848f867f49f8888474f410da5d44e6e2878779b68ce081711ff",
+      "package": "harbour-captains-bible-0.2-3.armv7hl",
+      "last_scanned": "2026-10-17T13:19:16Z"
+    },
+    "changes": [
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/harbour-captains-bible",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-captains-bible/qml/pages/MapPage.qml",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 0,
+        "removed": 0,
+        "changed": 2,
+        "unchanged": 19
+      }
+    }
+  },
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-captains-bible/c0d7a39b08dc987f38994a463f7ca4672bb11bb6a039ba5c811e94c16f85b2b1.md"
+}
