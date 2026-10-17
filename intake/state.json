@@ -1,5 +1,5 @@
 {
-  "cursor": 1792194331,
+  "cursor": 1792202401,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -356,8 +356,11 @@
     "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-2.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.9.5-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.9.5-1.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.9.5-1.i486.rpm"
+    "https://openrepos.net/sites/default/files/packages/117/futo-keyboard-sailfish-0.9.5-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/2414/sfos-quickshare-0.1.7-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-17T01:57:12Z",
-  "dispatched": []
+  "last_run": "2026-10-17T02:19:25Z",
+  "dispatched": [
+    1792203445
+  ]
 }
