@@ -1,19 +1,6 @@
 {
-  "cursor": 1792238041,
-  "queue": [
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-3.aarch64.rpm",
-      "page": "https://openrepos.net/node/12708",
-      "appid": 12708,
-      "title": "Captain's Bible"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-3.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12708",
-      "appid": 12708,
-      "title": "Captain's Bible"
-    }
-  ],
+  "cursor": 1792242001,
+  "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -393,14 +380,16 @@
     "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.10.1-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.10.2-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-3.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-3.armv7hl.rpm"
+    "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-3.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/18418/harbour-cribbage-0.1.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/18418/harbour-cribbage-0.1.0-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-17T12:58:32Z",
+  "last_run": "2026-10-17T13:23:05Z",
   "dispatched": [
-    1792238257,
-    1792238337,
-    1792238418,
-    1792238498,
-    1792241834
+    1792241834,
+    1792243044,
+    1792243125,
+    1792243205,
+    1792243285
   ]
 }
