@@ -2,12 +2,6 @@
   "cursor": 1792238041,
   "queue": [
     {
-      "url": "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.10.2-1.aarch64.rpm",
-      "page": "https://openrepos.net/node/12701",
-      "appid": 12701,
-      "title": "Inari Blue Notifier"
-    },
-    {
       "url": "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-3.aarch64.rpm",
       "page": "https://openrepos.net/node/12708",
       "appid": 12708,
@@ -401,12 +395,12 @@
     "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-3.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-3.armv7hl.rpm"
   ],
-  "last_run": "2026-10-17T12:37:12Z",
+  "last_run": "2026-10-17T12:58:32Z",
   "dispatched": [
-    1792237033,
     1792238257,
     1792238337,
     1792238418,
-    1792238498
+    1792238498,
+    1792241834
   ]
 }
