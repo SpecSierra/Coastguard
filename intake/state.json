@@ -1,11 +1,23 @@
 {
-  "cursor": 1792228801,
+  "cursor": 1792230950,
   "queue": [
     {
       "url": "https://openrepos.net/sites/default/files/packages/12895/harbour-sagswien-0.2.3-1.armv7hl.rpm",
       "page": "https://openrepos.net/node/12732",
       "appid": 12732,
       "title": "harbour-sagswien"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/12895/harbour-schachlehrer-0.4.1-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12603",
+      "appid": 12603,
+      "title": "harbour-schachlehrer"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/12895/harbour-schachlehrer-0.4.1-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12603",
+      "appid": 12603,
+      "title": "harbour-schachlehrer"
     }
   ],
   "seen": [
@@ -375,9 +387,11 @@
     "https://openrepos.net/sites/default/files/packages/12895/harbour-radelt-0.8.5-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/12895/harbour-radelt-0.8.5-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/12895/harbour-sagswien-0.2.3-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/12895/harbour-sagswien-0.2.3-1.armv7hl.rpm"
+    "https://openrepos.net/sites/default/files/packages/12895/harbour-sagswien-0.2.3-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/12895/harbour-schachlehrer-0.4.1-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/12895/harbour-schachlehrer-0.4.1-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-17T09:38:43Z",
+  "last_run": "2026-10-17T09:57:44Z",
   "dispatched": [
     1792228656,
     1792228736,
