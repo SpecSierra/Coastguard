@@ -1,0 +1,48 @@
+[
+  {
+    "sha256": "0c0b691fa6e9bb51b3571fbd55ad3c823a018750c4575a2a2663b2c88f5e3a7a",
+    "first_seen": "2026-10-17T20:48:47Z",
+    "package": "pharos-0.1.0-1.aarch64",
+    "version": "0.1.0-1",
+    "arch": "aarch64",
+    "buildtime": 1792249969,
+    "last_scanned": "2026-10-17T20:48:47Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 3,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39068253679",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/pharos/0c0b691fa6e9bb51b3571fbd55ad3c823a018750c4575a2a2663b2c88f5e3a7a.md"
+    }
+  }
+]
