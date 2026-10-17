@@ -1,12 +1,6 @@
 {
-  "cursor": 1792230950,
+  "cursor": 1792232101,
   "queue": [
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/12895/harbour-sagswien-0.2.3-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12732",
-      "appid": 12732,
-      "title": "harbour-sagswien"
-    },
     {
       "url": "https://openrepos.net/sites/default/files/packages/12895/harbour-schachlehrer-0.4.1-1.aarch64.rpm",
       "page": "https://openrepos.net/node/12603",
@@ -18,6 +12,42 @@
       "page": "https://openrepos.net/node/12603",
       "appid": 12603,
       "title": "harbour-schachlehrer"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19767/owlfish-qualcomm-1.5.0-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12736",
+      "appid": 12736,
+      "title": "owlfish-qualcomm"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19767/owlfish-qualcomm-1.5.0-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12736",
+      "appid": 12736,
+      "title": "owlfish-qualcomm"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19767/owlfish-1.5.0-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12675",
+      "appid": 12675,
+      "title": "Owlfish"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19767/owlfish-1.5.0-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12675",
+      "appid": 12675,
+      "title": "Owlfish"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.4.1-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12624",
+      "appid": 12624,
+      "title": "Car Hotspot"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.4.1-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12624",
+      "appid": 12624,
+      "title": "Car Hotspot"
     }
   ],
   "seen": [
@@ -389,14 +419,20 @@
     "https://openrepos.net/sites/default/files/packages/12895/harbour-sagswien-0.2.3-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/12895/harbour-sagswien-0.2.3-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/12895/harbour-schachlehrer-0.4.1-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/12895/harbour-schachlehrer-0.4.1-1.armv7hl.rpm"
+    "https://openrepos.net/sites/default/files/packages/12895/harbour-schachlehrer-0.4.1-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19767/owlfish-qualcomm-1.5.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19767/owlfish-qualcomm-1.5.0-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19767/owlfish-1.5.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19767/owlfish-1.5.0-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.4.1-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.4.1-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-17T09:57:44Z",
+  "last_run": "2026-10-17T10:19:06Z",
   "dispatched": [
-    1792228656,
     1792228736,
     1792228816,
     1792228896,
-    1792229844
+    1792229844,
+    1792232267
   ]
 }
