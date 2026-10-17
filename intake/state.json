@@ -1,5 +1,5 @@
 {
-  "cursor": 1792269335,
+  "cursor": 1792270902,
   "queue": [
     {
       "url": "https://openrepos.net/sites/default/files/packages/12895/harbour-oe1radio-0.7.4-1.armv7hl.rpm",
@@ -12,6 +12,12 @@
       "page": "https://openrepos.net/node/12738",
       "appid": 12738,
       "title": "harbour-oe1radio"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/6026/inari-blue-notifier-settings-1.0.0-1.noarch.rpm",
+      "page": "https://openrepos.net/node/12740",
+      "appid": 12740,
+      "title": "Inari Blue Notifier Settings entry"
     }
   ],
   "seen": [
@@ -409,9 +415,10 @@
     "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.46.17-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/17160/pharos-0.1.0-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/12895/harbour-oe1radio-0.7.4-1.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/12895/harbour-oe1radio-0.7.4-1.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/12895/harbour-oe1radio-0.7.4-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/6026/inari-blue-notifier-settings-1.0.0-1.noarch.rpm"
   ],
-  "last_run": "2026-10-17T20:57:10Z",
+  "last_run": "2026-10-17T21:17:21Z",
   "dispatched": [
     1792269456,
     1792269536,
