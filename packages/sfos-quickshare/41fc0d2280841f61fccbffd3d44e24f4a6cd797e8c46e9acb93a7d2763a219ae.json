@@ -1,0 +1,630 @@
+{
+  "verdict": "clean",
+  "name": "sfos-quickshare",
+  "version": "0.1.7-1",
+  "arch": "aarch64",
+  "package": "sfos-quickshare-0.1.7-1.aarch64",
+  "buildtime": 1792202093,
+  "sha256": "41fc0d2280841f61fccbffd3d44e24f4a6cd797e8c46e9acb93a7d2763a219ae",
+  "source": "https://openrepos.net/sites/default/files/packages/2414/sfos-quickshare-0.1.7-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12724",
+  "scanned": "2026-10-17T02:18:21Z",
+  "files": 99,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28155/Fri Oct 16 06:24:17 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [
+        {
+          "path": "/usr/lib/systemd/user/sfos-quickshare.service",
+          "scope": "user",
+          "exec_start": [
+            "/usr/bin/sfos-quickshared"
+          ],
+          "user": "device user",
+          "install_wanted_by": null,
+          "enabled_by": []
+        }
+      ],
+      "dbus": [
+        {
+          "path": "/usr/share/dbus-1/services/org.sailfishos.QuickShare.service",
+          "bus": "session",
+          "name": "org.sailfishos.QuickShare",
+          "exec": "/usr/bin/sfos-quickshared",
+          "user": null,
+          "systemd_service": "sfos-quickshare.service"
+        }
+      ],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "preinstall",
+        "interpreter": "/bin/sh",
+        "lines": 14,
+        "notable": [
+          "if command -v systemctl-user >/dev/null 2>&1; then",
+          "state=$(systemctl-user is-enabled sfos-quickshare.service 2>/dev/null || :)",
+          "masked*) systemctl-user stop sfos-quickshare.service >/dev/null 2>&1 || : ;;",
+          "if systemctl-user mask --runtime sfos-quickshare.service >/dev/null 2>&1; then",
+          "mkdir -p /run/sfos-quickshare-rpm",
+          "chmod 700 /run/sfos-quickshare-rpm",
+          ": > /run/sfos-quickshare-rpm/unmask",
+          "systemctl-user stop sfos-quickshare.service >/dev/null 2>&1 || :"
+        ],
+        "body": "# Block D-Bus activation while files are replaced, including upgrades from 0.1.5.\nif command -v systemctl-user >/dev/null 2>&1; then\n    state=$(systemctl-user is-enabled sfos-quickshare.service 2>/dev/null || :)\n    case \"$state\" in\n        masked*) systemctl-user stop sfos-quickshare.service >/dev/null 2>&1 || : ;;\n        *)\n            if systemctl-user mask --runtime sfos-quickshare.service >/dev/null 2>&1; then\n                mkdir -p /run/sfos-quickshare-rpm\n                chmod 700 /run/sfos-quickshare-rpm\n                : > /run/sfos-quickshare-rpm/unmask\n            fi\n            systemctl-user stop sfos-quickshare.service >/dev/null 2>&1 || :\n            ;;\n    esac\nfi\n"
+      },
+      {
+        "type": "preuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 16,
+        "notable": [
+          "if command -v systemctl-user >/dev/null 2>&1; then",
+          "state=$(systemctl-user is-enabled sfos-quickshare.service 2>/dev/null || :)",
+          "masked*) systemctl-user stop sfos-quickshare.service >/dev/null 2>&1 || : ;;",
+          "if systemctl-user mask --runtime sfos-quickshare.service >/dev/null 2>&1; then",
+          "mkdir -p /run/sfos-quickshare-rpm",
+          "chmod 700 /run/sfos-quickshare-rpm",
+          ": > /run/sfos-quickshare-rpm/unmask",
+          "systemctl-user stop sfos-quickshare.service >/dev/null 2>&1 || :"
+        ],
+        "body": "# The old package must not stop the new package during an upgrade.\nif [ \"$1\" -eq 0 ]; then\n    if command -v systemctl-user >/dev/null 2>&1; then\n        state=$(systemctl-user is-enabled sfos-quickshare.service 2>/dev/null || :)\n        case \"$state\" in\n            masked*) systemctl-user stop sfos-quickshare.service >/dev/null 2>&1 || : ;;\n            *)\n                if systemctl-user mask --runtime sfos-quickshare.service >/dev/null 2>&1; then\n                    mkdir -p /run/sfos-quickshare-rpm\n                    chmod 700 /run/sfos-quickshare-rpm\n                    : > /run/sfos-quickshare-rpm/unmask\n                fi\n                systemctl-user stop sfos-quickshare.service >/dev/null 2>&1 || :\n                ;;\n        esac\n    fi\nfi\n"
+      },
+      {
+        "type": "postuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 9,
+        "notable": [
+          "if command -v systemctl-user >/dev/null 2>&1; then",
+          "systemctl-user daemon-reload >/dev/null 2>&1 || :",
+          "if [ -f /run/sfos-quickshare-rpm/unmask ]; then",
+          "systemctl-user unmask --runtime sfos-quickshare.service >/dev/null 2>&1 || :",
+          "rm -f /run/sfos-quickshare-rpm/unmask"
+        ],
+        "body": "if [ \"$1\" -eq 0 ]; then\n    if command -v systemctl-user >/dev/null 2>&1; then\n        systemctl-user daemon-reload >/dev/null 2>&1 || :\n        if [ -f /run/sfos-quickshare-rpm/unmask ]; then\n            systemctl-user unmask --runtime sfos-quickshare.service >/dev/null 2>&1 || :\n            rm -f /run/sfos-quickshare-rpm/unmask\n        fi\n    fi\nfi\n"
+      },
+      {
+        "type": "posttrans",
+        "interpreter": "/bin/sh",
+        "lines": 7,
+        "notable": [
+          "if command -v systemctl-user >/dev/null 2>&1; then",
+          "systemctl-user daemon-reload >/dev/null 2>&1 || :",
+          "if [ -f /run/sfos-quickshare-rpm/unmask ]; then",
+          "systemctl-user unmask --runtime sfos-quickshare.service >/dev/null 2>&1 || :",
+          "rm -f /run/sfos-quickshare-rpm/unmask"
+        ],
+        "body": "# Preserve pre-existing masks; only undo a runtime mask made by this transaction.\nif command -v systemctl-user >/dev/null 2>&1; then\n    systemctl-user daemon-reload >/dev/null 2>&1 || :\n    if [ -f /run/sfos-quickshare-rpm/unmask ]; then\n        systemctl-user unmask --runtime sfos-quickshare.service >/dev/null 2>&1 || :\n        rm -f /run/sfos-quickshare-rpm/unmask\n    fi\nfi\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 1,
+      "hosts_in_scripts": 1,
+      "hosts": [
+        {
+          "host": "fsf.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/licenses/sfos-quickshare-0.1.7/LICENSE"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "fsf.org"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 633360,
+        "malicious": 416
+      },
+      "notable": [],
+      "ignored_hosts": 1
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38994334170",
+  "diff": {
+    "baseline": {
+      "sha256": "4e7b9e0d1310c23838320f76dce3c65c3e7d8e14931462c470d7fd8337f5ab6e",
+      "package": "sfos-quickshare-0.1.5-1.aarch64",
+      "last_scanned": "2026-10-16T00:22:49Z"
+    },
+    "changes": [
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "fi",
+        "attention": true,
+        "detail": "posttrans"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "if [ -f /run/sfos-quickshare-rpm/unmask ]; then",
+        "attention": true,
+        "detail": "posttrans"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "if command -v systemctl-user >/dev/null 2>&1; then",
+        "attention": true,
+        "detail": "posttrans"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "rm -f /run/sfos-quickshare-rpm/unmask",
+        "attention": true,
+        "detail": "posttrans"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "systemctl-user daemon-reload >/dev/null 2>&1 || :",
+        "attention": true,
+        "detail": "posttrans"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "systemctl-user unmask --runtime sfos-quickshare.service >/dev/null 2>&1 || :",
+        "attention": true,
+        "detail": "posttrans"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "fi",
+        "attention": true,
+        "detail": "postuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "if [ \"$1\" -eq 0 ]; then",
+        "attention": true,
+        "detail": "postuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "if [ -f /run/sfos-quickshare-rpm/unmask ]; then",
+        "attention": true,
+        "detail": "postuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "if command -v systemctl-user >/dev/null 2>&1; then",
+        "attention": true,
+        "detail": "postuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "rm -f /run/sfos-quickshare-rpm/unmask",
+        "attention": true,
+        "detail": "postuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "systemctl-user daemon-reload >/dev/null 2>&1 || :",
+        "attention": true,
+        "detail": "postuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "systemctl-user unmask --runtime sfos-quickshare.service >/dev/null 2>&1 || :",
+        "attention": true,
+        "detail": "postuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "*)",
+        "attention": true,
+        "detail": "preinstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": ": > /run/sfos-quickshare-rpm/unmask",
+        "attention": true,
+        "detail": "preinstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": ";;",
+        "attention": true,
+        "detail": "preinstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "case \"$state\" in",
+        "attention": true,
+        "detail": "preinstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "chmod 700 /run/sfos-quickshare-rpm",
+        "attention": true,
+        "detail": "preinstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "esac",
+        "attention": true,
+        "detail": "preinstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "fi",
+        "attention": true,
+        "detail": "preinstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "if command -v systemctl-user >/dev/null 2>&1; then",
+        "attention": true,
+        "detail": "preinstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "if systemctl-user mask --runtime sfos-quickshare.service >/dev/null 2>&1; then",
+        "attention": true,
+        "detail": "preinstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "masked*) systemctl-user stop sfos-quickshare.service >/dev/null 2>&1 || : ;;",
+        "attention": true,
+        "detail": "preinstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "mkdir -p /run/sfos-quickshare-rpm",
+        "attention": true,
+        "detail": "preinstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "state=$(systemctl-user is-enabled sfos-quickshare.service 2>/dev/null || :)",
+        "attention": true,
+        "detail": "preinstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "systemctl-user stop sfos-quickshare.service >/dev/null 2>&1 || :",
+        "attention": true,
+        "detail": "preinstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "*)",
+        "attention": true,
+        "detail": "preuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": ": > /run/sfos-quickshare-rpm/unmask",
+        "attention": true,
+        "detail": "preuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": ";;",
+        "attention": true,
+        "detail": "preuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "case \"$state\" in",
+        "attention": true,
+        "detail": "preuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "chmod 700 /run/sfos-quickshare-rpm",
+        "attention": true,
+        "detail": "preuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "esac",
+        "attention": true,
+        "detail": "preuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "fi",
+        "attention": true,
+        "detail": "preuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "if [ \"$1\" -eq 0 ]; then",
+        "attention": true,
+        "detail": "preuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "if command -v systemctl-user >/dev/null 2>&1; then",
+        "attention": true,
+        "detail": "preuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "if systemctl-user mask --runtime sfos-quickshare.service >/dev/null 2>&1; then",
+        "attention": true,
+        "detail": "preuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "masked*) systemctl-user stop sfos-quickshare.service >/dev/null 2>&1 || : ;;",
+        "attention": true,
+        "detail": "preuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "mkdir -p /run/sfos-quickshare-rpm",
+        "attention": true,
+        "detail": "preuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "state=$(systemctl-user is-enabled sfos-quickshare.service 2>/dev/null || :)",
+        "attention": true,
+        "detail": "preuninstall"
+      },
+      {
+        "area": "install scriptlet",
+        "change": "added",
+        "item": "systemctl-user stop sfos-quickshare.service >/dev/null 2>&1 || :",
+        "attention": true,
+        "detail": "preuninstall"
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/licenses/sfos-quickshare-0.1.7/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/sfos-quickshare/icons/quick-share-logo.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/themes/sailfish-default/meegotouch/z1.0/icons/icon-m-quickshare.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/themes/sailfish-default/meegotouch/z1.25/icons/icon-m-quickshare.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/themes/sailfish-default/meegotouch/z1.5/icons/icon-m-quickshare.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/themes/sailfish-default/meegotouch/z1.75/icons/icon-m-quickshare.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/themes/sailfish-default/meegotouch/z2.0/icons/icon-m-quickshare.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/themes/sailfish-default/meegotouch/z2.5/icons/icon-m-quickshare.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/themes/sailfish-default/meegotouch/z3.0/icons/icon-m-quickshare.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/themes/sailfish-default/silica/z1.0/icons-monochrome/icon-m-quickshare.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/themes/sailfish-default/silica/z1.25/icons-monochrome/icon-m-quickshare.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/themes/sailfish-default/silica/z1.5/icons-monochrome/icon-m-quickshare.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/themes/sailfish-default/silica/z1.75/icons-monochrome/icon-m-quickshare.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/themes/sailfish-default/silica/z2.0/icons-monochrome/icon-m-quickshare.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/themes/sailfish-default/silica/z2.5/icons-monochrome/icon-m-quickshare.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/themes/sailfish-default/silica/z3.0/icons-monochrome/icon-m-quickshare.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/licenses/sfos-quickshare-0.1.5/LICENSE",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/lib/systemd/user/sfos-quickshare.service",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/lib64/nemo-transferengine/plugins/sharing/libquickshareshareplugin.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/lib64/nemo-transferengine/plugins/transfer/libquicksharetransferplugin.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/jolla-settings/entries/quickshare.json",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/jolla-settings/pages/quickshare/QuickShareBus.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/nemo-transferengine/plugins/sharing/QuickShareBus.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/nemo-transferengine/plugins/sharing/QuickShareShare.qml",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 16,
+        "removed": 1,
+        "changed": 7,
+        "unchanged": 18
+      }
+    }
+  },
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "id": "background-start",
+        "text": "Starts in the background"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/sfos-quickshare/41fc0d2280841f61fccbffd3d44e24f4a6cd797e8c46e9acb93a7d2763a219ae.md"
+}

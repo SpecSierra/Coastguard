@@ -180,5 +180,122 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38829098123",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/sfos-quickshare/4e7b9e0d1310c23838320f76dce3c65c3e7d8e14931462c470d7fd8337f5ab6e.md"
     }
+  },
+  {
+    "sha256": "41fc0d2280841f61fccbffd3d44e24f4a6cd797e8c46e9acb93a7d2763a219ae",
+    "first_seen": "2026-10-17T02:18:21Z",
+    "package": "sfos-quickshare-0.1.7-1.aarch64",
+    "version": "0.1.7-1",
+    "arch": "aarch64",
+    "buildtime": 1792202093,
+    "last_scanned": "2026-10-17T02:18:21Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 4,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "sfos-quickshare-0.1.5-1.aarch64",
+        "attention_count": 40,
+        "attention": [
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "fi"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "if [ -f /run/sfos-quickshare-rpm/unmask ]; then"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "if command -v systemctl-user >/dev/null 2>&1; then"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "rm -f /run/sfos-quickshare-rpm/unmask"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "systemctl-user daemon-reload >/dev/null 2>&1 || :"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "systemctl-user unmask --runtime sfos-quickshare.service >/dev/null 2>&1 || :"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "fi"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "if [ \"$1\" -eq 0 ]; then"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "if [ -f /run/sfos-quickshare-rpm/unmask ]; then"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "if command -v systemctl-user >/dev/null 2>&1; then"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "rm -f /run/sfos-quickshare-rpm/unmask"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "systemctl-user daemon-reload >/dev/null 2>&1 || :"
+          }
+        ],
+        "files": {
+          "added": 16,
+          "removed": 1,
+          "changed": 7,
+          "unchanged": 18
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38994334170",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/sfos-quickshare/41fc0d2280841f61fccbffd3d44e24f4a6cd797e8c46e9acb93a7d2763a219ae.md"
+    }
   }
 ]
