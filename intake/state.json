@@ -1,29 +1,23 @@
 {
-  "cursor": 1792235606,
+  "cursor": 1792238041,
   "queue": [
     {
-      "url": "https://openrepos.net/sites/default/files/packages/19767/owlfish-1.5.0-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12675",
-      "appid": 12675,
-      "title": "Owlfish"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.4.1-1.aarch64.rpm",
-      "page": "https://openrepos.net/node/12624",
-      "appid": 12624,
-      "title": "Car Hotspot"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.4.1-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12624",
-      "appid": 12624,
-      "title": "Car Hotspot"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.10.1-1.aarch64.rpm",
+      "url": "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.10.2-1.aarch64.rpm",
       "page": "https://openrepos.net/node/12701",
       "appid": 12701,
       "title": "Inari Blue Notifier"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-3.aarch64.rpm",
+      "page": "https://openrepos.net/node/12708",
+      "appid": 12708,
+      "title": "Captain's Bible"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-3.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12708",
+      "appid": 12708,
+      "title": "Captain's Bible"
     }
   ],
   "seen": [
@@ -402,14 +396,17 @@
     "https://openrepos.net/sites/default/files/packages/19767/owlfish-1.5.0-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.4.1-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19715/harbour-carhotspot-0.4.1-1.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.10.1-1.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.10.1-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.10.2-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-3.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-3.armv7hl.rpm"
   ],
-  "last_run": "2026-10-17T11:38:31Z",
+  "last_run": "2026-10-17T12:02:57Z",
   "dispatched": [
-    1792233434,
-    1792233535,
-    1792233636,
-    1792234633,
-    1792237033
+    1792237033,
+    1792238257,
+    1792238337,
+    1792238418,
+    1792238498
   ]
 }
