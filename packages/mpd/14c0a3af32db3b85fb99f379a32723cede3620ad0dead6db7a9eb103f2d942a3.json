@@ -1,0 +1,211 @@
+{
+  "verdict": "clean",
+  "name": "mpd",
+  "version": "0.24-16",
+  "arch": "armv7hl",
+  "package": "mpd-0.24-16.armv7hl",
+  "buildtime": 1792262832,
+  "sha256": "14c0a3af32db3b85fb99f379a32723cede3620ad0dead6db7a9eb103f2d942a3",
+  "source": "https://openrepos.net/sites/default/files/packages/2497/mpd-0.24-16.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/11430",
+  "scanned": "2026-10-17T19:18:18Z",
+  "files": 19,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28155/Fri Oct 16 06:24:17 2026",
+    "yara_forge_core": "20261011"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [
+        {
+          "path": "/usr/lib/systemd/user/mpd.service",
+          "scope": "user",
+          "exec_start": [
+            "/usr/bin/mpd --systemd"
+          ],
+          "user": "device user",
+          "install_wanted_by": "default.target",
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/user/mpd.socket",
+          "scope": "user",
+          "exec_start": [],
+          "user": "device user",
+          "install_wanted_by": "sockets.target",
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        }
+      ],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "preinstall",
+        "interpreter": "/bin/sh",
+        "lines": 0,
+        "notable": [],
+        "body": "# add mpd user only when installing first time\n# getent passwd mpd >/dev/null || useradd -r -g audio -d /var/lib/mpd -s /sbin/nologin -c \"user for mpd\" mpd\n#%service_add_pre mpd.service\n"
+      },
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 2,
+        "notable": [
+          "systemctl-user enable mpd.socket || :",
+          "systemctl-user start mpd.socket || :"
+        ],
+        "body": "#%service_add_post mpd.service\nsystemctl-user enable mpd.socket || :\nsystemctl-user start mpd.socket || :\n"
+      },
+      {
+        "type": "preuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 0,
+        "notable": [],
+        "body": ""
+      },
+      {
+        "type": "postuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 0,
+        "notable": [],
+        "body": "#%service_del_postun mpd.service\n"
+      },
+      {
+        "type": "posttrans",
+        "interpreter": "/bin/sh",
+        "lines": 3,
+        "notable": [
+          "systemctl-user daemon-reload || :",
+          "systemctl-user enable mpd.socket || :",
+          "systemctl-user start mpd.socket || :"
+        ],
+        "body": "systemctl-user daemon-reload || :\nsystemctl-user enable mpd.socket || :\nsystemctl-user start mpd.socket || :\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 4,
+      "hosts_in_scripts": 3,
+      "hosts": [
+        {
+          "host": "mpd.readthedocs.io",
+          "urls": 3,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/doc/mpd/README.md"
+          ]
+        },
+        {
+          "host": "github.com",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/doc/mpd/README.md"
+          ]
+        },
+        {
+          "host": "www.musicpd.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/doc/mpd/AUTHORS",
+            "/usr/share/doc/mpd/README.md"
+          ]
+        },
+        {
+          "host": "musicbrainz.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/mpd"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "github.com",
+        "mpd.readthedocs.io",
+        "www.musicpd.org"
+      ],
+      "hosts_binaries": [
+        "musicbrainz.org"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 633360,
+        "malicious": 416
+      },
+      "notable": [],
+      "ignored_hosts": 1
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39061829562",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "id": "background-start",
+        "text": "Starts in the background"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/mpd/14c0a3af32db3b85fb99f379a32723cede3620ad0dead6db7a9eb103f2d942a3.md"
+}

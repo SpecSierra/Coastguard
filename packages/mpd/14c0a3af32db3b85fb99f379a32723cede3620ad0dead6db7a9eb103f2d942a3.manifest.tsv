@@ -1,0 +1,7 @@
+594bfa6374ca64f14ef2bb90aca4010bfed7ac56cfc69054329e863c81e78d94	1312604	elf	/usr/bin/mpd
+c3d77c7ae4a3914ee2d226b96fe5636beb2846bcb112b49587fcfe20ca29fe82	1103	other	/usr/lib/systemd/user/mpd.service
+cae717984c58afd6d6cc22ec8cf9ddc59cfe265a8f7ba8f68c74a717f6cc3077	135	other	/usr/lib/systemd/user/mpd.socket
+bb85ff943e23295771181341bc1525cd86fe96a587b0ad808794ed24b095ff85	1757	other	/usr/share/doc/mpd/AUTHORS
+ab15fd526bd8dd18a9e77ebc139656bf4d33e97fc7238cd11bf60e2b9b8666c6	17987	other	/usr/share/doc/mpd/COPYING
+7c8387cbf3a9ec7205a91d1981b97c5c57efe69e994beccd05a4dbd0addd6ec4	105578	other	/usr/share/doc/mpd/NEWS
+12c9ba1c83dcee6b49cba5ea4ae5c3f9daa862582ba66495726984bce9adfa2e	1009	other	/usr/share/doc/mpd/README.md
