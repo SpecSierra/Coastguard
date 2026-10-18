@@ -1,5 +1,5 @@
 {
-  "cursor": 1792331701,
+  "cursor": 1792336381,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -415,12 +415,11 @@
     "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-5.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/583/harbour-paperiton-0.6.0-8.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/583/harbour-paperiton-0.6.0-8.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/583/harbour-paperiton-0.6.0-8.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/583/harbour-paperiton-0.6.0-8.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19623/harbour-imira-0.10.12-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-18T14:57:10Z",
+  "last_run": "2026-10-18T15:19:45Z",
   "dispatched": [
-    1792331844,
-    1792331924,
-    1792332003
+    1792336645
   ]
 }
