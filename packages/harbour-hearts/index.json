@@ -38,5 +38,45 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39165735367",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-hearts/d06eb3da80ee921cbd27ab6cd5d6d6a433feff9220fb15f7546c4159063d2c33.md"
     }
+  },
+  {
+    "sha256": "16c48cad33457f6fc07e14033fe684e06dd73d2a928b25f269d123ed091cf80b",
+    "first_seen": "2026-10-18T21:37:49Z",
+    "package": "harbour-hearts-0.1.0-1.armv7hl",
+    "version": "0.1.0-1",
+    "arch": "armv7hl",
+    "buildtime": 1792355918,
+    "last_scanned": "2026-10-18T21:37:49Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39168644853",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-hearts/16c48cad33457f6fc07e14033fe684e06dd73d2a928b25f269d123ed091cf80b.md"
+    }
   }
 ]
