@@ -1,0 +1,467 @@
+{
+  "verdict": "clean",
+  "name": "harbour-sailwave",
+  "version": "1.1-1",
+  "arch": "noarch",
+  "package": "harbour-sailwave-1.1-1.noarch",
+  "buildtime": 1792347200,
+  "sha256": "838c9193a9c044fd347f100a5c99272281770b63ffb35f8c9424fcf0bba60c12",
+  "source": "https://openrepos.net/sites/default/files/packages/19754/harbour-sailwave-1.1-1.noarch.rpm",
+  "source_page": "https://openrepos.net/node/12702",
+  "scanned": "2026-10-18T19:18:18Z",
+  "files": 5,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28157/Sun Oct 18 06:24:14 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 0,
+      "hosts_in_scripts": 0,
+      "hosts": [],
+      "hosts_scripts": [],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 633671,
+        "malicious": 417
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39158100034",
+  "diff": {
+    "baseline": {
+      "sha256": "efa642bd17a6856adca33d5b00c61afa36b587e16a1b29e87fa70a5aadb41cbb",
+      "package": "harbour-sailwave-1.0.1-1.i486",
+      "last_scanned": "2026-10-11T04:59:34Z"
+    },
+    "changes": [
+      {
+        "area": "launcher entry",
+        "change": "removed",
+        "item": "/usr/share/applications/harbour-sailwave.desktop",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "all.api.radio-browser.info",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "api.country.is",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "github.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "ipapi.co",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "itunes.apple.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "oe3.orf.at",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "sailfishos.org",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "server.api.radio-browser.info",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "www.google.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "www.radio-browser.info",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/doc/harbour-sailwave/README",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/bin/harbour-sailwave",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/applications/harbour-sailwave.desktop",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/AppSettings.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/CountryData.js",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/CoverArtCache.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/FavoritesBackup.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/FavoritesStore.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/FilterChip.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/FilterSection.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/MenuVisibility.js",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/MessageBanner.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/MprisIntegration.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/PersistentState.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/PlayerBar.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/RadioApi.js",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/RingHint.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/ServerPool.js",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/SleepBadge.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/SleepTimer.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/StationDelegate.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/StationIcon.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/StationLogo.js",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/TrackPreview.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/TrackText.js",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/cover/CoverPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/harbour-sailwave.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/pages/AboutPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/pages/AdvancedSearchFilter.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/pages/AdvancedSearchPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/pages/BackupPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/pages/CountryPickerPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/pages/FavoritesPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/pages/GroupNameDialog.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/pages/HomepageDialog.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/pages/RestoreConfirmDialog.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/pages/RestorePage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/pages/SettingsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/pages/StationInfoPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/pages/SyncConflictPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/pages/TopStationsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/qml/pages/TrackHistoryPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/translations/harbour-sailwave-de.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/translations/harbour-sailwave-es.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-sailwave/translations/harbour-sailwave-fr.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/icons/hicolor/108x108/apps/harbour-sailwave.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/icons/hicolor/128x128/apps/harbour-sailwave.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/icons/hicolor/172x172/apps/harbour-sailwave.png",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/icons/hicolor/86x86/apps/harbour-sailwave.png",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 10
+      },
+      "files": {
+        "added": 1,
+        "removed": 48,
+        "changed": 0,
+        "unchanged": 0
+      }
+    }
+  },
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-sailwave/838c9193a9c044fd347f100a5c99272281770b63ffb35f8c9424fcf0bba60c12.md"
+}

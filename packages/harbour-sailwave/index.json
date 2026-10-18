@@ -278,5 +278,55 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38113221430",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-sailwave/efa642bd17a6856adca33d5b00c61afa36b587e16a1b29e87fa70a5aadb41cbb.md"
     }
+  },
+  {
+    "sha256": "838c9193a9c044fd347f100a5c99272281770b63ffb35f8c9424fcf0bba60c12",
+    "first_seen": "2026-10-18T19:18:18Z",
+    "package": "harbour-sailwave-1.1-1.noarch",
+    "version": "1.1-1",
+    "arch": "noarch",
+    "buildtime": 1792347200,
+    "last_scanned": "2026-10-18T19:18:18Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-sailwave-1.0.1-1.i486",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 1,
+          "removed": 48,
+          "changed": 0,
+          "unchanged": 0
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39158100034",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-sailwave/838c9193a9c044fd347f100a5c99272281770b63ffb35f8c9424fcf0bba60c12.md"
+    }
   }
 ]
