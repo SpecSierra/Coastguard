@@ -1,0 +1,57 @@
+[
+  {
+    "sha256": "e3578ec427781b85b2b0473fd3dbdf0c20066bf5e88798ea5e41ca635ba75078",
+    "first_seen": "2026-10-18T13:58:00Z",
+    "package": "harbour-paperiton-0.6.0-8.i486",
+    "version": "0.6.0-8",
+    "arch": "i486",
+    "buildtime": 1792331119,
+    "last_scanned": "2026-10-18T13:58:00Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Secrets"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Camera",
+        "Documents",
+        "Downloads",
+        "Internet",
+        "Pictures",
+        "RemovableMedia",
+        "Secrets",
+        "WebView"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 8,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39133820192",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-paperiton/e3578ec427781b85b2b0473fd3dbdf0c20066bf5e88798ea5e41ca635ba75078.md"
+    }
+  }
+]
