@@ -1,13 +1,6 @@
 {
   "cursor": 1792354626,
-  "queue": [
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-6.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12708",
-      "appid": 12708,
-      "title": "Captain's Bible"
-    }
-  ],
+  "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -437,12 +430,10 @@
     "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-6.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-6.armv7hl.rpm"
   ],
-  "last_run": "2026-10-18T20:20:07Z",
+  "last_run": "2026-10-18T20:38:32Z",
   "dispatched": [
-    1792351057,
-    1792351137,
-    1792351218,
     1792354648,
-    1792354728
+    1792354728,
+    1792355834
   ]
 }
