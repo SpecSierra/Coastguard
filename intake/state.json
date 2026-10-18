@@ -1,13 +1,6 @@
 {
   "cursor": 1792356421,
-  "queue": [
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/18418/harbour-hearts-0.1.0-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12743",
-      "appid": 12743,
-      "title": "Hearts"
-    }
-  ],
+  "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -440,12 +433,11 @@
     "https://openrepos.net/sites/default/files/packages/18418/harbour-hearts-0.1.0-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/18418/harbour-hearts-0.1.0-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-18T21:17:10Z",
+  "last_run": "2026-10-18T21:38:32Z",
   "dispatched": [
-    1792354648,
-    1792354728,
     1792355834,
     1792357055,
-    1792357114
+    1792357114,
+    1792359433
   ]
 }
