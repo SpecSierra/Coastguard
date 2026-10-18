@@ -1,5 +1,5 @@
 {
-  "cursor": 1792336381,
+  "cursor": 1792344121,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -416,8 +416,15 @@
     "https://openrepos.net/sites/default/files/packages/583/harbour-paperiton-0.6.0-8.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/583/harbour-paperiton-0.6.0-8.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/583/harbour-paperiton-0.6.0-8.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/19623/harbour-imira-0.10.12-1.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/19623/harbour-imira-0.10.12-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19055/harbour-rootelegram-3.7-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19055/harbour-rootelegram-3.7-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19055/harbour-rootelegram-3.7-1.i486.rpm"
   ],
-  "last_run": "2026-10-18T17:17:11Z",
-  "dispatched": []
+  "last_run": "2026-10-18T17:49:01Z",
+  "dispatched": [
+    1792345045,
+    1792345292,
+    1792345518
+  ]
 }
