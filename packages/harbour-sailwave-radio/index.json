@@ -1,5 +1,57 @@
 [
   {
+    "sha256": "21bc98330ca1540fc7e68fa465d2154a93b9e23e6eabdaef98693022874e7296",
+    "first_seen": "2026-10-18T20:18:06Z",
+    "package": "harbour-sailwave-radio-1.1-1.aarch64",
+    "version": "1.1-1",
+    "arch": "aarch64",
+    "buildtime": 1792346887,
+    "last_scanned": "2026-10-18T20:18:06Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Secrets"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Documents",
+        "Downloads",
+        "Internet",
+        "Secrets"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 10,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39162626934",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-sailwave-radio/21bc98330ca1540fc7e68fa465d2154a93b9e23e6eabdaef98693022874e7296.md"
+    }
+  },
+  {
     "sha256": "c0d5f72f9e6a018dfce0398c77cde19436f438a27ad72a2a2bb2bd00381bc312",
     "first_seen": "2026-10-18T19:20:57Z",
     "package": "harbour-sailwave-radio-1.1-1.armv7hl",
