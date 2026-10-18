@@ -56,5 +56,63 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39090749659",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/sanefish/975a8341ee725458bedf7ff3102cb357c458a923902d7134ff93207ecdf944c8.md"
     }
+  },
+  {
+    "sha256": "0a3e247a86921e4a55d79a177a868489b7b43459663b9a535f74cff7d5ffd820",
+    "first_seen": "2026-10-18T02:39:32Z",
+    "package": "sanefish-1.0.0-1.armv7hl",
+    "version": "1.0.0-1",
+    "arch": "armv7hl",
+    "buildtime": 1789473600,
+    "last_scanned": "2026-10-18T02:39:32Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "root-services",
+            "text": "1 root service, started at install"
+          },
+          {
+            "level": "medium",
+            "id": "hook-d-bus-system-policy",
+            "text": "System hook: D-Bus system policy"
+          },
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 3,
+      "root_services": 2,
+      "privileged_files": 0,
+      "system_hooks": [
+        "D-Bus system policy"
+      ],
+      "scriptlets": 3,
+      "hosts_in_scripts": 7,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39090826235",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/sanefish/0a3e247a86921e4a55d79a177a868489b7b43459663b9a535f74cff7d5ffd820.md"
+    }
   }
 ]
