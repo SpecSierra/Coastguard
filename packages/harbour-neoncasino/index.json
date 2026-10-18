@@ -1,0 +1,44 @@
+[
+  {
+    "sha256": "d4177c6823f6cc6d9900f286ae2b74d2a47f808141dbd465f516f0da0d7699cf",
+    "first_seen": "2026-10-18T21:58:25Z",
+    "package": "harbour-neoncasino-1.3.0-1.noarch",
+    "version": "1.3.0-1",
+    "arch": "noarch",
+    "buildtime": 1792330738,
+    "last_scanned": "2026-10-18T21:58:25Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 3,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39170095424",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-neoncasino/d4177c6823f6cc6d9900f286ae2b74d2a47f808141dbd465f516f0da0d7699cf.md"
+    }
+  }
+]
