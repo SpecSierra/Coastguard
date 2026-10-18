@@ -1307,5 +1307,64 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39082214589",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-inari-blue-notifier/96d2b4eeffc305534c08a12a8ec9e745b4353b2075fe6ba5a072790cd1264514.md"
     }
+  },
+  {
+    "sha256": "135a2437594134dff707f3cfbd990d7cf0df99f563c2d1b73c139c3a0513ac2b",
+    "first_seen": "2026-10-18T18:18:06Z",
+    "package": "harbour-inari-blue-notifier-1.10.4-1.aarch64",
+    "version": "1.10.4-1",
+    "arch": "aarch64",
+    "buildtime": 1792337740,
+    "last_scanned": "2026-10-18T18:18:06Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "own-sandbox-profile",
+            "text": "Own sandbox profile"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "AppLaunch",
+        "InariBlueNotifier"
+      ],
+      "own_sandbox_profile": true,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 1,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-inari-blue-notifier-1.10.3-1.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 1,
+          "unchanged": 29
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39153478780",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-inari-blue-notifier/135a2437594134dff707f3cfbd990d7cf0df99f563c2d1b73c139c3a0513ac2b.md"
+    }
   }
 ]
