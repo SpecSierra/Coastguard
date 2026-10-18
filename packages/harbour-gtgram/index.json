@@ -1,0 +1,73 @@
+[
+  {
+    "sha256": "82a800b67f70deb05fea53211bde56eee80be1e9f4f7b5a639edb57ebcbb473d",
+    "first_seen": "2026-10-18T22:40:40Z",
+    "package": "harbour-gtgram-0.18+gtgram.20261018221502.88102fe-60.aarch64",
+    "version": "0.18+gtgram.20261018221502.88102fe-60",
+    "arch": "aarch64",
+    "buildtime": 1792361706,
+    "last_scanned": "2026-10-18T22:40:40Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Contacts, Phone"
+          },
+          {
+            "level": "info",
+            "id": "code-sends-sms-or-places-calls",
+            "text": "Code that sends sms or places calls"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Sends SMS Or Places Calls"
+      ],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Camera",
+        "Contacts",
+        "Documents",
+        "Downloads",
+        "Internet",
+        "Location",
+        "MediaIndexing",
+        "Microphone",
+        "Music",
+        "Phone",
+        "Pictures",
+        "Privileged",
+        "PublicDir",
+        "RemovableMedia",
+        "UserDirs",
+        "Videos"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 8,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39173135634",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-gtgram/82a800b67f70deb05fea53211bde56eee80be1e9f4f7b5a639edb57ebcbb473d.md"
+    }
+  }
+]
