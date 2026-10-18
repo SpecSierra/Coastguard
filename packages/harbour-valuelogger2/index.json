@@ -1,5 +1,51 @@
 [
   {
+    "sha256": "9e619e394e54b3941e170980ce346c8a9c07a34268c02e05bcaee4d6ddaed528",
+    "first_seen": "2026-10-18T03:59:24Z",
+    "package": "harbour-valuelogger2-1.0.23-1.armv7hl",
+    "version": "1.0.23-1",
+    "arch": "armv7hl",
+    "buildtime": 1792293307,
+    "last_scanned": "2026-10-18T03:59:24Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39095486858",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-valuelogger2/9e619e394e54b3941e170980ce346c8a9c07a34268c02e05bcaee4d6ddaed528.md"
+    }
+  },
+  {
     "sha256": "2dd52d3b6732ffe284da3a08a797b07af641c2022090747dc64d36f0f9f679dc",
     "first_seen": "2026-10-18T03:58:01Z",
     "package": "harbour-valuelogger2-1.0.23-1.aarch64",
