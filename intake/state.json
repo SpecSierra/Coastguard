@@ -1,6 +1,13 @@
 {
-  "cursor": 1792354626,
-  "queue": [],
+  "cursor": 1792356421,
+  "queue": [
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/18418/harbour-hearts-0.1.0-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12743",
+      "appid": 12743,
+      "title": "Hearts"
+    }
+  ],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -428,12 +435,17 @@
     "https://openrepos.net/sites/default/files/packages/19754/harbour-sailwave-radio-1.1-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19754/harbour-sailwave-radio-1.1-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-6.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-6.armv7hl.rpm"
+    "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-6.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/2895/harbour-sfos-forum-viewer-1.16.10-1.noarch.rpm",
+    "https://openrepos.net/sites/default/files/packages/18418/harbour-hearts-0.1.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/18418/harbour-hearts-0.1.0-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-18T20:38:32Z",
+  "last_run": "2026-10-18T20:59:51Z",
   "dispatched": [
     1792354648,
     1792354728,
-    1792355834
+    1792355834,
+    1792357055,
+    1792357114
   ]
 }
