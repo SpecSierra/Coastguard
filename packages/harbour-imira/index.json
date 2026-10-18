@@ -73,5 +73,90 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38171988583",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-imira/dde2faa6a2d232554cbbce03b7c28d86afd46cd538d36eb3a6c57688189bc120.md"
     }
+  },
+  {
+    "sha256": "d4665efd5360e199068d3fd953f7bc4b30711d23a50cdc59bd43b9baebce3c1d",
+    "first_seen": "2026-10-18T15:18:06Z",
+    "package": "harbour-imira-0.10.12-1.aarch64",
+    "version": "0.10.12-1",
+    "arch": "aarch64",
+    "buildtime": 1792335584,
+    "last_scanned": "2026-10-18T15:18:06Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "high",
+        "reasons": [
+          {
+            "level": "high",
+            "id": "root-service-no-sandbox",
+            "text": "Root service and no sandbox"
+          },
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          },
+          {
+            "level": "medium",
+            "id": "root-services",
+            "text": "1 root service"
+          },
+          {
+            "level": "medium",
+            "id": "privileged-files",
+            "text": "2 privileged files (setgid privileged)"
+          },
+          {
+            "level": "medium",
+            "id": "hook-polkit",
+            "text": "System hook: polkit"
+          },
+          {
+            "level": "medium",
+            "id": "code-installs-persistence",
+            "text": "Unsandboxed code that installs persistence"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Installs Persistence"
+      ],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 1,
+      "privileged_files": 2,
+      "system_hooks": [
+        "polkit"
+      ],
+      "scriptlets": 3,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-imira-0.10.11-1.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 2,
+          "unchanged": 26
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39139806491",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-imira/d4665efd5360e199068d3fd953f7bc4b30711d23a50cdc59bd43b9baebce3c1d.md"
+    }
   }
 ]
