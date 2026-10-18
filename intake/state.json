@@ -1,5 +1,5 @@
 {
-  "cursor": 1792295221,
+  "cursor": 1792310881,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -410,8 +410,13 @@
     "https://openrepos.net/sites/default/files/packages/117/sanefish-1.0.0-1.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/7548/harbour-valuelogger2-1.0.23-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/7548/harbour-valuelogger2-1.0.23-1.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/7548/harbour-valuelogger2-1.0.23-1.i486.rpm"
+    "https://openrepos.net/sites/default/files/packages/7548/harbour-valuelogger2-1.0.23-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-5.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-5.armv7hl.rpm"
   ],
-  "last_run": "2026-10-18T07:57:09Z",
-  "dispatched": []
+  "last_run": "2026-10-18T08:20:02Z",
+  "dispatched": [
+    1792311444,
+    1792311524
+  ]
 }
