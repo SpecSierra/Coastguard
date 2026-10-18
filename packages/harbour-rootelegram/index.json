@@ -783,5 +783,123 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39150751255",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-rootelegram/f1c3355bca81800ad37d3b1fb72073fbdc65b69ba4edf7479e9ffd90470f68c1.md"
     }
+  },
+  {
+    "sha256": "efd435bd3597b089170c88eaf6676c1cc9cd55b7e8188cf13a90e879d794cf80",
+    "first_seen": "2026-10-18T17:46:25Z",
+    "package": "harbour-rootelegram-3.7-1.i486",
+    "version": "3.7-1",
+    "arch": "i486",
+    "buildtime": 1792342873,
+    "last_scanned": "2026-10-18T17:46:25Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "code-sends-sms-or-places-calls",
+            "text": "Unsandboxed code that sends sms or places calls"
+          },
+          {
+            "level": "info",
+            "id": "no-sandbox-profile",
+            "text": "No sandbox profile declared"
+          },
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Contacts, Phone"
+          },
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          },
+          {
+            "level": "info",
+            "id": "new-permission-unifiedpush",
+            "text": "New permission: UnifiedPush"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Sends SMS Or Places Calls"
+      ],
+      "sandbox": "none",
+      "permissions": [
+        "Audio",
+        "Camera",
+        "Contacts",
+        "Documents",
+        "Downloads",
+        "Internet",
+        "Location",
+        "MediaIndexing",
+        "Microphone",
+        "Music",
+        "Phone",
+        "Pictures",
+        "Privileged",
+        "PublicDir",
+        "RemovableMedia",
+        "UnifiedPush",
+        "UserDirs",
+        "Videos"
+      ],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 4,
+      "hosts_in_scripts": 18,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-rootelegram-3.6-1.i486",
+        "attention_count": 4,
+        "attention": [
+          {
+            "area": "permission",
+            "change": "added",
+            "item": "UnifiedPush"
+          },
+          {
+            "area": "systemd unit",
+            "change": "changed",
+            "item": "/usr/lib/systemd/user/harbour-rootelegram.service"
+          },
+          {
+            "area": "D-Bus activation",
+            "change": "added",
+            "item": "/usr/share/dbus-1/services/org.unifiedpush.Connector.rootelegram.service"
+          },
+          {
+            "area": "host",
+            "change": "added",
+            "item": "openrepos.net"
+          }
+        ],
+        "files": {
+          "added": 3,
+          "removed": 0,
+          "changed": 17,
+          "unchanged": 4231
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39151026930",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-rootelegram/efd435bd3597b089170c88eaf6676c1cc9cd55b7e8188cf13a90e879d794cf80.md"
+    }
   }
 ]
