@@ -1,0 +1,50 @@
+[
+  {
+    "sha256": "830767a23956b1024a594a4fa130da4697f85ba79e642da670d6cf5fc5992e99",
+    "first_seen": "2026-10-18T22:38:29Z",
+    "package": "coverload-1.0.0-1.noarch",
+    "version": "1.0.0-1",
+    "arch": "noarch",
+    "buildtime": 1792361489,
+    "last_scanned": "2026-10-18T22:38:29Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "hook-system-ui-patches",
+            "text": "System hook: system UI patches"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [
+        "system UI patches"
+      ],
+      "scriptlets": 3,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39173065938",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/coverload/830767a23956b1024a594a4fa130da4697f85ba79e642da670d6cf5fc5992e99.md"
+    }
+  }
+]
