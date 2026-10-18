@@ -1,5 +1,5 @@
 {
-  "cursor": 1792310881,
+  "cursor": 1792312892,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -414,7 +414,7 @@
     "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-5.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-5.armv7hl.rpm"
   ],
-  "last_run": "2026-10-18T08:37:10Z",
+  "last_run": "2026-10-18T08:57:26Z",
   "dispatched": [
     1792311444,
     1792311524
