@@ -706,5 +706,57 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39110954884",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-captains-bible/9fec9ecaedd13199e49f619b7299f5a787e715aaae24b4daa8b1119660025677.md"
     }
+  },
+  {
+    "sha256": "7cc6a161acd25e8b796f6bf3ec4b2eb6f7fd27d04343d535e518d0927e9fe09b",
+    "first_seen": "2026-10-18T20:19:23Z",
+    "package": "harbour-captains-bible-0.2-6.aarch64",
+    "version": "0.2-6",
+    "arch": "aarch64",
+    "buildtime": 1792353979,
+    "last_scanned": "2026-10-18T20:19:23Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-captains-bible-0.2-5.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 2,
+          "removed": 0,
+          "changed": 4,
+          "unchanged": 17
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39162730958",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-captains-bible/7cc6a161acd25e8b796f6bf3ec4b2eb6f7fd27d04343d535e518d0927e9fe09b.md"
+    }
   }
 ]
