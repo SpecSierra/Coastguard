@@ -1,0 +1,308 @@
+{
+  "verdict": "clean",
+  "name": "harbour-indra",
+  "version": "1.5.1-1",
+  "arch": "armv7hl",
+  "package": "harbour-indra-1.5.1-1.armv7hl",
+  "buildtime": 1792315111,
+  "sha256": "66e3cfcb461c2ffc0d648aa617cbecfd32233f5965fa7fd30f7356abcf8d5c29",
+  "source": "https://openrepos.net/sites/default/files/packages/19607/harbour-indra-1.5.1-1.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12522",
+  "scanned": "2026-10-18T19:00:12Z",
+  "files": 165,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28157/Sun Oct 18 06:24:14 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-indra.desktop",
+          "name": "Indra",
+          "exec": "harbour-indra",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Bluetooth",
+            "Location",
+            "Privileged"
+          ],
+          "organization": "harbour-indra",
+          "application": "harbour-indra"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 16,
+      "hosts_in_scripts": 10,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 6,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-indra/maplibre/lib/libIndraQMapLibre.so.3.0.0",
+            "/usr/share/harbour-indra/qml/components/3rd_party/ba-linkify.js",
+            "/usr/share/harbour-indra/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "benalman.com",
+          "urls": 3,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-indra/qml/components/3rd_party/ba-linkify.js"
+          ]
+        },
+        {
+          "host": "www.inkscape.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-indra/assets/go-down.svg",
+            "/usr/share/harbour-indra/assets/messages/circled_x_red.svg",
+            "/usr/share/harbour-indra/assets/messages/dotted_circle.svg"
+          ]
+        },
+        {
+          "host": "www.openstreetmap.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-indra/qml/components/MapBackendConfig.qml"
+          ]
+        },
+        {
+          "host": "openfreemap.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-indra/qml/components/MapBackendConfig.qml"
+          ]
+        },
+        {
+          "host": "sodipodi.sourceforge.net",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-indra/assets/go-down.svg",
+            "/usr/share/harbour-indra/assets/messages/circled_x_red.svg",
+            "/usr/share/harbour-indra/assets/messages/dotted_circle.svg"
+          ]
+        },
+        {
+          "host": "tile.openstreetmap.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-indra/qml/components/MapBackendConfig.qml"
+          ]
+        },
+        {
+          "host": "tiles.openfreemap.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-indra/qml/components/MapBackendConfig.qml"
+          ]
+        },
+        {
+          "host": "userscripts.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-indra/qml/components/3rd_party/ba-linkify.js"
+          ]
+        },
+        {
+          "host": "www.openmaptiles.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-indra/qml/components/MapBackendConfig.qml"
+          ]
+        },
+        {
+          "host": "hosted.weblate.org",
+          "urls": 16,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/locale/ca/LC_MESSAGES/indra.projectmoon.mo",
+            "/usr/share/locale/ca@valencia/LC_MESSAGES/indra.projectmoon.mo",
+            "/usr/share/locale/de/LC_MESSAGES/indra.projectmoon.mo"
+          ]
+        },
+        {
+          "host": "api.mapbox.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-indra/maplibre/lib/libIndraQMapLibre.so.3.0.0"
+          ]
+        },
+        {
+          "host": "api.maptiler.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-indra/maplibre/lib/libIndraQMapLibre.so.3.0.0"
+          ]
+        },
+        {
+          "host": "demotiles.maplibre.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-indra/maplibre/lib/libIndraQMapLibre.so.3.0.0"
+          ]
+        },
+        {
+          "host": "git.agnos.is",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/locale/de/LC_MESSAGES/indra.projectmoon.mo",
+            "/usr/share/locale/es/LC_MESSAGES/indra.projectmoon.mo",
+            "/usr/share/locale/id/LC_MESSAGES/indra.projectmoon.mo"
+          ]
+        },
+        {
+          "host": "www.freedesktop.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-indra"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "benalman.com",
+        "github.com",
+        "openfreemap.org",
+        "sodipodi.sourceforge.net",
+        "tile.openstreetmap.org",
+        "tiles.openfreemap.org",
+        "userscripts.org",
+        "www.inkscape.org",
+        "www.openmaptiles.org",
+        "www.openstreetmap.org"
+      ],
+      "hosts_binaries": [
+        "api.mapbox.com",
+        "api.maptiler.com",
+        "demotiles.maplibre.org",
+        "git.agnos.is",
+        "hosted.weblate.org",
+        "www.freedesktop.org"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 633671,
+        "malicious": 417
+      },
+      "notable": [],
+      "ignored_hosts": 4
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 4,
+      "unknown": 4,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 4,
+      "unknown": 4,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39156674895",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-indra/66e3cfcb461c2ffc0d648aa617cbecfd32233f5965fa7fd30f7356abcf8d5c29.md"
+}

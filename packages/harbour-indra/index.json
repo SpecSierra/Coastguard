@@ -43,5 +43,50 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39156531062",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-indra/39ecf494a36668f513f35ed3a535f802f3c83536af22a8b2300194e230a332e6.md"
     }
+  },
+  {
+    "sha256": "66e3cfcb461c2ffc0d648aa617cbecfd32233f5965fa7fd30f7356abcf8d5c29",
+    "first_seen": "2026-10-18T19:00:12Z",
+    "package": "harbour-indra-1.5.1-1.armv7hl",
+    "version": "1.5.1-1",
+    "arch": "armv7hl",
+    "buildtime": 1792315111,
+    "last_scanned": "2026-10-18T19:00:12Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Bluetooth",
+        "Internet",
+        "Location",
+        "Privileged"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 10,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39156674895",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-indra/66e3cfcb461c2ffc0d648aa617cbecfd32233f5965fa7fd30f7356abcf8d5c29.md"
+    }
   }
 ]
