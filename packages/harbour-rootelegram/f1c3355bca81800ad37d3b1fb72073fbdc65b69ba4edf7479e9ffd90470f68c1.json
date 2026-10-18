@@ -1,0 +1,876 @@
+{
+  "verdict": "clean",
+  "name": "harbour-rootelegram",
+  "version": "3.7-1",
+  "arch": "armv7hl",
+  "package": "harbour-rootelegram-3.7-1.armv7hl",
+  "buildtime": 1792342778,
+  "sha256": "f1c3355bca81800ad37d3b1fb72073fbdc65b69ba4edf7479e9ffd90470f68c1",
+  "source": "https://openrepos.net/sites/default/files/packages/19055/harbour-rootelegram-3.7-1.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12385",
+  "scanned": "2026-10-18T17:42:51Z",
+  "files": 4301,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28157/Sun Oct 18 06:24:14 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [
+    {
+      "rule": "Coastguard_Indicator_Sends_SMS_Or_Places_Calls",
+      "files": [
+        "payload/usr/bin/harbour-rootelegram",
+        "payload/usr/lib64/voicecall/plugins/librootelegram-voicecall-plugin.so"
+      ]
+    }
+  ],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-rootelegram-open-url.desktop",
+          "name": "RooTelegram",
+          "exec": "harbour-rootelegram",
+          "hidden": true,
+          "sandbox": "none",
+          "permissions": []
+        },
+        {
+          "desktop": "/usr/share/applications/harbour-rootelegram.desktop",
+          "name": "RooTelegram",
+          "exec": "harbour-rootelegram",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Phone",
+            "Audio",
+            "Camera",
+            "Contacts",
+            "Documents",
+            "Downloads",
+            "Internet",
+            "Location",
+            "MediaIndexing",
+            "Microphone",
+            "Music",
+            "Pictures",
+            "Privileged",
+            "PublicDir",
+            "RemovableMedia",
+            "UserDirs",
+            "Videos",
+            "UnifiedPush"
+          ],
+          "organization": "com.github.RootGPT_YouTube",
+          "application": "rootelegram"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [
+        {
+          "path": "/usr/lib/systemd/user/harbour-rootelegram.service",
+          "scope": "user",
+          "exec_start": [
+            "/bin/sh -c 'test -e \"${HOME}/.config/com.github.RootGPT_YouTube/rootelegram/autostart-disabled\" && exit 0; test -e \"${HOME}/.config/com.github.RootGPT_YouTube/rootelegram/unifiedpush-enabled\" && exit 0; exec /usr/bin/invoker --type=generic --single-instance /usr/bin/harbour-rootelegram --daemon'"
+          ],
+          "user": "device user",
+          "install_wanted_by": "post-user-session.target",
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        }
+      ],
+      "dbus": [
+        {
+          "path": "/usr/share/dbus-1/services/org.unifiedpush.Connector.rootelegram.service",
+          "bus": "session",
+          "name": "org.unifiedpush.Connector.rootelegram",
+          "exec": "/usr/bin/env ROOTELEGRAM_PUSH_WAKE=1 /usr/bin/sailjail -p harbour-rootelegram.desktop -- /usr/bin/harbour-rootelegram",
+          "user": null,
+          "systemd_service": null
+        }
+      ],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "preinstall",
+        "interpreter": "/bin/sh",
+        "lines": 2,
+        "notable": [
+          "pkill -9 harbour-rootelegram >/dev/null 2>&1 || true"
+        ],
+        "body": "pkill -9 harbour-rootelegram >/dev/null 2>&1 || true\nexit 0\n"
+      },
+      {
+        "type": "preuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 2,
+        "notable": [
+          "pkill -9 harbour-rootelegram >/dev/null 2>&1 || true"
+        ],
+        "body": "pkill -9 harbour-rootelegram >/dev/null 2>&1 || true\nexit 0\n"
+      },
+      {
+        "type": "postuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 4,
+        "notable": [
+          "systemctl --global disable harbour-rootelegram.service >/dev/null 2>&1 || true"
+        ],
+        "body": "if [ \"$1\" = 0 ]; then\n  systemctl --global disable harbour-rootelegram.service >/dev/null 2>&1 || true\nfi\nexit 0\n"
+      },
+      {
+        "type": "posttrans",
+        "interpreter": "/bin/sh",
+        "lines": 13,
+        "notable": [
+          "for d in /home/*/.cache/QtProject/qmlcache; do",
+          "systemctl try-restart sailjaild >/dev/null 2>&1 || true",
+          "for u in /home/*; do",
+          "systemctl --global enable harbour-rootelegram.service >/dev/null 2>&1 || true"
+        ],
+        "body": "for d in /home/*/.cache/QtProject/qmlcache; do\n  [ -d \"$d\" ] && rm -f \"$d\"/*.qmlc \"$d\"/*.jsc 2>/dev/null || true\ndone\nsystemctl try-restart sailjaild >/dev/null 2>&1 || true\nupdate-desktop-database /usr/share/applications >/dev/null 2>&1 || true\nfor u in /home/*; do\n  rm -f \"$u\"/.local/share/applications/harbour-rootelegram-open-url.desktop 2>/dev/null || true\n  rm -f \"$u\"/.local/share/dbus-1/services/de.ygriega.rootelegram.service 2>/dev/null || true\n  [ -d \"$u\"/.local/share/applications ] && update-desktop-database \"$u\"/.local/share/applications >/dev/null 2>&1 || true\ndone\nsystemctl --global enable harbour-rootelegram.service >/dev/null 2>&1 || true\nsh /usr/share/harbour-rootelegram/bin/restart-voicecall.sh >/dev/null 2>&1 || true\nexit 0\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 38,
+      "hosts_in_scripts": 18,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 14,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/licenses/NOTICE",
+            "/usr/share/harbour-rootelegram/qml/components/AudioPlayerBar.qml",
+            "/usr/share/harbour-rootelegram/qml/components/AudioPlaylist.qml"
+          ]
+        },
+        {
+          "host": "t.me",
+          "urls": 3,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/lib/libtdjson.so.1.8.67",
+            "/usr/share/harbour-rootelegram/qml/js/functions.js",
+            "/usr/share/harbour-rootelegram/qml/pages/AddProxyDialog.qml"
+          ]
+        },
+        {
+          "host": "chromium.googlesource.com",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/licenses/NOTICE",
+            "/usr/share/licenses/harbour-rootelegram/NOTICE"
+          ]
+        },
+        {
+          "host": "ffmpeg.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/ffmpeg/LICENSE",
+            "/usr/share/harbour-rootelegram/licenses/NOTICE",
+            "/usr/share/harbour-rootelegram/licenses/bundled/README.txt"
+          ]
+        },
+        {
+          "host": "telegram.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/qml/components/settingsPage/SettingsAbout.qml",
+            "/usr/share/harbour-rootelegram/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "www.videolan.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-rootelegram/bin/ffmpeg",
+            "/usr/share/harbour-rootelegram/ffmpeg/LICENSE",
+            "/usr/share/harbour-rootelegram/licenses/NOTICE"
+          ]
+        },
+        {
+          "host": "code.videolan.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/ffmpeg/LICENSE",
+            "/usr/share/harbour-rootelegram/licenses/NOTICE",
+            "/usr/share/licenses/harbour-rootelegram/NOTICE"
+          ]
+        },
+        {
+          "host": "forum.sailfishos.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/qml/pages/ChatSelectionPage.qml"
+          ]
+        },
+        {
+          "host": "fsf.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/licenses/LICENSE",
+            "/usr/share/licenses/harbour-rootelegram/LICENSE"
+          ]
+        },
+        {
+          "host": "mozilla.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-rootelegram/licenses/rlottie/COPYING.MPL"
+          ]
+        },
+        {
+          "host": "openrepos.net",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/qml/pages/UnifiedPushHelpPage.qml",
+            "/usr/share/harbour-rootelegram/translations/harbour-rootelegram-de.qm",
+            "/usr/share/harbour-rootelegram/translations/harbour-rootelegram-en.qm"
+          ]
+        },
+        {
+          "host": "opus-codec.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/licenses/NOTICE",
+            "/usr/share/licenses/harbour-rootelegram/NOTICE"
+          ]
+        },
+        {
+          "host": "sodipodi.sourceforge.net",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-rootelegram/images/icon-verified.svg"
+          ]
+        },
+        {
+          "host": "wiki.openstreetmap.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/licenses/NOTICE",
+            "/usr/share/harbour-rootelegram/qml/components/settingsPage/SettingsAbout.qml",
+            "/usr/share/harbour-rootelegram/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "www.freetype.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-rootelegram/licenses/rlottie/COPYING.FTL"
+          ]
+        },
+        {
+          "host": "www.inkscape.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-rootelegram/images/icon-verified.svg"
+          ]
+        },
+        {
+          "host": "www.nayuki.io",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/licenses/NOTICE",
+            "/usr/share/harbour-rootelegram/licenses/qrcodegen/LICENSE",
+            "/usr/share/licenses/harbour-rootelegram/NOTICE"
+          ]
+        },
+        {
+          "host": "xiph.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/licenses/NOTICE",
+            "/usr/share/licenses/harbour-rootelegram/NOTICE"
+          ]
+        },
+        {
+          "host": "www.webrtc.org",
+          "urls": 11,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-rootelegram"
+          ]
+        },
+        {
+          "host": "twitter.com",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/lib/libtdjson.so.1.8.67"
+          ]
+        },
+        {
+          "host": "crl.comodoca.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-rootelegram"
+          ]
+        },
+        {
+          "host": "www.instagram.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/lib/libtdjson.so.1.8.67"
+          ]
+        },
+        {
+          "host": "aomediacodec.github.io",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-rootelegram"
+          ]
+        },
+        {
+          "host": "crbug.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-rootelegram"
+          ]
+        },
+        {
+          "host": "crl.comodo.net",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-rootelegram"
+          ]
+        },
+        {
+          "host": "dns.google",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/lib/libtdjson.so.1.8.67"
+          ]
+        },
+        {
+          "host": "music.youtube.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/lib/libtdjson.so.1.8.67"
+          ]
+        },
+        {
+          "host": "my.telegram.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/lib/libtdjson.so.1.8.67"
+          ]
+        },
+        {
+          "host": "nominatim.openstreetmap.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-rootelegram"
+          ]
+        },
+        {
+          "host": "reserve-5a846.firebaseio.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/lib/libtdjson.so.1.8.67"
+          ]
+        },
+        {
+          "host": "software-download.microsoft.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/lib/libtdjson.so.1.8.67"
+          ]
+        },
+        {
+          "host": "streams.videolan.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/bin/ffmpeg",
+            "/usr/share/harbour-rootelegram/lib/libavutil.so.57"
+          ]
+        },
+        {
+          "host": "telegra.ph",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/lib/libtdjson.so.1.8.67"
+          ]
+        },
+        {
+          "host": "tgb-playground.smart-glocal.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/lib/libtdjson.so.1.8.67"
+          ]
+        },
+        {
+          "host": "tgb.smart-glocal.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/lib/libtdjson.so.1.8.67"
+          ]
+        },
+        {
+          "host": "webrtc.googlesource.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-rootelegram"
+          ]
+        },
+        {
+          "host": "www.google.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/lib/libtdjson.so.1.8.67"
+          ]
+        },
+        {
+          "host": "www.youtube.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-rootelegram/lib/libtdjson.so.1.8.67"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "chromium.googlesource.com",
+        "code.videolan.org",
+        "ffmpeg.org",
+        "forum.sailfishos.org",
+        "fsf.org",
+        "github.com",
+        "mozilla.org",
+        "openrepos.net",
+        "opus-codec.org",
+        "sodipodi.sourceforge.net",
+        "t.me",
+        "telegram.org",
+        "wiki.openstreetmap.org",
+        "www.freetype.org",
+        "www.inkscape.org",
+        "www.nayuki.io",
+        "www.videolan.org",
+        "xiph.org"
+      ],
+      "hosts_binaries": [
+        "aomediacodec.github.io",
+        "crbug.com",
+        "crl.comodo.net",
+        "crl.comodoca.com",
+        "dns.google",
+        "music.youtube.com",
+        "my.telegram.org",
+        "nominatim.openstreetmap.org",
+        "reserve-5a846.firebaseio.com",
+        "software-download.microsoft.com",
+        "streams.videolan.org",
+        "telegra.ph",
+        "tgb-playground.smart-glocal.com",
+        "tgb.smart-glocal.com",
+        "twitter.com",
+        "webrtc.googlesource.com",
+        "www.google.com",
+        "www.instagram.com",
+        "www.webrtc.org",
+        "www.youtube.com"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 633671,
+        "malicious": 417
+      },
+      "notable": [],
+      "ignored_hosts": 6
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 8,
+      "unknown": 8,
+      "not_queried": 12,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "error (HTTP 502, None)",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 18,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39150751255",
+  "diff": {
+    "baseline": {
+      "sha256": "b6546aff0c3b92acb190730259a9e5fc9ada87e5db0d1cd9c4c85940f5f01ebe",
+      "package": "harbour-rootelegram-3.6-1.armv7hl",
+      "last_scanned": "2026-10-16T15:02:21Z"
+    },
+    "changes": [
+      {
+        "area": "permission",
+        "change": "added",
+        "item": "UnifiedPush",
+        "attention": true,
+        "detail": "/usr/share/applications/harbour-rootelegram.desktop"
+      },
+      {
+        "area": "systemd unit",
+        "change": "changed",
+        "item": "/usr/lib/systemd/user/harbour-rootelegram.service",
+        "attention": true,
+        "detail": "as device user: /bin/sh -c 'test -e \"${HOME}/.config/com.github.RootGPT_YouTube/rootelegram/autostart-disabled\" && exit 0; exec /usr/bin/invoker --type=generic --single-instance /usr/bin/harbour-rootelegram --daemon' (enabled or started from an install scriptlet) -> as device user: /bin/sh -c 'test -e \"${HOME}/.config/com.github.RootGPT_YouTube/rootelegram/autostart-disabled\" && exit 0; test -e \"${HOME}/.config/com.github.RootGPT_YouTube/rootelegram/unifiedpush-enabled\" && exit 0; exec /usr/bin/invoker --type=generic --single-instance /usr/bin/harbour-rootelegram --daemon' (enabled or started from an install scriptlet)"
+      },
+      {
+        "area": "D-Bus activation",
+        "change": "added",
+        "item": "/usr/share/dbus-1/services/org.unifiedpush.Connector.rootelegram.service",
+        "attention": true,
+        "detail": "session bus, org.unifiedpush.Connector.rootelegram: /usr/bin/env ROOTELEGRAM_PUSH_WAKE=1 /usr/bin/sailjail -p harbour-rootelegram.desktop -- /usr/bin/harbour-rootelegram"
+      },
+      {
+        "area": "host",
+        "change": "added",
+        "item": "openrepos.net",
+        "attention": true,
+        "detail": "in scripts/QML/config"
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/dbus-1/services/org.unifiedpush.Connector.rootelegram.service",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/harbour-rootelegram/qml/components/AudioPlaylist.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/harbour-rootelegram/qml/pages/UnifiedPushHelpPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/harbour-rootelegram",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/lib/systemd/user/harbour-rootelegram.service",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/lib64/voicecall/plugins/librootelegram-voicecall-plugin.so",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/applications/harbour-rootelegram.desktop",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-rootelegram/qml/components/AudioPlayerBar.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-rootelegram/qml/components/messageContent/MessageAudio.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-rootelegram/qml/components/settingsPage/SettingsBehavior.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-rootelegram/qml/harbour-rootelegram.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-rootelegram/qml/js/whatsnew.js",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-rootelegram/qml/pages/CoverPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-rootelegram/qml/pages/OverviewPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-rootelegram/translations/harbour-rootelegram-de.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-rootelegram/translations/harbour-rootelegram-en.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-rootelegram/translations/harbour-rootelegram-fr.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-rootelegram/translations/harbour-rootelegram-it.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-rootelegram/translations/harbour-rootelegram-pl.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-rootelegram/translations/harbour-rootelegram-ru.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-rootelegram/translations/harbour-rootelegram-sk.qm",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 1,
+        "removed": 0
+      },
+      "files": {
+        "added": 3,
+        "removed": 0,
+        "changed": 18,
+        "unchanged": 4231
+      }
+    }
+  },
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "code-sends-sms-or-places-calls",
+        "text": "Unsandboxed code that sends sms or places calls"
+      },
+      {
+        "level": "info",
+        "id": "no-sandbox-profile",
+        "text": "No sandbox profile declared"
+      },
+      {
+        "level": "info",
+        "id": "personal-data",
+        "text": "Personal data: Contacts, Phone"
+      },
+      {
+        "level": "info",
+        "id": "background-start",
+        "text": "Starts in the background"
+      },
+      {
+        "level": "info",
+        "id": "new-permission-unifiedpush",
+        "text": "New permission: UnifiedPush"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-rootelegram/f1c3355bca81800ad37d3b1fb72073fbdc65b69ba4edf7479e9ffd90470f68c1.md"
+}
