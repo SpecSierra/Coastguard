@@ -1,0 +1,55 @@
+[
+  {
+    "sha256": "03a629bc195e47d4fc99db6c92042443e0534da319a92af3405cf49cd365d35a",
+    "first_seen": "2026-10-18T20:58:12Z",
+    "package": "harbour-sfos-forum-viewer-1.16.10-1.noarch",
+    "version": "1.16.10-1",
+    "arch": "noarch",
+    "buildtime": 1792355644,
+    "last_scanned": "2026-10-18T20:58:12Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Secrets"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "MediaIndexing",
+        "RemovableMedia",
+        "Secrets",
+        "UserDirs",
+        "WebView"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 4,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39165667374",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-sfos-forum-viewer/03a629bc195e47d4fc99db6c92042443e0534da319a92af3405cf49cd365d35a.md"
+    }
+  }
+]

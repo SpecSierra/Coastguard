@@ -1,0 +1,164 @@
+{
+  "verdict": "clean",
+  "name": "harbour-sfos-forum-viewer",
+  "version": "1.16.10-1",
+  "arch": "noarch",
+  "package": "harbour-sfos-forum-viewer-1.16.10-1.noarch",
+  "buildtime": 1792355644,
+  "sha256": "03a629bc195e47d4fc99db6c92042443e0534da319a92af3405cf49cd365d35a",
+  "source": "https://openrepos.net/sites/default/files/packages/2895/harbour-sfos-forum-viewer-1.16.10-1.noarch.rpm",
+  "source_page": "https://openrepos.net/node/11114",
+  "scanned": "2026-10-18T20:58:12Z",
+  "files": 57,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28157/Sun Oct 18 06:24:14 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-sfos-forum-viewer.desktop",
+          "name": "SFOS Forum",
+          "exec": "sailfish-qml harbour-sfos-forum-viewer",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "WebView",
+            "Secrets",
+            "UserDirs",
+            "MediaIndexing",
+            "RemovableMedia"
+          ],
+          "organization": null,
+          "application": null
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 4,
+      "hosts_in_scripts": 4,
+      "hosts": [
+        {
+          "host": "forum.sailfishos.org",
+          "urls": 13,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-sfos-forum-viewer/qml/harbour-sfos-forum-viewer.qml",
+            "/usr/share/harbour-sfos-forum-viewer/qml/pages/CategorySelect.qml",
+            "/usr/share/harbour-sfos-forum-viewer/qml/pages/FirstPage.qml"
+          ]
+        },
+        {
+          "host": "github.com",
+          "urls": 3,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-sfos-forum-viewer/qml/pages/About.qml",
+            "/usr/share/harbour-sfos-forum-viewer/qml/pages/PollView.qml"
+          ]
+        },
+        {
+          "host": "api.imgbb.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-sfos-forum-viewer/qml/pages/NewPost.qml"
+          ]
+        },
+        {
+          "host": "www.youtube",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-sfos-forum-viewer/qml/pages/ThreadView.qml"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "api.imgbb.com",
+        "forum.sailfishos.org",
+        "github.com",
+        "www.youtube"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 633671,
+        "malicious": 417
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39165667374",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "id": "personal-data",
+        "text": "Personal data: Secrets"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-sfos-forum-viewer/03a629bc195e47d4fc99db6c92042443e0534da319a92af3405cf49cd365d35a.md"
+}
