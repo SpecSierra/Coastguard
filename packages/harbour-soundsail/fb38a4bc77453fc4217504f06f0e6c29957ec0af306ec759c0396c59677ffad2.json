@@ -1,0 +1,166 @@
+{
+  "verdict": "clean",
+  "name": "harbour-soundsail",
+  "version": "0.1.0-1",
+  "arch": "aarch64",
+  "package": "harbour-soundsail-0.1.0-1.aarch64",
+  "buildtime": 1792362397,
+  "sha256": "fb38a4bc77453fc4217504f06f0e6c29957ec0af306ec759c0396c59677ffad2",
+  "source": "https://openrepos.net/sites/default/files/packages/19828/harbour-soundsail-0.1.0-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12746",
+  "scanned": "2026-10-18T22:58:18Z",
+  "files": 46,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28157/Sun Oct 18 06:24:14 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [
+    {
+      "rule": "Coastguard_Indicator_Reads_Browser_Profile_Data",
+      "files": [
+        "payload/usr/bin/harbour-soundsail"
+      ]
+    }
+  ],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-soundsail.desktop",
+          "name": "Soundsail",
+          "exec": "harbour-soundsail",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Audio",
+            "Music"
+          ],
+          "organization": "harbour-soundsail",
+          "application": "harbour-soundsail"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 4,
+      "hosts_in_scripts": 1,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-soundsail/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "api-v2.soundcloud.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-soundsail"
+          ]
+        },
+        {
+          "host": "secure.soundcloud.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-soundsail"
+          ]
+        },
+        {
+          "host": "soundcloud.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-soundsail"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "github.com"
+      ],
+      "hosts_binaries": [
+        "api-v2.soundcloud.com",
+        "secure.soundcloud.com",
+        "soundcloud.com"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 633671,
+        "malicious": 417
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39174461407",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "id": "code-reads-browser-profile-data",
+        "text": "Code that reads browser profile data"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-soundsail/fb38a4bc77453fc4217504f06f0e6c29957ec0af306ec759c0396c59677ffad2.md"
+}
