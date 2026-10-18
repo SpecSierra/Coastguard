@@ -1,0 +1,185 @@
+{
+  "verdict": "clean",
+  "name": "harbour-inari-blue-notifier",
+  "version": "1.11.0-1",
+  "arch": "aarch64",
+  "package": "harbour-inari-blue-notifier-1.11.0-1.aarch64",
+  "buildtime": 1792362767,
+  "sha256": "c045f2b828be09cf1e26bfafaa3161803a089450f593ede076108143e6dca81e",
+  "source": "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.11.0-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12701",
+  "scanned": "2026-10-18T22:43:55Z",
+  "files": 56,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28157/Sun Oct 18 06:24:14 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-inari-blue-notifier.desktop",
+          "name": "Inari Blue Notifier",
+          "exec": "harbour-inari-blue-notifier",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "AppLaunch",
+            "InariBlueNotifier"
+          ],
+          "organization": "dev.rikudou",
+          "application": "inari-blue-notifier"
+        }
+      ],
+      "shipped_profiles": [
+        "/etc/sailjail/permissions/InariBlueNotifier.permission"
+      ],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "posttrans",
+        "interpreter": "/bin/sh",
+        "lines": 4,
+        "notable": [],
+        "body": "if [ -f \"/usr/share/inari-blue-notifier-settings/hide-launcher\" ] && \\\n   [ -f \"/usr/share/applications/harbour-inari-blue-notifier.desktop\" ]; then\n    desktop-file-edit --set-key=NoDisplay --set-value=true \"/usr/share/applications/harbour-inari-blue-notifier.desktop\"\nfi\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 0,
+      "hosts_in_scripts": 0,
+      "hosts": [],
+      "hosts_scripts": [],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 633671,
+        "malicious": 417
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39173455464",
+  "diff": {
+    "baseline": {
+      "sha256": "135a2437594134dff707f3cfbd990d7cf0df99f563c2d1b73c139c3a0513ac2b",
+      "package": "harbour-inari-blue-notifier-1.10.4-1.aarch64",
+      "last_scanned": "2026-10-18T18:18:06Z"
+    },
+    "changes": [
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/harbour-inari-blue-notifier/qml/js/duration.js",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/harbour-inari-blue-notifier/qml/pages/KnockPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/harbour-inari-blue-notifier",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-inari-blue-notifier/qml/components/DurationInput.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-inari-blue-notifier/qml/pages/EditPatternPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-inari-blue-notifier/qml/pages/SettingsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-inari-blue-notifier/translations/harbour-inari-blue-notifier-cs.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-inari-blue-notifier/translations/harbour-inari-blue-notifier-en.qm",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 2,
+        "removed": 0,
+        "changed": 6,
+        "unchanged": 24
+      }
+    }
+  },
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "id": "own-sandbox-profile",
+        "text": "Own sandbox profile"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-inari-blue-notifier/c045f2b828be09cf1e26bfafaa3161803a089450f593ede076108143e6dca81e.md"
+}
