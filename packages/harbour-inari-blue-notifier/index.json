@@ -1227,5 +1227,85 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39034574871",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-inari-blue-notifier/7e9bdc686fc08f1c77c61eb24480076b1e080440739957bed5d8c21e47bb4c69.md"
     }
+  },
+  {
+    "sha256": "96d2b4eeffc305534c08a12a8ec9e745b4353b2075fe6ba5a072790cd1264514",
+    "first_seen": "2026-10-18T00:18:11Z",
+    "package": "harbour-inari-blue-notifier-1.10.3-1.aarch64",
+    "version": "1.10.3-1",
+    "arch": "aarch64",
+    "buildtime": 1792282057,
+    "last_scanned": "2026-10-18T00:18:11Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "own-sandbox-profile",
+            "text": "Own sandbox profile"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "AppLaunch",
+        "InariBlueNotifier"
+      ],
+      "own_sandbox_profile": true,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 1,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-inari-blue-notifier-1.10.2-1.aarch64",
+        "attention_count": 4,
+        "attention": [
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "[ -f \"/usr/share/applications/harbour-inari-blue-notifier.desktop\" ]; then"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "desktop-file-edit --set-key=NoDisplay --set-value=true \"/usr/share/applications/harbour-inari-blue-notifier.desktop\""
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "fi"
+          },
+          {
+            "area": "install scriptlet",
+            "change": "added",
+            "item": "if [ -f \"/usr/share/inari-blue-notifier-settings/hide-launcher\" ] && \\"
+          }
+        ],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 5,
+          "unchanged": 25
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39082214589",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-inari-blue-notifier/96d2b4eeffc305534c08a12a8ec9e745b4353b2075fe6ba5a072790cd1264514.md"
+    }
   }
 ]
