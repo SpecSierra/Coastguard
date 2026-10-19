@@ -1,5 +1,5 @@
 {
-  "cursor": 1792444621,
+  "cursor": 1792446090,
   "queue": [
     {
       "url": "https://openrepos.net/sites/default/files/packages/18816/harbour-dconf-explorer-1.0-1.noarch.rpm",
@@ -481,7 +481,7 @@
     "https://openrepos.net/sites/default/files/packages/19693/harbour-wave-0.2.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/18816/harbour-dconf-explorer-1.0-1.noarch.rpm"
   ],
-  "last_run": "2026-10-19T21:37:11Z",
+  "last_run": "2026-10-19T21:57:21Z",
   "dispatched": [
     1792443446,
     1792444647,
