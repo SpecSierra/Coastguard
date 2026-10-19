@@ -363,7 +363,7 @@
     "version": "1.2.0-1",
     "arch": "aarch64",
     "buildtime": 1792396855,
-    "last_scanned": "2026-10-19T08:38:20Z",
+    "last_scanned": "2026-10-19T08:41:00Z",
     "verdict": "clean",
     "summary": {
       "risk": {
@@ -392,13 +392,13 @@
       "hosts_in_scripts": 10,
       "reputation": {
         "virustotal": "ok",
-        "malwarebazaar": "error (HTTP 502, None)"
+        "malwarebazaar": "ok"
       },
       "checks": {
         "clamav": "pass",
         "yara": "pass",
         "virustotal": "pass",
-        "malwarebazaar": "error"
+        "malwarebazaar": "pass"
       },
       "changes": {
         "since": "harbour-sailfeed-1.1.0-1.aarch64",
@@ -411,7 +411,7 @@
           "unchanged": 44
         }
       },
-      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39224111713",
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39224425847",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-sailfeed/f008ca570f22f76888f181b4adf6613c02d4eb79a4f0a255529ab73db687e197.md"
     }
   },
