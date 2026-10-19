@@ -1,0 +1,221 @@
+{
+  "verdict": "clean",
+  "name": "harbour-suuntosync",
+  "version": "1.5.0-1",
+  "arch": "aarch64",
+  "package": "harbour-suuntosync-1.5.0-1.aarch64",
+  "buildtime": 1792398316,
+  "sha256": "6f689e30865300f6073c3c917348cb71680d3b7ce3806029ef73dc898320d374",
+  "source": "https://openrepos.net/sites/default/files/packages/19814/harbour-suuntosync-1.5.0-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12725",
+  "scanned": "2026-10-19T08:58:01Z",
+  "files": 41,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28157/Sun Oct 18 06:24:14 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-suuntosync.desktop",
+          "name": "Suunto Sync",
+          "exec": "harbour-suuntosync",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Bluetooth",
+            "Secrets",
+            "Documents"
+          ],
+          "organization": "io.github.jarnose",
+          "application": "suuntosync"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 1,
+      "hosts_in_scripts": 0,
+      "hosts": [
+        {
+          "host": "devices.suunto-operations.com",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-suuntosync"
+          ]
+        }
+      ],
+      "hosts_scripts": [],
+      "hosts_binaries": [
+        "devices.suunto-operations.com"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 632063,
+        "malicious": 421
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39226478387",
+  "diff": {
+    "baseline": {
+      "sha256": "4de1e8954a227d61c8785762958a998f19e04b0a4e84cc027f0a4725768057be",
+      "package": "harbour-suuntosync-1.4.0-1.aarch64",
+      "last_scanned": "2026-10-15T05:59:29Z"
+    },
+    "changes": [
+      {
+        "area": "permission",
+        "change": "added",
+        "item": "Documents",
+        "attention": true,
+        "detail": "/usr/share/applications/harbour-suuntosync.desktop"
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/harbour-suuntosync/qml/pages/OfflineMapsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/harbour-suuntosync",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/applications/harbour-suuntosync.desktop",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-suuntosync/qml/cover/CoverPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-suuntosync/qml/pages/ActivityTypes.js",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-suuntosync/qml/pages/HealthPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-suuntosync/qml/pages/MainPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-suuntosync/qml/pages/SettingsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-suuntosync/qml/pages/SuuntoPlusPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-suuntosync/qml/pages/WorkoutDetailPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-suuntosync/translations/harbour-suuntosync-fi.qm",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 1,
+        "removed": 0,
+        "changed": 10,
+        "unchanged": 11
+      }
+    }
+  },
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "id": "personal-data",
+        "text": "Personal data: Secrets"
+      },
+      {
+        "level": "info",
+        "id": "new-permission-documents",
+        "text": "New permission: Documents"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-suuntosync/6f689e30865300f6073c3c917348cb71680d3b7ce3806029ef73dc898320d374.md"
+}

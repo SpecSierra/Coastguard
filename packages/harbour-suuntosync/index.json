@@ -48,5 +48,77 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38689739180",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-suuntosync/4de1e8954a227d61c8785762958a998f19e04b0a4e84cc027f0a4725768057be.md"
     }
+  },
+  {
+    "sha256": "6f689e30865300f6073c3c917348cb71680d3b7ce3806029ef73dc898320d374",
+    "first_seen": "2026-10-19T08:58:01Z",
+    "package": "harbour-suuntosync-1.5.0-1.aarch64",
+    "version": "1.5.0-1",
+    "arch": "aarch64",
+    "buildtime": 1792398316,
+    "last_scanned": "2026-10-19T08:58:01Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Secrets"
+          },
+          {
+            "level": "info",
+            "id": "new-permission-documents",
+            "text": "New permission: Documents"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Bluetooth",
+        "Documents",
+        "Internet",
+        "Secrets"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 0,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-suuntosync-1.4.0-1.aarch64",
+        "attention_count": 1,
+        "attention": [
+          {
+            "area": "permission",
+            "change": "added",
+            "item": "Documents"
+          }
+        ],
+        "files": {
+          "added": 1,
+          "removed": 0,
+          "changed": 10,
+          "unchanged": 11
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39226478387",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-suuntosync/6f689e30865300f6073c3c917348cb71680d3b7ce3806029ef73dc898320d374.md"
+    }
   }
 ]
