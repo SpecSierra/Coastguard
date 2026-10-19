@@ -1,0 +1,210 @@
+{
+  "verdict": "clean",
+  "name": "password-store",
+  "version": "0.3.2-1",
+  "arch": "aarch64",
+  "package": "password-store-0.3.2-1.aarch64",
+  "buildtime": 1792407032,
+  "sha256": "2e53ca7da8a5cb933baaf9fd6814e969eb298276d87e35359eaa39f7a9d41796",
+  "source": "https://openrepos.net/sites/default/files/packages/18418/password-store-0.3.2-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12749",
+  "scanned": "2026-10-19T11:17:58Z",
+  "files": 59,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28157/Sun Oct 18 06:24:14 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [
+    {
+      "rule": "Coastguard_Indicator_Gains_Root_With_Devel_Su",
+      "files": [
+        "payload/usr/share/password-store/qml/pages/CloneDialog.qml",
+        "payload/usr/share/password-store/qml/pages/GitPage.qml"
+      ]
+    },
+    {
+      "rule": "Coastguard_Indicator_Installs_Packages_At_Runtime",
+      "files": [
+        "payload/usr/share/password-store/qml/pages/CloneDialog.qml",
+        "payload/usr/share/password-store/qml/pages/GitPage.qml"
+      ]
+    }
+  ],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/password-store.desktop",
+          "name": "Password Store",
+          "exec": "/usr/bin/password-store",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Documents",
+            "Downloads",
+            "RemovableMedia",
+            "Camera",
+            "Pictures"
+          ],
+          "organization": "rs.r8",
+          "application": "password-store"
+        }
+      ],
+      "shipped_profiles": [
+        "/etc/sailjail/permissions/password-store.profile"
+      ],
+      "profile_loosening": [
+        {
+          "file": "/etc/sailjail/permissions/password-store.profile",
+          "line": "noblacklist ${PATH}/ssh"
+        },
+        {
+          "file": "/etc/sailjail/permissions/password-store.profile",
+          "line": "noblacklist ${PATH}/ssh-keygen"
+        }
+      ]
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 5,
+      "hosts_in_scripts": 5,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 4,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/password-store/licenses/LICENSE-OCB.md",
+            "/usr/share/password-store/licenses/LICENSE.md"
+          ]
+        },
+        {
+          "host": "fsf.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/password-store/licenses/LICENSE"
+          ]
+        },
+        {
+          "host": "web.cs.ucdavis.edu",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/password-store/licenses/LICENSE-OCB.md"
+          ]
+        },
+        {
+          "host": "www.netbsd.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/password-store/licenses/LICENSE.md"
+          ]
+        },
+        {
+          "host": "www.ribose.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/password-store/licenses/LICENSE.md"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "fsf.org",
+        "github.com",
+        "web.cs.ucdavis.edu",
+        "www.netbsd.org",
+        "www.ribose.com"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 632063,
+        "malicious": 421
+      },
+      "notable": [],
+      "ignored_hosts": 4
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39243564776",
+  "diff": null,
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "sandbox-loosened",
+        "text": "Own profile loosens the sandbox (2 rules)"
+      },
+      {
+        "level": "medium",
+        "id": "code-gains-root-with-devel-su",
+        "text": "Code that gains root with devel su"
+      },
+      {
+        "level": "medium",
+        "id": "code-installs-packages-at-runtime",
+        "text": "Code that installs packages at runtime"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/password-store/2e53ca7da8a5cb933baaf9fd6814e969eb298276d87e35359eaa39f7a9d41796.md"
+}
