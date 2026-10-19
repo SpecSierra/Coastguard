@@ -165,6 +165,71 @@
     }
   },
   {
+    "sha256": "c6e7475844d5e8f639035f107adfbdf7acbe2cc46372dde8c18d6e4ad03c161c",
+    "first_seen": "2026-10-19T16:42:01Z",
+    "package": "harbour-paperiton-0.6.0-9.aarch64",
+    "version": "0.6.0-9",
+    "arch": "aarch64",
+    "buildtime": 1792423832,
+    "last_scanned": "2026-10-19T16:42:01Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Secrets"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Camera",
+        "Documents",
+        "Downloads",
+        "Internet",
+        "Pictures",
+        "RemovableMedia",
+        "Secrets",
+        "WebView"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 8,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-paperiton-0.6.0-8.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 3,
+          "unchanged": 83
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39287523600",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-paperiton/c6e7475844d5e8f639035f107adfbdf7acbe2cc46372dde8c18d6e4ad03c161c.md"
+    }
+  },
+  {
     "sha256": "14197569dee402bea655caf42053f9a0d4a29b5c779e4cb242433b1a0c2ce929",
     "first_seen": "2026-10-19T16:37:52Z",
     "package": "harbour-paperiton-0.6.0-9.armv7hl",
