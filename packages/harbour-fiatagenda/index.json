@@ -1,0 +1,47 @@
+[
+  {
+    "sha256": "8ae796dc431a6474b14a49f34f42fa6dd4a26adb4b968139e40e9c87cee46a0f",
+    "first_seen": "2026-10-19T20:14:14Z",
+    "package": "harbour-fiatagenda-2.0-1.aarch64",
+    "version": "2.0-1",
+    "arch": "aarch64",
+    "buildtime": 1792440245,
+    "last_scanned": "2026-10-19T20:14:14Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Calendar",
+        "Internet",
+        "Pictures",
+        "Privileged"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 3,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39317546745",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-fiatagenda/8ae796dc431a6474b14a49f34f42fa6dd4a26adb4b968139e40e9c87cee46a0f.md"
+    }
+  }
+]
