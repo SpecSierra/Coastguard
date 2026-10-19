@@ -1,0 +1,44 @@
+[
+  {
+    "sha256": "05be509542883349b84ad0429804169fd40bdc0dcc20ae0a1725107d5ccf9f17",
+    "first_seen": "2026-10-19T18:01:03Z",
+    "package": "harbour-guardifish-0.7-1.noarch",
+    "version": "0.7-1",
+    "arch": "noarch",
+    "buildtime": 1792428683,
+    "last_scanned": "2026-10-19T18:01:03Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 4,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39298946274",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-guardifish/05be509542883349b84ad0429804169fd40bdc0dcc20ae0a1725107d5ccf9f17.md"
+    }
+  }
+]

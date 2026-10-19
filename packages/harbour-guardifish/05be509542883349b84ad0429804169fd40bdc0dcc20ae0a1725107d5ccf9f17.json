@@ -1,0 +1,152 @@
+{
+  "verdict": "clean",
+  "name": "harbour-guardifish",
+  "version": "0.7-1",
+  "arch": "noarch",
+  "package": "harbour-guardifish-0.7-1.noarch",
+  "buildtime": 1792428683,
+  "sha256": "05be509542883349b84ad0429804169fd40bdc0dcc20ae0a1725107d5ccf9f17",
+  "source": "https://openrepos.net/sites/default/files/packages/6876/harbour-guardifish-0.7-1.noarch.rpm",
+  "source_page": "https://openrepos.net/node/11739",
+  "scanned": "2026-10-19T18:01:03Z",
+  "files": 34,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28157/Sun Oct 18 06:24:14 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-guardifish.desktop",
+          "name": "Guardifish",
+          "exec": "sailfish-qml harbour-guardifish",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet"
+          ],
+          "organization": "harbour-guardifish",
+          "application": "harbour-guardifish"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 4,
+      "hosts_in_scripts": 4,
+      "hosts": [
+        {
+          "host": "static.guim.co.uk",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-guardifish/qml/pages/About.qml",
+            "/usr/share/harbour-guardifish/qml/pages/Article.qml",
+            "/usr/share/harbour-guardifish/qml/pages/FirstPage.qml"
+          ]
+        },
+        {
+          "host": "content.guardianapis.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-guardifish/qml/main.js"
+          ]
+        },
+        {
+          "host": "github.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-guardifish/qml/pages/About.qml"
+          ]
+        },
+        {
+          "host": "open-platform.theguardian.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-guardifish/qml/pages/Settings.qml"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "content.guardianapis.com",
+        "github.com",
+        "open-platform.theguardian.com",
+        "static.guim.co.uk"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 632063,
+        "malicious": 421
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39298946274",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-guardifish/05be509542883349b84ad0429804169fd40bdc0dcc20ae0a1725107d5ccf9f17.md"
+}
