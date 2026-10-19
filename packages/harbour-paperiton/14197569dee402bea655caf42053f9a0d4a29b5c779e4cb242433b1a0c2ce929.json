@@ -1,0 +1,255 @@
+{
+  "verdict": "clean",
+  "name": "harbour-paperiton",
+  "version": "0.6.0-9",
+  "arch": "armv7hl",
+  "package": "harbour-paperiton-0.6.0-9.armv7hl",
+  "buildtime": 1792423866,
+  "sha256": "14197569dee402bea655caf42053f9a0d4a29b5c779e4cb242433b1a0c2ce929",
+  "source": "https://openrepos.net/sites/default/files/packages/583/harbour-paperiton-0.6.0-9.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12571",
+  "scanned": "2026-10-19T16:37:52Z",
+  "files": 119,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28157/Sun Oct 18 06:24:14 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-paperiton.desktop",
+          "name": "Paperiton",
+          "exec": "harbour-paperiton",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Documents",
+            "Downloads",
+            "Pictures",
+            "Camera",
+            "Secrets",
+            "WebView",
+            "RemovableMedia"
+          ],
+          "organization": "org.frapps",
+          "application": "harbour-paperiton"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 8,
+      "hosts_in_scripts": 8,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 8,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-paperiton/qml/components/PaperitonSupportDialog.qml",
+            "/usr/share/harbour-paperiton/qml/modules/Opal/About/AboutPageBase.qml",
+            "/usr/share/harbour-paperiton/qml/modules/Opal/About/Attribution.qml"
+          ]
+        },
+        {
+          "host": "liberapay.com",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-paperiton/qml/components/PaperitonSupportDialog.qml",
+            "/usr/share/harbour-paperiton/qml/modules/Opal/SupportMe/private/icons/liberapay.png.license",
+            "/usr/share/harbour-paperiton/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "spdx.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-paperiton/qml/modules/Opal/About/License.qml",
+            "/usr/share/harbour-paperiton/qml/modules/Opal/About/private/LicenseListPart.qml"
+          ]
+        },
+        {
+          "host": "docs.paperless-ngx.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-paperiton/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "explore.transifex.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-paperiton/qml/components/PaperitonSupportDialog.qml",
+            "/usr/share/harbour-paperiton/qml/pages/TranslationsPage.qml"
+          ]
+        },
+        {
+          "host": "fravaccaro.github.io",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-paperiton/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "fsf.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-paperiton/qml/modules/Opal/About/private/spdx/GPL-3.0-or-later.json"
+          ]
+        },
+        {
+          "host": "git-scm.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-paperiton/qml/modules/Opal/SupportMe/private/icons/git.png.license"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "docs.paperless-ngx.com",
+        "explore.transifex.com",
+        "fravaccaro.github.io",
+        "fsf.org",
+        "git-scm.com",
+        "github.com",
+        "liberapay.com",
+        "spdx.org"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 632063,
+        "malicious": 421
+      },
+      "notable": [],
+      "ignored_hosts": 2
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39286927029",
+  "diff": {
+    "baseline": {
+      "sha256": "dca9eacf0210ff8a0d9f0c3761007bccaaa6d4a1654cbf17f1147fc2d955686b",
+      "package": "harbour-paperiton-0.6.0-8.armv7hl",
+      "last_scanned": "2026-10-18T13:59:21Z"
+    },
+    "changes": [
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/harbour-paperiton",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-paperiton/qml/pages/StartPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-paperiton/translations/harbour-paperiton-it.qm",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 0,
+        "removed": 0,
+        "changed": 3,
+        "unchanged": 83
+      }
+    }
+  },
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "id": "personal-data",
+        "text": "Personal data: Secrets"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-paperiton/14197569dee402bea655caf42053f9a0d4a29b5c779e4cb242433b1a0c2ce929.md"
+}
