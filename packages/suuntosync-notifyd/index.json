@@ -56,5 +56,73 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38689619224",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/suuntosync-notifyd/bdd737e94ccda1aa86eb6f81ea09fc9a7201bd435195074dea2b32f46f31d443.md"
     }
+  },
+  {
+    "sha256": "c49d3bdfd5a569eddbf212713216e8521b1a4c1c9814a5db94c204fdf35080e8",
+    "first_seen": "2026-10-19T08:42:15Z",
+    "package": "suuntosync-notifyd-1.5.0-1.aarch64",
+    "version": "1.5.0-1",
+    "arch": "aarch64",
+    "buildtime": 1792398413,
+    "last_scanned": "2026-10-19T08:42:15Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "privileged-files",
+            "text": "1 privileged file (setgid privileged)"
+          },
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          },
+          {
+            "level": "info",
+            "id": "code-sends-sms-or-places-calls",
+            "text": "Code that sends sms or places calls"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Sends SMS Or Places Calls"
+      ],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 1,
+      "root_services": 0,
+      "privileged_files": 1,
+      "system_hooks": [],
+      "scriptlets": 3,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "suuntosync-notifyd-1.4.0-1.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 1,
+          "unchanged": 1
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39224585226",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/suuntosync-notifyd/c49d3bdfd5a569eddbf212713216e8521b1a4c1c9814a5db94c204fdf35080e8.md"
+    }
   }
 ]
