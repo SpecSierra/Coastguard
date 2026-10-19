@@ -1,6 +1,13 @@
 {
-  "cursor": 1792439581,
-  "queue": [],
+  "cursor": 1792440721,
+  "queue": [
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19674/harbour-fiatagenda-2.0-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12556",
+      "appid": 12556,
+      "title": "fiat agenda - a task list"
+    }
+  ],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -465,13 +472,16 @@
     "https://openrepos.net/sites/default/files/packages/12554/opensoar-7.44.24-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19693/harbour-gtgram-0.18gtgram.20261019184756.5c3c513-60.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19693/gtgram_beta_armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/19693/gtgram_beta_aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/19693/gtgram_beta_aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19674/harbour-fiatagenda-2.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19674/harbour-fiatagenda-2.0-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-19T20:08:07Z",
+  "last_run": "2026-10-19T20:15:02Z",
   "dispatched": [
     1792438648,
     1792439847,
     1792439991,
-    1792440240
+    1792440240,
+    1792440823
   ]
 }
