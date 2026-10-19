@@ -224,5 +224,97 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39315265967",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-gtgram/1866ac5e2e4761926acb00dad2b71e411c7f041f1c8859823de54369b5ff2ee5.md"
     }
+  },
+  {
+    "sha256": "780191ff2bb5e76cded58c260c1d3c1d84d46a826f29a11969ac550a515756c6",
+    "first_seen": "2026-10-19T20:01:28Z",
+    "package": "harbour-gtgram-0.18+gtgram.20261019192339.5d98c0a-60.armv7hl",
+    "version": "0.18+gtgram.20261019192339.5d98c0a-60",
+    "arch": "armv7hl",
+    "buildtime": 1792437822,
+    "last_scanned": "2026-10-19T20:01:28Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "new-code-sends-sms-or-places-calls",
+            "text": "New code that sends sms or places calls"
+          },
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Contacts, Phone"
+          },
+          {
+            "level": "info",
+            "id": "code-sends-sms-or-places-calls",
+            "text": "Code that sends sms or places calls"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Sends SMS Or Places Calls"
+      ],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Camera",
+        "Contacts",
+        "Documents",
+        "Downloads",
+        "Internet",
+        "Location",
+        "MediaIndexing",
+        "Microphone",
+        "Music",
+        "Phone",
+        "Pictures",
+        "Privileged",
+        "PublicDir",
+        "RemovableMedia",
+        "UserDirs",
+        "Videos"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 8,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "error (HTTP 502, None)"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "error"
+      },
+      "changes": {
+        "since": "harbour-gtgram-0.18+gtgram.20261019184756.5c3c513-60.armv7hl",
+        "attention_count": 1,
+        "attention": [
+          {
+            "area": "indicator",
+            "change": "added",
+            "item": "Coastguard_Indicator_Sends_SMS_Or_Places_Calls"
+          }
+        ],
+        "files": {
+          "added": 17,
+          "removed": 0,
+          "changed": 1,
+          "unchanged": 4160
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39315583314",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-gtgram/780191ff2bb5e76cded58c260c1d3c1d84d46a826f29a11969ac550a515756c6.md"
+    }
   }
 ]
