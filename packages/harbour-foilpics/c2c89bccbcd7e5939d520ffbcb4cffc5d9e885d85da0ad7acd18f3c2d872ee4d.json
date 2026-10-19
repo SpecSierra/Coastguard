@@ -1,0 +1,130 @@
+{
+  "verdict": "clean",
+  "name": "harbour-foilpics",
+  "version": "1.1.8-1",
+  "arch": "i486",
+  "package": "harbour-foilpics-1.1.8-1.i486",
+  "buildtime": 1792450736,
+  "sha256": "c2c89bccbcd7e5939d520ffbcb4cffc5d9e885d85da0ad7acd18f3c2d872ee4d",
+  "source": "https://openrepos.net/sites/default/files/packages/7548/harbour-foilpics-1.1.8-1.i486.rpm",
+  "source_page": "https://openrepos.net/node/10227",
+  "scanned": "2026-10-19T23:20:44Z",
+  "files": 112,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28157/Sun Oct 18 06:24:14 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-foilpics.desktop",
+          "name": "Foil Pics",
+          "exec": "harbour-foilpics",
+          "hidden": false,
+          "sandbox": "disabled",
+          "permissions": [],
+          "organization": null,
+          "application": null
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 2,
+      "hosts_in_scripts": 2,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-foilpics/qml/JailPage.qml"
+          ]
+        },
+        {
+          "host": "openrepos.net",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-foilpics/qml/JailPage.qml"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "github.com",
+        "openrepos.net"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 632063,
+        "malicious": 421
+      },
+      "notable": [],
+      "ignored_hosts": 1
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39340918874",
+  "diff": null,
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "sandbox-off",
+        "text": "Sandbox turned off"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-foilpics/c2c89bccbcd7e5939d520ffbcb4cffc5d9e885d85da0ad7acd18f3c2d872ee4d.md"
+}

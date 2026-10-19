@@ -46,6 +46,52 @@
     }
   },
   {
+    "sha256": "c2c89bccbcd7e5939d520ffbcb4cffc5d9e885d85da0ad7acd18f3c2d872ee4d",
+    "first_seen": "2026-10-19T23:20:44Z",
+    "package": "harbour-foilpics-1.1.8-1.i486",
+    "version": "1.1.8-1",
+    "arch": "i486",
+    "buildtime": 1792450736,
+    "last_scanned": "2026-10-19T23:20:44Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 2,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39340918874",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-foilpics/c2c89bccbcd7e5939d520ffbcb4cffc5d9e885d85da0ad7acd18f3c2d872ee4d.md"
+    }
+  },
+  {
     "sha256": "988b12e78b08fb6a2abba1315a74ca77506c6683d1e1ad68ff55a3499f9a7e27",
     "first_seen": "2026-10-19T23:18:02Z",
     "package": "harbour-foilpics-1.1.8-1.aarch64",
