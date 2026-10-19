@@ -43,5 +43,50 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39317546745",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-fiatagenda/8ae796dc431a6474b14a49f34f42fa6dd4a26adb4b968139e40e9c87cee46a0f.md"
     }
+  },
+  {
+    "sha256": "cf12d7ba826352a4e699ba6c1c4a38918cb1bc346fdddbc9e68e1c01884a6e56",
+    "first_seen": "2026-10-19T20:58:00Z",
+    "package": "harbour-fiatagenda-2.0-1.armv7hl",
+    "version": "2.0-1",
+    "arch": "armv7hl",
+    "buildtime": 1792440283,
+    "last_scanned": "2026-10-19T20:58:00Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Calendar",
+        "Internet",
+        "Pictures",
+        "Privileged"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 3,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39323609050",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-fiatagenda/cf12d7ba826352a4e699ba6c1c4a38918cb1bc346fdddbc9e68e1c01884a6e56.md"
+    }
   }
 ]

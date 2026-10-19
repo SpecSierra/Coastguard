@@ -1,0 +1,154 @@
+{
+  "verdict": "clean",
+  "name": "harbour-fiatagenda",
+  "version": "2.0-1",
+  "arch": "armv7hl",
+  "package": "harbour-fiatagenda-2.0-1.armv7hl",
+  "buildtime": 1792440283,
+  "sha256": "cf12d7ba826352a4e699ba6c1c4a38918cb1bc346fdddbc9e68e1c01884a6e56",
+  "source": "https://openrepos.net/sites/default/files/packages/19674/harbour-fiatagenda-2.0-1.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12556",
+  "scanned": "2026-10-19T20:58:00Z",
+  "files": 89,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28157/Sun Oct 18 06:24:14 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-fiatagenda.desktop",
+          "name": "fiat agenda",
+          "exec": "/usr/bin/sailjail -p harbour-fiatagenda.desktop /usr/bin/harbour-fiatagenda",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Calendar",
+            "Privileged",
+            "Internet",
+            "Pictures"
+          ],
+          "organization": "se.munkstolen",
+          "application": "harbour-fiatagenda"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 4,
+      "hosts_in_scripts": 3,
+      "hosts": [
+        {
+          "host": "openrepos.net",
+          "urls": 9,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-fiatagenda/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "github.com",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-fiatagenda/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "munkstolen.se",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-fiatagenda/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "apple.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-fiatagenda"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "github.com",
+        "munkstolen.se",
+        "openrepos.net"
+      ],
+      "hosts_binaries": [
+        "apple.com"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 632063,
+        "malicious": 421
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39323609050",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-fiatagenda/cf12d7ba826352a4e699ba6c1c4a38918cb1bc346fdddbc9e68e1c01884a6e56.md"
+}
