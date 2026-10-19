@@ -450,9 +450,8 @@
     "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-7.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-7.aarch64.rpm"
   ],
-  "last_run": "2026-10-19T09:59:54Z",
+  "last_run": "2026-10-19T10:17:12Z",
   "dispatched": [
-    1792400249,
     1792403835,
     1792403915
   ]
