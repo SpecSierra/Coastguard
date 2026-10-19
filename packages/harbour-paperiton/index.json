@@ -163,5 +163,70 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39133820192",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-paperiton/e3578ec427781b85b2b0473fd3dbdf0c20066bf5e88798ea5e41ca635ba75078.md"
     }
+  },
+  {
+    "sha256": "ca524800d5afab367e668c64b8cc6747b1944189433b05d0c90fc18bdad9f13c",
+    "first_seen": "2026-10-19T15:58:01Z",
+    "package": "harbour-paperiton-0.6.0-9.i486",
+    "version": "0.6.0-9",
+    "arch": "i486",
+    "buildtime": 1792423897,
+    "last_scanned": "2026-10-19T15:58:01Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Secrets"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Camera",
+        "Documents",
+        "Downloads",
+        "Internet",
+        "Pictures",
+        "RemovableMedia",
+        "Secrets",
+        "WebView"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 8,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-paperiton-0.6.0-8.i486",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 3,
+          "unchanged": 83
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39281797141",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-paperiton/ca524800d5afab367e668c64b8cc6747b1944189433b05d0c90fc18bdad9f13c.md"
+    }
   }
 ]
