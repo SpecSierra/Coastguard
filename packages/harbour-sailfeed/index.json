@@ -355,5 +355,64 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/38698051425",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-sailfeed/5af2c7d18a9ae7c59aa2e7b7854d70cf6f10a41a4056cc14334aa9c4b010e3c6.md"
     }
+  },
+  {
+    "sha256": "f008ca570f22f76888f181b4adf6613c02d4eb79a4f0a255529ab73db687e197",
+    "first_seen": "2026-10-19T08:38:20Z",
+    "package": "harbour-sailfeed-1.2.0-1.aarch64",
+    "version": "1.2.0-1",
+    "arch": "aarch64",
+    "buildtime": 1792396855,
+    "last_scanned": "2026-10-19T08:38:20Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Secrets"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "Secrets"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 10,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "error (HTTP 502, None)"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "error"
+      },
+      "changes": {
+        "since": "harbour-sailfeed-1.1.0-1.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 1,
+          "removed": 0,
+          "changed": 10,
+          "unchanged": 44
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39224111713",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-sailfeed/f008ca570f22f76888f181b4adf6613c02d4eb79a4f0a255529ab73db687e197.md"
+    }
   }
 ]
