@@ -1,5 +1,5 @@
 {
-  "cursor": 1792432718,
+  "cursor": 1792437841,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -461,8 +461,11 @@
     "https://openrepos.net/sites/default/files/packages/583/harbour-muoto-3.6.0-13.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/583/harbour-muoto-3.6.0-13.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/583/harbour-muoto-3.6.0-13.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/6876/harbour-guardifish-0.7-1.noarch.rpm"
+    "https://openrepos.net/sites/default/files/packages/6876/harbour-guardifish-0.7-1.noarch.rpm",
+    "https://openrepos.net/sites/default/files/packages/12554/opensoar-7.44.24-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-19T19:17:12Z",
-  "dispatched": []
+  "last_run": "2026-10-19T19:39:08Z",
+  "dispatched": [
+    1792438648
+  ]
 }
