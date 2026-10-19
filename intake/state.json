@@ -1,25 +1,6 @@
 {
   "cursor": 1792425542,
-  "queue": [
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/583/harbour-paperiton-0.6.0-9.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12571",
-      "appid": 12571,
-      "title": "Paperiton Paperless-ngx client"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/583/harbour-paperiton-0.6.0-9.aarch64.rpm",
-      "page": "https://openrepos.net/node/12571",
-      "appid": 12571,
-      "title": "Paperiton Paperless-ngx client"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/19742/harbour-felisttrss-0.1.15-1.aarch64.rpm",
-      "page": "https://openrepos.net/node/12639",
-      "appid": 12639,
-      "title": "FelisTTRSS"
-    }
-  ],
+  "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -478,8 +459,11 @@
     "https://openrepos.net/sites/default/files/packages/583/harbour-paperiton-0.6.0-9.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19742/harbour-felisttrss-0.1.15-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-19T16:17:52Z",
+  "last_run": "2026-10-19T16:48:18Z",
   "dispatched": [
-    1792425446
+    1792425446,
+    1792427836,
+    1792428085,
+    1792428419
   ]
 }
