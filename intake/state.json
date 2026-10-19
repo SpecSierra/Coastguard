@@ -1,13 +1,6 @@
 {
   "cursor": 1792446090,
-  "queue": [
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/18816/harbour-dconf-explorer-1.0-1.noarch.rpm",
-      "page": "https://openrepos.net/node/12751",
-      "appid": 12751,
-      "title": "DConf Explorer"
-    }
-  ],
+  "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -481,12 +474,12 @@
     "https://openrepos.net/sites/default/files/packages/19693/harbour-wave-0.2.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/18816/harbour-dconf-explorer-1.0-1.noarch.rpm"
   ],
-  "last_run": "2026-10-19T21:57:21Z",
+  "last_run": "2026-10-19T22:18:12Z",
   "dispatched": [
-    1792443446,
     1792444647,
     1792444728,
     1792444809,
-    1792444911
+    1792444911,
+    1792448234
   ]
 }
