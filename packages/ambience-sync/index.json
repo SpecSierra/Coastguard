@@ -1,0 +1,48 @@
+[
+  {
+    "sha256": "12c60eea4a2d4c73b59a03412cd3e5dab94b518c88aa11aac15587573efbde6e",
+    "first_seen": "2026-10-19T06:20:04Z",
+    "package": "ambience-sync-1.0.0-1.noarch",
+    "version": "1.0.0-1",
+    "arch": "noarch",
+    "buildtime": 1792371754,
+    "last_scanned": "2026-10-19T06:20:04Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "root-services",
+            "text": "2 root services, started at install"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 2,
+      "root_services": 2,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 3,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39209248850",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/ambience-sync/12c60eea4a2d4c73b59a03412cd3e5dab94b518c88aa11aac15587573efbde6e.md"
+    }
+  }
+]

@@ -1,0 +1,164 @@
+{
+  "verdict": "clean",
+  "name": "ambience-sync",
+  "version": "1.0.0-1",
+  "arch": "noarch",
+  "package": "ambience-sync-1.0.0-1.noarch",
+  "buildtime": 1792371754,
+  "sha256": "12c60eea4a2d4c73b59a03412cd3e5dab94b518c88aa11aac15587573efbde6e",
+  "source": "https://openrepos.net/sites/default/files/packages/1198/ambience-sync-1.0.0-1.noarch.rpm",
+  "source_page": "https://openrepos.net/node/12747",
+  "scanned": "2026-10-19T06:20:04Z",
+  "files": 56,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28157/Sun Oct 18 06:24:14 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [
+        {
+          "path": "/usr/lib/systemd/system/ambience-sync-android.service",
+          "scope": "system",
+          "exec_start": [
+            "/usr/libexec/ambience-sync/on-appsupport-start.sh"
+          ],
+          "user": "root",
+          "install_wanted_by": "appsupport@defaultuser.service",
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/system/ambience-sync.service",
+          "scope": "system",
+          "exec_start": [
+            "/usr/libexec/ambience-sync/watch.sh"
+          ],
+          "user": "root",
+          "install_wanted_by": "multi-user.target",
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        }
+      ],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 4,
+        "notable": [
+          "systemctl daemon-reload || :",
+          "systemctl enable ambience-sync.service || :",
+          "systemctl enable ambience-sync-android.service || :",
+          "systemctl restart ambience-sync.service || :"
+        ],
+        "body": "systemctl daemon-reload || :\nsystemctl enable ambience-sync.service || :\nsystemctl enable ambience-sync-android.service || :\nsystemctl restart ambience-sync.service || :\n"
+      },
+      {
+        "type": "preuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 5,
+        "notable": [
+          "systemctl disable ambience-sync-android.service || :",
+          "systemctl disable --now ambience-sync.service || :"
+        ],
+        "body": "if [ \"$1\" = 0 ]; then\n    systemctl disable ambience-sync-android.service || :\n    systemctl disable --now ambience-sync.service || :\n    # give the person their default Android colors back\n    /usr/libexec/ambience-sync/apply.sh --reset || :\nfi\n"
+      },
+      {
+        "type": "postuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 1,
+        "notable": [
+          "systemctl daemon-reload || :"
+        ],
+        "body": "systemctl daemon-reload || :\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 1,
+      "hosts_in_scripts": 1,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/jolla-settings/pages/ambience-sync/ambience-sync.qml"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "github.com"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 632063,
+        "malicious": 421
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39209248850",
+  "diff": null,
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "root-services",
+        "text": "2 root services, started at install"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/ambience-sync/12c60eea4a2d4c73b59a03412cd3e5dab94b518c88aa11aac15587573efbde6e.md"
+}
