@@ -1,5 +1,48 @@
 [
   {
+    "sha256": "fc2bfb54b45959a080bbe9bab7ebbd9f699eb6c15025c7f506ae81dc227ade23",
+    "first_seen": "2026-10-19T21:22:35Z",
+    "package": "harbour-wave-0.2.8-1.aarch64",
+    "version": "0.2.8-1",
+    "arch": "aarch64",
+    "buildtime": 1792442040,
+    "last_scanned": "2026-10-19T21:22:35Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Internet"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 4,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39326884249",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-wave/fc2bfb54b45959a080bbe9bab7ebbd9f699eb6c15025c7f506ae81dc227ade23.md"
+    }
+  },
+  {
     "sha256": "0d8244a6fa837e229d8643fd38bbbc4f514baf8d75f5251e9dcfa1882eecaca5",
     "first_seen": "2026-10-19T21:20:54Z",
     "package": "harbour-wave-0.2.8-1.armv7hl",
