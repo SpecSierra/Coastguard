@@ -1,5 +1,5 @@
 {
-  "cursor": 1792399861,
+  "cursor": 1792407541,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -448,11 +448,13 @@
     "https://openrepos.net/sites/default/files/packages/19814/suuntosync-notifyd-1.5.0-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19814/harbour-suuntosync-1.5.0-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-7.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-7.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-7.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/18418/password-store-0.3.2-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/18418/password-store-0.3.2-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-19T10:57:13Z",
+  "last_run": "2026-10-19T11:20:01Z",
   "dispatched": [
-    1792403835,
-    1792403915
+    1792408644,
+    1792408723
   ]
 }
