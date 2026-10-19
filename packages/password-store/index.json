@@ -64,5 +64,71 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39243564776",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/password-store/2e53ca7da8a5cb933baaf9fd6814e969eb298276d87e35359eaa39f7a9d41796.md"
     }
+  },
+  {
+    "sha256": "8b2677630822c1aa9b95689db27aa1d3a76bc0df619ee293cb39ce523c7918c6",
+    "first_seen": "2026-10-19T11:19:21Z",
+    "package": "password-store-0.3.2-1.armv7hl",
+    "version": "0.3.2-1",
+    "arch": "armv7hl",
+    "buildtime": 1792407100,
+    "last_scanned": "2026-10-19T11:19:21Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-loosened",
+            "text": "Own profile loosens the sandbox (2 rules)"
+          },
+          {
+            "level": "medium",
+            "id": "code-gains-root-with-devel-su",
+            "text": "Code that gains root with devel su"
+          },
+          {
+            "level": "medium",
+            "id": "code-installs-packages-at-runtime",
+            "text": "Code that installs packages at runtime"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Gains Root With Devel Su",
+        "Installs Packages At Runtime"
+      ],
+      "sandbox": "declared",
+      "permissions": [
+        "Camera",
+        "Documents",
+        "Downloads",
+        "Internet",
+        "Pictures",
+        "RemovableMedia"
+      ],
+      "own_sandbox_profile": true,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 5,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39243720202",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/password-store/8b2677630822c1aa9b95689db27aa1d3a76bc0df619ee293cb39ce523c7918c6.md"
+    }
   }
 ]
