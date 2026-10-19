@@ -1,0 +1,154 @@
+{
+  "verdict": "clean",
+  "name": "harbour-captains-bible",
+  "version": "0.2-7",
+  "arch": "armv7hl",
+  "package": "harbour-captains-bible-0.2-7.armv7hl",
+  "buildtime": 1792398605,
+  "sha256": "1cc56dcd13862e698d2e3472acdea91cfdf602b998eb0676b6eb285329e701f1",
+  "source": "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-7.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12708",
+  "scanned": "2026-10-19T09:57:50Z",
+  "files": 43,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28157/Sun Oct 18 06:24:14 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-captains-bible.desktop",
+          "name": "Captain's Bible",
+          "exec": "harbour-captains-bible",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet"
+          ],
+          "organization": "org.myorg",
+          "application": "harbour-captains-bible"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 2,
+      "hosts_in_scripts": 0,
+      "hosts": [
+        {
+          "host": "mph4.ru",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-captains-bible"
+          ]
+        },
+        {
+          "host": "www.gimp.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-captains-bible/qml/cover/172icon.png",
+            "/usr/share/icons/hicolor/108x108/apps/harbour-captains-bible.png",
+            "/usr/share/icons/hicolor/128x128/apps/harbour-captains-bible.png"
+          ]
+        }
+      ],
+      "hosts_scripts": [],
+      "hosts_binaries": [
+        "mph4.ru",
+        "www.gimp.org"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 632063,
+        "malicious": 421
+      },
+      "notable": [],
+      "ignored_hosts": 3
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39233890763",
+  "diff": {
+    "baseline": {
+      "sha256": "82ee9c8f5d512f2b8f39c5eedf2b756539dc04dde3b036b51860685b39f8191e",
+      "package": "harbour-captains-bible-0.2-6.armv7hl",
+      "last_scanned": "2026-10-18T20:37:49Z"
+    },
+    "changes": [
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/harbour-captains-bible",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 0,
+        "removed": 0,
+        "changed": 1,
+        "unchanged": 22
+      }
+    }
+  },
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-captains-bible/1cc56dcd13862e698d2e3472acdea91cfdf602b998eb0676b6eb285329e701f1.md"
+}
