@@ -1,6 +1,13 @@
 {
-  "cursor": 1792425542,
-  "queue": [],
+  "cursor": 1792428061,
+  "queue": [
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/583/harbour-muoto-3.6.0-13.aarch64.rpm",
+      "page": "https://openrepos.net/node/12392",
+      "appid": 12392,
+      "title": "Muoto UI Themer"
+    }
+  ],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -457,13 +464,17 @@
     "https://openrepos.net/sites/default/files/packages/583/harbour-paperiton-0.6.0-9.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/583/harbour-paperiton-0.6.0-9.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/583/harbour-paperiton-0.6.0-9.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/19742/harbour-felisttrss-0.1.15-1.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/19742/harbour-felisttrss-0.1.15-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/583/harbour-muoto-3.6.0-13.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/583/harbour-muoto-3.6.0-13.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/583/harbour-muoto-3.6.0-13.aarch64.rpm"
   ],
-  "last_run": "2026-10-19T16:48:18Z",
+  "last_run": "2026-10-19T17:03:00Z",
   "dispatched": [
-    1792425446,
     1792427836,
     1792428085,
-    1792428419
+    1792428419,
+    1792429053,
+    1792429217
   ]
 }
