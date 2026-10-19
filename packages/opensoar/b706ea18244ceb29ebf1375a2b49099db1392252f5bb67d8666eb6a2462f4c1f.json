@@ -1,0 +1,339 @@
+{
+  "verdict": "clean",
+  "name": "opensoar",
+  "version": "7.44.24-1",
+  "arch": "aarch64",
+  "package": "opensoar-7.44.24-1.aarch64",
+  "buildtime": 1792437708,
+  "sha256": "b706ea18244ceb29ebf1375a2b49099db1392252f5bb67d8666eb6a2462f4c1f",
+  "source": "https://openrepos.net/sites/default/files/packages/12554/opensoar-7.44.24-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12750",
+  "scanned": "2026-10-19T19:38:13Z",
+  "files": 127,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28157/Sun Oct 18 06:24:14 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 52,
+    "files": 52,
+    "bytes": 1600491,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/opensoar.desktop",
+          "name": "OpenSoar",
+          "exec": "/usr/bin/opensoar --fly --dpi=400",
+          "hidden": false,
+          "sandbox": "disabled",
+          "permissions": [],
+          "organization": null,
+          "application": null
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 19,
+      "hosts_in_scripts": 1,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 4,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/opensoar/OpenSoar",
+            "/usr/share/doc/opensoar/README.md",
+            "/usr/share/locale/bg/LC_MESSAGES/opensoar.mo"
+          ]
+        },
+        {
+          "host": "hosted.weblate.org",
+          "urls": 29,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/locale/bg/LC_MESSAGES/opensoar.mo",
+            "/usr/share/locale/ca/LC_MESSAGES/opensoar.mo",
+            "/usr/share/locale/cs/LC_MESSAGES/opensoar.mo"
+          ]
+        },
+        {
+          "host": "xcsoar.org",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/opensoar/OpenSoar"
+          ]
+        },
+        {
+          "host": "opengis.net",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/opensoar/OpenSoar"
+          ]
+        },
+        {
+          "host": "proj.org",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/opensoar/OpenSoar"
+          ]
+        },
+        {
+          "host": "skysight.io",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/opensoar/OpenSoar"
+          ]
+        },
+        {
+          "host": "tgftp.nws.noaa.gov",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/opensoar/OpenSoar"
+          ]
+        },
+        {
+          "host": "www.opengis.net",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/opensoar/OpenSoar"
+          ]
+        },
+        {
+          "host": "api.weglide.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/opensoar/OpenSoar"
+          ]
+        },
+        {
+          "host": "cdn.proj.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/opensoar/OpenSoar"
+          ]
+        },
+        {
+          "host": "docs.opengeospatial.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/opensoar/OpenSoar"
+          ]
+        },
+        {
+          "host": "download.xcsoar.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/opensoar/OpenSoar"
+          ]
+        },
+        {
+          "host": "ftp.pcmet.de",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/libexec/opensoar/OpenSoar"
+          ]
+        },
+        {
+          "host": "opensoar.de",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/opensoar/OpenSoar"
+          ]
+        },
+        {
+          "host": "stefly.aero",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/opensoar/OpenSoar"
+          ]
+        },
+        {
+          "host": "tile.openstreetmap.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/opensoar/OpenSoar"
+          ]
+        },
+        {
+          "host": "www.flugwetter.de",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/opensoar/OpenSoar"
+          ]
+        },
+        {
+          "host": "www.thermalmap.info",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/opensoar/OpenSoar"
+          ]
+        },
+        {
+          "host": "xcsoar.readthedocs.io",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/opensoar/OpenSoar"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "github.com"
+      ],
+      "hosts_binaries": [
+        "api.weglide.org",
+        "cdn.proj.org",
+        "docs.opengeospatial.org",
+        "download.xcsoar.org",
+        "ftp.pcmet.de",
+        "hosted.weblate.org",
+        "opengis.net",
+        "opensoar.de",
+        "proj.org",
+        "skysight.io",
+        "stefly.aero",
+        "tgftp.nws.noaa.gov",
+        "tile.openstreetmap.org",
+        "www.flugwetter.de",
+        "www.opengis.net",
+        "www.thermalmap.info",
+        "xcsoar.org",
+        "xcsoar.readthedocs.io"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 632063,
+        "malicious": 421
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39312531228",
+  "diff": null,
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "sandbox-off",
+        "text": "Sandbox turned off"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/opensoar/b706ea18244ceb29ebf1375a2b49099db1392252f5bb67d8666eb6a2462f4c1f.md"
+}
