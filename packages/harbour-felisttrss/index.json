@@ -1,0 +1,45 @@
+[
+  {
+    "sha256": "f6634cdad00b9e01952985b27fdf6944daee2b7effa98fc3fb15e2cfa44784aa",
+    "first_seen": "2026-10-19T16:47:35Z",
+    "package": "harbour-felisttrss-0.1.15-1.aarch64",
+    "version": "0.1.15-1",
+    "arch": "aarch64",
+    "buildtime": 1792422018,
+    "last_scanned": "2026-10-19T16:47:35Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "WebView"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 9,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39288369502",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-felisttrss/f6634cdad00b9e01952985b27fdf6944daee2b7effa98fc3fb15e2cfa44784aa.md"
+    }
+  }
+]
