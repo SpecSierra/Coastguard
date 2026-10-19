@@ -152,6 +152,87 @@
     }
   },
   {
+    "sha256": "69c0b7cc27066411485fbfdc8b383218bf8fb7e34b77f4fb4efb4e737640e324",
+    "first_seen": "2026-10-19T20:05:42Z",
+    "package": "harbour-gtgram-0.18+gtgram.20261019181759.609a2ce-60.aarch64",
+    "version": "0.18+gtgram.20261019181759.609a2ce-60",
+    "arch": "aarch64",
+    "buildtime": 1792433883,
+    "last_scanned": "2026-10-19T20:05:42Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Contacts, Phone"
+          },
+          {
+            "level": "info",
+            "id": "code-sends-sms-or-places-calls",
+            "text": "Code that sends sms or places calls"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Sends SMS Or Places Calls"
+      ],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Camera",
+        "Contacts",
+        "Documents",
+        "Downloads",
+        "Internet",
+        "Location",
+        "MediaIndexing",
+        "Microphone",
+        "Music",
+        "Phone",
+        "Pictures",
+        "Privileged",
+        "PublicDir",
+        "RemovableMedia",
+        "UserDirs",
+        "Videos"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 8,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-gtgram-0.18+gtgram.20261018224004.25169e2-60.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 4,
+          "unchanged": 4175
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39316176049",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-gtgram/69c0b7cc27066411485fbfdc8b383218bf8fb7e34b77f4fb4efb4e737640e324.md"
+    }
+  },
+  {
     "sha256": "1866ac5e2e4761926acb00dad2b71e411c7f041f1c8859823de54369b5ff2ee5",
     "first_seen": "2026-10-19T19:58:51Z",
     "package": "harbour-gtgram-0.18+gtgram.20261019184756.5c3c513-60.armv7hl",
