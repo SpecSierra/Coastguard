@@ -1,5 +1,49 @@
 [
   {
+    "sha256": "6d6a40bc4c98034771d8b7ceb778b6ecdefff36b8cb08b418f6240bf19c301be",
+    "first_seen": "2026-10-19T21:19:28Z",
+    "package": "harbour-driver-0.8.3-1.aarch64",
+    "version": "0.8.3-1",
+    "arch": "aarch64",
+    "buildtime": 1792440656,
+    "last_scanned": "2026-10-19T21:19:28Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "Location",
+        "Notifications"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 4,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39326478968",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-driver/6d6a40bc4c98034771d8b7ceb778b6ecdefff36b8cb08b418f6240bf19c301be.md"
+    }
+  },
+  {
     "sha256": "23a79c76fc9a4e6382135601ec844de65500e0e2fb3f7d8900e181a4c229ddc3",
     "first_seen": "2026-10-19T21:18:10Z",
     "package": "harbour-driver-0.8.3-1.armv7hl",
