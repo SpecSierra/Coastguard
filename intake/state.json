@@ -1,11 +1,17 @@
 {
-  "cursor": 1792398694,
+  "cursor": 1792399861,
   "queue": [
     {
-      "url": "https://openrepos.net/sites/default/files/packages/19814/harbour-suuntosync-1.5.0-1.aarch64.rpm",
-      "page": "https://openrepos.net/node/12725",
-      "appid": 12725,
-      "title": "SuuntoSync"
+      "url": "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-7.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12708",
+      "appid": 12708,
+      "title": "Captain's Bible"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-7.aarch64.rpm",
+      "page": "https://openrepos.net/node/12708",
+      "appid": 12708,
+      "title": "Captain's Bible"
     }
   ],
   "seen": [
@@ -453,14 +459,16 @@
     "https://openrepos.net/sites/default/files/packages/19754/harbour-sailfeed-1.2.0-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19754/harbour-sailfeed-1.2.0-1.aarch64_0.rpm",
     "https://openrepos.net/sites/default/files/packages/19814/suuntosync-notifyd-1.5.0-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/19814/harbour-suuntosync-1.5.0-1.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/19814/harbour-suuntosync-1.5.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-7.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.2-7.aarch64.rpm"
   ],
-  "last_run": "2026-10-19T08:42:58Z",
+  "last_run": "2026-10-19T08:58:48Z",
   "dispatched": [
-    1792395712,
     1792399058,
     1792399139,
     1792399220,
-    1792399300
+    1792399300,
+    1792400249
   ]
 }
