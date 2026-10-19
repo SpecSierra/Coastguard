@@ -1,0 +1,316 @@
+{
+  "verdict": "clean",
+  "name": "harbour-sailfeed",
+  "version": "1.2.0-1",
+  "arch": "armv7hl",
+  "package": "harbour-sailfeed-1.2.0-1.armv7hl",
+  "buildtime": 1792397130,
+  "sha256": "2d79a7044e5047f0a7a45a90ad7b04c7e2e79bd53c3691feda3e3f43ef2edb16",
+  "source": "https://openrepos.net/sites/default/files/packages/19754/harbour-sailfeed-1.2.0-1.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12706",
+  "scanned": "2026-10-19T08:39:43Z",
+  "files": 75,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28157/Sun Oct 18 06:24:14 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 1,
+    "files": 1,
+    "bytes": 90944,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-sailfeed.desktop",
+          "name": "Sailfeed",
+          "exec": "harbour-sailfeed",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Secrets"
+          ],
+          "organization": "org.sappl",
+          "application": "harbour-sailfeed"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 10,
+      "hosts_in_scripts": 10,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 7,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-sailfeed/qml/pages/AboutPage.qml",
+            "nested/usr/bin/harbour-sailfeed.carved/000cd958.bin"
+          ]
+        },
+        {
+          "host": "developer.mozilla.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/bin/harbour-sailfeed.carved/000cd958.bin"
+          ]
+        },
+        {
+          "host": "apps.nextcloud.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-sailfeed/qml/pages/LoginPage.qml"
+          ]
+        },
+        {
+          "host": "code.google.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/bin/harbour-sailfeed.carved/000cd958.bin"
+          ]
+        },
+        {
+          "host": "en.wikipedia.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/bin/harbour-sailfeed.carved/000cd958.bin"
+          ]
+        },
+        {
+          "host": "example.your-storageshare.de",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-sailfeed/qml/pages/LoginPage.qml"
+          ]
+        },
+        {
+          "host": "mobile.slate.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/bin/harbour-sailfeed.carved/000cd958.bin"
+          ]
+        },
+        {
+          "host": "nextcloud.github.io",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-sailfeed/qml/pages/LoginPage.qml"
+          ]
+        },
+        {
+          "host": "schema.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/bin/harbour-sailfeed.carved/000cd958.bin"
+          ]
+        },
+        {
+          "host": "searchfox.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/bin/harbour-sailfeed.carved/000cd958.bin"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "apps.nextcloud.com",
+        "code.google.com",
+        "developer.mozilla.org",
+        "en.wikipedia.org",
+        "example.your-storageshare.de",
+        "github.com",
+        "mobile.slate.com",
+        "nextcloud.github.io",
+        "schema.org",
+        "searchfox.org"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 632063,
+        "malicious": 421
+      },
+      "notable": [],
+      "ignored_hosts": 2
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39224266900",
+  "diff": {
+    "baseline": {
+      "sha256": "fbc469ed708114e780f5f1f2189e5ad28a0cbf0475ec6c96ac1951f82add3060",
+      "package": "harbour-sailfeed-1.1.0-1.armv7hl",
+      "last_scanned": "2026-10-15T07:19:30Z"
+    },
+    "changes": [
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/harbour-sailfeed/qml/pages/FeedSettingsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/harbour-sailfeed",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-sailfeed/qml/components/ArticleDelegate.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-sailfeed/qml/harbour-sailfeed.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-sailfeed/qml/pages/ArticleListPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-sailfeed/qml/pages/ArticlePage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-sailfeed/qml/pages/FeedsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-sailfeed/qml/pages/SettingsListPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-sailfeed/qml/pages/SettingsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-sailfeed/qml/pages/WebPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-sailfeed/translations/harbour-sailfeed-de.qm",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 1,
+        "removed": 0,
+        "changed": 10,
+        "unchanged": 44
+      }
+    }
+  },
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "id": "personal-data",
+        "text": "Personal data: Secrets"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-sailfeed/2d79a7044e5047f0a7a45a90ad7b04c7e2e79bd53c3691feda3e3f43ef2edb16.md"
+}
