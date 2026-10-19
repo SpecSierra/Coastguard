@@ -1,0 +1,98 @@
+{
+  "verdict": "clean",
+  "name": "harbour-dconf-explorer",
+  "version": "1.0-1",
+  "arch": "noarch",
+  "package": "harbour-dconf-explorer-1.0-1.noarch",
+  "buildtime": 1792444440,
+  "sha256": "5816b40ea6c14e32af11a5c70cf60fd997a52a0207373ae0d3a5d681ce339d26",
+  "source": "https://openrepos.net/sites/default/files/packages/18816/harbour-dconf-explorer-1.0-1.noarch.rpm",
+  "source_page": "https://openrepos.net/node/12751",
+  "scanned": "2026-10-19T22:17:49Z",
+  "files": 35,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28157/Sun Oct 18 06:24:14 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-dconf-explorer.desktop",
+          "name": "DConf Explorer",
+          "exec": "sailfish-qml harbour-dconf-explorer",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [],
+          "organization": "io.roundedrectangle",
+          "application": "dconf-explorer"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 0,
+      "hosts_in_scripts": 0,
+      "hosts": [],
+      "hosts_scripts": [],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 632063,
+        "malicious": 421
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39333856040",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-dconf-explorer/5816b40ea6c14e32af11a5c70cf60fd997a52a0207373ae0d3a5d681ce339d26.md"
+}
