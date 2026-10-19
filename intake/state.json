@@ -1,6 +1,13 @@
 {
-  "cursor": 1792394281,
-  "queue": [],
+  "cursor": 1792398694,
+  "queue": [
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19814/harbour-suuntosync-1.5.0-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12725",
+      "appid": 12725,
+      "title": "SuuntoSync"
+    }
+  ],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -441,11 +448,19 @@
     "https://openrepos.net/sites/default/files/packages/6026/harbour-inari-blue-notifier-1.11.1-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/1198/ambience-sync-1.0.0-1.noarch.rpm",
     "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.8-2.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.8-2.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.8-2.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19754/harbour-sailfeed-1.2.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19754/harbour-sailfeed-1.2.0-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19754/harbour-sailfeed-1.2.0-1.aarch64_0.rpm",
+    "https://openrepos.net/sites/default/files/packages/19814/suuntosync-notifyd-1.5.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19814/harbour-suuntosync-1.5.0-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-19T08:17:13Z",
+  "last_run": "2026-10-19T08:42:58Z",
   "dispatched": [
-    1792395445,
-    1792395712
+    1792395712,
+    1792399058,
+    1792399139,
+    1792399220,
+    1792399300
   ]
 }
