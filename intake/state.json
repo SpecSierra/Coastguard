@@ -455,10 +455,8 @@
     "https://openrepos.net/sites/default/files/packages/19055/harbour-rootheater-1.7.0-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19055/harbour-rootheater-1.7.0-1.i486.rpm"
   ],
-  "last_run": "2026-10-19T12:17:10Z",
+  "last_run": "2026-10-19T12:37:13Z",
   "dispatched": [
-    1792408644,
-    1792408723,
     1792411045,
     1792411251,
     1792411478
