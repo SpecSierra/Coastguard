@@ -1,11 +1,23 @@
 {
-  "cursor": 1792440721,
+  "cursor": 1792440841,
   "queue": [
     {
       "url": "https://openrepos.net/sites/default/files/packages/19674/harbour-fiatagenda-2.0-1.armv7hl.rpm",
       "page": "https://openrepos.net/node/12556",
       "appid": 12556,
       "title": "fiat agenda - a task list"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19693/harbour-driver-0.8.3-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12677",
+      "appid": 12677,
+      "title": "Driver"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19693/harbour-driver-0.8.3-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12677",
+      "appid": 12677,
+      "title": "Driver"
     }
   ],
   "seen": [
@@ -474,9 +486,11 @@
     "https://openrepos.net/sites/default/files/packages/19693/gtgram_beta_armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19693/gtgram_beta_aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19674/harbour-fiatagenda-2.0-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/19674/harbour-fiatagenda-2.0-1.armv7hl.rpm"
+    "https://openrepos.net/sites/default/files/packages/19674/harbour-fiatagenda-2.0-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19693/harbour-driver-0.8.3-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19693/harbour-driver-0.8.3-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-19T20:15:02Z",
+  "last_run": "2026-10-19T20:17:22Z",
   "dispatched": [
     1792438648,
     1792439847,
