@@ -1,0 +1,169 @@
+{
+  "verdict": "clean",
+  "name": "harbour-driver",
+  "version": "0.8.3-1",
+  "arch": "armv7hl",
+  "package": "harbour-driver-0.8.3-1.armv7hl",
+  "buildtime": 1792440672,
+  "sha256": "23a79c76fc9a4e6382135601ec844de65500e0e2fb3f7d8900e181a4c229ddc3",
+  "source": "https://openrepos.net/sites/default/files/packages/19693/harbour-driver-0.8.3-1.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12677",
+  "scanned": "2026-10-19T21:18:10Z",
+  "files": 86,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28157/Sun Oct 18 06:24:14 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-driver.desktop",
+          "name": "Driver",
+          "exec": "harbour-driver",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Location",
+            "Notifications"
+          ],
+          "organization": "org.driver",
+          "application": "Driver"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 5,
+      "hosts_in_scripts": 4,
+      "hosts": [
+        {
+          "host": "ko-fi.com",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-driver/qml/screens/AboutScreen.qml"
+          ]
+        },
+        {
+          "host": "legal.here.com",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-driver/qml/screens/FirstRunTerms.qml"
+          ]
+        },
+        {
+          "host": "scripts.sil.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-driver/assets/fonts/FiraSans-Medium.ttf",
+            "/usr/share/harbour-driver/assets/fonts/FiraSans-Regular.ttf",
+            "/usr/share/harbour-driver/assets/fonts/FiraSans-SemiBold.ttf"
+          ]
+        },
+        {
+          "host": "tiles.openfreemap.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-driver/qml/map/MapView.qml"
+          ]
+        },
+        {
+          "host": "www.carrois.comlicensed",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-driver/assets/fonts/FiraSans-Medium.ttf",
+            "/usr/share/harbour-driver/assets/fonts/FiraSans-Regular.ttf",
+            "/usr/share/harbour-driver/assets/fonts/FiraSans-SemiBold.ttf"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "ko-fi.com",
+        "legal.here.com",
+        "scripts.sil.org",
+        "tiles.openfreemap.org"
+      ],
+      "hosts_binaries": [
+        "www.carrois.comlicensed"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 632063,
+        "malicious": 421
+      },
+      "notable": [],
+      "ignored_hosts": 2
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39326307042",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-driver/23a79c76fc9a4e6382135601ec844de65500e0e2fb3f7d8900e181a4c229ddc3.md"
+}
