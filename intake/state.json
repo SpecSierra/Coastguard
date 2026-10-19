@@ -1,5 +1,5 @@
 {
-  "cursor": 1792437841,
+  "cursor": 1792439581,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -462,10 +462,16 @@
     "https://openrepos.net/sites/default/files/packages/583/harbour-muoto-3.6.0-13.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/583/harbour-muoto-3.6.0-13.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/6876/harbour-guardifish-0.7-1.noarch.rpm",
-    "https://openrepos.net/sites/default/files/packages/12554/opensoar-7.44.24-1.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/12554/opensoar-7.44.24-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19693/harbour-gtgram-0.18gtgram.20261019184756.5c3c513-60.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19693/gtgram_beta_armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19693/gtgram_beta_aarch64.rpm"
   ],
-  "last_run": "2026-10-19T19:39:08Z",
+  "last_run": "2026-10-19T20:08:07Z",
   "dispatched": [
-    1792438648
+    1792438648,
+    1792439847,
+    1792439991,
+    1792440240
   ]
 }
