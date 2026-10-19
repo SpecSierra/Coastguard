@@ -1,0 +1,398 @@
+{
+  "verdict": "clean",
+  "name": "harbour-muoto",
+  "version": "3.6.0-13",
+  "arch": "aarch64",
+  "package": "harbour-muoto-3.6.0-13.aarch64",
+  "buildtime": 1792424227,
+  "sha256": "2486c9117f46d480e724c396f5df85e0c562a3566904bf6e990356528690a4f0",
+  "source": "https://openrepos.net/sites/default/files/packages/583/harbour-muoto-3.6.0-13.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12392",
+  "scanned": "2026-10-19T17:58:16Z",
+  "files": 211,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28157/Sun Oct 18 06:24:14 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [
+    {
+      "rule": "Coastguard_Indicator_Installs_Packages_At_Runtime",
+      "files": [
+        "payload/usr/bin/harbour-muoto-repair-folder-icons"
+      ]
+    },
+    {
+      "rule": "Coastguard_Indicator_Installs_Persistence",
+      "files": [
+        "package.rpm",
+        "payload/usr/bin/harbour-muoto-repair-folder-icons",
+        "payload/usr/share/harbour-muoto/service/muoto-dbus-wait.sh",
+        "scriptlets.txt"
+      ]
+    }
+  ],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-muoto.desktop",
+          "name": "Muoto",
+          "exec": "invoker --type=generic -s /usr/bin/harbour-muoto",
+          "hidden": false,
+          "sandbox": "disabled",
+          "permissions": [],
+          "organization": "org.uithemer.muoto",
+          "application": "harbour-muoto"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [
+        {
+          "path": "/usr/lib/systemd/user/harbour-muoto-install-listener.service",
+          "scope": "user",
+          "exec_start": [
+            "/usr/libexec/harbour-muoto-install-listener"
+          ],
+          "user": "device user",
+          "install_wanted_by": "default.target",
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        },
+        {
+          "path": "/usr/lib/systemd/user/harbour-muoto-launcher-icond.service",
+          "scope": "user",
+          "exec_start": [
+            "/usr/libexec/harbour-muoto-launcher-icond"
+          ],
+          "user": "device user",
+          "install_wanted_by": "user-session.target",
+          "enabled_by": [
+            "enabled or started from an install scriptlet"
+          ]
+        }
+      ],
+      "dbus": [
+        {
+          "path": "/usr/share/dbus-1/system-services/org.muoto.Muoto1.service",
+          "bus": "system",
+          "name": "org.muoto.Muoto1",
+          "exec": "/bin/false",
+          "user": "root",
+          "systemd_service": "harbour-muoto-helperd.service"
+        }
+      ],
+      "autostart": []
+    },
+    "system_integration": {
+      "D-Bus system policy": [
+        "/etc/dbus-1/system.d/org.muoto.Muoto1.conf"
+      ]
+    },
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "pretrans",
+        "interpreter": "/bin/sh",
+        "lines": 46,
+        "notable": [
+          "fc_old=/home/defaultuser/.config/fontconfig/conf.d/99-uithemer.conf",
+          "fc_new=/home/defaultuser/.config/fontconfig/conf.d/99-muoto.conf",
+          "su defaultuser -c \"fc-cache -f\" 2>/dev/null || :"
+        ],
+        "body": "run_legacy_restore() {\n    if [ -x \"$1\" ]; then\n        \"$1\" || :\n        printf '#!/bin/sh\\nexit 0\\n' > \"$1\" || :\n    fi\n}\nfor s in \\\n    /usr/share/harbour-themepacksupport/tps/sound-restore.sh \\\n    /usr/share/sailfishos-uithemer/sound-restore.sh\ndo\n    run_legacy_restore \"$s\"\ndone\nfor s in \\\n    /usr/share/harbour-themepacksupport/tps/graphic-restore.sh\ndo\n    run_legacy_restore \"$s\"\ndone\nfor s in \\\n    /usr/share/harbour-themepacksupport/tps/font-restore.sh\ndo\n    run_legacy_restore \"$s\"\ndone\nfor s in \\\n    /usr/share/harbour-themepacksupport/icon-restore.sh \\\n    /usr/share/sailfishos-uithemer/icon-restore.sh\ndo\n    run_legacy_restore \"$s\"\ndone\n# Autoupdate hooks: neutralise only (not restore scripts).\nif [ -d /usr/share/harbour-themepacksupport ]; then\n    for s in disable-autoupdate.sh; do\n        f=\"/usr/share/harbour-themepacksupport/$s\"\n        if [ -e \"$f\" ]; then\n            printf '#!/bin/sh\\nexit 0\\n' > \"$f\" || :\n        fi\n    done\nfi\n# Fontconfig: rename before old %preun deletes 99-uithemer.conf.\nfc_old=/home/defaultuser/.config/fontconfig/conf.d/99-uithemer.conf\nfc_new=/home/defaultuser/.config/fontconfig/conf.d/99-muoto.conf\nif [ -f \"$fc_old\" ]; then\n    if [ ! -f \"$fc_new\" ]; then\n        mv \"$fc_old\" \"$fc_new\" || :\n    else\n        rm -f \"$fc_old\" || :\n    fi\n    su defaultuser -c \"fc-cache -f\" 2>/dev/null || :\nfi\n"
+      },
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 108,
+        "notable": [
+          "systemctl disable --now sailfishos-uithemer-helperd.service 2>/dev/null || :",
+          "systemctl stop sailfishos-uithemer-helperd.service 2>/dev/null || :",
+          "systemctl disable --now sailfishos-uithemer-reassert.service 2>/dev/null || :",
+          "systemctl disable --now themepacksupport-autoupdate.timer    2>/dev/null || :",
+          "systemctl disable --now themepacksupport-autoupdate.service  2>/dev/null || :",
+          "systemctl disable --now themepacksupport-systemupgrade.service 2>/dev/null || :",
+          "systemctl disable --now sailfishos-uithemer-icond.service    2>/dev/null || :",
+          "systemctl daemon-reload",
+          "systemctl reload dbus            2>/dev/null || :",
+          "systemctl disable harbour-muoto-helperd.service 2>/dev/null || :",
+          "systemctl stop harbour-muoto-helperd.service 2>/dev/null || :",
+          "systemctl enable harbour-muoto-update-icons.service 2>/dev/null || :",
+          "systemctl enable harbour-muoto-oneshot-restore.service 2>/dev/null || :",
+          "systemctl enable harbour-muoto-repair-folder-icons.service 2>/dev/null || :",
+          "pack=$(su defaultuser -c \"dconf read /apps/harbour-muoto/activeIconPack\" 2>/dev/null || true)",
+          "systemctl start --no-block harbour-muoto-update-icons.service 2>/dev/null \\",
+          "|| ( systemctl start harbour-muoto-update-icons.service >/dev/null 2>&1 & )",
+          "su defaultuser -c \"mkdir -p ~/.config/systemd/user && ln -sf /usr/lib/systemd/user/harbour-muoto-install-listener.service ~/.config/systemd/user/; ln -sf /usr/lib/systemd/user/harbour-muoto-launcher-icond.service ~/.config/systemd/user/\" 2>/dev/null || :",
+          "su defaultuser -c \"XDG_RUNTIME_DIR=/run/user/$MUOTO_UID systemctl --user daemon-reload\" 2>/dev/null || :",
+          "su defaultuser -c \"XDG_RUNTIME_DIR=/run/user/$MUOTO_UID systemctl --user enable --now harbour-muoto-install-listener.service\" 2>/dev/null || :",
+          "su defaultuser -c \"XDG_RUNTIME_DIR=/run/user/$MUOTO_UID systemctl --user try-restart harbour-muoto-install-listener.service\" 2>/dev/null || :",
+          "su defaultuser -c \"XDG_RUNTIME_DIR=/run/user/$MUOTO_UID systemctl --user enable --now harbour-muoto-launcher-icond.service\" 2>/dev/null || :",
+          "su defaultuser -c \"mkdir -p ~/.config/systemd/user && ln -sf /usr/lib/systemd/user/harbour-muoto-launcher-icond.service ~/.config/systemd/user/\" 2>/dev/null || :",
+          "su defaultuser -c \"systemctl --user daemon-reload\" 2>/dev/null || :",
+          "su defaultuser -c \"systemctl --user enable harbour-muoto-install-listener.service\" 2>/dev/null || :",
+          "su defaultuser -c \"systemctl --user enable harbour-muoto-launcher-icond.service\" 2>/dev/null || :",
+          "setcap cap_dac_override+ep /usr/libexec/harbour-muoto-launcher-icond 2>/dev/null || :",
+          "su defaultuser -c \"XDG_RUNTIME_DIR=/run/user/$MUOTO_UID systemctl --user try-restart harbour-muoto-launcher-icond.service\" 2>/dev/null || :",
+          "su defaultuser -c \"dconf reset /apps/harbour-muoto/launcherInstantApply\" 2>/dev/null || :",
+          "su defaultuser -c \"XDG_RUNTIME_DIR=/run/user/$MUOTO_UID systemctl --user try-restart harbour-muoto-launcher-icond.service\" 2>/dev/null || :",
+          "systemctl start --no-block harbour-muoto-repair-folder-icons.service 2>/dev/null || :",
+          "chmod 0666 /usr/share/harbour-muoto/icon-ops.lock 2>/dev/null || :",
+          "if [ -f /etc/dconf/db/vendor.d/sailfishos-uithemer.txt ]; then",
+          "rm -f /etc/dconf/db/vendor.d/sailfishos-uithemer.txt",
+          "dconf update || :",
+          "src=/etc/dconf/db/vendor.d/locks/$f",
+          "dconf update || :",
+          "su defaultuser -c \"dconf reset /desktop/lipstick/sailfishos-uithemer/iconSizeLauncherSeed\" 2>/dev/null || :"
+        ],
+        "body": "mkdir -p /usr/share/harbour-muoto/backup\n\n# Replacing sailfishos-uithemer (Obsoletes): stop legacy helper before D-Bus handoff.\nsystemctl disable --now sailfishos-uithemer-helperd.service 2>/dev/null || :\nsystemctl stop sailfishos-uithemer-helperd.service 2>/dev/null || :\n\nmv -f /usr/share/harbour-muoto/service/harbour-muoto-helperd.service /etc/systemd/system/\nmv -f /usr/share/harbour-muoto/service/harbour-muoto-update-icons.service /etc/systemd/system/\nmv -f /usr/share/harbour-muoto/service/harbour-muoto-oneshot-restore.service /etc/systemd/system/\nmv -f /usr/share/harbour-muoto/service/harbour-muoto-repair-folder-icons.service /etc/systemd/system/\nmkdir -p /etc/systemd/system/sailfish-upgrade-ui.service.d\ncp -f /usr/share/harbour-muoto/service/sailfish-upgrade-ui.service.d/muoto-oneshot-restore.conf \\\n    /etc/systemd/system/sailfish-upgrade-ui.service.d/muoto-oneshot-restore.conf\n# 2.6.1: drop the old boot unit + binary name (reassert -> icond).\nsystemctl disable --now sailfishos-uithemer-reassert.service 2>/dev/null || :\nrm -f /etc/systemd/system/sailfishos-uithemer-reassert.service\nrm -f /usr/bin/sailfishos-uithemer-reassert\n# 2.7.0: retire the headless icond + the autoupdate/systemupgrade\n# units. Stop + disable them on upgrade from <= 2.6.x; the matching\n# unit files were removed from the package and the binary is gone.\nsystemctl disable --now themepacksupport-autoupdate.timer    2>/dev/null || :\nsystemctl disable --now themepacksupport-autoupdate.service  2>/dev/null || :\nsystemctl disable --now themepacksupport-systemupgrade.service 2>/dev/null || :\nsystemctl disable --now sailfishos-uithemer-icond.service    2>/dev/null || :\nrm -f /etc/systemd/system/themepacksupport-autoupdate.timer\nrm -f /etc/systemd/system/themepacksupport-autoupdate.service\nrm -f /lib/systemd/system/themepacksupport-systemupgrade.service\nrm -f /etc/systemd/system/sailfishos-uithemer-icond.service\nrm -f /usr/bin/sailfishos-uithemer-icond\nrm -f /etc/systemd/system/sailfishos-uithemer-helperd.service\nrm -f /etc/systemd/system/sailfishos-uithemer-rescan.path\nrm -f /etc/systemd/system/sailfishos-uithemer-rescan.service\nrm -f /etc/dbus-1/system.d/org.uithemer.UiThemer1.conf\nrm -f /usr/share/dbus-1/system-services/org.uithemer.UiThemer1.service\nrm -f /usr/share/dbus-1/interfaces/org.uithemer.UiThemer1.Themes.xml\nrm -f /usr/share/dbus-1/interfaces/org.uithemer.UiThemer1.Packs.xml\n# 2.6.0: pick up the new helper unit + dbus policy. 2.6.2: polkit\n# reload dropped along with the policy file. Best-effort reloads\n# (older systemd / community ports may not honour reload dbus).\nsystemctl daemon-reload\nsystemctl reload dbus            2>/dev/null || :\n# 3.x: helperd is dbus-activated on demand (Restart=no); do not enable at boot.\nsystemctl disable harbour-muoto-helperd.service 2>/dev/null || :\nsystemctl stop harbour-muoto-helperd.service 2>/dev/null || :\n\nsystemctl enable harbour-muoto-update-icons.service 2>/dev/null || :\nsystemctl enable harbour-muoto-oneshot-restore.service 2>/dev/null || :\n\n# A1: on upgrade only \u2014 heal folder glyphs and destroyed launcher entries after\n# the transaction (pkcon must not run inside %post; rpm db is locked). Repair\n# owns restore \u2192 pkcon \u2192 reapply.\n#\n# Enabled here but deliberately NOT started yet. rpm has just replaced the daemon\n# binary, which clears its file capability, and setcap does not run until further\n# down: starting the repair here makes it restart the daemon off a cap-less\n# binary, after which every write fails silently. Observed doing exactly that.\n# The start moved to the end of %post, after setcap and the daemon restart.\nif [ \"$1\" -ge 2 ]; then\n    systemctl enable harbour-muoto-repair-folder-icons.service 2>/dev/null || :\nelse\n    # Fresh install: re-apply active pack if any (repair not started).\n    pack=$(su defaultuser -c \"dconf read /apps/harbour-muoto/activeIconPack\" 2>/dev/null || true)\n    pack=${pack#\\'}; pack=${pack%\\'}\n    if [ -n \"$pack\" ] && [ \"$pack\" != \"default\" ]; then\n        systemctl start --no-block harbour-muoto-update-icons.service 2>/dev/null \\\n            || ( systemctl start harbour-muoto-update-icons.service >/dev/null 2>&1 & )\n    fi\nfi\n\nMUOTO_UID=$(id -u defaultuser 2>/dev/null || echo \"\")\nif [ -n \"$MUOTO_UID\" ]; then\n    _wait=0\n    while [ \"$_wait\" -lt 2 ] && [ ! -d \"/run/user/$MUOTO_UID\" ]; do\n        sleep 2\n        _wait=$((_wait + 1))\n    done\n    su defaultuser -c \"mkdir -p ~/.config/systemd/user && ln -sf /usr/lib/systemd/user/harbour-muoto-install-listener.service ~/.config/systemd/user/; ln -sf /usr/lib/systemd/user/harbour-muoto-launcher-icond.service ~/.config/systemd/user/\" 2>/dev/null || :\n    if [ -d \"/run/user/$MUOTO_UID\" ]; then\n        su defaultuser -c \"XDG_RUNTIME_DIR=/run/user/$MUOTO_UID systemctl --user daemon-reload\" 2>/dev/null || :\n        su defaultuser -c \"XDG_RUNTIME_DIR=/run/user/$MUOTO_UID systemctl --user enable --now harbour-muoto-install-listener.service\" 2>/dev/null || :\n        su defaultuser -c \"XDG_RUNTIME_DIR=/run/user/$MUOTO_UID systemctl --user try-restart harbour-muoto-install-listener.service\" 2>/dev/null || :\n        su defaultuser -c \"XDG_RUNTIME_DIR=/run/user/$MUOTO_UID systemctl --user enable --now harbour-muoto-launcher-icond.service\" 2>/dev/null || :\n    else\n        su defaultuser -c \"mkdir -p ~/.config/systemd/user && ln -sf /usr/lib/systemd/user/harbour-muoto-launcher-icond.service ~/.config/systemd/user/\" 2>/dev/null || :\n        su defaultuser -c \"systemctl --user daemon-reload\" 2>/dev/null || :\n        su defaultuser -c \"systemctl --user enable harbour-muoto-install-listener.service\" 2>/dev/null || :\n        su defaultuser -c \"systemctl --user enable harbour-muoto-launcher-icond.service\" 2>/dev/null || :\n    fi\nfi\nsetcap cap_dac_override+ep /usr/libexec/harbour-muoto-launcher-icond 2>/dev/null || :\nmkdir -p /usr/share/harbour-muoto/launcher-icons 2>/dev/null || :\n\n# 3.6: the write model changed (inplace across all hicolor slots); a daemon\n# left running from 3.5 keeps the old redirect behaviour until the session\n# ends. Restart it so the startup rebuild transitions the live theme now.\n# Must run after setcap above: try-restart before it would boot the new\n# binary without cap_dac_override and every inplace write would fail.\nif [ -n \"$MUOTO_UID\" ] && [ -d \"/run/user/$MUOTO_UID\" ]; then\n    su defaultuser -c \"XDG_RUNTIME_DIR=/run/user/$MUOTO_UID systemctl --user try-restart harbour-muoto-launcher-icond.service\" 2>/dev/null || :\nfi\n\n# 3.2: one-shot bulk stock restore from 3.1 backup/icons, then retire tree.\n/usr/bin/harbour-muoto-migrate-bulk-icons 2>/dev/null || :\n# Legacy nested folder backups under the retired backup/icons tree only.\nrm -rf /usr/share/harbour-muoto/backup/icons 2>/dev/null || :\n# NOTE: backup/folder-icons is deliberately NOT wiped here. Wiping it without\n# restoring stock first means the next apply captures already-themed glyphs as\n# \"stock\" and restore is permanently poisoned. The repair oneshot discards them\n# at the one point where it is safe: immediately after the rpm force-install.\n\nsu defaultuser -c \"dconf reset /apps/harbour-muoto/launcherInstantApply\" 2>/dev/null || :\n\nMUOTO_UID=$(id -u defaultuser 2>/dev/null || echo \"\")\nif [ -n \"$MUOTO_UID\" ] && [ -d \"/run/user/$MUOTO_UID\" ]; then\n    # Unconditional: rpm replaced the binary and cleared its capability, so the\n    # running daemon is stale whether or not a pack is active. setcap above has\n    # already re-applied cap_dac_override, so the restart picks it up.\n    su defaultuser -c \"XDG_RUNTIME_DIR=/run/user/$MUOTO_UID systemctl --user try-restart harbour-muoto-launcher-icond.service\" 2>/dev/null || :\nfi\n\n# A1: now that setcap has run and the daemon is back on the new binary, the\n# repair can safely start. Its own preamble re-checks both anyway.\nif [ \"$1\" -ge 2 ]; then\n    systemctl start --no-block harbour-muoto-repair-folder-icons.service 2>/dev/null || :\nfi\n\n# Icon ops flock sentinel (GUI probe + launcher-icond).\nmkdir -p /usr/share/harbour-muoto/tmp 2>/dev/null || :\ntouch /usr/share/harbour-muoto/icon-ops.lock 2>/dev/null || :\nchmod 0666 /usr/share/harbour-muoto/icon-ops.lock 2>/dev/null || :\n\n# 2.4.5: the vendor dconf defaults file is no longer shipped. If it was\n# installed by an older version (<= 2.4.4), drop it and refresh the dconf db.\nif [ -f /etc/dconf/db/vendor.d/sailfishos-uithemer.txt ]; then\n    rm -f /etc/dconf/db/vendor.d/sailfishos-uithemer.txt\n    dconf update || :\nfi\n\n# 2.6.0: the themepacksupport CLI symlink and the harbour-themepacksupport\n# backup/config.cfg migration are gone. The new daemon owns the same ops\n# over D-Bus and the legacy backup/ tree (PNG-replacement era) is no longer\n# read by anything we ship.\n\n# 2.3.x left an icon-current pointer file behind; it is no longer used.\nrm -f /usr/share/harbour-muoto/icon-current\n# 2.4.1 and earlier kept a graphic-current state file for the (now removed)\n# graphic theming. Drop it on upgrade so it does not linger.\nrm -f /usr/share/harbour-muoto/graphic-current\n# 2.4.3 and earlier kept a sound-current state file and a backup/sound\n# directory for the (now removed) sound theming. %pretrans already restored\n# the user's sounds; drop the leftovers so they do not linger.\nrm -f /usr/share/harbour-muoto/sound-current\nrm -rf /usr/share/harbour-muoto/backup/sound\n# 2.4.5 and earlier kept a /usr/share/harbour-muoto/tmp/iconspreview.png\n# for the pack / cover preview. The preview is now served from memory\n# via a QQuickImageProvider; drop the leftover file and the (now unused) dir.\nrm -f /usr/share/harbour-muoto/tmp/iconspreview.png\nrmdir --ignore-fail-on-non-empty /usr/share/harbour-muoto/tmp 2>/dev/null || :\n# 2.4.x and earlier kept a font-current pointer + backup/font* trees from\n# the bash-based font theming. 2.5.0 switched to fontconfig aliasing under\n# ~/.config/fontconfig/conf.d, so neither is used anymore. Drop them.\nrm -f /usr/share/harbour-muoto/font-current\nrm -rf /usr/share/harbour-muoto/backup/font\nrm -rf /usr/share/harbour-muoto/backup/font-droid\nrm -rf /usr/share/harbour-muoto/backup/font-nonlatin\n\n# 2.5.4: density customizations are now always enabled. Mirror\n# DensityEnabler::ensureEnabled() at install time so the vendor dconf locks\n# for silica-configs.txt / ui-configs.txt are moved out of the way.\n# Idempotent: always move src when present (SFOS may restore locks while .bk exists).\nmkdir -p /usr/share/harbour-muoto/backup/dlocks\nfor f in silica-configs.txt ui-configs.txt; do\n    src=/etc/dconf/db/vendor.d/locks/$f\n    bk=/usr/share/harbour-muoto/backup/dlocks/$f.bk\n    if [ -f \"$src\" ]; then\n        mv -f \"$src\" \"$bk\"\n    fi\ndone\ndconf update || :\n# 2.5.4: tps/enable-dpi.sh used to drop the captured icon_size_launcher\n# into a plain file at $main/icon-z. The C++ port (2.5.4-2.5.5) stored it\n# in dconf as iconSizeLauncherSeed; 2.5.6 retired the seed entirely (restore\n# now resets icon_size_launcher to vendor default). Drop both leftovers.\nrm -f /usr/share/harbour-muoto/icon-z\nsu defaultuser -c \"dconf reset /desktop/lipstick/sailfishos-uithemer/iconSizeLauncherSeed\" 2>/dev/null || :\n"
+      },
+      {
+        "type": "preuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 30,
+        "notable": [
+          "systemctl stop harbour-muoto-update-icons.service 2>/dev/null || true",
+          "su defaultuser -c \"$MUOTO_ENV systemctl --user disable --now harbour-muoto-launcher-icond.service\" 2>/dev/null || true",
+          "su defaultuser -c \"$MUOTO_ENV systemctl --user disable --now harbour-muoto-install-listener.service\" 2>/dev/null || true",
+          "su defaultuser -c \"XDG_RUNTIME_DIR=/run/user/$MUOTO_UID /usr/libexec/harbour-muoto-launcher-icond --restore-once\" 2>/dev/null || true",
+          "rm -rf /home/defaultuser/.local/share/harbour-muoto",
+          "rm -rf /home/defaultuser/.cache/harbour-muoto",
+          "systemctl disable sailfishos-uithemer-reassert.service 2>/dev/null || :",
+          "systemctl stop harbour-muoto-helperd.service 2>/dev/null || :",
+          "systemctl disable --now harbour-muoto-rescan.path 2>/dev/null || :",
+          "systemctl disable --now harbour-muoto-update-icons.service 2>/dev/null || :",
+          "systemctl disable --now harbour-muoto-oneshot-restore.service 2>/dev/null || :",
+          "systemctl disable --now harbour-muoto-repair-folder-icons.service 2>/dev/null || :"
+        ],
+        "body": "if [ $1 -eq 0 ]; then\n    # Quiesce automation before restore (avoid ApplyIcons vs RestoreIcons on icon-ops.lock).\n    systemctl stop harbour-muoto-update-icons.service 2>/dev/null || true\n    MUOTO_UID=$(id -u defaultuser 2>/dev/null || echo \"\")\n    if [ -n \"$MUOTO_UID\" ]; then\n        # SFOS needs DBUS_SESSION_BUS_ADDRESS as well as XDG_RUNTIME_DIR for a\n        # `systemctl --user` from root -- the same reason muoto_dconf_env_prefix\n        # exists. Without it these stops silently fail (the || true hides it) and\n        # --restore-once below races a daemon that is still running.\n        MUOTO_ENV=\"XDG_RUNTIME_DIR=/run/user/$MUOTO_UID\"\n        if [ -S \"/run/user/$MUOTO_UID/dbus/user_bus_socket\" ]; then\n            MUOTO_ENV=\"$MUOTO_ENV DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$MUOTO_UID/dbus/user_bus_socket\"\n        fi\n        su defaultuser -c \"$MUOTO_ENV systemctl --user disable --now harbour-muoto-launcher-icond.service\" 2>/dev/null || true\n        su defaultuser -c \"$MUOTO_ENV systemctl --user disable --now harbour-muoto-install-listener.service\" 2>/dev/null || true\n    fi\n    if [ -n \"$MUOTO_UID\" ] && [ -d \"/run/user/$MUOTO_UID\" ]; then\n        su defaultuser -c \"XDG_RUNTIME_DIR=/run/user/$MUOTO_UID /usr/libexec/harbour-muoto-launcher-icond --restore-once\" 2>/dev/null || true\n    else\n        /usr/libexec/harbour-muoto-launcher-icond --restore-once 2>/dev/null || true\n    fi\n    /usr/bin/harbour-muoto-migrate-bulk-icons 2>/dev/null || true\n    # Full stock restore while helperd + backup still on disk; non-zero aborts removal.\n    /usr/bin/harbour-muoto-oneshot-restore --uninstall\n\n    rm -rf /home/defaultuser/.local/share/harbour-muoto\n    rm -rf /home/defaultuser/.cache/harbour-muoto\n\n    # Legacy unit name (<= 2.6.0); harmless no-op on fresh installs.\n    systemctl disable sailfishos-uithemer-reassert.service 2>/dev/null || :\n    rm -f /etc/systemd/system/sailfishos-uithemer-reassert.service\n    # 2.6.0: stop the privileged helper before files vanish so it does\n    # not race the rest of %preun on a dbus-activated re-spawn.\n    systemctl stop harbour-muoto-helperd.service 2>/dev/null || :\n    # 2.7.1: stop the rescan path unit too -- otherwise the in-flight\n    # %preun would tick it (we remove files under\n    # /home/defaultuser/.local/share/sailfishos-uithemer below) and\n    # systemd would retry a service whose binary is about to vanish.\n    systemctl disable --now harbour-muoto-rescan.path 2>/dev/null || :\n    systemctl disable --now harbour-muoto-update-icons.service 2>/dev/null || :\n    systemctl disable --now harbour-muoto-oneshot-restore.service 2>/dev/null || :\n    systemctl disable --now harbour-muoto-repair-folder-icons.service 2>/dev/null || :\n    rm -f /etc/systemd/system/sailfish-upgrade-ui.service.d/muoto-oneshot-restore.conf\n    rmdir /etc/systemd/system/sailfish-upgrade-ui.service.d 2>/dev/null || :\nfi\n"
+      },
+      {
+        "type": "postuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 13,
+        "notable": [
+          "systemctl daemon-reload",
+          "systemctl reload dbus    2>/dev/null || :"
+        ],
+        "body": "if [ $1 -eq 0 ]; then\n    rm -f /etc/systemd/system/sailfishos-uithemer-reassert.service\n    rm -f /etc/systemd/system/harbour-muoto-helperd.service\n    # 2.7.1: drop the rescan path+service we placed in %post. Files\n    # under /usr/share/harbour-muoto are removed by RPM automatically.\n    rm -f /etc/systemd/system/harbour-muoto-rescan.path\n    rm -f /etc/systemd/system/harbour-muoto-rescan.service\n    rm -f /etc/systemd/system/harbour-muoto-update-icons.service\n    rm -f /etc/systemd/system/harbour-muoto-oneshot-restore.service\n    rm -f /etc/systemd/system/harbour-muoto-repair-folder-icons.service\n    rm -f /etc/systemd/system/sailfish-upgrade-ui.service.d/muoto-oneshot-restore.conf\n    rm -f /usr/share/harbour-muoto/repair-folder-icons.state\n    systemctl daemon-reload\n    # 2.6.0: refresh dbus so the just-removed system bus name drops\n    # from the registry. 2.6.2: polkit reload dropped.\n    systemctl reload dbus    2>/dev/null || :\nfi\n"
+      },
+      {
+        "type": "transfiletriggerin",
+        "interpreter": "/bin/sh",
+        "lines": 6,
+        "notable": [
+          "su defaultuser -c \"XDG_RUNTIME_DIR=/run/user/$MUOTO_UID systemctl --user try-restart harbour-muoto-launcher-icond.service\" 2>/dev/null || :"
+        ],
+        "body": "if grep -qF /usr/share/harbour-themepack- ; then\n    MUOTO_UID=$(id -u defaultuser 2>/dev/null || echo \"\")\n    if [ -n \"$MUOTO_UID\" ] && [ -d \"/run/user/$MUOTO_UID\" ]; then\n        su defaultuser -c \"XDG_RUNTIME_DIR=/run/user/$MUOTO_UID systemctl --user try-restart harbour-muoto-launcher-icond.service\" 2>/dev/null || :\n    fi\nfi\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 9,
+      "hosts_in_scripts": 9,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 10,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-muoto/qml/components/MuotoSupportDialog.qml",
+            "/usr/share/harbour-muoto/qml/modules/Opal/About/AboutPageBase.qml",
+            "/usr/share/harbour-muoto/qml/modules/Opal/About/Attribution.qml"
+          ]
+        },
+        {
+          "host": "liberapay.com",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-muoto/qml/components/MuotoSupportDialog.qml",
+            "/usr/share/harbour-muoto/qml/modules/Opal/SupportMe/private/icons/liberapay.png.license",
+            "/usr/share/harbour-muoto/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "spdx.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-muoto/qml/modules/Opal/About/License.qml",
+            "/usr/share/harbour-muoto/qml/modules/Opal/About/private/LicenseListPart.qml"
+          ]
+        },
+        {
+          "host": "uithemer.github.io",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-muoto/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "www.freedesktop.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/etc/dbus-1/session.d/org.muoto.Launcher1.conf",
+            "/etc/dbus-1/system.d/org.muoto.Muoto1.conf",
+            "/usr/share/dbus-1/interfaces/org.muoto.Launcher1.Themes.xml"
+          ]
+        },
+        {
+          "host": "dt.iki.fi",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-muoto/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "explore.transifex.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-muoto/qml/components/MuotoSupportDialog.qml",
+            "/usr/share/harbour-muoto/qml/pages/TranslatorPage.qml"
+          ]
+        },
+        {
+          "host": "fsf.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-muoto/qml/modules/Opal/About/private/spdx/GPL-3.0-or-later.json"
+          ]
+        },
+        {
+          "host": "git-scm.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-muoto/qml/modules/Opal/SupportMe/private/icons/git.png.license"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "dt.iki.fi",
+        "explore.transifex.com",
+        "fsf.org",
+        "git-scm.com",
+        "github.com",
+        "liberapay.com",
+        "spdx.org",
+        "uithemer.github.io",
+        "www.freedesktop.org"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 632063,
+        "malicious": 421
+      },
+      "notable": [],
+      "ignored_hosts": 2
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 7,
+      "unknown": 7,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 7,
+      "unknown": 7,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39298517771",
+  "diff": null,
+  "risk": {
+    "grade": "high",
+    "reasons": [
+      {
+        "level": "high",
+        "id": "install-script-grants-elevated-privileges",
+        "text": "Install script grants elevated privileges"
+      },
+      {
+        "level": "medium",
+        "id": "sandbox-off",
+        "text": "Sandbox turned off"
+      },
+      {
+        "level": "medium",
+        "id": "hook-d-bus-system-policy",
+        "text": "System hook: D-Bus system policy"
+      },
+      {
+        "level": "medium",
+        "id": "code-installs-packages-at-runtime",
+        "text": "Code that installs packages at runtime"
+      },
+      {
+        "level": "medium",
+        "id": "code-installs-persistence",
+        "text": "Unsandboxed code that installs persistence"
+      },
+      {
+        "level": "info",
+        "id": "background-start",
+        "text": "Starts in the background"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-muoto/2486c9117f46d480e724c396f5df85e0c562a3566904bf6e990356528690a4f0.md"
+}
