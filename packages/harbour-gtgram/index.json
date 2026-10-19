@@ -150,5 +150,79 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39174546599",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-gtgram/7500ce5a54d8e7062386c55e1bde99e6d3fbc5faf7dcccc98f47e9568ea500c3.md"
     }
+  },
+  {
+    "sha256": "1866ac5e2e4761926acb00dad2b71e411c7f041f1c8859823de54369b5ff2ee5",
+    "first_seen": "2026-10-19T19:58:51Z",
+    "package": "harbour-gtgram-0.18+gtgram.20261019184756.5c3c513-60.armv7hl",
+    "version": "0.18+gtgram.20261019184756.5c3c513-60",
+    "arch": "armv7hl",
+    "buildtime": 1792435689,
+    "last_scanned": "2026-10-19T19:58:51Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Contacts, Phone"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Camera",
+        "Contacts",
+        "Documents",
+        "Downloads",
+        "Internet",
+        "Location",
+        "MediaIndexing",
+        "Microphone",
+        "Music",
+        "Phone",
+        "Pictures",
+        "Privileged",
+        "PublicDir",
+        "RemovableMedia",
+        "UserDirs",
+        "Videos"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 8,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-gtgram-0.18+gtgram.20261018224004.25169e2-60.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 18,
+          "changed": 5,
+          "unchanged": 4156
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39315265967",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-gtgram/1866ac5e2e4761926acb00dad2b71e411c7f041f1c8859823de54369b5ff2ee5.md"
+    }
   }
 ]
