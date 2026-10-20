@@ -1,0 +1,139 @@
+{
+  "verdict": "clean",
+  "name": "harbour-asteroid-meteormatch",
+  "version": "1.2.0-1",
+  "arch": "noarch",
+  "package": "harbour-asteroid-meteormatch-1.2.0-1.noarch",
+  "buildtime": 1792002711,
+  "sha256": "3505b0f8f9e6f7dab6fff18b461389b7763c70f3435db26212165866656435f5",
+  "source": "https://openrepos.net/sites/default/files/packages/19834/harbour-asteroid-meteormatch-1.2.0-1.noarch.rpm",
+  "source_page": "https://openrepos.net/node/12757",
+  "scanned": "2026-10-20T19:21:48Z",
+  "files": 40,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28159/Tue Oct 20 06:24:12 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-asteroid-meteormatch.desktop",
+          "name": "Meteor Match",
+          "exec": "sailfish-qml harbour-asteroid-meteormatch",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [],
+          "organization": "net.mowerk",
+          "application": "harbour-asteroid-meteormatch"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 3,
+      "hosts_in_scripts": 1,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-asteroid-meteormatch/qml/game/fonts/README"
+          ]
+        },
+        {
+          "host": "gitlab.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-asteroid-meteormatch/qml/game/fonts/Xolonium-Bold.otf",
+            "/usr/share/harbour-asteroid-meteormatch/qml/game/fonts/Xolonium-Regular.otf"
+          ]
+        },
+        {
+          "host": "scripts.sil.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-asteroid-meteormatch/qml/game/fonts/Xolonium-Bold.otf",
+            "/usr/share/harbour-asteroid-meteormatch/qml/game/fonts/Xolonium-Regular.otf"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "github.com"
+      ],
+      "hosts_binaries": [
+        "gitlab.com",
+        "scripts.sil.org"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 643952,
+        "malicious": 424
+      },
+      "notable": [],
+      "ignored_hosts": 1
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39482685814",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-asteroid-meteormatch/3505b0f8f9e6f7dab6fff18b461389b7763c70f3435db26212165866656435f5.md"
+}

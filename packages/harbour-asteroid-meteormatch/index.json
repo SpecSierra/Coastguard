@@ -1,0 +1,42 @@
+[
+  {
+    "sha256": "3505b0f8f9e6f7dab6fff18b461389b7763c70f3435db26212165866656435f5",
+    "first_seen": "2026-10-20T19:21:48Z",
+    "package": "harbour-asteroid-meteormatch-1.2.0-1.noarch",
+    "version": "1.2.0-1",
+    "arch": "noarch",
+    "buildtime": 1792002711,
+    "last_scanned": "2026-10-20T19:21:48Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39482685814",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-asteroid-meteormatch/3505b0f8f9e6f7dab6fff18b461389b7763c70f3435db26212165866656435f5.md"
+    }
+  }
+]
