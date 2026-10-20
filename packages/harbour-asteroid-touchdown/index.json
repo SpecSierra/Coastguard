@@ -1,0 +1,44 @@
+[
+  {
+    "sha256": "c0fc9c43646a55f3546b3617b102a7fce3d6204337937a18af6e0ddbb10f3877",
+    "first_seen": "2026-10-20T18:58:01Z",
+    "package": "harbour-asteroid-touchdown-1.2.0-1.noarch",
+    "version": "1.2.0-1",
+    "arch": "noarch",
+    "buildtime": 1791998984,
+    "last_scanned": "2026-10-20T18:58:01Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Camera"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39479265893",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-asteroid-touchdown/c0fc9c43646a55f3546b3617b102a7fce3d6204337937a18af6e0ddbb10f3877.md"
+    }
+  }
+]

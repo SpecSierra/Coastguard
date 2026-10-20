@@ -1,0 +1,141 @@
+{
+  "verdict": "clean",
+  "name": "harbour-asteroid-touchdown",
+  "version": "1.2.0-1",
+  "arch": "noarch",
+  "package": "harbour-asteroid-touchdown-1.2.0-1.noarch",
+  "buildtime": 1791998984,
+  "sha256": "c0fc9c43646a55f3546b3617b102a7fce3d6204337937a18af6e0ddbb10f3877",
+  "source": "https://openrepos.net/sites/default/files/packages/19834/harbour-asteroid-touchdown-1.2.0-1.noarch.rpm",
+  "source_page": "https://openrepos.net/node/12756",
+  "scanned": "2026-10-20T18:58:01Z",
+  "files": 51,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28159/Tue Oct 20 06:24:12 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-asteroid-touchdown.desktop",
+          "name": "Touchdown",
+          "exec": "sailfish-qml harbour-asteroid-touchdown",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Camera"
+          ],
+          "organization": "net.mowerk",
+          "application": "harbour-asteroid-touchdown"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 3,
+      "hosts_in_scripts": 1,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-asteroid-touchdown/qml/game/fonts/README"
+          ]
+        },
+        {
+          "host": "gitlab.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-asteroid-touchdown/qml/game/fonts/Xolonium-Bold.otf",
+            "/usr/share/harbour-asteroid-touchdown/qml/game/fonts/Xolonium-Regular.otf"
+          ]
+        },
+        {
+          "host": "scripts.sil.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-asteroid-touchdown/qml/game/fonts/Xolonium-Bold.otf",
+            "/usr/share/harbour-asteroid-touchdown/qml/game/fonts/Xolonium-Regular.otf"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "github.com"
+      ],
+      "hosts_binaries": [
+        "gitlab.com",
+        "scripts.sil.org"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 643952,
+        "malicious": 424
+      },
+      "notable": [],
+      "ignored_hosts": 2
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39479265893",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-asteroid-touchdown/c0fc9c43646a55f3546b3617b102a7fce3d6204337937a18af6e0ddbb10f3877.md"
+}
