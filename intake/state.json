@@ -1,5 +1,5 @@
 {
-  "cursor": 1792483501,
+  "cursor": 1792492201,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -479,8 +479,19 @@
     "https://openrepos.net/sites/default/files/packages/19693/gtgram_beta_armv7hl_0.rpm",
     "https://openrepos.net/sites/default/files/packages/19693/gtgram_beta_aarch64_0.rpm",
     "https://openrepos.net/sites/default/files/packages/2414/harbour-mconnect-1.5.0-5.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/16357/harbour-neoncasino-1.3.0-2.noarch.rpm"
+    "https://openrepos.net/sites/default/files/packages/16357/harbour-neoncasino-1.3.0-2.noarch.rpm",
+    "https://openrepos.net/sites/default/files/packages/19055/harbour-rootelegram-3.7.1-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19055/harbour-rootelegram-3.7.1-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19055/harbour-rootelegram-3.7.1-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.8.1-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.8.1-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-20T10:17:11Z",
-  "dispatched": []
+  "last_run": "2026-10-20T10:58:37Z",
+  "dispatched": [
+    1792492658,
+    1792492907,
+    1792493133,
+    1792493381,
+    1792493650
+  ]
 }
