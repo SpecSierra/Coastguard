@@ -1,6 +1,25 @@
 {
-  "cursor": 1792527241,
-  "queue": [],
+  "cursor": 1792530748,
+  "queue": [
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/10743/harbour-tooterb-1.5.0-1.i486.rpm",
+      "page": "https://openrepos.net/node/10958",
+      "appid": 10958,
+      "title": "Tooter \u03b2"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/10743/harbour-tooterb-1.5.0-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/10958",
+      "appid": 10958,
+      "title": "Tooter \u03b2"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/10743/harbour-tooterb-1.5.0-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/10958",
+      "appid": 10958,
+      "title": "Tooter \u03b2"
+    }
+  ],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -501,9 +520,12 @@
     "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.7.1-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.7.1-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.7.1-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.7.1-1.armv7hl.rpm"
+    "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.7.1-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/10743/harbour-tooterb-1.5.0-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/10743/harbour-tooterb-1.5.0-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/10743/harbour-tooterb-1.5.0-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-20T20:59:16Z",
+  "last_run": "2026-10-20T21:17:26Z",
   "dispatched": [
     1792527458,
     1792528634,
