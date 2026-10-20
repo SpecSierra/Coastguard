@@ -1,5 +1,45 @@
 [
   {
+    "sha256": "23da64a80092268068b2e96e8ce2463bb168e271ecc7fbe9e1b08fc9b34988cc",
+    "first_seen": "2026-10-20T20:18:11Z",
+    "package": "frogfish-1.0.0-1.armv7hl",
+    "version": "1.0.0-1",
+    "arch": "armv7hl",
+    "buildtime": 1792522822,
+    "last_scanned": "2026-10-20T20:18:11Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": null,
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 2,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39490728796",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/frogfish/23da64a80092268068b2e96e8ce2463bb168e271ecc7fbe9e1b08fc9b34988cc.md"
+    }
+  },
+  {
     "sha256": "7a31e7720fe3193eba5e0de7e046b79426e8fd433cf404d5275ddfd9d6b4c0e8",
     "first_seen": "2026-10-20T19:38:02Z",
     "package": "frogfish-1.0.0-1.aarch64",

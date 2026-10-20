@@ -1,0 +1,121 @@
+{
+  "verdict": "clean",
+  "name": "frogfish",
+  "version": "1.0.0-1",
+  "arch": "armv7hl",
+  "package": "frogfish-1.0.0-1.armv7hl",
+  "buildtime": 1792522822,
+  "sha256": "23da64a80092268068b2e96e8ce2463bb168e271ecc7fbe9e1b08fc9b34988cc",
+  "source": "https://openrepos.net/sites/default/files/packages/19767/frogfish-1.0.0-1.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12758",
+  "scanned": "2026-10-20T20:18:11Z",
+  "files": 54,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28159/Tue Oct 20 06:24:12 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [
+      {
+        "type": "postinstall",
+        "interpreter": "/bin/sh",
+        "lines": 4,
+        "notable": [
+          "echo \"frogfish: restart the home screen to load it: systemctl --user restart lipstick\""
+        ],
+        "body": "# On every install and upgrade; never fails the installation\nif /usr/libexec/frogfish/update-env; then\n    echo \"frogfish: restart the home screen to load it: systemctl --user restart lipstick\"\nfi\nexit 0\n"
+      },
+      {
+        "type": "postuninstall",
+        "interpreter": "/bin/sh",
+        "lines": 3,
+        "notable": [
+          "echo \"frogfish: restart the home screen to unload it: systemctl --user restart lipstick\""
+        ],
+        "body": "if [ $1 -eq 0 ]; then\n    echo \"frogfish: restart the home screen to unload it: systemctl --user restart lipstick\"\nfi\n"
+      }
+    ],
+    "network": {
+      "hosts_total": 1,
+      "hosts_in_scripts": 1,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/libexec/frogfish/update-env",
+            "/usr/share/jolla-settings/pages/frogfish/FrogfishPage.qml"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "github.com"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 643952,
+        "malicious": 424
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 3,
+      "unknown": 3,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39490728796",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/frogfish/23da64a80092268068b2e96e8ce2463bb168e271ecc7fbe9e1b08fc9b34988cc.md"
+}
