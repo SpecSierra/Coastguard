@@ -1,0 +1,115 @@
+{
+  "verdict": "clean",
+  "name": "harbour-asteroid-dodger",
+  "version": "2.2.0-1",
+  "arch": "noarch",
+  "package": "harbour-asteroid-dodger-2.2.0-1.noarch",
+  "buildtime": 1791996977,
+  "sha256": "d815435dd5932334d0964bcde62dc5473adbfb113afba9ef44eb0f90ca95a11a",
+  "source": "https://openrepos.net/sites/default/files/packages/19834/harbour-asteroid-dodger-2.2.0-1.noarch.rpm",
+  "source_page": "https://openrepos.net/node/12755",
+  "scanned": "2026-10-20T18:18:09Z",
+  "files": 42,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28159/Tue Oct 20 06:24:12 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-asteroid-dodger.desktop",
+          "name": "Dodger",
+          "exec": "sailfish-qml harbour-asteroid-dodger",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Camera"
+          ],
+          "organization": "net.mowerk",
+          "application": "harbour-asteroid-dodger"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 1,
+      "hosts_in_scripts": 1,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-asteroid-dodger/qml/game/fonts/README",
+            "/usr/share/harbour-asteroid-dodger/qml/game/img/README"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "github.com"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 643952,
+        "malicious": 424
+      },
+      "notable": [],
+      "ignored_hosts": 2
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39473441268",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-asteroid-dodger/d815435dd5932334d0964bcde62dc5473adbfb113afba9ef44eb0f90ca95a11a.md"
+}

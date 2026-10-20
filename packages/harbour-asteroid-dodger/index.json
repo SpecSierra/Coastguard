@@ -1,0 +1,44 @@
+[
+  {
+    "sha256": "d815435dd5932334d0964bcde62dc5473adbfb113afba9ef44eb0f90ca95a11a",
+    "first_seen": "2026-10-20T18:18:09Z",
+    "package": "harbour-asteroid-dodger-2.2.0-1.noarch",
+    "version": "2.2.0-1",
+    "arch": "noarch",
+    "buildtime": 1791996977,
+    "last_scanned": "2026-10-20T18:18:09Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Camera"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39473441268",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-asteroid-dodger/d815435dd5932334d0964bcde62dc5473adbfb113afba9ef44eb0f90ca95a11a.md"
+    }
+  }
+]
