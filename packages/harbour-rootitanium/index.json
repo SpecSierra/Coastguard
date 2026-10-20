@@ -856,6 +856,87 @@
     }
   },
   {
+    "sha256": "ef44567644cbdd716e9a042642accd08d6c573263200c784a24e39063432f2e6",
+    "first_seen": "2026-10-20T10:55:52Z",
+    "package": "harbour-rootitanium-2.8.1-1.aarch64",
+    "version": "2.8.1-1",
+    "arch": "aarch64",
+    "buildtime": 1792490542,
+    "last_scanned": "2026-10-20T10:55:52Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          },
+          {
+            "level": "medium",
+            "id": "hook-files-in-a-home-directory",
+            "text": "System hook: files in a home directory"
+          },
+          {
+            "level": "medium",
+            "id": "code-gains-root-with-devel-su",
+            "text": "Code that gains root with devel su"
+          },
+          {
+            "level": "medium",
+            "id": "code-reads-raw-input-devices",
+            "text": "Code that reads raw input devices"
+          },
+          {
+            "level": "info",
+            "id": "bulk-hosts",
+            "text": "304 hosts in a bulk list are on no public block list"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Gains Root With Devel Su",
+        "Reads Raw Input Devices"
+      ],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [
+        "files in a home directory"
+      ],
+      "scriptlets": 0,
+      "hosts_in_scripts": 42,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-rootitanium-2.8-2.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 4,
+          "unchanged": 2043
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39411182537",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-rootitanium/ef44567644cbdd716e9a042642accd08d6c573263200c784a24e39063432f2e6.md"
+    }
+  },
+  {
     "sha256": "99fdbcc8c385d519cb935ae37206dd583d8f6f52b5fd56fbd37713a50307a53d",
     "first_seen": "2026-10-20T10:51:18Z",
     "package": "harbour-rootitanium-2.8.1-1.armv7hl",
