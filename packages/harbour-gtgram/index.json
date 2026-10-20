@@ -399,6 +399,109 @@
     }
   },
   {
+    "sha256": "be4700a1771baa2becdae727526bb8d2cd680d7193f708f7820c01915822c1e0",
+    "first_seen": "2026-10-20T07:23:32Z",
+    "package": "harbour-gtgram-0.18+gtgram.20261020064628.8d94afb-60.aarch64",
+    "version": "0.18+gtgram.20261020064628.8d94afb-60",
+    "arch": "aarch64",
+    "buildtime": 1792478792,
+    "last_scanned": "2026-10-20T07:23:32Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Contacts, Phone"
+          },
+          {
+            "level": "info",
+            "id": "code-sends-sms-or-places-calls",
+            "text": "Code that sends sms or places calls"
+          },
+          {
+            "level": "info",
+            "id": "new-permission-unifiedpush",
+            "text": "New permission: UnifiedPush"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Sends SMS Or Places Calls"
+      ],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Camera",
+        "Contacts",
+        "Documents",
+        "Downloads",
+        "Internet",
+        "Location",
+        "MediaIndexing",
+        "Microphone",
+        "Music",
+        "Phone",
+        "Pictures",
+        "Privileged",
+        "PublicDir",
+        "RemovableMedia",
+        "UnifiedPush",
+        "UserDirs",
+        "Videos"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 9,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-gtgram-0.18+gtgram.20261019181759.609a2ce-60.aarch64",
+        "attention_count": 3,
+        "attention": [
+          {
+            "area": "permission",
+            "change": "added",
+            "item": "UnifiedPush"
+          },
+          {
+            "area": "D-Bus activation",
+            "change": "added",
+            "item": "/usr/share/dbus-1/services/org.unifiedpush.Connector.gtgram.service"
+          },
+          {
+            "area": "host",
+            "change": "added",
+            "item": "openrepos.net"
+          }
+        ],
+        "files": {
+          "added": 2,
+          "removed": 0,
+          "changed": 4,
+          "unchanged": 4175
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39386022294",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-gtgram/be4700a1771baa2becdae727526bb8d2cd680d7193f708f7820c01915822c1e0.md"
+    }
+  },
+  {
     "sha256": "9fc9ed5617a3b5c39fcc7359b114cc5b51d8e8c3e3b32e5fa640ed43c7c443d6",
     "first_seen": "2026-10-20T07:19:09Z",
     "package": "harbour-gtgram-0.18+gtgram.20261020065058.d5dee1a-60.armv7hl",

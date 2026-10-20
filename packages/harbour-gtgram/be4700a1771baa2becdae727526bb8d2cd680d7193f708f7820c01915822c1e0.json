@@ -1,0 +1,610 @@
+{
+  "verdict": "clean",
+  "name": "harbour-gtgram",
+  "version": "0.18+gtgram.20261020064628.8d94afb-60",
+  "arch": "aarch64",
+  "package": "harbour-gtgram-0.18+gtgram.20261020064628.8d94afb-60.aarch64",
+  "buildtime": 1792478792,
+  "sha256": "be4700a1771baa2becdae727526bb8d2cd680d7193f708f7820c01915822c1e0",
+  "source": "https://openrepos.net/sites/default/files/packages/19693/gtgram_beta_aarch64_0.rpm",
+  "source_page": "https://openrepos.net/node/12594",
+  "scanned": "2026-10-20T07:23:32Z",
+  "files": 4219,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28159/Tue Oct 20 06:24:12 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [
+    {
+      "rule": "Coastguard_Indicator_Sends_SMS_Or_Places_Calls",
+      "files": [
+        "payload/usr/bin/harbour-gtgram",
+        "payload/usr/lib64/voicecall/plugins/libgtgram-voicecall-plugin.so"
+      ]
+    }
+  ],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-gtgram.desktop",
+          "name": "GTgram",
+          "exec": "harbour-gtgram",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Audio",
+            "Camera",
+            "Contacts",
+            "Documents",
+            "Downloads",
+            "Internet",
+            "Location",
+            "MediaIndexing",
+            "Microphone",
+            "Music",
+            "Phone",
+            "Pictures",
+            "Privileged",
+            "PublicDir",
+            "RemovableMedia",
+            "UserDirs",
+            "Videos",
+            "UnifiedPush"
+          ],
+          "organization": "de.ygriega",
+          "application": "gtgram"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [
+        {
+          "path": "/usr/share/dbus-1/services/org.unifiedpush.Connector.gtgram.service",
+          "bus": "session",
+          "name": "org.unifiedpush.Connector.gtgram",
+          "exec": "/usr/bin/env GTGRAM_PUSH_WAKE=1 /usr/bin/sailjail -p harbour-gtgram.desktop -- /usr/bin/harbour-gtgram",
+          "user": null,
+          "systemd_service": null
+        }
+      ],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 30,
+      "hosts_in_scripts": 9,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 8,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-gtgram/qml/fonts/JetBrainsMono-OFL.txt",
+            "/usr/share/harbour-gtgram/qml/js/twemoji.js",
+            "/usr/share/harbour-gtgram/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "forum.sailfishos.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-gtgram/qml/components/messageContent/MessageVideo.qml",
+            "/usr/share/harbour-gtgram/qml/pages/ChatSelectionPage.qml"
+          ]
+        },
+        {
+          "host": "telegram.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-gtgram/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "ko-fi.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-gtgram/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "openrepos.net",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-gtgram/qml/pages/UnifiedPushHelpPage.qml"
+          ]
+        },
+        {
+          "host": "scripts.sil.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-gtgram/qml/fonts/JetBrainsMono-OFL.txt"
+          ]
+        },
+        {
+          "host": "sodipodi.sourceforge.net",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-gtgram/images/background-black.svg",
+            "/usr/share/harbour-gtgram/images/background-white.svg",
+            "/usr/share/harbour-gtgram/images/icon-verified.svg"
+          ]
+        },
+        {
+          "host": "wiki.openstreetmap.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-gtgram/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "www.inkscape.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-gtgram/images/background-black.svg",
+            "/usr/share/harbour-gtgram/images/background-white.svg",
+            "/usr/share/harbour-gtgram/images/icon-verified.svg"
+          ]
+        },
+        {
+          "host": "www.webrtc.org",
+          "urls": 11,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-gtgram"
+          ]
+        },
+        {
+          "host": "twitter.com",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-gtgram/lib/libtdjson.so",
+            "/usr/share/harbour-gtgram/lib/libtdjson.so.1.8.68"
+          ]
+        },
+        {
+          "host": "crl.comodoca.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-gtgram"
+          ]
+        },
+        {
+          "host": "t.me",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-gtgram/lib/libtdjson.so",
+            "/usr/share/harbour-gtgram/lib/libtdjson.so.1.8.68"
+          ]
+        },
+        {
+          "host": "www.instagram.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-gtgram/lib/libtdjson.so",
+            "/usr/share/harbour-gtgram/lib/libtdjson.so.1.8.68"
+          ]
+        },
+        {
+          "host": "aomediacodec.github.io",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-gtgram"
+          ]
+        },
+        {
+          "host": "crbug.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-gtgram"
+          ]
+        },
+        {
+          "host": "crl.comodo.net",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-gtgram"
+          ]
+        },
+        {
+          "host": "dns.google",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-gtgram/lib/libtdjson.so",
+            "/usr/share/harbour-gtgram/lib/libtdjson.so.1.8.68"
+          ]
+        },
+        {
+          "host": "music.youtube.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-gtgram/lib/libtdjson.so",
+            "/usr/share/harbour-gtgram/lib/libtdjson.so.1.8.68"
+          ]
+        },
+        {
+          "host": "my.telegram.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-gtgram/lib/libtdjson.so",
+            "/usr/share/harbour-gtgram/lib/libtdjson.so.1.8.68"
+          ]
+        },
+        {
+          "host": "nominatim.openstreetmap.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-gtgram"
+          ]
+        },
+        {
+          "host": "reserve-5a846.firebaseio.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-gtgram/lib/libtdjson.so",
+            "/usr/share/harbour-gtgram/lib/libtdjson.so.1.8.68"
+          ]
+        },
+        {
+          "host": "software-download.microsoft.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-gtgram/lib/libtdjson.so",
+            "/usr/share/harbour-gtgram/lib/libtdjson.so.1.8.68"
+          ]
+        },
+        {
+          "host": "streams.videolan.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-gtgram/lib/libavutil.so.57"
+          ]
+        },
+        {
+          "host": "telegra.ph",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-gtgram/lib/libtdjson.so",
+            "/usr/share/harbour-gtgram/lib/libtdjson.so.1.8.68"
+          ]
+        },
+        {
+          "host": "tgb-playground.smart-glocal.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-gtgram/lib/libtdjson.so",
+            "/usr/share/harbour-gtgram/lib/libtdjson.so.1.8.68"
+          ]
+        },
+        {
+          "host": "tgb.smart-glocal.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-gtgram/lib/libtdjson.so",
+            "/usr/share/harbour-gtgram/lib/libtdjson.so.1.8.68"
+          ]
+        },
+        {
+          "host": "webrtc.googlesource.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-gtgram"
+          ]
+        },
+        {
+          "host": "www.google.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-gtgram/lib/libtdjson.so",
+            "/usr/share/harbour-gtgram/lib/libtdjson.so.1.8.68"
+          ]
+        },
+        {
+          "host": "www.youtube.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-gtgram/lib/libtdjson.so",
+            "/usr/share/harbour-gtgram/lib/libtdjson.so.1.8.68"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "forum.sailfishos.org",
+        "github.com",
+        "ko-fi.com",
+        "openrepos.net",
+        "scripts.sil.org",
+        "sodipodi.sourceforge.net",
+        "telegram.org",
+        "wiki.openstreetmap.org",
+        "www.inkscape.org"
+      ],
+      "hosts_binaries": [
+        "aomediacodec.github.io",
+        "crbug.com",
+        "crl.comodo.net",
+        "crl.comodoca.com",
+        "dns.google",
+        "music.youtube.com",
+        "my.telegram.org",
+        "nominatim.openstreetmap.org",
+        "reserve-5a846.firebaseio.com",
+        "software-download.microsoft.com",
+        "streams.videolan.org",
+        "t.me",
+        "telegra.ph",
+        "tgb-playground.smart-glocal.com",
+        "tgb.smart-glocal.com",
+        "twitter.com",
+        "webrtc.googlesource.com",
+        "www.google.com",
+        "www.instagram.com",
+        "www.webrtc.org",
+        "www.youtube.com"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 643952,
+        "malicious": 424
+      },
+      "notable": [],
+      "ignored_hosts": 6
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 8,
+      "unknown": 8,
+      "not_queried": 11,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 19,
+      "unknown": 19,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39386022294",
+  "diff": {
+    "baseline": {
+      "sha256": "69c0b7cc27066411485fbfdc8b383218bf8fb7e34b77f4fb4efb4e737640e324",
+      "package": "harbour-gtgram-0.18+gtgram.20261019181759.609a2ce-60.aarch64",
+      "last_scanned": "2026-10-19T20:05:42Z"
+    },
+    "changes": [
+      {
+        "area": "permission",
+        "change": "added",
+        "item": "UnifiedPush",
+        "attention": true,
+        "detail": "/usr/share/applications/harbour-gtgram.desktop"
+      },
+      {
+        "area": "D-Bus activation",
+        "change": "added",
+        "item": "/usr/share/dbus-1/services/org.unifiedpush.Connector.gtgram.service",
+        "attention": true,
+        "detail": "session bus, org.unifiedpush.Connector.gtgram: /usr/bin/env GTGRAM_PUSH_WAKE=1 /usr/bin/sailjail -p harbour-gtgram.desktop -- /usr/bin/harbour-gtgram"
+      },
+      {
+        "area": "host",
+        "change": "added",
+        "item": "openrepos.net",
+        "attention": true,
+        "detail": "in scripts/QML/config"
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/dbus-1/services/org.unifiedpush.Connector.gtgram.service",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/harbour-gtgram/qml/pages/UnifiedPushHelpPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/harbour-gtgram",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/applications/harbour-gtgram.desktop",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-gtgram/qml/components/settingsPage/SettingsBehavior.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-gtgram/qml/harbour-gtgram.qml",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 1,
+        "removed": 0
+      },
+      "files": {
+        "added": 2,
+        "removed": 0,
+        "changed": 4,
+        "unchanged": 4175
+      }
+    }
+  },
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "id": "personal-data",
+        "text": "Personal data: Contacts, Phone"
+      },
+      {
+        "level": "info",
+        "id": "code-sends-sms-or-places-calls",
+        "text": "Code that sends sms or places calls"
+      },
+      {
+        "level": "info",
+        "id": "new-permission-unifiedpush",
+        "text": "New permission: UnifiedPush"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-gtgram/be4700a1771baa2becdae727526bb8d2cd680d7193f708f7820c01915822c1e0.md"
+}
