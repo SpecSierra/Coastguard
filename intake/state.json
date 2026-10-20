@@ -1,5 +1,5 @@
 {
-  "cursor": 1792492201,
+  "cursor": 1792500824,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -486,6 +486,6 @@
     "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.8.1-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.8.1-1.aarch64.rpm"
   ],
-  "last_run": "2026-10-20T12:37:10Z",
+  "last_run": "2026-10-20T12:57:22Z",
   "dispatched": []
 }
