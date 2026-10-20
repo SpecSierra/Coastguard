@@ -1,0 +1,173 @@
+{
+  "verdict": "clean",
+  "name": "harbour-neoncasino",
+  "version": "1.3.0-2",
+  "arch": "noarch",
+  "package": "harbour-neoncasino-1.3.0-2.noarch",
+  "buildtime": 1792483212,
+  "sha256": "fc785a0a13900c35a7aa2fcfbb3d1e931562cc3be816724f97c8f1f1a457f5a6",
+  "source": "https://openrepos.net/sites/default/files/packages/16357/harbour-neoncasino-1.3.0-2.noarch.rpm",
+  "source_page": "https://openrepos.net/node/12744",
+  "scanned": "2026-10-20T08:18:38Z",
+  "files": 380,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28159/Tue Oct 20 06:24:12 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-neoncasino.desktop",
+          "name": "Neon Casino",
+          "exec": "sailfish-qml harbour-neoncasino",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Audio"
+          ],
+          "organization": "org.neoncasino",
+          "application": "harbour-neoncasino"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 4,
+      "hosts_in_scripts": 3,
+      "hosts": [
+        {
+          "host": "opengameart.org",
+          "urls": 20,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-neoncasino/qml/js/MusicCredits.js"
+          ]
+        },
+        {
+          "host": "github.com",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-neoncasino/qml/fonts/NeonDisplay.ttf",
+            "/usr/share/harbour-neoncasino/qml/fonts/OFL-ChakraPetch.txt"
+          ]
+        },
+        {
+          "host": "scripts.sil.org",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-neoncasino/qml/fonts/NeonDisplay.ttf",
+            "/usr/share/harbour-neoncasino/qml/fonts/OFL-ChakraPetch.txt",
+            "/usr/share/harbour-neoncasino/qml/fonts/OFL-ShareTechMono.txt"
+          ]
+        },
+        {
+          "host": "www.cadsondemak.comhttp",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-neoncasino/qml/fonts/NeonDisplay.ttf"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "github.com",
+        "opengameart.org",
+        "scripts.sil.org"
+      ],
+      "hosts_binaries": [
+        "www.cadsondemak.comhttp"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 643952,
+        "malicious": 424
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39392327417",
+  "diff": {
+    "baseline": {
+      "sha256": "d4177c6823f6cc6d9900f286ae2b74d2a47f808141dbd465f516f0da0d7699cf",
+      "package": "harbour-neoncasino-1.3.0-1.noarch",
+      "last_scanned": "2026-10-18T21:58:25Z"
+    },
+    "changes": [],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 0,
+        "removed": 0,
+        "changed": 0,
+        "unchanged": 356
+      }
+    }
+  },
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-neoncasino/fc785a0a13900c35a7aa2fcfbb3d1e931562cc3be816724f97c8f1f1a457f5a6.md"
+}
