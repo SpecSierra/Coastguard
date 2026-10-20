@@ -854,5 +854,86 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39217180139",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-rootitanium/d2c25028f04bfafcf319dd00707a737698d86666d5e102ecd8250d86d8e333c1.md"
     }
+  },
+  {
+    "sha256": "99fdbcc8c385d519cb935ae37206dd583d8f6f52b5fd56fbd37713a50307a53d",
+    "first_seen": "2026-10-20T10:51:18Z",
+    "package": "harbour-rootitanium-2.8.1-1.armv7hl",
+    "version": "2.8.1-1",
+    "arch": "armv7hl",
+    "buildtime": 1792490974,
+    "last_scanned": "2026-10-20T10:51:18Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          },
+          {
+            "level": "medium",
+            "id": "hook-files-in-a-home-directory",
+            "text": "System hook: files in a home directory"
+          },
+          {
+            "level": "medium",
+            "id": "code-gains-root-with-devel-su",
+            "text": "Code that gains root with devel su"
+          },
+          {
+            "level": "medium",
+            "id": "code-reads-raw-input-devices",
+            "text": "Code that reads raw input devices"
+          },
+          {
+            "level": "info",
+            "id": "bulk-hosts",
+            "text": "304 hosts in a bulk list are on no public block list"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Gains Root With Devel Su",
+        "Reads Raw Input Devices"
+      ],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [
+        "files in a home directory"
+      ],
+      "scriptlets": 0,
+      "hosts_in_scripts": 42,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "error (HTTP 502, None)"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "error"
+      },
+      "changes": {
+        "since": "harbour-rootitanium-2.8-2.armv7hl",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 3,
+          "unchanged": 2047
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39410662704",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-rootitanium/99fdbcc8c385d519cb935ae37206dd583d8f6f52b5fd56fbd37713a50307a53d.md"
+    }
   }
 ]
