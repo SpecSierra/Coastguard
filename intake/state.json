@@ -1,5 +1,5 @@
 {
-  "cursor": 1792519141,
+  "cursor": 1792522621,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -491,11 +491,13 @@
     "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.3-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.3-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19834/harbour-asteroid-blaster-2.2.1-1.noarch.rpm",
-    "https://openrepos.net/sites/default/files/packages/19834/harbour-asteroid-dodger-2.2.0-1.noarch.rpm"
+    "https://openrepos.net/sites/default/files/packages/19834/harbour-asteroid-dodger-2.2.0-1.noarch.rpm",
+    "https://openrepos.net/sites/default/files/packages/19834/harbour-asteroid-touchdown-1.2.0-1.noarch.rpm"
   ],
-  "last_run": "2026-10-20T18:45:12Z",
+  "last_run": "2026-10-20T18:58:23Z",
   "dispatched": [
     1792519044,
-    1792520254
+    1792520254,
+    1792522645
   ]
 }
