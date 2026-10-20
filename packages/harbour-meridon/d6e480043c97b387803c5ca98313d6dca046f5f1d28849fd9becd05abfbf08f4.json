@@ -1,0 +1,211 @@
+{
+  "verdict": "clean",
+  "name": "harbour-meridon",
+  "version": "1.4-1",
+  "arch": "armv7hl",
+  "package": "harbour-meridon-1.4-1.armv7hl",
+  "buildtime": 1792522176,
+  "sha256": "d6e480043c97b387803c5ca98313d6dca046f5f1d28849fd9becd05abfbf08f4",
+  "source": "https://openrepos.net/sites/default/files/packages/19659/harbour-meridon-1.4-1.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12555",
+  "scanned": "2026-10-20T19:19:58Z",
+  "files": 1533,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28159/Tue Oct 20 06:24:12 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-meridon-open-url.desktop",
+          "name": "Meridon",
+          "exec": null,
+          "hidden": false,
+          "sandbox": "none",
+          "permissions": []
+        },
+        {
+          "desktop": "/usr/share/applications/harbour-meridon.desktop",
+          "name": "Meridon",
+          "exec": "harbour-meridon",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Audio",
+            "UserDirs",
+            "MediaIndexing",
+            "RemovableMedia"
+          ],
+          "organization": "org.anttsam",
+          "application": "meridon"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 7,
+      "hosts_in_scripts": 6,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 3,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-meridon/qml/fonts/OFL-Inter.txt",
+            "/usr/share/harbour-meridon/qml/fonts/OFL-OpenSans.txt",
+            "/usr/share/harbour-meridon/qml/fonts/OFL-Roboto.txt"
+          ]
+        },
+        {
+          "host": "mastodon.social",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-meridon/qml/pages/OAuthLoginPage.qml"
+          ]
+        },
+        {
+          "host": "openfontlicense.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-meridon/qml/fonts/OFL-Roboto.txt"
+          ]
+        },
+        {
+          "host": "scripts.sil.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-meridon/qml/fonts/FiraSans-Bold.ttf",
+            "/usr/share/harbour-meridon/qml/fonts/FiraSans-Light.ttf",
+            "/usr/share/harbour-meridon/qml/fonts/FiraSans-Regular.ttf"
+          ]
+        },
+        {
+          "host": "sodipodi.sourceforge.net",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-meridon/qml/cover/meridon-cover.svg"
+          ]
+        },
+        {
+          "host": "www.inkscape.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-meridon/qml/cover/meridon-cover.svg"
+          ]
+        },
+        {
+          "host": "www.carrois.comlicensed",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-meridon/qml/fonts/FiraSans-Bold.ttf",
+            "/usr/share/harbour-meridon/qml/fonts/FiraSans-Light.ttf",
+            "/usr/share/harbour-meridon/qml/fonts/FiraSans-Regular.ttf"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "github.com",
+        "mastodon.social",
+        "openfontlicense.org",
+        "scripts.sil.org",
+        "sodipodi.sourceforge.net",
+        "www.inkscape.org"
+      ],
+      "hosts_binaries": [
+        "www.carrois.comlicensed"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 643952,
+        "malicious": 424
+      },
+      "notable": [],
+      "ignored_hosts": 6
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39482444808",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "id": "no-sandbox-profile",
+        "text": "No sandbox profile declared"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-meridon/d6e480043c97b387803c5ca98313d6dca046f5f1d28849fd9becd05abfbf08f4.md"
+}

@@ -50,5 +50,57 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39482202685",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-meridon/8a0ca2f80b47461caf0fe3f56427630bdcde265d45318d3d64a21f6a2bf61edd.md"
     }
+  },
+  {
+    "sha256": "d6e480043c97b387803c5ca98313d6dca046f5f1d28849fd9becd05abfbf08f4",
+    "first_seen": "2026-10-20T19:19:58Z",
+    "package": "harbour-meridon-1.4-1.armv7hl",
+    "version": "1.4-1",
+    "arch": "armv7hl",
+    "buildtime": 1792522176,
+    "last_scanned": "2026-10-20T19:19:58Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "no-sandbox-profile",
+            "text": "No sandbox profile declared"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "none",
+      "permissions": [
+        "Audio",
+        "Internet",
+        "MediaIndexing",
+        "RemovableMedia",
+        "UserDirs"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 6,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39482444808",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-meridon/d6e480043c97b387803c5ca98313d6dca046f5f1d28849fd9becd05abfbf08f4.md"
+    }
   }
 ]
