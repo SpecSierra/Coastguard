@@ -1,0 +1,48 @@
+[
+  {
+    "sha256": "fd3d417da390eddb58d310f18db7e44d23c7a24a9e50637709819850b7f1934d",
+    "first_seen": "2026-10-20T07:38:05Z",
+    "package": "harbour-mconnect-1.5.0-5.aarch64",
+    "version": "1.5.0-5",
+    "arch": "aarch64",
+    "buildtime": 1792480104,
+    "last_scanned": "2026-10-20T07:38:05Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 21,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39387727827",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-mconnect/fd3d417da390eddb58d310f18db7e44d23c7a24a9e50637709819850b7f1934d.md"
+    }
+  }
+]
