@@ -1,5 +1,5 @@
 {
-  "cursor": 1792502341,
+  "cursor": 1792510441,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -487,8 +487,13 @@
     "https://openrepos.net/sites/default/files/packages/19055/harbour-rootitanium-2.8.1-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19055/harbour-rootheater-1.7.1-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19055/harbour-rootheater-1.7.1-1.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/19055/harbour-rootheater-1.7.1-1.i486.rpm"
+    "https://openrepos.net/sites/default/files/packages/19055/harbour-rootheater-1.7.1-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.3-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/15429/harbour-captains-bible-0.3-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-20T15:17:14Z",
-  "dispatched": []
+  "last_run": "2026-10-20T15:40:08Z",
+  "dispatched": [
+    1792510649,
+    1792510730
+  ]
 }
