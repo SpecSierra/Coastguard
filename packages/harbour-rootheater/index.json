@@ -273,5 +273,66 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39432555949",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-rootheater/37f38b440090cc8a199522ab71c796f8e6e4468c722bf4b072c8b76bdda12154.md"
     }
+  },
+  {
+    "sha256": "3fe3d06fbef918abe89dc752a8902587ee288a8be7b20bb9bac9dd0d73906e30",
+    "first_seen": "2026-10-20T13:46:06Z",
+    "package": "harbour-rootheater-1.7.1-1.i486",
+    "version": "1.7.1-1",
+    "arch": "i486",
+    "buildtime": 1792501840,
+    "last_scanned": "2026-10-20T13:46:06Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Documents",
+        "Downloads",
+        "Internet",
+        "MediaIndexing",
+        "Music",
+        "Pictures",
+        "RemovableMedia",
+        "UserDirs",
+        "Videos"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 11,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-rootheater-1.7.0-1.i486",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 4,
+          "unchanged": 296
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39433106352",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-rootheater/3fe3d06fbef918abe89dc752a8902587ee288a8be7b20bb9bac9dd0d73906e30.md"
+    }
   }
 ]
