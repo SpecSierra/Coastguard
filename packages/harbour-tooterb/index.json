@@ -1,5 +1,51 @@
 [
   {
+    "sha256": "daa568b1491188c6d7f9769216ea583b8bdb9f84fe244fc08aed1495f7976a85",
+    "first_seen": "2026-10-20T21:39:15Z",
+    "package": "harbour-tooterb-1.5.0-1.armv7hl",
+    "version": "1.5.0-1",
+    "arch": "armv7hl",
+    "buildtime": 1792521608,
+    "last_scanned": "2026-10-20T21:39:15Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Internet",
+        "MediaIndexing",
+        "RemovableMedia",
+        "UserDirs"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 8,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39502032348",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-tooterb/daa568b1491188c6d7f9769216ea583b8bdb9f84fe244fc08aed1495f7976a85.md"
+    }
+  },
+  {
     "sha256": "ec9adc226c3abf46d3bdf6c081735018c7cd0fd0fa7e80e7eef2d0845699e166",
     "first_seen": "2026-10-20T21:38:06Z",
     "package": "harbour-tooterb-1.5.0-1.i486",
