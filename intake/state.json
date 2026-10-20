@@ -1,11 +1,29 @@
 {
-  "cursor": 1792524061,
+  "cursor": 1792527241,
   "queue": [
     {
-      "url": "https://openrepos.net/sites/default/files/packages/19767/frogfish-1.0.0-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12758",
-      "appid": 12758,
-      "title": "Frogfish"
+      "url": "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.7.1-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12521",
+      "appid": 12521,
+      "title": "Foghorn Test Connector"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.7.1-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12521",
+      "appid": 12521,
+      "title": "Foghorn Test Connector"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.7.1-1.aarch64.rpm",
+      "page": "https://openrepos.net/node/12520",
+      "appid": 12520,
+      "title": "Foghorn"
+    },
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.7.1-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12520",
+      "appid": 12520,
+      "title": "Foghorn"
     }
   ],
   "seen": [
@@ -504,14 +522,18 @@
     "https://openrepos.net/sites/default/files/packages/19659/harbour-meridon-1.4-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/19834/harbour-asteroid-meteormatch-1.2.0-1.noarch.rpm",
     "https://openrepos.net/sites/default/files/packages/19767/frogfish-1.0.0-1.aarch64.rpm",
-    "https://openrepos.net/sites/default/files/packages/19767/frogfish-1.0.0-1.armv7hl.rpm"
+    "https://openrepos.net/sites/default/files/packages/19767/frogfish-1.0.0-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.7.1-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.7.1-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.7.1-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.7.1-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-20T19:57:10Z",
+  "last_run": "2026-10-20T20:19:17Z",
   "dispatched": [
-    1792522645,
     1792523856,
     1792523957,
     1792524057,
-    1792525047
+    1792525047,
+    1792527458
   ]
 }
