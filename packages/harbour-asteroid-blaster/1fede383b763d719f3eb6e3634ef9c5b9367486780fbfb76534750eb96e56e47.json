@@ -1,0 +1,115 @@
+{
+  "verdict": "clean",
+  "name": "harbour-asteroid-blaster",
+  "version": "2.2.1-1",
+  "arch": "noarch",
+  "package": "harbour-asteroid-blaster-2.2.1-1.noarch",
+  "buildtime": 1791403952,
+  "sha256": "1fede383b763d719f3eb6e3634ef9c5b9367486780fbfb76534750eb96e56e47",
+  "source": "https://openrepos.net/sites/default/files/packages/19834/harbour-asteroid-blaster-2.2.1-1.noarch.rpm",
+  "source_page": "https://openrepos.net/node/12754",
+  "scanned": "2026-10-20T17:57:57Z",
+  "files": 43,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28159/Tue Oct 20 06:24:12 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-asteroid-blaster.desktop",
+          "name": "Blaster",
+          "exec": "sailfish-qml harbour-asteroid-blaster",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Camera"
+          ],
+          "organization": "net.mowerk",
+          "application": "harbour-asteroid-blaster"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 1,
+      "hosts_in_scripts": 1,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-asteroid-blaster/qml/game/fonts/README",
+            "/usr/share/harbour-asteroid-blaster/qml/game/img/README"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "github.com"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 643952,
+        "malicious": 424
+      },
+      "notable": [],
+      "ignored_hosts": 2
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 1,
+      "unknown": 1,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39470541172",
+  "diff": null,
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-asteroid-blaster/1fede383b763d719f3eb6e3634ef9c5b9367486780fbfb76534750eb96e56e47.md"
+}

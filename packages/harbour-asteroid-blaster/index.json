@@ -1,0 +1,44 @@
+[
+  {
+    "sha256": "1fede383b763d719f3eb6e3634ef9c5b9367486780fbfb76534750eb96e56e47",
+    "first_seen": "2026-10-20T17:57:57Z",
+    "package": "harbour-asteroid-blaster-2.2.1-1.noarch",
+    "version": "2.2.1-1",
+    "arch": "noarch",
+    "buildtime": 1791403952,
+    "last_scanned": "2026-10-20T17:57:57Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Camera"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 1,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39470541172",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-asteroid-blaster/1fede383b763d719f3eb6e3634ef9c5b9367486780fbfb76534750eb96e56e47.md"
+    }
+  }
+]
