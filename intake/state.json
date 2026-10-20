@@ -1,5 +1,5 @@
 {
-  "cursor": 1792451581,
+  "cursor": 1792479481,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -475,8 +475,13 @@
     "https://openrepos.net/sites/default/files/packages/18816/harbour-dconf-explorer-1.0-1.noarch.rpm",
     "https://openrepos.net/sites/default/files/packages/7548/harbour-foilpics-1.1.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/7548/harbour-foilpics-1.1.8-1.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/7548/harbour-foilpics-1.1.8-1.i486.rpm"
+    "https://openrepos.net/sites/default/files/packages/7548/harbour-foilpics-1.1.8-1.i486.rpm",
+    "https://openrepos.net/sites/default/files/packages/19693/gtgram_beta_armv7hl_0.rpm",
+    "https://openrepos.net/sites/default/files/packages/19693/gtgram_beta_aarch64_0.rpm"
   ],
-  "last_run": "2026-10-20T06:57:11Z",
-  "dispatched": []
+  "last_run": "2026-10-20T07:26:02Z",
+  "dispatched": [
+    1792480646,
+    1792480916
+  ]
 }
