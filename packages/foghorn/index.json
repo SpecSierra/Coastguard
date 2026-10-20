@@ -827,5 +827,88 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39494002939",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/foghorn/3d2416b0d22f3380814d306e19d44564267b4eba2aa3b8944356f2f3106f5558.md"
     }
+  },
+  {
+    "sha256": "d41bdbc485b9730ad58032014cb962f37c531222fbfad39380caa2144c12681c",
+    "first_seen": "2026-10-20T20:58:03Z",
+    "package": "foghorn-0.7.1-1.armv7hl",
+    "version": "0.7.1-1",
+    "arch": "armv7hl",
+    "buildtime": 1792526013,
+    "last_scanned": "2026-10-20T20:58:03Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "root-services",
+            "text": "3 root services, started at install"
+          },
+          {
+            "level": "info",
+            "id": "own-sandbox-profile",
+            "text": "Own sandbox profile"
+          },
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Accounts"
+          },
+          {
+            "level": "info",
+            "id": "background-start",
+            "text": "Starts in the background"
+          },
+          {
+            "level": "info",
+            "id": "code-reads-account-credentials",
+            "text": "Code that reads account credentials"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Reads Account Credentials"
+      ],
+      "sandbox": "declared",
+      "permissions": [
+        "Accounts",
+        "AppLaunch",
+        "Foghorn",
+        "Privileged"
+      ],
+      "own_sandbox_profile": true,
+      "services": 4,
+      "root_services": 3,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 4,
+      "hosts_in_scripts": 2,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "foghorn-0.7.0-1.armv7hl",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 4,
+          "unchanged": 26
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39496364280",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/foghorn/d41bdbc485b9730ad58032014cb962f37c531222fbfad39380caa2144c12681c.md"
+    }
   }
 ]
