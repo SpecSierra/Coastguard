@@ -2,24 +2,6 @@
   "cursor": 1792527241,
   "queue": [
     {
-      "url": "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.7.1-1.aarch64.rpm",
-      "page": "https://openrepos.net/node/12521",
-      "appid": 12521,
-      "title": "Foghorn Test Connector"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/19607/foghorn-test-connector-0.7.1-1.armv7hl.rpm",
-      "page": "https://openrepos.net/node/12521",
-      "appid": 12521,
-      "title": "Foghorn Test Connector"
-    },
-    {
-      "url": "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.7.1-1.aarch64.rpm",
-      "page": "https://openrepos.net/node/12520",
-      "appid": 12520,
-      "title": "Foghorn"
-    },
-    {
       "url": "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.7.1-1.armv7hl.rpm",
       "page": "https://openrepos.net/node/12520",
       "appid": 12520,
@@ -528,12 +510,12 @@
     "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.7.1-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.7.1-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-20T20:19:17Z",
+  "last_run": "2026-10-20T20:42:35Z",
   "dispatched": [
-    1792523856,
-    1792523957,
-    1792524057,
     1792525047,
-    1792527458
+    1792527458,
+    1792528634,
+    1792528734,
+    1792528836
   ]
 }
