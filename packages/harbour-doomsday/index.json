@@ -143,5 +143,60 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39558689890",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-doomsday/76511d0b159820f1e0cd782a8546ced24df2922caed1fd0b0857a61cda0021e2.md"
     }
+  },
+  {
+    "sha256": "eb7eb3eb472b92a737170c262d746c6a30d70702584446d53dac4623e54e9af2",
+    "first_seen": "2026-10-21T07:00:56Z",
+    "package": "harbour-doomsday-0.2.1-1.armv7hl",
+    "version": "0.2.1-1",
+    "arch": "armv7hl",
+    "buildtime": 1792561602,
+    "last_scanned": "2026-10-21T07:00:56Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": []
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Internet",
+        "Location",
+        "Notifications",
+        "UnifiedPush"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 2,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-doomsday-0.2.0-1.armv7hl",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 3,
+          "unchanged": 29
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39558988001",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-doomsday/eb7eb3eb472b92a737170c262d746c6a30d70702584446d53dac4623e54e9af2.md"
+    }
   }
 ]

@@ -1,0 +1,311 @@
+{
+  "verdict": "clean",
+  "name": "harbour-doomsday",
+  "version": "0.2.1-1",
+  "arch": "armv7hl",
+  "package": "harbour-doomsday-0.2.1-1.armv7hl",
+  "buildtime": 1792561602,
+  "sha256": "eb7eb3eb472b92a737170c262d746c6a30d70702584446d53dac4623e54e9af2",
+  "source": "https://openrepos.net/sites/default/files/packages/19607/harbour-doomsday-0.2.1-1.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12693",
+  "scanned": "2026-10-21T07:00:56Z",
+  "files": 54,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28159/Tue Oct 20 06:24:12 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-doomsday.desktop",
+          "name": "Doomsday",
+          "exec": "harbour-doomsday",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Location",
+            "Notifications",
+            "UnifiedPush"
+          ],
+          "organization": "harbour-doomsday",
+          "application": "harbour-doomsday"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [
+        {
+          "path": "/usr/share/dbus-1/services/org.unifiedpush.Connector.doomsday.service",
+          "bus": "session",
+          "name": "org.unifiedpush.Connector.doomsday",
+          "exec": "/usr/bin/env LEGHORN_PUSH_WAKE=1 /usr/bin/sailjail -p harbour-doomsday.desktop -- /usr/bin/harbour-doomsday",
+          "user": null,
+          "systemd_service": null
+        }
+      ],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 13,
+      "hosts_in_scripts": 2,
+      "hosts": [
+        {
+          "host": "tiles.openfreemap.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-doomsday/qml/MapPage.qml"
+          ]
+        },
+        {
+          "host": "www.openstreetmap.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-doomsday/qml/InformationPage.qml"
+          ]
+        },
+        {
+          "host": "dbus.freedesktop.org",
+          "urls": 8,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-doomsday",
+            "/usr/share/harbour-doomsday/bin/doomsday-push-test"
+          ]
+        },
+        {
+          "host": "alerts.kde.org",
+          "urls": 3,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-doomsday"
+          ]
+        },
+        {
+          "host": "docs.rs",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-doomsday",
+            "/usr/share/harbour-doomsday/bin/doomsday-push-test"
+          ]
+        },
+        {
+          "host": "github.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-doomsday/maplibre/lib/libDoomsdayQMapLibre.so.3.0.0"
+          ]
+        },
+        {
+          "host": "alert-proxy.agnos.ishttp",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-doomsday"
+          ]
+        },
+        {
+          "host": "api.mapbox.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-doomsday/maplibre/lib/libDoomsdayQMapLibre.so.3.0.0"
+          ]
+        },
+        {
+          "host": "api.maptiler.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-doomsday/maplibre/lib/libDoomsdayQMapLibre.so.3.0.0"
+          ]
+        },
+        {
+          "host": "demotiles.maplibre.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-doomsday/maplibre/lib/libDoomsdayQMapLibre.so.3.0.0"
+          ]
+        },
+        {
+          "host": "geocoding-api.open-meteo.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-doomsday"
+          ]
+        },
+        {
+          "host": "nominatim.openstreetmap.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-doomsday"
+          ]
+        },
+        {
+          "host": "www.freedesktop.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/bin/harbour-doomsday"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "tiles.openfreemap.org",
+        "www.openstreetmap.org"
+      ],
+      "hosts_binaries": [
+        "alert-proxy.agnos.ishttp",
+        "alerts.kde.org",
+        "api.mapbox.com",
+        "api.maptiler.com",
+        "dbus.freedesktop.org",
+        "demotiles.maplibre.org",
+        "docs.rs",
+        "geocoding-api.open-meteo.com",
+        "github.com",
+        "nominatim.openstreetmap.org",
+        "www.freedesktop.org"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 651495,
+        "malicious": 451
+      },
+      "notable": [],
+      "ignored_hosts": 2
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 5,
+      "unknown": 5,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 5,
+      "unknown": 5,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39558988001",
+  "diff": {
+    "baseline": {
+      "sha256": "165d96a1ba1a81bd4d36f210f748f4c41051c64751a378467cdf733ae3d90a77",
+      "package": "harbour-doomsday-0.2.0-1.armv7hl",
+      "last_scanned": "2026-10-08T23:44:05Z"
+    },
+    "changes": [
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/harbour-doomsday",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-doomsday/bin/doomsday-push-test",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-doomsday/qml/DoomGauge.qml",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 0,
+        "removed": 0,
+        "changed": 3,
+        "unchanged": 29
+      }
+    }
+  },
+  "risk": {
+    "grade": "low",
+    "reasons": []
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-doomsday/eb7eb3eb472b92a737170c262d746c6a30d70702584446d53dac4623e54e9af2.md"
+}
