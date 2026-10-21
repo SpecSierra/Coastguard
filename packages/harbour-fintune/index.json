@@ -53,6 +53,69 @@
     }
   },
   {
+    "sha256": "85d85d9d29eba72fed497a5bace6c53bcaac3b97755b86b209ae663cf3f57517",
+    "first_seen": "2026-10-21T10:39:43Z",
+    "package": "harbour-fintune-1.3.1-1.aarch64",
+    "version": "1.3.1-1",
+    "arch": "aarch64",
+    "buildtime": 1792577984,
+    "last_scanned": "2026-10-21T10:39:43Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          },
+          {
+            "level": "medium",
+            "id": "code-reads-browser-profile-data",
+            "text": "Unsandboxed code that reads browser profile data"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Reads Browser Profile Data"
+      ],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 9,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-fintune-1.3.0-2.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 1,
+          "removed": 1,
+          "changed": 24,
+          "unchanged": 7
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39586148746",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-fintune/85d85d9d29eba72fed497a5bace6c53bcaac3b97755b86b209ae663cf3f57517.md"
+    }
+  },
+  {
     "sha256": "b9c5250fc36f606b4f20c913d17abb0a22f88d045fa8358ad3c2a719a2f578e0",
     "first_seen": "2026-10-21T10:38:27Z",
     "package": "harbour-fintune-1.3.1-1.armv7hl",
