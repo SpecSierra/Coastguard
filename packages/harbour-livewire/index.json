@@ -400,6 +400,76 @@
     }
   },
   {
+    "sha256": "ca64a6cd689a4fdb7c39d0bf7bf557161bd74f00348dc6586be56cba573a8a01",
+    "first_seen": "2026-10-21T11:58:15Z",
+    "package": "harbour-livewire-0.7.4-1.armv7hl",
+    "version": "0.7.4-1",
+    "arch": "armv7hl",
+    "buildtime": 1792575536,
+    "last_scanned": "2026-10-21T11:58:15Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "own-sandbox-profile",
+            "text": "Own sandbox profile"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Documents",
+        "Downloads",
+        "Internet",
+        "Location",
+        "MediaIndexing",
+        "Microphone",
+        "Music",
+        "Pictures",
+        "RemovableMedia",
+        "UnifiedPush",
+        "UserDirs",
+        "Videos"
+      ],
+      "own_sandbox_profile": true,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 2,
+      "hosts_in_scripts": 4,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-livewire-0.7.3-1.armv7hl",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 2,
+          "removed": 0,
+          "changed": 5,
+          "unchanged": 144
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39595793982",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-livewire/ca64a6cd689a4fdb7c39d0bf7bf557161bd74f00348dc6586be56cba573a8a01.md"
+    }
+  },
+  {
     "sha256": "eeb02a452b0e6ec0ca3983d05a728bc85fcf8780e27deefe5b65a9f1da30d984",
     "first_seen": "2026-10-21T10:44:17Z",
     "package": "harbour-livewire-0.7.4-1.aarch64",
