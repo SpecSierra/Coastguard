@@ -1872,6 +1872,100 @@
     }
   },
   {
+    "sha256": "78b72d0f6c2950110a5dcd6c48915b1d3ac18c15ee075651c2d28e201c542a40",
+    "first_seen": "2026-10-21T08:40:05Z",
+    "package": "harbour-xmatic-0.46.19-1.armv7hl",
+    "version": "0.46.19-1",
+    "arch": "armv7hl",
+    "buildtime": 1792569969,
+    "last_scanned": "2026-10-21T08:40:05Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "code-gains-root-with-devel-su",
+            "text": "Code that gains root with devel su"
+          },
+          {
+            "level": "medium",
+            "id": "code-installs-packages-at-runtime",
+            "text": "Code that installs packages at runtime"
+          },
+          {
+            "level": "info",
+            "id": "own-sandbox-profile",
+            "text": "Own sandbox profile"
+          },
+          {
+            "level": "info",
+            "id": "personal-data",
+            "text": "Personal data: Secrets"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Gains Root With Devel Su",
+        "Installs Packages At Runtime"
+      ],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Camera",
+        "Documents",
+        "Downloads",
+        "Internet",
+        "Location",
+        "MediaIndexing",
+        "Microphone",
+        "Music",
+        "Notifications",
+        "Pictures",
+        "PublicDir",
+        "RemovableMedia",
+        "Secrets",
+        "Sharing",
+        "Thumbnails",
+        "UnifiedPush",
+        "Videos",
+        "XmaticSpeech"
+      ],
+      "own_sandbox_profile": true,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 4,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-xmatic-0.46.17-1.armv7hl",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 2,
+          "removed": 2,
+          "changed": 3,
+          "unchanged": 136
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39570893692",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-xmatic/78b72d0f6c2950110a5dcd6c48915b1d3ac18c15ee075651c2d28e201c542a40.md"
+    }
+  },
+  {
     "sha256": "66f99b8bea2775110e4aa5b5f4553d461606f7c6bf458537d0631e71fcf487fe",
     "first_seen": "2026-10-21T08:38:26Z",
     "package": "harbour-xmatic-0.46.19-1.aarch64",
