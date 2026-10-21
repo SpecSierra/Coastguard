@@ -1,0 +1,794 @@
+{
+  "verdict": "clean",
+  "name": "harbour-mconnect",
+  "version": "1.5.0-7",
+  "arch": "aarch64",
+  "package": "harbour-mconnect-1.5.0-7.aarch64",
+  "buildtime": 1792601080,
+  "sha256": "ead839302a5362a55f5ae9d482f38dca5986813aeaf8da7433033a9a56f75bb6",
+  "source": "https://openrepos.net/sites/default/files/packages/2414/harbour-mconnect-1.5.0-7.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12753",
+  "scanned": "2026-10-21T17:18:11Z",
+  "files": 45,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28159/Tue Oct 20 06:24:12 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [],
+  "errors": [],
+  "nested": {
+    "archives": 1,
+    "carved_streams": 0,
+    "files": 1,
+    "bytes": 1500449,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-mconnect.desktop",
+          "name": "Mconnect",
+          "exec": "harbour-mconnect",
+          "hidden": false,
+          "sandbox": "disabled",
+          "permissions": [],
+          "organization": null,
+          "application": null
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 55,
+      "hosts_in_scripts": 21,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 7,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so",
+            "nested/usr/share/harbour-mconnect/data/flutter_assets/NOTICES.Z.unpacked/content"
+          ]
+        },
+        {
+          "host": "www.ijg.org",
+          "urls": 4,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/harbour-mconnect/data/flutter_assets/NOTICES.Z.unpacked/content"
+          ]
+        },
+        {
+          "host": "aomedia.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/data/flutter_assets/packages/media_kit/assets/web/hls1.4.10.js"
+          ]
+        },
+        {
+          "host": "bjoern.hoehrmann.de",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/harbour-mconnect/data/flutter_assets/NOTICES.Z.unpacked/content"
+          ]
+        },
+        {
+          "host": "casper.beckman.uiuc.edu",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/harbour-mconnect/data/flutter_assets/NOTICES.Z.unpacked/content"
+          ]
+        },
+        {
+          "host": "chasen.aist-nara.ac.jp",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/harbour-mconnect/data/flutter_assets/NOTICES.Z.unpacked/content"
+          ]
+        },
+        {
+          "host": "codepen.io",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/harbour-mconnect/data/flutter_assets/NOTICES.Z.unpacked/content"
+          ]
+        },
+        {
+          "host": "freetype.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/harbour-mconnect/data/flutter_assets/NOTICES.Z.unpacked/content"
+          ]
+        },
+        {
+          "host": "ftp.sgi.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/harbour-mconnect/data/flutter_assets/NOTICES.Z.unpacked/content"
+          ]
+        },
+        {
+          "host": "llvm.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/harbour-mconnect/data/flutter_assets/NOTICES.Z.unpacked/content"
+          ]
+        },
+        {
+          "host": "mozilla.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/harbour-mconnect/data/flutter_assets/NOTICES.Z.unpacked/content"
+          ]
+        },
+        {
+          "host": "nlohmann.me",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/harbour-mconnect/data/flutter_assets/NOTICES.Z.unpacked/content"
+          ]
+        },
+        {
+          "host": "oss.sgi.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/harbour-mconnect/data/flutter_assets/NOTICES.Z.unpacked/content"
+          ]
+        },
+        {
+          "host": "result42.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/harbour-mconnect/data/flutter_assets/NOTICES.Z.unpacked/content"
+          ]
+        },
+        {
+          "host": "rtfm.mit.edu",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/harbour-mconnect/data/flutter_assets/NOTICES.Z.unpacked/content"
+          ]
+        },
+        {
+          "host": "sourceforge.net",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/harbour-mconnect/data/flutter_assets/NOTICES.Z.unpacked/content"
+          ]
+        },
+        {
+          "host": "www.bouncycastle.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/harbour-mconnect/data/flutter_assets/NOTICES.Z.unpacked/content"
+          ]
+        },
+        {
+          "host": "www.ecma-international.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/harbour-mconnect/data/flutter_assets/NOTICES.Z.unpacked/content"
+          ]
+        },
+        {
+          "host": "www.faqs.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/harbour-mconnect/data/flutter_assets/NOTICES.Z.unpacked/content"
+          ]
+        },
+        {
+          "host": "www.khronos.org",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "nested/usr/share/harbour-mconnect/data/flutter_assets/NOTICES.Z.unpacked/content"
+          ]
+        },
+        {
+          "host": "www.winimage.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": true,
+          "files": [
+            "nested/usr/share/harbour-mconnect/data/flutter_assets/NOTICES.Z.unpacked/content"
+          ]
+        },
+        {
+          "host": "c.y.qq.com",
+          "urls": 11,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "mobilecdn.kugou.com",
+          "urls": 8,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "y.qq.com",
+          "urls": 7,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "gateway.kugou.com",
+          "urls": 4,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "graph.qq.com",
+          "urls": 4,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "mobilecdnbj.kugou.com",
+          "urls": 4,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "api.flutter.dev",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "libre.fm",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "login-user.kugou.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "lyrics.kugou.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "m.kugou.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": true,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "music.163.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "pub.dev",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "ssl.ptlogin2.qq.com",
+          "urls": 2,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "activity.kugou.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "api.listenbrainz.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "complexsearch.kugou.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "developer.mozilla.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "docs.flutter.dev",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "drift.simonbinder.eu",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "h5.kugou.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "i.y.qq.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "krcs.kugou.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "listenbrainz.org",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "lrclib.net",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "pubsongscdn.kugou.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "tracker.kugou.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "u.y.qq.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "ws.audioscrobbler.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "www.last.fm",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "wwwapi.kugou.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "xui.ptlogin2.qq.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "y.gtimg.cn",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        },
+        {
+          "host": "y.qq.comr",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-mconnect/lib/libapp.so"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "aomedia.org",
+        "bjoern.hoehrmann.de",
+        "casper.beckman.uiuc.edu",
+        "chasen.aist-nara.ac.jp",
+        "codepen.io",
+        "freetype.org",
+        "ftp.sgi.com",
+        "github.com",
+        "llvm.org",
+        "mozilla.org",
+        "nlohmann.me",
+        "oss.sgi.com",
+        "result42.com",
+        "rtfm.mit.edu",
+        "sourceforge.net",
+        "www.bouncycastle.org",
+        "www.ecma-international.org",
+        "www.faqs.org",
+        "www.ijg.org",
+        "www.khronos.org",
+        "www.winimage.com"
+      ],
+      "hosts_binaries": [
+        "activity.kugou.com",
+        "api.flutter.dev",
+        "api.listenbrainz.org",
+        "c.y.qq.com",
+        "complexsearch.kugou.com",
+        "developer.mozilla.org",
+        "docs.flutter.dev",
+        "drift.simonbinder.eu",
+        "gateway.kugou.com",
+        "graph.qq.com",
+        "h5.kugou.com",
+        "i.y.qq.com",
+        "krcs.kugou.com",
+        "libre.fm",
+        "listenbrainz.org",
+        "login-user.kugou.com",
+        "lrclib.net",
+        "lyrics.kugou.com",
+        "m.kugou.com",
+        "mobilecdn.kugou.com",
+        "mobilecdnbj.kugou.com",
+        "music.163.com",
+        "pub.dev",
+        "pubsongscdn.kugou.com",
+        "ssl.ptlogin2.qq.com",
+        "tracker.kugou.com",
+        "u.y.qq.com",
+        "ws.audioscrobbler.com",
+        "www.last.fm",
+        "wwwapi.kugou.com",
+        "xui.ptlogin2.qq.com",
+        "y.gtimg.cn",
+        "y.qq.com",
+        "y.qq.comr"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 651495,
+        "malicious": 451
+      },
+      "notable": [],
+      "ignored_hosts": 7
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 4,
+      "unknown": 4,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 4,
+      "unknown": 4,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39642477787",
+  "diff": {
+    "baseline": {
+      "sha256": "fd3d417da390eddb58d310f18db7e44d23c7a24a9e50637709819850b7f1934d",
+      "package": "harbour-mconnect-1.5.0-5.aarch64",
+      "last_scanned": "2026-10-20T07:38:05Z"
+    },
+    "changes": [
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-mconnect/lib/libapp.so",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 0,
+        "removed": 0,
+        "changed": 1,
+        "unchanged": 19
+      }
+    }
+  },
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "sandbox-off",
+        "text": "Sandbox turned off"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-mconnect/ead839302a5362a55f5ae9d482f38dca5986813aeaf8da7433033a9a56f75bb6.md"
+}
