@@ -1,0 +1,461 @@
+{
+  "verdict": "clean",
+  "name": "harbour-fintube",
+  "version": "1.5.1-1",
+  "arch": "armv7hl",
+  "package": "harbour-fintube-1.5.1-1.armv7hl",
+  "buildtime": 1792578030,
+  "sha256": "232367ec494f422ecc493ca581f716351cec89a604d15ddae69f2d652dda7215",
+  "source": "https://openrepos.net/sites/default/files/packages/19670/harbour-fintube-1.5.1-1.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12551",
+  "scanned": "2026-10-21T10:41:01Z",
+  "files": 59,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28159/Tue Oct 20 06:24:12 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [
+    {
+      "rule": "Coastguard_Indicator_Reads_Browser_Profile_Data",
+      "files": [
+        "payload/usr/share/harbour-fintube/python/ytm.py"
+      ]
+    }
+  ],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-fintube.desktop",
+          "name": "FinTube",
+          "exec": "harbour-fintube %U",
+          "hidden": false,
+          "sandbox": "disabled",
+          "permissions": [],
+          "organization": null,
+          "application": null
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [
+        {
+          "path": "/usr/share/dbus-1/services/harbour.fintube.service",
+          "bus": "session",
+          "name": "harbour.fintube",
+          "exec": "/usr/bin/invoker --type=silica-qt5 /usr/bin/harbour-fintube",
+          "user": null,
+          "systemd_service": null
+        }
+      ],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 7,
+      "hosts_in_scripts": 7,
+      "hosts": [
+        {
+          "host": "www.youtube.com",
+          "urls": 12,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-fintube/python/innertube.py",
+            "/usr/share/harbour-fintube/python/youfish.py",
+            "/usr/share/harbour-fintube/python/ytm.py"
+          ]
+        },
+        {
+          "host": "github.com",
+          "urls": 4,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-fintube/python/youfish.py"
+          ]
+        },
+        {
+          "host": "api.github.com",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-fintube/python/youfish.py"
+          ]
+        },
+        {
+          "host": "i.ytimg.com",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-fintube/python/youfish.py"
+          ]
+        },
+        {
+          "host": "johnvansickle.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-fintube/python/youfish.py"
+          ]
+        },
+        {
+          "host": "sponsor.ajay.app",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-fintube/python/youfish.py"
+          ]
+        },
+        {
+          "host": "suggestqueries.google.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-fintube/python/youfish.py"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "api.github.com",
+        "github.com",
+        "i.ytimg.com",
+        "johnvansickle.com",
+        "sponsor.ajay.app",
+        "suggestqueries.google.com",
+        "www.youtube.com"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 651495,
+        "malicious": 451
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39586309439",
+  "diff": {
+    "baseline": {
+      "sha256": "8b9a26ab85e726a3d2b3739635c12da00e2c4708e6adbd2de10779633d848c64",
+      "package": "harbour-fintube-1.5.0-2.aarch64",
+      "last_scanned": "2026-10-15T00:20:04Z"
+    },
+    "changes": [
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "manifest.googlevideo.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "r.googlevideo.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "rr1---sn.googlevideo.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "rr1.googlevideo.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "soundcloud.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "youtu.be",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "youtube.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "yt3.example",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/harbour-fintube/translations/harbour-fintube-en.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-fintube/python/test_youfish.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/harbour-fintube",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/python/innertube.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/python/youfish.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/python/ytm.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/qml/Backend.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/qml/cover/CoverPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/qml/harbour-fintube.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/qml/pages/AddToPlaylistPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/qml/pages/ChannelPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/qml/pages/ChannelPlaylistsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/qml/pages/DownloadsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/qml/pages/EqualizerPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/qml/pages/HistoryPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/qml/pages/HomePage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/qml/pages/LocalPlayerPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/qml/pages/MorePage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/qml/pages/PlaylistPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/qml/pages/PlaylistsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/qml/pages/ProvidersPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/qml/pages/RelatedPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/qml/pages/SearchPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/qml/pages/SettingsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/qml/pages/SponsorBlockPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/qml/pages/SubscriptionsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/qml/pages/TransportControls.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/qml/pages/VideoPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/qml/pages/WatchOverlay.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintube/qml/pages/YtAccountsPage.qml",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 8
+      },
+      "files": {
+        "added": 1,
+        "removed": 1,
+        "changed": 28,
+        "unchanged": 8
+      }
+    }
+  },
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "sandbox-off",
+        "text": "Sandbox turned off"
+      },
+      {
+        "level": "medium",
+        "id": "code-reads-browser-profile-data",
+        "text": "Unsandboxed code that reads browser profile data"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-fintube/232367ec494f422ecc493ca581f716351cec89a604d15ddae69f2d652dda7215.md"
+}
