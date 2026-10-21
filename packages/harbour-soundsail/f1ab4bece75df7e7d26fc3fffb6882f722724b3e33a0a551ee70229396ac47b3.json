@@ -1,0 +1,235 @@
+{
+  "verdict": "clean",
+  "name": "harbour-soundsail",
+  "version": "0.2.0-1",
+  "arch": "aarch64",
+  "package": "harbour-soundsail-0.2.0-1.aarch64",
+  "buildtime": 1792584175,
+  "sha256": "f1ab4bece75df7e7d26fc3fffb6882f722724b3e33a0a551ee70229396ac47b3",
+  "source": "https://openrepos.net/sites/default/files/packages/19828/harbour-soundsail-0.2.0-1.aarch64.rpm",
+  "source_page": "https://openrepos.net/node/12746",
+  "scanned": "2026-10-21T12:38:05Z",
+  "files": 48,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28159/Tue Oct 20 06:24:12 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [
+    {
+      "rule": "Coastguard_Indicator_Reads_Browser_Profile_Data",
+      "files": [
+        "payload/usr/bin/harbour-soundsail"
+      ]
+    }
+  ],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-soundsail.desktop",
+          "name": "Soundsail",
+          "exec": "harbour-soundsail",
+          "hidden": false,
+          "sandbox": "declared",
+          "permissions": [
+            "Internet",
+            "Audio",
+            "Music"
+          ],
+          "organization": "harbour-soundsail",
+          "application": "harbour-soundsail"
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 4,
+      "hosts_in_scripts": 2,
+      "hosts": [
+        {
+          "host": "soundcloud.com",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-soundsail",
+            "/usr/share/harbour-soundsail/qml/pages/WebLoginPage.qml"
+          ]
+        },
+        {
+          "host": "github.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-soundsail/qml/pages/AboutPage.qml"
+          ]
+        },
+        {
+          "host": "api-v2.soundcloud.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-soundsail"
+          ]
+        },
+        {
+          "host": "secure.soundcloud.com",
+          "urls": 1,
+          "in": [
+            "binary"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/bin/harbour-soundsail"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "github.com",
+        "soundcloud.com"
+      ],
+      "hosts_binaries": [
+        "api-v2.soundcloud.com",
+        "secure.soundcloud.com"
+      ],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 651495,
+        "malicious": 451
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39601074031",
+  "diff": {
+    "baseline": {
+      "sha256": "fb38a4bc77453fc4217504f06f0e6c29957ec0af306ec759c0396c59677ffad2",
+      "package": "harbour-soundsail-0.1.0-1.aarch64",
+      "last_scanned": "2026-10-18T22:58:18Z"
+    },
+    "changes": [
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/harbour-soundsail/qml/components/CoverArt.qml.autosave",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/harbour-soundsail/qml/pages/WebLoginPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/harbour-soundsail",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-soundsail/qml/components/PlaylistTile.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-soundsail/qml/components/TabRow.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-soundsail/qml/pages/AboutPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-soundsail/qml/pages/LoginPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-soundsail/qml/pages/MainPage.qml",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 0
+      },
+      "files": {
+        "added": 2,
+        "removed": 0,
+        "changed": 6,
+        "unchanged": 20
+      }
+    }
+  },
+  "risk": {
+    "grade": "low",
+    "reasons": [
+      {
+        "level": "info",
+        "id": "code-reads-browser-profile-data",
+        "text": "Code that reads browser profile data"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-soundsail/f1ab4bece75df7e7d26fc3fffb6882f722724b3e33a0a551ee70229396ac47b3.md"
+}

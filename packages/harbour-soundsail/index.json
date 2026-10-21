@@ -50,5 +50,67 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39174461407",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-soundsail/fb38a4bc77453fc4217504f06f0e6c29957ec0af306ec759c0396c59677ffad2.md"
     }
+  },
+  {
+    "sha256": "f1ab4bece75df7e7d26fc3fffb6882f722724b3e33a0a551ee70229396ac47b3",
+    "first_seen": "2026-10-21T12:38:05Z",
+    "package": "harbour-soundsail-0.2.0-1.aarch64",
+    "version": "0.2.0-1",
+    "arch": "aarch64",
+    "buildtime": 1792584175,
+    "last_scanned": "2026-10-21T12:38:05Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "low",
+        "reasons": [
+          {
+            "level": "info",
+            "id": "code-reads-browser-profile-data",
+            "text": "Code that reads browser profile data"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Reads Browser Profile Data"
+      ],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Internet",
+        "Music"
+      ],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 2,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-soundsail-0.1.0-1.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 2,
+          "removed": 0,
+          "changed": 6,
+          "unchanged": 20
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39601074031",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-soundsail/f1ab4bece75df7e7d26fc3fffb6882f722724b3e33a0a551ee70229396ac47b3.md"
+    }
   }
 ]
