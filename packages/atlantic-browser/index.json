@@ -159,5 +159,93 @@
       "run": "https://github.com/SpecSierra/Coastguard/actions/runs/37930781523",
       "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/atlantic-browser/919019afac225ad3799cb8939eb5ce543ace26e93d2d8916b580e94820b53fe6.md"
     }
+  },
+  {
+    "sha256": "cb4d66bf4d8c75aaf7d7faac956b2c0eba3765063396663a3b3cc138b1560ba2",
+    "first_seen": "2026-10-21T12:01:26Z",
+    "package": "atlantic-browser-1.6.1-761.1.aio.aarch64",
+    "version": "1.6.1-761.1.aio",
+    "arch": "aarch64",
+    "buildtime": 1792580056,
+    "last_scanned": "2026-10-21T12:01:26Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-loosened",
+            "text": "Own profile loosens the sandbox (7 rules)"
+          },
+          {
+            "level": "medium",
+            "id": "root-services",
+            "text": "3 root services, started at install"
+          },
+          {
+            "level": "info",
+            "id": "code-installs-persistence",
+            "text": "Code that installs persistence"
+          },
+          {
+            "level": "info",
+            "id": "code-reads-browser-profile-data",
+            "text": "Code that reads browser profile data"
+          },
+          {
+            "level": "info",
+            "id": "bulk-hosts",
+            "text": "7 hosts in a bulk list are on no public block list"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Installs Persistence",
+        "Reads Browser Profile Data"
+      ],
+      "sandbox": "declared",
+      "permissions": [
+        "Audio",
+        "Camera",
+        "Internet",
+        "MediaIndexing",
+        "Microphone",
+        "RemovableMedia",
+        "UserDirs",
+        "WebView"
+      ],
+      "own_sandbox_profile": true,
+      "services": 3,
+      "root_services": 3,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 4,
+      "hosts_in_scripts": 25,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "atlantic-browser-1.6.0-748.1.aio.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 0,
+          "removed": 0,
+          "changed": 10,
+          "unchanged": 272
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39596132784",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/atlantic-browser/cb4d66bf4d8c75aaf7d7faac956b2c0eba3765063396663a3b3cc138b1560ba2.md"
+    }
   }
 ]
