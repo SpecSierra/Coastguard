@@ -1,5 +1,5 @@
 {
-  "cursor": 1792532133,
+  "cursor": 1792565101,
   "queue": [],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
@@ -504,8 +504,13 @@
     "https://openrepos.net/sites/default/files/packages/19607/foghorn-0.7.1-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/10743/harbour-tooterb-1.5.0-1.i486.rpm",
     "https://openrepos.net/sites/default/files/packages/10743/harbour-tooterb-1.5.0-1.armv7hl.rpm",
-    "https://openrepos.net/sites/default/files/packages/10743/harbour-tooterb-1.5.0-1.aarch64.rpm"
+    "https://openrepos.net/sites/default/files/packages/10743/harbour-tooterb-1.5.0-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/harbour-doomsday-0.2.1-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/harbour-doomsday-0.2.1-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-21T06:37:10Z",
-  "dispatched": []
+  "last_run": "2026-10-21T07:02:36Z",
+  "dispatched": [
+    1792565848,
+    1792566013
+  ]
 }
