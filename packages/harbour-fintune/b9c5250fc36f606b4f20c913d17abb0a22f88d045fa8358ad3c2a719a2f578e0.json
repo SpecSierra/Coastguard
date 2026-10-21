@@ -1,0 +1,442 @@
+{
+  "verdict": "clean",
+  "name": "harbour-fintune",
+  "version": "1.3.1-1",
+  "arch": "armv7hl",
+  "package": "harbour-fintune-1.3.1-1.armv7hl",
+  "buildtime": 1792578021,
+  "sha256": "b9c5250fc36f606b4f20c913d17abb0a22f88d045fa8358ad3c2a719a2f578e0",
+  "source": "https://openrepos.net/sites/default/files/packages/19670/harbour-fintune-1.3.1-1.armv7hl.rpm",
+  "source_page": "https://openrepos.net/node/12552",
+  "scanned": "2026-10-21T10:38:27Z",
+  "files": 54,
+  "engines": {
+    "clamav": "ClamAV 1.5.4/28159/Tue Oct 20 06:24:12 2026",
+    "yara_forge_core": "20261018"
+  },
+  "clamav": [],
+  "yara": [],
+  "indicators": [
+    {
+      "rule": "Coastguard_Indicator_Reads_Browser_Profile_Data",
+      "files": [
+        "payload/usr/share/harbour-fintune/python/ytm.py"
+      ]
+    }
+  ],
+  "errors": [],
+  "nested": {
+    "archives": 0,
+    "carved_streams": 0,
+    "files": 0,
+    "bytes": 0,
+    "encrypted": [],
+    "failed": [],
+    "limits_hit": []
+  },
+  "inspect": {
+    "sailjail": {
+      "apps": [
+        {
+          "desktop": "/usr/share/applications/harbour-fintune.desktop",
+          "name": "FinTune",
+          "exec": "harbour-fintune",
+          "hidden": false,
+          "sandbox": "disabled",
+          "permissions": [],
+          "organization": null,
+          "application": null
+        }
+      ],
+      "shipped_profiles": [],
+      "profile_loosening": []
+    },
+    "services": {
+      "systemd": [],
+      "dbus": [
+        {
+          "path": "/usr/share/dbus-1/services/harbour.fintune.service",
+          "bus": "session",
+          "name": "harbour.fintune",
+          "exec": "/usr/bin/invoker --type=silica-qt5 /usr/bin/harbour-fintune",
+          "user": null,
+          "systemd_service": null
+        }
+      ],
+      "autostart": []
+    },
+    "system_integration": {},
+    "privileged_files": [],
+    "scriptlets": [],
+    "network": {
+      "hosts_total": 9,
+      "hosts_in_scripts": 9,
+      "hosts": [
+        {
+          "host": "github.com",
+          "urls": 4,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-fintune/python/youfish.py"
+          ]
+        },
+        {
+          "host": "www.youtube.com",
+          "urls": 4,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-fintune/python/innertube.py",
+            "/usr/share/harbour-fintune/python/youfish.py"
+          ]
+        },
+        {
+          "host": "api.github.com",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-fintune/python/youfish.py"
+          ]
+        },
+        {
+          "host": "oauth2.googleapis.com",
+          "urls": 2,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-fintune/python/ytm.py"
+          ]
+        },
+        {
+          "host": "google.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-fintune/python/ytm.py"
+          ]
+        },
+        {
+          "host": "lrclib.net",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-fintune/python/ytm.py"
+          ]
+        },
+        {
+          "host": "music.youtube.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-fintune/python/ytm.py"
+          ]
+        },
+        {
+          "host": "sponsor.ajay.app",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-fintune/python/youfish.py"
+          ]
+        },
+        {
+          "host": "www.googleapis.com",
+          "urls": 1,
+          "in": [
+            "script"
+          ],
+          "plain_http": false,
+          "files": [
+            "/usr/share/harbour-fintune/python/ytm.py"
+          ]
+        }
+      ],
+      "hosts_scripts": [
+        "api.github.com",
+        "github.com",
+        "google.com",
+        "lrclib.net",
+        "music.youtube.com",
+        "oauth2.googleapis.com",
+        "sponsor.ajay.app",
+        "www.googleapis.com",
+        "www.youtube.com"
+      ],
+      "hosts_binaries": [],
+      "hosts_bulk_unlisted": [],
+      "bulk": [],
+      "known_bad": [],
+      "lists": {
+        "public": 651495,
+        "malicious": 451
+      },
+      "notable": [],
+      "ignored_hosts": 0
+    },
+    "explanations": {}
+  },
+  "signature_verdict": "clean",
+  "reputation": {
+    "virustotal": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "malwarebazaar": {
+      "status": "ok",
+      "queried": 2,
+      "unknown": 2,
+      "not_queried": 0,
+      "results": []
+    },
+    "hits": []
+  },
+  "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39585987102",
+  "diff": {
+    "baseline": {
+      "sha256": "ca39f9d0dbee56c4709c3f1814db528b7dd2406a9e58f2b13af1b0812a92be8c",
+      "package": "harbour-fintune-1.3.0-2.aarch64",
+      "last_scanned": "2026-10-15T00:18:25Z"
+    },
+    "changes": [
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "manifest.googlevideo.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "r.googlevideo.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "rr1---sn.googlevideo.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "rr1.googlevideo.com",
+        "attention": false
+      },
+      {
+        "area": "host",
+        "change": "removed",
+        "item": "yt3.example",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "added",
+        "item": "/usr/share/harbour-fintune/translations/harbour-fintune-en.qm",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "removed",
+        "item": "/usr/share/harbour-fintune/python/test_youfish.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/bin/harbour-fintune",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintune/python/innertube.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintune/python/youfish.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintune/python/ytm.py",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintune/qml/Backend.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintune/qml/cover/CoverPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintune/qml/harbour-fintune.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintune/qml/pages/AccountsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintune/qml/pages/ArtistPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintune/qml/pages/DownloadsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintune/qml/pages/EqualizerPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintune/qml/pages/HistoryPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintune/qml/pages/HomePage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintune/qml/pages/LibraryPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintune/qml/pages/LyricsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintune/qml/pages/MorePage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintune/qml/pages/NowPlayingPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintune/qml/pages/PlaylistPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintune/qml/pages/PlaylistPickerPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintune/qml/pages/ProvidersPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintune/qml/pages/QueuePage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintune/qml/pages/SearchPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintune/qml/pages/SettingsPage.qml",
+        "attention": false
+      },
+      {
+        "area": "file",
+        "change": "changed",
+        "item": "/usr/share/harbour-fintune/qml/pages/SponsorBlockPage.qml",
+        "attention": false
+      }
+    ],
+    "counts": {
+      "hosts": {
+        "added": 0,
+        "removed": 5
+      },
+      "files": {
+        "added": 1,
+        "removed": 1,
+        "changed": 24,
+        "unchanged": 7
+      }
+    }
+  },
+  "risk": {
+    "grade": "medium",
+    "reasons": [
+      {
+        "level": "medium",
+        "id": "sandbox-off",
+        "text": "Sandbox turned off"
+      },
+      {
+        "level": "medium",
+        "id": "code-reads-browser-profile-data",
+        "text": "Unsandboxed code that reads browser profile data"
+      }
+    ]
+  },
+  "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-fintune/b9c5250fc36f606b4f20c913d17abb0a22f88d045fa8358ad3c2a719a2f578e0.md"
+}
