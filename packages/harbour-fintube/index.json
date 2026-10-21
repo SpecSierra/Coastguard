@@ -53,6 +53,69 @@
     }
   },
   {
+    "sha256": "ecd80d4059386b0f697af27037b011f6794afbdef50ce5204bd77497c11cfc77",
+    "first_seen": "2026-10-21T10:42:23Z",
+    "package": "harbour-fintube-1.5.1-1.aarch64",
+    "version": "1.5.1-1",
+    "arch": "aarch64",
+    "buildtime": 1792577999,
+    "last_scanned": "2026-10-21T10:42:23Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          },
+          {
+            "level": "medium",
+            "id": "code-reads-browser-profile-data",
+            "text": "Unsandboxed code that reads browser profile data"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [
+        "Reads Browser Profile Data"
+      ],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 7,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": {
+        "since": "harbour-fintube-1.5.0-2.aarch64",
+        "attention_count": 0,
+        "attention": [],
+        "files": {
+          "added": 1,
+          "removed": 1,
+          "changed": 28,
+          "unchanged": 8
+        }
+      },
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39586471293",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-fintube/ecd80d4059386b0f697af27037b011f6794afbdef50ce5204bd77497c11cfc77.md"
+    }
+  },
+  {
     "sha256": "232367ec494f422ecc493ca581f716351cec89a604d15ddae69f2d652dda7215",
     "first_seen": "2026-10-21T10:41:01Z",
     "package": "harbour-fintube-1.5.1-1.armv7hl",
