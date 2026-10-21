@@ -1,5 +1,51 @@
 [
   {
+    "sha256": "92fc01709d5df3a938919084db20915458ba980b79b661d9b656cdcfce7946aa",
+    "first_seen": "2026-10-21T08:59:22Z",
+    "package": "harbour-smpc-1.3.43-1.i486",
+    "version": "1.3.43-1",
+    "arch": "i486",
+    "buildtime": 1792572123,
+    "last_scanned": "2026-10-21T08:59:22Z",
+    "verdict": "clean",
+    "summary": {
+      "risk": {
+        "grade": "medium",
+        "reasons": [
+          {
+            "level": "medium",
+            "id": "sandbox-off",
+            "text": "Sandbox turned off"
+          }
+        ]
+      },
+      "detections": [],
+      "indicators": [],
+      "sandbox": "disabled",
+      "permissions": [],
+      "own_sandbox_profile": false,
+      "services": 0,
+      "root_services": 0,
+      "privileged_files": 0,
+      "system_hooks": [],
+      "scriptlets": 0,
+      "hosts_in_scripts": 4,
+      "reputation": {
+        "virustotal": "ok",
+        "malwarebazaar": "ok"
+      },
+      "checks": {
+        "clamav": "pass",
+        "yara": "pass",
+        "virustotal": "pass",
+        "malwarebazaar": "pass"
+      },
+      "changes": null,
+      "run": "https://github.com/SpecSierra/Coastguard/actions/runs/39573379570",
+      "report": "https://github.com/SpecSierra/Coastguard/blob/results/packages/harbour-smpc/92fc01709d5df3a938919084db20915458ba980b79b661d9b656cdcfce7946aa.md"
+    }
+  },
+  {
     "sha256": "641bcbecaf6fa211b1d5d0b0acdefc3bb3405eabdf1086a6b91e897e300d405f",
     "first_seen": "2026-10-21T08:57:57Z",
     "package": "harbour-smpc-1.3.43-1.aarch64",
