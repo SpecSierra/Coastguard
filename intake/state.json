@@ -1,6 +1,13 @@
 {
-  "cursor": 1792572781,
-  "queue": [],
+  "cursor": 1792578481,
+  "queue": [
+    {
+      "url": "https://openrepos.net/sites/default/files/packages/19607/harbour-livewire-0.7.4-1.armv7hl.rpm",
+      "page": "https://openrepos.net/node/12538",
+      "appid": 12538,
+      "title": "Livewire"
+    }
+  ],
   "seen": [
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/5903/harbour-helmsman-0.4.8-1.armv7hl.rpm",
@@ -511,8 +518,20 @@
     "https://openrepos.net/sites/default/files/packages/19623/harbour-xmatic-0.46.19-1.armv7hl.rpm",
     "https://openrepos.net/sites/default/files/packages/2497/harbour-smpc-1.3.43-1.aarch64.rpm",
     "https://openrepos.net/sites/default/files/packages/2497/harbour-smpc-1.3.43-1.i486.rpm",
-    "https://openrepos.net/sites/default/files/packages/2497/harbour-smpc-1.3.43-1.armv7hl.rpm"
+    "https://openrepos.net/sites/default/files/packages/2497/harbour-smpc-1.3.43-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19670/harbour-fintune-1.3.1-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19670/harbour-fintune-1.3.1-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19670/harbour-fintube-1.5.1-1.armv7hl.rpm",
+    "https://openrepos.net/sites/default/files/packages/19670/harbour-fintube-1.5.1-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/harbour-livewire-0.7.4-1.aarch64.rpm",
+    "https://openrepos.net/sites/default/files/packages/19607/harbour-livewire-0.7.4-1.armv7hl.rpm"
   ],
-  "last_run": "2026-10-21T10:20:51Z",
-  "dispatched": []
+  "last_run": "2026-10-21T10:45:55Z",
+  "dispatched": [
+    1792579070,
+    1792579151,
+    1792579232,
+    1792579312,
+    1792579392
+  ]
 }
