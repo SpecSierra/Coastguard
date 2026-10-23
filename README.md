@@ -153,6 +153,22 @@ earlier ones. To look a file up by hash:
 
     git ls-tree -r --name-only origin/results | grep <sha256>
 
+## Reports
+
+`scripts/report_pdf.py` turns a checkout of the `results` branch into a PDF
+for OpenRepos users: a summary, what packages get to do, the high-grade
+packages, grade changes between versions and every package. Reports are kept
+in `reports/`.
+
+    pip install reportlab
+    git worktree add ../results origin/results
+    python3 -I scripts/report_pdf.py ../results reports/<date>.pdf \
+        --subtitle "The first two weeks on OpenRepos"
+
+`--note` adds a sentence to the summary and `--pause-label` marks the days
+after the last scan in the daily chart. The fonts are JetBrains Mono, in
+`scripts/fonts` under the SIL Open Font License.
+
 ## Changes since the previous version
 
 Each result is compared with the stored result of the build before it (by
